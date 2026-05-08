@@ -8,19 +8,24 @@ param(
   [Parameter(Mandatory = $true)]
   [string]$AdminHostname,
 
-  [string]$WwwHostname = ""
+  [string]$WwwHostname = "",
+
+  [string]$CloudflaredPath = $env:CLOUDFLARED_PATH
 )
 
 $ErrorActionPreference = "Stop"
-$cloudflaredPath = "C:\Program Files (x86)\cloudflared\cloudflared.exe"
 
-if (-not (Test-Path $cloudflaredPath)) {
-  throw "cloudflared.exe not found at $cloudflaredPath"
+if (-not $CloudflaredPath) {
+  $CloudflaredPath = "cloudflared"
 }
 
-& $cloudflaredPath tunnel route dns $TunnelName $AppHostname
-& $cloudflaredPath tunnel route dns $TunnelName $AdminHostname
+if ($CloudflaredPath -ne "cloudflared" -and -not (Test-Path $CloudflaredPath)) {
+  throw "cloudflared.exe not found at $CloudflaredPath"
+}
+
+& $CloudflaredPath tunnel route dns $TunnelName $AppHostname
+& $CloudflaredPath tunnel route dns $TunnelName $AdminHostname
 
 if ($WwwHostname) {
-  & $cloudflaredPath tunnel route dns $TunnelName $WwwHostname
+  & $CloudflaredPath tunnel route dns $TunnelName $WwwHostname
 }

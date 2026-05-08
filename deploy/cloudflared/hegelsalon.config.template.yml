@@ -1,11 +1,11 @@
 tunnel: REPLACE_WITH_TUNNEL_UUID
-credentials-file: C:\Windows\System32\config\systemprofile\.cloudflared\REPLACE_WITH_TUNNEL_UUID.json
+credentials-file: REPLACE_WITH_CLOUDFLARED_CREDENTIALS_FILE
 
 ingress:
   - hostname: app.your-domain.example
-    service: http://127.0.0.1:3098
+    service: http://HEGEL_ORIGIN_HOST:HEGEL_ORIGIN_PORT
   - hostname: www.your-domain.example
-    service: http://127.0.0.1:3098
+    service: http://HEGEL_ORIGIN_HOST:HEGEL_ORIGIN_PORT
   - hostname: admin.your-domain.example
-    service: http://127.0.0.1:3098
+    service: http://HEGEL_ORIGIN_HOST:HEGEL_ORIGIN_PORT
   - service: http_status:404

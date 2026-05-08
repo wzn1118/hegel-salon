@@ -121,61 +121,6 @@
                 <button id="sendButton" class="send-button" type="submit">发问</button>
               </div>
             </div>
-            <section class="provider-guide-shell hidden" id="providerGuideShellLegacy">
-              <div class="provider-guide-head">
-                <div>
-                  <p class="eyebrow">Provider Guide</p>
-                  <h4>常用中转与购买教程</h4>
-                </div>
-              </div>
-
-              <div class="provider-guide-grid">
-                <article class="provider-guide-card">
-                  <div class="provider-guide-card-head">
-                    <strong>Geek</strong>
-                    <span class="provider-guide-tag">OpenAI Compatible</span>
-                  </div>
-                  <p class="provider-guide-copy">
-                    适合已经有账号、想快速接入的用户。Base URL 必须带 <code>/v1</code>。
-                  </p>
-                  <div class="provider-guide-links">
-                    <a href="https://geek.tm2.xin" target="_blank" rel="noreferrer">官网入口</a>
-                    <button id="fillGeekPresetLegacy" class="ghost-button" type="button">填入 Geek 模板</button>
-                  </div>
-                  <ol class="provider-guide-steps">
-                    <li>打开官网并登录账号。</li>
-                    <li>充值或确认余额可用。</li>
-                    <li>在站内创建 API Key。</li>
-                    <li>本页填写：`Provider=openai`、`Base URL=https://geek.tm2.xin/v1`。</li>
-                  </ol>
-                </article>
-
-                <article class="provider-guide-card">
-                  <div class="provider-guide-card-head">
-                    <strong>TokenX24</strong>
-                    <span class="provider-guide-tag">OpenAI Compatible</span>
-                  </div>
-                  <p class="provider-guide-copy">
-                    站点支持注册和邮箱验证。OpenAI 兼容入口也建议填写带 <code>/v1</code> 的地址。
-                  </p>
-                  <div class="provider-guide-links">
-                    <a href="https://tokenx24.com" target="_blank" rel="noreferrer">官网入口</a>
-                    <button id="fillTokenxPresetLegacy" class="ghost-button" type="button">填入 TokenX24 模板</button>
-                  </div>
-                  <ol class="provider-guide-steps">
-                    <li>注册并完成邮箱验证。</li>
-                    <li>登录后在站内获取或创建 API Key。</li>
-                    <li>如需购买额度，先在站内确认充值或余额入口。</li>
-                    <li>本页填写：`Provider=openai`、`Base URL=https://tokenx24.com/v1`。</li>
-                  </ol>
-                </article>
-              </div>
-
-              <div class="provider-guide-note">
-                <strong>使用提示：</strong>
-                如果返回网页 HTML 或出现 <code>Unexpected token '&lt;'</code>，通常就是 Base URL 少了 <code>/v1</code>。
-              </div>
-            </section>
           </form>
         </section>
       </section>
@@ -686,6 +631,7 @@
       </div>
     </div>
 
+    <script src="./runtime-config.js"></script>
     <script type="module" src="./app.js"></script>
     <script type="module" src="./computer-use.js"></script>
   </body>

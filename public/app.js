@@ -18,8 +18,7 @@ const configApiKey = document.getElementById("configApiKey");
 const configMeta = document.getElementById("configMeta");
 const configStatus = document.getElementById("configStatus");
 const saveConfigButton = document.getElementById("saveConfig");
-let fillGeekPresetButton = document.getElementById("fillGeekPreset");
-let fillTokenxPresetButton = document.getElementById("fillTokenxPreset");
+let providerPresetButtons = [];
 const openComputer = document.getElementById("openComputer");
 const openTraining = document.getElementById("openTraining");
 const styleSelector = document.getElementById("styleSelector");
@@ -254,9 +253,24 @@ window.__hegelSalonApp = {
   }
 };
 
+function readConfiguredApiBase() {
+  const configured = String(
+    window.HEGEL_SALON_API_BASE ||
+      document.documentElement?.dataset?.apiBase ||
+      ""
+  ).trim();
+
+  return /^https?:\/\//i.test(configured) ? configured.replace(/\/+$/, "") : "";
+}
+
 function getApiBase() {
   if (window.location.protocol !== "file:") {
     return "";
+  }
+
+  const configured = readConfiguredApiBase();
+  if (configured) {
+    return configured;
   }
 
   const stored = localStorage.getItem(API_BASE_STORAGE_KEY);
@@ -264,9 +278,7 @@ function getApiBase() {
     return stored.replace(/\/+$/, "");
   }
 
-  const fallback = "http://127.0.0.1:3088";
-  localStorage.setItem(API_BASE_STORAGE_KEY, fallback);
-  return fallback;
+  return "";
 }
 
 function apiUrl(path) {
@@ -2598,74 +2610,120 @@ function applyProviderPreset({ provider = "", model = "", baseURL = "" } = {}) {
 
 function initializeProviderGuide() {
   if (!configForm || document.getElementById("providerGuideShell")) {
-    fillGeekPresetButton = document.getElementById("fillGeekPreset");
-    fillTokenxPresetButton = document.getElementById("fillTokenxPreset");
+    providerPresetButtons = Array.from(document.querySelectorAll("[data-provider-preset-index]"));
+    return;
+  }
+
+  const guides = Array.isArray(window.HEGEL_PROVIDER_GUIDES)
+    ? window.HEGEL_PROVIDER_GUIDES
+        .map((guide) => ({
+          name: String(guide?.name || "").trim(),
+          tag: String(guide?.tag || "OpenAI Compatible").trim(),
+          copy: String(guide?.copy || "").trim(),
+          href: String(guide?.href || "").trim(),
+          provider: String(guide?.provider || "openai").trim(),
+          model: String(guide?.model || "").trim(),
+          baseURL: String(guide?.baseURL || "").trim(),
+          steps: Array.isArray(guide?.steps)
+            ? guide.steps.map((step) => String(step || "").trim()).filter(Boolean)
+            : []
+        }))
+        .filter((guide) => guide.name && guide.baseURL)
+    : [];
+
+  if (!guides.length) {
+    providerPresetButtons = [];
     return;
   }
 
   const shell = document.createElement("section");
   shell.className = "provider-guide-shell";
   shell.id = "providerGuideShell";
-  shell.innerHTML = `
-    <div class="provider-guide-head">
-      <div>
-        <p class="eyebrow">Provider Guide</p>
-        <h4>常用中转与购买教程</h4>
-      </div>
-    </div>
-    <div class="provider-guide-grid">
-      <article class="provider-guide-card">
-        <div class="provider-guide-card-head">
-          <strong>Geek</strong>
-          <span class="provider-guide-tag">OpenAI Compatible</span>
-        </div>
-        <p class="provider-guide-copy">
-          适合已经有账号、想快速接入的用户。Base URL 必须带 <code>/v1</code>。
-        </p>
-        <div class="provider-guide-links">
-          <a href="https://geek.tm2.xin" target="_blank" rel="noreferrer">官网入口</a>
-          <button id="fillGeekPreset" class="ghost-button" type="button">填入 Geek 模板</button>
-        </div>
-        <ol class="provider-guide-steps">
-          <li>打开官网并登录账号。</li>
-          <li>充值或确认余额可用。</li>
-          <li>在站内创建 API Key。</li>
-          <li>本页填写：<code>Provider=openai</code>、<code>Base URL=https://geek.tm2.xin/v1</code>。</li>
-        </ol>
-      </article>
-      <article class="provider-guide-card">
-        <div class="provider-guide-card-head">
-          <strong>TokenX24</strong>
-          <span class="provider-guide-tag">OpenAI Compatible</span>
-        </div>
-        <p class="provider-guide-copy">
-          站点当前支持注册和邮箱验证。OpenAI 兼容入口也建议填写带 <code>/v1</code> 的地址。
-        </p>
-        <div class="provider-guide-links">
-          <a href="https://tokenx24.com" target="_blank" rel="noreferrer">官网入口</a>
-          <button id="fillTokenxPreset" class="ghost-button" type="button">填入 TokenX24 模板</button>
-        </div>
-        <ol class="provider-guide-steps">
-          <li>注册并完成邮箱验证。</li>
-          <li>登录后在站内获取或创建 API Key。</li>
-          <li>如需购买额度，先在站内确认充值或余额入口。</li>
-          <li>本页填写：<code>Provider=openai</code>、<code>Base URL=https://tokenx24.com/v1</code>。</li>
-        </ol>
-      </article>
-    </div>
-    <div class="provider-guide-note">
-      <strong>使用提示：</strong>
-      如果返回网页 HTML 或出现 <code>Unexpected token '&lt;'</code>，通常就是 Base URL 少了 <code>/v1</code>。
-    </div>
-  `;
+
+  const head = document.createElement("div");
+  head.className = "provider-guide-head";
+  const headText = document.createElement("div");
+  const eyebrow = document.createElement("p");
+  eyebrow.className = "eyebrow";
+  eyebrow.textContent = "Provider Guide";
+  const title = document.createElement("h4");
+  title.textContent = "常用中转与购买教程";
+  headText.append(eyebrow, title);
+  head.append(headText);
+
+  const grid = document.createElement("div");
+  grid.className = "provider-guide-grid";
+
+  guides.forEach((guide, index) => {
+    const card = document.createElement("article");
+    card.className = "provider-guide-card";
+
+    const cardHead = document.createElement("div");
+    cardHead.className = "provider-guide-card-head";
+    const name = document.createElement("strong");
+    name.textContent = guide.name;
+    const tag = document.createElement("span");
+    tag.className = "provider-guide-tag";
+    tag.textContent = guide.tag;
+    cardHead.append(name, tag);
+
+    const copy = document.createElement("p");
+    copy.className = "provider-guide-copy";
+    copy.textContent = guide.copy || "填写 OpenAI-compatible 的 Base URL、模型名与 API Key 后保存。";
+
+    const links = document.createElement("div");
+    links.className = "provider-guide-links";
+    if (/^https?:\/\//i.test(guide.href)) {
+      const link = document.createElement("a");
+      link.href = guide.href;
+      link.target = "_blank";
+      link.rel = "noreferrer";
+      link.textContent = "官网入口";
+      links.append(link);
+    }
+
+    const presetButton = document.createElement("button");
+    presetButton.className = "ghost-button";
+    presetButton.type = "button";
+    presetButton.dataset.providerPresetIndex = String(index);
+    presetButton.textContent = `填入 ${guide.name} 模板`;
+    links.append(presetButton);
+
+    const steps = document.createElement("ol");
+    steps.className = "provider-guide-steps";
+    const renderedSteps = guide.steps.length
+      ? guide.steps
+      : [
+          "登录供应商站点并创建 API Key。",
+          "确认余额或额度可用。",
+          `本页填写 Provider=${guide.provider}、Base URL=${guide.baseURL}。`
+        ];
+    renderedSteps.forEach((step) => {
+      const item = document.createElement("li");
+      item.textContent = step;
+      steps.append(item);
+    });
+
+    card.append(cardHead, copy, links, steps);
+    grid.append(card);
+  });
+
+  const note = document.createElement("div");
+  note.className = "provider-guide-note";
+  const noteStrong = document.createElement("strong");
+  noteStrong.textContent = "使用提示：";
+  const noteText = document.createTextNode(
+    "如果返回网页 HTML 或出现 Unexpected token '<'，通常是 Base URL 路径不完整。"
+  );
+  note.append(noteStrong, noteText);
+  shell.append(head, grid, note);
 
   if (configContent && configForm && configForm.parentElement === configContent) {
     configContent.insertBefore(shell, configForm);
   } else {
     configForm?.append(shell);
   }
-  fillGeekPresetButton = shell.querySelector("#fillGeekPreset");
-  fillTokenxPresetButton = shell.querySelector("#fillTokenxPreset");
+  providerPresetButtons = Array.from(shell.querySelectorAll("[data-provider-preset-index]"));
 }
 
 function maskKey(key) {
@@ -3533,25 +3591,20 @@ if (configForm) {
   configForm.addEventListener("submit", saveConfig);
 }
 
-if (fillGeekPresetButton) {
-  fillGeekPresetButton.addEventListener("click", () => {
+providerPresetButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const guides = Array.isArray(window.HEGEL_PROVIDER_GUIDES)
+      ? window.HEGEL_PROVIDER_GUIDES
+      : [];
+    const index = Number(button.dataset.providerPresetIndex || -1);
+    const guide = guides[index] || {};
     applyProviderPreset({
-      provider: "openai",
-      model: "gpt-5.4",
-      baseURL: "https://geek.tm2.xin/v1"
+      provider: String(guide.provider || "openai"),
+      model: String(guide.model || ""),
+      baseURL: String(guide.baseURL || "")
     });
   });
-}
-
-if (fillTokenxPresetButton) {
-  fillTokenxPresetButton.addEventListener("click", () => {
-    applyProviderPreset({
-      provider: "openai",
-      model: "gpt-5.4",
-      baseURL: "https://tokenx24.com/v1"
-    });
-  });
-}
+});
 
 if (toggleSources) {
   toggleSources.addEventListener("click", async () => {

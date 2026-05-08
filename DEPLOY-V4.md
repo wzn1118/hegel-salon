@@ -143,14 +143,14 @@ Recommended extra setting behind a proxy:
 ```text
 HEGEL_FORCE_SECURE_COOKIES=1
 HEGEL_ENABLE_AUTH=1
-PORT=3088
+PORT=<origin-port>
 ```
 
 Example Caddy:
 
 ```caddy
 your-domain.com {
-  reverse_proxy 127.0.0.1:3088
+  reverse_proxy 127.0.0.1:<origin-port>
 }
 ```
 
@@ -160,7 +160,7 @@ Windows example:
 
 ```powershell
 $env:HEGEL_ENABLE_AUTH='1'
-$env:PORT='3088'
+$env:PORT='<origin-port>'
 node src/server.mjs
 ```
 

@@ -1,4 +1,5 @@
 param(
+  [int]$Port = 3098,
   [string]$AdminAllowedIps = "127.0.0.1,::1",
   [string]$PublicBaseUrl = "https://app.your-domain.example",
   [string]$AllowedOrigins = "https://app.your-domain.example,https://www.your-domain.example,https://admin.your-domain.example"
@@ -9,7 +10,7 @@ $scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 $projectRoot = Resolve-Path (Join-Path $scriptDir "..\\..")
 Set-Location $projectRoot
 
-$env:PORT = "3098"
+$env:PORT = [string]$Port
 $env:HEGEL_ENABLE_AUTH = "1"
 $env:HEGEL_TRUST_PROXY = "1"
 $env:HEGEL_FORCE_SECURE_COOKIES = "1"

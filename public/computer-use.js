@@ -14,9 +14,24 @@ const computerTranscript = document.getElementById("computerTranscript");
 
 let pollTimer = null;
 
+function readConfiguredApiBase() {
+  const configured = String(
+    window.HEGEL_SALON_API_BASE ||
+      document.documentElement?.dataset?.apiBase ||
+      ""
+  ).trim();
+
+  return /^https?:\/\//i.test(configured) ? configured.replace(/\/+$/, "") : "";
+}
+
 function getApiBase() {
   if (window.location.protocol !== "file:") {
     return "";
+  }
+
+  const configured = readConfiguredApiBase();
+  if (configured) {
+    return configured;
   }
 
   const stored = localStorage.getItem("hegel-salon-api-base");
@@ -24,9 +39,7 @@ function getApiBase() {
     return stored.replace(/\/+$/, "");
   }
 
-  const fallback = "http://127.0.0.1:3088";
-  localStorage.setItem("hegel-salon-api-base", fallback);
-  return fallback;
+  return "";
 }
 
 function apiUrl(path) {

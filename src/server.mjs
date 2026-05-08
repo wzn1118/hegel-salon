@@ -262,9 +262,10 @@ const ALLOWED_ATTACHMENT_MEDIA_TYPES = new Set([
   "text/tab-separated-values"
 ]);
 const DEFENDER_CANDIDATE_PATHS = [
+  String(process.env.HEGEL_DEFENDER_SCAN_PATH || "").trim(),
   "C:\\Program Files\\Windows Defender\\MpCmdRun.exe",
   "C:\\Program Files\\Microsoft Defender\\MpCmdRun.exe"
-];
+].filter(Boolean);
 const uploadScanMode = String(process.env.HEGEL_UPLOAD_SCAN_MODE || "best-effort")
   .trim()
   .toLowerCase();
@@ -436,7 +437,7 @@ function buildSecurityHeaders(req, { html = false } = {}) {
       "script-src 'self'",
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
       "font-src 'self' https://fonts.gstatic.com",
-      "connect-src 'self' http://127.0.0.1:3088"
+      "connect-src 'self'"
     ].join("; ");
   }
 

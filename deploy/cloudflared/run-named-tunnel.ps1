@@ -1,17 +1,22 @@
 param(
   [Parameter(Mandatory = $true)]
-  [string]$ConfigPath
+  [string]$ConfigPath,
+
+  [string]$CloudflaredPath = $env:CLOUDFLARED_PATH
 )
 
 $ErrorActionPreference = "Stop"
 
-$cloudflaredPath = "C:\Program Files (x86)\cloudflared\cloudflared.exe"
-if (-not (Test-Path $cloudflaredPath)) {
-  throw "cloudflared.exe not found at $cloudflaredPath"
+if (-not $CloudflaredPath) {
+  $CloudflaredPath = "cloudflared"
+}
+
+if ($CloudflaredPath -ne "cloudflared" -and -not (Test-Path $CloudflaredPath)) {
+  throw "cloudflared.exe not found at $CloudflaredPath"
 }
 
 if (-not (Test-Path $ConfigPath)) {
   throw "Config file not found: $ConfigPath"
 }
 
-& $cloudflaredPath tunnel --config $ConfigPath run
+& $CloudflaredPath tunnel --config $ConfigPath run

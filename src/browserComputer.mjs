@@ -13,9 +13,10 @@ const WIDTH = 1280;
 const HEIGHT = 900;
 const MAX_STEPS = 10;
 const EDGE_CANDIDATES = [
+  String(process.env.HEGEL_EDGE_PATH || "").trim(),
   "C:\\Program Files\\Microsoft\\Edge\\Application\\msedge.exe",
   "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe"
-];
+].filter(Boolean);
 
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));

@@ -11,7 +11,11 @@ import {
 import { buildRuntimeScope } from "./runtimeScope.mjs";
 import { updateStyleProfileById } from "./userDatabase.mjs";
 
-const apiUrl = process.env.HEGEL_API_URL || "http://127.0.0.1:3088/api/chat";
+const apiUrl = String(process.env.HEGEL_API_URL || "").trim();
+if (!apiUrl) {
+  console.error("Set HEGEL_API_URL to the chat endpoint before running the optimizer.");
+  process.exit(1);
+}
 const userId = process.env.HEGEL_USER_ID || "";
 const styleProfileId = process.env.HEGEL_STYLE_PROFILE_ID || "";
 const sessionToken = process.env.HEGEL_SESSION_TOKEN || "";

@@ -1,3 +1,7 @@
+param(
+  [int]$Port = 3087
+)
+
 $ErrorActionPreference = "Stop"
 
 $projectRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
@@ -15,14 +19,17 @@ $existing = Get-CimInstance Win32_Process -Filter "name = 'node.exe'" |
   Select-Object -First 1
 
 if (-not $existing) {
+  $env:PORT = [string]$Port
   Start-Process -FilePath node -ArgumentList "src/server.mjs" -WorkingDirectory $projectRoot | Out-Null
 }
 
+$localUrl = "http://127.0.0.1:$Port/"
+
 for ($i = 0; $i -lt 40; $i++) {
   try {
-    $response = Invoke-WebRequest -Uri "http://127.0.0.1:3087/" -UseBasicParsing -TimeoutSec 2
+    $response = Invoke-WebRequest -Uri $localUrl -UseBasicParsing -TimeoutSec 2
     if ($response.StatusCode -eq 200) {
-      Start-Process "http://127.0.0.1:3087/"
+      Start-Process $localUrl
       exit 0
     }
   } catch {
@@ -30,4 +37,4 @@ for ($i = 0; $i -lt 40; $i++) {
   }
 }
 
-Start-Process "http://127.0.0.1:3087/"
+Start-Process $localUrl

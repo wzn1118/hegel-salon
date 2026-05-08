@@ -14,7 +14,11 @@ import {
 
 const root = projectRoot;
 const logsPath = join(root, "data", "logs", "chat-history.jsonl");
-const apiUrl = process.env.HEGEL_API_URL || "http://127.0.0.1:3087/api/chat";
+const apiUrl = String(process.env.HEGEL_API_URL || "").trim();
+if (!apiUrl) {
+  console.error("Set HEGEL_API_URL to the chat endpoint before running the evaluation.");
+  process.exit(1);
+}
 const judgeModel = process.env.HEGEL_EVAL_MODEL || "gpt-5.3-codex";
 const concurrency =
   Number.parseInt(process.env.HEGEL_EVAL_CONCURRENCY || "3", 10) || 3;

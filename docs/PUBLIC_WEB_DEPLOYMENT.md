@@ -1,6 +1,6 @@
 # Hegel Salon Public Web Deployment
 
-This guide turns the local `http://127.0.0.1:3098` service into a public website with:
+This guide turns a local Hegel Salon origin service into a public website with:
 
 - a custom domain
 - Cloudflare Named Tunnel
@@ -10,10 +10,9 @@ This guide turns the local `http://127.0.0.1:3098` service into a public website
 
 ## Current Local Assumptions
 
-- App server listens on `127.0.0.1:3098`
+- App server listens on a private origin address such as `127.0.0.1:<origin-port>`
 - Auth is enabled
-- `cloudflared` is installed on Windows at:
-  `C:\Program Files (x86)\cloudflared\cloudflared.exe`
+- `cloudflared` is available on `PATH`, or its path is exposed with `CLOUDFLARED_PATH`
 
 ## 1. Cloudflare Requirements
 
@@ -33,7 +32,7 @@ Recommended hostnames:
 Recommended:
 
 ```powershell
-$env:PORT = "3098"
+$env:PORT = "<origin-port>"
 $env:HEGEL_ENABLE_AUTH = "1"
 $env:HEGEL_PUBLIC_BASE_URL = "https://app.your-domain.example"
 $env:HEGEL_FORCE_SECURE_COOKIES = "1"
@@ -50,7 +49,8 @@ $env:HEGEL_UPLOAD_SCAN_MODE = "required"
 Run:
 
 ```powershell
-& "C:\Program Files (x86)\cloudflared\cloudflared.exe" tunnel login
+$cloudflared = if ($env:CLOUDFLARED_PATH) { $env:CLOUDFLARED_PATH } else { "cloudflared" }
+& $cloudflared tunnel login
 ```
 
 Cloudflare will open an authorization page in your browser. Choose the domain you want the tunnel to manage.
@@ -60,7 +60,8 @@ Cloudflare will open an authorization page in your browser. Choose the domain yo
 Run:
 
 ```powershell
-& "C:\Program Files (x86)\cloudflared\cloudflared.exe" tunnel create hegel-salon
+$cloudflared = if ($env:CLOUDFLARED_PATH) { $env:CLOUDFLARED_PATH } else { "cloudflared" }
+& $cloudflared tunnel create hegel-salon
 ```
 
 This prints:
@@ -82,6 +83,8 @@ Then replace:
 
 - `REPLACE_WITH_TUNNEL_UUID`
 - `credentials-file`
+- `HEGEL_ORIGIN_HOST`
+- `HEGEL_ORIGIN_PORT`
 - `app.your-domain.example`
 - `admin.your-domain.example`
 
@@ -90,8 +93,9 @@ Then replace:
 Run:
 
 ```powershell
-& "C:\Program Files (x86)\cloudflared\cloudflared.exe" tunnel route dns hegel-salon app.your-domain.example
-& "C:\Program Files (x86)\cloudflared\cloudflared.exe" tunnel route dns hegel-salon admin.your-domain.example
+$cloudflared = if ($env:CLOUDFLARED_PATH) { $env:CLOUDFLARED_PATH } else { "cloudflared" }
+& $cloudflared tunnel route dns hegel-salon app.your-domain.example
+& $cloudflared tunnel route dns hegel-salon admin.your-domain.example
 ```
 
 ## 7. Run the Tunnel
