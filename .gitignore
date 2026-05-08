@@ -11,12 +11,15 @@ data/computer-browser-sessions/
 local-resources/*
 !local-resources/README.md
 android-app/.local-android/
+android-app/.playwright-cli/
+android-app/*.apk
 android-app/android/local.properties
 android-app/android/.gradle/
 android-app/android/app/build/
 android-app/android/build/
 config/api.local.json
 config/mail.local.json
+deploy/cloudflared/hegelsalon.config.yml
 .env.local
 *.log
 *.sqlite
