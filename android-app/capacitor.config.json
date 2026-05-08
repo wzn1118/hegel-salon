@@ -1,0 +1,11 @@
+{
+  "appId": "com.hegelsalon.app",
+  "appName": "Hegel Salon",
+  "webDir": "www",
+  "server": {
+    "allowNavigation": [
+      "*"
+    ],
+    "cleartext": true
+  }
+}

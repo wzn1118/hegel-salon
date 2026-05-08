@@ -1,0 +1,264 @@
+:root {
+  color-scheme: dark;
+  --bg: #070707;
+  --panel: rgba(12, 12, 12, 0.92);
+  --panel-border: rgba(216, 199, 154, 0.14);
+  --panel-strong: rgba(216, 199, 154, 0.32);
+  --text: #f0eadf;
+  --muted: rgba(240, 234, 223, 0.6);
+  --accent: #d8c79a;
+  --accent-strong: #efe2be;
+  --danger: #da8a78;
+  --shadow: 0 32px 80px rgba(0, 0, 0, 0.45);
+  font-family: "Noto Sans SC", "Microsoft YaHei", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background:
+    radial-gradient(circle at 18% 24%, rgba(255, 255, 255, 0.06), transparent 22%),
+    radial-gradient(circle at 74% 16%, rgba(216, 199, 154, 0.1), transparent 18%),
+    linear-gradient(180deg, #080808 0%, #040404 100%);
+  color: var(--text);
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+}
+
+.noise {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.1;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 3px 3px, 3px 3px;
+  mix-blend-mode: soft-light;
+}
+
+.app-shell {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(240px, 0.92fr) minmax(300px, 1.08fr);
+  gap: 24px;
+  min-height: 100vh;
+  padding: 22px;
+}
+
+.portrait-panel,
+.control-panel {
+  border: 1px solid var(--panel-border);
+  background: linear-gradient(180deg, rgba(10, 10, 10, 0.94), rgba(8, 8, 8, 0.98));
+  box-shadow: var(--shadow);
+}
+
+.portrait-panel {
+  overflow: hidden;
+}
+
+.portrait-panel-inner {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100%;
+  padding: 24px;
+}
+
+.portrait-header,
+.control-panel {
+  position: relative;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  font-size: 11px;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(3rem, 9vw, 5.2rem);
+  line-height: 0.92;
+  letter-spacing: -0.05em;
+}
+
+.deck,
+.lead,
+.status-text,
+.notes-list {
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.portrait-stage {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  min-height: 300px;
+  margin-top: 18px;
+}
+
+.portrait-aura {
+  position: absolute;
+  width: 66%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.16), transparent 70%);
+  filter: blur(18px);
+}
+
+.portrait {
+  position: relative;
+  width: min(88%, 420px);
+  object-fit: contain;
+  filter: grayscale(1) contrast(1.08);
+}
+
+.portrait-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  color: rgba(240, 234, 223, 0.5);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.control-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 28px;
+}
+
+h2 {
+  font-size: clamp(2rem, 7vw, 3.4rem);
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+}
+
+.gateway-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.field input {
+  width: 100%;
+  border: 1px solid rgba(216, 199, 154, 0.24);
+  background: rgba(6, 6, 6, 0.92);
+  color: var(--text);
+  padding: 16px 18px;
+  font-size: 16px;
+  outline: none;
+}
+
+.field input:focus {
+  border-color: var(--panel-strong);
+  box-shadow: 0 0 0 1px rgba(216, 199, 154, 0.18);
+}
+
+.quick-actions,
+.action-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.ghost-button,
+.send-button {
+  appearance: none;
+  border: 1px solid rgba(216, 199, 154, 0.26);
+  padding: 14px 18px;
+  background: transparent;
+  color: var(--text);
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.ghost-button {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.send-button {
+  background: linear-gradient(180deg, rgba(216, 199, 154, 0.14), rgba(216, 199, 154, 0.07));
+}
+
+.ghost-button:active,
+.send-button:active {
+  transform: translateY(1px);
+}
+
+.notes-card {
+  margin-top: auto;
+  padding: 18px;
+  border: 1px solid rgba(216, 199, 154, 0.16);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.notes-title {
+  margin-bottom: 10px;
+  color: var(--accent-strong);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.notes-list {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.notes-list li + li {
+  margin-top: 10px;
+}
+
+.status-text.is-success {
+  color: var(--accent-strong);
+}
+
+.status-text.is-error {
+  color: var(--danger);
+}
+
+@media (max-width: 820px) {
+  .app-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .portrait-panel-inner {
+    min-height: auto;
+  }
+
+  .portrait-stage {
+    min-height: 240px;
+  }
+}

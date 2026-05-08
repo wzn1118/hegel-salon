@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_reload"
+        android:title="@string/menu_reload"
+        android:showAsAction="never" />
+    <item
+        android:id="@+id/action_change_endpoint"
+        android:title="@string/menu_change_endpoint"
+        android:showAsAction="never" />
+    <item
+        android:id="@+id/action_open_external"
+        android:title="@string/menu_open_external"
+        android:showAsAction="never" />
+</menu>

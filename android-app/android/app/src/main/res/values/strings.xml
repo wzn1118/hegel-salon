@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Hegel Salon</string>
+    <string name="title_activity_main">Hegel Salon</string>
+    <string name="package_name">com.hegelsalon.app</string>
+    <string name="custom_url_scheme">com.hegelsalon.app</string>
+    <string name="home_eyebrow">Android Native Edition</string>
+    <string name="home_title">HEGEL\nSALON</string>
+    <string name="home_deck">这一次不是网页首页的简单包裹，而是一个真正驻留在 Android 里的入口。你先规定服务所在，这个 app 再把黑格尔沙龙召入手机之中。</string>
+    <string name="home_portrait">黑格尔肖像</string>
+    <string name="home_footer">Native shell. Hegel tone. Mobile entry.</string>
+    <string name="gateway_eyebrow">Service Gateway</string>
+    <string name="gateway_title">连接 Hegel Salon</string>
+    <string name="gateway_deck">问答、附件理解和 computer use 仍然由 Hegel Salon 服务承载；但首页、地址配置、文件上传入口和浏览器容器现在都归 Android 原生层掌握。</string>
+    <string name="server_url_label">服务地址</string>
+    <string name="server_url_hint">http://10.0.2.2:3087</string>
+    <string name="use_emulator">模拟器地址</string>
+    <string name="use_local">本机地址</string>
+    <string name="test_connection">测试连接</string>
+    <string name="open_salon">进入沙龙</string>
+    <string name="status_default">首次启动时，你可以先填入 Android 模拟器地址，或真机所在局域网里的服务地址。</string>
+    <string name="status_emulator_url">已填入 Android 模拟器默认地址。</string>
+    <string name="status_local_url">已填入本机调试地址。若在模拟器中，请改回 10.0.2.2。</string>
+    <string name="status_invalid_url">请输入有效的 Hegel Salon 地址。</string>
+    <string name="status_testing">正在测试连接…</string>
+    <string name="status_opening">正在进入 Hegel Salon…</string>
+    <string name="status_success">连接成功。现在可以进入沙龙。</string>
+    <string name="status_failed">连接失败：%1$s</string>
+    <string name="status_http_code">服务返回状态码 %1$d</string>
+    <string name="address_notes">提示：模拟器访问电脑本地服务时通常用 http://10.0.2.2:3087；真机要改成你电脑的局域网 IP；如果服务已部署公网，也可以直接填 HTTPS 地址。</string>
+    <string name="salon_title">Hegel Salon</string>
+    <string name="loading_engine">正在准备浏览器内核…</string>
+    <string name="loading_page">正在载入沙龙页面…</string>
+    <string name="loading_ready">页面已准备就绪。</string>
+    <string name="loading_failed">页面载入失败：%1$s</string>
+    <string name="choose_file">选择附件</string>
+    <string name="menu_reload">重新载入</string>
+    <string name="menu_change_endpoint">更改地址</string>
+    <string name="menu_open_external">系统浏览器打开</string>
+</resources>

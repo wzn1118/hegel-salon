@@ -1,0 +1,11 @@
+tunnel: REPLACE_WITH_TUNNEL_UUID
+credentials-file: C:\Windows\System32\config\systemprofile\.cloudflared\REPLACE_WITH_TUNNEL_UUID.json
+
+ingress:
+  - hostname: hegelsalon.com
+    service: http://127.0.0.1:3098
+  - hostname: www.hegelsalon.com
+    service: http://127.0.0.1:3098
+  - hostname: admin.hegelsalon.com
+    service: http://127.0.0.1:3098
+  - service: http_status:404

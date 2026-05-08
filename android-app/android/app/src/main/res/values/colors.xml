@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="hegel_background">#070707</color>
+    <color name="hegel_panel">#0D0D0D</color>
+    <color name="hegel_border">#26D8C79A</color>
+    <color name="hegel_text">#F0EADF</color>
+    <color name="hegel_muted_text">#A99F8D</color>
+    <color name="hegel_hint">#7A7266</color>
+    <color name="hegel_accent">#D8C79A</color>
+    <color name="hegel_accent_dark">#8E7B4D</color>
+    <color name="hegel_danger">#DA8A78</color>
+    <color name="colorPrimary">#0D0D0D</color>
+    <color name="colorPrimaryDark">#070707</color>
+    <color name="colorAccent">#D8C79A</color>
+</resources>

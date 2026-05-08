@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Hegel Salon</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="noise" aria-hidden="true"></div>
+
+    <main class="app-shell">
+      <aside class="portrait-panel">
+        <div class="portrait-panel-inner">
+          <header class="portrait-header">
+            <p class="eyebrow">Android Companion Edition</p>
+            <h1>HEGEL<br />SALON</h1>
+            <p class="deck">
+              这不是一块临时壳，而是通往当前 Hegel Salon 服务的一扇门。你先规定服务所在，
+              此 app 再把界面带入手机之中。
+            </p>
+          </header>
+
+          <div class="portrait-stage">
+            <div class="portrait-aura" aria-hidden="true"></div>
+            <img class="portrait" src="./assets/hegel-cutout-web.png" alt="黑格尔肖像" />
+          </div>
+
+          <footer class="portrait-footer">
+            <span>Browser shell for Android.</span>
+            <span>Endpoint-led. Hegel-styled.</span>
+          </footer>
+        </div>
+      </aside>
+
+      <section class="control-panel">
+        <p class="eyebrow">Service Gateway</p>
+        <h2>连接 Hegel Salon</h2>
+        <p class="lead">
+          现有能力仍由 Hegel Salon 服务承载。这个 Android App 负责在手机里打开它，并保留一键改地址的入口。
+        </p>
+
+        <form id="gatewayForm" class="gateway-form">
+          <label class="field">
+            <span>服务地址</span>
+            <input
+              id="serverUrl"
+              type="url"
+              inputmode="url"
+              autocomplete="url"
+              placeholder="http://10.0.2.2:3087"
+            />
+          </label>
+
+          <div class="quick-actions">
+            <button id="fillEmulatorUrl" class="ghost-button" type="button">模拟器默认地址</button>
+            <button id="fillLocalhostUrl" class="ghost-button" type="button">本机调试地址</button>
+          </div>
+
+          <div class="action-row">
+            <button id="testConnection" class="ghost-button" type="button">测试连接</button>
+            <button id="openSalon" class="send-button" type="submit">进入沙龙</button>
+          </div>
+
+          <p id="statusText" class="status-text">首次启动时，你可以先填入 Android 模拟器或局域网中的服务地址。</p>
+        </form>
+
+        <section class="notes-card">
+          <p class="notes-title">地址提示</p>
+          <ul class="notes-list">
+            <li>Android 模拟器访问电脑上的本地服务时，通常使用 `http://10.0.2.2:3087`。</li>
+            <li>真机调试时，请改成电脑在同一局域网中的 IP，比如 `http://192.168.x.x:3087`。</li>
+            <li>如果你之后把 Hegel Salon 部署到了公网，这里也可以直接填 HTTPS 地址。</li>
+          </ul>
+        </section>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

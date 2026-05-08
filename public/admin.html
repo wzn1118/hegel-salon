@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hegel Admin</title>
+    <link rel="icon" href="./assets/hegel-cutout-web.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700;900&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./admin-dashboard.css" />
+  </head>
+  <body>
+    <div class="admin-noise" aria-hidden="true"></div>
+
+    <main class="admin-shell">
+      <aside class="admin-sidebar">
+        <div>
+          <p class="eyebrow">Independent Backend</p>
+          <h1>HEGEL<br />ADMIN</h1>
+          <p class="sidebar-copy">用户、数据库、训练、邮件配置与审计全部集中管理。</p>
+        </div>
+
+        <nav class="admin-nav">
+          <a href="#overview" class="nav-link">总览</a>
+          <a href="#activity" class="nav-link">活动</a>
+          <a href="#users" class="nav-link">用户</a>
+          <a href="#ops" class="nav-link">运维</a>
+        </nav>
+
+        <div class="sidebar-actions">
+          <button id="refreshAll" class="ghost-button" type="button">刷新后台</button>
+          <button id="logoutButton" class="ghost-button" type="button">退出登录</button>
+        </div>
+      </aside>
+
+      <section class="admin-main">
+        <header class="admin-header">
+          <div>
+            <p class="eyebrow">Control Plane</p>
+            <h2>独立后台</h2>
+          </div>
+          <div id="sessionIdentity" class="session-pill">未登录</div>
+        </header>
+
+        <section id="overview" class="admin-section">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Overview</p>
+              <h3>平台总览</h3>
+            </div>
+            <p id="adminStatus" class="status-text">后台尚未加载。</p>
+          </div>
+          <div id="summaryCards" class="summary-grid"></div>
+        </section>
+
+        <section id="activity" class="admin-section">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Analytics</p>
+              <h3>活动与使用</h3>
+            </div>
+          </div>
+
+          <div class="analytics-grid">
+            <section class="panel-card">
+              <div class="panel-head">
+                <h4>使用时间线</h4>
+                <span class="panel-meta">近 30 天</span>
+              </div>
+              <div id="usageTimeline" class="timeline-chart"></div>
+            </section>
+
+            <section class="panel-card">
+              <div class="panel-head">
+                <h4>最近登录</h4>
+                <span class="panel-meta">审计</span>
+              </div>
+              <div id="recentLogins" class="table-shell"></div>
+            </section>
+
+            <section class="panel-card">
+              <div class="panel-head">
+                <h4>最近训练</h4>
+                <span class="panel-meta">用户隔离</span>
+              </div>
+              <div id="recentTrainingRuns" class="table-shell"></div>
+            </section>
+          </div>
+        </section>
+
+        <section id="users" class="admin-section">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Users</p>
+              <h3>用户数据治理</h3>
+            </div>
+          </div>
+
+          <div class="users-layout">
+            <section class="panel-card">
+              <div class="panel-head">
+                <h4>用户列表</h4>
+                <input id="userSearch" class="admin-input" type="search" placeholder="搜索账号 / 邮箱" />
+              </div>
+              <div id="usersList" class="users-list"></div>
+            </section>
+
+            <section class="panel-card">
+              <div class="panel-head">
+                <h4>用户详情</h4>
+                <span id="detailHint" class="panel-meta">选择一个用户查看</span>
+              </div>
+              <div id="userDetail" class="user-detail"></div>
+            </section>
+          </div>
+        </section>
+
+        <section id="ops" class="admin-section">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Operations</p>
+              <h3>数据库与 SMTP</h3>
+            </div>
+          </div>
+
+          <div class="ops-grid">
+            <section class="panel-card">
+              <div class="panel-head">
+                <h4>数据库健康</h4>
+                <div class="inline-actions">
+                  <button id="refreshDatabase" class="ghost-button" type="button">刷新</button>
+                  <button id="backupDatabase" class="send-button" type="button">创建备份</button>
+                </div>
+              </div>
+              <p id="databaseStatus" class="status-text">尚未读取数据库健康状态。</p>
+              <pre id="databaseHealth" class="console-block">No database health yet.</pre>
+            </section>
+
+            <section class="panel-card">
+              <div class="panel-head">
+                <h4>SMTP 配置</h4>
+              </div>
+
+              <div class="form-grid">
+                <label class="field">
+                  <span>Mode</span>
+                  <select id="mailMode" class="admin-input">
+                    <option value="console">console</option>
+                    <option value="smtp">smtp</option>
+                  </select>
+                </label>
+                <label class="field">
+                  <span>Host</span>
+                  <input id="mailHost" class="admin-input" type="text" />
+                </label>
+                <label class="field">
+                  <span>Port</span>
+                  <input id="mailPort" class="admin-input" type="number" min="1" max="65535" />
+                </label>
+                <label class="field">
+                  <span>Secure</span>
+                  <select id="mailSecure" class="admin-input">
+                    <option value="true">true</option>
+                    <option value="false">false</option>
+                  </select>
+                </label>
+                <label class="field">
+                  <span>User</span>
+                  <input id="mailUser" class="admin-input" type="text" />
+                </label>
+                <label class="field">
+                  <span>Pass</span>
+                  <input id="mailPass" class="admin-input" type="password" />
+                </label>
+              </div>
+
+              <label class="field">
+                <span>From</span>
+                <input id="mailFrom" class="admin-input" type="text" />
+              </label>
+
+              <div class="inline-actions">
+                <input id="mailTestTo" class="admin-input grow" type="email" placeholder="测试收件人" />
+                <button id="sendMailTest" class="ghost-button" type="button">发送测试</button>
+                <button id="saveMailConfig" class="send-button" type="button">保存 SMTP</button>
+              </div>
+
+              <p id="mailStatus" class="status-text">尚未加载 SMTP 配置。</p>
+            </section>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <div id="authGate" class="auth-gate">
+      <div class="auth-card">
+        <p class="eyebrow">Admin Access</p>
+        <h2>管理员登录</h2>
+        <p class="sidebar-copy">独立后台只允许管理员账号进入。</p>
+        <form id="loginForm" class="auth-form">
+          <label class="field">
+            <span>Account or Email</span>
+            <input id="loginIdentity" class="admin-input" type="text" autocomplete="username" />
+          </label>
+          <label class="field">
+            <span>Password</span>
+            <input id="loginPassword" class="admin-input" type="password" autocomplete="current-password" />
+          </label>
+          <label id="loginTwoFactorField" class="field hidden">
+            <span>2FA Code</span>
+            <input id="loginTwoFactorCode" class="admin-input" type="text" inputmode="numeric" autocomplete="one-time-code" />
+          </label>
+          <button id="loginSubmit" class="send-button" type="submit">进入后台</button>
+        </form>
+        <p id="authStatus" class="status-text"></p>
+      </div>
+    </div>
+
+    <script type="module" src="./admin-dashboard.js"></script>
+  </body>
+</html>

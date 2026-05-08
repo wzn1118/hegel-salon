@@ -1,0 +1,692 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hegel Salon</title>
+    <link rel="icon" href="./assets/hegel-cutout-web.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700;900&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-noise" aria-hidden="true"></div>
+
+    <main class="shell" id="shell">
+      <aside class="portrait-panel">
+        <div class="portrait-panel-inner">
+          <header class="portrait-header">
+            <p class="eyebrow">Primary Corpus Edition</p>
+            <h1>HEGEL<br />SALON</h1>
+            <p class="portrait-deck">
+              这里不是摘要堆叠，而是一间黑色阅读室。你把问题交进来，我只从当前版本线、原典原句与概念运动里回答。
+            </p>
+          </header>
+
+          <div class="portrait-stage">
+            <div class="portrait-aura" aria-hidden="true"></div>
+            <img class="portrait" src="./assets/hegel-cutout-web.png" alt="黑格尔半身像" />
+          </div>
+
+          <footer class="portrait-footer">
+            <span class="footer-line">Georg Wilhelm Friedrich Hegel</span>
+            <span class="footer-subline">Version fidelity. Conceptual pressure. Plain argument.</span>
+          </footer>
+        </div>
+      </aside>
+
+      <section class="salon-panel" id="salonPanel">
+        <div
+          class="salon-resize-handle"
+          id="salonResizeHandle"
+          role="separator"
+          aria-orientation="vertical"
+          aria-label="拖动调整聊天区宽度"
+          tabindex="0"
+        ></div>
+
+        <header class="salon-header">
+          <div class="salon-heading">
+            <p class="eyebrow">Conversation Chamber</p>
+            <div class="pixel-title-shell" aria-label="与黑格尔对话">
+              <canvas id="pixelTitleCanvas" class="pixel-title-canvas"></canvas>
+            </div>
+            <p class="salon-intro">
+              中文问题优先走中文版本线。现在也可以把图片、PDF、Excel 一起交给我读。
+            </p>
+          </div>
+
+          <div class="salon-tools">
+            <div class="salon-tools-primary">
+              <select id="styleSelector" class="ghost-button style-selector"></select>
+              <button id="createStyle" class="ghost-button" type="button">新建风格</button>
+              <button id="openStylePanel" class="ghost-button" type="button">风格面板</button>
+              <button id="openTraining" class="ghost-button" type="button">训练</button>
+            </div>
+
+            <div class="salon-tools-secondary">
+              <button id="openComputer" class="ghost-button" type="button">Computer Use</button>
+              <button id="openAdmin" class="ghost-button hidden" type="button">后台</button>
+              <button id="openConfig" class="ghost-button" type="button">API 配置</button>
+              <button id="toggleSources" class="ghost-button" type="button">查看原典与依据</button>
+            </div>
+
+            <div id="sessionPill" class="session-pill hidden">
+              <span id="sessionIdentity" class="session-identity">Guest</span>
+              <button id="logoutButton" class="ghost-button session-logout" type="button">Logout</button>
+            </div>
+          </div>
+        </header>
+
+        <section class="salon-stage">
+          <div id="chat" class="chat-log" aria-live="polite"></div>
+
+          <form id="chatForm" class="composer">
+            <label class="composer-label" for="prompt">在这里发问</label>
+            <input
+              id="filePicker"
+              class="file-picker"
+              type="file"
+              multiple
+              accept=".pdf,.xls,.xlsx,.csv,.tsv,.txt,.md,.json,.png,.jpg,.jpeg,.gif,.webp,.svg"
+            />
+
+            <div class="composer-grid">
+              <div class="composer-main">
+                <div class="composer-toolbar">
+                  <button id="addFilesButton" class="ghost-button" type="button">添加附件</button>
+                  <span id="attachmentHint" class="attachment-hint">
+                    支持图片、PDF、Excel、CSV、TSV、TXT、JSON
+                  </span>
+                </div>
+
+                <div id="pendingAttachments" class="pending-attachments hidden"></div>
+
+                <textarea
+                  id="prompt"
+                  name="prompt"
+                  rows="4"
+                  placeholder="例如：概括这份 PDF 的论点；比较这张图和黑格尔文本；或读取这份 Excel 再回答。"
+                ></textarea>
+              </div>
+
+              <div class="composer-side">
+                <p class="composer-hint">
+                  默认中文。若你附上图片、PDF 或 Excel，我会把它们和当前问题一起送进理解链路。
+                </p>
+                <button id="sendButton" class="send-button" type="submit">发问</button>
+              </div>
+            </div>
+            <section class="provider-guide-shell hidden" id="providerGuideShellLegacy">
+              <div class="provider-guide-head">
+                <div>
+                  <p class="eyebrow">Provider Guide</p>
+                  <h4>常用中转与购买教程</h4>
+                </div>
+              </div>
+
+              <div class="provider-guide-grid">
+                <article class="provider-guide-card">
+                  <div class="provider-guide-card-head">
+                    <strong>Geek</strong>
+                    <span class="provider-guide-tag">OpenAI Compatible</span>
+                  </div>
+                  <p class="provider-guide-copy">
+                    适合已经有账号、想快速接入的用户。Base URL 必须带 <code>/v1</code>。
+                  </p>
+                  <div class="provider-guide-links">
+                    <a href="https://geek.tm2.xin" target="_blank" rel="noreferrer">官网入口</a>
+                    <button id="fillGeekPresetLegacy" class="ghost-button" type="button">填入 Geek 模板</button>
+                  </div>
+                  <ol class="provider-guide-steps">
+                    <li>打开官网并登录账号。</li>
+                    <li>充值或确认余额可用。</li>
+                    <li>在站内创建 API Key。</li>
+                    <li>本页填写：`Provider=openai`、`Base URL=https://geek.tm2.xin/v1`。</li>
+                  </ol>
+                </article>
+
+                <article class="provider-guide-card">
+                  <div class="provider-guide-card-head">
+                    <strong>TokenX24</strong>
+                    <span class="provider-guide-tag">OpenAI Compatible</span>
+                  </div>
+                  <p class="provider-guide-copy">
+                    站点支持注册和邮箱验证。OpenAI 兼容入口也建议填写带 <code>/v1</code> 的地址。
+                  </p>
+                  <div class="provider-guide-links">
+                    <a href="https://tokenx24.com" target="_blank" rel="noreferrer">官网入口</a>
+                    <button id="fillTokenxPresetLegacy" class="ghost-button" type="button">填入 TokenX24 模板</button>
+                  </div>
+                  <ol class="provider-guide-steps">
+                    <li>注册并完成邮箱验证。</li>
+                    <li>登录后在站内获取或创建 API Key。</li>
+                    <li>如需购买额度，先在站内确认充值或余额入口。</li>
+                    <li>本页填写：`Provider=openai`、`Base URL=https://tokenx24.com/v1`。</li>
+                  </ol>
+                </article>
+              </div>
+
+              <div class="provider-guide-note">
+                <strong>使用提示：</strong>
+                如果返回网页 HTML 或出现 <code>Unexpected token '&lt;'</code>，通常就是 Base URL 少了 <code>/v1</code>。
+              </div>
+            </section>
+          </form>
+        </section>
+      </section>
+
+      <aside id="stylePanel" class="sources-panel style-panel hidden">
+        <div class="sources-header">
+          <div>
+            <p class="eyebrow">Style Profile</p>
+            <h3>风格面板</h3>
+          </div>
+          <div class="style-panel-actions">
+            <button id="refreshStylePanel" class="ghost-button" type="button">刷新</button>
+            <button id="closeStylePanel" class="ghost-button" type="button">关闭</button>
+          </div>
+        </div>
+
+        <div id="stylePanelContent" class="config-content style-panel-content">
+          <section class="style-summary-shell">
+            <div class="style-identity">
+              <div>
+                <p class="eyebrow">Current Style</p>
+                <h4 id="stylePanelTitle" class="style-panel-title">Default</h4>
+              </div>
+              <div class="style-key-shell">
+                <span class="style-key-label">Style Key</span>
+                <code id="stylePanelKey" class="style-key-value">default</code>
+              </div>
+            </div>
+
+            <p id="styleEditorStatus" class="config-status">当前尚未加载风格详情。</p>
+
+            <div class="style-stats-grid">
+              <article class="style-stat-card">
+                <span class="style-stat-label">Chats</span>
+                <strong id="styleChatCount">0</strong>
+              </article>
+              <article class="style-stat-card">
+                <span class="style-stat-label">Memory</span>
+                <strong id="styleMemoryCount">0</strong>
+              </article>
+              <article class="style-stat-card">
+                <span class="style-stat-label">Training</span>
+                <strong id="styleTrainingCount">0</strong>
+              </article>
+              <article class="style-stat-card">
+                <span class="style-stat-label">Updated</span>
+                <strong id="styleUpdatedAt">-</strong>
+              </article>
+            </div>
+          </section>
+
+          <form id="styleForm" class="config-form style-form">
+            <label class="config-field">
+              <span class="config-label">风格名称</span>
+              <input id="styleNameInput" class="config-input" type="text" maxlength="64" />
+            </label>
+
+            <label class="config-field">
+              <span class="config-label">基础风格说明</span>
+              <textarea
+                id="styleDescriptionInput"
+                class="config-input config-textarea"
+                rows="3"
+                maxlength="400"
+              ></textarea>
+            </label>
+
+            <label class="config-field">
+              <span class="config-label">蒸馏前基础 Prompt</span>
+              <textarea
+                id="stylePromptInput"
+                class="config-input config-textarea"
+                rows="8"
+                maxlength="6000"
+              ></textarea>
+            </label>
+
+            <div class="config-actions">
+              <button id="saveStyleButton" class="send-button" type="submit">保存风格</button>
+            </div>
+          </form>
+
+          <section class="style-visual-grid">
+            <article class="style-visual-card">
+              <p class="eyebrow">Learned Style</p>
+              <h4>训练蒸馏摘要</h4>
+              <pre id="styleTrainedSummary" class="computer-transcript style-summary-block">暂无训练蒸馏摘要。</pre>
+            </article>
+
+            <article class="style-visual-card">
+              <p class="eyebrow">Durable Memory</p>
+              <h4>Agent 记忆摘要</h4>
+              <pre id="styleMemorySummary" class="computer-transcript style-summary-block">暂无记忆摘要。</pre>
+            </article>
+
+            <article class="style-visual-card style-visual-card-wide">
+              <p class="eyebrow">Injected Context</p>
+              <h4>Agent 上下文预览</h4>
+              <pre id="styleAgentSummary" class="computer-transcript style-summary-block">暂无 agent 摘要。</pre>
+            </article>
+          </section>
+        </div>
+      </aside>
+
+      <aside id="configPanel" class="sources-panel config-panel hidden">
+        <div class="sources-header">
+          <div>
+            <p class="eyebrow">API Access</p>
+            <h3>API 配置</h3>
+          </div>
+          <button id="closeConfig" class="ghost-button" type="button">关闭</button>
+        </div>
+
+        <div class="config-content">
+          <form id="configForm" class="config-form">
+            <label class="config-field">
+              <span class="config-label">Provider</span>
+              <input id="configProvider" class="config-input" type="text" value="" />
+            </label>
+
+            <label class="config-field">
+              <span class="config-label">Model</span>
+              <input id="configModel" class="config-input" type="text" value="" />
+            </label>
+
+            <label class="config-field">
+              <span class="config-label">中转站 / Base URL</span>
+              <input
+                id="configBaseURL"
+                class="config-input"
+                type="text"
+                placeholder="https://api.openai.com/v1"
+              />
+            </label>
+
+            <label class="config-field">
+              <span class="config-label">API Key</span>
+              <textarea
+                id="configApiKey"
+                class="config-input config-textarea"
+                rows="3"
+                placeholder="在这里填入 API key"
+              ></textarea>
+            </label>
+
+            <div class="config-meta" id="configMeta">
+              保存后，下一次提问立即生效，不需要重启。
+            </div>
+
+            <div class="config-actions">
+              <button id="saveConfig" class="send-button" type="submit">保存配置</button>
+            </div>
+
+            <p id="configStatus" class="config-status">
+              当前页面会优先使用项目目录里的 `config/api.json`。
+            </p>
+          </form>
+        </div>
+      </aside>
+
+      <aside id="sourcesPanel" class="sources-panel hidden">
+        <div class="sources-header">
+          <div>
+            <p class="eyebrow">Grounding Dossier</p>
+            <h3>原典与依据</h3>
+          </div>
+          <button id="closeSources" class="ghost-button" type="button">关闭</button>
+        </div>
+
+        <div id="sourcesContent" class="sources-content">
+          <p class="sources-loading">正在加载原典语料与蒸馏材料…</p>
+        </div>
+      </aside>
+
+      <aside id="computerPanel" class="sources-panel computer-panel hidden">
+        <div class="sources-header">
+          <div>
+            <p class="eyebrow">Browser Agent</p>
+            <h3>Computer Use</h3>
+          </div>
+          <button id="closeComputer" class="ghost-button" type="button">关闭</button>
+        </div>
+
+        <div class="computer-content">
+          <label class="config-field">
+            <span class="config-label">Start URL</span>
+            <input
+              id="computerStartUrl"
+              class="config-input"
+              type="text"
+              placeholder="https://www.openai.com"
+            />
+          </label>
+
+          <label class="config-field">
+            <span class="config-label">Task</span>
+            <textarea
+              id="computerTask"
+              class="config-input config-textarea"
+              rows="4"
+              placeholder="例如：打开 OpenAI 首页，找到最新的 API 文档入口，然后停下来。"
+            ></textarea>
+          </label>
+
+          <div class="computer-actions">
+            <button id="runComputerTask" class="send-button" type="button">运行</button>
+            <button id="resetComputerTask" class="ghost-button" type="button">重置浏览器</button>
+          </div>
+
+          <p id="computerStatus" class="config-status">浏览器代理尚未启动。</p>
+
+          <div class="computer-preview-shell">
+            <img id="computerScreenshot" class="computer-screenshot hidden" alt="Computer Use screenshot" />
+            <div id="computerPlaceholder" class="computer-placeholder">
+              运行任务后，这里会显示浏览器当前截图。
+            </div>
+          </div>
+
+          <div class="computer-meta">
+            <span id="computerCurrentUrl">URL: -</span>
+            <span id="computerCurrentTitle">Title: -</span>
+          </div>
+
+          <pre id="computerTranscript" class="computer-transcript">暂无操作记录。</pre>
+        </div>
+      </aside>
+
+      <aside id="trainingPanel" class="sources-panel computer-panel hidden">
+        <div class="sources-header">
+          <div>
+            <p class="eyebrow">Optimizer</p>
+            <h3>训练</h3>
+          </div>
+          <button id="closeTraining" class="ghost-button" type="button">关闭</button>
+        </div>
+
+        <div class="computer-content">
+          <label class="config-field">
+            <span class="config-label">训练评分 Prompt</span>
+            <textarea
+              id="trainingJudgePrompt"
+              class="config-input config-textarea"
+              rows="8"
+              placeholder="在这里编辑训练评分 / 优化总结用的 prompt。"
+            ></textarea>
+          </label>
+
+          <div class="training-grid">
+            <label class="config-field">
+              <span class="config-label">迭代次数</span>
+              <input id="trainingIterations" class="config-input" type="number" min="1" value="100000" />
+            </label>
+            <label class="config-field">
+              <span class="config-label">并发</span>
+              <input id="trainingConcurrency" class="config-input" type="number" min="1" value="1" />
+            </label>
+            <label class="config-field">
+              <span class="config-label">目标分</span>
+              <input id="trainingTargetScore" class="config-input" type="number" min="1" max="10" step="0.1" value="9" />
+            </label>
+            <label class="config-field">
+              <span class="config-label">单题超时(ms)</span>
+              <input id="trainingTimeoutMs" class="config-input" type="number" min="30000" step="1000" value="300000" />
+            </label>
+          </div>
+
+          <div class="computer-actions">
+            <button id="saveTrainingPrompt" class="ghost-button" type="button">保存 Prompt</button>
+            <button id="startTraining" class="send-button" type="button">开始训练</button>
+          </div>
+
+          <p id="trainingStatus" class="config-status">训练尚未开始。</p>
+
+          <div class="training-progress-grid">
+            <div class="training-stat">
+              <span class="training-stat-label">已完成</span>
+              <strong id="trainingCompleted">0 / 0</strong>
+            </div>
+            <div class="training-stat">
+              <span class="training-stat-label">成功</span>
+              <strong id="trainingSuccessCount">0</strong>
+            </div>
+            <div class="training-stat">
+              <span class="training-stat-label">超时</span>
+              <strong id="trainingTimeoutCount">0</strong>
+            </div>
+            <div class="training-stat">
+              <span class="training-stat-label">成功均分</span>
+              <strong id="trainingSuccessAvg">0</strong>
+            </div>
+          </div>
+
+          <div class="training-insight-grid">
+            <section class="training-insight-card">
+              <p class="eyebrow">Current Run</p>
+              <h4>本轮进度</h4>
+              <div id="trainingProgress" class="training-insight-body">暂无进度。</div>
+            </section>
+
+            <section class="training-insight-card">
+              <p class="eyebrow">Recent Runs</p>
+              <h4>最近训练</h4>
+              <div id="trainingRuns" class="training-insight-body">暂无训练记录。</div>
+            </section>
+
+            <section class="training-insight-card training-insight-card-wide">
+              <p class="eyebrow">Optimizer Playbook</p>
+              <h4>蒸馏规则</h4>
+              <div id="trainingPlaybook" class="training-insight-body">暂无优化 playbook。</div>
+            </section>
+          </div>
+        </div>
+      </aside>
+
+      <aside id="adminPanel" class="sources-panel admin-panel hidden">
+        <div class="sources-header">
+          <div>
+            <p class="eyebrow">Administrator</p>
+            <h3>后台</h3>
+          </div>
+          <button id="closeAdmin" class="ghost-button" type="button">关闭</button>
+        </div>
+
+        <div class="computer-content">
+          <p id="adminStatus" class="config-status">管理员后台尚未加载。</p>
+
+          <section class="admin-mail-card">
+            <div class="admin-mail-head">
+              <div>
+                <p class="eyebrow">SMTP</p>
+                <h4 class="admin-mail-title">邮箱发送配置</h4>
+              </div>
+            </div>
+
+            <div class="training-grid">
+              <label class="config-field">
+                <span class="config-label">Mode</span>
+                <select id="adminMailMode" class="config-input">
+                  <option value="console">console</option>
+                  <option value="smtp">smtp</option>
+                </select>
+              </label>
+              <label class="config-field">
+                <span class="config-label">Host</span>
+                <input id="adminMailHost" class="config-input" type="text" />
+              </label>
+              <label class="config-field">
+                <span class="config-label">Port</span>
+                <input id="adminMailPort" class="config-input" type="number" min="1" max="65535" />
+              </label>
+              <label class="config-field">
+                <span class="config-label">Secure</span>
+                <select id="adminMailSecure" class="config-input">
+                  <option value="true">true</option>
+                  <option value="false">false</option>
+                </select>
+              </label>
+              <label class="config-field">
+                <span class="config-label">User</span>
+                <input id="adminMailUser" class="config-input" type="text" />
+              </label>
+              <label class="config-field">
+                <span class="config-label">Pass</span>
+                <input id="adminMailPass" class="config-input" type="password" />
+              </label>
+            </div>
+
+            <label class="config-field">
+              <span class="config-label">From</span>
+              <input id="adminMailFrom" class="config-input" type="text" />
+            </label>
+
+            <div class="auth-inline">
+              <label class="config-field auth-inline-field">
+                <span class="config-label">测试收件人</span>
+                <input id="adminMailTestTo" class="config-input" type="email" />
+              </label>
+              <button id="adminSendMailTest" class="ghost-button auth-code-button" type="button">发送测试</button>
+            </div>
+
+            <div class="computer-actions">
+              <button id="adminSaveMailConfig" class="send-button" type="button">保存 SMTP</button>
+            </div>
+
+            <p id="adminMailStatus" class="config-status">当前未加载 SMTP 配置。</p>
+          </section>
+
+          <section class="admin-mail-card">
+            <div class="admin-mail-head">
+              <div>
+                <p class="eyebrow">Database</p>
+                <h4 class="admin-mail-title">用户数据库</h4>
+              </div>
+            </div>
+
+            <div class="computer-actions">
+              <button id="adminRefreshDatabase" class="ghost-button" type="button">刷新健康状态</button>
+              <button id="adminBackupDatabase" class="send-button" type="button">创建备份</button>
+            </div>
+
+            <p id="adminDatabaseStatus" class="config-status">当前未加载数据库健康状态。</p>
+            <pre id="adminDatabaseHealth" class="computer-transcript">No database health yet.</pre>
+          </section>
+
+          <div class="training-progress-grid">
+            <div class="training-stat">
+              <span class="training-stat-label">用户数</span>
+              <strong id="adminUsersCount">0</strong>
+            </div>
+            <div class="training-stat">
+              <span class="training-stat-label">管理员</span>
+              <strong id="adminAdminsCount">0</strong>
+            </div>
+            <div class="training-stat">
+              <span class="training-stat-label">会话数</span>
+              <strong id="adminSessionsCount">0</strong>
+            </div>
+            <div class="training-stat">
+              <span class="training-stat-label">存储总量</span>
+              <strong id="adminStorageTotal">0 B</strong>
+            </div>
+          </div>
+
+          <div id="adminUsersList" class="admin-users-list"></div>
+        </div>
+      </aside>
+    </main>
+
+    <div id="authGate" class="auth-gate hidden">
+      <div class="auth-card">
+        <p class="eyebrow">V4 Access</p>
+        <h2 class="auth-title">Hegel Salon V4</h2>
+        <p class="auth-copy" id="authCopy">
+          Sign in before using chat, uploads, training, and computer use.
+        </p>
+
+        <div class="auth-tabs">
+          <button id="showLoginTab" class="ghost-button auth-tab is-active" type="button">Login</button>
+          <button id="showRegisterTab" class="ghost-button auth-tab" type="button">Register</button>
+          <button id="showResetTab" class="ghost-button auth-tab" type="button">Reset</button>
+        </div>
+
+        <form id="loginForm" class="auth-form">
+          <label class="config-field">
+            <span class="config-label">Account or Email</span>
+            <input id="loginIdentity" class="config-input" type="text" autocomplete="username" />
+          </label>
+          <label class="config-field">
+            <span class="config-label">Password</span>
+            <input id="loginPassword" class="config-input" type="password" autocomplete="current-password" />
+          </label>
+          <label id="loginTwoFactorField" class="config-field hidden">
+            <span class="config-label">2FA Code</span>
+            <input
+              id="loginTwoFactorCode"
+              class="config-input"
+              type="text"
+              inputmode="numeric"
+              autocomplete="one-time-code"
+            />
+          </label>
+          <button id="loginSubmit" class="send-button" type="submit">Login</button>
+        </form>
+
+        <form id="registerForm" class="auth-form hidden">
+          <label class="config-field">
+            <span class="config-label">Account</span>
+            <input id="registerAccount" class="config-input" type="text" autocomplete="username" />
+          </label>
+          <label class="config-field">
+            <span class="config-label">Email</span>
+            <input id="registerEmail" class="config-input" type="email" autocomplete="email" />
+          </label>
+          <div class="auth-inline">
+            <label class="config-field auth-inline-field">
+              <span class="config-label">Verification Code</span>
+              <input id="registerCode" class="config-input" type="text" inputmode="numeric" />
+            </label>
+            <button id="sendRegisterCode" class="ghost-button auth-code-button" type="button">Send Code</button>
+          </div>
+          <label class="config-field">
+            <span class="config-label">Password</span>
+            <input id="registerPassword" class="config-input" type="password" autocomplete="new-password" />
+          </label>
+          <button id="registerSubmit" class="send-button" type="submit">Create Account</button>
+        </form>
+
+        <form id="resetForm" class="auth-form hidden">
+          <label class="config-field">
+            <span class="config-label">Account or Email</span>
+            <input id="resetIdentity" class="config-input" type="text" autocomplete="username" />
+          </label>
+          <div class="auth-inline">
+            <label class="config-field auth-inline-field">
+              <span class="config-label">Verification Code</span>
+              <input id="resetCode" class="config-input" type="text" inputmode="numeric" />
+            </label>
+            <button id="sendResetCode" class="ghost-button auth-code-button" type="button">Send Code</button>
+          </div>
+          <label class="config-field">
+            <span class="config-label">New Password</span>
+            <input id="resetPassword" class="config-input" type="password" autocomplete="new-password" />
+          </label>
+          <button id="resetSubmit" class="send-button" type="submit">Reset Password</button>
+        </form>
+
+        <p id="authStatus" class="config-status auth-status"></p>
+      </div>
+    </div>
+
+    <script type="module" src="./app.js"></script>
+    <script type="module" src="./computer-use.js"></script>
+  </body>
+</html>

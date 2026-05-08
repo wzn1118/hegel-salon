@@ -1,0 +1,14 @@
+{
+  "name": "hegel-salon-android",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "sync": "npx cap sync android",
+    "copy": "npx cap copy android",
+    "open:android": "npx cap open android"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "UNLICENSED",
+  "description": "Android shell for Hegel Salon"
+}

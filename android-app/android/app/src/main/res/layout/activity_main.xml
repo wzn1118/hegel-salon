@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/hegel_background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/home_panel_background"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/home_eyebrow"
+                android:textAllCaps="true"
+                android:textColor="@color/hegel_muted_text"
+                android:letterSpacing="0.18"
+                android:textSize="11sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@string/home_title"
+                android:textColor="@color/hegel_text"
+                android:textSize="34sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:lineSpacingExtra="6dp"
+                android:text="@string/home_deck"
+                android:textColor="@color/hegel_muted_text"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="340dp"
+                android:layout_marginTop="18dp"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/home_portrait"
+                android:scaleType="fitCenter"
+                android:src="@drawable/hegel_portrait" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@string/home_footer"
+                android:textAllCaps="true"
+                android:textColor="@color/hegel_muted_text"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/home_panel_background"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/gateway_eyebrow"
+                android:textAllCaps="true"
+                android:textColor="@color/hegel_muted_text"
+                android:letterSpacing="0.18"
+                android:textSize="11sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@string/gateway_title"
+                android:textColor="@color/hegel_text"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:lineSpacingExtra="6dp"
+                android:text="@string/gateway_deck"
+                android:textColor="@color/hegel_muted_text"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:text="@string/server_url_label"
+                android:textColor="@color/hegel_text"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/server_url_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/input_background"
+                android:hint="@string/server_url_hint"
+                android:imeOptions="actionDone"
+                android:inputType="textUri"
+                android:padding="16dp"
+                android:textColor="@color/hegel_text"
+                android:textColorHint="@color/hegel_hint" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/use_emulator_button"
+                    style="@style/HegelGhostButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/use_emulator" />
+
+                <Space
+                    android:layout_width="12dp"
+                    android:layout_height="wrap_content" />
+
+                <Button
+                    android:id="@+id/use_local_button"
+                    style="@style/HegelGhostButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/use_local" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/test_connection_button"
+                    style="@style/HegelGhostButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/test_connection" />
+
+                <Space
+                    android:layout_width="12dp"
+                    android:layout_height="wrap_content" />
+
+                <Button
+                    android:id="@+id/open_salon_button"
+                    style="@style/HegelPrimaryButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/open_salon" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/status_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:lineSpacingExtra="4dp"
+                android:text="@string/status_default"
+                android:textColor="@color/hegel_muted_text"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:lineSpacingExtra="5dp"
+                android:text="@string/address_notes"
+                android:textColor="@color/hegel_hint"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

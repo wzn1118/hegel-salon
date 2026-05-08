@@ -1,0 +1,9 @@
+{
+  "mode": "console",
+  "host": "smtp.example.com",
+  "port": 465,
+  "secure": true,
+  "user": "mailer@example.com",
+  "pass": "PASTE_SMTP_PASSWORD_HERE",
+  "from": "Hegel Salon <no-reply@example.com>"
+}
