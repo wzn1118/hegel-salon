@@ -76,7 +76,7 @@ Copy:
 
 to a real config file, for example:
 
-`E:\hegel-salon-portable-full\deploy\cloudflared\config.yml`
+`deploy/cloudflared/config.yml`
 
 Then replace:
 

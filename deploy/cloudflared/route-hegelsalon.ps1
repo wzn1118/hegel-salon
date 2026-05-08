@@ -1,6 +1,14 @@
 param(
   [Parameter(Mandatory = $true)]
-  [string]$TunnelName
+  [string]$TunnelName,
+
+  [Parameter(Mandatory = $true)]
+  [string]$AppHostname,
+
+  [Parameter(Mandatory = $true)]
+  [string]$AdminHostname,
+
+  [string]$WwwHostname = ""
 )
 
 $ErrorActionPreference = "Stop"
@@ -10,6 +18,9 @@ if (-not (Test-Path $cloudflaredPath)) {
   throw "cloudflared.exe not found at $cloudflaredPath"
 }
 
-& $cloudflaredPath tunnel route dns $TunnelName "hegelsalon.com"
-& $cloudflaredPath tunnel route dns $TunnelName "www.hegelsalon.com"
-& $cloudflaredPath tunnel route dns $TunnelName "admin.hegelsalon.com"
+& $cloudflaredPath tunnel route dns $TunnelName $AppHostname
+& $cloudflaredPath tunnel route dns $TunnelName $AdminHostname
+
+if ($WwwHostname) {
+  & $cloudflaredPath tunnel route dns $TunnelName $WwwHostname
+}
