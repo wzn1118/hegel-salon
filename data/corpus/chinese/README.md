@@ -1,20 +1,20 @@
 # Chinese Corpus Placement
 
-Use this folder for Chinese Hegel translations or Chinese OCR/text assets that
-the repository operator has cleared for public GitHub redistribution.
+Use this folder for Chinese Hegel translations or Chinese OCR/text assets整理自
+互联网上可公开访问的资料.
 
-Recommended layout when the material is public-release safe:
+Recommended layout for the public-release corpus:
 
 ```text
 data/corpus/chinese/
   texts/        Clean `.txt` or `.md` translation text.
   pdfs/         Redistributable PDF scans or born-digital PDFs.
   ocr/          OCR output derived from redistributable scans.
-  metadata/     Source, edition, license, translator, and provenance notes.
+  metadata/     Source URL, edition, license/status, translator, and provenance notes.
 ```
 
-If future material is private, licensed, purchased, classroom-only, or otherwise
-not clearly redistributable, do not commit it here. Put it in:
+If future material is private, purchased, classroom-only, or otherwise uncertain,
+do not commit it here. Put it in:
 
 ```text
 local-resources/chinese/

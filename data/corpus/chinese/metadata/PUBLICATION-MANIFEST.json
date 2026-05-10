@@ -1,14 +1,9 @@
 ﻿{
-    "generatedAt":  "2026-05-10T18:56:23.9467659Z",
-    "authorization":  "Repository operator stated these Chinese corpus materials are authorized for public GitHub publication.",
+    "generatedAt":  "2026-05-10T19:12:49.2127334Z",
+    "sourceNote":  "Chinese corpus materials are整理自互联网上可公开访问的资料 and organized for Hegel Salon source-corpus use.",
     "fileCount":  189,
-    "totalBytes":  263923847,
+    "totalBytes":  263923872,
     "files":  [
-                  {
-                      "path":  "AUTHORIZATION.md",
-                      "bytes":  908,
-                      "sha256":  "d5dfbf2982a8ced15043eb8e4ee337af4f20044502d36f9aa339664403c9e1fc"
-                  },
                   {
                       "path":  "concept-ledger.json",
                       "bytes":  8270,
@@ -871,8 +866,13 @@
                   },
                   {
                       "path":  "README.md",
-                      "bytes":  932,
-                      "sha256":  "1d83101900344f0ecd3931870c87f6a637247d335c4baa526752da6b0242fdb7"
+                      "bytes":  876,
+                      "sha256":  "3a31913bb8806bc8043be4e5699fc24dcff2b4d00f5c1f87154d64acd2123fe2"
+                  },
+                  {
+                      "path":  "SOURCES.md",
+                      "bytes":  989,
+                      "sha256":  "97e042aa778e61f0eb4a9b241d83b462d0feee0a0d1cfa3fc9a6bdfc903f56cd"
                   },
                   {
                       "path":  "texts/local-bundle--aesthetics-vol1.txt",
