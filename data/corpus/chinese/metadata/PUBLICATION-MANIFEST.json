@@ -1,953 +1,953 @@
-﻿{
-    "generatedAt":  "2026-05-10T19:12:49.2127334Z",
-    "sourceNote":  "Chinese corpus materials are整理自互联网上可公开访问的资料 and organized for Hegel Salon source-corpus use.",
-    "fileCount":  189,
-    "totalBytes":  263923872,
-    "files":  [
-                  {
-                      "path":  "concept-ledger.json",
-                      "bytes":  8270,
-                      "sha256":  "b0330a7e97c672d947ce1d0f96e7002279b341204ecc4e491675b7222b14bcbe"
-                  },
-                  {
-                      "path":  "generated-manifest.json",
-                      "bytes":  45651,
-                      "sha256":  "5d6f35ba8511b4d7eb3dc4e5d06409696bd91d1df64b4de4dad8fda87bdb7087"
-                  },
-                  {
-                      "path":  "generated-texts/absolute-spirit-selection--absolute-spirit.txt",
-                      "bytes":  14323,
-                      "sha256":  "dd5057e15a06c374ca5c6cf2647d6efc5cfbfff609b057aa0f8af981b56a179d"
-                  },
-                  {
-                      "path":  "generated-texts/aesthetics--hegel-s-lectures-on-aesthetics.txt",
-                      "bytes":  66981,
-                      "sha256":  "e68ff1333f5e0273b028fa01996b0ffece2dc38b1b35dee49c57b8b7ac965ec8"
-                  },
-                  {
-                      "path":  "generated-texts/aesthetics--hegel-s-lectures-on-the-aesthetics.txt",
-                      "bytes":  1684,
-                      "sha256":  "58ec976bcdb8ad49a769994e5909c84da0e9826e343835b4be2ee348ce545492"
-                  },
-                  {
-                      "path":  "generated-texts/briefe-correspondence-metadata--briefe-und-amtliche-korrespondenz-metadata.txt",
-                      "bytes":  798,
-                      "sha256":  "5371bbcb652dde66997ba7c7454065f159a65a38aae48565a072aaf39f065c73"
-                  },
-                  {
-                      "path":  "generated-texts/briefe-von-und-an-hegel-1887-band19-2--briefe-von-und-an-hegel-1887-band-19-2.txt",
-                      "bytes":  588029,
-                      "sha256":  "3277979822699c37c0bf97210e630bd9c1adb1d95a2bf478e41d35269769c777"
-                  },
-                  {
-                      "path":  "generated-texts/classical-studies--on-classical-studies-by-hegel-1809.txt",
-                      "bytes":  15924,
-                      "sha256":  "fe33863da713033f8e8d35d45e44ffd54305be491d7f50ac31e6b1c513d505d9"
-                  },
-                  {
-                      "path":  "generated-texts/critical-journal-introduction--the-critical-journal-of-philosophy-by-hegel-and-schelling-1801.txt",
-                      "bytes":  26506,
-                      "sha256":  "14ccfca39e44a2e3ee0aa6fb1135ca28458d20b263ae71579197743185401055"
-                  },
-                  {
-                      "path":  "generated-texts/difference-essay--the-difference-between-fichte-s-and-schelling-s-system-of-philosophy-by-hegel-18.txt",
-                      "bytes":  48310,
-                      "sha256":  "e8d59107865fb00b4e2ba3742d2ac508ed40e8f7fb7a26e2ca5b775504e22d1b"
-                  },
-                  {
-                      "path":  "generated-texts/early-theological-writings--love-by-hegel-1798.txt",
-                      "bytes":  13915,
-                      "sha256":  "edcac0e1cf17328a35fab01d0ef376a3ca4b70a1f38a846204f8b02980340b10"
-                  },
-                  {
-                      "path":  "generated-texts/elect-magistrates--the-magistrates-should-be-elected-by-the-people-by-hegel-1798.txt",
-                      "bytes":  10648,
-                      "sha256":  "d479c4ab7f6734bb40bde7fa7aee35d8c76ca96728fda2753b100ba2fdf74d65"
-                  },
-                  {
-                      "path":  "generated-texts/encyclopaedia--absolute-spirit.txt",
-                      "bytes":  14288,
-                      "sha256":  "7fbe43d5dea213bbfc139fda4ace3b963439361d151e5f6e0d6c9ffa086d0dca"
-                  },
-                  {
-                      "path":  "generated-texts/encyclopaedia--contents-of-hegel-s-encyclopaedia-of-the-philosophical-sciences-in-outline.txt",
-                      "bytes":  5586,
-                      "sha256":  "004016611a41845f45b9f9a765141bbbb4bd04633d59e6bbdfff66959bbd2456"
-                  },
-                  {
-                      "path":  "generated-texts/encyclopaedia--hegel-s-introduction-to-the-shorter-logic.txt",
-                      "bytes":  37388,
-                      "sha256":  "a3bcea98104a7d1206a2e5a01b6b91fbd4aeebf10ab265e63cc6783889ac8d38"
-                  },
-                  {
-                      "path":  "generated-texts/encyclopaedia--hegel-s-philosophy-of-nature.txt",
-                      "bytes":  30423,
-                      "sha256":  "0b9e878dd0d56eccc3f6e595ba4f41a3bac6afc08987111e6b7f14303c227914"
-                  },
-                  {
-                      "path":  "generated-texts/encyclopaedia--hegel-the-doctrine-of-the-notion.txt",
-                      "bytes":  31170,
-                      "sha256":  "e730131e5bf91ff3ee5cd2df15302f10524ca0a05868cff774cb5b719e83fe99"
-                  },
-                  {
-                      "path":  "generated-texts/encyclopaedia--iii-first-attitude-of-thought-to-objectivity.txt",
-                      "bytes":  27020,
-                      "sha256":  "0ec5f678a6bf63e4b80b95e40923052b965e537c95e604b8f96d42867ebf18cd"
-                  },
-                  {
-                      "path":  "generated-texts/encyclopaedia--ii-preliminary-notion.txt",
-                      "bytes":  51639,
-                      "sha256":  "fc572605e19d4e6af6c3e343a9adb03215211d6edeb256b28a1f351d13baa266"
-                  },
-                  {
-                      "path":  "generated-texts/encyclopaedia--index-to-outline-of-logic.txt",
-                      "bytes":  592,
-                      "sha256":  "930b08d5d7167ac64975c54535f12ca46f013486efd5567213fa6f4424ddae60"
-                  },
-                  {
-                      "path":  "generated-texts/encyclopaedia--iv-second-attitude-of-thought-to-objectivity.txt",
-                      "bytes":  58658,
-                      "sha256":  "b366a73ef1296e355d17c398fb5bd3ba33fd4e439cab670fba30d8fdf4d1b8e3"
-                  },
-                  {
-                      "path":  "generated-texts/encyclopaedia--the-doctrine-of-being-hegel.txt",
-                      "bytes":  55487,
-                      "sha256":  "77c07e46983fe046717257009076e8a80553186c0fe39d4e3c5ab1b2498ae01d"
-                  },
-                  {
-                      "path":  "generated-texts/encyclopaedia--the-doctrine-of-essence-hegel.txt",
-                      "bytes":  54561,
-                      "sha256":  "ee20e9a5545186e59b160a0f573c1c95026175f472b6b51ca1463771308e93d2"
-                  },
-                  {
-                      "path":  "generated-texts/encyclopaedia--the-objective-spirit-from-the-encyclopaedia-ethics.txt",
-                      "bytes":  83553,
-                      "sha256":  "763377364f1fbb2172a06505443985db2adcfe7d60d57623b9dcfebdaffc8d2a"
-                  },
-                  {
-                      "path":  "generated-texts/encyclopaedia--the-objective-spirit-from-the-encyclopaedia-introduction.txt",
-                      "bytes":  5949,
-                      "sha256":  "f7efba6f86e04b6e5a3c49e3bd8dc86ccdc5a5f4ebb4b92c496f2334de08cb5e"
-                  },
-                  {
-                      "path":  "generated-texts/encyclopaedia--the-objective-spirit-from-the-encyclopaedia-law.txt",
-                      "bytes":  9759,
-                      "sha256":  "858b96ee775b97cff61ba3346c8a0154d3cdf5e95ec644ad317b669ed3307128"
-                  },
-                  {
-                      "path":  "generated-texts/encyclopaedia--the-objective-spirit-from-the-encyclopaedia-morality.txt",
-                      "bytes":  9717,
-                      "sha256":  "226ef1caf0d264905944a3f0f3d7d7e2bda87af1faf079f425215e662092f3a9"
-                  },
-                  {
-                      "path":  "generated-texts/encyclopaedia--the-subjective-spirit.txt",
-                      "bytes":  102901,
-                      "sha256":  "8aac47d10ef74d25ef6d8e25c0943aa774c5478a96ec21af67b3586620ec38fe"
-                  },
-                  {
-                      "path":  "generated-texts/encyclopaedia--vi-logic-further-defined-and-divided.txt",
-                      "bytes":  8500,
-                      "sha256":  "68d4c558acb39659f90d49d3dbb0b40c226f76bc65d87e161dc20649b4d6ebef"
-                  },
-                  {
-                      "path":  "generated-texts/encyclopaedia--v-third-attitude-of-thought-to-objectivity.txt",
-                      "bytes":  33528,
-                      "sha256":  "ba26d4aef157ec870bc277e584b30e92f080625846a1f85458b4ca815cba5d2b"
-                  },
-                  {
-                      "path":  "generated-texts/english-reform-bill--the-english-reform-bill.txt",
-                      "bytes":  68651,
-                      "sha256":  "6b944e586e1c90102ac3e726979cc0cd0750e15f94224ee9039c98da60ea37b8"
-                  },
-                  {
-                      "path":  "generated-texts/fate-and-christianity--the-spirit-of-christianity-and-its-fate-by-hegel-1798.txt",
-                      "bytes":  37225,
-                      "sha256":  "d2f0ab110a18414454a068483cc5b8193eb25f3a7fbdd13514c0f13671da6070"
-                  },
-                  {
-                      "path":  "generated-texts/first-philosophy-of-spirit--faith-and-knowledge-hegel-1802.txt",
-                      "bytes":  4502,
-                      "sha256":  "f218f5d1a5ec4d935a3f0d4061a9285caa37b9d34418aa3c90254ab2169951da"
-                  },
-                  {
-                      "path":  "generated-texts/fragments--fragment-of-a-system-by-hegel-1800.txt",
-                      "bytes":  21414,
-                      "sha256":  "716467460f59b7b8253a741b57aa5820dfacb7b6ed876dfba44d99a237043135"
-                  },
-                  {
-                      "path":  "generated-texts/german-constitution--the-german-constitution-by-hegel-1802.txt",
-                      "bytes":  5626,
-                      "sha256":  "ef3e246d2f1d84d3cf6c7aa356cd9376cf3359cfa63775ebdaae32da60b6a18e"
-                  },
-                  {
-                      "path":  "generated-texts/gw10-nuremberg-courses-metadata--gw-10-nuremberg-courses-metadata.txt",
-                      "bytes":  612,
-                      "sha256":  "382434397c959885dcf8189046690e0f8dead104bc26fdaa5a741adc13722403"
-                  },
-                  {
-                      "path":  "generated-texts/gw14-right-supplements-metadata--gw-14-2-14-3-right-supplements-metadata.txt",
-                      "bytes":  538,
-                      "sha256":  "067d05026f937e98471bb75a75e7128c58c281ac5a0be1751aa6af7869e191c0"
-                  },
-                  {
-                      "path":  "generated-texts/gw15-18-late-berlin-metadata--gw-15-18-berlin-writings-and-manuscripts-metadata.txt",
-                      "bytes":  652,
-                      "sha256":  "5e487fbd63f7184e306a80612e8048bab0c8d777327fe2a49b233bc51b892790"
-                  },
-                  {
-                      "path":  "generated-texts/gw22-excerpts-notes-metadata--gw-22-exzerpte-und-notizen-metadata.txt",
-                      "bytes":  515,
-                      "sha256":  "5bbb99033940c2de70fc467eefee8e96dbcbc30b73bd1b0566be1093b14e1b7e"
-                  },
-                  {
-                      "path":  "generated-texts/gw23-logic-lectures-metadata--gw-23-logic-lectures-metadata.txt",
-                      "bytes":  537,
-                      "sha256":  "b21affe002276b405bb1bbe13b784574c7907aba2a1abc7b753307c40bcd07fb"
-                  },
-                  {
-                      "path":  "generated-texts/gw24-nature-lectures-metadata--gw-24-nature-lectures-metadata.txt",
-                      "bytes":  523,
-                      "sha256":  "954cc23fdfa1f648b412cc857fa16b4c45bfb26f375e6ddcebdd54f3dcb0a944"
-                  },
-                  {
-                      "path":  "generated-texts/gw25-spirit-lectures-metadata--gw-25-subjective-spirit-lectures-metadata.txt",
-                      "bytes":  519,
-                      "sha256":  "a26a04a219eed73af6708ab3b734021d4b2d05427bbcff03e22966ddd043382b"
-                  },
-                  {
-                      "path":  "generated-texts/gw26-right-lectures-metadata--gw-26-right-lectures-metadata.txt",
-                      "bytes":  493,
-                      "sha256":  "6058e6089869e83fa34a7191c412a782fa8f4773190890350c60d27fc28d4798"
-                  },
-                  {
-                      "path":  "generated-texts/gw27-world-history-lectures-metadata--gw-27-world-history-lectures-metadata.txt",
-                      "bytes":  339,
-                      "sha256":  "9f607f8de0724d6fabd4351963291515c0e7b654be7a5f3e730ab2b7fbc79489"
-                  },
-                  {
-                      "path":  "generated-texts/gw28-art-lectures-metadata--gw-28-art-lectures-metadata.txt",
-                      "bytes":  557,
-                      "sha256":  "64bedc8dc79308d00c7f0ee3ae409253b4cce5d6e63f343b8793a3fb5843bcce"
-                  },
-                  {
-                      "path":  "generated-texts/gw29-religion-lectures-metadata--gw-29-religion-lectures-metadata.txt",
-                      "bytes":  554,
-                      "sha256":  "ad953baeac69ba7891782421f2f8368a9c49b6d3942fa583a4a0713a8e8c5a3c"
-                  },
-                  {
-                      "path":  "generated-texts/gw30-history-of-philosophy-lectures-metadata--gw-30-history-of-philosophy-lectures-metadata.txt",
-                      "bytes":  523,
-                      "sha256":  "6f0f45ed82f32ac48628d0ad4c4dfcbaea885ee8a68982f65ccfb442813be290"
-                  },
-                  {
-                      "path":  "generated-texts/gw3-early-excerpts-metadata--gw-3-fruehe-exzerpte-metadata.txt",
-                      "bytes":  613,
-                      "sha256":  "d8c621abccfb08568fe10445ed1dfe3fa1ef613aee9017dda8f78eadecfc7a64"
-                  },
-                  {
-                      "path":  "generated-texts/gw6-8-jena-system-drafts-metadata--gw-6-8-jenaer-systementwuerfe-metadata.txt",
-                      "bytes":  587,
-                      "sha256":  "76f8889ba02901bb158748705d23c0e7771fce13527be2a3f1f55a06f0ac6087"
-                  },
-                  {
-                      "path":  "generated-texts/history-of-philosophy--hegel-history-of-philosophy.txt",
-                      "bytes":  22372,
-                      "sha256":  "7d8ea560e5d9662dfbfeef07f8683512e535149ccb4390f0700b684e98fc96a5"
-                  },
-                  {
-                      "path":  "generated-texts/history-of-philosophy--hegel-history-of-philosophy-address.txt",
-                      "bytes":  23410,
-                      "sha256":  "1f18d275976bdff254b2c81c3f5109e093874ecd69d77b77d63ab30fe508d96a"
-                  },
-                  {
-                      "path":  "generated-texts/history-of-philosophy--hegel-s-history-of-philosophy.txt",
-                      "bytes":  14357,
-                      "sha256":  "8ae0f8da3fed79e81da8e41bda53ed02b3cc094fd1559a9316b3ba90b53cab0f"
-                  },
-                  {
-                      "path":  "generated-texts/history-of-philosophy--hegel-s-history-of-philosophy-greek-philosophy.txt",
-                      "bytes":  25572,
-                      "sha256":  "3639702c5becaf008a08653b4bc09675656329b6cf55fedb963d4f08bb2841b6"
-                  },
-                  {
-                      "path":  "generated-texts/history-of-philosophy--hegel-s-lectures-on-the-history-of-philosophy.txt",
-                      "bytes":  45006,
-                      "sha256":  "9e194e161e9f99878c26bfbbfe60e742f3d867666837322e7ba6d5561415b7b1"
-                  },
-                  {
-                      "path":  "generated-texts/history-of-philosophy--hegel-s-lectures-on-the-history-of-philosophy-part-two-philosophy-of-the-middle-.txt",
-                      "bytes":  10970,
-                      "sha256":  "b300fcbb7202f97d68f3f24cd47bdfe737cc50217db510bd91bb0f7cb0aecf6b"
-                  },
-                  {
-                      "path":  "generated-texts/history-of-philosophy--introduction-to-the-history-of-philosophy-by-hegel.txt",
-                      "bytes":  108037,
-                      "sha256":  "d674fed74806e8ec0bcb6de98b0644e374ec1894b517fb27e5373fd9326f6217"
-                  },
-                  {
-                      "path":  "generated-texts/inaugural-address--inaugural-address-delivered-at-the-university-of-berlin-by-hegel-1818.txt",
-                      "bytes":  16675,
-                      "sha256":  "8de1c8abf5956965696a063d7b604bca7b14ebab5b2748e962173127d988c3ab"
-                  },
-                  {
-                      "path":  "generated-texts/jena-lectures--jena-lectures-1805-6-by-hegel.txt",
-                      "bytes":  17540,
-                      "sha256":  "1b74ea4d64190ceedb1c9532728f4607b4fd756e83f6addea2bdebf4a8c7bf19"
-                  },
-                  {
-                      "path":  "generated-texts/natural-law--on-the-scientific-ways-of-treating-natural-law-by-hegel-1803.txt",
-                      "bytes":  13322,
-                      "sha256":  "f5b29faa262b5252ac6051c57c585b52d9492485dd6a395f8138df6fe8770cde"
-                  },
-                  {
-                      "path":  "generated-texts/objective-spirit--the-objective-spirit-from-the-encyclopaedia-ethics.txt",
-                      "bytes":  83553,
-                      "sha256":  "763377364f1fbb2172a06505443985db2adcfe7d60d57623b9dcfebdaffc8d2a"
-                  },
-                  {
-                      "path":  "generated-texts/objective-spirit--the-objective-spirit-from-the-encyclopaedia-introduction.txt",
-                      "bytes":  5949,
-                      "sha256":  "f7efba6f86e04b6e5a3c49e3bd8dc86ccdc5a5f4ebb4b92c496f2334de08cb5e"
-                  },
-                  {
-                      "path":  "generated-texts/objective-spirit--the-objective-spirit-from-the-encyclopaedia-law.txt",
-                      "bytes":  9759,
-                      "sha256":  "858b96ee775b97cff61ba3346c8a0154d3cdf5e95ec644ad317b669ed3307128"
-                  },
-                  {
-                      "path":  "generated-texts/objective-spirit--the-objective-spirit-from-the-encyclopaedia-morality.txt",
-                      "bytes":  9717,
-                      "sha256":  "226ef1caf0d264905944a3f0f3d7d7e2bda87af1faf079f425215e662092f3a9"
-                  },
-                  {
-                      "path":  "generated-texts/phenomenology--absolute-freedom-and-terror.txt",
-                      "bytes":  18335,
-                      "sha256":  "b32056d16029420d574933289e8241edb0f0db055c5a59cf3151680993e37e35"
-                  },
-                  {
-                      "path":  "generated-texts/phenomenology--belief-and-pure-insight.txt",
-                      "bytes":  15999,
-                      "sha256":  "7616d49acd91e5ca20295fef5fd06fed64a4c969d12eb36dfb9290560deff73a"
-                  },
-                  {
-                      "path":  "generated-texts/phenomenology--certainty-at-the-level-of-sense-experience.txt",
-                      "bytes":  21994,
-                      "sha256":  "ecc0affd85b44ea1914d06859522963872a291e522cf58bb9e3253f26511a077"
-                  },
-                  {
-                      "path":  "generated-texts/phenomenology--conscience.txt",
-                      "bytes":  57954,
-                      "sha256":  "520497499f22bab35138f221798c8092f575e5b58195042024d7474b147e60f8"
-                  },
-                  {
-                      "path":  "generated-texts/phenomenology--culture-and-its-field-of-actuality.txt",
-                      "bytes":  60215,
-                      "sha256":  "35477fb6e452788954610534786ae5d603f5074bf0cb3ca8c01f60139dcaeb99"
-                  },
-                  {
-                      "path":  "generated-texts/phenomenology--dissemblance.txt",
-                      "bytes":  21733,
-                      "sha256":  "8dc4d70b613f470bbb2a7b5a5fc67fe88a3c2a87fd00202913fb9a2a56cda3b6"
-                  },
-                  {
-                      "path":  "generated-texts/phenomenology--enlightenment.txt",
-                      "bytes":  45654,
-                      "sha256":  "6229dba250d1530d78c71d4734de3b38337a5de3cb4bba9764906ee2e67160d8"
-                  },
-                  {
-                      "path":  "generated-texts/phenomenology--force-and-the-understanding-the-world-of-appearance-and-the-supersensible-world.txt",
-                      "bytes":  54271,
-                      "sha256":  "61cc1bfb938568b5dd8480b7f713c2a9fa08248247920cb6d0483571d4a11ca5"
-                  },
-                  {
-                      "path":  "generated-texts/phenomenology--free-concrete-mind.txt",
-                      "bytes":  7996,
-                      "sha256":  "5cd187dc9ef83544065b9451c78937eaf25096d2473b490204665fefba91961e"
-                  },
-                  {
-                      "path":  "generated-texts/phenomenology--guilt-and-destiny.txt",
-                      "bytes":  9579,
-                      "sha256":  "30a6c7e9650237add8caca062217db91a09dae08d97d094f3fb0325d4c19cfea"
-                  },
-                  {
-                      "path":  "generated-texts/phenomenology--hegel-phenomenology-of-mind.txt",
-                      "bytes":  50794,
-                      "sha256":  "39f85024885b1857b34014e418a7834c96660cfa0f2bfcba7d6a7dd814eafecd"
-                  },
-                  {
-                      "path":  "generated-texts/phenomenology--index-to-outline-of-phenomenology.txt",
-                      "bytes":  800,
-                      "sha256":  "44a2f4e8b6268ecdf206f76ef04648da044e2b5d14aab69c2863834fec210be6"
-                  },
-                  {
-                      "path":  "generated-texts/phenomenology--individuality.txt",
-                      "bytes":  3564,
-                      "sha256":  "79b4ce2852266884a86fa871533872e2113343a6c808708bfadbca434cf97d3d"
-                  },
-                  {
-                      "path":  "generated-texts/phenomenology--lordship-and-bondage.txt",
-                      "bytes":  42844,
-                      "sha256":  "d7d0718fd2ae3619c93a13074b48b0aa78b0cb330248574cd09d11ee441cc453"
-                  },
-                  {
-                      "path":  "generated-texts/phenomenology--man-and-woman.txt",
-                      "bytes":  25390,
-                      "sha256":  "aba8506557ef0f3f5422292b4d00115d1d07ce2eea1c69970b5da40a92e93e0f"
-                  },
-                  {
-                      "path":  "generated-texts/phenomenology--morality.txt",
-                      "bytes":  2867,
-                      "sha256":  "85320eafdfcc0eaa7e9f5de31789ccf332d66fa5941b7bf9107dca3f8eba6a2b"
-                  },
-                  {
-                      "path":  "generated-texts/phenomenology--natural-religion.txt",
-                      "bytes":  16831,
-                      "sha256":  "bd612e3f0902eae59a558838fe4f1b737854d57a583571a97e9c81f9531289cf"
-                  },
-                  {
-                      "path":  "generated-texts/phenomenology--observation-as-a-process-of-reason.txt",
-                      "bytes":  6378,
-                      "sha256":  "700b34ccd3f3cd077bf0bebdf9c6e81d53a0005ea2fab3cb4a676c192477ea3f"
-                  },
-                  {
-                      "path":  "generated-texts/phenomenology--observation-of-nature.txt",
-                      "bytes":  11076,
-                      "sha256":  "d38dda95167bd4429a0015d6818bda336c6e94763245991eb44e5397ef4c29ce"
-                  },
-                  {
-                      "path":  "generated-texts/phenomenology--perception-or-things-and-their-deceptiveness.txt",
-                      "bytes":  29200,
-                      "sha256":  "ce831ff698d29879b84abe1777eed4201c898f40b8a0c1eb50b58e54fed2d068"
-                  },
-                  {
-                      "path":  "generated-texts/phenomenology--phenomenology-of-spirit.txt",
-                      "bytes":  22405,
-                      "sha256":  "ec4ec609b9b237373c5317f62b979233a28a538c96e3c3c275b05aa4e52e7c3b"
-                  },
-                  {
-                      "path":  "generated-texts/phenomenology--physiognomy-phrenology.txt",
-                      "bytes":  56375,
-                      "sha256":  "13d012ed0ef6cf723ee62d344ac21bee7bea3f1c8d6b2ad8fa424ad0f7893d60"
-                  },
-                  {
-                      "path":  "generated-texts/phenomenology--pleasure-and-necessity.txt",
-                      "bytes":  16363,
-                      "sha256":  "86b8c774c103f61a3ce5a066b9d2a9a66fcc5907efbaef13c07233c7444a9938"
-                  },
-                  {
-                      "path":  "generated-texts/phenomenology--preface-to-the-phenomenology-of-spirit.txt",
-                      "bytes":  99199,
-                      "sha256":  "d97a8d84e81f4a3f58b04687946eb749ae5c16b4467640ec3efe87450e13dfa3"
-                  },
-                  {
-                      "path":  "generated-texts/phenomenology--religion-in-general.txt",
-                      "bytes":  33060,
-                      "sha256":  "e724f83ebb1cdad3ed9a3c94ab31f9dd567b78876168343cd5a39c9cd40544f7"
-                  },
-                  {
-                      "path":  "generated-texts/phenomenology--religion-in-the-form-of-art.txt",
-                      "bytes":  5637,
-                      "sha256":  "6c07745a286f12890bfc09590f026f07bf059704239d5fcc1ef3983b90b94092"
-                  },
-                  {
-                      "path":  "generated-texts/phenomenology--revealed-religion.txt",
-                      "bytes":  57146,
-                      "sha256":  "ff4a2b03444a98c4bb3332013688712b3e348416cede46ffed201f91d639744f"
-                  },
-                  {
-                      "path":  "generated-texts/phenomenology--self-contained-individuals.txt",
-                      "bytes":  12743,
-                      "sha256":  "b8575cebe864f142642350aa2ca19de97bd66c8db7651212a2c246daff0440c9"
-                  },
-                  {
-                      "path":  "generated-texts/phenomenology--the-abstract-work-of-art.txt",
-                      "bytes":  18593,
-                      "sha256":  "b9b5593941445705333c997c4a14f62950753c6551ff196e94d0fdc5f8f574d8"
-                  },
-                  {
-                      "path":  "generated-texts/phenomenology--the-ethical-order.txt",
-                      "bytes":  2184,
-                      "sha256":  "14632c9285368e3dfbd398516736155f3d0c22f74cb10744f7cf401a0fedcb53"
-                  },
-                  {
-                      "path":  "generated-texts/phenomenology--the-living-work-of-art.txt",
-                      "bytes":  8745,
-                      "sha256":  "db9288591d8736f92441b918c16ccc353ef0d2e4b31ee6055b0cccdbd3b03219"
-                  },
-                  {
-                      "path":  "generated-texts/phenomenology--the-moral-view-of-the-world.txt",
-                      "bytes":  19444,
-                      "sha256":  "afd594a7a118ab566ab3767552d5cb374bb450a6263a2b334dae6bc28148f91d"
-                  },
-                  {
-                      "path":  "generated-texts/phenomenology--the-realisation-of-rational-self-consciousness.txt",
-                      "bytes":  14456,
-                      "sha256":  "ab419475003fe266a0196e1ccc7b154640e9e9a96f0789a9cc710d7b645b5291"
-                  },
-                  {
-                      "path":  "generated-texts/phenomenology--the-spiritual-work-of-art.txt",
-                      "bytes":  24509,
-                      "sha256":  "d17c8e3ccfa39ef4367e9456a3af7f8545492220105cb64cd14d1fa4fb7edc06"
-                  },
-                  {
-                      "path":  "generated-texts/phenomenology--the-truth-of-enlightenment.txt",
-                      "bytes":  13376,
-                      "sha256":  "b5316b676e06353d964aa984188baf891015ee1ce93508b329f3e178e2d69bef"
-                  },
-                  {
-                      "path":  "generated-texts/phenomenology--the-truth-which-conscious-certainty-of-self-realises.txt",
-                      "bytes":  16274,
-                      "sha256":  "cf76b31f6299b8b2a100bf8266bd223d5debbc0a09620e1bf626fb59c9fb2b6b"
-                  },
-                  {
-                      "path":  "generated-texts/phenomenology--the-world-of-spirit-in-self-estrangement.txt",
-                      "bytes":  1214,
-                      "sha256":  "6f70f602bc59420e610d5deb4b8b0acd3b9916a9453eedcbb947bd4f3dc56556"
-                  },
-                  {
-                      "path":  "generated-texts/philosophical-propaedeutic-german--hegel-philosophische-prop-deutik-dritter-kursus-erste-abteilung.txt",
-                      "bytes":  26737,
-                      "sha256":  "1da4b41bce46753abb485b1e352f654726154b9d29aa3cf6e44db21711eb6c9f"
-                  },
-                  {
-                      "path":  "generated-texts/philosophical-propaedeutic-german--hegel-philosophische-prop-deutik-dritter-kursus-zweite-abteilung.txt",
-                      "bytes":  68501,
-                      "sha256":  "b045cdf7f50f94b4f452522c561768eaa9c2e3d0a6b3a858825aeeb6a6d4c5a8"
-                  },
-                  {
-                      "path":  "generated-texts/philosophical-propaedeutic-german--hegel-philosophische-prop-deutik-erster-kursus-dritter-abschnitt.txt",
-                      "bytes":  2932,
-                      "sha256":  "9ac45b927a019611e56c774d3d615eff5872483941732ef9c1e44c8e33285d0b"
-                  },
-                  {
-                      "path":  "generated-texts/philosophical-propaedeutic-german--hegel-philosophische-prop-deutik-erster-kursus-einleitung.txt",
-                      "bytes":  4824,
-                      "sha256":  "53d7d8ef459736642a1ed936e586b4097db806914f7cbb057ed3a8abe0f3f466"
-                  },
-                  {
-                      "path":  "generated-texts/philosophical-propaedeutic-german--hegel-philosophische-prop-deutik-erster-kursus-erl-uterungen-zur-einleitung.txt",
-                      "bytes":  34431,
-                      "sha256":  "f72aedf2efabe8edf89d7d6eb0e2feccfc92a8f206740d45fad7fad7a23442a9"
-                  },
-                  {
-                      "path":  "generated-texts/philosophical-propaedeutic-german--hegel-philosophische-prop-deutik-erster-kursus-erster-abschnitt.txt",
-                      "bytes":  25728,
-                      "sha256":  "65b6fed6b17d5253185dff9c94fc1d5c28c62b6606d54171a9467d3302bcb56b"
-                  },
-                  {
-                      "path":  "generated-texts/philosophical-propaedeutic-german--hegel-philosophische-prop-deutik-erster-kursus-zweiter-abschnitt.txt",
-                      "bytes":  27226,
-                      "sha256":  "38631af811ac15e7e2a787244264640b4800ea222dd19d909113360eeb1a60a6"
-                  },
-                  {
-                      "path":  "generated-texts/philosophical-propaedeutic-german--hegel-philosophische-prop-deutik-zweiter-kursus-erste-abteilung.txt",
-                      "bytes":  14325,
-                      "sha256":  "55928f164d843b0646e559ffe982ff368a0a2d0212eef4557db7e4ad56a533a6"
-                  },
-                  {
-                      "path":  "generated-texts/philosophical-propaedeutic-german--hegel-philosophische-prop-deutik-zweiter-kursus-zweite-abteilung.txt",
-                      "bytes":  35157,
-                      "sha256":  "ac59487f10b5e1c4baaa24292a87ad4c4b48b5796eca7f2fd897f0f39b9fd969"
-                  },
-                  {
-                      "path":  "generated-texts/philosophy-of-history--general-introduction-to-the-philosophy-of-history-by-hegel.txt",
-                      "bytes":  125857,
-                      "sha256":  "a23d90f26b914c4dbf7a0da259fe77d2c0b857a46cd6ac4cde7016f39b9cb727"
-                  },
-                  {
-                      "path":  "generated-texts/philosophy-of-history--hegel-s-lectures-on-the-philosophy-of-history.txt",
-                      "bytes":  958,
-                      "sha256":  "f197a5a734c8bc8d576ec55be831f9ef1d88ccd7606dbbe1fcb2de58ed4385bc"
-                  },
-                  {
-                      "path":  "generated-texts/philosophy-of-history--hegel-s-philosophy-of-history.txt",
-                      "bytes":  211952,
-                      "sha256":  "afbfb0de0bd20d07a870d62cdf853fb8dba2b845d52a054d00c7c0a3738f8a58"
-                  },
-                  {
-                      "path":  "generated-texts/philosophy-of-nature--contents-of-hegel-s-philosophy-of-nature.txt",
-                      "bytes":  7237,
-                      "sha256":  "04fe7beaa8be93d0c973c1f631dffdf14ed01bb36bad895bf9640fdbea806f92"
-                  },
-                  {
-                      "path":  "generated-texts/philosophy-of-nature--hegel-s-philosophy-of-nature.txt",
-                      "bytes":  30423,
-                      "sha256":  "0b9e878dd0d56eccc3f6e595ba4f41a3bac6afc08987111e6b7f14303c227914"
-                  },
-                  {
-                      "path":  "generated-texts/philosophy-of-religion--introduction-to-the-philosophy-of-religion-by-hegel.txt",
-                      "bytes":  41240,
-                      "sha256":  "a0c000cf0e022094396971ee4e8773fb72927297c776d14eb49250a1c524f909"
-                  },
-                  {
-                      "path":  "generated-texts/philosophy-of-religion--the-absolute-religion-by-hegel.txt",
-                      "bytes":  27964,
-                      "sha256":  "1f999b9ee4ad794da13f334b75c7a6c2316a76e5416bbb3c5a924b218414ea80"
-                  },
-                  {
-                      "path":  "generated-texts/philosophy-of-right--contents-of-hegel-s-philosophy-of-right.txt",
-                      "bytes":  30827,
-                      "sha256":  "6d47d824173741c4d6ead010098e9d453b7880d407c2bd71365cfd39bd0fd16c"
-                  },
-                  {
-                      "path":  "generated-texts/philosophy-of-right--hegel-s-philosophy-of-right-abstract-right.txt",
-                      "bytes":  14249,
-                      "sha256":  "79a48ebb4f162d975c3aba13b55fde3b84f8c5adc6c15ffc5e906510585f66de"
-                  },
-                  {
-                      "path":  "generated-texts/philosophy-of-right--hegel-s-philosophy-of-right-civil-society.txt",
-                      "bytes":  110459,
-                      "sha256":  "63ccf4d303cd359b26fec5571bd1b69038060aaaf6916d3603bcff4454557e5a"
-                  },
-                  {
-                      "path":  "generated-texts/philosophy-of-right--hegel-s-philosophy-of-right-contract.txt",
-                      "bytes":  19559,
-                      "sha256":  "a1e8fde1a8317836474400b34e4059bb8aee09df354fa5783069f05e1cbb01e2"
-                  },
-                  {
-                      "path":  "generated-texts/philosophy-of-right--hegel-s-philosophy-of-right-ethical-life.txt",
-                      "bytes":  19600,
-                      "sha256":  "ef681b5cbb7153747a3d020f18121a5b1688015b315501ea16dc2bd6a4680b49"
-                  },
-                  {
-                      "path":  "generated-texts/philosophy-of-right--hegel-s-philosophy-of-right-introduction.txt",
-                      "bytes":  78179,
-                      "sha256":  "c26328f45fc9dfcdc3c7f33e5ccbff1861fb52feec9a1c653b50e8585d5ed790"
-                  },
-                  {
-                      "path":  "generated-texts/philosophy-of-right--hegel-s-philosophy-of-right-morality.txt",
-                      "bytes":  110094,
-                      "sha256":  "ff37639db52c46fb977f769f25c09521451973999bffa44bfc19cad289275d82"
-                  },
-                  {
-                      "path":  "generated-texts/philosophy-of-right--hegel-s-philosophy-of-right-preface.txt",
-                      "bytes":  30685,
-                      "sha256":  "3680f2f3b8a9450ed80e4373e81f24136743301bc3ade0091a881e3d3f173a7e"
-                  },
-                  {
-                      "path":  "generated-texts/philosophy-of-right--hegel-s-philosophy-of-right-property.txt",
-                      "bytes":  62965,
-                      "sha256":  "4914d50e946b000c31a6c89dfec1a101424d59c848ccdcf5104b743f1d99f6ef"
-                  },
-                  {
-                      "path":  "generated-texts/philosophy-of-right--hegel-s-philosophy-of-right-the-family.txt",
-                      "bytes":  42218,
-                      "sha256":  "59907e6638224145b23cc7c773d56c6d273f0808473efb8abc486a6efcb564cf"
-                  },
-                  {
-                      "path":  "generated-texts/philosophy-of-right--hegel-s-philosophy-of-right-the-state.txt",
-                      "bytes":  14508,
-                      "sha256":  "a51fb4d983afc787765b7cd9a29e4fe7bbaacb95c3a04e15100bc9d5ffc6520e"
-                  },
-                  {
-                      "path":  "generated-texts/positivity-of-christian-religion--on-the-prospects-for-a-folk-religion-by-hegel.txt",
-                      "bytes":  51916,
-                      "sha256":  "1c6ec659b2d09f67b5e667e8d773da280509b8417eba634035ea00645482381f"
-                  },
-                  {
-                      "path":  "generated-texts/positivity-of-christian-religion--the-positivity-of-the-christian-religion-by-hegel-1795.txt",
-                      "bytes":  26159,
-                      "sha256":  "7d094758e3b3119dfab8958f54af8810207e190f96f78f02bd682bf9dae4c82d"
-                  },
-                  {
-                      "path":  "generated-texts/proofs-of-god--the-philosophical-propadeutic-by-hegel-1808-1811.txt",
-                      "bytes":  14193,
-                      "sha256":  "77bfab4455bd7b3afdc632deb12de0e8e2d0c3b337973b3256ef89a95fd373f1"
-                  },
-                  {
-                      "path":  "generated-texts/science-of-logic--book-iii-of-hegel-s-science-of-logic-cont-d-the-idea.txt",
-                      "bytes":  54269,
-                      "sha256":  "5643ae8a529c58b00db126783848c6f9f2055f5e2bac768e97cab94d28f8c7e9"
-                  },
-                  {
-                      "path":  "generated-texts/science-of-logic--book-ii-of-hegel-s-science-of-logic-essence.txt",
-                      "bytes":  49248,
-                      "sha256":  "478b1aeb43d147264e2495e0f9a2c4ed535b8d9245e34d42a63dfe18f61ab4c9"
-                  },
-                  {
-                      "path":  "generated-texts/science-of-logic--book-i-of-hegel-s-science-of-logic-being.txt",
-                      "bytes":  69099,
-                      "sha256":  "843c49786225a47eb023efe6bf5227a9aea535af6d279292967e7b8b2f232b09"
-                  },
-                  {
-                      "path":  "generated-texts/science-of-logic--book-i-of-hegel-s-science-of-logic-introduction.txt",
-                      "bytes":  42859,
-                      "sha256":  "82236b6f24e4671ec3df52c33030c3ae07bdae6fd31be939f4665c5e6cd66f94"
-                  },
-                  {
-                      "path":  "generated-texts/science-of-logic--index-to-the-science-of-logic.txt",
-                      "bytes":  603,
-                      "sha256":  "7e8130d2ee44d77a6e098946c53d4ebfa0ce45001610d238ea8bbb053b25c6f4"
-                  },
-                  {
-                      "path":  "generated-texts/science-of-logic--objectivity.txt",
-                      "bytes":  43288,
-                      "sha256":  "2cc5b0d45af173c1d261d9dd8c042886de10bcb2b2ba2a6715be85c9c13e4943"
-                  },
-                  {
-                      "path":  "generated-texts/science-of-logic--table-of-contents-for-hegel-s-science-of-logic.txt",
-                      "bytes":  172233,
-                      "sha256":  "7f6ca8358fc5221d64ae83ac87cada2242162feaa77483e602fa4a1ad6e8138a"
-                  },
-                  {
-                      "path":  "generated-texts/science-of-logic--the-notion-in-general.txt",
-                      "bytes":  74568,
-                      "sha256":  "37de107ebfe2bc04a7f7b96677e0d6a428f868fd131d5736715f1510d7e54398"
-                  },
-                  {
-                      "path":  "generated-texts/shorter-logic--hegel-s-introduction-to-the-shorter-logic.txt",
-                      "bytes":  44367,
-                      "sha256":  "e620301e6679f9fac9d63a645430ecc60011598c48c833c61dbc493ac780f672"
-                  },
-                  {
-                      "path":  "generated-texts/shorter-logic--hegel-the-doctrine-of-the-notion.txt",
-                      "bytes":  31748,
-                      "sha256":  "81f5bb89a303bd36b4e7fa1f4748749ea5eb5531da55105d158c4443f3b9154d"
-                  },
-                  {
-                      "path":  "generated-texts/shorter-logic--hegel-the-notion-part-b-the-object.txt",
-                      "bytes":  28843,
-                      "sha256":  "13fde6a7125c52ec75aae4bf5cf49d86bf49f4c798380f5e880761421ef44a09"
-                  },
-                  {
-                      "path":  "generated-texts/shorter-logic--iii-first-attitude-of-thought-to-objectivity.txt",
-                      "bytes":  27120,
-                      "sha256":  "c09a3a4cc725d285bee2482f793ff70dd3a541835b0145893ce671f401ec897b"
-                  },
-                  {
-                      "path":  "generated-texts/shorter-logic--ii-preliminary-notion.txt",
-                      "bytes":  51573,
-                      "sha256":  "12923594910bae3977b6dc724def59af6f94aa23c43299c7848890aeda927aee"
-                  },
-                  {
-                      "path":  "generated-texts/shorter-logic--iv-second-attitude-of-thought-to-objectivity.txt",
-                      "bytes":  58897,
-                      "sha256":  "327d64c468d8739c02c8de0616d173f03c69223c5e0f358059f3e785de17c82f"
-                  },
-                  {
-                      "path":  "generated-texts/shorter-logic--logic-further-defined-and-divided-hegel.txt",
-                      "bytes":  13733,
-                      "sha256":  "830f87d4631aaf5af1b4ab7cd0cda5052f76740c80eaa5a6413e197d3988a7bf"
-                  },
-                  {
-                      "path":  "generated-texts/shorter-logic--quantity.txt",
-                      "bytes":  30203,
-                      "sha256":  "e3fe10cd7659f23dff4308241d12246d21cf09cf13c1037e9341d5cc7a6889b1"
-                  },
-                  {
-                      "path":  "generated-texts/shorter-logic--the-doctrine-of-being-hegel.txt",
-                      "bytes":  58554,
-                      "sha256":  "631a1cbdd3c83d036866ba1fc9104d2ada5e108bbe71af638e4b2aabd3bd30ca"
-                  },
-                  {
-                      "path":  "generated-texts/shorter-logic--the-doctrine-of-essence-actuality-hegel.txt",
-                      "bytes":  47827,
-                      "sha256":  "a4ae41f566e313b667a3046cc458aad769485e2ecfd4b478e509182994878c6c"
-                  },
-                  {
-                      "path":  "generated-texts/shorter-logic--the-doctrine-of-essence-appearance-hegel.txt",
-                      "bytes":  31440,
-                      "sha256":  "9b8fc63a3155fb58732b4f1be853065237a3a9abe3a08aba6ea2aeaa096fdd43"
-                  },
-                  {
-                      "path":  "generated-texts/shorter-logic--the-doctrine-of-essence-hegel.txt",
-                      "bytes":  53773,
-                      "sha256":  "643490d1bb91100da4302c229b9f972f3139675ce876ff2c4195eb38c788b9d6"
-                  },
-                  {
-                      "path":  "generated-texts/shorter-logic--the-doctrine-of-the-notion-3rd-part-the-idea-hegel.txt",
-                      "bytes":  43235,
-                      "sha256":  "e16a8ced7ad4eb74ed8723aa62876f1ae9851d6ed8e23a40bc8c5c62d0f0f157"
-                  },
-                  {
-                      "path":  "generated-texts/shorter-logic--the-judgment.txt",
-                      "bytes":  18665,
-                      "sha256":  "f6349b7a8799b6857274068b4f3ea446711d76b95f0e4cf6782f7296c4bfb438"
-                  },
-                  {
-                      "path":  "generated-texts/shorter-logic--the-syllogism.txt",
-                      "bytes":  24098,
-                      "sha256":  "705c86585d8344b7bc20f40dafbaa8a9db420127577ba78b196596e4b82861c4"
-                  },
-                  {
-                      "path":  "generated-texts/shorter-logic--vi-logic-further-defined-and-divided.txt",
-                      "bytes":  8383,
-                      "sha256":  "ee67f9dbf485b975ba2c39d83b5dd478e0dc6688bfadb69a69329e6b7ecef9d1"
-                  },
-                  {
-                      "path":  "generated-texts/shorter-logic--v-third-attitude-of-thought-to-objectivity.txt",
-                      "bytes":  32131,
-                      "sha256":  "b7d7a14a2e7a593395513fb9ffb8ef957660cb22445f709eda18339254c0574d"
-                  },
-                  {
-                      "path":  "generated-texts/subjective-spirit--index-to-the-subjective-spirit.txt",
-                      "bytes":  863,
-                      "sha256":  "f1436494c0570786750ac3480e6dc540d9c2548dc5dc23bc7da996fc306caf7c"
-                  },
-                  {
-                      "path":  "generated-texts/subjective-spirit-shorter--index-to-the-subjective-spirit.txt",
-                      "bytes":  519,
-                      "sha256":  "bc32d2d6bda08fc65135b84bf4b60b75cfea6d0052d29b74345f689457808ee3"
-                  },
-                  {
-                      "path":  "generated-texts/subjective-spirit-shorter--the-subjective-spirit.txt",
-                      "bytes":  102901,
-                      "sha256":  "8aac47d10ef74d25ef6d8e25c0943aa774c5478a96ec21af67b3586620ec38fe"
-                  },
-                  {
-                      "path":  "generated-texts/subjective-spirit--the-subjective-spirit.txt",
-                      "bytes":  29456,
-                      "sha256":  "d8c313dfe8b5053fd5636f2b67b1e186bc851386ae25e13ae7bba2562b2639d3"
-                  },
-                  {
-                      "path":  "generated-texts/system-of-ethical-life--system-of-ethical-life-by-hegel-1802.txt",
-                      "bytes":  73425,
-                      "sha256":  "3921834b6d5da7a55f4dcef9a6468ec4a12f5a50d10779989ad01090942118e9"
-                  },
-                  {
-                      "path":  "generated-texts/tercentenary-speech--address-on-the-tercentenary-of-the-submission-of-the-augsburg-confession-by-hege.txt",
-                      "bytes":  30742,
-                      "sha256":  "99f3746f563c217ef363784468e7bb3d9a540541bef8e755e321fbdf0c5ca861"
-                  },
-                  {
-                      "path":  "generated-texts/theses-1801--hegel-s-theses-1801.txt",
-                      "bytes":  1541,
-                      "sha256":  "1166b074b2da59c2696e5bf77a1bd4df39fb09f5b98199af0135f1ea4da894c3"
-                  },
-                  {
-                      "path":  "generated-texts/who-thinks-abstractly--who-thinks-abstractly.txt",
-                      "bytes":  10678,
-                      "sha256":  "5948768555f793697f01f82a34de181696a07495c4b9a415786b9932955c263e"
-                  },
-                  {
-                      "path":  "manifest.json",
-                      "bytes":  27527,
-                      "sha256":  "0b9a93cbe8d693e1f590e6f1928f59b016c137500006adaf54cdff3c5bd6632d"
-                  },
-                  {
-                      "path":  "originals/hegel-14-bundle/hegel-works-14.azw3",
-                      "bytes":  14888825,
-                      "sha256":  "1f3a2e1ea72c49835b2db2331e34d7de8a69596bc63c73793bcfea2ccc4c2bf8"
-                  },
-                  {
-                      "path":  "originals/hegel-14-bundle/hegel-works-14.epub",
-                      "bytes":  9519862,
-                      "sha256":  "1eae9dc68e63aa4f89bfc73ce8e3e0b7dc69f38aadce1b3c6ca7703a0ff02b2c"
-                  },
-                  {
-                      "path":  "originals/hegel-14-bundle/hegel-works-14.mobi",
-                      "bytes":  14229326,
-                      "sha256":  "22a787c0468edf51b72e0c6206c7adb546ef221d3a947e2f5c0403566884ced5"
-                  },
-                  {
-                      "path":  "originals/hegel-14-bundle/hegel-works-14.pdf",
-                      "bytes":  28252325,
-                      "sha256":  "0e52c7ba82e133f545c0a782fa6a13ddeab683c0aef59c166e5d52cb198efd37"
-                  },
-                  {
-                      "path":  "originals/hegel-14-bundle/hegel-works-14.txt",
-                      "bytes":  12326399,
-                      "sha256":  "d2d47fc034119c90da08270387880ecb0e466faac2091db031ec74c87352c7ca"
-                  },
-                  {
-                      "path":  "originals/phenomenology-pdfs/phenomenology-helin-down.pdf",
-                      "bytes":  16990067,
-                      "sha256":  "46ec4971370d4389375dab336ead1c9307f6c31411853381006c58df022e6213"
-                  },
-                  {
-                      "path":  "originals/phenomenology-pdfs/phenomenology-helin-up.pdf",
-                      "bytes":  127076137,
-                      "sha256":  "ce63c37af9dfa6268394d4cb5f10749e4dae72e7154fbca38db9a2c2e8b155d3"
-                  },
-                  {
-                      "path":  "originals/phenomenology-pdfs/phenomenology-xiangang-ocr.pdf",
-                      "bytes":  21318429,
-                      "sha256":  "0de4f70c48a54c28eb11010cdd8eba7c6ffe600f2e059d0f446ccc63e605d5cd"
-                  },
-                  {
-                      "path":  "README.md",
-                      "bytes":  876,
-                      "sha256":  "3a31913bb8806bc8043be4e5699fc24dcff2b4d00f5c1f87154d64acd2123fe2"
-                  },
-                  {
-                      "path":  "SOURCES.md",
-                      "bytes":  989,
-                      "sha256":  "97e042aa778e61f0eb4a9b241d83b462d0feee0a0d1cfa3fc9a6bdfc903f56cd"
-                  },
-                  {
-                      "path":  "texts/local-bundle--aesthetics-vol1.txt",
-                      "bytes":  745183,
-                      "sha256":  "da60d71cdcfc5674567b469ca8161df155836fddb6d7d69d5246808d404f103c"
-                  },
-                  {
-                      "path":  "texts/local-bundle--aesthetics-vol2.txt",
-                      "bytes":  725710,
-                      "sha256":  "17775ff5f9b35c22582ccf0bc7876daa79b5853cb728a66a490dda7d0968fb87"
-                  },
-                  {
-                      "path":  "texts/local-bundle--aesthetics-vol3.txt",
-                      "bytes":  768732,
-                      "sha256":  "e80a1f493eabe7570a54359fb920f77df58e408671dd717f225141482acb6049"
-                  },
-                  {
-                      "path":  "texts/local-bundle--aesthetics-vol4.txt",
-                      "bytes":  795509,
-                      "sha256":  "1c1e97539ce8b9df7476719290dbb8407991459f107651cea0cef5536466742d"
-                  },
-                  {
-                      "path":  "texts/local-bundle--early-theological-writings.txt",
-                      "bytes":  1000228,
-                      "sha256":  "a09d37e6f5b660a1b856c130bf3a2d4ccc536b3bdc5684f97c810071b41a5d57"
-                  },
-                  {
-                      "path":  "texts/local-bundle--history-of-philosophy-vol1.txt",
-                      "bytes":  800989,
-                      "sha256":  "cbc3e0fa03abee13e34f5d5a0a512dcd33865ddb8e262591a0d93bc28c628069"
-                  },
-                  {
-                      "path":  "texts/local-bundle--history-of-philosophy-vol2.txt",
-                      "bytes":  810510,
-                      "sha256":  "6158c2342177ba8eebab3a85ae65486e169949a5da1a48380716a284c7c1ce3e"
-                  },
-                  {
-                      "path":  "texts/local-bundle--history-of-philosophy-vol3.txt",
-                      "bytes":  812344,
-                      "sha256":  "dd2e851d9fa563999cac9eaacffc45c968c6f7b08ec038276b623d6f5edb44b7"
-                  },
-                  {
-                      "path":  "texts/local-bundle--history-of-philosophy-vol4.txt",
-                      "bytes":  1019862,
-                      "sha256":  "d4c385cc90876c15fd567ac8b6c73f1abf24a137f5eb79e3ee7794501b59de4f"
-                  },
-                  {
-                      "path":  "texts/local-bundle--philosophy-of-nature.txt",
-                      "bytes":  1327043,
-                      "sha256":  "02d1c163406a85fe0dd27f7319cd0ab0b63fc52f432320ab15cc67d57808d5f7"
-                  },
-                  {
-                      "path":  "texts/local-bundle--philosophy-of-right.txt",
-                      "bytes":  784572,
-                      "sha256":  "8a25ef04a8dd8a7a9ad5881036b91dc4c2ca5ee9cdccc511f27256cb0c338f0d"
-                  },
-                  {
-                      "path":  "texts/local-bundle--science-of-logic-down.txt",
-                      "bytes":  1026560,
-                      "sha256":  "21097f4fe29c97bf5cdf94b1b8b89b5e9b98264d7be0471cdbaf5fb67951194e"
-                  },
-                  {
-                      "path":  "texts/local-bundle--science-of-logic-up.txt",
-                      "bytes":  796566,
-                      "sha256":  "7d9fc5ee7aafad19912258d1ab704722f88f02bc9e5a38799170af820d8b5aee"
-                  },
-                  {
-                      "path":  "texts/local-bundle--shorter-logic.txt",
-                      "bytes":  856161,
-                      "sha256":  "a0dfe952bb1b2a79a49d0444aa467b2739aaa3dd3ecee1b9a6354b4c53438819"
-                  },
-                  {
-                      "path":  "texts/local-pdf--phenomenology-xiangang-ocr.txt",
-                      "bytes":  1412982,
-                      "sha256":  "7aa57f137d19bc1d4205d4207967e09faf9f63758f3a70e7837bc2826b026adc"
-                  }
-              ]
+{
+  "generatedAt": "2026-05-10T19:23:53.804Z",
+  "sourceNote": "本目录中的中文语料整理自互联网上可公开访问的资料，并作为黑格尔沙龙的中文语料入口使用。",
+  "fileCount": 189,
+  "totalBytes": 263923759,
+  "files": [
+    {
+      "path": "来源说明.md",
+      "bytes": 815,
+      "sha256": "56af59f6fb05f0ddd360addaebe5a654c0119bae07dc315d47d35fcbb98d3626"
+    },
+    {
+      "path": "concept-ledger.json",
+      "bytes": 8270,
+      "sha256": "b0330a7e97c672d947ce1d0f96e7002279b341204ecc4e491675b7222b14bcbe"
+    },
+    {
+      "path": "generated-manifest.json",
+      "bytes": 45651,
+      "sha256": "5d6f35ba8511b4d7eb3dc4e5d06409696bd91d1df64b4de4dad8fda87bdb7087"
+    },
+    {
+      "path": "generated-texts/absolute-spirit-selection--absolute-spirit.txt",
+      "bytes": 14323,
+      "sha256": "dd5057e15a06c374ca5c6cf2647d6efc5cfbfff609b057aa0f8af981b56a179d"
+    },
+    {
+      "path": "generated-texts/aesthetics--hegel-s-lectures-on-aesthetics.txt",
+      "bytes": 66981,
+      "sha256": "e68ff1333f5e0273b028fa01996b0ffece2dc38b1b35dee49c57b8b7ac965ec8"
+    },
+    {
+      "path": "generated-texts/aesthetics--hegel-s-lectures-on-the-aesthetics.txt",
+      "bytes": 1684,
+      "sha256": "58ec976bcdb8ad49a769994e5909c84da0e9826e343835b4be2ee348ce545492"
+    },
+    {
+      "path": "generated-texts/briefe-correspondence-metadata--briefe-und-amtliche-korrespondenz-metadata.txt",
+      "bytes": 798,
+      "sha256": "5371bbcb652dde66997ba7c7454065f159a65a38aae48565a072aaf39f065c73"
+    },
+    {
+      "path": "generated-texts/briefe-von-und-an-hegel-1887-band19-2--briefe-von-und-an-hegel-1887-band-19-2.txt",
+      "bytes": 588029,
+      "sha256": "3277979822699c37c0bf97210e630bd9c1adb1d95a2bf478e41d35269769c777"
+    },
+    {
+      "path": "generated-texts/classical-studies--on-classical-studies-by-hegel-1809.txt",
+      "bytes": 15924,
+      "sha256": "fe33863da713033f8e8d35d45e44ffd54305be491d7f50ac31e6b1c513d505d9"
+    },
+    {
+      "path": "generated-texts/critical-journal-introduction--the-critical-journal-of-philosophy-by-hegel-and-schelling-1801.txt",
+      "bytes": 26506,
+      "sha256": "14ccfca39e44a2e3ee0aa6fb1135ca28458d20b263ae71579197743185401055"
+    },
+    {
+      "path": "generated-texts/difference-essay--the-difference-between-fichte-s-and-schelling-s-system-of-philosophy-by-hegel-18.txt",
+      "bytes": 48310,
+      "sha256": "e8d59107865fb00b4e2ba3742d2ac508ed40e8f7fb7a26e2ca5b775504e22d1b"
+    },
+    {
+      "path": "generated-texts/early-theological-writings--love-by-hegel-1798.txt",
+      "bytes": 13915,
+      "sha256": "edcac0e1cf17328a35fab01d0ef376a3ca4b70a1f38a846204f8b02980340b10"
+    },
+    {
+      "path": "generated-texts/elect-magistrates--the-magistrates-should-be-elected-by-the-people-by-hegel-1798.txt",
+      "bytes": 10648,
+      "sha256": "d479c4ab7f6734bb40bde7fa7aee35d8c76ca96728fda2753b100ba2fdf74d65"
+    },
+    {
+      "path": "generated-texts/encyclopaedia--absolute-spirit.txt",
+      "bytes": 14288,
+      "sha256": "7fbe43d5dea213bbfc139fda4ace3b963439361d151e5f6e0d6c9ffa086d0dca"
+    },
+    {
+      "path": "generated-texts/encyclopaedia--contents-of-hegel-s-encyclopaedia-of-the-philosophical-sciences-in-outline.txt",
+      "bytes": 5586,
+      "sha256": "004016611a41845f45b9f9a765141bbbb4bd04633d59e6bbdfff66959bbd2456"
+    },
+    {
+      "path": "generated-texts/encyclopaedia--hegel-s-introduction-to-the-shorter-logic.txt",
+      "bytes": 37388,
+      "sha256": "a3bcea98104a7d1206a2e5a01b6b91fbd4aeebf10ab265e63cc6783889ac8d38"
+    },
+    {
+      "path": "generated-texts/encyclopaedia--hegel-s-philosophy-of-nature.txt",
+      "bytes": 30423,
+      "sha256": "0b9e878dd0d56eccc3f6e595ba4f41a3bac6afc08987111e6b7f14303c227914"
+    },
+    {
+      "path": "generated-texts/encyclopaedia--hegel-the-doctrine-of-the-notion.txt",
+      "bytes": 31170,
+      "sha256": "e730131e5bf91ff3ee5cd2df15302f10524ca0a05868cff774cb5b719e83fe99"
+    },
+    {
+      "path": "generated-texts/encyclopaedia--ii-preliminary-notion.txt",
+      "bytes": 51639,
+      "sha256": "fc572605e19d4e6af6c3e343a9adb03215211d6edeb256b28a1f351d13baa266"
+    },
+    {
+      "path": "generated-texts/encyclopaedia--iii-first-attitude-of-thought-to-objectivity.txt",
+      "bytes": 27020,
+      "sha256": "0ec5f678a6bf63e4b80b95e40923052b965e537c95e604b8f96d42867ebf18cd"
+    },
+    {
+      "path": "generated-texts/encyclopaedia--index-to-outline-of-logic.txt",
+      "bytes": 592,
+      "sha256": "930b08d5d7167ac64975c54535f12ca46f013486efd5567213fa6f4424ddae60"
+    },
+    {
+      "path": "generated-texts/encyclopaedia--iv-second-attitude-of-thought-to-objectivity.txt",
+      "bytes": 58658,
+      "sha256": "b366a73ef1296e355d17c398fb5bd3ba33fd4e439cab670fba30d8fdf4d1b8e3"
+    },
+    {
+      "path": "generated-texts/encyclopaedia--the-doctrine-of-being-hegel.txt",
+      "bytes": 55487,
+      "sha256": "77c07e46983fe046717257009076e8a80553186c0fe39d4e3c5ab1b2498ae01d"
+    },
+    {
+      "path": "generated-texts/encyclopaedia--the-doctrine-of-essence-hegel.txt",
+      "bytes": 54561,
+      "sha256": "ee20e9a5545186e59b160a0f573c1c95026175f472b6b51ca1463771308e93d2"
+    },
+    {
+      "path": "generated-texts/encyclopaedia--the-objective-spirit-from-the-encyclopaedia-ethics.txt",
+      "bytes": 83553,
+      "sha256": "763377364f1fbb2172a06505443985db2adcfe7d60d57623b9dcfebdaffc8d2a"
+    },
+    {
+      "path": "generated-texts/encyclopaedia--the-objective-spirit-from-the-encyclopaedia-introduction.txt",
+      "bytes": 5949,
+      "sha256": "f7efba6f86e04b6e5a3c49e3bd8dc86ccdc5a5f4ebb4b92c496f2334de08cb5e"
+    },
+    {
+      "path": "generated-texts/encyclopaedia--the-objective-spirit-from-the-encyclopaedia-law.txt",
+      "bytes": 9759,
+      "sha256": "858b96ee775b97cff61ba3346c8a0154d3cdf5e95ec644ad317b669ed3307128"
+    },
+    {
+      "path": "generated-texts/encyclopaedia--the-objective-spirit-from-the-encyclopaedia-morality.txt",
+      "bytes": 9717,
+      "sha256": "226ef1caf0d264905944a3f0f3d7d7e2bda87af1faf079f425215e662092f3a9"
+    },
+    {
+      "path": "generated-texts/encyclopaedia--the-subjective-spirit.txt",
+      "bytes": 102901,
+      "sha256": "8aac47d10ef74d25ef6d8e25c0943aa774c5478a96ec21af67b3586620ec38fe"
+    },
+    {
+      "path": "generated-texts/encyclopaedia--v-third-attitude-of-thought-to-objectivity.txt",
+      "bytes": 33528,
+      "sha256": "ba26d4aef157ec870bc277e584b30e92f080625846a1f85458b4ca815cba5d2b"
+    },
+    {
+      "path": "generated-texts/encyclopaedia--vi-logic-further-defined-and-divided.txt",
+      "bytes": 8500,
+      "sha256": "68d4c558acb39659f90d49d3dbb0b40c226f76bc65d87e161dc20649b4d6ebef"
+    },
+    {
+      "path": "generated-texts/english-reform-bill--the-english-reform-bill.txt",
+      "bytes": 68651,
+      "sha256": "6b944e586e1c90102ac3e726979cc0cd0750e15f94224ee9039c98da60ea37b8"
+    },
+    {
+      "path": "generated-texts/fate-and-christianity--the-spirit-of-christianity-and-its-fate-by-hegel-1798.txt",
+      "bytes": 37225,
+      "sha256": "d2f0ab110a18414454a068483cc5b8193eb25f3a7fbdd13514c0f13671da6070"
+    },
+    {
+      "path": "generated-texts/first-philosophy-of-spirit--faith-and-knowledge-hegel-1802.txt",
+      "bytes": 4502,
+      "sha256": "f218f5d1a5ec4d935a3f0d4061a9285caa37b9d34418aa3c90254ab2169951da"
+    },
+    {
+      "path": "generated-texts/fragments--fragment-of-a-system-by-hegel-1800.txt",
+      "bytes": 21414,
+      "sha256": "716467460f59b7b8253a741b57aa5820dfacb7b6ed876dfba44d99a237043135"
+    },
+    {
+      "path": "generated-texts/german-constitution--the-german-constitution-by-hegel-1802.txt",
+      "bytes": 5626,
+      "sha256": "ef3e246d2f1d84d3cf6c7aa356cd9376cf3359cfa63775ebdaae32da60b6a18e"
+    },
+    {
+      "path": "generated-texts/gw10-nuremberg-courses-metadata--gw-10-nuremberg-courses-metadata.txt",
+      "bytes": 612,
+      "sha256": "382434397c959885dcf8189046690e0f8dead104bc26fdaa5a741adc13722403"
+    },
+    {
+      "path": "generated-texts/gw14-right-supplements-metadata--gw-14-2-14-3-right-supplements-metadata.txt",
+      "bytes": 538,
+      "sha256": "067d05026f937e98471bb75a75e7128c58c281ac5a0be1751aa6af7869e191c0"
+    },
+    {
+      "path": "generated-texts/gw15-18-late-berlin-metadata--gw-15-18-berlin-writings-and-manuscripts-metadata.txt",
+      "bytes": 652,
+      "sha256": "5e487fbd63f7184e306a80612e8048bab0c8d777327fe2a49b233bc51b892790"
+    },
+    {
+      "path": "generated-texts/gw22-excerpts-notes-metadata--gw-22-exzerpte-und-notizen-metadata.txt",
+      "bytes": 515,
+      "sha256": "5bbb99033940c2de70fc467eefee8e96dbcbc30b73bd1b0566be1093b14e1b7e"
+    },
+    {
+      "path": "generated-texts/gw23-logic-lectures-metadata--gw-23-logic-lectures-metadata.txt",
+      "bytes": 537,
+      "sha256": "b21affe002276b405bb1bbe13b784574c7907aba2a1abc7b753307c40bcd07fb"
+    },
+    {
+      "path": "generated-texts/gw24-nature-lectures-metadata--gw-24-nature-lectures-metadata.txt",
+      "bytes": 523,
+      "sha256": "954cc23fdfa1f648b412cc857fa16b4c45bfb26f375e6ddcebdd54f3dcb0a944"
+    },
+    {
+      "path": "generated-texts/gw25-spirit-lectures-metadata--gw-25-subjective-spirit-lectures-metadata.txt",
+      "bytes": 519,
+      "sha256": "a26a04a219eed73af6708ab3b734021d4b2d05427bbcff03e22966ddd043382b"
+    },
+    {
+      "path": "generated-texts/gw26-right-lectures-metadata--gw-26-right-lectures-metadata.txt",
+      "bytes": 493,
+      "sha256": "6058e6089869e83fa34a7191c412a782fa8f4773190890350c60d27fc28d4798"
+    },
+    {
+      "path": "generated-texts/gw27-world-history-lectures-metadata--gw-27-world-history-lectures-metadata.txt",
+      "bytes": 339,
+      "sha256": "9f607f8de0724d6fabd4351963291515c0e7b654be7a5f3e730ab2b7fbc79489"
+    },
+    {
+      "path": "generated-texts/gw28-art-lectures-metadata--gw-28-art-lectures-metadata.txt",
+      "bytes": 557,
+      "sha256": "64bedc8dc79308d00c7f0ee3ae409253b4cce5d6e63f343b8793a3fb5843bcce"
+    },
+    {
+      "path": "generated-texts/gw29-religion-lectures-metadata--gw-29-religion-lectures-metadata.txt",
+      "bytes": 554,
+      "sha256": "ad953baeac69ba7891782421f2f8368a9c49b6d3942fa583a4a0713a8e8c5a3c"
+    },
+    {
+      "path": "generated-texts/gw3-early-excerpts-metadata--gw-3-fruehe-exzerpte-metadata.txt",
+      "bytes": 613,
+      "sha256": "d8c621abccfb08568fe10445ed1dfe3fa1ef613aee9017dda8f78eadecfc7a64"
+    },
+    {
+      "path": "generated-texts/gw30-history-of-philosophy-lectures-metadata--gw-30-history-of-philosophy-lectures-metadata.txt",
+      "bytes": 523,
+      "sha256": "6f0f45ed82f32ac48628d0ad4c4dfcbaea885ee8a68982f65ccfb442813be290"
+    },
+    {
+      "path": "generated-texts/gw6-8-jena-system-drafts-metadata--gw-6-8-jenaer-systementwuerfe-metadata.txt",
+      "bytes": 587,
+      "sha256": "76f8889ba02901bb158748705d23c0e7771fce13527be2a3f1f55a06f0ac6087"
+    },
+    {
+      "path": "generated-texts/history-of-philosophy--hegel-history-of-philosophy-address.txt",
+      "bytes": 23410,
+      "sha256": "1f18d275976bdff254b2c81c3f5109e093874ecd69d77b77d63ab30fe508d96a"
+    },
+    {
+      "path": "generated-texts/history-of-philosophy--hegel-history-of-philosophy.txt",
+      "bytes": 22372,
+      "sha256": "7d8ea560e5d9662dfbfeef07f8683512e535149ccb4390f0700b684e98fc96a5"
+    },
+    {
+      "path": "generated-texts/history-of-philosophy--hegel-s-history-of-philosophy-greek-philosophy.txt",
+      "bytes": 25572,
+      "sha256": "3639702c5becaf008a08653b4bc09675656329b6cf55fedb963d4f08bb2841b6"
+    },
+    {
+      "path": "generated-texts/history-of-philosophy--hegel-s-history-of-philosophy.txt",
+      "bytes": 14357,
+      "sha256": "8ae0f8da3fed79e81da8e41bda53ed02b3cc094fd1559a9316b3ba90b53cab0f"
+    },
+    {
+      "path": "generated-texts/history-of-philosophy--hegel-s-lectures-on-the-history-of-philosophy-part-two-philosophy-of-the-middle-.txt",
+      "bytes": 10970,
+      "sha256": "b300fcbb7202f97d68f3f24cd47bdfe737cc50217db510bd91bb0f7cb0aecf6b"
+    },
+    {
+      "path": "generated-texts/history-of-philosophy--hegel-s-lectures-on-the-history-of-philosophy.txt",
+      "bytes": 45006,
+      "sha256": "9e194e161e9f99878c26bfbbfe60e742f3d867666837322e7ba6d5561415b7b1"
+    },
+    {
+      "path": "generated-texts/history-of-philosophy--introduction-to-the-history-of-philosophy-by-hegel.txt",
+      "bytes": 108037,
+      "sha256": "d674fed74806e8ec0bcb6de98b0644e374ec1894b517fb27e5373fd9326f6217"
+    },
+    {
+      "path": "generated-texts/inaugural-address--inaugural-address-delivered-at-the-university-of-berlin-by-hegel-1818.txt",
+      "bytes": 16675,
+      "sha256": "8de1c8abf5956965696a063d7b604bca7b14ebab5b2748e962173127d988c3ab"
+    },
+    {
+      "path": "generated-texts/jena-lectures--jena-lectures-1805-6-by-hegel.txt",
+      "bytes": 17540,
+      "sha256": "1b74ea4d64190ceedb1c9532728f4607b4fd756e83f6addea2bdebf4a8c7bf19"
+    },
+    {
+      "path": "generated-texts/natural-law--on-the-scientific-ways-of-treating-natural-law-by-hegel-1803.txt",
+      "bytes": 13322,
+      "sha256": "f5b29faa262b5252ac6051c57c585b52d9492485dd6a395f8138df6fe8770cde"
+    },
+    {
+      "path": "generated-texts/objective-spirit--the-objective-spirit-from-the-encyclopaedia-ethics.txt",
+      "bytes": 83553,
+      "sha256": "763377364f1fbb2172a06505443985db2adcfe7d60d57623b9dcfebdaffc8d2a"
+    },
+    {
+      "path": "generated-texts/objective-spirit--the-objective-spirit-from-the-encyclopaedia-introduction.txt",
+      "bytes": 5949,
+      "sha256": "f7efba6f86e04b6e5a3c49e3bd8dc86ccdc5a5f4ebb4b92c496f2334de08cb5e"
+    },
+    {
+      "path": "generated-texts/objective-spirit--the-objective-spirit-from-the-encyclopaedia-law.txt",
+      "bytes": 9759,
+      "sha256": "858b96ee775b97cff61ba3346c8a0154d3cdf5e95ec644ad317b669ed3307128"
+    },
+    {
+      "path": "generated-texts/objective-spirit--the-objective-spirit-from-the-encyclopaedia-morality.txt",
+      "bytes": 9717,
+      "sha256": "226ef1caf0d264905944a3f0f3d7d7e2bda87af1faf079f425215e662092f3a9"
+    },
+    {
+      "path": "generated-texts/phenomenology--absolute-freedom-and-terror.txt",
+      "bytes": 18335,
+      "sha256": "b32056d16029420d574933289e8241edb0f0db055c5a59cf3151680993e37e35"
+    },
+    {
+      "path": "generated-texts/phenomenology--belief-and-pure-insight.txt",
+      "bytes": 15999,
+      "sha256": "7616d49acd91e5ca20295fef5fd06fed64a4c969d12eb36dfb9290560deff73a"
+    },
+    {
+      "path": "generated-texts/phenomenology--certainty-at-the-level-of-sense-experience.txt",
+      "bytes": 21994,
+      "sha256": "ecc0affd85b44ea1914d06859522963872a291e522cf58bb9e3253f26511a077"
+    },
+    {
+      "path": "generated-texts/phenomenology--conscience.txt",
+      "bytes": 57954,
+      "sha256": "520497499f22bab35138f221798c8092f575e5b58195042024d7474b147e60f8"
+    },
+    {
+      "path": "generated-texts/phenomenology--culture-and-its-field-of-actuality.txt",
+      "bytes": 60215,
+      "sha256": "35477fb6e452788954610534786ae5d603f5074bf0cb3ca8c01f60139dcaeb99"
+    },
+    {
+      "path": "generated-texts/phenomenology--dissemblance.txt",
+      "bytes": 21733,
+      "sha256": "8dc4d70b613f470bbb2a7b5a5fc67fe88a3c2a87fd00202913fb9a2a56cda3b6"
+    },
+    {
+      "path": "generated-texts/phenomenology--enlightenment.txt",
+      "bytes": 45654,
+      "sha256": "6229dba250d1530d78c71d4734de3b38337a5de3cb4bba9764906ee2e67160d8"
+    },
+    {
+      "path": "generated-texts/phenomenology--force-and-the-understanding-the-world-of-appearance-and-the-supersensible-world.txt",
+      "bytes": 54271,
+      "sha256": "61cc1bfb938568b5dd8480b7f713c2a9fa08248247920cb6d0483571d4a11ca5"
+    },
+    {
+      "path": "generated-texts/phenomenology--free-concrete-mind.txt",
+      "bytes": 7996,
+      "sha256": "5cd187dc9ef83544065b9451c78937eaf25096d2473b490204665fefba91961e"
+    },
+    {
+      "path": "generated-texts/phenomenology--guilt-and-destiny.txt",
+      "bytes": 9579,
+      "sha256": "30a6c7e9650237add8caca062217db91a09dae08d97d094f3fb0325d4c19cfea"
+    },
+    {
+      "path": "generated-texts/phenomenology--hegel-phenomenology-of-mind.txt",
+      "bytes": 50794,
+      "sha256": "39f85024885b1857b34014e418a7834c96660cfa0f2bfcba7d6a7dd814eafecd"
+    },
+    {
+      "path": "generated-texts/phenomenology--index-to-outline-of-phenomenology.txt",
+      "bytes": 800,
+      "sha256": "44a2f4e8b6268ecdf206f76ef04648da044e2b5d14aab69c2863834fec210be6"
+    },
+    {
+      "path": "generated-texts/phenomenology--individuality.txt",
+      "bytes": 3564,
+      "sha256": "79b4ce2852266884a86fa871533872e2113343a6c808708bfadbca434cf97d3d"
+    },
+    {
+      "path": "generated-texts/phenomenology--lordship-and-bondage.txt",
+      "bytes": 42844,
+      "sha256": "d7d0718fd2ae3619c93a13074b48b0aa78b0cb330248574cd09d11ee441cc453"
+    },
+    {
+      "path": "generated-texts/phenomenology--man-and-woman.txt",
+      "bytes": 25390,
+      "sha256": "aba8506557ef0f3f5422292b4d00115d1d07ce2eea1c69970b5da40a92e93e0f"
+    },
+    {
+      "path": "generated-texts/phenomenology--morality.txt",
+      "bytes": 2867,
+      "sha256": "85320eafdfcc0eaa7e9f5de31789ccf332d66fa5941b7bf9107dca3f8eba6a2b"
+    },
+    {
+      "path": "generated-texts/phenomenology--natural-religion.txt",
+      "bytes": 16831,
+      "sha256": "bd612e3f0902eae59a558838fe4f1b737854d57a583571a97e9c81f9531289cf"
+    },
+    {
+      "path": "generated-texts/phenomenology--observation-as-a-process-of-reason.txt",
+      "bytes": 6378,
+      "sha256": "700b34ccd3f3cd077bf0bebdf9c6e81d53a0005ea2fab3cb4a676c192477ea3f"
+    },
+    {
+      "path": "generated-texts/phenomenology--observation-of-nature.txt",
+      "bytes": 11076,
+      "sha256": "d38dda95167bd4429a0015d6818bda336c6e94763245991eb44e5397ef4c29ce"
+    },
+    {
+      "path": "generated-texts/phenomenology--perception-or-things-and-their-deceptiveness.txt",
+      "bytes": 29200,
+      "sha256": "ce831ff698d29879b84abe1777eed4201c898f40b8a0c1eb50b58e54fed2d068"
+    },
+    {
+      "path": "generated-texts/phenomenology--phenomenology-of-spirit.txt",
+      "bytes": 22405,
+      "sha256": "ec4ec609b9b237373c5317f62b979233a28a538c96e3c3c275b05aa4e52e7c3b"
+    },
+    {
+      "path": "generated-texts/phenomenology--physiognomy-phrenology.txt",
+      "bytes": 56375,
+      "sha256": "13d012ed0ef6cf723ee62d344ac21bee7bea3f1c8d6b2ad8fa424ad0f7893d60"
+    },
+    {
+      "path": "generated-texts/phenomenology--pleasure-and-necessity.txt",
+      "bytes": 16363,
+      "sha256": "86b8c774c103f61a3ce5a066b9d2a9a66fcc5907efbaef13c07233c7444a9938"
+    },
+    {
+      "path": "generated-texts/phenomenology--preface-to-the-phenomenology-of-spirit.txt",
+      "bytes": 99199,
+      "sha256": "d97a8d84e81f4a3f58b04687946eb749ae5c16b4467640ec3efe87450e13dfa3"
+    },
+    {
+      "path": "generated-texts/phenomenology--religion-in-general.txt",
+      "bytes": 33060,
+      "sha256": "e724f83ebb1cdad3ed9a3c94ab31f9dd567b78876168343cd5a39c9cd40544f7"
+    },
+    {
+      "path": "generated-texts/phenomenology--religion-in-the-form-of-art.txt",
+      "bytes": 5637,
+      "sha256": "6c07745a286f12890bfc09590f026f07bf059704239d5fcc1ef3983b90b94092"
+    },
+    {
+      "path": "generated-texts/phenomenology--revealed-religion.txt",
+      "bytes": 57146,
+      "sha256": "ff4a2b03444a98c4bb3332013688712b3e348416cede46ffed201f91d639744f"
+    },
+    {
+      "path": "generated-texts/phenomenology--self-contained-individuals.txt",
+      "bytes": 12743,
+      "sha256": "b8575cebe864f142642350aa2ca19de97bd66c8db7651212a2c246daff0440c9"
+    },
+    {
+      "path": "generated-texts/phenomenology--the-abstract-work-of-art.txt",
+      "bytes": 18593,
+      "sha256": "b9b5593941445705333c997c4a14f62950753c6551ff196e94d0fdc5f8f574d8"
+    },
+    {
+      "path": "generated-texts/phenomenology--the-ethical-order.txt",
+      "bytes": 2184,
+      "sha256": "14632c9285368e3dfbd398516736155f3d0c22f74cb10744f7cf401a0fedcb53"
+    },
+    {
+      "path": "generated-texts/phenomenology--the-living-work-of-art.txt",
+      "bytes": 8745,
+      "sha256": "db9288591d8736f92441b918c16ccc353ef0d2e4b31ee6055b0cccdbd3b03219"
+    },
+    {
+      "path": "generated-texts/phenomenology--the-moral-view-of-the-world.txt",
+      "bytes": 19444,
+      "sha256": "afd594a7a118ab566ab3767552d5cb374bb450a6263a2b334dae6bc28148f91d"
+    },
+    {
+      "path": "generated-texts/phenomenology--the-realisation-of-rational-self-consciousness.txt",
+      "bytes": 14456,
+      "sha256": "ab419475003fe266a0196e1ccc7b154640e9e9a96f0789a9cc710d7b645b5291"
+    },
+    {
+      "path": "generated-texts/phenomenology--the-spiritual-work-of-art.txt",
+      "bytes": 24509,
+      "sha256": "d17c8e3ccfa39ef4367e9456a3af7f8545492220105cb64cd14d1fa4fb7edc06"
+    },
+    {
+      "path": "generated-texts/phenomenology--the-truth-of-enlightenment.txt",
+      "bytes": 13376,
+      "sha256": "b5316b676e06353d964aa984188baf891015ee1ce93508b329f3e178e2d69bef"
+    },
+    {
+      "path": "generated-texts/phenomenology--the-truth-which-conscious-certainty-of-self-realises.txt",
+      "bytes": 16274,
+      "sha256": "cf76b31f6299b8b2a100bf8266bd223d5debbc0a09620e1bf626fb59c9fb2b6b"
+    },
+    {
+      "path": "generated-texts/phenomenology--the-world-of-spirit-in-self-estrangement.txt",
+      "bytes": 1214,
+      "sha256": "6f70f602bc59420e610d5deb4b8b0acd3b9916a9453eedcbb947bd4f3dc56556"
+    },
+    {
+      "path": "generated-texts/philosophical-propaedeutic-german--hegel-philosophische-prop-deutik-dritter-kursus-erste-abteilung.txt",
+      "bytes": 26737,
+      "sha256": "1da4b41bce46753abb485b1e352f654726154b9d29aa3cf6e44db21711eb6c9f"
+    },
+    {
+      "path": "generated-texts/philosophical-propaedeutic-german--hegel-philosophische-prop-deutik-dritter-kursus-zweite-abteilung.txt",
+      "bytes": 68501,
+      "sha256": "b045cdf7f50f94b4f452522c561768eaa9c2e3d0a6b3a858825aeeb6a6d4c5a8"
+    },
+    {
+      "path": "generated-texts/philosophical-propaedeutic-german--hegel-philosophische-prop-deutik-erster-kursus-dritter-abschnitt.txt",
+      "bytes": 2932,
+      "sha256": "9ac45b927a019611e56c774d3d615eff5872483941732ef9c1e44c8e33285d0b"
+    },
+    {
+      "path": "generated-texts/philosophical-propaedeutic-german--hegel-philosophische-prop-deutik-erster-kursus-einleitung.txt",
+      "bytes": 4824,
+      "sha256": "53d7d8ef459736642a1ed936e586b4097db806914f7cbb057ed3a8abe0f3f466"
+    },
+    {
+      "path": "generated-texts/philosophical-propaedeutic-german--hegel-philosophische-prop-deutik-erster-kursus-erl-uterungen-zur-einleitung.txt",
+      "bytes": 34431,
+      "sha256": "f72aedf2efabe8edf89d7d6eb0e2feccfc92a8f206740d45fad7fad7a23442a9"
+    },
+    {
+      "path": "generated-texts/philosophical-propaedeutic-german--hegel-philosophische-prop-deutik-erster-kursus-erster-abschnitt.txt",
+      "bytes": 25728,
+      "sha256": "65b6fed6b17d5253185dff9c94fc1d5c28c62b6606d54171a9467d3302bcb56b"
+    },
+    {
+      "path": "generated-texts/philosophical-propaedeutic-german--hegel-philosophische-prop-deutik-erster-kursus-zweiter-abschnitt.txt",
+      "bytes": 27226,
+      "sha256": "38631af811ac15e7e2a787244264640b4800ea222dd19d909113360eeb1a60a6"
+    },
+    {
+      "path": "generated-texts/philosophical-propaedeutic-german--hegel-philosophische-prop-deutik-zweiter-kursus-erste-abteilung.txt",
+      "bytes": 14325,
+      "sha256": "55928f164d843b0646e559ffe982ff368a0a2d0212eef4557db7e4ad56a533a6"
+    },
+    {
+      "path": "generated-texts/philosophical-propaedeutic-german--hegel-philosophische-prop-deutik-zweiter-kursus-zweite-abteilung.txt",
+      "bytes": 35157,
+      "sha256": "ac59487f10b5e1c4baaa24292a87ad4c4b48b5796eca7f2fd897f0f39b9fd969"
+    },
+    {
+      "path": "generated-texts/philosophy-of-history--general-introduction-to-the-philosophy-of-history-by-hegel.txt",
+      "bytes": 125857,
+      "sha256": "a23d90f26b914c4dbf7a0da259fe77d2c0b857a46cd6ac4cde7016f39b9cb727"
+    },
+    {
+      "path": "generated-texts/philosophy-of-history--hegel-s-lectures-on-the-philosophy-of-history.txt",
+      "bytes": 958,
+      "sha256": "f197a5a734c8bc8d576ec55be831f9ef1d88ccd7606dbbe1fcb2de58ed4385bc"
+    },
+    {
+      "path": "generated-texts/philosophy-of-history--hegel-s-philosophy-of-history.txt",
+      "bytes": 211952,
+      "sha256": "afbfb0de0bd20d07a870d62cdf853fb8dba2b845d52a054d00c7c0a3738f8a58"
+    },
+    {
+      "path": "generated-texts/philosophy-of-nature--contents-of-hegel-s-philosophy-of-nature.txt",
+      "bytes": 7237,
+      "sha256": "04fe7beaa8be93d0c973c1f631dffdf14ed01bb36bad895bf9640fdbea806f92"
+    },
+    {
+      "path": "generated-texts/philosophy-of-nature--hegel-s-philosophy-of-nature.txt",
+      "bytes": 30423,
+      "sha256": "0b9e878dd0d56eccc3f6e595ba4f41a3bac6afc08987111e6b7f14303c227914"
+    },
+    {
+      "path": "generated-texts/philosophy-of-religion--introduction-to-the-philosophy-of-religion-by-hegel.txt",
+      "bytes": 41240,
+      "sha256": "a0c000cf0e022094396971ee4e8773fb72927297c776d14eb49250a1c524f909"
+    },
+    {
+      "path": "generated-texts/philosophy-of-religion--the-absolute-religion-by-hegel.txt",
+      "bytes": 27964,
+      "sha256": "1f999b9ee4ad794da13f334b75c7a6c2316a76e5416bbb3c5a924b218414ea80"
+    },
+    {
+      "path": "generated-texts/philosophy-of-right--contents-of-hegel-s-philosophy-of-right.txt",
+      "bytes": 30827,
+      "sha256": "6d47d824173741c4d6ead010098e9d453b7880d407c2bd71365cfd39bd0fd16c"
+    },
+    {
+      "path": "generated-texts/philosophy-of-right--hegel-s-philosophy-of-right-abstract-right.txt",
+      "bytes": 14249,
+      "sha256": "79a48ebb4f162d975c3aba13b55fde3b84f8c5adc6c15ffc5e906510585f66de"
+    },
+    {
+      "path": "generated-texts/philosophy-of-right--hegel-s-philosophy-of-right-civil-society.txt",
+      "bytes": 110459,
+      "sha256": "63ccf4d303cd359b26fec5571bd1b69038060aaaf6916d3603bcff4454557e5a"
+    },
+    {
+      "path": "generated-texts/philosophy-of-right--hegel-s-philosophy-of-right-contract.txt",
+      "bytes": 19559,
+      "sha256": "a1e8fde1a8317836474400b34e4059bb8aee09df354fa5783069f05e1cbb01e2"
+    },
+    {
+      "path": "generated-texts/philosophy-of-right--hegel-s-philosophy-of-right-ethical-life.txt",
+      "bytes": 19600,
+      "sha256": "ef681b5cbb7153747a3d020f18121a5b1688015b315501ea16dc2bd6a4680b49"
+    },
+    {
+      "path": "generated-texts/philosophy-of-right--hegel-s-philosophy-of-right-introduction.txt",
+      "bytes": 78179,
+      "sha256": "c26328f45fc9dfcdc3c7f33e5ccbff1861fb52feec9a1c653b50e8585d5ed790"
+    },
+    {
+      "path": "generated-texts/philosophy-of-right--hegel-s-philosophy-of-right-morality.txt",
+      "bytes": 110094,
+      "sha256": "ff37639db52c46fb977f769f25c09521451973999bffa44bfc19cad289275d82"
+    },
+    {
+      "path": "generated-texts/philosophy-of-right--hegel-s-philosophy-of-right-preface.txt",
+      "bytes": 30685,
+      "sha256": "3680f2f3b8a9450ed80e4373e81f24136743301bc3ade0091a881e3d3f173a7e"
+    },
+    {
+      "path": "generated-texts/philosophy-of-right--hegel-s-philosophy-of-right-property.txt",
+      "bytes": 62965,
+      "sha256": "4914d50e946b000c31a6c89dfec1a101424d59c848ccdcf5104b743f1d99f6ef"
+    },
+    {
+      "path": "generated-texts/philosophy-of-right--hegel-s-philosophy-of-right-the-family.txt",
+      "bytes": 42218,
+      "sha256": "59907e6638224145b23cc7c773d56c6d273f0808473efb8abc486a6efcb564cf"
+    },
+    {
+      "path": "generated-texts/philosophy-of-right--hegel-s-philosophy-of-right-the-state.txt",
+      "bytes": 14508,
+      "sha256": "a51fb4d983afc787765b7cd9a29e4fe7bbaacb95c3a04e15100bc9d5ffc6520e"
+    },
+    {
+      "path": "generated-texts/positivity-of-christian-religion--on-the-prospects-for-a-folk-religion-by-hegel.txt",
+      "bytes": 51916,
+      "sha256": "1c6ec659b2d09f67b5e667e8d773da280509b8417eba634035ea00645482381f"
+    },
+    {
+      "path": "generated-texts/positivity-of-christian-religion--the-positivity-of-the-christian-religion-by-hegel-1795.txt",
+      "bytes": 26159,
+      "sha256": "7d094758e3b3119dfab8958f54af8810207e190f96f78f02bd682bf9dae4c82d"
+    },
+    {
+      "path": "generated-texts/proofs-of-god--the-philosophical-propadeutic-by-hegel-1808-1811.txt",
+      "bytes": 14193,
+      "sha256": "77bfab4455bd7b3afdc632deb12de0e8e2d0c3b337973b3256ef89a95fd373f1"
+    },
+    {
+      "path": "generated-texts/science-of-logic--book-i-of-hegel-s-science-of-logic-being.txt",
+      "bytes": 69099,
+      "sha256": "843c49786225a47eb023efe6bf5227a9aea535af6d279292967e7b8b2f232b09"
+    },
+    {
+      "path": "generated-texts/science-of-logic--book-i-of-hegel-s-science-of-logic-introduction.txt",
+      "bytes": 42859,
+      "sha256": "82236b6f24e4671ec3df52c33030c3ae07bdae6fd31be939f4665c5e6cd66f94"
+    },
+    {
+      "path": "generated-texts/science-of-logic--book-ii-of-hegel-s-science-of-logic-essence.txt",
+      "bytes": 49248,
+      "sha256": "478b1aeb43d147264e2495e0f9a2c4ed535b8d9245e34d42a63dfe18f61ab4c9"
+    },
+    {
+      "path": "generated-texts/science-of-logic--book-iii-of-hegel-s-science-of-logic-cont-d-the-idea.txt",
+      "bytes": 54269,
+      "sha256": "5643ae8a529c58b00db126783848c6f9f2055f5e2bac768e97cab94d28f8c7e9"
+    },
+    {
+      "path": "generated-texts/science-of-logic--index-to-the-science-of-logic.txt",
+      "bytes": 603,
+      "sha256": "7e8130d2ee44d77a6e098946c53d4ebfa0ce45001610d238ea8bbb053b25c6f4"
+    },
+    {
+      "path": "generated-texts/science-of-logic--objectivity.txt",
+      "bytes": 43288,
+      "sha256": "2cc5b0d45af173c1d261d9dd8c042886de10bcb2b2ba2a6715be85c9c13e4943"
+    },
+    {
+      "path": "generated-texts/science-of-logic--table-of-contents-for-hegel-s-science-of-logic.txt",
+      "bytes": 172233,
+      "sha256": "7f6ca8358fc5221d64ae83ac87cada2242162feaa77483e602fa4a1ad6e8138a"
+    },
+    {
+      "path": "generated-texts/science-of-logic--the-notion-in-general.txt",
+      "bytes": 74568,
+      "sha256": "37de107ebfe2bc04a7f7b96677e0d6a428f868fd131d5736715f1510d7e54398"
+    },
+    {
+      "path": "generated-texts/shorter-logic--hegel-s-introduction-to-the-shorter-logic.txt",
+      "bytes": 44367,
+      "sha256": "e620301e6679f9fac9d63a645430ecc60011598c48c833c61dbc493ac780f672"
+    },
+    {
+      "path": "generated-texts/shorter-logic--hegel-the-doctrine-of-the-notion.txt",
+      "bytes": 31748,
+      "sha256": "81f5bb89a303bd36b4e7fa1f4748749ea5eb5531da55105d158c4443f3b9154d"
+    },
+    {
+      "path": "generated-texts/shorter-logic--hegel-the-notion-part-b-the-object.txt",
+      "bytes": 28843,
+      "sha256": "13fde6a7125c52ec75aae4bf5cf49d86bf49f4c798380f5e880761421ef44a09"
+    },
+    {
+      "path": "generated-texts/shorter-logic--ii-preliminary-notion.txt",
+      "bytes": 51573,
+      "sha256": "12923594910bae3977b6dc724def59af6f94aa23c43299c7848890aeda927aee"
+    },
+    {
+      "path": "generated-texts/shorter-logic--iii-first-attitude-of-thought-to-objectivity.txt",
+      "bytes": 27120,
+      "sha256": "c09a3a4cc725d285bee2482f793ff70dd3a541835b0145893ce671f401ec897b"
+    },
+    {
+      "path": "generated-texts/shorter-logic--iv-second-attitude-of-thought-to-objectivity.txt",
+      "bytes": 58897,
+      "sha256": "327d64c468d8739c02c8de0616d173f03c69223c5e0f358059f3e785de17c82f"
+    },
+    {
+      "path": "generated-texts/shorter-logic--logic-further-defined-and-divided-hegel.txt",
+      "bytes": 13733,
+      "sha256": "830f87d4631aaf5af1b4ab7cd0cda5052f76740c80eaa5a6413e197d3988a7bf"
+    },
+    {
+      "path": "generated-texts/shorter-logic--quantity.txt",
+      "bytes": 30203,
+      "sha256": "e3fe10cd7659f23dff4308241d12246d21cf09cf13c1037e9341d5cc7a6889b1"
+    },
+    {
+      "path": "generated-texts/shorter-logic--the-doctrine-of-being-hegel.txt",
+      "bytes": 58554,
+      "sha256": "631a1cbdd3c83d036866ba1fc9104d2ada5e108bbe71af638e4b2aabd3bd30ca"
+    },
+    {
+      "path": "generated-texts/shorter-logic--the-doctrine-of-essence-actuality-hegel.txt",
+      "bytes": 47827,
+      "sha256": "a4ae41f566e313b667a3046cc458aad769485e2ecfd4b478e509182994878c6c"
+    },
+    {
+      "path": "generated-texts/shorter-logic--the-doctrine-of-essence-appearance-hegel.txt",
+      "bytes": 31440,
+      "sha256": "9b8fc63a3155fb58732b4f1be853065237a3a9abe3a08aba6ea2aeaa096fdd43"
+    },
+    {
+      "path": "generated-texts/shorter-logic--the-doctrine-of-essence-hegel.txt",
+      "bytes": 53773,
+      "sha256": "643490d1bb91100da4302c229b9f972f3139675ce876ff2c4195eb38c788b9d6"
+    },
+    {
+      "path": "generated-texts/shorter-logic--the-doctrine-of-the-notion-3rd-part-the-idea-hegel.txt",
+      "bytes": 43235,
+      "sha256": "e16a8ced7ad4eb74ed8723aa62876f1ae9851d6ed8e23a40bc8c5c62d0f0f157"
+    },
+    {
+      "path": "generated-texts/shorter-logic--the-judgment.txt",
+      "bytes": 18665,
+      "sha256": "f6349b7a8799b6857274068b4f3ea446711d76b95f0e4cf6782f7296c4bfb438"
+    },
+    {
+      "path": "generated-texts/shorter-logic--the-syllogism.txt",
+      "bytes": 24098,
+      "sha256": "705c86585d8344b7bc20f40dafbaa8a9db420127577ba78b196596e4b82861c4"
+    },
+    {
+      "path": "generated-texts/shorter-logic--v-third-attitude-of-thought-to-objectivity.txt",
+      "bytes": 32131,
+      "sha256": "b7d7a14a2e7a593395513fb9ffb8ef957660cb22445f709eda18339254c0574d"
+    },
+    {
+      "path": "generated-texts/shorter-logic--vi-logic-further-defined-and-divided.txt",
+      "bytes": 8383,
+      "sha256": "ee67f9dbf485b975ba2c39d83b5dd478e0dc6688bfadb69a69329e6b7ecef9d1"
+    },
+    {
+      "path": "generated-texts/subjective-spirit--index-to-the-subjective-spirit.txt",
+      "bytes": 863,
+      "sha256": "f1436494c0570786750ac3480e6dc540d9c2548dc5dc23bc7da996fc306caf7c"
+    },
+    {
+      "path": "generated-texts/subjective-spirit--the-subjective-spirit.txt",
+      "bytes": 29456,
+      "sha256": "d8c313dfe8b5053fd5636f2b67b1e186bc851386ae25e13ae7bba2562b2639d3"
+    },
+    {
+      "path": "generated-texts/subjective-spirit-shorter--index-to-the-subjective-spirit.txt",
+      "bytes": 519,
+      "sha256": "bc32d2d6bda08fc65135b84bf4b60b75cfea6d0052d29b74345f689457808ee3"
+    },
+    {
+      "path": "generated-texts/subjective-spirit-shorter--the-subjective-spirit.txt",
+      "bytes": 102901,
+      "sha256": "8aac47d10ef74d25ef6d8e25c0943aa774c5478a96ec21af67b3586620ec38fe"
+    },
+    {
+      "path": "generated-texts/system-of-ethical-life--system-of-ethical-life-by-hegel-1802.txt",
+      "bytes": 73425,
+      "sha256": "3921834b6d5da7a55f4dcef9a6468ec4a12f5a50d10779989ad01090942118e9"
+    },
+    {
+      "path": "generated-texts/tercentenary-speech--address-on-the-tercentenary-of-the-submission-of-the-augsburg-confession-by-hege.txt",
+      "bytes": 30742,
+      "sha256": "99f3746f563c217ef363784468e7bb3d9a540541bef8e755e321fbdf0c5ca861"
+    },
+    {
+      "path": "generated-texts/theses-1801--hegel-s-theses-1801.txt",
+      "bytes": 1541,
+      "sha256": "1166b074b2da59c2696e5bf77a1bd4df39fb09f5b98199af0135f1ea4da894c3"
+    },
+    {
+      "path": "generated-texts/who-thinks-abstractly--who-thinks-abstractly.txt",
+      "bytes": 10678,
+      "sha256": "5948768555f793697f01f82a34de181696a07495c4b9a415786b9932955c263e"
+    },
+    {
+      "path": "manifest.json",
+      "bytes": 27527,
+      "sha256": "0b9a93cbe8d693e1f590e6f1928f59b016c137500006adaf54cdff3c5bd6632d"
+    },
+    {
+      "path": "originals/hegel-14-bundle/hegel-works-14.azw3",
+      "bytes": 14888825,
+      "sha256": "1f3a2e1ea72c49835b2db2331e34d7de8a69596bc63c73793bcfea2ccc4c2bf8"
+    },
+    {
+      "path": "originals/hegel-14-bundle/hegel-works-14.epub",
+      "bytes": 9519862,
+      "sha256": "1eae9dc68e63aa4f89bfc73ce8e3e0b7dc69f38aadce1b3c6ca7703a0ff02b2c"
+    },
+    {
+      "path": "originals/hegel-14-bundle/hegel-works-14.mobi",
+      "bytes": 14229326,
+      "sha256": "22a787c0468edf51b72e0c6206c7adb546ef221d3a947e2f5c0403566884ced5"
+    },
+    {
+      "path": "originals/hegel-14-bundle/hegel-works-14.pdf",
+      "bytes": 28252325,
+      "sha256": "0e52c7ba82e133f545c0a782fa6a13ddeab683c0aef59c166e5d52cb198efd37"
+    },
+    {
+      "path": "originals/hegel-14-bundle/hegel-works-14.txt",
+      "bytes": 12326399,
+      "sha256": "d2d47fc034119c90da08270387880ecb0e466faac2091db031ec74c87352c7ca"
+    },
+    {
+      "path": "originals/phenomenology-pdfs/phenomenology-helin-down.pdf",
+      "bytes": 16990067,
+      "sha256": "46ec4971370d4389375dab336ead1c9307f6c31411853381006c58df022e6213"
+    },
+    {
+      "path": "originals/phenomenology-pdfs/phenomenology-helin-up.pdf",
+      "bytes": 127076137,
+      "sha256": "ce63c37af9dfa6268394d4cb5f10749e4dae72e7154fbca38db9a2c2e8b155d3"
+    },
+    {
+      "path": "originals/phenomenology-pdfs/phenomenology-xiangang-ocr.pdf",
+      "bytes": 21318429,
+      "sha256": "0de4f70c48a54c28eb11010cdd8eba7c6ffe600f2e059d0f446ccc63e605d5cd"
+    },
+    {
+      "path": "README.md",
+      "bytes": 937,
+      "sha256": "f800d35c84977997302b1c676c8efac98b85b66927a265b4b37e5c9eed012009"
+    },
+    {
+      "path": "texts/local-bundle--aesthetics-vol1.txt",
+      "bytes": 745183,
+      "sha256": "da60d71cdcfc5674567b469ca8161df155836fddb6d7d69d5246808d404f103c"
+    },
+    {
+      "path": "texts/local-bundle--aesthetics-vol2.txt",
+      "bytes": 725710,
+      "sha256": "17775ff5f9b35c22582ccf0bc7876daa79b5853cb728a66a490dda7d0968fb87"
+    },
+    {
+      "path": "texts/local-bundle--aesthetics-vol3.txt",
+      "bytes": 768732,
+      "sha256": "e80a1f493eabe7570a54359fb920f77df58e408671dd717f225141482acb6049"
+    },
+    {
+      "path": "texts/local-bundle--aesthetics-vol4.txt",
+      "bytes": 795509,
+      "sha256": "1c1e97539ce8b9df7476719290dbb8407991459f107651cea0cef5536466742d"
+    },
+    {
+      "path": "texts/local-bundle--early-theological-writings.txt",
+      "bytes": 1000228,
+      "sha256": "a09d37e6f5b660a1b856c130bf3a2d4ccc536b3bdc5684f97c810071b41a5d57"
+    },
+    {
+      "path": "texts/local-bundle--history-of-philosophy-vol1.txt",
+      "bytes": 800989,
+      "sha256": "cbc3e0fa03abee13e34f5d5a0a512dcd33865ddb8e262591a0d93bc28c628069"
+    },
+    {
+      "path": "texts/local-bundle--history-of-philosophy-vol2.txt",
+      "bytes": 810510,
+      "sha256": "6158c2342177ba8eebab3a85ae65486e169949a5da1a48380716a284c7c1ce3e"
+    },
+    {
+      "path": "texts/local-bundle--history-of-philosophy-vol3.txt",
+      "bytes": 812344,
+      "sha256": "dd2e851d9fa563999cac9eaacffc45c968c6f7b08ec038276b623d6f5edb44b7"
+    },
+    {
+      "path": "texts/local-bundle--history-of-philosophy-vol4.txt",
+      "bytes": 1019862,
+      "sha256": "d4c385cc90876c15fd567ac8b6c73f1abf24a137f5eb79e3ee7794501b59de4f"
+    },
+    {
+      "path": "texts/local-bundle--philosophy-of-nature.txt",
+      "bytes": 1327043,
+      "sha256": "02d1c163406a85fe0dd27f7319cd0ab0b63fc52f432320ab15cc67d57808d5f7"
+    },
+    {
+      "path": "texts/local-bundle--philosophy-of-right.txt",
+      "bytes": 784572,
+      "sha256": "8a25ef04a8dd8a7a9ad5881036b91dc4c2ca5ee9cdccc511f27256cb0c338f0d"
+    },
+    {
+      "path": "texts/local-bundle--science-of-logic-down.txt",
+      "bytes": 1026560,
+      "sha256": "21097f4fe29c97bf5cdf94b1b8b89b5e9b98264d7be0471cdbaf5fb67951194e"
+    },
+    {
+      "path": "texts/local-bundle--science-of-logic-up.txt",
+      "bytes": 796566,
+      "sha256": "7d9fc5ee7aafad19912258d1ab704722f88f02bc9e5a38799170af820d8b5aee"
+    },
+    {
+      "path": "texts/local-bundle--shorter-logic.txt",
+      "bytes": 856161,
+      "sha256": "a0dfe952bb1b2a79a49d0444aa467b2739aaa3dd3ecee1b9a6354b4c53438819"
+    },
+    {
+      "path": "texts/local-pdf--phenomenology-xiangang-ocr.txt",
+      "bytes": 1412982,
+      "sha256": "7aa57f137d19bc1d4205d4207967e09faf9f63758f3a70e7837bc2826b026adc"
+    }
+  ]
 }

@@ -1,26 +1,25 @@
-# Chinese Corpus Placement
+# 中文语料目录
 
-Use this folder for Chinese Hegel translations or Chinese OCR/text assets整理自
-互联网上可公开访问的资料.
+这个目录用于存放中文黑格尔语料、中文整理文本、光学识别文本以及来源说明。
 
-Recommended layout for the public-release corpus:
+当前公开版本中的中文材料整理自互联网上可公开访问的资料，并作为黑格尔沙龙的中文语料入口使用。
+
+建议目录结构：
 
 ```text
 data/corpus/chinese/
-  texts/        Clean `.txt` or `.md` translation text.
-  pdfs/         Redistributable PDF scans or born-digital PDFs.
-  ocr/          OCR output derived from redistributable scans.
-  metadata/     Source URL, edition, license/status, translator, and provenance notes.
+  texts/        整理后的中文文本。
+  generated-texts/  生成的中文辅助文本。
+  originals/    原始 PDF、电子书和大文件，使用 Git LFS 存储。
+  metadata/     来源、版本、译者、状态和校验清单。
 ```
 
-If future material is private, purchased, classroom-only, or otherwise uncertain,
-do not commit it here. Put it in:
+如果以后新增私人资料、课堂资料、购买资料或来源不确定的材料，不要提交到这个目录。请放在：
 
 ```text
 local-resources/chinese/
 ```
 
-Then mount or copy it into a private deployment after cloning the repository.
+私有部署时，可以再把这些材料挂载或复制进去。
 
-Large binary source files such as PDF, EPUB, MOBI, and AZW3 are stored with Git
-LFS. Text and metadata files are stored directly in Git.
+PDF、EPUB、MOBI、AZW3 等较大的二进制文件使用 Git LFS 存储；普通文本和元数据直接存储在 Git 中。
