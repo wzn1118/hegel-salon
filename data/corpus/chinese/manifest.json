@@ -1,0 +1,485 @@
+{
+  "generatedAt": "2026-04-12T05:30:00.000Z",
+  "localTextInstructions": "Place UTF-8 Chinese translation text files with visible section markers under E:\\hegel-salon\\data\\corpus\\chinese\\texts and register them in localTexts below. For section-level parallel citation, keep the original section numbers such as 閹?4, 閹?15, 閹?381.",
+  "entries": [
+    {
+      "id": "pr-shangwu-classic",
+      "workId": "philosophy-of-right",
+      "editionId": "pr-shangwu-classic",
+      "editionLabel": "婵炲娲栭幗顒傗偓娑崇畱鐢偊鎮?闁哥喎妫楁慨鐔虹磼韫囨挸鎮佺紒?,
+      "termProfileId": "local-bundle-classic",
+      "precedence": 2,
+      "quoteStyle": "bibliographic",
+      "conceptCoverage": ["freiheit", "wille", "recht", "sittlichkeit", "gegenstand-objekt", "willkuer"],
+      "families": ["philosophy-of-right"],
+      "chineseTitle": "婵炲娲栭幗顒傗偓娑崇畱鐢偊鎮?,
+      "translator": "闁肩厧鍟竟? 鐎殿喚濮崇槐鎺戔枖?,
+      "publisher": "闁哥喎妫楁慨鐔煎础妫颁礁濮涘Λ?,
+      "publicationLine": "婵懓顦抽惁褎绋夐弽顐ｆ珪閻庢冻闄勫﹢鎶藉触瀹ュ牊鍟垮☉鎾寸◥閸? 闁哥喎妫楁慨鐔煎棘閸モ晝褰块悹鍥х摠濡叉垹鎷犻妷銈堝幀閻犲洦鍨跺﹢浼村礆濠靛牆顣煎ù?961妤?,
+      "verification": "official publisher catalog bundle plus official publisher history/article and lawful ebook listing; full Chinese body text not loaded locally",
+      "sourceUrls": [
+        "https://www.cp.com.cn/book/978-7-100-08242-6_26.html",
+        "https://www.cp.com.cn/ourselves/history/dsj.html?year=2021",
+        "https://www.cp.com.cn/Content/2022/06-07/1539173989.html",
+        "https://pic.cp.com.cn/Files/2014/3/14/83954504641ab7aa-a.pdf",
+        "https://e.dangdang.com/products/1901384186.html"
+      ],
+      "notes": "Treat this as the standard older 闁哥喎妫楁慨鐔烘嫚閹寸偞鎷?path. The Dangdang Cloud Reading listing is treated as lawful ebook access using the闁肩厧鍟竟鍐Υ娴ｅ摜鐐婂ù闂寸劍閸㈣尙鎷犻幋鐐存嫳, but not as an official publisher page."
+    },
+    {
+      "id": "pr-renmin-collected",
+      "workId": "philosophy-of-right",
+      "editionId": "pr-renmin-collected",
+      "editionLabel": "婵炲娲栭幗顒傗偓娑崇畱鐢偊鎮?濞存粎鍎ら惃顖炴媼濡炲墽绋婇梻鍡楁閸?,
+      "termProfileId": "bibliographic-only",
+      "precedence": 3,
+      "quoteStyle": "bibliographic",
+      "conceptCoverage": ["freiheit", "wille", "recht", "sittlichkeit", "gegenstand-objekt", "willkuer"],
+      "families": ["philosophy-of-right"],
+      "chineseTitle": "婵炲娲栭幗顒傗偓娑崇畱鐢偊鎮?,
+      "translator": "闂侇厽鎸搁悾銊︽償?,
+      "publisher": "濞存粎鍎ら惃顖炲礄閾忕懓顣肩紒鈧?,
+      "publicationLine": "2016, 濮掓稒鍨堕悧鍝ヤ焊閺冨洦鍟垮ù锝嗙矒濞?缂?闁?,
+      "verification": "library catalog verified; full Chinese body text not loaded locally",
+      "sourceUrls": [
+        "https://libopac.sicnu.edu.cn/opac/book/60f22c85c94644a39f4c3c5448dd4a86"
+      ],
+      "notes": "This is the newer 濞存粎鍎ら惃顖炴偋?route aligned with the People series."
+    },
+    {
+      "id": "phen-shangwu-classic",
+      "workId": "phenomenology",
+      "editionId": "phen-shangwu-classic",
+      "editionLabel": "缂侇喖澧介〃锝夋偝閹峰矁鏉介悗?閻犳劖妞界花楣冩偝鐎ｎ剙绗柛蹇旀綑閺呫垽宕濋敍鍕疇",
+      "termProfileId": "helin-shangwu",
+      "precedence": 5,
+      "quoteStyle": "bibliographic",
+      "conceptCoverage": ["geist", "substanz", "subjekt", "begriff", "gegenstand-objekt"],
+      "families": ["phenomenology"],
+      "chineseTitle": "缂侇喖澧介〃锝夋偝閹峰矁鏉介悗?,
+      "translator": "閻犳劖妞界花? 闁绘粌顑囩敮鐘诲礂?,
+      "publisher": "闁哥喎妫楁慨鐔煎础妫颁礁濮涘Λ?,
+      "publicationLine": "official 闁哥喎妫楁慨?pages preserve the two-volume route and translator note; later reprints continue in 婵懓顦抽惁褎绋夐弽顐ｆ珪閻庢冻闄勫﹢鎶藉触瀹ュ牊鍟垮☉鎾寸◥閸?,
+      "verification": "official publisher product pages, lawful ebook listing, and front-matter checked; full Chinese body text not loaded locally",
+      "sourceUrls": [
+        "https://www.cp.com.cn/book/7-100-00566-3_40.html",
+        "https://www.cp.com.cn/book/7-100-02342-4_46.html",
+        "https://www.cp.com.cn/book/cecbcbdc-5.html",
+        "https://read.douban.com/ebook/22463770/",
+        "https://www.99csw.com/book/1128/32802.htm"
+      ],
+      "notes": "The checked 闁哥喎妫楁慨?pages include the two-volume route and confirm 閻犳劖妞界花楣冨Υ娴ｅ搫绔鹃柣婊勭墪閸?as the translation team. The Douban Read listing is treated as lawful ebook access. The 99csw link appears to mirror this Chinese translation online, but it is not treated as an official publisher source."
+    },
+    {
+      "id": "phen-renmin-collected",
+      "workId": "phenomenology",
+      "editionId": "phen-renmin-collected",
+      "editionLabel": "缂侇喖澧介〃锝夋偝閹峰矁鏉介悗?闁稿繐鐗嗛崹鐗堢閻戞姣岀紒?,
+      "termProfileId": "xiangang-renmin",
+      "precedence": 4,
+      "quoteStyle": "bibliographic",
+      "conceptCoverage": ["geist", "substanz", "subjekt", "begriff", "gegenstand-objekt"],
+      "families": ["phenomenology"],
+      "chineseTitle": "缂侇喖澧介〃锝夋偝閹峰矁鏉介悗?,
+      "translator": "闁稿繐鐗嗛崹?,
+      "publisher": "濞存粎鍎ら惃顖炲礄閾忕懓顣肩紒鈧?,
+      "publicationLine": "濮掓稒鍨堕悧鍝ヤ焊閺冨洦鍟垮ù锝嗙矒濞?缂?闁?path",
+      "verification": "publisher-series announcement plus catalog/community catalog snippets; full Chinese body text not loaded locally",
+      "sourceUrls": [
+        "https://culture.people.com.cn/n/2015/0723/c172318-27351959.html",
+        "https://book.douban.com/subject/25766591//",
+        "https://item.xhsd.com/items/1010000101546944"
+      ],
+      "notes": "Use as the modern 濞存粎鍎ら惃顖炴偋?path. Exact publisher metadata page was not directly opened successfully in this round."
+    },
+    {
+      "id": "logic-shangwu-xiaoluoji",
+      "workId": "science-of-logic",
+      "editionId": "logic-shangwu-xiaoluoji",
+      "editionLabel": "閻忓繐绻橀埀顒佹缁?闁哥喎妫楁慨鐔虹棯?,
+      "termProfileId": "local-bundle-classic",
+      "precedence": 3,
+      "quoteStyle": "bibliographic",
+      "conceptCoverage": ["begriff", "substanz", "subjekt"],
+      "families": ["science-of-logic"],
+      "chineseTitle": "閻忓繐绻橀埀顒佹缁?,
+      "translator": "閻犳劖妞界花?,
+      "publisher": "闁哥喎妫楁慨鐔煎础妫颁礁濮涘Λ?,
+      "publicationLine": "2004 reissue page, ISBN 978-7-100-00558-6",
+      "verification": "official publisher product page and official catalog bundle checked; full Chinese body text not loaded locally",
+      "sourceUrls": [
+        "https://www.cp.com.cn/book/48e19d31-6.html",
+        "https://www.cp.com.cn/book/978-7-100-08242-6_26.html",
+        "https://www.cp.com.cn/Content/2021/06-09/1010155597.html",
+        "https://www.cp.com.cn/Content/2021/08-23/0956022137.html"
+      ],
+      "notes": "This remains the default Chinese terminology anchor for many established Chinese Hegel discussions."
+    },
+    {
+      "id": "logic-renmin-series",
+      "workId": "science-of-logic",
+      "editionId": "logic-renmin-series",
+      "editionLabel": "闂侇偅妲掔欢顐も偓?濞存粎鍎ら惃顖炴媼濡炲墽绋婇梻鍡楁閸?,
+      "termProfileId": "bibliographic-only",
+      "precedence": 4,
+      "quoteStyle": "bibliographic",
+      "conceptCoverage": ["begriff", "substanz", "subjekt"],
+      "families": ["science-of-logic"],
+      "chineseTitle": "闂侇偅妲掔欢顐も偓?I / 闂侇偅妲掔欢顐も偓?II",
+      "translator": "闁稿繐鐗嗛崹?,
+      "publisher": "濞存粎鍎ら惃顖炲礄閾忕懓顣肩紒鈧?,
+      "publicationLine": "濮掓稒鍨堕悧鍝ヤ焊閺冨洦鍟垮ù锝嗙矒濞?volume path; exact volume metadata still to be hardened in a later round",
+      "verification": "secondary catalog and review snippets only; full Chinese body text not loaded locally",
+      "sourceUrls": [
+        "https://book.douban.com/review/12578202/",
+        "https://book.douban.com/subject/27198106/"
+      ],
+      "notes": "Retain as a tracked path, but do not overstate edition precision until an official page is checked directly."
+    },
+    {
+      "id": "spirit-renmin-jingshenzhexue",
+      "families": ["encyclopaedia-spirit"],
+      "chineseTitle": "缂侇喖澧介〃锝夊传閹绘帩鍔?,
+      "translator": "闁哄鍔庨〃娑㈡⒔?,
+      "publisher": "濞存粎鍎ら惃顖炲礄閾忕懓顣肩紒鈧?,
+      "publicationLine": "濮掓稒鍨堕悧鍝ヤ焊閺冨洦鍟垮ù锝嗙矒濞?corresponding volume path",
+      "verification": "official 濞存粎鍎ら惃?series announcement snippet plus academic syllabus/reference pages; full Chinese body text not loaded locally",
+      "sourceUrls": [
+        "https://culture.people.com.cn/n/2015/0723/c172318-27351959.html",
+        "https://phil.bnu.edu.cn/xshd/86926.html",
+        "https://chinese-thought.ecnu.edu.cn/_upload/article/files/a3/2b/366df8c14a82bce076b7a8e52387/da6c1571-b868-47dd-bfd8-297364b0fa24.pdf"
+      ],
+      "notes": "Good modern Chinese path for Philosophy of Spirit. Exact product metadata still needs a stable official page fetch."
+    },
+    {
+      "id": "nature-renmin-ziranzhexue",
+      "families": ["encyclopaedia-nature"],
+      "chineseTitle": "闁煎浜為崝褔宕幓鎺濆妳",
+      "translator": "",
+      "publisher": "濞存粎鍎ら惃顖炲礄閾忕懓顣肩紒鈧?,
+      "publicationLine": "濮掓稒鍨堕悧鍝ヤ焊閺冨洦鍟垮ù锝嗙矒濞?corresponding volume path",
+      "verification": "series-level path only; translator and exact metadata not yet hardened in this round",
+      "sourceUrls": [
+        "https://book.douban.com/review/12578202/",
+        "https://book.douban.com/subject/35737005/"
+      ],
+      "notes": "Kept in the ledger so future local text ingestion and official-page verification can attach cleanly."
+    },
+    {
+      "id": "religion-renmin-lectures",
+      "families": ["philosophy-of-religion"],
+      "chineseTitle": "閻庤顨嗛弳鈧柛婵囧絻椤掔喎顭抽弮鍥跺敼鐟?,
+      "translator": "闁绘洘娲栭悾顖涙交? 鐎殿喚濮村ù妤呮嚌?,
+      "publisher": "濞存粎鍎ら惃顖炲礄閾忕懓顣肩紒鈧?,
+      "publicationLine": "濮掓稒鍨堕悧鍝ヤ焊閺冨洦鍟垮ù锝嗙矒濞?缂?6闁?/ 缂?7闁?path",
+      "verification": "secondary academic review snippets plus series-announcement snippet; full Chinese body text not loaded locally",
+      "sourceUrls": [
+        "https://book.douban.com/review/12577462/",
+        "https://book.douban.com/review/12578202/",
+        "https://www.sohu.com/a/236638280_188245"
+      ],
+      "notes": "Translator line is presently secondhand in the ledger and should be rechecked against a stable publisher page later."
+    },
+    {
+      "id": "historyphilo-shangwu",
+      "families": ["history-of-philosophy"],
+      "chineseTitle": "闁告繃褰冮鐔煎矗閼奸鍞规繝鏇熸煥缂?,
+      "translator": "閻犳劖妞界花? 闁绘粌顑呴妵濠冩償?,
+      "publisher": "闁哥喎妫楁慨鐔煎础妫颁礁濮涘Λ?,
+      "publicationLine": "婵懓顦抽惁褎绋夐弽顐ｆ珪閻庢冻闄勫﹢鎶藉触瀹ュ牊鍟垮☉鎾寸◥閸? 1997 reissue path on official pages",
+      "verification": "official publisher product pages, official catalog bundle, and lawful ebook listing checked; full Chinese body text not loaded locally",
+      "sourceUrls": [
+        "https://www.cp.com.cn/book/7-100-02346-7_00.html",
+        "https://www.cp.com.cn/book/7-100-02345-9_74.html",
+        "https://pic.cp.com.cn/Files/2014/3/14/83954504641ab7aa-a.pdf",
+        "https://read.douban.com/reader/ebook/5890360/",
+        "https://e.dangdang.com/touch/products/1900448919.html"
+      ],
+      "notes": "The official page explicitly describes the 閻犳劖妞界花?/ 闁绘粌顑呴妵濠冩償?division of labor for volume 4. Douban Read and Dangdang both provide lawful digital access routes for at least part of this translation line."
+    },
+    {
+      "id": "historyworld-shangwu-1822",
+      "families": ["philosophy-of-history"],
+      "chineseTitle": "濞戞挻鐗滈弲顐﹀矗閹绘帗鎳嶉悗娑崇畳椤斿顭抽弬璺ㄧЭ闁?822-1823闁?,
+      "translator": "",
+      "publisher": "闁哥喎妫楁慨鐔煎础妫颁礁濮涘Λ?,
+      "publicationLine": "2015, ISBN 978-7-100-11028-0",
+      "verification": "official publisher product page checked; translator line not surfaced on the fetched page",
+      "sourceUrls": [
+        "https://www.cp.com.cn/book/244d7595-d.html"
+      ],
+      "notes": "This is a valuable modern critical-lecture path, but translator metadata still needs a follow-up check."
+    },
+    {
+      "id": "early-shangwu-collected",
+      "families": ["early-writings", "biography"],
+      "chineseTitle": "濮掓稒鍨堕悧鍝ヤ焊閺冣偓濡參寮甸悢缁樺暱濞达絾绮撳▔锕傛晬閸粎鐟愰柛妤€鍤栫槐?,
+      "translator": "闁告劦鍨伴婊堢嵁? 閻庣懓顑囬〃娑㈡嚌? 閻犳劖妞界花? 闁芥牗绋戝畷? 闁绘粌顑囩敮鐘诲礂? 閻犲鍨瑰﹢鎾锤?and others",
+      "publisher": "闁哥喎妫楁慨鐔煎础妫颁礁濮涘Λ?,
+      "publicationLine": "1997, ISBN 7-100-01974-5",
+      "verification": "official publisher product page, back matter, and lawful ebook listing checked; full Chinese body text not loaded locally",
+      "sourceUrls": [
+        "https://www.cp.com.cn/book/7-100-01974-5_85.html",
+        "https://read.douban.com/ebook/5785047/"
+      ],
+      "notes": "Important for youth manuscripts, Bern/Frankfurt theology, and early institutional formation. The Douban Read listing is treated as lawful ebook access."
+    }
+  ],
+  "localTexts": [
+    {
+      "id": "user-local-hegel-14-volume-bundle",
+      "enabled": false,
+      "families": [
+        "early-writings",
+        "science-of-logic",
+        "encyclopaedia-nature",
+        "philosophy-of-right",
+        "aesthetics",
+        "history-of-philosophy"
+      ],
+      "title": "濮掓稒鍨堕悧鍝ヤ焊閺傚墽绋婇柛婵呯窔濞夛箓鏁嶉崼婵愭閻熶礁鎳庨崣?4闁告劕鐭夌槐?,
+      "translator": "multiple translators in bundled local file",
+      "publisher": "user-provided local bundle",
+      "path": "local-resources\\hegel-14-bundle\\hegel-works-14.txt",
+      "notes": "user-provided local Chinese bundle text; treated as a searchable Chinese source layer, not as a publisher-verified single-volume edition"
+    },
+    {
+      "id": "user-local-hegel-14-early-theology",
+      "enabled": true,
+      "families": ["early-writings"],
+      "title": "濮掓稒鍨堕悧鍝ヤ焊閺冣偓濡參寮甸悢渚閻庢冻绠掗幉鍙夋媴?,
+      "translator": "bundle split from user-provided local Chinese collection",
+      "publisher": "user-provided local bundle",
+      "file": "local-bundle--early-theological-writings.txt"
+    },
+    {
+      "id": "user-local-hegel-14-logic-up",
+      "workId": "science-of-logic",
+      "editionId": "user-local-hegel-14-logic-up",
+      "editionLabel": "闂侇偅妲掔欢顐も偓娑崇細缁楀倿宕?闁哄牜鍓欏﹢鎾触閸儲鑲犵紒?,
+      "termProfileId": "local-bundle-classic",
+      "precedence": 1,
+      "quoteStyle": "checked-local",
+      "conceptCoverage": ["begriff", "substanz", "subjekt"],
+      "enabled": true,
+      "families": ["science-of-logic"],
+      "title": "闂侇偅妲掔欢顐も偓娑宠缁辨瑦绋夋繝鍌氱ス闁?,
+      "translator": "bundle split from user-provided local Chinese collection",
+      "publisher": "user-provided local bundle",
+      "file": "local-bundle--science-of-logic-up.txt",
+      "bodyStartPattern": "\\u7b2c\\s*\\u4e00\\s*\\u7248\\s*\\u5e8f\\u8a00|\\u7b2c\\s*\\u4e00\\s*\\u7248\\s*\\u5e8f\\s*\\u8a00"
+    },
+    {
+      "id": "user-local-hegel-14-logic-down",
+      "workId": "science-of-logic",
+      "editionId": "user-local-hegel-14-logic-down",
+      "editionLabel": "闂侇偅妲掔欢顐も偓娑崇細缁楀懘宕?闁哄牜鍓欏﹢鎾触閸儲鑲犵紒?,
+      "termProfileId": "local-bundle-classic",
+      "precedence": 1,
+      "quoteStyle": "checked-local",
+      "conceptCoverage": ["begriff", "substanz", "subjekt"],
+      "enabled": true,
+      "families": ["science-of-logic"],
+      "title": "闂侇偅妲掔欢顐も偓娑宠缁辨瑦绋夌€ｎ亜绁归柨?,
+      "translator": "bundle split from user-provided local Chinese collection",
+      "publisher": "user-provided local bundle",
+      "file": "local-bundle--science-of-logic-down.txt"
+    },
+    {
+      "id": "user-local-hegel-14-nature",
+      "enabled": true,
+      "families": ["encyclopaedia-nature"],
+      "title": "闁煎浜為崝褔宕幓鎺濆妳",
+      "translator": "bundle split from user-provided local Chinese collection",
+      "publisher": "user-provided local bundle",
+      "file": "local-bundle--philosophy-of-nature.txt"
+    },
+    {
+      "id": "user-local-hegel-14-shorter-logic",
+      "workId": "science-of-logic",
+      "editionId": "user-local-hegel-14-shorter-logic",
+      "editionLabel": "閻忓繐绻橀埀顒佹缁?闁哄牜鍓欏﹢鎾触閸儲鑲犵紒?,
+      "termProfileId": "local-bundle-classic",
+      "precedence": 1,
+      "quoteStyle": "checked-local",
+      "conceptCoverage": ["begriff", "substanz", "subjekt"],
+      "enabled": true,
+      "families": ["science-of-logic"],
+      "title": "閻忓繐绻橀埀顒佹缁?,
+      "translator": "bundle split from user-provided local Chinese collection",
+      "publisher": "user-provided local bundle",
+      "file": "local-bundle--shorter-logic.txt",
+      "bodyStartPattern": "\\u7b2c\\s*\\u4e00\\s*\\u7248\\s*\\u5e8f\\u8a00|\\u7b2c\\s*\\u4e00\\s*\\u7248\\s*\\u5e8f\\s*\\u8a00"
+    },
+    {
+      "id": "user-local-hegel-14-right",
+      "workId": "philosophy-of-right",
+      "editionId": "user-local-hegel-14-right",
+      "editionLabel": "婵炲娲栭幗顒傗偓娑崇畱鐢偊鎮?闁哄牜鍓欏﹢鎾触閸儲鑲犵紒?,
+      "termProfileId": "local-bundle-classic",
+      "precedence": 1,
+      "quoteStyle": "checked-local",
+      "conceptCoverage": ["freiheit", "wille", "recht", "sittlichkeit", "gegenstand-objekt", "willkuer"],
+      "enabled": true,
+      "families": ["philosophy-of-right"],
+      "title": "婵炲娲栭幗顒傗偓娑崇畱鐢偊鎮?,
+      "translator": "bundle split from user-provided local Chinese collection",
+      "publisher": "user-provided local bundle",
+      "file": "local-bundle--philosophy-of-right.txt",
+      "bodyStartPattern": "\\u5bfc\\u8bba\\s*\\u7b2c\\s*1\\s*\\u8282"
+    },
+    {
+      "id": "user-local-hegel-14-aesthetics-vol1",
+      "enabled": true,
+      "families": ["aesthetics"],
+      "title": "缂傚洤楠搁鐔兼晬閸埄鍎戝☉鎾亾闁告劕鐭夌槐?,
+      "translator": "bundle split from user-provided local Chinese collection",
+      "publisher": "user-provided local bundle",
+      "file": "local-bundle--aesthetics-vol1.txt"
+    },
+    {
+      "id": "user-local-hegel-14-aesthetics-vol2",
+      "enabled": true,
+      "families": ["aesthetics"],
+      "title": "缂傚洤楠搁鐔兼晬閸埄鍎戝ù婊冭嫰閸炰粙鏁?,
+      "translator": "bundle split from user-provided local Chinese collection",
+      "publisher": "user-provided local bundle",
+      "file": "local-bundle--aesthetics-vol2.txt"
+    },
+    {
+      "id": "user-local-hegel-14-aesthetics-vol3",
+      "enabled": true,
+      "families": ["aesthetics"],
+      "title": "缂傚洤楠搁鐔兼晬閸埄鍎戝☉鎾愁槸閸炰粙鏁?,
+      "translator": "bundle split from user-provided local Chinese collection",
+      "publisher": "user-provided local bundle",
+      "file": "local-bundle--aesthetics-vol3.txt"
+    },
+    {
+      "id": "user-local-hegel-14-aesthetics-vol4",
+      "enabled": true,
+      "families": ["aesthetics"],
+      "title": "缂傚洤楠搁鐔兼晬閸埄鍎戦柛銉︾☉閸炰粙鏁?,
+      "translator": "bundle split from user-provided local Chinese collection",
+      "publisher": "user-provided local bundle",
+      "file": "local-bundle--aesthetics-vol4.txt"
+    },
+    {
+      "id": "user-local-hegel-14-history-vol1",
+      "enabled": true,
+      "families": ["history-of-philosophy"],
+      "title": "闁告繃褰冮鐔煎矗閼奸鍞规繝鏇熸煥缂嶅秹鏁嶉崼銏╁剳濞戞挴鍋撻柛妤€鍤栫槐?,
+      "translator": "bundle split from user-provided local Chinese collection",
+      "publisher": "user-provided local bundle",
+      "file": "local-bundle--history-of-philosophy-vol1.txt"
+    },
+    {
+      "id": "user-local-hegel-14-history-vol2",
+      "enabled": true,
+      "families": ["history-of-philosophy"],
+      "title": "闁告繃褰冮鐔煎矗閼奸鍞规繝鏇熸煥缂嶅秹鏁嶉崼銏╁剳濞存粌鑻畵搴ㄦ晬?,
+      "translator": "bundle split from user-provided local Chinese collection",
+      "publisher": "user-provided local bundle",
+      "file": "local-bundle--history-of-philosophy-vol2.txt"
+    },
+    {
+      "id": "user-local-hegel-14-history-vol3",
+      "enabled": true,
+      "families": ["history-of-philosophy"],
+      "title": "闁告繃褰冮鐔煎矗閼奸鍞规繝鏇熸煥缂嶅秹鏁嶉崼銏╁剳濞戞挸顦畵搴ㄦ晬?,
+      "translator": "bundle split from user-provided local Chinese collection",
+      "publisher": "user-provided local bundle",
+      "file": "local-bundle--history-of-philosophy-vol3.txt"
+    },
+    {
+      "id": "user-local-hegel-14-history-vol4",
+      "enabled": true,
+      "families": ["history-of-philosophy"],
+      "title": "闁告繃褰冮鐔煎矗閼奸鍞规繝鏇熸煥缂嶅秹鏁嶉崼銏╁剳闁搞儲绋戝畵搴ㄦ晬?,
+      "translator": "bundle split from user-provided local Chinese collection",
+      "publisher": "user-provided local bundle",
+      "file": "local-bundle--history-of-philosophy-vol4.txt"
+    },
+    {
+      "id": "local-pdf-phenomenology-xiangang-ocr-text",
+      "workId": "phenomenology",
+      "editionId": "local-pdf-phenomenology-xiangang-ocr-text",
+      "editionLabel": "缂侇喖澧介〃锝夋偝閹峰矁鏉介悗?闁稿繐鐗嗛崹?OCR 闁哄牜鍓欏﹢瀵哥棯?,
+      "termProfileId": "xiangang-renmin",
+      "precedence": 1,
+      "quoteStyle": "ocr-local",
+      "conceptCoverage": ["geist", "substanz", "subjekt", "begriff", "gegenstand-objekt"],
+      "enabled": true,
+      "families": ["phenomenology"],
+      "title": "缂侇喖澧介〃锝夋偝閹峰矁鏉介悗娑宠缁辨瑩宕楅崼婵嗙仩閻?OCR 闁哄牜鍓ㄧ槐?,
+      "translator": "闁稿繐鐗嗛崹?,
+      "publisher": "濞存粎鍎ら惃顖炲礄閾忕懓顣肩紒鈧?,
+      "file": "local-pdf--phenomenology-xiangang-ocr.txt",
+      "bodyStartPattern": "\\u5e8f\\s*\\u8a00\\s*\\[11\\]|\\u5e8f\\s*\\u8a00\\s*\\[\\s*11\\s*\\]"
+    }
+  ],
+  "localPdfSources": [
+    {
+      "id": "local-pdf-phenomenology-helin-up",
+      "workId": "phenomenology",
+      "editionId": "local-pdf-phenomenology-helin-up",
+      "editionLabel": "缂侇喖澧介〃锝夋偝閹峰矁鏉介悗?閻犳劖妞界花楣冩偝鐎ｎ剙绗柛蹇曠節缁楀倿宕￠柨瀣棁闁硅绻掗崵?,
+      "termProfileId": "helin-shangwu",
+      "precedence": 2,
+      "quoteStyle": "bibliographic",
+      "conceptCoverage": ["geist", "substanz", "subjekt", "begriff", "gegenstand-objekt"],
+      "families": ["phenomenology"],
+      "title": "缂侇喖澧介〃锝夋偝閹峰矁鏉介悗娑宠缁辨瑧鎷瑰ú顏嗙啲闁靛棔鑳剁敮鍥偝閺嵮冨胶閻犲洦鍩婄槐婵囩▔婵犲倸绁归柟娈垮亝瀵潡寮甸濠勭",
+      "translator": "閻犳劖妞界花? 闁绘粌顑囩敮鐘诲礂?,
+      "publisher": "闁哥喎妫楁慨鐔煎础妫颁礁濮涘Λ?,
+      "path": "local-resources\\phenomenology-pdfs\\phenomenology-helin-up.pdf",
+      "status": "scanned-pdf-no-text-layer",
+      "notes": "local scanned PDF resource; currently image-only according to pypdf extraction tests"
+    },
+    {
+      "id": "local-pdf-phenomenology-helin-down",
+      "workId": "phenomenology",
+      "editionId": "local-pdf-phenomenology-helin-down",
+      "editionLabel": "缂侇喖澧介〃锝夋偝閹峰矁鏉介悗?閻犳劖妞界花楣冩偝鐎ｎ剙绗柛蹇曠節缁楀懘宕￠柨瀣棁闁硅绻掗崵?,
+      "termProfileId": "helin-shangwu",
+      "precedence": 3,
+      "quoteStyle": "bibliographic",
+      "conceptCoverage": ["geist", "substanz", "subjekt", "begriff", "gegenstand-objekt"],
+      "families": ["phenomenology"],
+      "title": "缂侇喖澧介〃锝夋偝閹峰矁鏉介悗娑宠缁辨瑧鎷瑰ú顏嗙啲闁靛棔鑳剁敮鍥偝閺嵮冨胶閻犲洦鍩婄槐婵囩▔鐎ｎ亜绁归柟娈垮亝瀵潡寮甸濠勭",
+      "translator": "閻犳劖妞界花? 闁绘粌顑囩敮鐘诲礂?,
+      "publisher": "闁哥喎妫楁慨鐔煎础妫颁礁濮涘Λ?,
+      "path": "local-resources\\phenomenology-pdfs\\phenomenology-helin-down.pdf",
+      "status": "scanned-pdf-no-text-layer",
+      "notes": "local scanned PDF resource; currently image-only according to pypdf extraction tests"
+    },
+    {
+      "id": "local-pdf-phenomenology-xiangang-ocr",
+      "workId": "phenomenology",
+      "editionId": "local-pdf-phenomenology-xiangang-ocr",
+      "editionLabel": "缂侇喖澧介〃锝夋偝閹峰矁鏉介悗?闁稿繐鐗嗛崹?OCR PDF 缂?,
+      "termProfileId": "xiangang-renmin",
+      "precedence": 1,
+      "quoteStyle": "ocr-local",
+      "conceptCoverage": ["geist", "substanz", "subjekt", "begriff", "gegenstand-objekt"],
+      "families": ["phenomenology"],
+      "title": "缂侇喖澧介〃锝夋偝閹峰矁鏉介悗娑宠缁辨瑩宕楅崼婵嗙仩閻?OCR 闁哄牜鍓ㄧ槐?,
+      "translator": "闁稿繐鐗嗛崹?,
+      "publisher": "濞存粎鍎ら惃顖炲礄閾忕懓顣肩紒鈧?,
+      "path": "local-resources\\phenomenology-pdfs\\phenomenology-xiangang-ocr.pdf",
+      "status": "ocr-pdf-text-extractable",
+      "notes": "local OCR PDF resource; suitable for text extraction and direct search"
+    }
+  ],
+  "localTextsExample": [
+    {
+      "id": "example-philosophy-of-right-zh",
+      "enabled": false,
+      "families": ["philosophy-of-right"],
+      "title": "婵炲娲栭幗顒傗偓娑崇畱鐢偊鎮?,
+      "translator": "Example Translator",
+      "publisher": "Example Publisher",
+      "file": "philosophy-of-right-zh.txt"
+    }
+  ]
+}

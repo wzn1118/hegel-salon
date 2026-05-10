@@ -1,0 +1,48 @@
+services:
+  - type: web
+    name: hegel-salon
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    plan: starter
+    autoDeploy: true
+    healthCheckPath: /
+    disk:
+      name: hegel-data
+      mountPath: /app/data
+      sizeGB: 1
+    envVars:
+      - key: PORT
+        value: "3087"
+      - key: HEGEL_ENABLE_AUTH
+        value: "1"
+      - key: HEGEL_HIDE_DEV_CODES
+        value: "1"
+      - key: HEGEL_TRUST_PROXY
+        value: "1"
+      - key: HEGEL_FORCE_SECURE_COOKIES
+        value: "1"
+      - key: HEGEL_PUBLIC_BASE_URL
+        sync: false
+      - key: HEGEL_ALLOWED_ORIGINS
+        sync: false
+      - key: HEGEL_API_CONFIG_MASTER_KEY
+        generateValue: true
+      - key: HEGEL_ADMIN_ACCOUNT
+        sync: false
+      - key: HEGEL_ADMIN_EMAIL
+        sync: false
+      - key: HEGEL_ADMIN_PASSWORD
+        sync: false
+      - key: HEGEL_SMTP_HOST
+        sync: false
+      - key: HEGEL_SMTP_PORT
+        sync: false
+      - key: HEGEL_SMTP_SECURE
+        sync: false
+      - key: HEGEL_SMTP_USER
+        sync: false
+      - key: HEGEL_SMTP_PASS
+        sync: false
+      - key: HEGEL_MAIL_FROM
+        sync: false
+

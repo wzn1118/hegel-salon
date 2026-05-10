@@ -1,0 +1,249 @@
+{
+  "generatedAt": "2026-04-13",
+  "termProfiles": [
+    {
+      "id": "local-bundle-classic",
+      "label": "本地合集经典线",
+      "notes": "用于你提供的14册合集拆分文本，当前优先覆盖《法哲学原理》《小逻辑》《逻辑学》等。"
+    },
+    {
+      "id": "xiangang-renmin",
+      "label": "先刚人民线",
+      "notes": "用于《精神现象学》先刚译本及其 OCR 文本。"
+    },
+    {
+      "id": "helin-shangwu",
+      "label": "贺麟商务线",
+      "notes": "用于《精神现象学》贺麟、王玖兴译本及商务相关路径。"
+    },
+    {
+      "id": "generated-default",
+      "label": "生成中文默认线",
+      "notes": "仅作无本地中文正文时的兜底翻译术语线。"
+    },
+    {
+      "id": "bibliographic-only",
+      "label": "书目元数据线",
+      "notes": "仅有版本账本或扫描元数据时使用，不许可直接引用正文。"
+    }
+  ],
+  "workEditionPrecedence": {
+    "phenomenology": [
+      "local-pdf-phenomenology-xiangang-ocr-text",
+      "local-pdf-phenomenology-helin-up",
+      "local-pdf-phenomenology-helin-down",
+      "phen-renmin-collected",
+      "phen-shangwu-classic"
+    ],
+    "philosophy-of-right": [
+      "user-local-hegel-14-right",
+      "pr-shangwu-classic",
+      "pr-renmin-collected"
+    ],
+    "science-of-logic": [
+      "user-local-hegel-14-logic-up",
+      "user-local-hegel-14-logic-down",
+      "user-local-hegel-14-shorter-logic",
+      "logic-shangwu-xiaoluoji",
+      "logic-renmin-series"
+    ]
+  },
+  "generatedTermProfileByFamily": {
+    "phenomenology": "xiangang-renmin",
+    "philosophy-of-right": "local-bundle-classic",
+    "science-of-logic": "local-bundle-classic",
+    "encyclopaedia-spirit": "generated-default",
+    "encyclopaedia-nature": "generated-default",
+    "history-of-philosophy": "local-bundle-classic",
+    "philosophy-of-history": "generated-default",
+    "philosophy-of-religion": "generated-default",
+    "aesthetics": "local-bundle-classic",
+    "early-writings": "generated-default",
+    "misc": "generated-default"
+  },
+  "concepts": [
+    {
+      "conceptId": "freiheit",
+      "de": ["Freiheit"],
+      "en": ["freedom", "liberty"],
+      "zhByEdition": {
+        "local-bundle-classic": ["自由"],
+        "xiangang-renmin": ["自由"],
+        "helin-shangwu": ["自由"],
+        "generated-default": ["自由"]
+      },
+      "relatedConcepts": ["wille", "recht", "sittlichkeit", "willkuer"],
+      "autoExpand": true,
+      "onlyWhenExplicit": ["willkuer"],
+      "workSectionHints": {
+        "philosophy-of-right": ["4", "5", "7", "10"],
+        "encyclopaedia-spirit": ["381", "382", "385", "386", "387", "482", "483"]
+      },
+      "notes": "自由可以自动连到意志、法、伦理生活，但不得自动牵到任意或任性。"
+    },
+    {
+      "conceptId": "wille",
+      "de": ["Wille"],
+      "en": ["will", "volition"],
+      "zhByEdition": {
+        "local-bundle-classic": ["意志"],
+        "xiangang-renmin": ["意志"],
+        "helin-shangwu": ["意志"],
+        "generated-default": ["意志"]
+      },
+      "relatedConcepts": ["freiheit", "gegenstand-objekt", "willkuer"],
+      "autoExpand": true,
+      "onlyWhenExplicit": ["willkuer"],
+      "workSectionHints": {
+        "philosophy-of-right": ["4", "5", "7", "10"],
+        "encyclopaedia-spirit": ["440", "441", "442", "468", "469", "482"]
+      },
+      "notes": "意志可连到自由与对象，不自动牵到任性。"
+    },
+    {
+      "conceptId": "willkuer",
+      "de": ["Willkür"],
+      "en": ["arbitrariness", "caprice"],
+      "zhByEdition": {
+        "local-bundle-classic": ["任性", "任意"],
+        "xiangang-renmin": ["任意", "任性"],
+        "helin-shangwu": ["任性", "任意"],
+        "generated-default": ["任性", "任意"]
+      },
+      "relatedConcepts": ["freiheit", "wille"],
+      "autoExpand": false,
+      "onlyWhenExplicit": [],
+      "workSectionHints": {
+        "philosophy-of-right": ["15", "16", "17"]
+      },
+      "notes": "只有在用户显式询问或原文已进入该分支时才展开。"
+    },
+    {
+      "conceptId": "begriff",
+      "de": ["Begriff"],
+      "en": ["concept", "notion"],
+      "zhByEdition": {
+        "local-bundle-classic": ["概念"],
+        "xiangang-renmin": ["概念"],
+        "helin-shangwu": ["概念"],
+        "generated-default": ["概念"]
+      },
+      "relatedConcepts": ["subjekt", "substanz", "geist"],
+      "autoExpand": true,
+      "onlyWhenExplicit": [],
+      "workSectionHints": {
+        "science-of-logic": ["160", "161"],
+        "philosophy-of-right": ["1", "2"]
+      },
+      "notes": "概念可自动连到主体、实体、精神。"
+    },
+    {
+      "conceptId": "geist",
+      "de": ["Geist"],
+      "en": ["spirit", "mind"],
+      "zhByEdition": {
+        "local-bundle-classic": ["精神"],
+        "xiangang-renmin": ["精神"],
+        "helin-shangwu": ["精神"],
+        "generated-default": ["精神"]
+      },
+      "relatedConcepts": ["subjekt", "freiheit", "begriff"],
+      "autoExpand": true,
+      "onlyWhenExplicit": [],
+      "workSectionHints": {
+        "encyclopaedia-spirit": ["381", "382", "385", "386", "387"]
+      },
+      "notes": "精神问题默认可展开到主体与自由。"
+    },
+    {
+      "conceptId": "gegenstand-objekt",
+      "de": ["Gegenstand", "Objekt"],
+      "en": ["object", "objectivity"],
+      "zhByEdition": {
+        "local-bundle-classic": ["对象", "对象性"],
+        "xiangang-renmin": ["对象", "对象性"],
+        "helin-shangwu": ["对象", "对象性"],
+        "generated-default": ["对象", "对象性"]
+      },
+      "relatedConcepts": ["wille", "subjekt", "begriff"],
+      "autoExpand": true,
+      "onlyWhenExplicit": [],
+      "workSectionHints": {
+        "philosophy-of-right": ["10"]
+      },
+      "notes": "对象问题可自动连到意志与主体。"
+    },
+    {
+      "conceptId": "substanz",
+      "de": ["Substanz"],
+      "en": ["substance"],
+      "zhByEdition": {
+        "local-bundle-classic": ["实体"],
+        "xiangang-renmin": ["实体"],
+        "helin-shangwu": ["实体"],
+        "generated-default": ["实体"]
+      },
+      "relatedConcepts": ["subjekt", "begriff", "geist"],
+      "autoExpand": true,
+      "onlyWhenExplicit": [],
+      "workSectionHints": {
+        "phenomenology": []
+      },
+      "notes": "实体默认可与主体、概念、精神联动。"
+    },
+    {
+      "conceptId": "subjekt",
+      "de": ["Subjekt"],
+      "en": ["subject"],
+      "zhByEdition": {
+        "local-bundle-classic": ["主体"],
+        "xiangang-renmin": ["主体"],
+        "helin-shangwu": ["主体"],
+        "generated-default": ["主体"]
+      },
+      "relatedConcepts": ["substanz", "begriff", "geist"],
+      "autoExpand": true,
+      "onlyWhenExplicit": [],
+      "workSectionHints": {
+        "phenomenology": []
+      },
+      "notes": "主体默认可与实体和概念联动。"
+    },
+    {
+      "conceptId": "sittlichkeit",
+      "de": ["Sittlichkeit"],
+      "en": ["ethical life", "ethical order"],
+      "zhByEdition": {
+        "local-bundle-classic": ["伦理生活"],
+        "xiangang-renmin": ["伦理生活"],
+        "helin-shangwu": ["伦理生活"],
+        "generated-default": ["伦理生活"]
+      },
+      "relatedConcepts": ["freiheit", "recht"],
+      "autoExpand": true,
+      "onlyWhenExplicit": [],
+      "workSectionHints": {
+        "philosophy-of-right": ["142", "145", "146", "147", "150", "156", "157", "257"]
+      },
+      "notes": "伦理生活默认可连到自由与法。"
+    },
+    {
+      "conceptId": "recht",
+      "de": ["Recht"],
+      "en": ["right", "law"],
+      "zhByEdition": {
+        "local-bundle-classic": ["权利", "法与权利"],
+        "xiangang-renmin": ["权利", "法与权利"],
+        "helin-shangwu": ["权利", "法与权利"],
+        "generated-default": ["权利", "法与权利"]
+      },
+      "relatedConcepts": ["freiheit", "wille", "sittlichkeit"],
+      "autoExpand": true,
+      "onlyWhenExplicit": [],
+      "workSectionHints": {
+        "philosophy-of-right": ["1", "2", "4", "29"]
+      },
+      "notes": "法与权利问题默认可连到自由、意志、伦理生活。"
+    }
+  ]
+}

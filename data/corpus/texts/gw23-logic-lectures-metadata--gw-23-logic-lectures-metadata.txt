@@ -1,0 +1,6 @@
+GW 23 metadata. This is official edition metadata, not Hegel's own prose.
+GW 23 covers "Vorlesungen ueber die Wissenschaft der Logik".
+The official page states that Band 23,1 includes the Jena lecture of 1801/02 and the lectures held on the basis of the first Encyclopaedia edition: Heidelberg 1817 and Berlin 1823, 1824, 1825, and 1826 witness texts.
+Band 23,3 is the appendix volume of secondary transmission.
+This is the critical lecture layer that goes beyond the currently ingested mirror texts of logic.
+Official source: https://www.pe.ruhr-uni-bochum.de/philosophie/i/hegel_edition/works/works.html.de

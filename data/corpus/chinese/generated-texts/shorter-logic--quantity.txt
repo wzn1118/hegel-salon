@@ -1,0 +1,135 @@
+Quantity
+
+Part One of the Encyclopedia of Philosophical Sciences: The Logic
+
+First Subdivision: Being
+
+B. QUANTITY
+
+Pure Quantity - Quantum - Degree
+
+(a) Pure Quantity
+
+§ 99
+
+Quantity is pure Being, where the mode or character is no longer taken as one with the being itself, but explicitly put as superseded or indifferent.
+
+Quantity 是纯粹存在，其方式或特性不再与其存在本身认同，而是被明确地看作是被超越或无关紧要的。
+
+(1) The expression Magnitude especially marks determinate Quantity, and is for that reason not a suitable name for Quantity in general. (2) Mathematics usually define magnitude as what can be increased or diminished. This definition has the defect of containing the thing to be defined over again: but it may serve to show that the category of magnitude is explicitly understood to be changeable and indifferent, so that, in spite of its being altered by an increased extension or intension, the thing - a house, for example - does not cease to be a house, and red to be red. (3) The Absolute is pure Quantity. This point of view is on the whole the same as when the Absolute is defined to be Matter, in which, though form undoubtedly is present, the form is a characteristic of no importance one way or another. Quantity too constitutes the main characteristic of the Absolute, when the Absolute is regarded as absolute indifference, and only admitting of quantitative distinction. Otherwise pure space, time, etc., may be taken as examples of Quantity, if we allow ourselves to regard the real as whatever fills up space and time, it matters not with what.
+
+（1）“量度”这一表达特别标示确定的数量，因此不适合作为一般数量的名称。（2）数学通常将量度定义为可以增加或减少的东西。这个定义的缺点在于把要定义的事物又重新包含在内：但它可以用来说明，量度这一范畴被明确地理解为可变动并且无关紧要的，因此，尽管通过扩延或限度的增加而发生变化，诸如房子之类的事物仍然不会因此停止是房子，红色也仍然是红色。（3）绝对者乃是纯粹数量。从整体上看，这一观点与将绝对者定义为物质者是同一个意思，在物质中，虽然无疑有形式存在，但该形式不过是毫无价值的一种无关紧要的特征。当绝对者被视为绝对的漠视，仅仅承认数量上的差别时，数量也构成其主要的特征。另方面，纯粹的空间、时间等，也可以作为数量的例子，若我们允许自己把现实看作填充空间和时间的任何东西，无论以何种形式。
+
+The mathematical definition of magnitude as what may be increased or diminished, appears at first sight to be more plausible and perspicuous than the exposition of the notion in the present section. When closely examined, however, it involves, under cover of presuppositions and images, the same elements as appear in the notion of quantity reached by the method of logical development. In other words, when we say that the notion of magnitude lies in the possibility of being increased or diminished, we state that magnitude (or more correctly, quantity), as distinguished from quality, is a characteristic of such kind that the characterised thing is not in the least affected by any change in it.
+
+把量度定义为可以增加或减少的东西，乍看比本节中对该概念的展开更为合理和清晰。然而，当细致考察时，我们会发现该定义在前提和形象的掩盖下包含了与通过逻辑展开的方法所获得的数量概念中出现的相同要素。换句话说，当我们说量度的概念在于它能够增加或减少的可能性时，我们其实在说明量度（或更准确地说，数量）与质相区别，具有这样一种特征：被确定的事物对于其中的任何变化都丝毫不受影响。
+
+What then, it may be asked, is the fault which we have to find with this definition? It is that to increase and to diminish is the same thing as to characterise magnitude otherwise. If this aspect then were an adequate account of it, quantity would be described merely as whatever can be altered. But quality is no less than quantity open to alteration; and the distinction here given between quantity and quality is expressed by saying increase or diminution: the meaning being that, towards whatever side the determination of magnitude be altered, the thing still remains what it is.
+
+那么，问题来了，这一定义的缺陷何在？它在于：增加与减少不过是对量度作出不同描述而已。如果这一方面就足以解释它，那数量仅仅可以被描述为任何可变的东西。然而，质同样像数量一样容易变化；而在这里用增加或减少所表达的，就是数量与质之间的区别：其意义在于，无论量度的确定性向哪个方向改变，事物仍旧保持其本来面目。
+
+One remark more. Throughout philosophy we do not seek merely for correct, still less for plausible definitions, whose correctness appeals directly to the popular imagination; we seek approved or verified definitions, the content of which is not assumed merely as given, but is seen and known to warrant itself, because warranted by the free self-evolution of thought. To apply this to the present case: however correct and self-evident the definition of quantity usual in Mathematics may be, it will still fail to satisfy the wish to see how far this particular thought is founded in universal thought, and in that way necessary. This difficulty, however, is not the only one.
+
+另有一言。在整个哲学中，我们并不只是追求正确的、进而更少追求符合通俗直觉的定义；我们追求的是被认可或证实的定义，其内容不是仅仅被假定为既定的，而是通过自由的思想自我展开被见到并被确知，从而证明其自身的正当性。将此应用于当前的情况：无论数学中普遍使用的数量定义多么正确、多么不言自明，它仍不能满足我们想要看见此一特殊思维在普遍思维中立足并因而必然的愿望。然而，这并非唯一的困难。
+
+If quantity is not reached through the action of thought, but taken uncritically from our generalised image of it, we are liable to exaggerate the range of its validity, or even to raise it to the height of an absolute category. And that such a danger is real, we see when the title of exact science is restricted to those sciences the objects of which can be submitted to mathematical calculation. Here we have another trace of the bad metaphysics (mentioned in § 98n) which replace the concrete idea by partial and inadequate categories of understanding. Our knowledge would be in a very awkward predicament if such objects as freedom, law, morality, or even God himself, because they cannot be measured and calculated, or expressed in a mathematical formula, were to be reckoned beyond the reach of exact knowledge, and we had to put up with a vague generalised image of them, leaving their details or particulars to the pleasure of each individual, to make out of them what he will. The pernicious consequences, to which such a theory gives rise in practice, are at once evident. And this mere mathematical view, which identifies with the Idea one of its special stages, viz., quantity, is no other than the principle of Materialism. Witness the history of the scientific modes of thought, especially in France since the middle of last century. Matter in the abstract is just what, though of course there is form in it, has that form only as an indifferent and external attribute.
+
+如果数量不是通过思想的作用而达成，而是从我们对它的概括形象中不经批判地拿来使用，我们就容易夸大其效力范围，甚至把它拔高为一个绝对的范畴。我们从哪里能看出这类危险是现实的呢？正是在“精确科学”这个称号被限定为那些其对象可以提交给数学计算的科学时。这里我们又可以见到一种糟糕形而上学的痕迹（见 § 98n），它们用理解的片面且不足的范畴取代具体的概念。如果自由、法则、道德、甚至上帝本身，因为无法测量、计算或以数学公式表达，就被认为是超出精确认识的范围，我们不得不满足于对它们模糊的概括形象，把它们的细节或特殊性任凭个人喜好去如何塑造，那我们的知识就会陷入极为尴尬的境地。此类理论在实践中所导致的有害后果，立刻可以看出。而这一片面的数学观点，它把观念的一个特殊阶段——即数量——当作是观念本身，正是唯物主义的原则。看看科学思维方式的历史，尤其是上个世纪中叶以来的法国。抽象的物质正是那种尽管其中当然有形式，但该形式只不过是一种漠然且外在的属性。
+
+此番解释若被误以为贬低数学，则完全错解。称数量属性只是外在而漠不关心，并非为懒惰肤浅开脱，也未曾说数量属性可以任其自生，或者至少无需极其细致的处理。数量固然是理念的一个阶段：作为如此它必须首先在逻辑范畴中得到它的正当地位，然后在对象世界中也要得到体现，不论自然界还是精神界。尽管如此，仍很快显现出数量范畴因其对象所属自然界或精神界而带有不同的重要性。因为在自然中，理念的形式要与自身异者而且同时处于其外，正因如此数量的重要性比在自由内在的精神世界更大。的确，我们即便是从数量角度来看待精神的事实；但立刻可见，在称上帝为三位一体时，三这个数并不像我们考虑空间的三维或以三条线界定的三角形时那样显著——此后三角形的基本特征恰恰是其受三条线所界定的面。即使在自然领域内部，我们亦能发现数量特征重要性有所差别。在无机界，数量可谓比在有机界占更显著的地位。即便在有机自然中，当我们将机械功能与所谓的化学、狭义的物理区分时，亦存在同样的差别。众所周知，力学是各科学中最难舍弃数学帮助的——在其中我们连一步都无法离开数学。因此力学被视为仅次于数学的典范科学；这又引出了另一次关于物质主义者与纯粹数学视角相吻合之观察。在前述一切之后，我们不得不认为，为精确与透彻的知识利益，把对象的一切差异性与确定性仅仅归诸数量的观点，是极其有害的偏见。精神当然比自然更宏大，动物当然比植物更多；但若我们只满足于更多与更少而不进一步把它们在其特殊的、本质上即质量特征中加以把握，那我们就对这些对象及其区别知之甚少。
+
+§ 100
+
+数量如我们所见有两个来源：排他性单位和这些单位的同一化或等同化。因而当我们考察其与自我之间的直接关系，或由吸引所明示的自我同一特征，数量就是连续量；但当我们考察其所含的他一特征，即其中蕴含的那个一，它就是离散量。尽管如此，连续数量亦具有一定的离散性，仅是多者的连续；而离散数量并非不具有连续性，其连续性就是那个一或单位，亦即那个众多一者的自同一点。
+
+(1) 因此，连续量和离散量不应被视为数量的两个种类，仿佛其中一者的特征不属于另一者。它们之间唯一的区别在于：同一整体（的数量）有时被明确地置于其一特征之下，有时被置于其另一特征之下。
+
+(2) 关于空间、时间或物质的反论，即讨论它们是否可永远被分割，或是否由不可分割单位构成，仅仅意味着我们一方面把数量当作离散的，另一方面又把它当作连续的。当我们明确地赋予时间、空间或物质以连续数量的属性时，它们就可以无限地被分。相反，当赋予它们离散数量的属性时，它们已在潜能上被分，并由不可分单位构成。一个观点和另一个一样不充分。
+
+数量作为自我为自身的最近结果，包含其过程中的两面——吸引与排斥——作为其自身概念的构成要素。因而它既是连续的，也是离散的。这两个要素各自又包含对方，所以根本不存在纯粹连续或纯粹离散的数量。我们可以称这两者是数量的两个特定且相对立的种类；但那只是我们抽象思维的结果，在考量确定的数量时，恣意放弃其中今次是一个、今次又是另一个、而实在在数量概念中不可分离地统一着的要素。于是，可以说：这个房间所占的空间是连续数量，而聚集在其中的一百人则构成离散数量。
+
+然而此空间同时也是连续的和离散的；因此我们谈论空间点，或者我们将某一长度划分为若干英尺、英寸等——这只能建立在空间在潜能上亦是离散的假设之上。同样，另一方面，由一百人组成的离散数量也同时是连续的；而这种连续性赖以成立的情况是共同元素，即人这一种类，充盈于所有个体并将它们相互结合。
+
+（b）量（多少）
+
+§ 101
+
+数量本质上具备所含的排除性特征，是量，即有界数量。量仿佛是数量的确定存在；而单纯数量相当于抽象的存在，下节要谈的度则相当于为自身的存在。至于从单纯数量到量的具体推进，是建立在这样一基础上的：在单纯数量中，作为连续性与离散性的区分起初只是隐含的；而在量中，这种区分已被实际作出，从而数量总体现在显现为有区别的或有限的。然而，通过这种方式，量又同时分裂成无穷多的量子或具体数量。这些具体数量每一个介于它与他者之间形成一个统一，而另一方面就其本身而言又是多。如此一来，所形成的量便被描述为数。
+
+§ 102
+
+在“数”中，量达到其发展与完满的形态。如同“一”——其所存在的媒介，“数”包含两种质性的因素或职能：计数或总和，依赖于离散性因素；和统一，依赖于连续性。
+
+在算术中，各种运算通常被呈现为对数的附带方式。若这些运算中要有必要性与意义，那必须由一个原则，而此原则必来自于数概念本身的特征要素。这个原则在此须简要展开。这些特征要素一方面是计数，另一方面是统一，数本身就是统一。但是，当这一统一被套用于经验数时，只是这些数的相等：因而算术运算的原则必须是把数置于统一与总和（或数量）的比例之中，并揭示这两种方式的相等。
+
+各个“一”或数本身彼此无差，因此算术运算所转化出来的统一呈现为外在的结合。所有的计算不过是把数目凑成总数；而其各类之间的差别，仅在于我们所凑成的数的质性构成。对这种构成的原则在于我们如何规定统一与计数。
+
+计数先行；即所谓造数；这是任意把若干单位结合。但要获得一种计算方式，被数的对象必须已经是数，而不再是单纯的单位。
+
+第一种观点，把数自然呈现于手边，它们总体上仍是模糊的一般数，因此是不等的。把这些结合起来或数其总数就是加法。
+
+第二种观点是把数看作相等，使其构成一个统一，而在这之前已有一个计数或总和。把这些数的总数说出来就是乘法。在过程中，合成的两个数或因子之间如何分配总和与统一的职能并无关系；任一都可以是总和，也都可以是统一。
+
+第三也是最终的观点是总和（数量）与统一的相等。把已经如此具特性的数一起计数就是冪法；最初则是把它们提升到平方。把一个数提升到更高次幂，从形式上讲就是不断地用这个数自身相乘。既然这种第三类的计算表现了数中唯一既存的区别——即总和或数量与统一之间的区别——的完全相等，因此计算方式不可能超过这三种。与整合相应的，我们有按相同特征对数的解构。因此，除前述可称为正的三种种类之外，还存在三种算术运算的负面种类。
+
+数一般而言是量在其完全特殊化中的表现。因此我们可以用它不仅确定所谓的离散，还可以确定所谓的连续量。正因如此，几何学在需要指明空间的特定形状及其比例时，亦必借助数。
+
+(c) Degree
+
+§ 103
+
+限制（在量中）与整个量本身相同。如其自身而言是多的，限制就是广延量；如其自身而言是单一的确定性（质的单一性），就是强度量或度。
+
+连续量与离散量之间的区分不同于广延量与强度量之间的区分，其因在于前者适用于量的一般性，而后者适用于其自身的限制或确定性。强度量与广延量并非两种互异的种类，一者具有而他者不具的特征：广延量同样是强度量，反之亦然。
+
+强度量或程度在其概念上有别于广延量或量。因此，像许多人那样拒绝承认这种区别，并肆无忌惮地把这两种量的形式等同起来是不容许的。在物理学中常常这样等同：当用某一物体的比重是另一物体两倍来解释比重的差别时，就是说，在同样的空间里比另一个物体多含有两倍的物质部分（或原子）。热与光也同样，若要用热与光的粒子（或分子）多少多少来说明各种温度与亮度的程度的强弱。不少以这种解释办法为用的物理学家，在其站不住脚时常以这样的话作为辩解：此种表达并不妨碍对其公认不可知的本质的承认，仅仅是为着更便利而设。所称的更便利，原本是指更方便使用微积分；但很难看出既然强度量本身就具有明确的数表，又为何不如广延量那样便于运算。若仅图方便，岂不更方便干脆把计算与思维都取消掉吗？对物理学家所提出之辩护的另一点反驳是：从事此类解释即越出知觉与经验的范畴，进入形而上学以及在他时被称为无益甚至有害的臆测之境。确是经验的事实：若两只装满先令的袋子中之一重是另一只的两倍，那么其原因必在于前者含有诸如二百枚而后者仅一百枚这样的先令。这些钱币是我们可以用感官看见、摸到的；而原子、分子之类却恰在感官感知的界限之外；只有思维才能决定它们是否可否准许，是否有意义。然而（如已在第98节注所指出）正是抽象理解以“自为之存在”概念中所含之“多之性”赋予原子般的形态，并把它作为最终原则。正是这个抽象理解，在目前这一实例中，完全与不偏不倚的知觉与真实具象思维相矛盾，把广延量视为数量的唯一形式；而在出现强度量的时候，并不在其本性中认识之，反而以一种根本站不住脚的假设强行把它们归约为广延量。
+
+在对现代哲学的指责中，有一种比其他更常被听见。人们说，现代哲学把一切归约为同一。这就是它被称为“同一哲学”的绰号。然而，现今的讨论可教我们明白：区分在逻辑上与经验中既有差异之物的，正是哲学且唯有哲学；而自称经验的拥护者，却把抽象的同一作为认识的最高原则。他们的哲学更适合被称为同一的哲学。况且确是如此：没有单纯的广延量和单纯的强度量，就像没有单纯的连续量与单纯的离散量一样。数量的这两种特性不是彼此独立、彼此对立的种类。每一种强度量亦是广延量，反之亦然。这样，某一程度的温度是强度量，它对应着一个完全单纯的感觉。如果我们观察温度计，就会发现此温度程度对应着水银柱的某种膨胀；该广延量与温度或强度量同时变化。在精神的世界中也是如此：更强的性格所产生的作用，比起较弱的性格，其影响的范围更广。
+
+§ 104
+
+在程度中，量的概念被明示。它是就其自身而言、且本身单纯的中性的量；但使它成为量的那种性质（或方式的存在）却完全在它之外，在其它量中。在这种矛盾中，当作为对立于自身的独立的中性限度是绝对的外在性时，便明确地表现出无限量的进程——即直接性随即转向其对应者，转向中介（超越与越过刚才所设之量），反之亦然。
+
+数是思，但又是完全自我外化的思。因它是思，所以不属于知觉；但它是以知觉的外在性为特征的思。因此，不仅量可以无限地增大或减少：量的概念本身就是不断向外伸展。无限量的进程，只是挂在量（一般地说或明确地赋予其特殊的性格，即程度）身上的那一再重复的、毫无意义的矛盾。论及以无限进程的形式陈说这一矛盾的无益，亚里士多德引述芝诺的话称：“说一遍与说永远是一样的。”
+
+（1）倘若依照数学家在第99节所给的通常定义，说量是那可以增加或减少的，那么对其所依赖的观念的正确性或许难以反驳；但问题仍在于，我们如何会假定它具有这种增减的能力。若仅仅诉诸经验以求回答，这条路便不令人满意；因为除了我们仅获得有关量的物质形象而非其概念之外，量还会显得为一种单纯的可能性（其可增可减），而我们也无法把握其为何必须如此行止。在我们的逻辑演进之途上，数量明显地是自我决定思维过程中的一个阶段；且已表明，量的概念就在于向外伸展。因此，所听到的增减不仅是可能的，而且是必然的。
+
+(2) 定量的无穷进展正是反思的理解在涉及无穷这一一般问题时通常所依赖的。然而，就如在质的无穷进展时已经指出的那样，这种进展也同样成立。正如当时所说的，它不是对真正无穷的表达，而是对错误无穷的表达；它永远止于一个仅仅的“应当”，因而实际上仍然停留在有限之中。这种定量形式的无穷进展，斯宾诺莎称之为“纯粹想象之无穷”（infinitum imaginationis）是当代诗人，如哈勒尔与克洛普施托克经常用来描绘无穷——不仅仅是自然的无穷，甚至是上帝自己的无穷——的一幅图像。因此我们在哈勒尔对上帝无穷的著名描写中看到：
+
+我堆集巨大数字，百万之山；我把时间压在时间之上，世界叠在世界之巅；当我从那可怖的高处眺望你时，数字的全部力量乘以千倍，也还不是你的部分之一。
+
+在这里，首先我们遇到的是那种持续地将量，尤其是数，从自身中挤出、延伸出去的过程，康德称之为“可怖”（eery）。它唯一真正“可怖”的地方，正是不断地设限又撤限却未向前迈出一步的厌倦。而这位诗人却为这对虚假无穷的描写加上了收束的一句：
+
+我将这些移去，而你在我面前尽现。
+
+其意即真正的无穷不仅仅是有限之外的一世界，而我们若要意识到它，就必须放弃那种向无穷的进展（progressus in infinitum）。
+
+(3) 众所周知，毕达哥拉斯在数字中进行哲学思考，并将数字设想为万物的根本原则。对普通的心智来说，这一观点乍看之下必定显得完全悖论，或许只是癫狂之说。那么，我们对此应当作何思？为回答这一问题，我们首先必须记住，哲学的问题就在于把事物追溯到观念，当然是追溯到确定的观念。而数字无疑是一种观念：它是最接近感性之物的观念，或者更确切地说，它是感性之物本身的观念，如果我们把感性之物理解为多者，且互相排斥的话。因此，试图把宇宙理解为数字是迈向形而上学的第一步。在哲学史上，正如我们所知，毕达哥拉斯处于伊奥尼亚哲学家与艾利亚学派之间。前者，如亚里士多德所言，从未超出将事物的本质视为物质（iii）；而后者，尤其是巴门尼德，以存在的形态发展到纯粹的思维。毕达哥拉斯哲学的原理仿佛是一座从感性通向超感性之间的桥梁。
+
+从此我们可以看出，那些认为毕达哥拉斯确实走得太远，把事物的本质设想为仅仅数字者，该怎样看待他们的意见。他们诚然承认我们可以对事物加以数数；但就他们所说，事物远不止仅是数字。但在何种意义上它们还要更多呢？普通的感性意识，从它自身的立场出发，会毫不迟疑地回答这个问题：“通过把我们交给感性知觉，并指出事物不但可数，而且可见、可嗅、可触等等。”用现代的话说，毕达哥拉斯的过失可被称为理想主义的过度。正如关于毕达哥拉斯学派历史地位所述，实际情况恰恰相反。纵然承认事物不仅仅是数字；但该承认的意义必须是，单纯数字的观念仍不足以表述事物的确定概念或本质。因而，与其说毕达哥拉斯在数字哲学上走得太远，还不如说他还不够远；事实上，艾利亚学派才是第一个迈出进一步步骤进入纯粹思维的。
+
+再者，即便没有事物，亦有事物状态以及整体的自然现象，其特征主要依赖于确定的数字与比例。尤其如此的是音调的差异及其和谐一致，正是这些，按照广为流传的说法，最先促使毕达哥拉斯设想将事物的本质视为数字。固然，追溯这些现象到其所依赖的确定数字对科学而言是重要的，但将整体的、通过思维的特征归结为仅仅数字的方式则完全不可接受。我们当然可以感觉到自己受到促使，将思维的最一般特征与最初的数字联系起来：说1是简朴与直接；2是差异与调解；而3是二者的统一。然而这种联想纯属外在：仅凭数字本身并无任何东西使其表达这些确定的观念。沿着这种方法每进一步一步，确定数字与确定观念之间的联结就越发任意。因此，我们可以把4视为1与3及其联想到的观念的统一，但4同样是2的二倍；9不只是3的平方，也是8与1之和，7与2之和，等等。像某些现代的秘密社团那样，为各种数字与图形赋予重要性，在某种程度上还是一种无害的消遣，但也显示出其知识资源的匮乏。人们说这些数字隐藏着深远的意义，发人深思。但哲学的重点，并非你可以想到什么，而是你确实想到什么：而真正的思维气质必须在思维自身，而不在任意选定的符号中寻找。
+
+§ 105
+
+量在其独立性格上对自身是外在的，正是这构成了其性质。在那外在性中，它本身并且作为对自身的联结而被指向。它之内有外在性，也就是量性，以及独立性（为自之存在）——即质性的统一。量当这样清楚地在其自身中被呈现时，就是量的比，一种存在方式，它在它的指数上是一个直接的量，同时又是中介，即某一量指向另一量，从而形成比的两边。但这两个量并不是以各自的直接数值来计算：它们的价值仅在这一关系中。
+
+量的无限递进起初显现为数字不断向外伸展超出自身。然而细察便知在这一递进中量又回归到自身：因为这一递进的意义，就思维而言，就是数字由数字所决定。这就构成了量的比。举例说，2：4。这里我们有两个量（并非以它们各自的直接价值来计），我们只关心它们彼此之间的关系。两个项之间的这个关系（比的指数）本身也是一个量，它区别于被关系的量在于：它发生变化就会引起比的变化，而比在其两边同时变化时却不受影响，只要指数不变它就保持不变。因此，在2：4的地方我们可以代以3：6而不改变这个比；因为指数2在两种情况下都是相同的。
+
+§ 106
+
+比的两边仍然是直接的量；质的与量的特性仍彼此外在。但在它们的真理中，既然量在其外在性中即是向自身的关系，或者说这种特性的独立与漠然相结合，便是度量。
+
+由此，通过迄今所考察的各阶段的辩证运动，量竟归回于质。最先呈现在我们面前的量的概念是被废除并被吸收的质。换言之，量看似一种与存在并不相同的外在特征，对存在来说岂有关系。这一概念，正如我们已经见到的，是数学中将大小定义为可增可减的东西的基础。乍看来，这一定义可能会使人产生这样的印象：量仅仅是任何可被改变之物——增与减都意味着对象大小的另一个确定——并可能混淆它与确定的存在，后者作为质的第二阶段，其概念同样被设想为可变。我们却可以通过补充说明来完成这个定义：在量中我们有一个可被改变者，尽管变动依旧保持相同。由此可见，量的概念含有一个内在的矛盾。
+
+这一矛盾，就是构成量的辩证法的因素。辩证法的结果却不是单纯回到质，好像质才是真，量是假的，而是向两者的统一与真理前进，向质的量，或度量前进。因此，在我们考察客观世界时凡涉及量的确定，在所有情况下，其目的是度量，即我们操作的最终目标。哪怕在语言上也有所暗示，当人们称确定量的特征与关系为测量。
+
+例如，我们测量那些被置于振动状态的不同弦的长度，目的是看它们振动所引起的音调在质上的差别，该差别与长度之差对应。
+
+同样在化学中，我们试图确定参与组合的物质数量，以弄清决定这种组合的度量或比例，也就是说，那些引发确定质的量。
+
+在统计学里也是如此，研究所涉及的数字的重要性仅在于它们所决定的质的结果。
+
+单纯收集数字事实，而不顾上述目的，恰如其分地被称为徒有好奇心的练习，既无理论也无实践价值。
+
+度量

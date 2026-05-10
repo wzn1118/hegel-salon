@@ -1,0 +1,971 @@
+{
+  "generatedAt": "2026-04-12T19:26:40.981Z",
+  "generatedTexts": [
+    {
+      "id": "absolute-spirit-selection--absolute-spirit",
+      "enabled": true,
+      "sourceFile": "absolute-spirit-selection--absolute-spirit.txt",
+      "file": "absolute-spirit-selection--absolute-spirit.txt",
+      "families": [
+        "encyclopaedia-spirit"
+      ],
+      "title": "absolute-spirit-selection--absolute-spirit",
+      "medium": "cached online-generated Chinese full text from the local English primary-text corpus",
+      "sourceHash": "a63a2c61d1216a88adc022fe9602a979b5259378",
+      "sourceLength": 18098,
+      "translatedAt": "2026-04-12T09:36:16.722Z"
+    },
+    {
+      "id": "briefe-correspondence-metadata--briefe-und-amtliche-korrespondenz-metadata",
+      "enabled": true,
+      "sourceFile": "briefe-correspondence-metadata--briefe-und-amtliche-korrespondenz-metadata.txt",
+      "file": "briefe-correspondence-metadata--briefe-und-amtliche-korrespondenz-metadata.txt",
+      "families": [
+        "misc"
+      ],
+      "title": "briefe-correspondence-metadata--briefe-und-amtliche-korrespondenz-metadata",
+      "medium": "cached online-generated Chinese full text from the local English primary-text corpus",
+      "sourceHash": "c0f9fe108250f6bc73dc4b390801eb7a20568e69",
+      "sourceLength": 897,
+      "translatedAt": "2026-04-12T14:40:56.903Z"
+    },
+    {
+      "id": "briefe-von-und-an-hegel-1887-band19-2--briefe-von-und-an-hegel-1887-band-19-2",
+      "enabled": true,
+      "sourceFile": "briefe-von-und-an-hegel-1887-band19-2--briefe-von-und-an-hegel-1887-band-19-2.txt",
+      "file": "briefe-von-und-an-hegel-1887-band19-2--briefe-von-und-an-hegel-1887-band-19-2.txt",
+      "families": [
+        "misc"
+      ],
+      "title": "briefe-von-und-an-hegel-1887-band19-2--briefe-von-und-an-hegel-1887-band-19-2",
+      "medium": "cached online-generated Chinese full text from the local English primary-text corpus",
+      "sourceHash": "2a58353724e0610bfe4dec0fcc1f85976a2e87a6",
+      "sourceLength": 778973,
+      "translatedAt": "2026-04-12T19:26:40.968Z"
+    },
+    {
+      "id": "encyclopaedia--absolute-spirit",
+      "enabled": true,
+      "sourceFile": "encyclopaedia--absolute-spirit.txt",
+      "file": "encyclopaedia--absolute-spirit.txt",
+      "families": [
+        "encyclopaedia-spirit"
+      ],
+      "title": "encyclopaedia--absolute-spirit",
+      "medium": "cached online-generated Chinese full text from the local English primary-text corpus",
+      "sourceHash": "a63a2c61d1216a88adc022fe9602a979b5259378",
+      "sourceLength": 18098,
+      "translatedAt": "2026-04-12T09:37:43.887Z"
+    },
+    {
+      "id": "encyclopaedia--contents-of-hegel-s-encyclopaedia-of-the-philosophical-sciences-in-outline",
+      "enabled": true,
+      "sourceFile": "encyclopaedia--contents-of-hegel-s-encyclopaedia-of-the-philosophical-sciences-in-outline.txt",
+      "file": "encyclopaedia--contents-of-hegel-s-encyclopaedia-of-the-philosophical-sciences-in-outline.txt",
+      "families": [
+        "encyclopaedia-spirit"
+      ],
+      "title": "encyclopaedia--contents-of-hegel-s-encyclopaedia-of-the-philosophical-sciences-in-outline",
+      "medium": "cached online-generated Chinese full text from the local English primary-text corpus",
+      "sourceHash": "ce1be9992cc803b290010220373a76760ffb66d7",
+      "sourceLength": 5991,
+      "translatedAt": "2026-04-12T09:56:42.932Z"
+    },
+    {
+      "id": "encyclopaedia--hegel-s-introduction-to-the-shorter-logic",
+      "enabled": true,
+      "sourceFile": "encyclopaedia--hegel-s-introduction-to-the-shorter-logic.txt",
+      "file": "encyclopaedia--hegel-s-introduction-to-the-shorter-logic.txt",
+      "families": [
+        "encyclopaedia-spirit"
+      ],
+      "title": "encyclopaedia--hegel-s-introduction-to-the-shorter-logic",
+      "medium": "cached online-generated Chinese full text from the local English primary-text corpus",
+      "sourceHash": "e5b37a6593ebfce45c6595b57b0d390170b9d674",
+      "sourceLength": 47279,
+      "translatedAt": "2026-04-12T10:01:59.860Z"
+    },
+    {
+      "id": "encyclopaedia--the-objective-spirit-from-the-encyclopaedia-ethics",
+      "enabled": true,
+      "sourceFile": "encyclopaedia--the-objective-spirit-from-the-encyclopaedia-ethics.txt",
+      "file": "encyclopaedia--the-objective-spirit-from-the-encyclopaedia-ethics.txt",
+      "families": [
+        "encyclopaedia-spirit"
+      ],
+      "title": "encyclopaedia--the-objective-spirit-from-the-encyclopaedia-ethics",
+      "medium": "cached online-generated Chinese full text from the local English primary-text corpus",
+      "sourceHash": "026a3bf3ad5768e78989771bbf15659050d3b369",
+      "sourceLength": 88682,
+      "translatedAt": "2026-04-12T09:50:49.382Z"
+    },
+    {
+      "id": "encyclopaedia--the-objective-spirit-from-the-encyclopaedia-introduction",
+      "enabled": true,
+      "sourceFile": "encyclopaedia--the-objective-spirit-from-the-encyclopaedia-introduction.txt",
+      "file": "encyclopaedia--the-objective-spirit-from-the-encyclopaedia-introduction.txt",
+      "families": [
+        "encyclopaedia-spirit"
+      ],
+      "title": "encyclopaedia--the-objective-spirit-from-the-encyclopaedia-introduction",
+      "medium": "cached online-generated Chinese full text from the local English primary-text corpus",
+      "sourceHash": "9e21a5cab81562899f5032138db38c5214cf48b0",
+      "sourceLength": 6243,
+      "translatedAt": "2026-04-12T09:51:24.914Z"
+    },
+    {
+      "id": "encyclopaedia--the-objective-spirit-from-the-encyclopaedia-law",
+      "enabled": true,
+      "sourceFile": "encyclopaedia--the-objective-spirit-from-the-encyclopaedia-law.txt",
+      "file": "encyclopaedia--the-objective-spirit-from-the-encyclopaedia-law.txt",
+      "families": [
+        "encyclopaedia-spirit"
+      ],
+      "title": "encyclopaedia--the-objective-spirit-from-the-encyclopaedia-law",
+      "medium": "cached online-generated Chinese full text from the local English primary-text corpus",
+      "sourceHash": "8c32b6bdd9f20023122df44daf936ba007d0781c",
+      "sourceLength": 10293,
+      "translatedAt": "2026-04-12T09:52:27.441Z"
+    },
+    {
+      "id": "encyclopaedia--the-objective-spirit-from-the-encyclopaedia-morality",
+      "enabled": true,
+      "sourceFile": "encyclopaedia--the-objective-spirit-from-the-encyclopaedia-morality.txt",
+      "file": "encyclopaedia--the-objective-spirit-from-the-encyclopaedia-morality.txt",
+      "families": [
+        "encyclopaedia-spirit"
+      ],
+      "title": "encyclopaedia--the-objective-spirit-from-the-encyclopaedia-morality",
+      "medium": "cached online-generated Chinese full text from the local English primary-text corpus",
+      "sourceHash": "936f0d283fc17f7313aed2a3d8f78627ad57ad9c",
+      "sourceLength": 10203,
+      "translatedAt": "2026-04-12T09:53:32.663Z"
+    },
+    {
+      "id": "encyclopaedia--the-subjective-spirit",
+      "enabled": true,
+      "sourceFile": "encyclopaedia--the-subjective-spirit.txt",
+      "file": "encyclopaedia--the-subjective-spirit.txt",
+      "families": [
+        "encyclopaedia-spirit"
+      ],
+      "title": "encyclopaedia--the-subjective-spirit",
+      "medium": "cached online-generated Chinese full text from the local English primary-text corpus",
+      "sourceHash": "f0bc8a1bb75331d425bd9a5e93993799164cabf6",
+      "sourceLength": 107875,
+      "translatedAt": "2026-04-12T10:14:34.098Z"
+    },
+    {
+      "id": "gw10-nuremberg-courses-metadata--gw-10-nuremberg-courses-metadata",
+      "enabled": true,
+      "sourceFile": "gw10-nuremberg-courses-metadata--gw-10-nuremberg-courses-metadata.txt",
+      "file": "gw10-nuremberg-courses-metadata--gw-10-nuremberg-courses-metadata.txt",
+      "families": [
+        "misc"
+      ],
+      "title": "gw10-nuremberg-courses-metadata--gw-10-nuremberg-courses-metadata",
+      "medium": "cached online-generated Chinese full text from the local English primary-text corpus",
+      "sourceHash": "a162fde5ffa34f971e03020f47e2e82768a8df05",
+      "sourceLength": 651,
+      "translatedAt": "2026-04-12T14:40:59.522Z"
+    },
+    {
+      "id": "gw14-right-supplements-metadata--gw-14-2-14-3-right-supplements-metadata",
+      "enabled": true,
+      "sourceFile": "gw14-right-supplements-metadata--gw-14-2-14-3-right-supplements-metadata.txt",
+      "file": "gw14-right-supplements-metadata--gw-14-2-14-3-right-supplements-metadata.txt",
+      "families": [
+        "misc"
+      ],
+      "title": "gw14-right-supplements-metadata--gw-14-2-14-3-right-supplements-metadata",
+      "medium": "cached online-generated Chinese full text from the local English primary-text corpus",
+      "sourceHash": "1af2590489818b071fb183ed6db663d8b93f77b6",
+      "sourceLength": 850,
+      "translatedAt": "2026-04-12T14:41:01.645Z"
+    },
+    {
+      "id": "gw15-18-late-berlin-metadata--gw-15-18-berlin-writings-and-manuscripts-metadata",
+      "enabled": true,
+      "sourceFile": "gw15-18-late-berlin-metadata--gw-15-18-berlin-writings-and-manuscripts-metadata.txt",
+      "file": "gw15-18-late-berlin-metadata--gw-15-18-berlin-writings-and-manuscripts-metadata.txt",
+      "families": [
+        "misc"
+      ],
+      "title": "gw15-18-late-berlin-metadata--gw-15-18-berlin-writings-and-manuscripts-metadata",
+      "medium": "cached online-generated Chinese full text from the local English primary-text corpus",
+      "sourceHash": "5bd95de8cca55e97bd556e76b462c409c48c939a",
+      "sourceLength": 959,
+      "translatedAt": "2026-04-12T14:41:03.933Z"
+    },
+    {
+      "id": "gw22-excerpts-notes-metadata--gw-22-exzerpte-und-notizen-metadata",
+      "enabled": true,
+      "sourceFile": "gw22-excerpts-notes-metadata--gw-22-exzerpte-und-notizen-metadata.txt",
+      "file": "gw22-excerpts-notes-metadata--gw-22-exzerpte-und-notizen-metadata.txt",
+      "families": [
+        "misc"
+      ],
+      "title": "gw22-excerpts-notes-metadata--gw-22-exzerpte-und-notizen-metadata",
+      "medium": "cached online-generated Chinese full text from the local English primary-text corpus",
+      "sourceHash": "737e1e029201ec2a9fd11e57b164f45bca173f5c",
+      "sourceLength": 529,
+      "translatedAt": "2026-04-12T14:41:08.285Z"
+    },
+    {
+      "id": "gw23-logic-lectures-metadata--gw-23-logic-lectures-metadata",
+      "enabled": true,
+      "sourceFile": "gw23-logic-lectures-metadata--gw-23-logic-lectures-metadata.txt",
+      "file": "gw23-logic-lectures-metadata--gw-23-logic-lectures-metadata.txt",
+      "families": [
+        "misc"
+      ],
+      "title": "gw23-logic-lectures-metadata--gw-23-logic-lectures-metadata",
+      "medium": "cached online-generated Chinese full text from the local English primary-text corpus",
+      "sourceHash": "98c10854170bf731d9b60e50b9b552e0be8db9e3",
+      "sourceLength": 608,
+      "translatedAt": "2026-04-12T14:41:10.138Z"
+    },
+    {
+      "id": "gw24-nature-lectures-metadata--gw-24-nature-lectures-metadata",
+      "enabled": true,
+      "sourceFile": "gw24-nature-lectures-metadata--gw-24-nature-lectures-metadata.txt",
+      "file": "gw24-nature-lectures-metadata--gw-24-nature-lectures-metadata.txt",
+      "families": [
+        "misc"
+      ],
+      "title": "gw24-nature-lectures-metadata--gw-24-nature-lectures-metadata",
+      "medium": "cached online-generated Chinese full text from the local English primary-text corpus",
+      "sourceHash": "f2712e9df3ff65cdfef2b14e8c17ff278d0968ff",
+      "sourceLength": 572,
+      "translatedAt": "2026-04-12T14:41:12.287Z"
+    },
+    {
+      "id": "gw25-spirit-lectures-metadata--gw-25-subjective-spirit-lectures-metadata",
+      "enabled": true,
+      "sourceFile": "gw25-spirit-lectures-metadata--gw-25-subjective-spirit-lectures-metadata.txt",
+      "file": "gw25-spirit-lectures-metadata--gw-25-subjective-spirit-lectures-metadata.txt",
+      "families": [
+        "misc"
+      ],
+      "title": "gw25-spirit-lectures-metadata--gw-25-subjective-spirit-lectures-metadata",
+      "medium": "cached online-generated Chinese full text from the local English primary-text corpus",
+      "sourceHash": "60e44e739e5ea1a84a79a1b1e3d1497c5a01a74a",
+      "sourceLength": 562,
+      "translatedAt": "2026-04-12T14:41:14.010Z"
+    },
+    {
+      "id": "gw26-right-lectures-metadata--gw-26-right-lectures-metadata",
+      "enabled": true,
+      "sourceFile": "gw26-right-lectures-metadata--gw-26-right-lectures-metadata.txt",
+      "file": "gw26-right-lectures-metadata--gw-26-right-lectures-metadata.txt",
+      "families": [
+        "misc"
+      ],
+      "title": "gw26-right-lectures-metadata--gw-26-right-lectures-metadata",
+      "medium": "cached online-generated Chinese full text from the local English primary-text corpus",
+      "sourceHash": "3e63e5da3761a1d3eb10c5ac3a0af5e161b6f96a",
+      "sourceLength": 665,
+      "translatedAt": "2026-04-12T14:41:15.674Z"
+    },
+    {
+      "id": "gw27-world-history-lectures-metadata--gw-27-world-history-lectures-metadata",
+      "enabled": true,
+      "sourceFile": "gw27-world-history-lectures-metadata--gw-27-world-history-lectures-metadata.txt",
+      "file": "gw27-world-history-lectures-metadata--gw-27-world-history-lectures-metadata.txt",
+      "families": [
+        "misc"
+      ],
+      "title": "gw27-world-history-lectures-metadata--gw-27-world-history-lectures-metadata",
+      "medium": "cached online-generated Chinese full text from the local English primary-text corpus",
+      "sourceHash": "a36043a065b4192d91e2255a49dad7ecdaafb501",
+      "sourceLength": 487,
+      "translatedAt": "2026-04-12T14:41:17.770Z"
+    },
+    {
+      "id": "gw28-art-lectures-metadata--gw-28-art-lectures-metadata",
+      "enabled": true,
+      "sourceFile": "gw28-art-lectures-metadata--gw-28-art-lectures-metadata.txt",
+      "file": "gw28-art-lectures-metadata--gw-28-art-lectures-metadata.txt",
+      "families": [
+        "misc"
+      ],
+      "title": "gw28-art-lectures-metadata--gw-28-art-lectures-metadata",
+      "medium": "cached online-generated Chinese full text from the local English primary-text corpus",
+      "sourceHash": "7b5ccf12e4f4f14513aa3d6a3ceaabd16241259d",
+      "sourceLength": 609,
+      "translatedAt": "2026-04-12T14:41:19.577Z"
+    },
+    {
+      "id": "gw29-religion-lectures-metadata--gw-29-religion-lectures-metadata",
+      "enabled": true,
+      "sourceFile": "gw29-religion-lectures-metadata--gw-29-religion-lectures-metadata.txt",
+      "file": "gw29-religion-lectures-metadata--gw-29-religion-lectures-metadata.txt",
+      "families": [
+        "misc"
+      ],
+      "title": "gw29-religion-lectures-metadata--gw-29-religion-lectures-metadata",
+      "medium": "cached online-generated Chinese full text from the local English primary-text corpus",
+      "sourceHash": "de0d9eb5f6039a4dd07bb2a98edf495a0b9a84bc",
+      "sourceLength": 652,
+      "translatedAt": "2026-04-12T14:41:24.047Z"
+    },
+    {
+      "id": "gw3-early-excerpts-metadata--gw-3-fruehe-exzerpte-metadata",
+      "enabled": true,
+      "sourceFile": "gw3-early-excerpts-metadata--gw-3-fruehe-exzerpte-metadata.txt",
+      "file": "gw3-early-excerpts-metadata--gw-3-fruehe-exzerpte-metadata.txt",
+      "families": [
+        "misc"
+      ],
+      "title": "gw3-early-excerpts-metadata--gw-3-fruehe-exzerpte-metadata",
+      "medium": "cached online-generated Chinese full text from the local English primary-text corpus",
+      "sourceHash": "49b9f627d58b855a2e1509ef620e650c10f303a3",
+      "sourceLength": 639,
+      "translatedAt": "2026-04-12T14:41:26.220Z"
+    },
+    {
+      "id": "gw30-history-of-philosophy-lectures-metadata--gw-30-history-of-philosophy-lectures-metadata",
+      "enabled": true,
+      "sourceFile": "gw30-history-of-philosophy-lectures-metadata--gw-30-history-of-philosophy-lectures-metadata.txt",
+      "file": "gw30-history-of-philosophy-lectures-metadata--gw-30-history-of-philosophy-lectures-metadata.txt",
+      "families": [
+        "misc"
+      ],
+      "title": "gw30-history-of-philosophy-lectures-metadata--gw-30-history-of-philosophy-lectures-metadata",
+      "medium": "cached online-generated Chinese full text from the local English primary-text corpus",
+      "sourceHash": "9de0a9e5c29ecad2b4f1a724b9b38db48ec5a57e",
+      "sourceLength": 601,
+      "translatedAt": "2026-04-12T14:41:29.468Z"
+    },
+    {
+      "id": "gw6-8-jena-system-drafts-metadata--gw-6-8-jenaer-systementwuerfe-metadata",
+      "enabled": true,
+      "sourceFile": "gw6-8-jena-system-drafts-metadata--gw-6-8-jenaer-systementwuerfe-metadata.txt",
+      "file": "gw6-8-jena-system-drafts-metadata--gw-6-8-jenaer-systementwuerfe-metadata.txt",
+      "families": [
+        "misc"
+      ],
+      "title": "gw6-8-jena-system-drafts-metadata--gw-6-8-jenaer-systementwuerfe-metadata",
+      "medium": "cached online-generated Chinese full text from the local English primary-text corpus",
+      "sourceHash": "2e5c4ac7d8e078d78b5ce0fca61eb4d34487a544",
+      "sourceLength": 720,
+      "translatedAt": "2026-04-12T14:41:32.196Z"
+    },
+    {
+      "id": "history-of-philosophy--hegel-history-of-philosophy-address",
+      "enabled": true,
+      "sourceFile": "history-of-philosophy--hegel-history-of-philosophy-address.txt",
+      "file": "history-of-philosophy--hegel-history-of-philosophy-address.txt",
+      "families": [
+        "history-of-philosophy"
+      ],
+      "title": "history-of-philosophy--hegel-history-of-philosophy-address",
+      "medium": "cached online-generated Chinese full text from the local English primary-text corpus",
+      "sourceHash": "b0d8973ca3353c355a2ce90c315090316da70996",
+      "sourceLength": 30703,
+      "translatedAt": "2026-04-12T10:38:32.579Z"
+    },
+    {
+      "id": "history-of-philosophy--hegel-history-of-philosophy",
+      "enabled": true,
+      "sourceFile": "history-of-philosophy--hegel-history-of-philosophy.txt",
+      "file": "history-of-philosophy--hegel-history-of-philosophy.txt",
+      "families": [
+        "history-of-philosophy"
+      ],
+      "title": "history-of-philosophy--hegel-history-of-philosophy",
+      "medium": "cached online-generated Chinese full text from the local English primary-text corpus",
+      "sourceHash": "8359b5f3ec3872cbb5453b62fd8fd31e3390bfd9",
+      "sourceLength": 27194,
+      "translatedAt": "2026-04-12T10:39:32.507Z"
+    },
+    {
+      "id": "history-of-philosophy--hegel-s-history-of-philosophy-greek-philosophy",
+      "enabled": true,
+      "sourceFile": "history-of-philosophy--hegel-s-history-of-philosophy-greek-philosophy.txt",
+      "file": "history-of-philosophy--hegel-s-history-of-philosophy-greek-philosophy.txt",
+      "families": [
+        "history-of-philosophy"
+      ],
+      "title": "history-of-philosophy--hegel-s-history-of-philosophy-greek-philosophy",
+      "medium": "cached online-generated Chinese full text from the local English primary-text corpus",
+      "sourceHash": "8e22cf3a6defcff626b4a5994a0a0801b6a5c1dd",
+      "sourceLength": 31699,
+      "translatedAt": "2026-04-12T10:40:22.994Z"
+    },
+    {
+      "id": "history-of-philosophy--hegel-s-history-of-philosophy",
+      "enabled": true,
+      "sourceFile": "history-of-philosophy--hegel-s-history-of-philosophy.txt",
+      "file": "history-of-philosophy--hegel-s-history-of-philosophy.txt",
+      "families": [
+        "history-of-philosophy"
+      ],
+      "title": "history-of-philosophy--hegel-s-history-of-philosophy",
+      "medium": "cached online-generated Chinese full text from the local English primary-text corpus",
+      "sourceHash": "cf98fd7bc32529aa410b08bed5a9d115902c944e",
+      "sourceLength": 17946,
+      "translatedAt": "2026-04-12T10:40:55.873Z"
+    },
+    {
+      "id": "history-of-philosophy--hegel-s-lectures-on-the-history-of-philosophy-part-two-philosophy-of-the-middle-",
+      "enabled": true,
+      "sourceFile": "history-of-philosophy--hegel-s-lectures-on-the-history-of-philosophy-part-two-philosophy-of-the-middle-.txt",
+      "file": "history-of-philosophy--hegel-s-lectures-on-the-history-of-philosophy-part-two-philosophy-of-the-middle-.txt",
+      "families": [
+        "history-of-philosophy"
+      ],
+      "title": "history-of-philosophy--hegel-s-lectures-on-the-history-of-philosophy-part-two-philosophy-of-the-middle-",
+      "medium": "cached online-generated Chinese full text from the local English primary-text corpus",
+      "sourceHash": "f3587480e6d1209d2d72eda67e90c64cb02bb10a",
+      "sourceLength": 6138,
+      "translatedAt": "2026-04-12T10:41:17.090Z"
+    },
+    {
+      "id": "history-of-philosophy--hegel-s-lectures-on-the-history-of-philosophy",
+      "enabled": true,
+      "sourceFile": "history-of-philosophy--hegel-s-lectures-on-the-history-of-philosophy.txt",
+      "file": "history-of-philosophy--hegel-s-lectures-on-the-history-of-philosophy.txt",
+      "families": [
+        "history-of-philosophy"
+      ],
+      "title": "history-of-philosophy--hegel-s-lectures-on-the-history-of-philosophy",
+      "medium": "cached online-generated Chinese full text from the local English primary-text corpus",
+      "sourceHash": "f279844de689c250585daf5569d4e54d310f3874",
+      "sourceLength": 60444,
+      "translatedAt": "2026-04-12T10:43:09.497Z"
+    },
+    {
+      "id": "history-of-philosophy--introduction-to-the-history-of-philosophy-by-hegel",
+      "enabled": true,
+      "sourceFile": "history-of-philosophy--introduction-to-the-history-of-philosophy-by-hegel.txt",
+      "file": "history-of-philosophy--introduction-to-the-history-of-philosophy-by-hegel.txt",
+      "families": [
+        "history-of-philosophy"
+      ],
+      "title": "history-of-philosophy--introduction-to-the-history-of-philosophy-by-hegel",
+      "medium": "cached online-generated Chinese full text from the local English primary-text corpus",
+      "sourceHash": "17f4468ded22850c737a07cd07326fd65a83d053",
+      "sourceLength": 132984,
+      "translatedAt": "2026-04-12T10:47:29.021Z"
+    },
+    {
+      "id": "objective-spirit--the-objective-spirit-from-the-encyclopaedia-ethics",
+      "enabled": true,
+      "sourceFile": "objective-spirit--the-objective-spirit-from-the-encyclopaedia-ethics.txt",
+      "file": "objective-spirit--the-objective-spirit-from-the-encyclopaedia-ethics.txt",
+      "families": [
+        "encyclopaedia-spirit"
+      ],
+      "title": "objective-spirit--the-objective-spirit-from-the-encyclopaedia-ethics",
+      "medium": "cached online-generated Chinese full text from the local English primary-text corpus",
+      "sourceHash": "026a3bf3ad5768e78989771bbf15659050d3b369",
+      "sourceLength": 88682,
+      "translatedAt": "2026-04-12T09:50:49.382Z"
+    },
+    {
+      "id": "objective-spirit--the-objective-spirit-from-the-encyclopaedia-introduction",
+      "enabled": true,
+      "sourceFile": "objective-spirit--the-objective-spirit-from-the-encyclopaedia-introduction.txt",
+      "file": "objective-spirit--the-objective-spirit-from-the-encyclopaedia-introduction.txt",
+      "families": [
+        "encyclopaedia-spirit"
+      ],
+      "title": "objective-spirit--the-objective-spirit-from-the-encyclopaedia-introduction",
+      "medium": "cached online-generated Chinese full text from the local English primary-text corpus",
+      "sourceHash": "9e21a5cab81562899f5032138db38c5214cf48b0",
+      "sourceLength": 6243,
+      "translatedAt": "2026-04-12T09:51:24.914Z"
+    },
+    {
+      "id": "objective-spirit--the-objective-spirit-from-the-encyclopaedia-law",
+      "enabled": true,
+      "sourceFile": "objective-spirit--the-objective-spirit-from-the-encyclopaedia-law.txt",
+      "file": "objective-spirit--the-objective-spirit-from-the-encyclopaedia-law.txt",
+      "families": [
+        "encyclopaedia-spirit"
+      ],
+      "title": "objective-spirit--the-objective-spirit-from-the-encyclopaedia-law",
+      "medium": "cached online-generated Chinese full text from the local English primary-text corpus",
+      "sourceHash": "8c32b6bdd9f20023122df44daf936ba007d0781c",
+      "sourceLength": 10293,
+      "translatedAt": "2026-04-12T09:52:27.441Z"
+    },
+    {
+      "id": "objective-spirit--the-objective-spirit-from-the-encyclopaedia-morality",
+      "enabled": true,
+      "sourceFile": "objective-spirit--the-objective-spirit-from-the-encyclopaedia-morality.txt",
+      "file": "objective-spirit--the-objective-spirit-from-the-encyclopaedia-morality.txt",
+      "families": [
+        "encyclopaedia-spirit"
+      ],
+      "title": "objective-spirit--the-objective-spirit-from-the-encyclopaedia-morality",
+      "medium": "cached online-generated Chinese full text from the local English primary-text corpus",
+      "sourceHash": "936f0d283fc17f7313aed2a3d8f78627ad57ad9c",
+      "sourceLength": 10203,
+      "translatedAt": "2026-04-12T09:53:32.663Z"
+    },
+    {
+      "id": "philosophy-of-history--general-introduction-to-the-philosophy-of-history-by-hegel",
+      "enabled": true,
+      "sourceFile": "philosophy-of-history--general-introduction-to-the-philosophy-of-history-by-hegel.txt",
+      "file": "philosophy-of-history--general-introduction-to-the-philosophy-of-history-by-hegel.txt",
+      "families": [
+        "philosophy-of-history"
+      ],
+      "title": "philosophy-of-history--general-introduction-to-the-philosophy-of-history-by-hegel",
+      "medium": "cached online-generated Chinese full text from the local English primary-text corpus",
+      "sourceHash": "0fb51b714505ed5307ac90f67e9f235c954234d7",
+      "sourceLength": 154983,
+      "translatedAt": "2026-04-12T10:27:50.529Z"
+    },
+    {
+      "id": "philosophy-of-history--hegel-s-lectures-on-the-philosophy-of-history",
+      "enabled": true,
+      "sourceFile": "philosophy-of-history--hegel-s-lectures-on-the-philosophy-of-history.txt",
+      "file": "philosophy-of-history--hegel-s-lectures-on-the-philosophy-of-history.txt",
+      "families": [
+        "philosophy-of-history"
+      ],
+      "title": "philosophy-of-history--hegel-s-lectures-on-the-philosophy-of-history",
+      "medium": "cached online-generated Chinese full text from the local English primary-text corpus",
+      "sourceHash": "ffc0c2b3e1161828e54fac13891dd8aa1b1e3407",
+      "sourceLength": 1285,
+      "translatedAt": "2026-04-12T10:27:56.109Z"
+    },
+    {
+      "id": "philosophy-of-history--hegel-s-philosophy-of-history",
+      "enabled": true,
+      "sourceFile": "philosophy-of-history--hegel-s-philosophy-of-history.txt",
+      "file": "philosophy-of-history--hegel-s-philosophy-of-history.txt",
+      "families": [
+        "philosophy-of-history"
+      ],
+      "title": "philosophy-of-history--hegel-s-philosophy-of-history",
+      "medium": "cached online-generated Chinese full text from the local English primary-text corpus",
+      "sourceHash": "408cf8e0e543fb706aed89872e19510f2fd859bf",
+      "sourceLength": 279361,
+      "translatedAt": "2026-04-12T10:37:38.395Z"
+    },
+    {
+      "id": "philosophy-of-right--contents-of-hegel-s-philosophy-of-right",
+      "enabled": true,
+      "sourceFile": "philosophy-of-right--contents-of-hegel-s-philosophy-of-right.txt",
+      "file": "philosophy-of-right--contents-of-hegel-s-philosophy-of-right.txt",
+      "families": [
+        "philosophy-of-right"
+      ],
+      "title": "philosophy-of-right--contents-of-hegel-s-philosophy-of-right",
+      "medium": "cached online-generated Chinese full text from the local English primary-text corpus",
+      "sourceHash": "38e42f17a6bddcfa46cd9a902f016b6c32adc20e",
+      "sourceLength": 34466,
+      "translatedAt": "2026-04-12T08:38:45.131Z"
+    },
+    {
+      "id": "philosophy-of-right--hegel-s-philosophy-of-right-abstract-right",
+      "enabled": true,
+      "sourceFile": "philosophy-of-right--hegel-s-philosophy-of-right-abstract-right.txt",
+      "file": "philosophy-of-right--hegel-s-philosophy-of-right-abstract-right.txt",
+      "families": [
+        "philosophy-of-right"
+      ],
+      "title": "philosophy-of-right--hegel-s-philosophy-of-right-abstract-right",
+      "medium": "cached online-generated Chinese full text from the local English primary-text corpus",
+      "sourceHash": "e2d602309da5203721dbfcad1f74d684a7eed27c",
+      "sourceLength": 15022,
+      "translatedAt": "2026-04-12T08:40:13.668Z"
+    },
+    {
+      "id": "philosophy-of-right--hegel-s-philosophy-of-right-civil-society",
+      "enabled": true,
+      "sourceFile": "philosophy-of-right--hegel-s-philosophy-of-right-civil-society.txt",
+      "file": "philosophy-of-right--hegel-s-philosophy-of-right-civil-society.txt",
+      "families": [
+        "philosophy-of-right"
+      ],
+      "title": "philosophy-of-right--hegel-s-philosophy-of-right-civil-society",
+      "medium": "cached online-generated Chinese full text from the local English primary-text corpus",
+      "sourceHash": "3e5d6d053e8fd8ed1fa844ab2fc020feb4df21c2",
+      "sourceLength": 120529,
+      "translatedAt": "2026-04-12T08:50:42.123Z"
+    },
+    {
+      "id": "philosophy-of-right--hegel-s-philosophy-of-right-contract",
+      "enabled": true,
+      "sourceFile": "philosophy-of-right--hegel-s-philosophy-of-right-contract.txt",
+      "file": "philosophy-of-right--hegel-s-philosophy-of-right-contract.txt",
+      "families": [
+        "philosophy-of-right"
+      ],
+      "title": "philosophy-of-right--hegel-s-philosophy-of-right-contract",
+      "medium": "cached online-generated Chinese full text from the local English primary-text corpus",
+      "sourceHash": "8adffe623d6b9d9b41e471bf5f2db8f1220d43a7",
+      "sourceLength": 21670,
+      "translatedAt": "2026-04-12T08:52:32.876Z"
+    },
+    {
+      "id": "philosophy-of-right--hegel-s-philosophy-of-right-ethical-life",
+      "enabled": true,
+      "sourceFile": "philosophy-of-right--hegel-s-philosophy-of-right-ethical-life.txt",
+      "file": "philosophy-of-right--hegel-s-philosophy-of-right-ethical-life.txt",
+      "families": [
+        "philosophy-of-right"
+      ],
+      "title": "philosophy-of-right--hegel-s-philosophy-of-right-ethical-life",
+      "medium": "cached online-generated Chinese full text from the local English primary-text corpus",
+      "sourceHash": "be69942f2bdf2b50ef54e48eef81d6f53b2ce94c",
+      "sourceLength": 20937,
+      "translatedAt": "2026-04-12T08:54:26.606Z"
+    },
+    {
+      "id": "philosophy-of-right--hegel-s-philosophy-of-right-introduction",
+      "enabled": true,
+      "sourceFile": "philosophy-of-right--hegel-s-philosophy-of-right-introduction.txt",
+      "file": "philosophy-of-right--hegel-s-philosophy-of-right-introduction.txt",
+      "families": [
+        "philosophy-of-right"
+      ],
+      "title": "philosophy-of-right--hegel-s-philosophy-of-right-introduction",
+      "medium": "cached online-generated Chinese full text from the local English primary-text corpus",
+      "sourceHash": "82b63d5d984b1832afaa2164e1ba2aa51c20bd06",
+      "sourceLength": 83618,
+      "translatedAt": "2026-04-12T09:01:49.849Z"
+    },
+    {
+      "id": "philosophy-of-right--hegel-s-philosophy-of-right-morality",
+      "enabled": true,
+      "sourceFile": "philosophy-of-right--hegel-s-philosophy-of-right-morality.txt",
+      "file": "philosophy-of-right--hegel-s-philosophy-of-right-morality.txt",
+      "families": [
+        "philosophy-of-right"
+      ],
+      "title": "philosophy-of-right--hegel-s-philosophy-of-right-morality",
+      "medium": "cached online-generated Chinese full text from the local English primary-text corpus",
+      "sourceHash": "8ffaf3eb83b64c1e5106eb1ffde3ccc4d184cc31",
+      "sourceLength": 116264,
+      "translatedAt": "2026-04-12T09:16:50.596Z"
+    },
+    {
+      "id": "philosophy-of-right--hegel-s-philosophy-of-right-preface",
+      "enabled": true,
+      "sourceFile": "philosophy-of-right--hegel-s-philosophy-of-right-preface.txt",
+      "file": "philosophy-of-right--hegel-s-philosophy-of-right-preface.txt",
+      "families": [
+        "philosophy-of-right"
+      ],
+      "title": "philosophy-of-right--hegel-s-philosophy-of-right-preface",
+      "medium": "cached online-generated Chinese full text from the local English primary-text corpus",
+      "sourceHash": "73f532b533286215333a44ffee69c9ab3e46dbbc",
+      "sourceLength": 32155,
+      "translatedAt": "2026-04-12T09:20:00.751Z"
+    },
+    {
+      "id": "philosophy-of-right--hegel-s-philosophy-of-right-property",
+      "enabled": true,
+      "sourceFile": "philosophy-of-right--hegel-s-philosophy-of-right-property.txt",
+      "file": "philosophy-of-right--hegel-s-philosophy-of-right-property.txt",
+      "families": [
+        "philosophy-of-right"
+      ],
+      "title": "philosophy-of-right--hegel-s-philosophy-of-right-property",
+      "medium": "cached online-generated Chinese full text from the local English primary-text corpus",
+      "sourceHash": "2fc6d25bc256843f5ac2cff13c190ada97ba9326",
+      "sourceLength": 66542,
+      "translatedAt": "2026-04-12T09:26:03.888Z"
+    },
+    {
+      "id": "philosophy-of-right--hegel-s-philosophy-of-right-the-family",
+      "enabled": true,
+      "sourceFile": "philosophy-of-right--hegel-s-philosophy-of-right-the-family.txt",
+      "file": "philosophy-of-right--hegel-s-philosophy-of-right-the-family.txt",
+      "families": [
+        "philosophy-of-right"
+      ],
+      "title": "philosophy-of-right--hegel-s-philosophy-of-right-the-family",
+      "medium": "cached online-generated Chinese full text from the local English primary-text corpus",
+      "sourceHash": "d50cab5903ae0886c14b084434f2487d0f3ef41b",
+      "sourceLength": 46214,
+      "translatedAt": "2026-04-12T09:30:17.878Z"
+    },
+    {
+      "id": "philosophy-of-right--hegel-s-philosophy-of-right-the-state",
+      "enabled": true,
+      "sourceFile": "philosophy-of-right--hegel-s-philosophy-of-right-the-state.txt",
+      "file": "philosophy-of-right--hegel-s-philosophy-of-right-the-state.txt",
+      "families": [
+        "philosophy-of-right"
+      ],
+      "title": "philosophy-of-right--hegel-s-philosophy-of-right-the-state",
+      "medium": "cached online-generated Chinese full text from the local English primary-text corpus",
+      "sourceHash": "19e26f9cbd412bfcc8eade394e2c00755a4132ea",
+      "sourceLength": 15449,
+      "translatedAt": "2026-04-12T09:31:49.717Z"
+    },
+    {
+      "id": "shorter-logic--hegel-s-introduction-to-the-shorter-logic",
+      "enabled": true,
+      "sourceFile": "shorter-logic--hegel-s-introduction-to-the-shorter-logic.txt",
+      "file": "shorter-logic--hegel-s-introduction-to-the-shorter-logic.txt",
+      "families": [
+        "science-of-logic"
+      ],
+      "title": "shorter-logic--hegel-s-introduction-to-the-shorter-logic",
+      "medium": "cached online-generated Chinese full text from the local English primary-text corpus",
+      "sourceHash": "e5b37a6593ebfce45c6595b57b0d390170b9d674",
+      "sourceLength": 47279,
+      "translatedAt": "2026-04-12T10:01:59.860Z"
+    },
+    {
+      "id": "shorter-logic--hegel-the-doctrine-of-the-notion",
+      "enabled": true,
+      "sourceFile": "shorter-logic--hegel-the-doctrine-of-the-notion.txt",
+      "file": "shorter-logic--hegel-the-doctrine-of-the-notion.txt",
+      "families": [
+        "science-of-logic"
+      ],
+      "title": "shorter-logic--hegel-the-doctrine-of-the-notion",
+      "medium": "cached online-generated Chinese full text from the local English primary-text corpus",
+      "sourceHash": "fdd2eb73453b5c5184a525543e713047e8062f6d",
+      "sourceLength": 39239,
+      "translatedAt": "2026-04-12T10:49:31.143Z"
+    },
+    {
+      "id": "shorter-logic--hegel-the-notion-part-b-the-object",
+      "enabled": true,
+      "sourceFile": "shorter-logic--hegel-the-notion-part-b-the-object.txt",
+      "file": "shorter-logic--hegel-the-notion-part-b-the-object.txt",
+      "families": [
+        "science-of-logic"
+      ],
+      "title": "shorter-logic--hegel-the-notion-part-b-the-object",
+      "medium": "cached online-generated Chinese full text from the local English primary-text corpus",
+      "sourceHash": "aac1618a8bdff24c4764a8e552443d997814a6ee",
+      "sourceLength": 36765,
+      "translatedAt": "2026-04-12T10:51:05.503Z"
+    },
+    {
+      "id": "shorter-logic--ii-preliminary-notion",
+      "enabled": true,
+      "sourceFile": "shorter-logic--ii-preliminary-notion.txt",
+      "file": "shorter-logic--ii-preliminary-notion.txt",
+      "families": [
+        "science-of-logic"
+      ],
+      "title": "shorter-logic--ii-preliminary-notion",
+      "medium": "cached online-generated Chinese full text from the local English primary-text corpus",
+      "sourceHash": "866e3738e64b60e3b3b83919c667d3c210d3f6f1",
+      "sourceLength": 62716,
+      "translatedAt": "2026-04-12T10:53:26.084Z"
+    },
+    {
+      "id": "shorter-logic--iii-first-attitude-of-thought-to-objectivity",
+      "enabled": true,
+      "sourceFile": "shorter-logic--iii-first-attitude-of-thought-to-objectivity.txt",
+      "file": "shorter-logic--iii-first-attitude-of-thought-to-objectivity.txt",
+      "families": [
+        "science-of-logic"
+      ],
+      "title": "shorter-logic--iii-first-attitude-of-thought-to-objectivity",
+      "medium": "cached online-generated Chinese full text from the local English primary-text corpus",
+      "sourceHash": "6e56b6026e4ddbd972c78b1fd4dc787985827868",
+      "sourceLength": 32312,
+      "translatedAt": "2026-04-12T10:54:47.136Z"
+    },
+    {
+      "id": "shorter-logic--iv-second-attitude-of-thought-to-objectivity",
+      "enabled": true,
+      "sourceFile": "shorter-logic--iv-second-attitude-of-thought-to-objectivity.txt",
+      "file": "shorter-logic--iv-second-attitude-of-thought-to-objectivity.txt",
+      "families": [
+        "science-of-logic"
+      ],
+      "title": "shorter-logic--iv-second-attitude-of-thought-to-objectivity",
+      "medium": "cached online-generated Chinese full text from the local English primary-text corpus",
+      "sourceHash": "6d4da2cbe3d9902efb917daf46ae5bfbdb48973f",
+      "sourceLength": 74448,
+      "translatedAt": "2026-04-12T10:58:31.970Z"
+    },
+    {
+      "id": "shorter-logic--logic-further-defined-and-divided-hegel",
+      "enabled": true,
+      "sourceFile": "shorter-logic--logic-further-defined-and-divided-hegel.txt",
+      "file": "shorter-logic--logic-further-defined-and-divided-hegel.txt",
+      "families": [
+        "science-of-logic"
+      ],
+      "title": "shorter-logic--logic-further-defined-and-divided-hegel",
+      "medium": "cached online-generated Chinese full text from the local English primary-text corpus",
+      "sourceHash": "9497c1e93e3d748d7610fbdffd2996fa5cdd380b",
+      "sourceLength": 17249,
+      "translatedAt": "2026-04-12T10:59:12.575Z"
+    },
+    {
+      "id": "shorter-logic--quantity",
+      "enabled": true,
+      "sourceFile": "shorter-logic--quantity.txt",
+      "file": "shorter-logic--quantity.txt",
+      "families": [
+        "science-of-logic"
+      ],
+      "title": "shorter-logic--quantity",
+      "medium": "cached online-generated Chinese full text from the local English primary-text corpus",
+      "sourceHash": "a1d6a2a386bbfb96ce1bbd77c59d7cf8b3c14e13",
+      "sourceLength": 32094,
+      "translatedAt": "2026-04-12T11:01:03.643Z"
+    },
+    {
+      "id": "shorter-logic--the-doctrine-of-being-hegel",
+      "enabled": true,
+      "sourceFile": "shorter-logic--the-doctrine-of-being-hegel.txt",
+      "file": "shorter-logic--the-doctrine-of-being-hegel.txt",
+      "families": [
+        "science-of-logic"
+      ],
+      "title": "shorter-logic--the-doctrine-of-being-hegel",
+      "medium": "cached online-generated Chinese full text from the local English primary-text corpus",
+      "sourceHash": "4fcdbdb88d12b3eb64feedd7c793a1598bc4d5f9",
+      "sourceLength": 70939,
+      "translatedAt": "2026-04-12T11:04:03.460Z"
+    },
+    {
+      "id": "shorter-logic--the-doctrine-of-essence-actuality-hegel",
+      "enabled": true,
+      "sourceFile": "shorter-logic--the-doctrine-of-essence-actuality-hegel.txt",
+      "file": "shorter-logic--the-doctrine-of-essence-actuality-hegel.txt",
+      "families": [
+        "science-of-logic"
+      ],
+      "title": "shorter-logic--the-doctrine-of-essence-actuality-hegel",
+      "medium": "cached online-generated Chinese full text from the local English primary-text corpus",
+      "sourceHash": "5852b308f0992f761e8307956d4d73d09851c327",
+      "sourceLength": 58890,
+      "translatedAt": "2026-04-12T11:07:44.086Z"
+    },
+    {
+      "id": "shorter-logic--the-doctrine-of-essence-appearance-hegel",
+      "enabled": true,
+      "sourceFile": "shorter-logic--the-doctrine-of-essence-appearance-hegel.txt",
+      "file": "shorter-logic--the-doctrine-of-essence-appearance-hegel.txt",
+      "families": [
+        "science-of-logic"
+      ],
+      "title": "shorter-logic--the-doctrine-of-essence-appearance-hegel",
+      "medium": "cached online-generated Chinese full text from the local English primary-text corpus",
+      "sourceHash": "326ae0a51a847e7953e7ab03f54b3454662f1ebb",
+      "sourceLength": 38646,
+      "translatedAt": "2026-04-12T11:09:20.617Z"
+    },
+    {
+      "id": "shorter-logic--the-doctrine-of-essence-hegel",
+      "enabled": true,
+      "sourceFile": "shorter-logic--the-doctrine-of-essence-hegel.txt",
+      "file": "shorter-logic--the-doctrine-of-essence-hegel.txt",
+      "families": [
+        "science-of-logic"
+      ],
+      "title": "shorter-logic--the-doctrine-of-essence-hegel",
+      "medium": "cached online-generated Chinese full text from the local English primary-text corpus",
+      "sourceHash": "c45a9471f3e9a88cc71c26563f78d203916bf23a",
+      "sourceLength": 65215,
+      "translatedAt": "2026-04-12T11:13:47.639Z"
+    },
+    {
+      "id": "shorter-logic--the-doctrine-of-the-notion-3rd-part-the-idea-hegel",
+      "enabled": true,
+      "sourceFile": "shorter-logic--the-doctrine-of-the-notion-3rd-part-the-idea-hegel.txt",
+      "file": "shorter-logic--the-doctrine-of-the-notion-3rd-part-the-idea-hegel.txt",
+      "families": [
+        "science-of-logic"
+      ],
+      "title": "shorter-logic--the-doctrine-of-the-notion-3rd-part-the-idea-hegel",
+      "medium": "cached online-generated Chinese full text from the local English primary-text corpus",
+      "sourceHash": "848364606cfa8dfd7443f5dc171a5561e0c5d030",
+      "sourceLength": 54002,
+      "translatedAt": "2026-04-12T11:16:15.947Z"
+    },
+    {
+      "id": "shorter-logic--the-judgment",
+      "enabled": true,
+      "sourceFile": "shorter-logic--the-judgment.txt",
+      "file": "shorter-logic--the-judgment.txt",
+      "families": [
+        "science-of-logic"
+      ],
+      "title": "shorter-logic--the-judgment",
+      "medium": "cached online-generated Chinese full text from the local English primary-text corpus",
+      "sourceHash": "be30b6caa1c273ef22f34908067b24272e29649e",
+      "sourceLength": 23846,
+      "translatedAt": "2026-04-12T11:17:17.150Z"
+    },
+    {
+      "id": "shorter-logic--the-syllogism",
+      "enabled": true,
+      "sourceFile": "shorter-logic--the-syllogism.txt",
+      "file": "shorter-logic--the-syllogism.txt",
+      "families": [
+        "science-of-logic"
+      ],
+      "title": "shorter-logic--the-syllogism",
+      "medium": "cached online-generated Chinese full text from the local English primary-text corpus",
+      "sourceHash": "24785fa70b3050cb59758559fb9b8f5b80369116",
+      "sourceLength": 30526,
+      "translatedAt": "2026-04-12T11:19:14.399Z"
+    },
+    {
+      "id": "shorter-logic--v-third-attitude-of-thought-to-objectivity",
+      "enabled": true,
+      "sourceFile": "shorter-logic--v-third-attitude-of-thought-to-objectivity.txt",
+      "file": "shorter-logic--v-third-attitude-of-thought-to-objectivity.txt",
+      "families": [
+        "science-of-logic"
+      ],
+      "title": "shorter-logic--v-third-attitude-of-thought-to-objectivity",
+      "medium": "cached online-generated Chinese full text from the local English primary-text corpus",
+      "sourceHash": "8328e0ea937b6f57775d41c7042efeaafd36581b",
+      "sourceLength": 39923,
+      "translatedAt": "2026-04-12T11:20:19.176Z"
+    },
+    {
+      "id": "shorter-logic--vi-logic-further-defined-and-divided",
+      "enabled": true,
+      "sourceFile": "shorter-logic--vi-logic-further-defined-and-divided.txt",
+      "file": "shorter-logic--vi-logic-further-defined-and-divided.txt",
+      "families": [
+        "science-of-logic"
+      ],
+      "title": "shorter-logic--vi-logic-further-defined-and-divided",
+      "medium": "cached online-generated Chinese full text from the local English primary-text corpus",
+      "sourceHash": "cec4398aa42a31790589068dbfe2fdba0be259de",
+      "sourceLength": 10218,
+      "translatedAt": "2026-04-12T11:21:05.153Z"
+    },
+    {
+      "id": "subjective-spirit--index-to-the-subjective-spirit",
+      "enabled": true,
+      "sourceFile": "subjective-spirit--index-to-the-subjective-spirit.txt",
+      "file": "subjective-spirit--index-to-the-subjective-spirit.txt",
+      "families": [
+        "encyclopaedia-spirit"
+      ],
+      "title": "subjective-spirit--index-to-the-subjective-spirit",
+      "medium": "cached online-generated Chinese full text from the local English primary-text corpus",
+      "sourceHash": "deb8aba65df74735f3789518140b33d4cadf75c1",
+      "sourceLength": 909,
+      "translatedAt": "2026-04-12T10:14:39.022Z"
+    },
+    {
+      "id": "who-thinks-abstractly--who-thinks-abstractly",
+      "enabled": true,
+      "sourceFile": "who-thinks-abstractly--who-thinks-abstractly.txt",
+      "file": "who-thinks-abstractly--who-thinks-abstractly.txt",
+      "families": [
+        "early-writings"
+      ],
+      "title": "who-thinks-abstractly--who-thinks-abstractly",
+      "medium": "cached online-generated Chinese full text from the local English primary-text corpus",
+      "sourceHash": "429198d2c223344aa1abef42dac879f465e8ef75",
+      "sourceLength": 12870,
+      "translatedAt": "2026-04-12T10:20:23.098Z"
+    }
+  ]
+}

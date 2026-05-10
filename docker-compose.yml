@@ -1,0 +1,21 @@
+services:
+  hegel-salon:
+    build: .
+    ports:
+      - "3087:3087"
+    environment:
+      PORT: "3087"
+      HEGEL_ENABLE_AUTH: "1"
+      HEGEL_HIDE_DEV_CODES: "1"
+      HEGEL_TRUST_PROXY: "1"
+      HEGEL_FORCE_SECURE_COOKIES: "0"
+      HEGEL_API_CONFIG_MASTER_KEY: "change-this-32-byte-minimum-secret"
+    volumes:
+      - hegel-data:/app/data
+      - hegel-local-resources:/app/local-resources
+    restart: unless-stopped
+
+volumes:
+  hegel-data:
+  hegel-local-resources:
+

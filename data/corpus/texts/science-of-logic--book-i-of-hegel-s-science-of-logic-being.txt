@@ -1,0 +1,599 @@
+Book I of Hegel's Science of Logic - Being
+
+ Hegel's Science of Logic
+
+ Highlighted text is Lenin's underlining. The ® access his annotations.
+
+ Volume One: The Objective Logic
+
+Book One: The Doctrine of Being
+
+ Quality - Quantity - Measure
+
+ Section One: Determinateness (Quality)
+
+ &sect; 130
+
+ Being is the indeterminate immediate ; it is free from determinateness in relation to essence and also from any which it can possess within itself. This reflectionless being is being as it is immediately in its own self alone.
+
+ &sect; 131
+
+Because it is indeterminate being, it lacks all quality; but in itself, the character of indeterminateness attaches to it only in contrast to what is determinate or qualitative. But determinate being stands in contrast to being in general, so that the very indeterminateness of the latter constitutes its quality. It will therefore be shown that the first being is in itself determinate, and therefore, secondly, that it passes over into determinate being - is determinate being - but that this latter as finite being sublates itself and passes over into the infinite relation of being to its own self, that is, thirdly , into being-for-self.
+
+ Chapter 1 Being
+
+ A Being
+
+ &sect; 132
+
+ Being, pure being, without any further determination. In its indeterminate immediacy it is equal only to itself. It is also not unequal relatively to an other; it has no diversity within itself nor any with a reference outwards. It would not be held fast in its purity if it contained any determination or content which could be distinguished in it or by which it could be distinguished from an other. It is pure indeterminateness and emptiness. There is nothing to be intuited in it, if one can speak here of intuiting; or, it is only this pure intuiting itself. Just as little is anything to be thought in it, or it is equally only this empty thinking. Being, the indeterminate immediate, is in fact nothing, and neither more nor less than nothing.
+
+ B Nothing
+
+ &sect; 133
+
+ Nothing, pure nothing: it is simply equality with itself, complete emptiness, absence of all determination and content - undifferentiatedness in itself. In so far as intuiting or thinking can be mentioned here, it counts as a distinction whether something or nothing is intuited or thought. To intuit or think nothing has, therefore, a meaning; both are distinguished and thus nothing is (exists) in our intuiting or thinking; or rather it is empty intuition and thought itself, and the same empty intuition or thought as pure being. Nothing is, therefore, the same determination, or rather absence of determination, and thus altogether the same as, pure being . ®
+
+ C Becoming
+
+ 1. Unity of Being and Nothing
+
+ &sect; 134
+
+ Pure Being and pure nothing are, therefore, the same. What is the truth is neither being nor nothing, but that being - does not pass over but has passed over - into nothing, and nothing into being. But it is equally true that they are not undistinguished from each other, that, on the contrary, they are not the same, that they are absolutely distinct, and yet that they are unseparated and inseparable and that each immediately vanishes in its opposite . Their truth is therefore, this movement of the immediate vanishing of the one into the other: becoming , a movement in which both are distinguished, but by a difference which has equally immediately resolved itself. ®
+
+ Remark 1: The Opposition of Being and Nothing in Ordinary Thinking
+
+ Remark 2: Defectiveness of the Expression 'Unity, Identity of Being and Nothing'
+
+ Remark 3: The Isolating of These Abstractions
+
+ Remark 4: Incomprehensibility of the Beginning
+
+ 2. Moments of Becoming : Coming-to-be and Ceasing-to-be
+
+ 3. The Sublation of Becoming
+
+ Remark: The Expression ‘To Sublate'
+
+ &sect; 184
+
+ To sublate, and the sublated (that which exists ideally as a moment), constitute one of the most important notions in philosophy. It is a fundamental determination which repeatedly occurs throughout the whole of philosophy, the meaning of which is to be clearly grasped and especially distinguished from nothing . What is sublated is not thereby reduced to nothing. Nothing is immediate ; what is sublated, on the other hand, is the result of mediation ; it is a non-being but as a result which had its origin in a being. It still has, therefore, in itself the determinate from which it originates .
+
+ &sect; 185
+
+ ' To sublate ' has a twofold meaning in the language: on the one hand it means to preserve, to maintain, and equally it also means to cause to cease, to put an end to . Even 'to preserve' includes a negative elements, namely, that something is removed from its influences, in order to preserve it. Thus what is sublated is at the same time preserved; it has only lost its immediacy but is not on that account annihilated.
+
+ &sect; 186
+
+The two definitions of 'to sublate' which we have given can be quoted as two dictionary meanings of this word. But it is certainly remarkable to find that a language has come to use one and the same word for two opposite meanings. It is a delight to speculative thought to find in the language words which have in themselves a speculative meaning; the German language has a number of such. The double meaning of the Latin tollere (which has become famous through the Ciceronian pun: tollendum est Octavium ) does not go so far; its affirmative determination signifies only a lifting-up. Something is sublated only in so far as it has entered into unity with its opposite; in this more particular signification as something reflected, it may fittingly be called a moment. In the case of the lever, weight and distance from a point are called its mechanical moments on account of the sameness of their effect, in spite of the contrast otherwise between something real, such as a weight, and something ideal, such as a mere spatial determination, a line.[See Phil. Nat. §261 ] We shall often have occasion to notice that the technical language of philosophy employs Latin terms for reflected determinations, either because the mother tongue has no words for them or if it has, as here, because its expression calls to mind more what is immediate, whereas the foreign language suggests more what is reflected.
+
+ &sect; 187
+
+The more precise meaning and expression which being and nothing receive, now that they are moments, is to be ascertained from the consideration of determinate being as the unity in which they are preserved. Being is being, and nothing is nothing, only in their contradistinction from each other; but in their truth, in their unity, they have vanished as these determinations and are now something else. Being and nothing are the same; but just because they are the same they are no longer being and nothing, but now have a different significance. In becoming they were coming-to-be and ceasing-to-be; in determinate being, a differently determined unity, they are again differently determined moments. This unity now remains their base from which they do not again emerge in the abstract significance of being and nothing.
+
+ Chapter 2 Determinate Being
+
+ &sect; 188
+
+In considering determinate being the emphasis falls on its determinate character; the determinateness is in the form of being, and as such it is quality. Through its quality, something is determined as opposed to an other, as alterable and finite; and as negatively determined not only against an other but also in its own self. This its negation as at first opposed to the finite something is the infinite; the abstract opposition in which these determinations appear resolves itself into the infinity which is free from the opposition, into being-for-self.
+
+ &sect; 189
+
+The treatment of determinate being falls therefore into three parts:
+
+A. Determinate being as such
+
+B. Something and other, finitude
+
+C. Qualitative infinity.
+
+ A Determinate Being as Such
+
+ (a) Determinate Being in General
+
+(b) Quality
+
+(c) Something
+
+ B Finitude
+
+ (a) Something and Other
+
+(b) Determination, Constitution and Limit
+
+(c) Finitude
+
+ [a] The Immediacy of Finitude
+
+[b] Limitation and the Ought
+
+ Remark: The Ought
+
+ &sect; 262
+
+The ought has recently played a great part in philosophy, especially in connection with morality and also in metaphysics generally, as the ultimate and absolute concept of the identity of the in-itself or self-relation, and of the determinateness or limit.
+
+ &sect; 263
+
+'You can, because you ought' - this expression, which is supposed to mean a great deal, is implied in the notion of ought. For the ought implies that one is superior to the limitation; in it the limit is sublated and the in-itself of the ought is thus an identical self-relation, and hence the abstraction of 'can'. But conversely, it is equally correct that: 'you cannot, just because you ought.' For in the ought, the limitation as limitation is equally implied; the said formalism of possibility has, in the limitation, a reality, a qualitative otherness opposed to it and the relation of each to the other is a contradiction, and thus a 'cannot', or rather an impossibility.
+
+ &sect; 264
+
+ In the Ought the transcendence of finitude, that is, infinity, begins. The ought is that which, in the further development, exhibits itself in accordance with the said impossibility as the infinity.
+
+ &sect; 265
+
+With respect to the form of the limitation and the ought, two prejudices can be criticised in more detail. First of all, great stress is laid on the limitations of thought, of reason, and so on, and it is asserted that the limitation cannot be transcended. To make such as assertion is to be unaware that the very fact that something is determined as a limitation implies that the limitation is already transcended . For a determinateness, a limit, is determined as a limitation only in opposition to its other in general, that is, in opposition to that which is free from the limitation; the other of a limitation is precisely the being beyond it. Stone and metal do not transcend their limitation because this is not a limitation for them. If, however, in the case of such general propositions framed by the understanding, such as that limitation cannot be transcended, thought will not apply itself to finding out what is implied in the Notion, then it can be directed to the world of actuality where such proportions show themselves to be completely unreal. just because thought is supposed to be superior to actuality, to dwell apart from it in higher regions and therefore to be itself determined as an ought-to-be, on the one hand, it does not advance to the Notion, and, on the other hand, it stands in just as untrue a relation to actuality as it does to the Notion.
+
+ Because the stone does not think, does not even feel, its limitedness is not a limitation for it , that is, is not a negation in it for sensation, imagination, thought, etc., which it does not possess . But even the stone, as a something, contains the distinction of its determination or in-itself and its determinate being, and to that extent it, too, transcends its limitation; the Notion which is implicit in it contains the identity of the stone with its other. If it is a base capable of being acted on by an acid, then it can be oxidised , and neutralised, and so on. In oxidation, neutralisation and so on, it overcomes its limitation of existing only as a base; it transcends it, and similarly the acid overcomes its limitation of being an acid. This ought, the obligation to transcend limitations, is present in both acid and caustic base in such a degree that it is only by force that they can be kept fixed as (waterless, that is, purely non-neutral) acid and caustic base.
+
+ &sect; 266
+
+If, however, an existence contains the Notion not merely as an abstract in-itself, but as an explicit, self-determined totality, as instinct, life, ideation, etc., then in its own strength it overcomes the limitation and attains a being beyond it. The plant transcends the limitation of being a seed, similarly, of being blossom, fruit, leaf; the seed becomes the developed plant, the blossom fades away, and so on. The sentient creature, in the limitation of hunger, thirst, etc., is the urge to overcome this limitation and it does overcome it. It feels pain, and it is the privilege of the sentient nature to feel pain; it is a negation in its self, and the negation is determined as a limitation in its feeling, just because the sentient creature has the feeling of its self, which is the totality that transcends this determinateness. If it were not above and beyond the determinateness, it would not feel it as its negation and would feel no pain.
+
+ But it is reason, thought, which is supposed to be unable to transcend limitation - reason, which is the universal explicitly beyond particularity as such (that is, all particularity), which is nothing but the overcoming of limitation! Granted, not every instance of transcending and being beyond limitation is a genuine liberation from it , a veritable affirmation; even the ought itself, and abstraction in general, is in imperfect transcending. However, the reference to the wholly abstract universal is a sufficient reply to the equally abstract assertion that limitation cannot be transcended, or, again, even the reference to the infinite in general is a sufficient refutation of the assertion that the finite cannot be transcended.
+
+ &sect; 267
+
+In this connection we may mention a seemingly ingenious fancy of Leibniz: that if a magnet possessed consciousness it would regard its pointing to the north as a determination of its will , as a law of its freedom. On the contrary , if it possessed consciousness and consequently will and freedom, it would be a thinking being. Consequently, space for it would be universal, embracing every direction , so that the single direction to the north would be rather a limitation on its freedom, just as much as being fixed to one spot would be a limitation for a man although not for a plant.
+
+ &sect; 268
+
+On the other hand, the ought is the transcending, but still only finite transcending, of the limitation. Therefore, it has its place and its validity in the sphere of finitude where it holds fast to being-in-itself in opposition to limitedness, declaring the former to be the regulative and essential factor relatively to what is null. Duty is an ought directed against the particular will, against self-seeking desire and capricious interest and it is held up as an ought to the will in so far as this has the capacity to isolate itself from the true. Those who attach such importance to the ought of morality and fancy that morality is destroyed if the ought is not recognized as ultimate truth, and those too who, reasoning from the level of the understanding, derive a perpetual satisfaction from being able to confront everything there is with an ought, that is, with a 'knowing better' - and for that very reason are just as loath to be robbed of the ought - do not see that as regards the finitude of their sphere the ought receives full recognition. But in the world of actuality itself, Reason and Law are not in such a bad way that they only ought to be - it is only the abstraction of the in-itself that stops at this-any more than the ought is in its own self perennial and, what is the same thing, that finitude is absolute. The philosophy of Kant and Fichte sets up the ought as the highest point of the resolution of the contradictions of Reason; but the truth is that the ought is only the standpoint which clings to finitude and thus to contradiction.
+
+ [c] Transition of the Finite into the Infinite
+
+ C Infinity
+
+ (a) The Infinite in General
+
+(b) Alternating Determination of the Finite and the Infinite
+
+(c) Affirmative Infinity
+
+ Transition
+
+ Remark 1: The Infinite Progress
+
+ Remark 2: Idealism
+
+ &sect; 316
+
+The proposition that the finite is ideal [ ideell ] constitutes idealism. The idealism of philosophy consists in nothing else than in recognising that the finite has no veritable being. Every philosophy is essentially an idealism or at least has idealism for its principle, and the question then is only how far this principle is actually carried out. This is as true of philosophy as of religion; for religion equally does not recognise finitude as a veritable being, as something ultimate and absolute or as something underived, uncreated, eternal. Consequently the opposition of idealistic and realistic philosophy has no significance. A philosophy which ascribed veritable, ultimate, absolute being to finite existence as such, would not deserve the name of philosophy; the principles of ancient or modern philosophies, water, or matter, or atoms are thoughts, universals, ideal entities, not things as they immediately present themselves to us, that is, in their sensuous individuality - not even the water of Thales. For although this is also empirical water, it is at the same time also the in-itself or essence of all other things, too, and these other things are not self-subsistent or grounded in themselves, but are posited by, are derived from, an other, from water, that is they are ideal entities. Now above we have named the principle or the universal the ideal (and still more must the Notion, the Idea, spirit be so named); and then again we have described individual, sensuous things as ideal in principle, or in their Notion, still more in spirit, that is, as sublated; here we must note, in passing, this twofold aspect which showed itself in connection with the infinite, namely that on the one hand the ideal is concrete, veritable being, and on the other hand the moments of this concrete being are no less ideal - are sublated in it; but in fact what is, is only the one concrete whole from which the moments are inseparable.
+
+ &sect; 317
+
+By the ideal [ dem Ideellen ] is meant chiefly the form of figurate conception and imagination, and what is simply in my conception, or in the Notion, or in the idea, in imagination, and so on, is called ideal, so that even fancies are counted as ideals - conceptions which are not only distinct from the real world, but are supposed to be essentially not real. In point of fact, the spirit is the idealist proper; in spirit, even as feeling, imagination and still more as thinking and comprehending, the content is not present as a so-called real existence; in the simplicity of the ego such external being is present only as sublated, it is for me, it is ideally in me. This subjective idealism, either in the form of the unconscious idealism of consciousness generally, or consciously enunciated and set up as a principle, concerns only the form of conception according to which a content is mine; in the systematic idealism of subjectivity this form is declared to be the only true exclusive form in opposition to the form of objectivity or reality, of the external existence of that content. Such idealism is [merely] formal because it disregards the content of imagination or thought, which content in being imagined or thought can remain wholly in its finitude. In such an idealism nothing is lost, just as much because the reality of such a finite content, the existence filled with finitude, is preserved, as because, in so far as abstraction is made from such finite reality, the content is supposed to be of no consequence in itself; and in it nothing is gained for the same reason that nothing is lost, because the ego, conception, spirit, remains filled with the same content of finitude. The opposition of the form of subjectivity and objectivity is of course one of the finitudes; but the content, as taken up in sensation, intuition or even in the more abstract element of conception, of thought, contains finitudes in abundance and with the exclusion of only one of the modes of finitude, namely, of the said form of subjective and objective, these finitudes are certainly not eliminated, still less have they spontaneously fallen away.
+
+ Chapter 3 Being-for-self
+
+ &sect; 318
+
+In being-for-self, qualitative being finds its consummation; it is infinite being. The being of the beginning lacks all determination. Determinate being is sublated but only immediately sublated being. It thus contains, to begin with, only the first negation, which is itself immediate; it is true that being, too, is preserved in it and both are united in determinate being in a simple unity, but for that very reason they are in themselves still unequal to each other and their unity is not yet posited. Determinate being is therefore the sphere of difference, of dualism, the field of finitude. Determinateness is determinateness as such, in which being is only relatively, not absolutely determined. In being-for-self, the difference between being and determinateness or negation is posited and equalised; quality, otherness, limit - like reality, being-in-itself, the ought, and so on-are the imperfect embodiments of the negation in being in which the difference of both still lies at the base. Since, however, in finitude the negation has passed into infinity, into the posited negation of negation, it is simple self-relation and consequently in its own self the equalisation with being, absolutely determined being.
+
+ &sect; 319
+
+Being-for-self is first, immediately a being-for-self - the One.
+
+Secondly, the One passes into a plurality of ones - repulsion - and this otherness of the ones is sublated in their ideality - attraction.
+
+Thirdly, we have the alternating determination of repulsion and attraction in which they collapse into equilibrium, and quality, which in being-for-self reached its climax, passes over into quantity.
+
+ A Being-for-self as Such
+
+ (a) Determinate Being and Being-for-self
+
+(b) Being-for-one
+
+ Remark: The German Expression, 'What For a Thing' (Meaning 'What Kind of a Thing')
+
+ (c) The One
+
+ B The One and the Many
+
+ (a) The One in its own self
+
+(b) The One and the Void
+
+ Remark: Atomism
+
+ (c) Many Ones - Repulsion
+
+ Remark: The Monad of Leibniz
+
+ C Repulsion and Attraction
+
+ (a) Exclusion of the One
+
+ Remark: The unity of the One and the Many
+
+ (b) The one One of Attraction
+
+(c) The Relation of Repulsion and Attraction
+
+ Remark: The Kantian Construction of Matter from the Forces of Attraction and Repulsion
+
+ &sect; 373
+
+Attraction and repulsion, as we know, are usually regarded as forces . This determination of them and - the relationships connected with it have to be compared with the Notions which have resulted from our consideration of them. Conceived as forces, they are regarded as self-subsistent and therefore as not connected with each other through their own nature; that is, they are considered not as moments, each of which is supposed to pass into the other, but rather as fixed in their opposition to each other. Further, they are imagined as meeting in a third, in matter , but in such a manner, that this unification is, counted, as their truth., on the contrary; each is regarded also as a first, as being in and for itself, and matter, or its determinations, are supposed to be realised and produced by them. When it is said that matter has the forces within itself , they are understood to be so conjoined in this unity that they are at the same time presupposed as intrinsically free and independent of each other.
+
+ &sect; 374
+
+Kant, as we know, constructed matter from the forces of attraction and repulsion, or at least he has, to use his own words, set up the metaphysical elements of this construction. It will not be without interest to examine this construction more closely. This metaphysical exposition of a subject matter which not only itself but also in its determinations seemed to belong only to experience is noteworthy, partly because as an experiment with the Notion it at least gave the impulse to the more recent philosophy of nature, to a philosophy which does not make nature as given in sense-perception the basis of science, but which goes to the absolute Notion for its determinations; and partly because in many cases no advance is made beyond the Kantian construction which is held to be a philosophical beginning and foundation for physics.
+
+ &sect; 375
+
+Now it is true that matter as it exists for sense perception is no more a subject matter of logic than are space and its determinations. But the forces of attraction and repulsion, in so far as they are regarded as forces of empirical matter, are also based on the pure determinations here considered of the one and the many and their inter-relationships, which, because these names are most obvious, I have called repulsion and attraction.
+
+ &sect; 376
+
+Kant's method in the deduction of matter from these forces, which he calls a construction, when looked at more closely does not deserve this name, unless any exercise of reflection, even analytical reflection, is to be called a construction; and later philosophers of nature have in fact given the name of construction to the shallowest reasoning and the most baseless concoction of unbridled imagination and thoughtless reflection - and it is especially for the so-called factors of attraction and repulsion that such philosophers have shown a predilection.
+
+ &sect; 377
+
+For Kant's method is basically analytical, not constructive. He presupposes the idea of matter and then asks what forces are required to maintain the determinations he has presupposed. Thus, on the one hand, he demands the force of attraction because, properly speaking, through repulsion alone and without attraction matter could not exist; and on the other hand he derives repulsion, too, from matter and gives as the reason that we think of matter as impenetrable, since it presents itself under this category to the sense of touch by which it manifests itself to us. Consequently, he proceeds, repulsion is at once thought in the concept of matter because it is immediately given therein, whereas attraction is added to the concept syllogistically. But these syllogisms, too, are based on what has just been said, namely, that matter which possessed repulsive force alone, would not exhaust our conception of matter.
+
+ It is evident that this is the method of a cognition which reflects on experience, which first perceives the determinations in a phenomenon, then makes these the foundation, and for their so-called explanation assumes corresponding basic elements or forces which are supposed to produce those determinations of the phenomenon .
+
+ &sect; 378
+
+With respect to this difference as to the way in which cognition finds the forces of repulsion and attraction in matter, Kant further remarks that the force of attraction certainly just as much belongs to the concept of matter 'although it is not contained in it'; this last expression is italicised by Kant. However, it is hard to perceive what this difference is supposed to be; for a determination which belongs to the concept of anything must be truly contained in it.
+
+ &sect; 379
+
+What causes the difficulty and gives rise to this vain subterfuge, is that Kant from the start one-sidedly attributes to the concept of matter only the determination of impenetrability, which we are supposed to perceive by the sense of touch, for which reason the force of repulsion as the holding off of an other from itself is immediately given. But if, further, the existence of matter is supposed to be impossible without attraction, then this assertion is based on a conception of matter taken from sense perception; consequently, the determination of attraction, too, must come within the range of sense perception. It is indeed easy to perceive that matter, besides its being-for-self, which sublates the being-for-other (offers resistance), has also a relation between its self - determined parts, a spatial extension and cohesion, and in rigidity and solidity the cohesion is very firm. Physics explains that the tearing apart, etc., of a body requires a force which shall be stronger than the mutual attraction of the parts of the body. From this observation reflection can just as directly derive the force of attraction or assume it as given, as it did with the force of repulsion. In point of fact, if we consider Kant's arguments from which the force of attraction is supposed to be deduced (the proof of the proposition that the possibility of matter requires a force of attraction as a second fundamental force, loc. cit.), it is apparent that their sole content is this, that through repulsion alone matter would not be spatial Matter being presupposed as filling space, it is credited with continuity, the ground of which is assumed to be the force of attraction.
+
+ &sect; 380
+
+Now if the merit of such a construction of matter were at most that of an analysis (though a merit diminished by the faulty exposition), still the fundamental thought, namely, the derivation of matter from these two opposite determinations as its fundamental forces, must always be highly esteemed. Kant is chiefly concerned to banish the vulgar mechanistic way of thinking which stops short at the one determination of impenetrability, of self-determined and self-subsistent puncticity, and converts into something external the opposite determination, the relation of matter within itself or the relation of a plurality of matters, which in turn are regarded as particular ones - a way of thinking which, as Kant says, will admit no motive forces except pressure and thrust, that is, only action from without. This external manner of thinking always presupposes motion as already externally present in matter, and it does not occur to it to regard motion as something immanent and to comprehend motion itself in matter, which latter is thus assumed as, on its own account, motionless and inert. This stand-point has before it only ordinary mechanics, not immanent and free motion. It is true that Kant sublates this externality in so far as he makes attraction (the relation of matters to one another in so far as these are assumed as separated from one another, or matter generally in its self-externality) a force of matter itself ; still, on the other hand, his two fundamental forces within matter remain external to and completely independent of each other.
+
+ &sect; 381
+
+The fixed difference of these two forces attributed to them from that external standpoint is no less null than any other distinction must show itself to be which, in respect of its specific content, is made into something supposedly fixed; because these forces are only moments which pass over into each other, as we saw above when they were considered in their truth. I go on to consider these other distinctions as they are stated by Kant.
+
+ &sect; 382
+
+He defines the force of attraction as a penetrative force by which one bit of matter can act directly on the parts of another even beyond the area of contact; the force of repulsion, on the other hand, he defines as a surface force through which bits of matter can act on each other only in the common area of contact. The reason adduced that the latter can be only a surface force is as follows: ‘The parts in contact each limit the sphere of action of the other, and the force of repulsion cannot move any more distant part except through the agency of the intervening parts; an immediate action of one part of matter on another passing right across these intervening parts by forces of expansion (which means here, forces of repulsion) is impossible.'
+
+ &sect; 383
+
+But here we must remember that in assuming 'nearer' or 'more distant' parts of matter, the same distinction would likewise arise with respect to attraction, namely, that though one atom acted on another, yet a third, more distant atom (between which and the first atom, the second atom would be), would first enter into the sphere of attraction of the intervening atom nearer to it; therefore the first atom would not have an immediate, simple action on the third, from which it would follow that the action of the force of attraction, like that of repulsion, is equally mediated. Further, the genuine penetration of the force of attraction could of necessity consist only in this, that every part of matter was in and for itself attractive, not that a certain number of atoms behaved passively and only one atom actively. But we must at once remark with respect to the force of repulsion itself that in the passage quoted, 'parts in contact' are mentioned which implies solidity and continuity of a matter already finished and complete which would not permit the passage through it of a repelling force. But this solidity of matter in which parts are in contact and are no longer separated by the void already presupposes that the force of repulsion is sublated; according to the sensuous conception of repulsion which prevails here, parts in contact are to be taken as those which do not repel each other. It therefore follows, quite tautologically, that where repulsion is assumed to be not, there no repulsion can take place. But from this nothing else follows which could serve to determine the force of repulsion. However, reflection on the statement that parts in contact are in contact only in so far as they hold themselves apart, leads directly to the conclusion that the force of repulsion is not merely on the surface of matter but within the sphere which was supposed to be only a sphere of attraction.
+
+ &sect; 384
+
+Kant assumes further that 'through the force of attraction, matter only occupies space but does not fill it'; and 'because matter through the force of attraction does not fill space, this force can act across empty space since there is no intervening matter to limit it'. This distinction is much the same as the one mentioned above where a determination was supposed to belong to the concept of a thing but not to be contained in it; here, then, matter is supposed only to occupy a space but not to fill it. There it is repulsion, if we stop at the first determination of matter, through which the ones repel one another and so are only negatively related to one another, here that means, by empty space. Here, however, it is the force of attraction which keeps space empty; it does not fill space by its connection of the atoms, in other words, it keeps the atoms in a negative relation to one another. We see that Kant here unconsciously realises what is implicit in the nature of the subject matter, when he attributes to the force of attraction precisely what, in accordance with the first determination, he attributed to the opposite force. While he was busy with establishing the difference between the two forces, it happened that one had passed over into the other. Thus through repulsion, on the other hand, matter is supposed to fill a space, and consequently through repulsion the empty space left by the force of attraction vanishes. In point of fact repulsion, in doing away with empty space, also destroys the negative relation of the atoms or ones, that is, their repulsion of one another; in -other words, repulsion is determined as the opposite of itself.
+
+ &sect; 385
+
+To this effacing of the differences there is added the confusion arising from the fact that, as we observed at the beginning, Kant's exposition of the opposed forces is analytic; and whereas matter is supposed to be derived from its elements, it is presented throughout the entire discourse as already formed and constituted. In the definition of surface and penetrative force both are assumed as motive forces by means of which matter is supposed to be able to act in one or other of these ways. Here, therefore, they are represented as forces, not through which matter first comes into being but through which matter, as an already finished product, is only set in motion. But in so far as we are speaking of the forces through which different bodies act on one another and are set in motion, this is something quite different from the determination and relation which these forces were supposed to have as [constitutive] moments of matter.
+
+ &sect; 386
+
+The same opposition of attractive and repulsive forces is made by their more developed form of centripetal and centrifugal forces. These appear to offer an essential distinction, since in their sphere there is a fixed single one, a centre, in relation to which the other ones behave as not for themselves, so that the difference between the forces can be linked to this presupposed difference between a single central one and the others which are not independent relatively to it. But if they are to be used for explanation - for which purpose they are assumed to be (like the forces of repulsion and attraction) in an inverse quantitative ratio so that the one increases as the other decreases - then the phenomenon of the motion and its inequality ought to be the result of these forces which were assumed for the purpose of explanation. However, one need only examine the accounts (any of them will do) of a phenomenon like the unequal velocity of a planet in its orbit round the sun, based on the opposition of these forces, to become aware of the confusion which prevails in such explanations, and the impossibility of disentangling the magnitudes of the forces, so that the one which in the explanation is assumed to be decreasing can just as well be assumed to be increasing, and vice versa . To make this evident would require a lengthier exposition than could be given here; but what is necessary for this purpose is adduced later on in connection with the inverted relation.
+
+ Section Two: Magnitude (Quantity)
+
+ &sect; 387
+
+The difference between quantity and quality has been stated. Quality is the first, immediate determinateness, quantity is the determinateness which has become indifferent to being, a limit which is just as much no limit, being-for-self which is absolutely identical with being-for-other - a repulsion of the many ones which is directly the non-repulsion, the continuity of them.
+
+ &sect; 388
+
+Because that which is for itself is now posited as not excluding its other, but rather as affirmatively continuing itself into it, it is otherness in so far as determinate being again appears in this continuity and its determinateness is at the same time no longer in a simple self-relation, no longer an immediate determinateness of the determinately existent something, but is posited as self-repelling, as in fact having the relation-to-self as a determinateness in another something (which is for itself ; and since they are at the same time indifferent, relationless limits reflected into themselves, the determinateness in general is outside itself, an absolutely self-external determinateness and an equally external something; such a limit, the indifference of the limit within itself and of the something to the limit, constitutes the quantitative determinateness of the something.
+
+ &sect; 389
+
+In the first place, pure quantity is to be distinguished from itself as a determinate quantity, from quantum. As the former, it is in the first place real being-for-self which has returned into itself and which as yet contains no determinateness: a compact, infinite unity which continues itself into itself.
+
+ &sect; 390
+
+Secondly, this develops a determinateness which is posited in it as one which is at the same time no determinateness, as only an external one. It becomes quantum. Quantum is indifferent determinateness, that is, a self-transcending, self-negating determinateness; as this otherness of otherness it relapses into the infinite progress. But the infinite quantum is the indifferent determinate ness sublated, it is the restoration of quality.
+
+ &sect; 391
+
+Thirdly, quantum in a qualitative form is quantitative ratio. Quantum transcends itself only generally: in ratio, however, its transition into its otherness is such that this otherness in which it has its determination is at the same time posited, is another quantum. Thus quantum has returned into itself and in its otherness is related to itself.
+
+ &sect; 392
+
+At the base of this ratio there is still the externality of quantum; the quanta which are related to each other are indifferent, that is, they have their self-relation in such self-externality. The ratio is thus only a formal unity of quality and quantity. Its dialectic is its transition into their absolute unity, into Measure.
+
+ Remark: Something's Limit as Quality
+
+ Chapter 1 Quantity
+
+ A. PURE QUANTITY
+
+ &sect; 395
+
+Quantity is sublated being-for-self; the repelling one which related itself only negatively to the excluded one, having passed over into relation to it, treats the other as identical with itself, and in doing so has lost its determination: being-for-self has passed over into attraction. The absolute brittleness of the repelling one has melted away into this unity which, however, as containing this one, is at the same time determined by the immanent repulsion, and as unity of the self-externality is unity with itself. Attraction is in this way the moment of continuity in quantity.
+
+ &sect; 396
+
+Continuity is, therefore, simple, self-same self-relation, which is not interrupted by any limit or exclusion; it is not, however, an immediate unity, but a unity of ones which possess being-for-self. The asunderness of the plurality is still contained in this unity, but at the same time as not differentiating or interrupting it. In continuity, the plurality is posited as it is in itself; the many are all alike, each is the same as the other and the plurality is, consequently, a simple, undifferentiated sameness. Continuity is this moment of self-sameness of the asunderness, the self-continuation of the different ones into those from which they are distinguished.
+
+ &sect; 397
+
+In continuity, therefore, magnitude immediately possesses the moment of discreteness - repulsion, as now a moment in quantity. Continuity is self-sameness, but of the Many which, however, do not become exclusive; it is repulsion which expands the selfsameness to continuity. Hence discreteness, on its side, is a coalescent discreteness, where the ones are not connected by the void, by the negative, but by their own continuity and do not interrupt this self-sameness in the many.
+
+ &sect; 398
+
+Quantity is the unity of these moments of continuity and discreteness, but at first it is so in the form of one of them, continuity, as a result of the dialectic of being-for-self, which has collapsed into the form of self-identical immediacy. Quantity is, as such, this simple result in so far as being-for-self has not yet developed its moments and posited them within itself. It contains them to begin with as being-for-self posited as it is in truth. The determination of being-for-self was to be a self-sublating relation-to-self, a perpetual coming-out-of-itself. But what is repelled is itself; repulsion is, therefore, the creative flowing away of itself. On account of the self-sameness of what is repelled, this distinguishing or differentiation is an uninterrupted continuity; and because of the coming-out-of-itself this continuity, without being interrupted, is at the same time a plurality, which no less immediately remains in its self-identicalness.
+
+ Remark 1: The Conception of Pure Quantity
+
+ Remark 2: The Kantian Antinomy of the Indivisibility and the Infinite Divisibility
+
+ B Continuous and Discrete Magnitude
+
+ Remark: The Usual Separation of These Magnitudes
+
+ &sect; 432
+
+In the usual ideas of continuous and discrete magnitude, it is overlooked that each of these magnitudes contains both moments, continuity and discreteness, and that the distinction between them consists only in this, that in one of the moments the determinateness is posited and in the other it is only implicit. Space, time, matter, and so forth are continuous magnitudes in that they are repulsions from themselves, a streaming forth out of themselves which at the same time is not their transition or relating of themselves to a qualitative other. They possess the absolute possibility that the one may be posited in them at any point - not the empty possibility of a mere otherness (as when it is said, it is possible that a tree might stand in the place of this stone), but they contain the principle of the one within themselves; it is one of the determinations which constitute them.
+
+ &sect; 433
+
+Conversely, in discrete magnitude continuity is not to be overlooked; this moment is, as has been shown, the one as unity.
+
+ Continuous and discrete magnitude can be regarded as species of quantity , provided that magnitude is posited, not under any external determinateness, but under the determinatenesses of its own moments; the ordinary transition from genus to species allows external characteristics to be attributed to the former according to some external basis of classification. And besides, continuous and discrete magnitude are not yet quanta; they are only quantity itself in each of its two forms . They are perhaps, called magnitudes in so far as they have in common with quantum simply this-to be a determinateness in quantity.
+
+ C. LIMITATION OF QUANTITY
+
+ &sect; 434
+
+Discrete magnitude has first the one for its principle; secondly, it is a plurality of ones; and thirdly, it is essentially continuous; it is the one as at the same time sublated, as unity, the continuation of itself as such in the discreteness of the ones. Consequently, it is posited as one magnitude, the determinateness of which is the one which, in this posited and determinate being is the excluding one, a limit in the unity. Discrete magnitude as such is immediately not limited; but as distinguished from continuous magnitude it is a determinate being, a something, with the one as its determinateness and also as its first negation and limit.
+
+ &sect; 435
+
+This limit, which is related to the unity and is the negation in it, is also, as the one, self-related; it is thus the enclosing, encompassing limit. Limit here is not at first distinguished from its determinate being as something, but, as the one, is immediately this negative point itself. But the being which here is limited is essentially a continuity, by virtue of which it passes beyond the limit, beyond this one, to which it is indifferent. Real discrete quantity is thus a quantity, or quantum - quantity as a determinate being and a something.
+
+ &sect; 436
+
+Since the one which is a limit includes within itself the many ones of discrete quantity, it equally posits them as sublated within it; and because it is a limit of continuity simply as such, the distinction between continuous and discrete magnitude is here of no significance; or, more correctly, it is a limit to the continuity of the one as much as of the other; both undergo transition into quanta.
+
+ Chapter 2 Quantum
+
+ &sect; 437
+
+ Quantum, which to begin with is quantity with a determinateness or limit in general is, in its complete determinateness, number . Quantum differentiates itself secondly , into (a) extensive quantum, in which the limit is a limitation of the determinately existent plurality; and (b) intensive quantum or degree, the determinate being having made the transition into being-for-self. Intensive quantum as both for itself and at the same time immediately outside itself - since it is an indifferent limit - has its determinateness in an other. As this manifest contradiction of being determined simply within itself yet having its determinateness outside it, pointing outside itself for it, quantum posited as being in its own self external to itself, passes over thirdly, into quantitative infinity.
+
+ A. NUMBER
+
+ &sect; 438
+
+Quantity is quantum, or has a limit, both as continuous and as discrete magnitude. The difference between these two kinds has here, in the first instance, no immediate significance.
+
+ &sect; 439
+
+The very nature of quantity as sublated being-for-self is ipso facto to be indifferent to its limit. But equally, too, quantity is not unaffected by the limit or by being, a quantum; for it contains within itself as its own moment the one, which is absolutely determined and which, therefore, as posited in the continuity or unity of quantity, is its limit, but a limit which remains what it has become, simply a one.
+
+ &sect; 440
+
+This one is thus the principle of quantum, but as the one of quantity. Hence, first, it is continuous, it is a unity; secondly, it is discrete, a plurality of ones, which is implicit in continuous, or explicit in discrete magnitude, the ones having equality with one another, possessing the said continuity, the same unity. Thirdly, this one is also a negation of the many ones as a simple limit, an excluding of its otherness from itself, a determination of itself in opposition to other quanta. Thus the one is [a] self-relating, [b] enclosing and [c] other-excluding limit.
+
+ &sect; 441
+
+Quantum completely posited in these determinations is number . The complete positedness lies in the existence of the limit as a plurality and so in its distinction from the unity. Consequently, number appears as a discrete magnitude, but in the unity it equally possesses continuity. It is, therefore, also quantum in its complete determinateness , for its principle the one, the absolutely determinate. Continuity, in which the one is present only in principle, as a sublated moment - posited as a unity - is the form of indeterminateness.
+
+ &sect; 442
+
+Quantum, merely as such, is limited generally; its limit is an abstract simple determinateness of it. But in quantum as number, this limit is posited as manifold within itself. It contains the many ones which constitute its determinate being, but does not contain them in an indeterminate manner, for the determinateness of the limit falls in them; the limit excludes other determinate being, that is, other pluralities and the ones it encloses are a specific aggregate, the amount - which is the form taken by discreteness in number - the other to which is the unit, the continuity of the amount. Amount and unit constitute the moments of number .
+
+ &sect; 443
+
+As regards amount, we must see more closely how the many ones of which it consists are present in the limit; it is correct to say of amount that it consists of the many, for the ones are in it not as sublated but as affirmatively present, only posited with the excluding limit to which they are indifferent. This, however, is not indifferent to them. In the sphere of determinate being, the relation of the limit to it was primarily such that the determinate being persisted as the affirmative on this side of its limit, while the limit, the negation, was found outside on the border of the determinate being; similarly, the breaking-off [in the counting] of the many ones and the exclusion of other ones appears as a determination falling outside the enclosed ones. But in the qualitative sphere it was found that the limit pervades the determinate being, is coextensive with it, and consequently that it lies in the nature of something to be limited, that is, finite. In the quantitative sphere a number, say a hundred, is conceived in such a manner that the hundredth one alone limits the many to make them a hundred. In one sense this is correct; but on the other hand none of the hundred ones has precedence over any other for they are only equal - each is equally the hundredth; thus they all belong to the limit which makes the number a hundred and the number cannot dispense with any of them for its determinateness. Hence, relatively to the hundredth one, the others do not constitute a determinate being that is in any way different from the limit, whether they are outside or inside it. Consequently, the number is not a plurality over against the enclosing, limiting one, but itself constitutes this limitation which is a specific quantum; the many constitute a number, a two, a ten, a hundred, and so on.
+
+ &sect; 444
+
+Now the limiting one is the number as determined relatively to other numbers, as distinguished from them. But this distinguishing does not become a qualitative determinateness but remains quantitative, falling only within the comparing external reflection; the number, as a one, remains returned into itself and indifferent to others. This indifference of a number to others is an essential determination of it and constitutes the implicit determinedness of the number, but also the number's own externality. Number is thus a numerical one as the absolutely determinate one, which at the same time has the form of simple immediacy and for which, therefore, the relation to other is completely external. Further, one as a number possesses determinateness (in so far as this is a relation to other) as the moments of itself contained within it, in its difference of unit and amount; and amount is itself a plurality of ones, that is, this absolute externality is in the one itself. This contradiction of number or of quantum as such within itself is the quality of quantum, in the further determinations of which this contradiction is developed.
+
+ Remark 1: The Species of Calculation in Arithmetic; Kant's Synthetic Propositions a priori
+
+ Remark 2: The Employment of Numerical Distinctions for Expressing Philosophical Notions
+
+ B Extensive and Intensive Quantum
+
+ (a) Their Difference
+
+(b) Identity of Extensive and Intensive Magnitude
+
+ Remark 1: Examples of This Identity
+
+ Remark 2: The determination of degree as applied by Kant to the soul
+
+ (c) Alteration of Quantum
+
+ C Quantitative Infinity
+
+ (a) Its Notion
+
+(b) The Quantitative Infinite Progress
+
+ Remark 1: The High Repute of the Progress to Infinity
+
+ Remark 2: The Kantian Antinomy of the Limitation and Nonlimitation of the World
+
+ (c) The Infinity of Quantum
+
+ Remark 1: The Specific Nature of the Notion of the Mathematical Infinite
+
+ Remark 2: The Purpose of the Differential Calculus Deduced from its Application
+
+ Remark 3: Further Forms Connected With the Qualitative Determinateness of Magnitude
+
+ Chapter 3 The Quantitative Relation or Quantitative Ratio
+
+ A The Direct Ratio
+
+B Inverse Ratio
+
+C The Ratio of Powers
+
+ Remark
+
+ &sect; 695
+
+In the Remarks above on the quantitative infinite, it was shown that this infinite and also the difficulties associated with it have their origin in the qualitative moment which makes its appearance in the sphere of quantity, and also how the qualitative moment of the ratio of powers in particular is the source of various developments and complexities. It was shown that the chief obstacle to a grasp of the Notion of this infinite is the stopping short at its merely negative determination as the negation of quantum, instead of advancing to the simple affirmative determination which is the qualitative moment. The only further remark to be made here concerns the intrusion of quantitative forms into the pure qualitative forms of thought in philosophy. It is the relationship of powers in particular which has been applied recently to the determinations of the Notion. The Notion in its immediacy was called the first power or potence; in its otherness or difference, in the determinate being of its moments, the second power; and in its return into itself or as a totality, the third power. It is at once evident that power as used thus is a category which essentially belongs to quantum - these powers do not bear the meaning of the potentia, the dynamis of Aristotle. Thus, the relationship of powers expresses determinateness in the form or difference which has reached its truth, but difference as it is in the particular Notion of quantum, not as it is in the Notion as such. In quantum, the negativity which belongs to the nature of the Notion is still far from being posited in the determination proper to the Notion; differences which are proper to quantum are superficial determinations for the Notion itself and are still far from being determined as they are in the Notion. It was in the infancy of philosophic thinking that numbers were used, as by Pythagoras, to designate universal, essential distinctions - and first and second power, and so on are in this respect not a whit better than numbers. This was a preliminary stage to comprehension in the element of pure thought; it was not until after Pythagoras that thought determinations themselves were discovered, i.e., became on their own account objects for consciousness. But to retrogress from such determinations to those of number is the action of a thinking which feels its own incapacity, a thinking which, in Opposition to current philosophical culture which is accustomed to thought determinations, now also makes itself ridiculous by pretending that this impotence is something new, superior, and an advance.
+
+ &sect; 696
+
+There is as little to be said against the expression power when it is used only as a symbol, as there is against the use of numbers or any other kind of symbols for Notions - but also there is just as much to be said against them as against all symbolism whatever in which pure determinations of the Notion or of philosophy are supposed to be represented.
+
+ &sect; 697
+
+Philosophy needs no such help either from the world of sense or from the products of the imagination, or from subordinate spheres in its own peculiar province, for the determinations of such spheres are unfitted for higher spheres and for the whole. This unfitness is manifest whenever categories of the finite are applied to the infinite; the current determinations of force, or substantiality, cause and effect, and so on, are likewise only symbols for expressing, for example, vital or spiritual relationships, i.e. they are untrue determinations for such relationships; and still more so are the powers of quantum and degrees of powers, both for such and for speculative relationships generally.
+
+ &sect; 698
+
+If numbers, powers, the mathematical infinite, and suchlike are to be used not as symbols but as forms for philosophical determinations and hence themselves as philosophical forms, then it would be necessary first of all to demonstrate their philosophical meaning, i.e. the specific nature of their Notion. If this is done, then they themselves are superfluous designations; the determinateness of the Notion specifies its own self and its specification alone is the correct and fitting designation. The use of those forms is, therefore, nothing more than a convenient means of evading the task of grasping the determinations of the Notion, of specifying and of justifying them.
+
+ Section Three: Measure
+
+ &sect; 699
+
+ Abstractly expressed, in measure quality and quantity are united. Being as such is an immediate identity of the determinateness with itself. This immediacy of the determinateness has sublated itself. Quantity is being which has returned into itself in such a manner that it is a simple self-identity as indifference to the determinateness .
+
+ &sect; 700
+
+But this indifference is only the externality of having the determinateness not in its own self but in an other. Thirdly, we now have self-related externality; as self-related it is also a sublated externality and has within itself the difference from itself-the difference which, as an externality is the quantitative, and as taken back into itself is the qualitative, moment.
+
+ &sect; 701
+
+In transcendental idealism the categories of quantity and quality are followed, after the insertion of relation, by modality , which may therefore be mentioned here. This category has there the meaning of being the relation of the object to thought. According to that idealism thought generally is essentially external to the thing-in-itself. In so far as the other categories have only the transcendental character of belonging to consciousness, but to the objective element of it, so modality as the category of relation to the subject, to this extent contains relatively the determination of reflection -into-self; i.e. the objectivity which belongs to the other categories is lacking in the categories of modality ; these, according to Kant, do not in the least add to the concept as a determination of the object but only express the relation to the faculty of cognition. The categories which Kant groups under modality - namely, possibility, actuality and necessity will occur later in their proper place; Kant did not apply the infinitely important form of triplicity - with him it manifested itself at first only as a formal spark of light - to the genera of his categories (quantity, quality, etc.), but only to their species which, too, alone he called categories. Consequently he was unable to hit on the third to quality and quantity.
+
+ &sect; 702
+
+With Spinoza, the mode is likewise the third after substance and attribute; he explains it to be the affections of substance, or that element which is in an other through which it is comprehended. According to this concept, this third is only externality as such; as has already been mentioned, with. Spinoza generally, the rigid nature of substance lacks the return into itself.
+
+ &sect; 703
+
+The observation here made extends generally to those systems of pantheism which have been partially developed by thought. The first is being, the one, substance, the infinite, essence; in contrast to this abstraction the second, namely, all determinateness in general, what is only finite, accidental, perishable, non-essential, etc. can equally abstractly be grouped together; and this is what usually happens as the next step in quite formal thinking. But the connection of this second with the first is so evident that one cannot avoid grasping it as also in a unity with the latter; thus with Spinoza, the attribute is the whole substance, but is apprehended by the intellect which is itself a limitation or mode; but in this way the mode, the non-substantial generally, which can only be grasped through an other, constitutes the other extreme to substance, the third generally. Indian pantheism, too, in its monstrous fantasies has in an abstract way received this development which runs like a moderating thread through its extravagances; a point of some interest in the development is that Brahma, the one of abstract thought, progresses through the shape of Vishnu, particularly in the form of Krishna, to a third form, that of Siva. The determination of this third is the mode, alteration, coming-to-be and ceasing-to-be-the field of externality in general. This Indian trinity has misled to a comparison with the Christian and it is true that in them a common element of the nature of the Notion can be recognised; but it is essential to gain a more precise consciousness of the difference between them; for not only is this difference infinite, but it is the true, the genuine infinite which constitutes it. This third principle is, according to its determination, the dispersal of the unity of substance into its opposite, not the return of the unity to itself - not spirit but rather the non-spiritual. In the true trinity there is not only unity but union, the conclusion of the syllogism is a unity possessing content and actuality, a unity which in its wholly concrete determination is spirit. This principle of the mode and of alteration does not, it is true, altogether exclude the unity; in Spinozism, for example, it is precisely the mode as such which is untrue; substance alone is true and to it everything must be brought back. But this is only to submerge all content in the void, in a merely formal unity lacking all content. Thus Siva, too, is again the great whole, not distinct from Brahma, but Brahma himself. In other words, the difference and the determinateness only vanish again but are not preserved, are not sublated, and the unity does not become a concrete unity, neither is the disunity reconciled. The supreme goal for man placed in the sphere of coming-to-be and ceasing-to-be, of modality generally, is submergence in unconsciousness, unity with Brahma, annihilation; the Buddhist Nirvana, Nibbana etc., is the same.
+
+ &sect; 704
+
+Now although the mode as such is abstract externality, indifference to qualitative and quantitative determinations, and in essence the external and unessential elements are not supposed to count, it is still, on the other hand, admitted in many cases that everything depends on the kind and manner of the mode; such an admission means that the mode itself is declared to belong essentially to the substantial nature of a thing, a very indefinite connection but one which at least implies that this external element is not so abstractly an externality.
+
+ &sect; 705
+
+Here the mode has the specific meaning of measure. Spinoza's mode, like the Indian principle of change, is the measureless. The Greek awareness, itself still indeterminate, that everything has a measure - even Parmenides, after abstract being, introduced necessity as the ancient limit by which all things are bounded - is the beginning of a much higher conception than that contained in substance and in the difference of the mode from substance.
+
+ &sect; 706
+
+Measure in its more developed, more reflected form is necessity; fate, Nemesis, was restricted in general to the specific nature of measure, namely, that what is presumptuous, what makes itself too great, too high, is reduced to the other extreme of being brought to nothing, so that the mean of measure, mediocrity is restored. 'The absolute, God, is the measure of all things' is not more intensely pantheistic than the definition: 'The absolute, God, is being, ' but it is infinitely truer. Measure, it is true, is an external kind and manner of determinateness, a more or less, but at the same time it is equally reflected into itself, a determinateness which is not indifferent and external but intrinsic; it is thus the concrete truth of being. That is why mankind has revered measure as something inviolable and sacred.
+
+ &sect; 707
+
+The Idea of essence, namely, to be self-identical in the immediacy of its determined being, is already immanent in measure; so that the immediacy is thus reduced by this self-identity to something mediated, which equally is mediated only through this externality, but is a mediation with itself - that is, reflection, the determinations of which are, but in this being are nothing more than moments of their negative unity. In measure, the qualitative moment is quantitative; the determinateness or difference is indifferent and so is no difference, is sublated. This nature of quantity as a return-into-self in which it is qualitative constitutes that being-in-and-for-itself which is essence. But measure is only in itself or in its Notion essence; this Notion of measure is not yet posited. Measure, still as such, is itself the immediate [ seiende ] unity of quality and quantity; its moments are determinately present as a quality, and quanta thereof; these moments are at first inseparable only in principle [ an sich ], but do not yet have the significance of this reflected determination. The development of measure contains the differentiation of these moments, but at the same time their relation, so that the identity which they are in themselves becomes their relation to each other, i.e. is posited. The significance of this development is the realisation of measure in which it posits itself as in relation with itself, and hence as a moment. Through this mediation it is determined as sublated; its immediacy and that of its moments vanishes; they are reflected. Measure, having thus realised its own Notion, has passed into essence.
+
+ &sect; 708
+
+At first, measure is only an immediate unity of quality and quantity, so that: (1) , we have a quantum with a qualitative significance, a measure. The progressive determining of this consists in explicating what is only implicit in it, namely, the difference of its moments, of its qualitatively and quantitatively determined being. These moments further develop themselves into wholes of measure which as such are self-subsistent. These are essentially in relationship with each other, and so measure becomes (2) , a ratio of specific quanta having the form of self-subsistent measures. But their self-subsistence also rests essentially on quantitative relation and quantitative difference; and so their self-subsistence becomes a transition of each into the other, with the result that measure perishes in the measureless. But this beyond of measure is the negativity of measure only in principle; this results (3) , in the positing of the indifference of the determinations of measure, and the positing of real measure - real through the negativity contained in the indifference - as an inverse ratio of measures which, as self-subsistent qualities, are essentially based only on their quantity and on their negative relation to one another, thereby demonstrating themselves to be only moments of their truly self-subsistent unity which is their reflection-into-self and the positing thereof, essence.
+
+ &sect; 709
+
+The development of measure which has been attempted in the following chapters is extremely difficult. Starting from immediate, external measure it should, on the one hand, go on to develop the abstract determination of the quantitative aspects of natural objects (a mathematics of nature), and on the other hand, to indicate the connection between this determination of measure and the qualities of natural objects, at least in general; for the specific proof, derived from the Notion of the concrete object, of the connection between its qualitative and quantitative aspects, belongs to the special science of the concrete. Examples of this kind concerning the law of falling bodies and free, celestial motion will be found in the Encyclopedia. of the Phil. Sciences, 3rd ed., Sections 267 and 270, Remark. In this connection the general observation may be made that the different forms in which measure is realised belong also to different spheres of natural reality. The complete, abstract indifference of developed measure, i.e. the laws of measure, can only be manifested in the sphere of mechanics in which the concrete bodily factor is itself only abstract matter; the qualitative differences of such matter are essentially quantitatively determined; space and time are the purest forms of externality, and the multitude of matters, masses, intensity of weight, are similarly external determinations which have their characteristic determinateness in the quantitative element. On the other hand, such quantitative determinateness of abstract matter is deranged simply by the plurality of conflicting qualities in the inorganic sphere and still more even in the organic world. But here there is involved not merely a conflict of qualities, for measure here is subordinated to higher relationships and the immanent development of measure tends to be reduced to the simple form of immediate measure. The limbs of the animal organism have a measure which, as a simple quantum, stands in a ratio to the other quanta of the other limbs; the proportions of the human body are the fixed ratio of such quanta. Natural science is still far from possessing an insight into the connection between such quantities and the organic functions on which they wholly depend. But the readiest example of the reduction of an immanent measure to a merely externally determined magnitude is motion. In the celestial bodies it is free motion, a motion which is determined solely by the Notion and whose quantitative elements therefore equally depend solely on the Notion (see above); but such free motion is reduced by the living creature to arbitrary or mechanically regular, i.e. a wholly abstract, formal motion.
+
+ &sect; 710
+
+And in the realm of spirit there is still less to be found a characteristic, free development of measure. It is quite evident, for example, that a republican constitution like that of Athens, or an aristocratic constitution tempered by democracy, is suitable only for States of a certain size, and that in a developed civil society the numbers of individuals belonging to different occupations stand in a certain relations to one another; but all this yields neither laws of measure nor characteristic forms of it . In the spiritual sphere as such there occur differences of intensity of character , strength of imagination, sensations, general ideas, and so on; but the determination does not go beyond the indefiniteness of strength or weakness . How insipid and completely empty the so-called laws turn out to be which have been laid down about the relation of strength and weakness of sensations, general ideas, and so on, comes home to one on reading the psychologies which occupy themselves with such laws.
+
+ Chapter 1: Specific Quantity
+
+ A The Specific Quantum
+
+B Specifying Measure
+
+ (a) The Rule
+
+(b) Specifying Measure
+
+(c) Relation of the Two Sides as Qualities
+
+ Remark
+
+ &sect; 736
+
+The exposition here of the connection between the qualitative nature of something and its quantitative determination has its application in the already indicated example of motion. First of all, in velocity as the direct ratio of space traversed and time elapsed, the magnitude of time is taken as denominator while that of space is taken as numerator. If velocity as such is only a ratio of the space and time in a motion, it is immaterial which of the two moments is to be considered as amount or as unit. Space, however, like weight in specific gravity, is an external, real whole as such - hence amount - whereas time, like volume, is the ideal, negative factor, the side of unity. But here there essentially belongs the more important ratio, that which holds between the magnitudes of space and time in free motion; at first, in the still conditioned motion of a falling body where the time factor is determined as a root and the space factor as a square, or in the absolutely free motion of the celestial bodies where the period of revolution is lower by one power than the distance from the sun, the former being a square and the latter a cube. Fundamental relationships of this kind rest on the nature of the interrelated qualities of space and time and on the kind of relation in which they stand, either as a mechanical motion, i.e. as an unfree motion which is not determined by the Notion of the moments of space and time, or as the descent of a falling body, i.e. as a conditionally free motion, or as the absolutely free celestial motion. These kinds of motion, no less than their laws, rest on the development of the Notion of their moments, of space and time, since these qualities as such (space and time) prove to be in themselves, i.e. in their Notion, inseparable and their quantitative relationship is the being-for-self of measure, is only one measure-determination.
+
+ &sect; 737
+
+In regard to the absolute relations of measure, it is well to bear in mind that the mathematics of nature, if it is to be worthy of the name of science, must be essentially the science of measures - a science for which it is true much has been done empirically, but little as yet from a strictly scientific, that is, philosophical point of view. Mathematical principles of natural philosophy-as Newton called his work-if they are to fulfil this description in a profounder sense than that accorded to them by Newton and by the entire Baconian species of philosophy and science, must contain things of quite a different character in order to bring light into these still obscure regions which are, however, worthy in the highest degree of consideration.
+
+ It is a great service to ascertain the empirical numbers of nature, e.g., the distances of the planets from one another; but it is an infinitely greater service when the empirical quanta are made to disappear and they are raised into a universal form of determinations of quantity so that they become moments of a law or of measure - immortal services which Galileo for the descent of falling bodies and Kepler for the motion of the celestial bodies, have achieved. The laws they discovered they have proved in this sense, that they have shown the whole compass of the particulars of observation to correspond to them. But yet a still higher proof is required for these laws; nothing else, that is, than that their quantitative relations be known from the qualities or specific Notions of time and space that are correlated.
+
+Of this kind of proof there is still no trace in the said mathematical principles of natural philosophy, neither is there in the subsequent works of this kind. It has already been remarked in connection with the show of mathematical proofs of certain relationships in nature, a show based on the misuse of the infinitely small, that it is absurd to try todemonstrate such proofs on a strictly mathematical basis, i.e. neither empirically nor from the standpoint of the Notion. These proofs presuppose thir theorems, those very laws, from experience; what they succeed in doing is to reduce them to abstract expressions and convenient formulae.
+
+ Undoubtedly the time will come when, with a clearer understanding of what mathematics can accomplish and has accomplished, the entire, real merit of Newton as against Kepler - the sham scaffolding of proofs being discarded - will clearly be seen to be restricted to the said transformation of Kepler's formula and to the elementary analytical treatment accorded to it.
+
+ C Being-for-self in Measure
+
+ Chapter 2 Real Measure
+
+ A The Relation of Self-Subsistent Measures
+
+ (a) Combination of Two Measures
+
+(b) Measure of a Series of Measure Relations
+
+(c) Elective Affinity
+
+ Remark: Berthollet on Chemical Affinity and Berzelius's Theory of it
+
+ B Nodal Line of Measure Relations
+
+ Remark: Examples of Such Nodal Lines; the Maxim, ‘Nature Does Not Make Leaps'
+
+ &sect; 774
+
+The system of natural numbers already shows a nodal line of qualitative moments which emerge in a merely external succession. It is on the one hand a merely quantitative progress and regress, a perpetual adding or subtracting, so that each number has the same arithmetical relation to the one before it and after it, as these have to their predecessors and successors, and so on. But the numbers so formed also have a specific relation to other numbers preceding and following them, being either an integral multiple of one of them or else a power or a root. In the musical scale which is built up on quantitative differences, a quantum gives rise to an harmonious relation without its own relation to those on either side of it in the scale differing from the relation between these again and their predecessors and successors. While successive notes seem to be at an ever-increasing distance from the keynote, or numbers in succeeding each other arithmetically seem only to become other numbers, the fact is that there suddenly emerges a return, a surprising accord, of which no hint was given by the quality of what immediately preceded it, but which appears as an actio in distans, as a connection with something far removed. There is a sudden interruption of the succession of merely indifferent relations which do not alter the preceding specific reality or do not even form any such, and although the succession is continued quantitatively in the same manner, a specific relation breaks in per saltum.
+
+ &sect; 775
+
+Such qualitative nodes and leaps occur in chemical combinations when the mixture proportions are progressively altered; at certain points in the scale of mixtures, two substances form products exhibiting particular qualities. These products are distinguished from one another not merely by a more or less, and they are not already present, or only perhaps in a weaker degree, in the proportions close to the nodal proportions, but are bound up with these nodes themselves. For example, different oxides of nitrogen and nitric acids having essentially different qualities are formed only when oxygen and nitrogen are combined in certain specific proportions, and no such specific compounds are formed by the intermediate proportions. Metal oxides, e.g. the lead oxides, are formed at certain quantitative points of oxidation and are distinguished by colours and other qualities. They do not pass gradually into one another; the proportions lying in between these nodes do not produce a neutral or a specific substance. Without having passed through the intervening stages, a specific compound appears which is based on a measure relation and possesses characteristic qualities. Again, water when its temperature is altered does not merely get more or less hot but passes through from the liquid into either the solid or gaseous states; these states do not appear gradually; on the contrary, each new state appears as a leap, suddenly interrupting and checking the gradual succession of temperature changes at these points. Every birth and death, far from being a progressive gradualness, is an interruption of it and is the leap from a quantitative into a qualitative alteration.
+
+ &sect; 776
+
+ It is said, natura non facit saltum [there are no leaps in nature]; and ordinary thinking when it has to grasp a coming-to-be or a ceasing-to-be, fancies it has done so by representing it as a gradual emergence or disappearance. But we have seen that the alterations of being in general are not only the transition of one magnitude into another, but a transition from quality into quantity and vice versa , a becoming-other which is an interruption of gradualness and the production of something qualitatively different from the reality which preceded it. Water, in cooling, does not gradually harden as if it thickened like porridge, gradually solidifying until it reached the consistency of ice; it suddenly solidifies, all at once. It can remain quite fluid even at freezing point if it is standing undisturbed, and then a slight shock will bring it into the solid state .
+
+ &sect; 777
+
+ In thinking about the gradualness of the coming-to-be of something, it is ordinarily assumed that what comes to be is already sensibly or actually in existence ; it is not yet perceptible only because of its smallness. Similarly with the gradual disappearance of something, the non-being or other which takes its place is likewise assumed to be really there , only not observable, and there , too, not in the sense of being implicitly or ideally contained in the first something, but really there , only not observable. In this way, the form of the in-itself, the inner being of something before it actually exists, is transformed into a smallness of an outer existence, and the essential difference, that of the Notion, is converted into an external difference of mere magnitude. The attempt to explain coming-to-be or ceasing-to-be on the basis of gradualness of the alteration is tedious like any tautology; what comes to be or ceases to be is assumed as already complete and in existence beforehand and the alteration is turned into a mere change of an external difference, with the result that the explanation is in fact a mere tautology. The intellectual difficulty attendant on such an attempted explanation comes from the qualitative transition from something into its other in general, and then into its opposite; but the identity and the alteration are misrepresented as the indifferent, external determinations of the quantitative sphere .
+
+ &sect; 778
+
+ In the moral sphere, in so far as it is considered under the categories of being, there occurs the same transition from quantity into quality and different qualities appear to be based in a difference of magnitude.
+
+It is through a more or less that the measure of frivolity or thoughtlessness is exceeded and something quite different comes about, namely crime, and thus right becomes wrong and virtue vice. Thus states, too, acquire through their quantitative difference, other things being assumed equal, a distinct qualitative character. With the expansion of the state and an increased number of citizens, the laws and the constitution acquire a different significance. The state has its own measure of magnitude and when this is exceeded this mere change of size renders it liable to instability and disruption under that same constitution which was its good fortune and its strength before its expansion.
+
+ C The Measureless
+
+ Chapter 3: The Becoming of Essence
+
+ A Absolute Indifference
+
+B Indifference as an Inverse Ratio of its Factors
+
+ Remark: Centripetal and Centrifugal Force
+
+ C Transition into Essence
+
+ &sect; 803
+
+Absolute indifference is the final determination of being before it becomes essence; but it does not attain to essence. It reveals itself as still belonging to the sphere of being through the fact that, determined as indifferent, it still contains difference as an external, quantitative determination; this is its determinate being, contrasted with which absolute indifference is determined as being only implicitly the absolute, not the absolute grasped as actuality . In other words, it is external reflection which stops short at conceiving the differences in themselves or in the absolute as one and the same, thinking of them as only indifferently distinguished, not as intrinsically distinct from one another. The further step which requires to be made here is to grasp that this reflection of the differences into their unity is not merely the product of the external reflection of the subjective thinker, but that it is the very nature of the differences of this unity to sublate themselves, with the result that their unity proves to be absolute negativity, its indifference to be just as much indifferent to itself, to its own indifference, as it is indifferent to otherness.
+
+ &sect; 804
+
+But we are already familiar with this self-sublating of the determination of indifference; in the development of its positedness, this determination has shown itself to be from every aspect a contradiction. It is in itself the totality in which every determination of being is sublated and contained; it is thus the substrate, but at first only in the one-sided determination of the in-itself, and consequently the differences, namely, the quantitative difference and the inverse ratio of factors, are present in it only in an external manner. As thus the contradiction of itself and its determinedness, of its implicit determination and its posited determinateness, it is the negative totality whose determinatenesses have sublated themselves in themselves and in so doing have sublated this fundamental one-sidedness of theirs, their [merely] implicit being [ Ansichsein ]. The result is that indifference is now posited as what it in fact is, namely a simple and infinite, negative relation-to-self, its inherent incompatibility with itself, a repelling of itself from itself. The process of determining and being determined is not a transition, nor an external alteration, nor an emergence of determinations in the indifference, but is its own self-relating which is the negativity of itself, of its [merely] implicit being.
+
+ &sect; 805
+
+Now these repelled determinations do not possess themselves, do not emerge as self-subsistent or external determinations, but first, as moments belonging to the implicit unity, they are not expelled from it but are borne by it as the substrate and are filled solely by it; secondly, as determinations which are immanent in the explicated unity, they are only through their repulsion from themselves. The being of the determinations is no longer simply affirmative as in the entire sphere of being, but is now a sheer positedness, the determinations having the fixed character and significance of being related to their unity, each consequently being related to its other and with negation; this is the mark of their relativity.
+
+ &sect; 806
+
+Thus we see that being in general and the being or immediacy of the distinct determinatenesses, no less than the implicit being, has vanished and the unity is being , an immediate presupposed totality such that it is this simple self-relation only as a result of the sublating of this presupposition, and this presupposedness and immediate being is itself only a moment of its repelling, the original self-subsistence and self-Identity is only as the resulting coming together with itself. Being, in its determining, has thus determined itself to essence, a being which, through the sublating of being, is a simple being-with-itself. ®
+
+ ESSENCE - Second Part of The Logic
+
+ Hegel-by-HyperText Home Page @ marxists.org

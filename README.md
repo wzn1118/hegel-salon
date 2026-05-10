@@ -1,5 +1,53 @@
 # Hegel Salon
 
+## Public GitHub Release
+
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/wzn1118/hegel-salon)
+
+This repository is prepared as a public-source release. It ships with the
+German/English public-domain or openly mirrored corpus under `data/corpus/texts`.
+It does not ship private user data, API keys, sessions, uploads, browser profiles,
+licensed Chinese translations, PDFs, ebooks, or OCR exports.
+
+Quick start:
+
+```bash
+npm install
+npm run start
+```
+
+Docker start:
+
+```bash
+docker compose up -d --build
+```
+
+For a public HTTPS deployment, set these environment variables before first run:
+
+```text
+HEGEL_ENABLE_AUTH=1
+HEGEL_PUBLIC_BASE_URL=https://your-domain.example
+HEGEL_ALLOWED_ORIGINS=https://your-domain.example
+HEGEL_API_CONFIG_MASTER_KEY=<long-random-secret>
+HEGEL_ADMIN_ACCOUNT=<admin-login>
+HEGEL_ADMIN_EMAIL=<admin-email>
+HEGEL_ADMIN_PASSWORD=<admin-password>
+HEGEL_SMTP_HOST=<smtp-host>
+HEGEL_SMTP_PORT=<smtp-port>
+HEGEL_SMTP_SECURE=<true-or-false>
+HEGEL_SMTP_USER=<smtp-user>
+HEGEL_SMTP_PASS=<smtp-password-or-app-password>
+HEGEL_MAIL_FROM=Hegel Salon <no-reply@your-domain.example>
+```
+
+Users configure their own model provider, base URL, model, and API key inside
+the frontend after login. The public repo intentionally leaves default API
+configuration blank.
+
+Licensed or private materials should be added only after cloning, through
+`local-resources/` or a private persistent volume. Do not commit those materials
+to the public repository.
+
 Hegel Salon 是一个面向中文场景的黑格尔式阅读与论证工作台。
 
 它不是通用聊天机器人外套，而是把黑格尔语料、引文核验、现实判断、附件理解、浏览器代理和一套持续优化链放进同一个本地可运行产品里的实验项目。

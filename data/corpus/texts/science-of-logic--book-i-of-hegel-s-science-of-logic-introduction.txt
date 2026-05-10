@@ -1,0 +1,280 @@
+Book I of Hegel's Science of Logic - Introduction
+
+ Hegel's Science of Logic
+
+ Highlighted text is Lenin's underlining. The ® access his annotations.
+
+ Introduction
+
+ General Notion of Logic
+
+ &sect; 33
+
+In no science is the need to begin with the subject matter itself, without preliminary reflections, felt more strongly than in the science of logic. In every other science the subject matter and the scientific method are distinguished from each other; also the content does not make an absolute beginning but is dependent on other concepts and is connected on all sides with other material. These other sciences are, therefore, permitted to speak of their ground and its context and also of their method, only as premises taken for granted which, as forms of definitions and such-like presupposed as familiar and accepted, are to be applied straight-way, and also to employ the usual kind of reasoning for the establishment of their general concepts and fundamental determinations.
+
+ &sect; 34
+
+Logic on the contrary, cannot presuppose any of these forms of reflection and laws of thinking, for these constitute part of its own content and have first to be established within the science. But not only the account of scientific method, but even the Notion itself of the science as such belongs to its content, and in fact constitutes its final result; what logic is cannot be stated beforehand, rather does this knowledge of what it is first emerge as the final outcome and consummation of the whole exposition. Similarly, it is essentially within the science that the subject matter of logic, namely, thinking or more specifically comprehensive thinking is considered; the Notion of logic has its genesis in the course of exposition and cannot therefore be premised. Consequently, what is premised in this Introduction is not intended, as it were, to establish the Notion of Logic or to justify its method scientifically in advance, but rather by the aid of some reasoned and historical explanations and reflections to make more accessible to ordinary thinking the point of view from which this science is to be considered.
+
+ &sect; 35
+
+When logic is taken as the science of thinking in general, it is understood that this thinking constitutes the mere form of a cognition that logic abstracts from all content and that the so-called second constituent belonging to cognition, namely its matter , must come from somewhere else; and that since this matter is absolutely independent of logic, this latter can provide only the formal conditions of genuine cognition and cannot in its own self contain any real truth, not even be the pathway to real truth because just that which is essential in truth, its content, lies outside logic . ®
+
+ &sect; 36
+
+But in the first place, it is quite inept to say that logic abstracts from all content, that it teaches only the rules of thinking without any reference to what is thought or without being able to consider its nature. For as thinking and the rules of thinking are supposed to be the subject matter of logic, these directly constitute its peculiar content; in them, logic has that second constituent, a matter, about the nature of which it is concerned.
+
+ &sect; 37
+
+But secondly, the conceptions on which the Notion of logic has rested hitherto have in part already been discarded, and for the rest, it is time that they disappeared entirely and that this science were grasped from a higher standpoint and received a completely changed shape.
+
+ &sect; 38
+
+Hitherto, the Notion of logic has rested on the separation, presupposed once and for all in the ordinary consciousness, of the content of cognition and its form , or of truth and certainty . First, it is assumed that the material of knowing is present on its own account as a ready-made world apart from thought, that thinking on its own is empty and comes as an external form to the said material, fills itself with it and only thus acquires a content and so becomes real knowing.
+
+ &sect; 39
+
+Further, these two constituents - for they are supposed to be related to each other as constituents, and cognition is compounded from them in a mechanical or at best chemical fashion - are appraised as follows: the object is regarded as something complete and finished on its own account, something which can entirely dispense with thought for its actuality, while thought on the other hand is regarded as defective because it has to complete itself with a material and moreover, as a pliable indeterminate form, has to adapt itself to its material. Truth is the agreement of thought with the object, and in order to bring about this agreement - for it does not exist on its own account - thinking is supposed to adapt and accommodate itself to the object.
+
+ &sect; 40
+
+Thirdly, when the difference of matter and form, of object and thought is not left in that nebulous indeterminateness but is taken more definitely, then each is regarded as a sphere divorced from the other. Thinking therefore in its reception and formation of material does not go outside itself; its reception of the material and the conforming of itself to it remains a modification of its own self, it does not result in thought becoming the other of itself; and self-conscious determining moreover belongs only to thinking. In its relation to the object, therefore, thinking does not go out of itself to the object; this, as a thing-in-itself, remains a sheer beyond of thought.
+
+ &sect; 41
+
+These views on the relation of subject and object to each other express the determinations which constitute the nature of our ordinary, phenomenal consciousness; but when these prejudices are carried out into the sphere of reason as if the same relation obtained there, as if this relation were something true in its own self, then they are errors - the refutation of which throughout every part of the spiritual and natural universe is philosophy, or rather, as they bar the entrance to philosophy, must be discarded at its portals.
+
+ &sect; 42
+
+Ancient metaphysics had in this respect a higher conception of thinking than is current today. For it based itself on the fact that the knowledge of things obtained through thinking is alone what is really true in them, that is, things not in their immediacy but as first raised into the form of thought, as things thought. Thus this metaphysics believed that thinking (and its determinations) is not anything alien to the object, but rather is its essential nature, or that things and the thinking of them - our language too expresses their kinship - are explicitly in full agreement, thinking in its immanent determinations and the true nature of things forming one and the same content.
+
+ &sect; 43
+
+But reflective understanding took possession of philosophy. We must know exactly what is meant by this expression which moreover is often used as a slogan; in general it stands for the understanding as abstracting, and hence as separating and remaining fixed in its separations. Directed against reason, it behaves as ordinary common sense and imposes its view that truth rests on sensuous reality, that thoughts are only thoughts, meaning that it is sense perception which first gives them filling and reality and that reason left to its own resources engenders only figments of the brain. In this self-renunciation on the part of reason, the Notion of truth is lost; it is limited to knowing only subjective truth, only phenomena, appearances, only something to which the nature of the object itself does not correspond: knowing has lapsed into opinion.
+
+ &sect; 44
+
+However, this turn taken by cognition, which appears as a loss and a retrograde step, is based on something more profound on which rests the elevation of reason into the loftier spirit of modern philosophy. The basis of that universally held conception is, namely, to be sought in the insight into the necessary conflict of the determinations of the understanding with themselves. The reflection already referred to is this, to transcend the concrete immediate object and to determine it and separate it. But equally it must transcend these its separating determinations and straightway connect them. It is at the stage of this connecting of the determinations that their conflict emerges. This connecting activity of reflection belongs in itself to reason and the rising above those determinations which attains to an insight into their conflict is the great negative step towards the true Notion of reason. But the insight, when not thorough-going, commits the mistake of thinking that it is reason which is in contradiction with itself; it does not recognise that the contradiction is precisely the rising of reason above the limitations of the understanding and the resolving of them, Cognition, instead of taking from this stage the final step into the heights, has fled from the unsatisfactoriness of the categories of the understanding to sensuous existence, imagining that in this it possesses what is solid and self-consistent. But on the other hand, since this knowledge is self-confessedly knowledge only of appearances, the unsatisfactoriness of the latter is admitted, but at the same time presupposed: as much as to say that admittedly, we have no proper knowledge of things-in-themselves but we do have a proper knowledge of them within the sphere of appearances, as if, so to speak, only the kind of objects were different, and one kind, namely things-in-themselves, did not fall within the scope of our knowledge but the other kind, phenomena, did. This is like attributing to someone a correct perception, with the rider that nevertheless he is incapable of perceiving what is true but only what is false. Absurd as this would be, it would not be more so than a true knowledge which did not know the object as it is in itself.
+
+ &sect; 45
+
+The criticism of the forms of the understanding has had the result already mentioned, that these forms do not apply to things-in-themselves. This can have no other meaning than that these forms are in themselves something untrue. But then if they are allowed to remain valid for subjective reason and experience, the criticism has not produced any alteration in them: they are left in the same shape for the subject knower as they formerly possessed for the object. If, however, they are inadequate for the thing-in-itself, still less must the understanding to which they are supposed to belong put up with them and rest content with them. If they cannot be determinations of the thing-in-itself, still less can they be determinations of the understanding to which one ought at least to concede the dignity of a thing-in-itself. The determinations of finite and infinite conflict in the same way, whether they are applied to time and space, to the world, or are determinations within the mind - just as black and white produce grey whether they are mixed on a canvas or on the palette. If our conception of the world is dissolved by the transference to it of the determinations of infinite and finite, still more is spirit itself, which contains both of them, inwardly self-contradictory and self-dissolving: it is not the nature of the material or the object to which they are applied or in which they occur that can make a difference for it is only through those determinations and in accordance with them that the object contains the contradiction.
+
+ &sect; 46
+
+The forms of objective thinking, therefore, have been removed by this criticism only from the thing; but they have been left in the subject just as they were originally. That is to say, this criticism did not consider these forms on their own merits and according to their own peculiar content, but simply took them as accepted starting points from subjective logic: so that there was no question of an immanent deduction of them as forms of subjective logic, still less of a dialectical consideration of them.
+
+ &sect; 47
+
+ Transcendental idealism in its more consistent development, recognised the nothingness of the spectral thing-in-itself left over by the Kantian philosophy, this abstract shadow divorced from all content, and intended to destroy it completely. This philosophy also made a start at letting reason itself exhibit its own determinations. But this attempt, because it proceeded from a subjective standpoint, could not be brought to a successful conclusion. ® Later this standpoint, and with it too the attempt to develop the content of pure science, was abandoned.
+
+ &sect; 48
+
+But what is commonly understood by logic is considered without any reference whatever to metaphysical significance. This science in its present state has, it must be admitted, no content of a kind which the ordinary consciousness would regard as a reality and as a genuine subject matter. But it is not for this reason a formal science lacking significant truth. Moreover, the region of truth is not to be sought in that matter which is missing in logic, a deficiency to which the unsatisfactoriness of the science is usually attributed. The truth is rather that the insubstantial nature of logical forms originates solely in the way in which they are considered and dealt with. When they are taken as fixed determinations and consequently in their separation from each other and not as held together in an organic unity, then they are dead forms and the spirit which is their living, concrete unity does not dwell in them. As thus taken, they lack a substantial content - a matter which would be substantial in itself. The content which is missing in the logical forms is nothing else than a solid foundation and a concretion of these abstract determinations; and such a substantial being for them is usually sought outside them.
+
+But logical reason itself is the substantial or real being which holds together within itself every abstract determination and is their substantial, absolutely concrete unity. One need not therefore look far for what is commonly called a matter; if logic is supposed to lack a substantial content, then the fault does not lie with its subject matter but solely with the way in which this subject matter is grasped.
+
+ &sect; 49
+
+This reflection leads up to the statement of the point of view from which logic is to be considered, how it differs from previous modes of treatment of this science which in future must always be based on this, the only true standpoint.
+
+ &sect; 50
+
+ In the Phenomenology of Mind , I have exhibited consciousness in its movement onwards from the first immediate opposition of itself and the object to absolute knowing. The path of this movement goes through every form of the relation of consciousness to the object and has the Notion of science for its result.
+
+This Notion therefore (apart from the fact that it emerges within logic itself) needs no justification here because it has received it in that work; and it cannot be justified in any other way than by this emergence in consciousness, all the forms of which are resolved into this Notion as into their truth. To establish or explain the Notion of science ratiocinatively can at most achieve this, that a general idea of the Notion is presented to our thinking and a historical knowledge of it is produced; but a definition of science - or more precisely of logic - has its proof solely in the already mentioned necessity of its emergence in consciousness. The definition with which any science makes an absolute beginning. cannot contain anything other than the precise and correct expression of what is imagined to be the accepted and familiar subject matter and aim of the science. That precisely this is what is imagined is an historical asseveration in respect of which one can only appeal to such and such as recognised facts; or rather the plea can be advanced that such and such could be accepted as recognised facts. There will always be someone who will adduce a case, an instance, according to which something more and different is to be understood by certain terms the definition of which must therefore be made more precise or more general and the science too, must be accommodated thereto. This again involves argumentation about what should be admitted or excluded and within what limits and to what extent; but argumentation is open to the most manifold and various opinions, on which a decision can finally be determined only arbitrarily. In this method of beginning a science with its definition, no mention is made of the need to demonstrate the necessity of its subject matter and therefore of the science itself.
+
+ &sect; 51
+
+The Notion of pure science and its deduction is therefore presupposed in the present work in so far as the Phenomenology of Spirit is nothing other than the deduction of it. Absolute knowing is the truth of every mode of consciousness because, as the course of the Phenomenology showed, it is only in absolute knowing that separation of the object from the certainty of itself is completely eliminated: truth is now equated with certainty and this certainty with truth.
+
+ &sect; 52
+
+Thus pure science presupposes liberation from the opposition of consciousness. It contains thought in so far as this is just as much the object in its own self, or the object in its own self in so far as it is equally pure thought . As science, truth is pure self-consciousness in its self-development and has the shape of the self, so that the absolute truth of being is the known Notion and the Notion as such is the absolute truth of being.
+
+ &sect; 53
+
+This objective thinking , then, is the content of pure science. Consequently, far from it being formal, far from it standing in need of a matter to constitute an actual and true cognition, it is its content alone which has absolute truth, or, if one still wanted to employ the word matter, it is the veritable matter - but a matter which is not external to the form, since this matter is rather pure thought and hence the absolute form itself. Accordingly, logic is to be understood as the system of pure reason, as the realm of pure thought . This realm is truth as it is without veil and in its own absolute nature . It can therefore be said that this content is the exposition of God as he is in his eternal essence before the creation of nature and a finite mind.
+
+ &sect; 54
+
+Anaxagoras is praised as the man who first declared that Nous , thought, is the principle of the world, that the essence of the world is to be defined as thought. In so doing he laid the foundation for an intellectual view of the universe, the pure form of which must be logic.
+
+What we are dealing with in logic is not a thinking about something which exists independently as a base for our thinking and apart from it, nor forms which are supposed to provide mere signs or distinguishing marks of truth; on the contrary, the necessary forms and self-determinations of thought are the content and the ultimate truth itself.
+
+ &sect; 55
+
+To get some idea of this one must discard the prejudice that truth must be something tangible. Such tangibility is, for example, imported even into the Platonic Ideas which are in God's thinking, as if they are, as it were, existing things but in another world or region; while the world of actuality exists outside that region and has a substantial existence distinct from those Ideas and only through this distinction is a substantial reality. The Platonic Idea is the universal, or more definitely the Notion of an object; only in its Notion does something possess actuality and to the extent that it is distinct from its Notion it ceases to be actual and is a non-entity; the side of tangibility and sensuous self-externality belongs to this null aspect. But on the other side, one can appeal to the conceptions of ordinary logic itself; for it is assumed, for example, that the determinations contained in definitions do not belong only to the knower, but are determinations of the object, constituting its innermost essence and its very own nature. Or, if from given determinations others are inferred, it is assumed that what is inferred is not something external and alien to the object, but rather that it belongs to the object itself, that to the thought there is a correspondent being.
+
+ &sect; 56
+
+It is implied generally in the use of forms of the Notion, of judgment, syllogism, definition, division, etc., that they are not merely forms of self-conscious thinking but also of the objective understanding.
+
+ Thought is an expression which attributes the determination contained therein primarily to consciousness. But inasmuch as it is said that understanding, reason, is in the objective world, that mind and nature have universal laws to which their life and changes conform, then it is conceded that the determinations of thought equally have objective value and existence.
+
+ &sect; 57
+
+The critical philosophy had, it is true, already turned metaphysics into logic but it, like the later idealism, as previously remarked, was overawed by the object, and so the logical determinations were given an essentially subjective significance with the result that these philosophies remained burdened with the object they had avoided and were left with the residue of a thing-in-itself, an infinite obstacle, as a beyond. But the liberation from the opposition of consciousness which the science of logic must be able to presuppose lifts the determinations of thought above this timid, incomplete standpoint and demands that they be considered not with any such limitation and reference but as they are in their own proper character, as logic, as pure reason.
+
+ &sect; 58
+
+Kant moreover considers logic, that is, the aggregate of definitions and propositions which ordinarily passes for logic, to be fortunate in having attained so early to completion before the other sciences; since Aristotle, it has not lost any ground, but neither has it gained any, the latter because to all appearances it seems to be finished and complete. Now if logic has not undergone any change since Aristotle - and in fact, judging by modern compendiums of logic the changes frequently consist mainly in omissions - then surely the conclusion which should be drawn is that it is all the more in need of a total reconstruction; for spirit, after its labours over two thousand years, must have attained to a higher consciousness about its thinking and about its own pure, essential nature.
+
+A comparison of the forms to which spirit has raised itself in the practical and religious sphere and in every branch of science both physical and mental, with the form presented by logic which is spirit's consciousness of its own pure essence, reveals so vast a difference that the utter inadequacy and unworthiness of the latter consciousness in comparison with the higher consciousness displayed in those other spheres cannot fail to strike the most superficial observer.
+
+ &sect; 59
+
+In point of fact the need for a reconstruction of logic has long since been felt . In form and in content, logic, as exhibited in the text-books, may be said to have fallen into contempt . It is still dragged in, but more from a feeling that one cannot dispense with logic altogether and because the tradition of its importance still survives, rather than from a conviction that such commonplace content and occupation with such empty forms is valuable and useful.
+
+ &sect; 60
+
+The additions of psychological, pedagogic and even physiological material which logic received in the past have subsequently been recognised almost universally as disfigurements. A great part of these psychological, pedagogic and physiological observations, laws and rules, whether they occur in logic or anywhere else, must appear very shallow and trivial in themselves; and without exception all those rules such as, for example, that one must think out and test what one reads in books or hears by word of mouth, that when one's sight is not good one should help one's eyes by wearing spectacles - rules which in textbooks of so-called applied logic were solemnly set out in paragraphs and put forward as aids to the attainment of truth - these must strike everyone as superfluous - except only the writer or teacher who finds difficulty in expanding by some means or other the otherwise scanty and life-less content of logic.'
+
+ &sect; 61
+
+Regarding this content, the reason why logic is so dull and spiritless has already been given above. Its determinations are accepted in their unmoved fixity and are brought only into external relation with each other. In judgments and syllogisms the operations are in the main reduced to and founded on the quantitative aspect of the determinations; consequently everything rests on an external difference, on mere comparison and becomes a completely analytical procedure and mechanical calculation. The deduction of the so-called rules and laws, chiefly of inference, is not much better than a manipulation of rods of unequal length in order to sort and group them according to size - than a childish game of fitting together the pieces of a coloured picture puzzle .
+
+Consequently, this thinking has been equated, not incorrectly, with reckoning, and reckoning again with this thinking. In arithmetic, numbers are regarded as devoid of any concrete conceptual content, so apart from their wholly external relationship they have no meaning, and neither in themselves nor in their interrelationships are thoughts. When it is calculated in mechanical fashion that three-fourths multiplied by two-thirds makes one-half, this operation contains about as much and as little thought as calculating whether in a logical figure this or that kind of syllogism is valid.
+
+ &sect; 62
+
+Before these dead bones of logic can be quickened by spirit, and so become possessed of a substantial, significant content, its method must be that which alone can enable it to be pure science. In the present state of logic one can scarcely recognise even a trace of scientific method. It has roughly the form of an empirical science. The empirical sciences have found for their own appropriate purposes their own peculiar method, such as it is, of defining and classifying their material. Pure mathematics, too, has its method which is appropriate for its abstract objects and for the quantitative form in which alone it considers them. I have said what is essential in the preface to the Phenomenology of Spirit about this method and, in general, the subordinate form of scientific method which can be employed in mathematics; but it will also be considered in more detail in the logic itself. Spinoza, Wolff and others have let themselves be misled in applying it also to philosophy and in making the external course followed by Notion-less quantity, the course of the Notion, a procedure which is absolutely contradictory.
+
+Hitherto philosophy had not found its method; it regarded with envy the systematic structure of mathematics, and, as we have said, borrowed it or had recourse to the method of sciences which are only amalgams of given material, empirical propositions and thoughts - or even resorted to crude rejection of all method.
+
+However, the exposition of what alone can be the true method of philosophical science falls within the treatment of logic itself; for the method is the consciousness of the form of the inner self-movement of the content of logic. ® .
+
+In the Phenomenology of Mind I have expounded an example of this method in application to a more concrete object, namely to consciousness. Here we are dealing with forms of consciousness each of which in realising itself at the same time resolves itself, has for its result its own negation - and so passes into a higher form . All that is necessary to achieve scientific progress - and it is essential to strive to gain this quite simple insight - is the recognition of the logical principle that the negative is just as much positive , or that what is self-contradictory does not resolve itself into a nullity, into abstract nothingness, but essentially only into the negation of its particular content, in other words, that such a negation is not all and every negation but the negation of a specific subject matter which resolves itself, and consequently is a specific negation, and therefore the result essentially contains that from which it results; which strictly speaking is a tautology, for otherwise it would be an immediacy, not a result. Because the result, the negation, is a specific negation, it has content . It is a fresh Notion but higher and richer than its predecessor; for it is richer by the negation or opposite of the latter, therefore contains it, but also something more, and is the unity of itself and its opposite. It is in this way that the system of Notions as such has to be formed - and has to complete itself in a purely continuous course in which nothing extraneous is introduced.
+
+ &sect; 63
+
+I could not pretend that the method which I follow in this system of logic - or rather which this system in its own self follows - is not capable of greater completeness, of much elaboration in detail; but at the same time I know that it is the only true method. This is self-evident simply from the fact that it is not something distinct from its object and content; for it is the inwardness of the content, the dialectic which it possesses within itself, which is the mainspring of its advance. It is clear that no expositions can be accepted as scientifically valid which do not pursue the course of this method and do not conform to its simple rhythm, for this is the course of the subject matter itself.
+
+ &sect; 64
+
+In conformity with this method, I would point out that the divisions and headings of the books, sections and chapters given in this work as well as the explanations associated with them, are made to facilitate a preliminary survey and strictly are only of historical value. They do not belong to the content and body of the science but are compilations of an external reflection which has already run through the whole of the exposition and consequently knows and indicates in advance the sequence of its moments before these are brought forward by the subject matter itself.
+
+ &sect; 65
+
+Similarly in the other sciences, such preliminary definitions and divisions are in themselves nothing else but such external indications; but even within the particular science they are not raised above this status. Even in logic, for example, we may be told perhaps that 'logic has two main parts, the theory of elements and methodology', then under the former there straightway follows perhaps the superscription, Laws of Thought ; and then, Chapter I: Concepts. First Section: Of the Clearness of Concepts , and so on. These definitions and divisions, made without any deduction or justification, constitute the systematic framework and the entire connectedness of such sciences. Such a logic regards it as its vocation to talk about the necessity of deducing concepts and truths from principles; but as regards what it calls method, the thought of a deduction of it simply does not occur to it. The procedure consists, perhaps, in grouping together what is similar and making what is simple precede what is complex, and other external considerations.
+
+But as regards any inner, necessary connectedness , there is nothing more than the list of headings of the various parts and the transition is effected simply by saying Chapter II , or We come now to the judgments , and the like.
+
+ &sect; 66
+
+The superscriptions and divisions, too, which appear in this system are not themselves intended to have any other significance than that of a list of contents. Besides, the immanent coming-to-be of the distinctions and the necessity of their connection with each other must present themselves in the exposition of the subject matter itself for it falls within the spontaneous progressive determination of the Notion. ®
+
+ &sect; 67
+
+That which enables the Notion to advance itself is the already mentioned negative which it possesses within itself; it is this which constitutes the genuine dialectical moment. Dialectic in this way acquires an entirely different significance from what it had when it was considered as a separate part of Logic and when its aim and standpoint were, one may say, completely misunderstood. Even the Platonic dialectic, in the Parmenides itself and elsewhere even more directly, on the one hand, aims only at abolishing and refuting assertions through themselves and on the other hand, has for its result simply nothingness.
+
+ Dialectic is commonly regarded as an external, negative activity which does not pertain to the subject matter itself, having its ground in mere conceit as a subjective itch for unsettling and destroying what is fixed and substantial, or at least having for its result nothing but the worthlessness of the object dialectically considered.
+
+ &sect; 68
+
+Kant rated dialectic higher - and this is among his greatest merits - for he freed it from the seeming arbitrariness which it possesses from the standpoint of ordinary thought and exhibited it as a necessary function of reason . Because dialectic was held to be merely the art of practising deceptions and producing illusions, the assumption was made forthwith that it is only a spurious game, the whole of its power resting solely on concealment of the deceit and that its results are obtained only surreptitiously and are a subjective illusion. True, Kant's expositions in the antinomies of pure reason, when closely examined as they will be at length in the course of this work, do not indeed deserve any great praise; but the general idea on which he based his expositions and which he vindicated, is the objectivity of the illusion and the necessity of the contradiction which belongs to the nature of thought determinations: primarily, it is true, with the significance that these determinations are applied by reason to things in themselves ; but their nature is precisely what they are in reason and with reference to what is intrinsic or in itself.
+
+This result, grasped in its positive aspect, is nothing else but the inner negativity of the determinations as their self-moving soul, the principle of all natural and spiritual life. ®
+
+But if no advance is made beyond the abstract negative aspect of dialectic, the result is only the familiar one that reason is incapable of knowing the infinite; a strange result for - since the infinite is the Reasonable - it asserts that reason is incapable of knowing the Reasonable.
+
+ &sect; 69
+
+It is in this dialectic as it is here understood, that is, in the grasping of opposites in their unity or of the positive in the negative , that speculative thought consists.
+
+It is the most important aspect of dialectic, but for thinking which is as yet unpractised and unfree it is the most difficult. Such thinking, if it is still engaged in breaking itself of the habit of employing sensuously concrete terms and of ratiocination, must first practise abstract thinking, hold fast Notions in their determinateness and learn to cognise by means of them. An exposition of logic to this end would, in its method, have to keep to the division of the subject above-mentioned and with regard to the more detailed contents, to the definitions given for the particular Notions without touching on the dialectical aspect. As regards its external structure, such an exposition would resemble the usual presentation of this science, but it would also be distinguished from it with respect to the content and still would serve for practice in abstract thinking, though not in speculative thinking, a purpose which can never be realised by the logic which has become popular through the addition of psychological and anthropological material. It would give to mind the picture of a methodically ordered whole, although the soul of the structure, the method (which dwells in the dialectical aspect) would not itself appear in it.
+
+ &sect; 70
+
+Finally, with respect to education and the relation of the individual to logic, I would further remark that this science, like grammar, appears in two different aspects or values. It is one thing for him who comes to it and the sciences generally for the first time, but it is another thing for him who comes back to it from these sciences . He who begins the study of grammar finds in its forms and laws dry abstractions, arbitrary rules, in general an isolated collection of definitions and terms which exhibit only the value and significance of what is implied in their immediate meaning; there is nothing to be known in them other than themselves. On the other hand, he who has mastered a language and at the same time has a comparative knowledge of other languages, he alone can make contact with the spirit and culture of a people through the grammar of its language; the same rules and forms now have a substantial, living value. Similarly, he who approaches this science at first finds in logic an isolated system of abstractions which, confined within itself, does not embrace within its scope the other knowledges and sciences. ®
+
+On the contrary, when contrasted with the wealth of the world as pictorially conceived, with the apparently real content of the other sciences, and compared with the promise of absolute science to unveil the essential being of this wealth, the inner nature of mind and the world, the truth, then this science in its abstract shape, in the colourless, cold simplicity of its pure determinations looks as if it could achieve anything sooner than the fulfilment of its promise and seems to confront that richness as an empty, insubstantial form. The first acquaintance with logic confines its significance to itself alone; its content passes only for a detached occupation with the determinations of thought, alongside which other scientific activities possess on their own account a matter and content of their own, on which logic may perhaps have a formal influence, though an influence which comes only from itself and which if necessary can of course also be dispensed with so far as the scientific structure and its study are concerned.
+
+The other sciences have on the whole discarded the correct method, that is, a sequence of definitions, axioms, theorems and their proofs, etc.; so-called natural logic now has its own validity in the sciences and manages to get along without any special knowledge of the nature of thought itself. But the matter and content of these sciences is held to be completely independent of logic and also has more appeal for sense, feeling, figurate conception, and practical interest of any kind.
+
+ &sect; 71
+
+At first, therefore, logic must indeed be learnt as something which one understands and sees into quite well but in which, at the beginning, one feels the lack of scope and depth and a wider significance. It is only after profounder acquaintance with the other sciences that logic ceases to be for subjective spirit a merely abstract universal and reveals itself as the universal which embraces within itself the wealth of the particular - just as the same proverb, in the mouth of a youth who understands it quite well, does not possess the wide range of meaning which it has in the mind of a man with the experience of a lifetime behind him, for whom the meaning is expressed in all its power . Thus the value of logic is only apprehended when it is preceded by experience of the sciences; it then displays itself to mind as the universal truth, not as a particular knowledge alongside other matters and realities, but as the essential being of all these latter .
+ ®
+
+ &sect; 72
+
+Now although the mind is not conscious of this power of logic at the beginning of its study, it none the less receives within itself through such study the power which leads it into all truth. The system of logic is the realm of shadows , the world of simple essentialities freed from all sensuous concreteness. The study of this science, to dwell and labour in this shadowy realm, is the absolute culture and discipline of consciousness. In logic, consciousness is busy with something remote from sensuous intuitions and aims, from feelings, from the merely imagined world of figurate conception. Considered from its negative aspect, this business consists in holding off the contingency of ordinary thinking and the arbitrary selection of particular grounds - or their opposites - as valid.
+
+ &sect; 73
+
+But above all, thought acquires thereby self-reliance and independence. It becomes at home in abstractions and in progressing by means of Notions free from sensuous substrata, develops an unsuspected power of assimilating in rational form all the various knowledges and sciences in their complex variety, of grasping and retaining them in their essential character, stripping them of their external features and in this way extracting from them the logical element, or what is the same thing, filling the abstract basis of Logic acquired by study with the substantial content of absolute truth and giving it the value of a universal which no longer stands as a particular alongside other particulars but includes them all within its grasp and is their essence, the absolutely True.
+
+ General Division of Logic
+
+ &sect; 74
+
+From what has been said about the Notion of this science and where its justification is to be found, it follows that the general division of it here can only be provisional , can be given, as it were, only in so far as the author is already familiar with the science and consequently is historically in a position to state here in advance the main distinctions which will emerge in the development of the Notion.
+
+ &sect; 75
+
+Still, the attempt can be made to promote an understanding beforehand of what is requisite for such a division, even though in doing so we must have recourse to an application of the method which will only be fully understood and justified within the science itself. We must therefore point out at the start that we are presupposing that the division must be connected with the Notion, or rather must be implicit in the Notion itself. The Notion is not indeterminate but is in its own self determinate; the division, however, expresses this its determinateness as developed ; it is the judgment of the Notion, not a judgment about some object or other picked up from outside, but the judging , that is, determining , of the Notion in its own self.
+
+ &sect; 76
+
+The quality of being right-angled, acute-angled or equilateral, according to which triangles are classified, is not implicit in the determinateness of the triangle itself, that is, not in what is usually called the Notion of the triangle, just as little as there is implicit in what passes for the Notion of animal as such, or of the mammal, bird, etc. the determinations governing the classification into mammal, bird, etc., and the subdivision of these classes into other species. Such determinations are taken from elsewhere and are annexed to such so-called Notion from outside. In the philosophical treatment of classification or division, the Notion itself must show that it is itself the course of those determinations.
+
+ &sect; 77
+
+But in the Introduction, the Notion of logic was itself stated to be the result of a preceding science, and so here, too, it is a presupposition. In accordance with that result logic was defined as the science of pure thought, the principle of which is pure knowing, the unity which is not abstract but a living, concrete unity in virtue of the fact that in it the opposition in consciousness between a self-determined entity, a subject, and a second such entity, an object, is known to be overcome; being is known to be the pure Notion in its own self, and the pure Notion to be the true being. These, then, are the two moments contained in logic. But now they are known to be inseparable, not as in consciousness where each also has a separate being of its own; it is solely because they are at the same time known as distinct (yet not with an independent being) that their unity is not abstract, dead and inert, but concrete.
+
+ &sect; 78
+
+This unity also constitutes the logical principle as element, so that the development of the difference directly present in that principle proceeds only within this element. For since the division is, as we have said, the judgment of the Notion, the positing of the determination already immanent in it, and therefore of the difference, we must not understand this positing as a resolving of that concrete unity back into its determinations as if these had an independent self-subsistence, for this would be an empty return to the previous standpoint, to the opposition of consciousness. This however has vanished; the said unity remains the element, and the distinctions of the division and of the development no longer originate outside that element. Consequently the earlier determinations (those used on the pathway to truth ) such as subjectivity and objectivity, or even thought and being, or Notion and reality, no matter from what standpoint they were determined, have lost their independent and purely affirmative character and are now in their truth, that is, in their unity, reduced to forms. In their difference, therefore, they themselves remain implicitly the whole Notion, and this, in the division, is posited only under its own specifications.
+
+ &sect; 79
+
+Thus what is to be considered is the whole Notion, firstly as the Notion in the form of being, secondly, as the Notion; in the first case, the Notion is only in itself , the Notion of reality or being; in the second case, it is the Notion as such, the Notion existing for itself (as it is, to name concrete forms, in thinking man, and even in the sentient animal and in organic individuality generally, although, of course, in these it is not conscious, still less known; it is only in inorganic nature that it is in itself ) . Accordingly, logic should be divided primarily into the logic of the Notion as being and of the Notion as Notion - or, by employing the usual terms (although these as least definite are most ambiguous) into 'objective' and 'subjective' logic.
+
+ &sect; 80
+
+But in accordance with the fundamental element of the immanent unity of the Notion, and hence with the inseparability of its determinations, these latter, when distinguished from each other in the positing of the Notion in its difference, must at least also stand in relation to each other. There results a sphere of mediation, the Notion as a system of reflected determinations, that is, of being in process of transition into the being-within-self or inwardness of the Notion. In this way, the Notion is not yet posited as such for itself, but is still fettered by the externality of immediate being. This is the doctrine of essence which stands midway between the doctrine of being and that of the Notion. In the general division of logic in the present work it has been included in objective logic because although essence is already the inwardness of being, the character of subject is to be expressly reserved for the Notion.
+
+ &sect; 81
+
+Recently Kant has opposed to what has usually been called logic another, namely, a transcendental logic. What has here been called objective logic would correspond in part to what with him is transcendental logic. He distinguishes it from what he calls general logic in this way, [a] that it treats of the notions which refer a priori to objects, and consequently does not abstract from the whole content of objective cognition, or, in other words, it contains the rules of the pure thinking of an object, and [b] at the same time it treats of the origin of our cognition so far as this cognition cannot be ascribed to the objects. It is to this second aspect that Kant's philosophical interest is exclusively directed.
+
+ &sect; 82
+
+His chief thought is to vindicate the categories for self-consciousness as the subjective ego . By virtue of this determination the point of view remains confined within consciousness and its opposition; and besides the empirical element of feeling and intuition it has something else left over which is not posited and determined by thinking self-consciousness, a thing-in-itself , something alien and external to thought - although it is easy to perceive that such an abstraction as the thing-in-itself is itself only a product of thought , and of merely abstractive thought at that. If other disciples of Kant have expressed themselves concerning the determining of the object by the ego in this way, that the objectifying of the ego is to be regarded as an original and necessary act of consciousness, so that in this original act there is not yet the idea of the ego itself - which would be a consciousness of that consciousness or even an objectifying of it - then this objectifying act, in its freedom from the opposition of consciousness, is nearer to what may be taken simply for thought as such. [2]
+
+ Footnote ®
+
+ 1. I would mention that in this work I frequently refer to the Kantian philosophy (which to many may seem superfluous) because whatever may be said, both in this work and elsewhere, about the precise character of this philosophy and about particular parts of its exposition, it constitutes the base and the starting point of recent German philosophy and that its merit remains unaffected by whatever faults may be found in it. The reason too why reference must often be made to it in the objective logic is that it enters into detailed consideration of important, more specific aspects of logic, whereas later philosophical works have paid little attention to these and in some instances have only displayed a crude - not unavenged - contempt for them. The philosophising which is most widespread among us does not go beyond the Kantian results, that Reason cannot acquire knowledge of any true content or subject matter and in regard to absolute truth must be directed to faith. But what with Kant is a result, forms the immediate starting-point in this philosophising, so that the preceding exposition from which that result issued and which is a philosophical cognition, is cut away beforehand. The Kantian philosophy thus serves as a cushion for intellectual indolence which soothes itself with the conviction that everything is already proved and settled. Consequently for genuine knowledge, for a specific content of thought which is not to be found in such barren and arid complacency, one must turn to that preceding exposition.
+
+ 2. If the expression 'objectifying act of the ego' suggests other products of spirit, e.g. fantasy, it is to be observed that we are speaking of a determining of an object in so far as the elements of its content do not belong to feeling and intuition. Such an object is a thought, and to determine it means partly, first to produce it, partly, in so far as it is something presupposed, to have further thoughts about it, to develop it further by thought.
+
+ &sect; 83
+
+But this act should no longer be called consciousness; consciousness embraces within itself the opposition of the ego and its object which is not present in that original act. The name consciousness gives it a semblance of subjectivity even more than does the term thought, which here, however, is to be taken simply in the absolute sense as infinite thought untainted by the finitude of consciousness, in short, thought as such.
+
+ &sect; 84
+
+Now because the interest of the Kantian philosophy was directed to the so-called transcendental aspect of the categories, the treatment of the categories themselves yielded a blank result; what they are in themselves without the abstract relation to the ego common to all, what is their specific nature relatively to each other and their relationship to each other, this has not been made an object of consideration. Hence this philosophy has not contributed in the slightest to a knowledge of their nature; what alone is of interest in this connection occurs in the Critique of Ideas. But if philosophy was to make any real progress, it was necessary that the interest of thought should be drawn to a consideration of the formal side, to a consideration of the ego, of consciousness as such, i.e. of the abstract relation of a subjective knowing to an object, so that in this way the cognition of the infinite form, that is, of the Notion, would be introduced. But in order that this cognition may be reached, that form has still to be relieved of the finite determinateness in which it is ego, or consciousness. The form, when thus thought out into its purity, will have within itself the capacity to determine itself, that is, to give itself a content, and that a necessarily explicated content in the form of a system of determinations of thought.
+
+ &sect; 85
+
+The objective logic, then, takes the place rather of the former metaphysics which was intended to be the scientific construction of the world in terms of thoughts alone. If we have regard to the final shape of this science, then it is first and immediately ontology whose place is taken by objective logic - that part of this metaphysics which was supposed to investigate the nature of ens in general; ens comprises both being and essence , a distinction for which the German language has fortunately preserved different terms. But further, objective logic also comprises the rest of metaphysics in so far as this attempted to comprehend with the forms of pure thought particular substrata taken primarily from figurate conception, namely the soul, the world and God; and the determinations of thought constituted what was essential in the mode of consideration. Logic, however, considers these forms free from those substrata, from the subjects of figurate conception; it considers them, their nature and worth, in their own proper character. Former metaphysics omitted to do this and consequently incurred the just reproach of having employed these forms uncritically without a preliminary investigation as to whether and how they were capable of being determinations of the thing-in-itself, to use the Kantian expression - or rather of the Reasonable. Objective logic is therefore the genuine critique of them - a critique which does not consider them as contrasted under the abstract forms of the a priori and the a posteriori, but considers the determinations themselves according to their specific content.
+
+ &sect; 86
+
+The subjective logic is the logic of the Notion, of essence which has sublated its relation to being or its illusory being [ Schein ], and in its determination is no longer external but is subjective free, self-subsistent and self-determining, or rather it is the subject itself. Since subjectivity brings with it the misconception of contingency and caprice and, in general, characteristics belonging to the form of consciousness, no particular importance is to be attached here to the distinction of subjective and objective; these determinations will be more precisely developed later on in the logic itself.
+
+ &sect; 87
+
+Logic thus falls generally into objective and subjective logic, but more specifically it has three parts:
+
+I The logic of being
+
+II The logic of essence , and
+
+III The logic of the Notion
+
+ With What must Science Begin? - Next Section
+
+ Hegel-by-HyperText Home Page @ marxists.org

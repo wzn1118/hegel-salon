@@ -1,0 +1,429 @@
+Hegel: Philosophische Propädeutik - Dritter Kursus - Erste Abteilung
+
+ MIA   >  Deutsch   >  Philosophie   >  Hegel   >  Propädeutik
+
+  
+
+ G.W.F. Hegel
+
+ Philosophische Propädeutik
+
+ Dritter Kursus. Oberklasse. Begriffslehre und philosophische Enzyklopädie.
+
+  
+
+ << Zweiter Kursus.   |  Zweite Abteilung >>
+
+  
+
+ Erste Abteilung. Begriffslehre.
+
+ §1
+
+ Die objektive Logik ist die Wissenschaft des Begriffs an sich oder der Kategorien. Die subjektive Logik, welche hier abgehandelt wird, ist die Wissenschaft des Begriffs als Begriff oder des Begriffs von Etwas. Sie teilt sich in drei Teile:
+
+ 1) in die Lehre vom Begriff;
+
+ 2)    in die Lehre von seiner Realisierung;
+
+ 3) in die Lehre von der Idee.
+
+ Erster Abschnitt. Begriffslehre.
+
+ I. Begriff
+
+ §2
+
+ Der Begriff ist das Allgemeine, das zugleich bestimmt ist, das in seiner Bestimmung dasselbe Ganze, Allgemeine bleibt, oder die Bestimmtheit, welche die verschiedenen Bestimmungen einer Sache als Einheit in sich befasst.
+
+ §3
+
+ Die Momente des Begriffs sind die Allgemeinheit, Besonderheit und Einzelheit. Er ist ihre Einheit.
+
+ §4
+
+ Das Allgemeine ist diese Einheit als positive, sich selbst gleiche unbestimmte Einheit; - die Besonderheit ist die Bestimmung des Allgemeinen, aber so, dass sie im Allgemeinen aufgehoben ist oder das Allgemeine in ihr bleibt, was es ist; - die Einzel­heit ist die negative Einheit oder die Bestimmung, die sich in Selbstbestimmung zusammen fasst.
+
+ §5
+
+ Das Allgemeine befasst das Besondere und Einzelne, so wie das Besondere auch das Einzelne unter sich; dagegen das Einzeln die Besonderheit und Allgemeinheit und das Besondere die All­gemeinheit in sich befasst. Das Allgemeine ist weiter, als die Besonderheit und Einzelheit, dagegen die Besonderheit und Einzelheit mehr in sich befasst, als das Allgemeine, welches dadurch, dass es in der Einzelheit befasst ist, wieder eine Be­stimmtheit wird. Das Allgemeine inhäriert dem Besonderen und Einzelnen, dagegen es das Besondere und Einzelne unter sich subsumiert.
+
+ §6
+
+ Wie der Begriff die Momente der Einzelheit, Besonderheit und Allgemeinheit in sich enthält, so ist er selbst darnach in seinem Inhalt verschieden bestimmt und Begriff von etwas Einzelnem, Besonderem oder Allgemeinem.
+
+ §7
+
+ Die Besonderung des Allgemeinen, d. h. Bestimmungen, welche eine und dieselbe allgemeine Sphäre haben; so wie die einzel­nen, welche unter dieselbe Besonderheit oder Allgemein­heit subsumiert sind, sind einander koordiniert, so wie das Subsumierte demjenigen subordiniert ist, von dem es subsumiert ist.
+
+ §8
+
+ Die koordinierten besondern Bestimmungen des Allgemeinen sind einander entgegengesetzt und, indem die eine nur als die negative der andern genommen wird, sind sie kontradikto­risch; indem die andere aber auch eine Positivität hat, wodurch sie zugleich unter dieselbe allgemeine Sphäre fällt, sind sie nur konträr entgegengesetzt. Solche in dem Allgemeinen koordinierte Bestimmungen können nicht in dem Einzelnen zugleich sein, sondern die in diesem koordinierten sind verschieden, d. h. sie haben in ihrem Unterschiede nicht dieselbe allgemeine Sphäre und sind in Beziehung auf das Einzelne einstimmig.
+
+ §9
+
+ Die koordinierten Bestimmungen des Allgemeinen näher be­trachtet, sind sie: 1) die eine die negative der andern überhaupt, unbestimmt, ob sie dieselbe allgemeine Sphäre haben oder nicht; 2) insofern sie dieselbe Sphäre gemeinschaftlich haben und die eine Bestimmung positiv, die andere negativ ist, so dass diese Negativität gegen die erste deren Natur ausmacht, sind sie eigentlich kontradiktorisch entgegengesetzt; 3) insofern sie in derselben allgemeinen Sphäre entgegengesetzt sind, oder die eine auf dieselbe Weise auch positiv ist als die andere, jede somit eben so gut als positiv oder negativ in Beziehung auf die andere ausgesprochen werden kann, sind sie konträr.
+
+ § l0
+
+ Mit der konträren Bestimmung, welche gleichgültig gegen den Gegensatz des Positiven und Negativen ist, geschieht der Über-gang in das Nichtbestimmtsein durch ein Anderes, in das An und für sich bestimmtsein, wodurch die Gemeinschaftlichkeit der Sphäre verschieden und die Einzelheit ist, deren Bestimmungen verschieden ohne allgemeine Sphäre und in der sie als an und für sich bestimmte sind.
+
+ II. Urteil
+
+ Das Urteil ist die Darstellung eines Gegenstandes in den unterschiedenen Momenten des Begriffs. Es enthält denselben: a) in der Bestimmung der Einzelheit als Subjekt; b) seine Be­stimmung der Allgemeinheit oder sein Prädikat, wobei jedoch auch das Subjekt zum Prädikat sich wie Einzelheit zur Besonder­heit und wie Besonderheit zur Allgemeinheit verhalten kann; c) die einfache, inhaltslose Beziehung des Prädikates auf das Subjekt: das Ist, ist die Copula.
+
+ Vom Urteil ist der Satz zu unterscheiden, in welchem von einem Subjekte etwas ganz Einzelnes, Geschehenes ausgesagt wird, oder auch wie in den allgemeinen Sätzen etwas, mit wel­chem es nach der Notwendigkeit zusammenhängt, zu dem es wird und sich wesentlich als Entgegengesetztes verhält. Weil im Begriff die Momente als in einer Einheit befasst sind, so ist auch im Urteil als der Darstellung des Begriffs zwar Bestimmung, aber nicht als Werden oder Entgegensetzung. Die niedrigere Bestimmung, das Subjekt, erhebt sich zu der von ihr verschie­denen Allgemeinheit, dem Prädikat, oder ist unmittelbar das­selbe.
+
+ §13
+
+ In der Logik wird das Urteil seiner reinen Form nach betrach­tet, ohne Rücksicht auf irgend einen bestimmten, empirischen Inhalt. Die Urteile unterscheiden sich durch das Verhalten, welches das Subjekt und das Prädikat in der Rücksicht zu ein­ander hat, in wiefern ihre Beziehung durch und in dem Begriff oder eine Beziehung der Gegenständlichkeit auf den Begriff ist. Von der Art dieser Beziehung hängt die höhere oder absolute Wahrheit des Urteils ab. Die Wahrheit ist Übereinstimmung des Begriffs mit seiner Gegenständlichkeit. Im Urteil fängt diese Darstellung des Begriffs und seiner Gegenständlichkeit, somit das Gebiet der Wahrheit, an.
+
+ §14
+
+ Indem das Urteil die Darstellung eines Gegenstandes in den verschiedenen Momenten des Begriffs ist, so ist es umgekehrt die Darstellung des Begriffs in seinem Dasein, nicht sowohl wegen des bestimmten Inhalts, den die Begriffsmomente haben, als weil sie im Urteil aus ihrer Einheit treten. Wie das ganze Urteil den Begriff in seinem Dasein darstellt, so wird dieser Unterschied auch wieder zur Form des Urteils selbst. Das Subjekt ist der Gegenstand und das Prädikat die Allgemeinheit des­selben, welches ihn als Begriff ausdrücken soll. Die Bewegung des Urteils durch seine verschiedenen Arten hindurch erhebt diese Allgemeinheit in die höhere Stufe, worin sie dem Be­griff so entsprechend wird, als sie überhaupt sein kann, insofern sie überhaupt Prädikat ist.
+
+ A. Qualität der Urteile oder Urteile der Inhärenz
+
+ §15
+
+ Unmittelbar ist in dem Urteil das Prädikat eine Eigenschaft, die dem Subjekt so zukommt, dass sie zwar als Allgemeines überhaupt sich zu ihm verhält, aber zugleich nur ein bestimm­tes Daseirp desselben ist, wie es deren mehrere Bestimmtheiten hat. Allgemeinheit, das Prädikat, hat hier nur die Bedeutung einer unmittelbaren (oder sinnlichen) Allgemeinheit und der bloßen Gemeinschaftlichkeit mit andern.
+
+ §16
+
+ Im qualitativen Urteil ist das Prädikat sowohl etwas Allge­meines, welche Seite die Form des Urteils ausmacht, als eine bestimmte Qualität des Subjekts, welche als Inhalt erscheint. Nach jener Seite heißt das Urteil, seiner reinen Form nach: das Einzelne ist ein Allgemeines; nach dieser, der Seite des Inhalts: das Einzelne ist so bestimmt; - - positives Urteil überhaupt.
+
+ (Dies ist gut; dies ist schlecht; diese Rose ist roth; diese Rose ist weiß u. s. f.)
+
+ §17
+
+ Weil 1) das Einzelne eben so sehr nicht allgemein ist und 2) das Subjekt nicht nur diese Bestimmtheit hat, so muss das qua­litative Urteil in beiden Rücksichten auch negativ ausgespro­chen werden: negatives Urteil.
+
+ (Dies ist nicht schlecht; dies ist nicht gut; diese Rose ist nicht roth -, sondern weiß, gelb u. s. f.; diese Rose ist nicht weiß, sondern roth u. s. f.)
+
+ §18
+
+ Der Form nach heißt daher dieses Urteil: das Einzelne ist nicht ein Allgemeines, sondern ein Besonderes; dem Inhalt nach: das Einzelne ist nicht so, sondern zunächst anders be­stimmt. In beiden Rücksichten ist dieses negative Urteil zu­gleich auch positiv. In der ersten Rücksicht ist die Negation nur die Beschränkung der Allgemeinheit zur Besonderheit; in der andern Rücksicht ist nur irgend eine Bestimmtheit negiert und durch diese Negation tritt die Allgemeinheit oder die höhere Sphäre derselben hervor.
+
+ §19
+
+ Endlich ist: 1) der Form nach das Einzelne auch nicht nur ein Besonderes - denn die Besonderheit ist weiter als die Einzel­heit -, sondern das Einzelne ist nur das Einzelne: identisches Urteil.
+
+ Umgekehrt ist: 2) dem Inhalte nach das Subjekt nicht nur diese Bestimmtheit, aber auch nicht bloß irgend eine andere. Ein sol­cher Inhalt ist zu eingeschränkt für das Subjekt. Durch diese Negation der Bestimmtheit wird die ganze Sphäre des Prädikats und die positive Beziehung, welche im vorhergehenden negativen Urteil noch statt hatte, aufgehoben: unendliches Urteil.
+
+ § 20
+
+ Jenes identische sowohl als das unendliche Urteil sind nicht mehr Urteile. Dies hat näher die Bedeutung, dass das im qualitativen Urteil stattfindende Verhältnis des Subjekts und Prädikats sich aufgehoben hat, dass nämlich von dem Subjekt nur irgend eine unmittelbare Bestimmtheit seines Daseins, der nur eine oberflächliche Allgemeinheit zukommt, ausgesagt wird. Im unendlichen Urteil ist eine Allgemeinheit gefordert, die nicht nur eine einzelne Bestimmtheit ist. Jenes identische Ur­teil enthält, dass das Subjekt an und für sich bestimmt ist und in seiner Bestimmung in sich zurückgekehrt sei.
+
+ §21
+
+ Im identischen und unendlichen Urteil ist das Verhältnis von Subjekt und Prädikat aufgehoben. Dies ist zunächst als die­jenige Seite des Urteils zu nehmen, nach welcher Subjekt und Prädikat mit Abstraktion von ihrem Unterschied durch die Copula, als in einer Beziehung der Gleichheit stehend, betrachtet werden können. In dieser Rücksicht kann das positive Urteil umgekehrt werden, insofern das Prädikat nur in der Bedeutung des mit dem Subjekt identischen Umfanges genommen wird.
+
+ Das negative Urteil enthält die Trennung einer Bestimmtheit und eines Subjekts so, dass jedoch das Subjekt auf die allge­meine nicht ausgedrückte Sphäre der Bestimmtheit positiv be­zogen ist. Indem das negierte Prädikat zum Subjekt gemacht wird, fällt von selbst jene allgemeine Sphäre hinweg und es ist nur überhaupt die Ungleichheit zweier Bestimmungen vorhan­den, von welchen es insofern gleichgültig ist, welche zum Subjekt oder welche zum Prädikat gemacht wird. Das negative Ur­teil kann daher, so wie ohnehin auch das identische, umge­kehrt werden.
+
+ B. Quantität der Urteile oder Urteile der Reflexion
+
+ §23
+
+ Bei der Umkehrung der Urteile wird von dem Unterschiede des Subjekts und Prädikats abstrahiert. Dieser Unterschied ist aber, nachdem er nun als qualitativ aufgehoben, quantitativ zu nehmen.
+
+ §24
+
+ Indem sich die einzelnen Bestimmtheiten, die das Prädikat ent­hielten, aufheben, hat dasselbe die mannigfaltigen Bestimmun­gen des Subjekts zusammenfassend zu enthalten. Hierdurch hört die Allgemeinheit auf, eine bloße Gemeinschaftlichkeit mit andern zu sein. Sie ist die eigene Allgemeinheit des Subjekts, welche somit dies zugleich enthält, dass das Subjekt in seinem Prädikat in sich selbst zurückgekehrt ist.
+
+ §25
+
+ Ein solches Urteil ist somit ein Urteil der Reflexion, indem Reflektieren überhaupt das Fortgehen zu mehreren Bestimmun­gen eines Gegenstandes und das dadurch zu Stande kommende Zusammenfassen derselben in einer Einheit ist.
+
+ §26
+
+ Insofern sich am Subjekt seine Gleichheit mit dem Prädikat dar­stellt, ist dasselbe ein Allgemeines, das durch Einschränkung zunächst auf die Einzelheit Subjekt ist. Das qualitative Urteil ist also: 1) ein singuläres, welches zur Bestimmung des Subjektes die vollkommene Einzelheit hat, ein dieses Allgemeine ist.
+
+ §27
+
+ Ein Dieses aber ist unendlich vielfach bestimmt, d. h. unbe­stimmt bestimmbar. Das Reflexionsprädikat, da es ein Zusam­menfassen ist, drückt nicht nur die allgemeine Bestimmung aus von einem Diesen, sondern auch von andern Diesen; oder das singulare Urteil geht in das partikuläre über.
+
+ §28
+
+ Das partikuläre Urteil, in welchem das Subjekt als Einiges bestimmt ist, ist ein nur bestimmtes Urteil, das unmittelbar eben so sehr positiv als negativ ausgesagt werden kann.
+
+ §29
+
+ Das Subjekt erhält seine vollkommene Bestimmung, dem Um­fang der Form nach, durch die Allheit in dem universellen Ur­teil. Indem die Allheit an die Stelle der Partikularität tritt und zugleich den Umfang von dieser hat, so muss der Umfang des Inhalts des Subjektes darnach beschränkt werden.
+
+ §30
+
+ Das Subjekt wird hierdurch teils ein besonderes gegen sein Prädikat, teils tritt damit eine Beziehung der Notwendigkeit von Subjekt und Prädikat ein.
+
+ C. Relation der Urteile oder Urteile der Notwendigkeit
+
+ §31
+
+ Durch das Aufheben der qualitativen und quantitativen Be­stimmung ist die Einheit des Inhalts von Subjekt und Prädikat gesetzt, welche nur durch die Form unterschieden sind, so dass derselbe Gegenstand das eine Mal nur in der Bestimmung des Subjekts, das andere Mal in der Bestimmung des Prädikats ge­setzt ist.
+
+ §32
+
+ Indem das Subjekt ein besonderes gegen sein Prädikat ist, so ist umgekehrt gegen das qualitative Urteil nunmehr das Subjekt eine Bestimmtheit des Prädikats und unmittelbar unter dasselbe subsumiert. Die Allgemeinheit des Prädikats drückt also nicht bloß ein Zusammenfassen der Bestimmtheiten des Subjektes, wie das Reflexionsprädikat, sondern die allgemeine innere Natur des Subjekts aus: kategorisches Urteil. (Der Körper ist schwer. Gold ist Metall. Der Geist ist vernünf­tig.)
+
+ §33
+
+ Insofern Subjekt und Prädikat auch unterschieden sind, muss ihre Einheit auch als Einheit Entgegengesetzter d. h. als notwendige Beziehung ausgedrückt werden: hypothetisches Urteil.
+
+ §34
+
+ Die Identität des Inhaltes, die im kategorischen Urteil statt­findet, und die Beziehung Entgegengesetzter oder Anderer im hypothetischen Urteil ist im disjunktiven Urteil vereinigt, worin das Subjekt eine allgemeine Sphäre ist oder in Rücksicht einer solchen betrachtet wird, welche gleichfalls das Prädikat ausmacht und deren Besonderung oder verschiedene Bestim­mungen dieses ausdrückt. Von diesen kommt dem Allgemeinen sowohl die eine als die andere zu. Nach ihrer Besonderung und in Rücksicht auf das Subjekt aber schließen sie sich gegenseitig
+
+ D. Modalität der Urteile oder Urteile der Beziehung des Begriffs auf das Dasein
+
+ §35
+
+ Im disjunktiven Urteil ist ein Dasein in den vollständigen Momenten des Begriffs gesetzt. Modalität der Urteile besteht nun darin, dass ein Daseiendes auf seinen Begriff als solchen bezogen ist und das Prädikat die Angemessenheit oder Unange­messenheit beider ausspricht.
+
+ §36
+
+ Das erste Urteil der Modalität ist das assertorische, welches insofern eine bloße Versicherung enthält, als die Beschaffenheit des Subjekts, die mit dem Begriff verglichen werden soll und der Begriff selbst noch nicht ausgedrückt ist, somit jenes Urteil nur erst eine subjektive Bewährung hat.
+
+ (Diese Handlung ist schlecht; diese Rede ist wahr.)
+
+ §37
+
+ Gegen die Versicherung des assertorischen Urteils kann daher eben so sehr die entgegengesetzte behauptet werden und das Prädikat drückt nur eine jener entgegengesetzten Bestimmthei­ten aus, deren das Subjekt, als allgemeine Sphäre betrachtet, beide enthalten kann. Dieses Urteil geht daher in das problematische über, welches nur die Möglichkeit ausspricht, dass das Dasein dem Begriffe angemessen sei oder auch nicht.
+
+ §38
+
+ Die Allgemeinheit des Subjekts ist daher mit einer Einschrän­kung gesetzt, welche die Beschaffenheit ausdrückt, worin die Angemessenheit oder Unangemessenheit des Daseins mit dem Begriffe liegt. Das Prädikat drückt nichts anders als diese Gleich­heit oder Ungleichheit der Beschaffenheit und des Begriffs der Sache aus. Dies Urteil ist apodiktisch.
+
+ III. Schluss
+
+ §39
+
+ Der Schluss ist die vollständige Darstellung des Begriffs. Er enthält überhaupt das Urteil mit seinem Grunde. Es sind darin zwei Bestimmungen zusammengeschlossen durch eine dritte, welche deren Einheit ist. Es ist ein Begriff vorhanden in seiner Einheit, der Mitte des Schlusses, und in seiner Entzwei­ung, den Extremen des Schlusses.
+
+ §40
+
+ Die Beziehung der beiden Extreme des Schlusses auf die Mitte ist eine unmittelbare; ihre Beziehung auf einander aber ist vermittelt durch die Mitte. Jene beiden unmittelbaren Bezie­hungen sind die Urteile, welche Prämissen heißen; die Bezie­hung, welche vermittelt ist, heißt der Schlusssatz.
+
+ §41
+
+ Zunächst drückt der Schluss seine Momente durch die bloße Form aus, so dass die Mitte eine eigene Bestimmtheit gegen die Extreme und der Grund oder die Einheit der Momente noch eine subjektive ist. Das an sich Ursprüngliche ist hier ein Erschlossenes und hat die Bedeutung einer Folge.
+
+ A. Schlüsse der Qualität oder der Inhärenz
+
+ §42
+
+ Die Form dieses Schlusses, E-B-A, dass das Einzelne mit dem Allgemeinen durch das Besondere zusammengeschlossen ist, ist die allgemeine Regel des Schlusses überhaupt. - Im ersten un­mittelbaren Schlüsse ist das Besondere oder die Mitte eine Qua­lität oder Bestimmtheit des Einzelnen, eben so auch das Allge­meine eine Bestimmtheit des Besondern. Daher kann von dem Einzelnen durch eine andere seiner Bestimmtheiten, deren es mehrere hat, eben so von derselben zu einem anderen Allge­meinen übergegangen werden; so wie vom Besondern zu einem andern Allgemeinen, da das Besondere gleichfalls verschiedene Bestimmungen in sich enthält. Dieser Schluss erscheint demnach seiner Vorm nach zwar richtig, seinem Inhalt nach aber als willkürlich und zufällig.
+
+ (Grün ist eine angenehme Farbe; dies Blatt ist grün; also ist es angenehm. - Das Sinnliche ist weder gut noch böse. Nun ist der Mensch sinnlich. Also ist er weder gut noch böse. - Tapfer­keit ist eine Tugend. Alexander besaß Tapferkeit. Also war er tugendhaft. - Trunkenheit ist ein Laster. Alexander war dem Trunk ergeben. Also war er lasterhaft u. s. f.)
+
+ §43
+
+ Der Form nach sind die beiden Prämissen unmittelbare Bezie­hungen. Die Form des Schlusses enthält aber die Forderung, dass sie gleichfalls vermittelt, oder, nach dem gewöhnlichen Ausdruck, dass die Prämissen bewiesen werden sollen. - Aber der Beweis durch diese Form des Schlusses würde nur eine Wiederholung der nämlichen Form sein, bei der auch dieselbe Forderung, ins Unendliche hin, sich wiederholte.
+
+ §44
+
+ Die Vermittlung, und zwar der Besonderheit und Allgemein­heit, muss also durch das Moment der Einzelheit geschehen. Dies gibt die zweite Form des Schlusses: A - E - B. - Dieser Schluss ist vor's Erste nur insofern richtig, als A - E ein gül­tiges Urteil ist. Dass dies der Fall sei, muss A partikulär sein. Auf diese Weise ist nicht eigentlich das Einzelne die Mitte. Der Schluss ist auf die Form des ersten zurückgebracht, aber der Schlusssatz partikulär. (Manche Logiker sagen, dass es nicht nötig sei, die andere Figur auf die erste zurückzubringen, in­dem in ihr geschlossen werden könne, in der Tat aber kraft dieser Form.) - Vors Andere aber hat dieser Schluss überhaupt die Bedeutung, dass unmittelbare Bestimmungen oder Qualitäten durch die Einzelheit, und insofern zufällig, zusammengeschlos­sen sind.
+
+ §45
+
+ Das Einzelne mit dem Besondern durch das Allgemeine zusam­mengeschlossen, gibt die dritte Form des Schlusses: B - A - E. Das Allgemeine ist hier die vermittelnde Bestimmung und in den beiden Prämissen Prädikat. Aber so wie daraus, dass zwei Bestimmungen demselben Einzelnen inhäriren, nicht folgt, dass sie dasselbe sind; so auch folgt daraus, dass zwei Bestimmungen unter dasselbe Allgemeine subsumiert sind, nicht, dass sie als Subjekt und Prädikat verbunden werden können. Nur insofern der Obersatz negativ ist und also umgekehrt werden kann, lässt sich dieser Schluss auf den ersten zurückführen und hat damit die richtige Form.
+
+ (Kein endliches Wesen ist heilig. Gott ist kein endliches Wesen. Also ist Gott heilig.)
+
+ §46
+
+ Die objektive Bedeutung dieses Schlusses ist, dass die Vereini­gung der Besonderheit mit der Einzelheit ihren Grund nur in der identischen Natur beider hat.
+
+ §47
+
+ In der Reihe dieser Schlüsse hat jede der drei Bestimmungen erstens die Mitte ausgemacht. Die Zurückführung der zweiten und dritten Schlussform ist das Aufheben des Qualitativen. Zweitens ist wohl jede unmittelbare Beziehung des ersten Schlusses durch die folgenden vermittelt worden, aber jeder von diesen setzt den vorhergehenden, d. h. die vermittelte Einheit die unmittelbare Gleichheit, voraus.
+
+ B. Schlüsse der Quantität oder Reflexion
+
+ §48
+
+ Der unmittelbar qualitätslose Schluss ist der mathematische. Die Mitte ist darin nur ein Solches, das zwei Andern gleich ist. Als Satz ausgedrückt heißt er: wenn zwei Größen einer dritten gleich sind, so sind sie unter sich gleich.
+
+ §49
+
+ Zweitens macht im quantitativen Schluss die Einzelheit, nicht als ein Einzelnes, sondern als alle Einzelne, die Mitte aus. In­sofern zugleich allen irgend eine Qualität zukommt, so wird diese als Qualität jener allgemeinen Sphäre oder Gattung selbst, welcher die Einzelnen angehören, ausgesprochen: Schluss der Induktion.
+
+ §50
+
+ Der Schluss, worin das Allgemeine die Mitte ist, schließt durch Analogie, dass bei zwei Subjekten, welche ihrer allgemeinen Be­stimmung nach dasselbe sind, eine besondere Bestimmung, die dem einen zukommt, auch dem andern zukomme.
+
+ (a. Mehrere Einzelne haben eine allgemeine Natur.
+
+b. Eins der Einzelnen hat eine Qualität.
+
+c. Also auch die andern Einzelnen haben diese Qualität.)
+
+ (Bei der Induktion kommt es darauf an, was Subjekt oder Prädikat im Schlusssatz werden soll, z. B. was sich frei bewegt; ist ein Tier; oder: ein Tier ist; was sich frei bewegt. - Der Löwe; ist ein Säugetier; oder: was ein Säugetier ist; ist ein Löwe. Bei der Analogie hingegen liegt die Vermittlung darin, dass ein anderes Einzelne dieselbe allgemeine Natur hat, wogegen bei der Induktion die besondere Bestimmtheit der allgemeinen Na­tur im Einzelnen gegründet ist. Die Analogie schließt von der allgemeinen Natur auf die besondere Bestimmtheit des Einzel­nen, z. B. die Erde hat Bewegung; der Mond ist eine Erde; also hat der Mond Bewegung.)
+
+ C. Schlüsse der Relation
+
+ §51
+
+ Der kategorische Schluss hat zur Mitte die an und für sich sei­ende Allgemeinheit oder die Natur des einzelnen Subjektes, von der als solcher eine wesentliche Eigenschaft ausgesagt und mit diesem Subjekt zusammengeschlossen wird.
+
+ §52
+
+ Der hypothetische Schluss drückt als Grund eines Daseins ein anderes Dasein aus. Wenn A ist, so ist B. Nun ist A. Also ist B. - Die Bestimmungen sind nicht mehr im Verhältnis als Ein­zelnes, Besonderes und Allgemeines, sondern eine Bestimmung, B, die zunächst nur eine an sich seiende oder mögliche ist, wird mit dem Dasein durch A als Mitte verbunden, das sowohl daseiend als Grund ist.
+
+ Im disjunktiven Schlüsse besteht der Grund, dass eine Bestim­mung mit einem Subjekt verbunden wird, darin, dass ihm von den besondern Bestimmungen einer allgemeinen Sphäre ein Teil nicht und somit der übrige Teil zukomme, oder, wenn die Bestimmung vom Subjekt getrennt wird, umgekehrt. - A ist entweder B oder C oder D. Nun ist es nicht B noch C. Also ist es D.
+
+ §54
+
+ Die Mitte ist also das Subjekt als eine allgemeine Sphäre in ihrer vollständigen Besonderung und enthält zugleich das Ausschlie­ßen oder Setzen eines Teils dieser Bestimmungen desselben. Das Subjekt ist als ein Allgemeines an sich die Möglichkeit meh­rerer Bestimmungen. Von seiner Allgemeinheit oder Möglich­keit wird zu seiner Bestimmtheit oder Wirklichkeit übergegan­gen.
+
+ §55
+
+ Die Übersicht der Form der Schlüsse ergibt, dass: 1) im qua­litativen Schluss die Momente in ihrem qualitativen Unterschied gelten. Sie bedürfen daher eines Vermittelnden, das ihre un­mittelbare Einheit ist, aber außer ihnen fällt. 2) In den quanti­tativen Schlüssen ist der qualitative Unterschied der Momente und damit auch das Verhältnis und der Unterschied des Vermittelten und des Unmittelbaren gleichgültig. 3) In den Schlüs­sen der Relation enthält die Vermittlung zugleich die Unmittel­barkeit. Es ist also daraus der Begriff einer Unmittelbarkeit der Natur oder des qualitativen Unterschiedes hervorgegangen, welche zugleich an und für sich Vermittlung: Zweck und Prozess ist.
+
+  
+
+ Zweiter Abschnitt. Die Realisierung des Begriffs.
+
+ §56
+
+ Im Urteil wie im Schluss ist der Begriff an der unmittelbaren Realität, dem gleichgültigen Dasein des Subjekts und Prädikats; oder die Extreme des Schlusses gehen gegen einander und gegen die Mitte. Das Objektive ist, dass diese Momente selbst an ihnen das Ganze werden, ihre Unmittelbarkeit sohin eben dies ist, das Ganze zu sein.
+
+ §57
+
+ Im Zwecke ist das, was Folge und Resultat ist, zugleich der un­mittelbar tätige Grund. Er ist als ein Subjektives getrennt von dem äußerlichen Dasein vorhanden und die Tätigkeit besteht in dem Übersetzen der subjektiven Form in die Objektivität. In diesem Übergehen kehrt der Zweck zugleich in seinen Begriff zurück.
+
+ §58
+
+ Der Schluss des zweckmäßigen Tuns hat die drei Momente: den subjektiven Zweck, die Vermittlung und den daseienden Zweck. Jeder dieser Momente ist die Totalität der allgemeinen Bestim­mungen des Schlusses.
+
+ §59
+
+ 1)    Der subjektive Zweck enthält: a) die unbestimmte freie Tätigkeit eines Subjekts überhaupt, welche b) sich selbst be­ stimmt oder ihre Allgemeinheit besondert und sich einen bestimmten Inhalt gibt; c) hat sie das Moment der Einzelheit, nach welchem sie gegen sich selbst negativ ist, das Subjektive aufhebt und ein äußeres, vom Subjekt freies Dasein hervorbringt.
+
+ §60
+
+ 2)     Die Vermittlung oder das Übergehen in die Objektivität hat zwei Seiten an sich: a) die der Objektivität. Diese ist ein äußerliches Ding als Mittel, das unter die Macht des Subjekts gesetzt, dadurch als Mittel bestimmt und von ihm gegen das äußere Dasein gekehrt wird, b) Die Seite der Subjektivität ist die vermittelnde Tätigkeit, welche eines Teils das Mittel auf den Zweck bezieht und ihm unterwirft und andern Teils es gegen Anderes kehrt und durch Aufheben der Bestimmungen des Äußerlichen dem Zwecke Dasein gibt.
+
+ §61
+
+ 3) Der ausgeführte Zweck ist: a) Dasein der Objektivität über­haupt, aber b) nicht nur ein unmittelbares Dasein, sondern ein gesetztes und vermitteltes und c) von demselben Inhalt als der subjektive Zweck.
+
+ §62
+
+ Der Mangel dieser Zweckbeziehung ist die unmittelbare Exi­stenz jedes der drei ins Verhältnis tretenden Momente, für welche also die Beziehung und die Bestimmungen, die sie darin erhalten, äußerlich hinzukommen. Die ganze Bewegung dieser Realisierung des Begriffs ist daher überhaupt ein subjektives Tun. Als objektives Tun ist die Realisierung der Prozess als innerliche Beziehung der Momente des Schlusses ihrer eigenen Natur nach. Im Prozesse stehen wirkliche Gegenstände als selbstständige Extreme in Beziehung, deren innere Bestimmung aber ist, vermittelst anderer zu sein und sich damit zu ver­binden.
+
+ §63
+
+ 1)     Bei dem bloßen Mechanismus werden Gegenstände durch eine dritte Gewalt verbunden oder verändert, so dass diese Verbindung oder Veränderung nicht vorher schon in ihrer Natur liegt, sondern ihnen äußerlich und zufällig ist und sie daher in derselben selbstständig bleiben.
+
+ §64
+
+ 2)    Bei dem Chemismus ist jedes der beiden Extreme: a) seinem Dasein nach ein bestimmtes und zugleich dem andern wesentlich entgegengesetztes, b) Als Entgegengesetztes ist es an sich Beziehung auf das andere. Es ist nicht nur es selbst, sondern hat auch die Bestimmung, nur da zu sein als Vereinigung mit dem andern, oder seine Natur ist in sich gespannt und gegen das andere begeistet. c) Die Einheit der Extreme ist das neutrale Produkt, welches den Grund ihrer Beziehung und ihres Eingehens in den Prozess ausmacht, aber diese Einheit ist in ihnen nur als ansichseiende Beziehung vorhanden. Sie existiert nicht frei für sich vor dem Prozesse. Dies ist der Fall im Zwecke.
+
+ §65
+
+ 3) Die höhere Einheit ist daher, dass die Tätigkeit sich im Produkte erhält, oder dass dass das Produkt selbst produzierend ist, somit die Neutralisierung der Momente eben so ihre Entzwei­ung, oder das Erlöschen des Prozesses in der Vereinigung der Extreme das Wiederanfachen desselben ist. Die Tätigkeit die­ses produzierenden Produkts ist somit Selbsterhaltung. Es bringt nur sich hervor, das schon da ist.
+
+ Dritter Abschnitt Ideenlehre
+
+ §66
+
+ Die Idee ist das objektiv Wahre oder der adäquate Begriff, in welchem das Dasein durch seinen ihm inwohnenden Begriff bestimmt und die Existenz als selbst produzierendes Produkt in äußerer Einheit mit ihrem Zweck ist. Die Idee ist diejenige Wirklichkeit, die nicht irgend einer außer ihr vorhandenen Vorstellung oder Begriffe, sondern ihrem eigenen Begriff ent­spricht, welche daher so ist, wie sie an und für sich sein soll und diesen ihren Begriff selbst enthält. - Das Ideal ist die Idee nach der Seite der Existenz betrachtet, aber als eine solche, die dem Begriff gemäß ist. Es ist also das Wirkliche in seiner höch­sten Wahrheit. - Im Unterschiede von dem Ausdruck Ideal nennt man Idee mehr das Wahre, nach der Seite des Begriffs betrachtet.
+
+ §67
+
+ Es sind drei Ideen: 1) die Idee des Lebens; 2) die Idee der Erkenntnis und des Guten und 3) die Idee der Wissenschaft oder der Wahrheit selbst.
+
+ I. Idee des Lebens
+
+ §68
+
+ Das Leben ist die Idee in ihrem unmittelbaren Dasein, wodurch sie in das Feld der Erscheinung oder des veränderlichen, sich mannigfaltig und äußerlich bestimmenden Sein und einer un­organischen Natur gegenüber tritt.
+
+ §69
+
+ Das Leben ist als unmittelbare Einheit des Begriffs und des Daseins ein solches Ganzes, in welchem die Teile nichts für sich, sondern durch's Ganze und im Ganzen und das Ganze eben so sehr durch die Teile ist. Es ist ein orga­nisches System.
+
+ II. Idee der Erkenntnis und des Guten
+
+ §70
+
+ In dieser Idee tritt der Begriff und die Wirklichkeit aus ein­ander. Jener einerseits, für sich leer, soll seine Bestimmung und Erfüllung von der Wirklichkeit; anderseits diese aus der selbstständigen Bestimmung von jenem ihre Bestimmung erhalten.
+
+ 1) Das Erkennen
+
+ §71
+
+ Das Erkennen ist die Beziehung des Begriffs und der Wirk­lichkeit. Das an sich nur mit sich erfüllte und insofern leere Denken wird dadurch mit besonderem Inhalt erfüllt, der aus dem Dasein zu allgemeiner Darstellung erhoben wird.
+
+ §72
+
+ Die Definition drückt von einem Gegenstande, der sich in ihr als ein Einzelnes oder Besonderes verhält, seine Gattung als sein allgemeines Wesen und die besondere Bestimmtheit dieses Allgemeinen, wodurch es dieser Gegenstand ist, aus.
+
+ §73
+
+ Die Einteilung drückt von einer Gattung oder einem Allge­meinen überhaupt, einem Geschlecht, einer Ordnung u. s. f. die Besonderungen aus, in welchen sie als Mannigfaltigkeit von Arten existiert. Diese Besonderungen, die in einer Einheit ent­halten sind, müssen aus einem gemeinschaftlichen Einteilungsgrunde fließen.
+
+ §74
+
+ Das Erkennen ist teils analytisch, teils synthetisch.
+
+ §75
+
+ Das analytische Erkennen geht von einem Begriffe oder einer konkreten Bestimmung aus und entwickelt nur die Mannig­faltigkeit der unmittelbaren oder identisch darinnen enthaltenen einfachen Bestimmungen.
+
+ §76
+
+ Das synthetische Erkennen entwickelt dagegen die Bestimmun­gen eines Ganzen, die nicht unmittelbar darin enthalten sind, noch identisch aus einander herfliessen, sondern die Gestalt der Verschiedenheit gegen einander haben, und zeigt die Notwendigkeit ihres bestimmten Verhältnisses zu einander auf.
+
+ §77
+
+ Dies geschieht durch Construction und Beweis. Die Construction stellt den Begriff oder Satz teils in seinen realen Bestim­mungen, teils zum Behufe des Beweises diese seine Realität in ihrer Einteilung und Auflösung dar, wodurch ihr Übergang in den Begriff beginnt.
+
+ §78
+
+ Der Beweis fasst die aufgelösten Teile auf und bringt durch die Vergleichung ihrer Verhältnisse zu einander diejenige Verbin­dung derselben hervor, welche das im Lehrsatz ausgesprochene Verhältnis des Ganzen ausmacht; oder er zeigt von den realen Bestimmungen auf, wie sie Momente des Begriffs sind und ihr zusammengefasstes Verhältnis den Begriff in seiner Totalität darstellt.
+
+ §79
+
+ In diesem Erkennen, welches in seiner strengsten Form das geo­metrische ist, geht: 1) die Construction nicht aus dem Begriff hervor, sondern ist eine erfundene Vorrichtung, die nur in Be­ziehung auf den Beweis sich als zweckmäßig zeigt, oder in andern Fällen auch eine empirische Beschreibung. 2) In dem Beweise werden für die analytischen Bestimmungen sonst be­kannte oder ausgemachte synthetische Sätze anderswo herbei­geholt, das Vorliegende darunter subsumiert und verbunden. Der Beweis erhält dadurch den Schein der Zufälligkeit, indem er für die Einsicht nur eine Notwendigkeit, nicht den eigenen Gang und die innere Notwendigkeit des Gegenstandes selbst dar­stellt.
+
+ 2) Das Sollen oder das Gute.
+
+ §80
+
+ In der Idee des Erkennens wird der Begriff gesucht und er soll dem Gegenstand angemessen sein. In der Idee des Guten gilt der Begriff umgekehrt als das Erste und als der an sich seiende Zweck, der in der Wirklichkeit realisiert werden soll.
+
+ §81
+
+ Das an sich Gute, da es erst realisiert werden soll, steht einer ihm nicht entsprechenden Welt und einer Natur gegenüber, die ihre eigenen Gesetze der Notwendigkeit hat und gegen die Gesetze der Freiheit gleichgültig ist.
+
+ §82
+
+ Das Gute ist als absoluter Zweck einerseits an sich zu vollbrin­gen ohne alle Rücksicht auf die Folgen, indem es einer Wirk­lichkeit anvertrauet wird, die unabhängig von ihm ist und es verkehren kann.
+
+ §83
+
+ Zugleich aber liegt darin die Bestimmung, dass an sich die Wirklichkeit mit dem Guten übereinstimmt oder der Glaube an eine moralische Weltordnung.
+
+ III. Idee des Wissens oder der Wahrheit
+
+ §84
+
+ Das absolute Wissen ist der Begriff, der sich selbst zum Gegen­stand und Inhalt hat, somit seine eigene Realität ist.
+
+ §85
+
+ Der Gang oder die Methode des absoluten Wissens ist eben so sehr analytisch als synthetisch. Die Entwicklung dessen, was im Begriff enthalten ist, die Analysis, ist das Hervorgehen verschiedener Bestimmungen, die im Begriff enthalten, aber nicht als solche unmittelbar gegeben sind, somit zugleich syn­thetisch. Die Darstellung des Begriffs in seinen realen Bestim­mungen geht hier aus dem Begriff selbst hervor und, was im gewöhnlichen Erkennen den Beweis ausmacht, ist hier der Rück­gang der in die Verschiedenheit übergegangenen Begriffsmo­mente in die Einheit, welche hierdurch Totalität, erfüllter und sich selbst zum Inhalt gewordener Begriff ist.
+
+ §86
+
+ Diese Vermittlung des Begriffs mit sich selbst ist nicht nur ein Gang des subjektiven Erkennens, sondern eben so sehr die eigene Bewegung der Sache seihst. Im absoluten Erkennen fängt der Begriff eben so wohl an, als er auch Resultat ist.
+
+ §87
+
+ Der Fortgang zu weiteren Begriffen oder zu einer neuen Sphäre ist gleichfalls durch die vorhergehende geleitet und notwendig. Der Begriff, der zur Realität wurde, ist zugleich wieder eine Einheit, welche die Bewegung der Realisierung an sich darstellen muss. Aber die Entwicklung des in ihr enthaltenen Gegensatzes ist nicht eine bloße Auflösung in die Momente, aus denen sie geworden ist, sondern diese haben nun eine andere Gestalt dadurch, dass sie durch die Einheit hindurchgegangen sind. In der neuen Entwicklung sind sie nun als das gesetzt, was sie durch ihre Beziehung auf einander sind. Sie haben somit eine neue Bestimmung erhalten.
+
+  
+
+ Anfang der Seite
+
+ Zuletzt aktualisiert am 15.11.2007

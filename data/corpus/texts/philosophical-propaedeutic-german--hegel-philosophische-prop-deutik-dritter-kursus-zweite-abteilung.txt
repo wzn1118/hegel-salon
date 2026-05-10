@@ -1,0 +1,1027 @@
+Hegel: Philosophische Propädeutik - Dritter Kursus - Zweite Abteilung
+
+ MIA   >  Deutsch   >  Philosophie   >  Hegel   >  Propädeutik
+
+  
+
+ G.W.F. Hegel
+
+ Philosophische Propädeutik
+
+ Dritter Kursus. Oberklasse. Begriffslehre und philosophische Enzyklopädie.
+
+  
+
+ << Erste Abteilung.
+
+  
+
+ Zweite Abteilung. Philosophische Enzyklopädie.
+
+  
+
+ Einleitung.
+
+ §1
+
+ Eine Encyklopädie hat den gesamten Umkreis der Wissen­schaften nach dem Gegenstande einer jeden und nach dem Grundbegriffe desselben zu betrachten.
+
+ §2
+
+ Die Mannigfaltigkeit von Erfahrungen über einen allgemeinen Gegenstand zur Einheit allgemeiner Vorstellungen zusammengefasst und die in der Betrachtung seines Wesens erzeugten Ge­danken machen in ihrer Verknüpfung eine besondere Wissen­schaft aus.
+
+ §3
+
+ Wenn dieser Verknüpfung ein empirischer Stoff zu Grunde liegt, von dem sie die nur zusammenfassende Allgemeinheit ausmacht, so ist die Wissenschaft mehr historischer Art. Wenn aber das Allgemeine in der Form von Grundbestimmungen und Begriffen vorangeht und das Besondere aus demselben abgelei­tet werden soll, so ist die Wissenschaft mehr eigentlich wissen­schaftlicher Art.
+
+ §4
+
+ Es gibt keine absolute Grenzen für einen Umfang von Er­kenntnissen, der das Besondere einer Wissenschaft ausmachen soll; denn jeder allgemeine oder konkrete Gegenstand kann in seine Arten oder Teile geteilt und jede solche Art wieder als Gegenstand einer besonderen Wissenschaft betrachtet werden.
+
+ §5
+
+ In einer gewöhnlichen Encyklopädie werden die Wissenschaften empirisch aufgenommen, wie sie sich vorfinden. Sie sollen darin vollständig aufgeführt und ferner in eine Ordnung da­durch gebracht werden, dass das Aehnliche und unter gemein­schaftlichen Bestimmungen Zusammentreffende nach einer ana­logen Verwandtschaft zusammengestellt wird.
+
+ §6
+
+ Die philosophische Encyklopädie aber ist die Wissenschaft von dem notwendigen, durch den Begriff bestimmten Zusammen­hang und von der philosophischen Entstehung der Grundbe­griffe und Grundsätze der Wissenschaften.
+
+ §7
+
+ Sie ist eigentlich die Darstellung des allgemeinen Inhalts der Philosophie, denn was in den Wissenschaften auf Vernunft ge­gründet ist, hängt von der Philosophie ab; was dagegen in ihnen auf willkürlichen und äußerlichen Bestimmungen beruht oder, wie es genannt wird, positiv und statutarisch ist, so wie auch das bloß Empirische, liegt außer ihr.
+
+ §8
+
+ Die Wissenschaften sind nach ihrer Erkenntnißweise entweder empirische oder rein rationelle. Absolut betrachtet, sollen beide denselben Inhalt haben. Es ist das Ziel des wissenschaftlichen Bestrebens, das bloß empirisch Gewußte zum immer Wahren, zum Begriff aufzuheben, es rationell zu machen und es dadurch der rationeilen Wissenschaft einzuverleiben.
+
+ §9
+
+ Die Wissenschaften erweitern sich teils nach der empirischen, teils nach der rationellen Seite hin. Das Letztere geschieht, in­dem das Wesentliche immer mehr herausgehoben, unter allge­meinen Gesichtspunkten aufgefaßt und das bloß Empirische begriffen wird. Die rationelle Erweiterung der Wissenschaften ist zugleich eine Erweiterung der Philosophie selbst.
+
+ §10
+
+ Das Ganze der Wissenschaft teilt sich in die drei Hauptteile; 1) die Logik; z] die Wissenschaft der Natur; 3) die Wissenschaft des Geistes. - Die Logik ist nämlich die Wissenschaft der rei­nen Begriffe und der abstrakten Idee. Natur und Geist macht die Realität der Idee aus, jene als äußerliches Dasein, dieser als sich wissend. (Oder: das Logische ist das ewig einfache Wesen in sich selbst; die Natur ist dieses Wesen als ent­äußert; der Geist die Rückkehr desselben in sich aus seiner Entäußerung.)
+
+ §11
+
+ Die Wissenschaften der Natur und des Geistes können als die angewandte Wissenschaft, als das System der realen oder be­sonderen Wissenschaften, zum Unterschiede von der reinen Wissenschaft oder der Logik betrachtet werden, weil sie das System der reinen Wissenschaft in der Gestalt der Natur und des Geistes sind.
+
+ Erster Teil. Logik.
+
+ §12
+
+ Die Logik ist die Wissenschaft des reinen Verstandes und der reinen Vernunft, der eigentümlichen Bestimmungen und Ge­setze derselben. Das Logische hat demnach drei Seiten: 1) die abstrakte oder verständige; 2) die dialektische oder negativ vernünftige; 3) die speculative oder positiv vernünftige. Das Verständige bleibt bei den Begriffen in ihrer festen Bestimmt­heit und Unterschiedenheit von anderen stehen; das Dialek­tische zeigt sie in ihrem Übergehen und ihrer Auflösung auf; das Speculative oder Vernünftige erfaßt ihre Einheit in ihrer Entgegensetzung oder das Positive in der Auflösung und im Übergehen.
+
+ §13
+
+ Verstand und Vernunft werden hierbei gewöhnlich in dem subjektiven Sinne genommen, insofern sie als Denken einem Selbstbewusstsein angehören und die Logik ist so eine bloß formelle Wissenschaft, die erst eines anderen Inhalts, eines äußeren Stoffes bedarf, wenn etwas wirklich Wahres zu Stande kommen soll.
+
+ §14
+
+ Ihrem Inhalt nach betrachtet die Logik den Verstand und die Vernunft an und für sich selbst und die absoluten Begriffe als den an und für sich wahren Grund von Allem, oder das Ver­ständige und Vernünftige, insofern es nicht bloß ein bewusstes Begreifen ist. Die Logik ist daher an sich selbst speculative Philosophie, denn die speculative Betrachtungsart der Dinge ist nichts Anderes, als die Betrachtung des Wesens der Dinge, wel­ches eben so sehr reiner, der Vernunft eigentümlicher Begriff, als die Natur und das Gesetz der Dinge ist.
+
+ §15
+
+ Die Logik zerfällt in drei Teile: 1) in die ontologische; 2) in die subjektive Logik; 3) in die Ideenlehre. Die erstere ist das System der reinen Begriffe des Seienden; die zweite das der reinen Begriffe des Allgemeinen; die dritte enthält den Begriff der Wissenschaft.
+
+  
+
+ Erster Abschnitt Ontologische Logik
+
+ I. Sein
+
+ A. Qualität
+
+ a)    Sein
+
+§16
+
+ 1) Der Anfang der Wissenschaft ist der unmittelbare, bestim­mungslose Begriff des Seins. - 2) Dieser ist in seiner Inhalts­losigkeit so viel, als das Nichts. Das Nichts, als ein Denken jener Leerheit, ist somit umgekehrt selbst ein Sein, und um seiner Reinheit willen dasselbe, was jenes. - 3) Es ist also kein Unterschied desselben, sondern, was ist, ist hiermit nur das Setzen ihrer als Unterschiedener und das Ver­schwinden eines jeden in seinem Gegenteil, oder es ist das reine Werden.
+
+ b)    Dasein
+
+ §17
+
+ Weil aber im Werden jene zuvor Gesetzten nur verschwinden, so ist das Werden ihr Zusammenfallen in eine ruhige Einfach­heit, in welcher sie nicht nichts sind, aber auch nicht mehr jedes für sich, sondern als aufgehobene oder Momente sind. Diese Einheit ist das Dasein,
+
+ §18
+
+ Das Dasein ist: 1) ein Sein, in dessen Begriff zugleich das Nicht­sein seiner als Beziehung auf Anderes oder das Sein für Ande­res liegt; 2) aber, nach dem Momente des Seins, hat es die Seite, nicht Beziehung auf Anderes, sondern an sich zu sein. Als der Begriff, der diese beiden Bestimmungen in sich fasst, ist es die Realität.
+
+ §19
+
+ Das Reelle oder Etwas ist, als verschieden von anderem Reellen, zunächst gleichgültig gegen dasselbe, indem es in seinem An­derssein zugleich an sich ist. Die Verschiedenheit von solchem ist zunächst in der Grenze als der Mitte zwischen ihnen, in welcher sie so sehr sind, als nicht sind.
+
+ §20
+
+ Sie sind: 1) verschieden von der Grenze oder von ihrer Ver­schiedenheit, die ihre Mitte ist, außerhalb welcher sie Etwas sind . Aber: 2) gehört die Grenze ihnen selbst an, weil es ihre Grenze ist.
+
+ Die Verschiedenheit ist somit: 1) eigene Verschiedenheit des Reellen oder seine Bestimmtheit. Diese an sich seiende Be­stimmtheit ist aber auch: 2) äußerliches Dasein oder Beschaffen­heit. Die Bestimmtheit, die sowohl Äußerliches als Innerliches ist,, macht die Qualität aus.
+
+ c) Veränderung
+
+ Die Beschaffenheit oder das äußerliche Dasein gehört sowohl dem Etwas an, als es ihm fremd, oder sein Anderssein, hiemit sein Nichtsein ist. Es ist somit die Ungleichheit seiner mit sich selbst, wodurch die Veränderung gesetzt ist.
+
+ §23
+
+ Indem die Veränderung das Negiren des Negativen ist, welches das Etwas an ihm hat, ist das Für-sich-sein entstanden. Oder die Bestimmtheit, als die innerliche Verschiedenheit, die das Etwas an sich selbst hat, ist die Beziehung des Etwas in seinem Unterschiede nur auf sich selbst, oder es ist für sich.
+
+ B. Quantität
+
+ a) Fürsichsein (Idealität)
+
+ §24
+
+ Das Fürsichsein ist: 1) Der Unterschied, aber nur von sich selbst, oder die Beziehung, nicht auf ein Anderes, sondern auf sich. 2) Insofern aber der Unterschied das Anderssein in sich enthält und die Beziehung darauf negativ ist, ist Anderes für es, aber als ausgeschlossen.
+
+ §25
+
+ Das für sich Seiende ist das numerische Eins. Es ist einfach, nur auf sich bezogen und das Andere von ihm ausgeschlossen. Sein Anderssein ist die Vielheit.
+
+ §26
+
+ Die Vielen sind jedes dasselbe. Sie sind daher Eins. Aber das Eins ist eben so sehr die Vielheit. Denn sein Ausschließen ist Setzen seines Gegenteils, oder es setzt sich dadurch als Viel­heit. Jenes Werden ist die Attraction, dieses die Repulsion.
+
+ §27
+
+ Indem so sehr das eine Werden gesetzt ist, als das andere, so ist ihre Wahrheit die Ruhe, welche eben so sehr das Außer­sich-sein des Eins oder sein sich Setzen als Vielheit, Discretion, wie die sich selbst gleiche Beziehung der Vielen, oder ihre Kontinuität ist, die reine Quantität.
+
+ b) Quantum
+
+ §28
+
+ Die Quantität hat die Negativität des Eins nur als aufgeho­bene an ihr, oder weil in der Sich-selbst-gleichheit des Fürsich­seins das Anderssein unmittelbar kein Anderes ist, als eine äußerliche Grenze, oder als eine Grenze, die keine Grenze ist. Die Quantität mit dieser gleichgültigen Grenze ist Quantum.
+
+ §29
+
+ Das Quantum ist extensives Quantum, insofern die Grenze auf das Moment der Vielheit der Quantität; oder intensives Quan­tum, insofern sie auf das Moment der Sichselbstgleichheit be­zogen oder in der Bestimmung der Sichselbstgleichheit ist.
+
+ §30
+
+ Da die Negativität als gleichgültige Grenze an dem Quantum ist, so ist das Fürsichsein oder die absolute Bestimmung ein Jenseits für dasselbe. Über jedes Quantum kann hinausgegan­gen und eine andere Grenze gesetzt werden, welche eben so sehr keine immanente Grenze ist. Es entsteht dadurch der Pro-greß ins Unendliche oder die schlechte Unendlichkeit.
+
+ §31
+
+ Die absolute Bestimmung, welche als ein Jenseits gesetzt wurde, ist aber als das Fürsichsein eigenes Moment der Quantität. Oder die Grenze, welche keine ist, ist nichts Anderes, als das im Fürsichsein aufgehobene Anderssein. Es ist die Bestimmtheit, deren Setzen Selbstbestimmung ist: qualitative Größe.
+
+ C. Unendlichkeit
+
+ Die qualitative Größe ist als einfache Bestimmung zuerst speci­fische Größe, als sich unterscheidendes Selbstbestimmen aber eine Specification von Größen, welche zugleich bestimmte Grö­ßen gegen einander sind und ein qualitatives Verhältnis zu einander haben, oder deren Quotient ihre Verhältniszahl und als qualitativ zu einander sich verhaltender ist. Da die Größen hier nicht nur als endliche aufgehoben sind, sondern ihr Aufgehobensein selbst als ihr qualitatives Gesetz gesetzt ist, so ist dies ihre wahre, gegenwärtige Unendlichkeit.
+
+ II. Wesen
+
+    Begriff des Wesens
+
+ §33
+
+ Die einfache Durchdringung der quantitativen oder äußerlichen Bestimmung und des eigenen Innern Bestimmens ist das Wesen. Als Durchdringung der Selbstbestimmung und der gleichgül­tigen Bestimmtheit hat es die Momente der Wesentlichkeit und Unwesentlichkeit an sich. Das Wesentliche ist das der Selbst­bestimmung Angehörige, das Unwesentliche aber das Moment des gleichgültigen Daseins.
+
+ §34
+
+ Das Werden, als Werden des Wesens, ist zunächst das Tun, ein Übergehen desselben in die Freiheit des Daseins, das aber ein Insichbleiben ist.
+
+ §35
+
+ Insofern das Tun ein Unterschied des Wesens von sich selbst ist und Dasein oder Bestimmtheit dadurch hervorgebracht wird, ist das Tun Setzen.
+
+ B.    Satz
+
+ §36
+
+ Der Satz enthält die Momente des Insichbleibens oder der Sich­selbstgleichheit und des reinen Unterscheidens. Jenes wäre die reine Materie, dies die reine Form. Die reine Form aber ist das in sich bleibende Tun, also die nämliche Sichselbstgleichheit, welche reine Materie genannt wurde, so wie diese umgekehrt das unterschiedslose Außereinander und von der reinen Form nicht unterschieden ist.
+
+ §37
+
+ Es muss aber eben so sehr der Unterschied gesetzt werden und die Einheit der Form und der Sichselbstgleichheit ist im Gegen­satz gegen das Insichsein, in der Form des äußerlichen Daseins, das, was gewöhnlich Materie genannt wird. Insofern sie in der Form des innerlichen Seins ist, ist sie Inhalt, die Form aber ist jede dieser Bestimmungen der Verschiedenheit.
+
+ §38
+
+ α ) Der einfache Satz ist der Satz der Identität, a = a. Er ist gegen seine Materie gleichgültig. Sein Inhalt hat keine Bestim­mung, oder er hat keinen Gehalt und die Form ist somit die unterschiedslose Sichselbstgleichheit.
+
+ §39
+
+ β ) Der Satz der gleichgültigen Verschiedenheit setzt die unbe­stimmte Unterschiedenheit überhaupt und sagt aus, dass es nicht zwei Dinge gebe, welche einander vollkommen gleich sind.
+
+ §40
+
+ γ ) Der Satz der Entgegensetzung heißt: a ist entweder b oder - b, Positivität und Negativität. Von den entgegengesetzten Prädikaten kommt den Dingen nur das Eine zu und es gibt kein drittes zwischen ihnen.
+
+ §41
+
+ δ ) Der Satz des Grundes drückt das Zurückgekehrtsein des Ge­setzten in sich aus, oder das Setzen selbst als das Dritte, in welchem die entgegengesetzten Bestimmungen aufgehoben sind und welches, als das Einfache, die dem Begründeten, als dem mannigfaltigen Dasein, entgegengesetzte Bestimmung ist.
+
+ C. Grund und Begründetes
+
+ 1) Ganzes und Teile
+
+ §42
+
+ Das Wesen, als Grund seines Daseins, ohne welches das Wesen selbst nicht ist, ist zunächst Ganzes und Teile. Das Ganze ist das Setzen seiner Teile und besteht umgekehrt aus ihnen. Beide Seiten machen Ein und Dasselbe aus. Das Ganze ist den Teilen nur als ihrem Zusammen, d. h. dem Ganzen, gleich und die Teile sind ihm als Geteiltem, d. h. als Teilen, gleich; oder beide Seiten sind gleichgültig gegen einander und die Tätig-keit des Ganzen, als der Form, hat die Materie zur Bedingung.
+
+ 2) Kraft und ihre Äußerung
+
+ §43
+
+ Die Teile sind aber nur Teile als gesetzt durch das Ganze. Diese, ihre Beziehung ist die Bestimmtheit durch die Einheit des Grundes. Oder die Qualität des Daseins wird durch die Tätigkeit des Grundes, als der Form, gesetzt und die Materie der Erscheinung ist sein eigener Inhalt. Er ist somit Kraft, welche sich äußert.
+
+ Die Kraft ist das Selbstsetzen ihres Daseins als bestimmter Qualität. Nach der Seite, dass das Dasein noch Sein für Ande­res oder Äußerlichkeit ist, ist sie zugleich frei von demselben undhört nicht auf, indem diese, ihre Erscheinung verschwindet. Sie hat nach dieser Seite zwar nicht mehr die Materie zur Be­dingung, welche ihr Inhalt ist und der sie immanent angehört, aber noch eine sie sollicitirende Tätigkeit.
+
+ §45
+
+ Die sollicitirende Tätigkeit ist selbst Kraft und muss dazu, sollicitirt zu sein, sollicitirt werden. Indem die Beziehung bei­der Tätigkeiten auf einander dies wechselseitige Austauschen ihrer Bestimmungen ist, ist jede der Grund der Tätigkeit oder der Äußerung der andern. Es ist damit der Begriff des Grun­des entstanden, welcher Grund seiner eigenen und der andern diese erregenden Tätigkeit ist.
+
+ 3) Inneres und Äußeres
+
+ §46
+
+ Das Wesen ist Grund seines Daseins als sich selbst erregende Tätigkeit und es ist in seinem Dasein nichts Fremdes, oder Nichts, das nicht durch den Grund selbst gesetzt wäre. Das Wesen und sein Dasein sind somit dasselbe. Jenes verhält sich als Inne­res zu sich als Äußerem, das nur die Darstellung des Innern ist.
+
+ §47
+
+ Der Grund ist als dieses Verhältnis das Unbedingte, das Innere, die Einheit der Materie als der ruhenden Sichselbstgleichheit, und der Form als der Einheit des Gegensatzes. Er stellt sich dar in seinem Dasein als Materie, in der ihre Kräfte ruhen, und als Gegensatz und Spiel der sich erregenden und gegen einander tätigen Kräfte. Das Wesen ist hiermit Wirklichkeit geworden.
+
+ III. Wirklichkeit
+
+ §48
+
+ Die Wirklichkeit ist das selbstständige Verhältnis. Sie hat die Momente ihrer Erscheinung oder ihres Daseins, welches das Verhältnis zu sich selbst ist, und ihrer Möglichkeit als des Ansichseins oder Wesen ihres Daseins. Das Wirkliche selbst ist die Einheit seiner Möglichkeit und seines Daseins.
+
+ 1) Substanz
+
+ §49
+
+ Das Wirkliche ist Substanz. Es ist Wesen, welches die Bestimmungen seines Daseins als einfache Attribute und Gesetze in sich enthält und dieselben als daseiendes Spiel oder als seine Akzidenzen setzt, deren Aufheben nicht ein Verschwinden der Substanz, sondern ihr Zurückkehren in sich selbst ist.
+
+ §50
+
+ Die Substanz ist die Notwendigkeit ihrer Akzidenzen. Diese haben in ihrem freien Dasein die Beziehung ihrer Natur auf ein Anderes als eine innere, verborgene an ihnen, und scheinen ihre Selbstständigkeit durch äußerlichen Zufall und eine fremde Macht zu verlieren, was aber in Wahrheit nur die Wiederher­stellung des Ganzen ist, welches die an ihnen gemachte Abson­derung wieder in sich zurücknimmt.
+
+ 2)    Ursache
+
+ §51
+
+ Die Substanz tritt in das Verhältnis der Kausalität, insofern sie sich in dem Gegensatz der Notwendigkeit darstellt. Die frei wirkende absolute Ursache ist die Substanz nicht nur als das Bewegende, dessen Tätigkeit in sich anfängt, sondern das auch den ganzen Inhalt in sich hat, den sie hervorbringt und der als Wirkung Dasein erhält.
+
+ §52
+
+ Diese Tätigkeit ist somit, nach dem Gegensatz der Tätigkeit und des Bewirkten, Übergehen in das Entgegengesetzte, dem Inhalte nach aber ein identisches Übergehen.
+
+ 3)    Wechselwirkung
+
+ §53
+
+ Die Substanz ist daher als Ursache nur auf und in sich selbst tätig und steht nur in Wechselwirkung mit sich oder sie ist das Allgemeine.
+
+ Zweiter Abschnitt. Subjektive Logik.
+
+ I. Begriff
+
+ §54
+
+ Der Begriff ist das Ganze der Bestimmungen, zusammengefasst in ihre einfache Einheit.
+
+ §55
+
+ Er hat die Momente der Allgemeinheit, der Besonderheit und der Einzelheit.
+
+ §56
+
+ Die Allgemeinheit ist seine in sich seiende Einheit in der Be­stimmung. - Die Besonderheit ist das Negative als einfache Bestimmung, die von der Allgemeinheit durchdrungen ist, oder sie ist Merkmal. - Die Einzelheit ist das Negative als reine sich auf sich beziehende Negativität.
+
+ §57
+
+ Die Einzelheit hat als die sich auf sich beziehende bestimmungs­lose Negativität die Bestimmung als gleichgültiges, jedoch nicht selbstständiges, sondern aufgehobenes Dasein an ihr als Eigen­schaft und ist Subjekt.
+
+ II. Urteil
+
+ § 58
+
+ Das Urteil ist die Trennung des Subjekts von seiner Bestim­mung oder Besonderheit und die Beziehung desselben auf sie, die sein Prädikat ist. Subjekt und Prädikat verhalten sich als Einzelne und Besondere oder Allgemeine oder auch als Beson­dere und Allgemeine zu einander.
+
+ §59
+
+ Das Urteil erweitert zugleich das Subjekt zur Allgemeinheit und setzt zugleich seine Schranken. Das Prädikat geht hierdurch zugleich über das Subjekt hinaus, und zugleich ist es in dem Subjekt enthalten, oder das Prädikat ist zugleich besonders und allgemein.
+
+ a)     Qualität des Urteils oder Bestimmung des Prädikats.
+
+ §60
+
+ Indem das Urteil die Beziehung des Prädikats auf das Subjekt ist, so ist erstlich sein Inhalt und Ausdruck zunächst dieser: das Einzelne ist allgemein; positives Urteil. - 2) Das Einzelne aber ist nicht allgemein, - negatives Urteil -, sondern Besonderes. - 3) Das Einzelne ist nicht Besonderes, - unendliches Urteil -, wodurch alle Bestimmung, auch die allgemeine Sphä­re, somit das Prädikat überhaupt aufgehoben wird.
+
+ §61
+
+ b)    Quantität des Urteils oder Bestimmung des Subjekts.
+
+ Das unendliche Urteil enthält das Einzelne als Einzelnes oder als dieses und es entsteht: 1) das Urteil: dieses ist so be­schaffen; Singular es Urteil. - 2) Da das Prädikat zugleich von dem Subjekt auch etwas Allgemeines aussagt, so muss das Ur­teil so lauten: Einiges ist so beschaffen; particuläres Urteil, worin unmittelbar das entgegengesetzte Urteil liegt: Einiges ist nicht so beschaffen. - 3) Diese Unbestimmtheit hebt sich durch das Urteil auf: Alles ist so beschaffen; universelles Ur­teil. c) Relation des Urteils oder Bestimmung der Beziehung.
+
+ §62
+
+ Durch das qualitative und quantitative Urteil ist sowohl Subjekt als Prädikat in allen Bestimmungen des Begriffs gesetzt worden, hierdurch der Begriff an sich vorhanden, und das Ur­teil enthält jetzt eine Beziehung des Daseienden auf den Be­griff. Dies eigentliche Urteil ist 1) kategorisch. Weil jene Beziehung des Begriffs auf das Dasein aber nur erst ein inner­licher Zusammenhang ist, ist das kategorische Urteil zugleich nur assertorisch.
+
+ §63
+
+ 2)    Das hypothetische Urteil: wenn a ist, so ist b, spricht den Zusammenhang als solchen aus, also ohne Versicherung oder Assertion des Daseins, wodurch es problematisch ist.
+
+ §64
+
+ 3)    Das disjunktive Urteil: a ist entweder b oder c oder d, enthält im Prädikate die Allgemeinheit und die Besonderung derselben. Das Subjekt ist auf diese Bestimmungen eben so sehr als Allgemeines bezogen, als diese auch einander ausschließen und dem Subjekte nur eine derselben zukommen kann. Dies Urteil ist apodiktisch.
+
+ III. Schluss
+
+ §65
+
+ Der Schluss ist die Darstellung des Begriffs in seinen Momenten. Einzelheit, Besonderheit und Allgemeinheit sind darinnen so­wohl als Momente unterschieden, als auch die Extreme durch die Mitte, die ihre Einheit ist, zusammengeschlossen.
+
+ §66
+
+ Der Schluss ist: 1) zunächst die Zusammenschließung der Einzel­heit und Allgemeinheit durch die Besonderheit als die Mitte. Der Sinn dieses Schlusses ist: a) das Einzelne ist durch seine Bestimmtheit ein Allgemeines oder hat Dasein überhaupt; b) das Einzelne hat durch seine unmittelbare Bestimmtheit noch eine andere Bestimmtheit, welche jene in sich schließt.
+
+ §67
+
+ Die Form dieses Schlusses, E - B - A, ist die allgemeine Regel der Subsumtion eines bestimmten Inhalts unter eine allgemeine Bestimmung. Wenn diese, wie in identischen Sätzen, dem In­halte nach nicht allgemeiner ist, als diejenige, von der sie un­mittelbar prädiziert wird, so hat sie doch die Form der Allge­meinheit als Prädikat gegen die andere als Subjekt.
+
+ §68
+
+ In quantitativen Bestimmungen haben die Momente des Schlus­ses kein Verhältnis der Form zu einander, sondern das der (ilcichheit. Der mathematische Schluss heißt deswegen: Was einem Dritten gleich ist, ist unter sich gleich.
+
+ §69
+
+ Die Schlüsse, welche Stellung auch die in ihnen enthaltenen Mo­mente haben mögen, sind auf die oben angegebene Form zu­rückzubringen, welche die allgemeine Regel aller Schlüsse ist.
+
+ §70
+
+ Im Schluss, nach seinen bestimmten Momenten betrachtet, ist die Mitte die Besonderheit, eine Bestimmtheit, deren Mehrheit das Einzelne als Konkretes in sich enthält, das somit auch mit andern allgemeinen Bestimmungen zusammengeschlossen wer­den kann, die sich gegenseitig einschränken und selbst auf­heben können. - Eben so ist das Besondere für sich auf andere allgemeine Bestimmungen beziehbar. Umgekehrt fasst das All­gemeine andere Bestimmtheiten, und somit auch andere Einzel­heiten in sich. Folglich sind hier das zusammengeschlossene Einzelne und Allgemeine ein zufälliger Inhalt für einander.
+
+ §71
+
+ In Ansehung der Beziehung der Momente sind in dem Schlüsse zwei unmittelbare Beziehungen oder Urteile, nämlich die des Einzelnen auf das Besondere und die des Besondern auf das Allgemeine, und eine vermittelte Beziehung: der Schlusssatz. Weil nur die vermittelte die Einheit der Zusammengeschlosse­nen und dadurch, der Form nach, die Notwendigkeit ihrer Be­ziehung enthält, so müssen die beiden unmittelbaren Beziehun­gen gleichfalls als Vermittlungen dargestellt werden. Geschieht dies aber durch dieselbe Art des Schlusses, so entsteht der Fort­gang ins schlecht Unendliche, indem jeder solcher eingescho­bener Schlüsse denselben Mangel hat.
+
+ §72
+
+ Die unmittelbaren Beziehungen des Einzelnen auf das Beson­dere und die des Besonderen auf das Allgemeine müssen daher zuvor nach der allgemeinen Form des Schlusses überhaupt, aber durch eine andere Bestimmtheit der Mitte, vermittelt werden.
+
+ 2)    Der zweite allgemeine Schluss ist daher, dass das Besondere mit dem Allgemeinen durch die Einzelheit zusammengeschlossen wird. - Das Einzelne aber als Daseiendes muss, insofern es Mitte sein soll, Allheit sein: Schluss durch Induktion. Die Induktion kann, weil das daseiende Einzelne der freien Zufälligkeit angehört, nicht vollständig werden, und dieser Schluss bleibt daher insofern unvollkommen, so wie er auch keine innere Notwendigkeit enthält.
+
+ §73
+
+ Die Einzelheit als Mitte aber, insofern sie allgemeines Moment des Begriffs ist, schließt das Besondere und Allgemeine auf wahrhafte Weise zusammen. Sie ist die negative Einheit, in welcher als Werden und Tätigkeit, die Besonderheit als unter­schiedene Mannigfaltigkeit und Bedingung des Daseins in Eins zusammengefasst und zur einfachen allgemeinen Einheit er­hoben worden, oder umgekehrt das Allgemeine vereinzelt und in die Mannigfaltigkeit des Daseins getreten ist.
+
+ §74
+
+ 3)    Endlich muss die Beziehung der Einzelheit auf die Besonderheit vermittelt werden, wozu das Allgemeine vorhanden ist: Schluss der Analogie, In diesem Schluss hat die Mitte gegen das Extrem der Besonderheit die Bestimmung der Einzelheit und zerfällt in Einzelnes und Allgemeines, da das, was nur von Einzelnem gilt, allgemein genommen wird. Dieser Schluss enthält also eigentlich vier Bestimmungen (quaternio terminorum) und ist daher mangelhaft.
+
+ §75
+
+ Die Allgemeinheit aber als wahrhafte Mitte ist die innere Natur und der ganze Begriff, in welchem die negative Einheit, die Subjektivität, so wie die Objektivität, der Inhalt und die Beson­derheit des Daseins, sich durchdringen und welche der absolute Grund und Zusammenhang des Insichseins und des Daseins ist.
+
+ §76
+
+ Der erste Schluss, E - B - A, der Vermittlung der Einzelheit und Allgemeinheit durch die Besonderheit, setzt die beiden fol­genden, durch welche seine beiden unmittelbaren Beziehungen vermittelt werden, voraus. Umgekehrt aber setzen diese beiden sich gegenseitig und eben so den ersten voraus. Das Unmittel­barefordert die Vermittlung und geht nur aus ihr hervor, so wie umgekehrt die Vermittlung aus dem Unmittelbaren her­vorgeht. Jene Schlüsse machen einen Kreis der gegenseitigen Voraussetzung aus, der als Ganzes sich mit sich selbst bindet und in der einfachen Vermittlung, die eben so unmittelbar ist, sich als in dem Mittelpunkte zusammenfasst.
+
+ §77
+
+ Dies Ganze der sich selbst gegenseitig voraussetzenden Ver­mittlung, die oben darin einfache Unmittelbarkeit ist, bringt ein Dasein hervor, welches jene Ursache und deren Tätigkeit zu ihrer Voraussetzung hat, aber umgekehrt ist das Hervorge­brachte eben so sehr Grund der Tätigkeit und des Hervorbrin­gens selbst. Diese Vermittlung ist daher weder ein Übergehen, wie das Werden des Seins überhaupt, worin das Übergehende in seinem Entgegengesetzten sich verliert; noch ist es ein Her­vorbringen, wie das Erscheinen des Grundes, das nur unmittel­bar ist; oder die Äußerung der Kraft, deren Tätigkeit bedingt ist; noch ein Wirken, wie das der Ursache, deren Tätigkeit in der Wirkung verschwindet.
+
+ §78
+
+ A. Der Zweck, näher betrachtet, ist der reale und sich selbst realisierende Begriff, als Ganzes, wie in seinen Teilen, der ganze Schluss. Er ist zunächst als das Subjektive der ganze Schluss, nämlich: 1) das unmittelbare, in sich seiende Allgemeine, das sich 2) selbst bestimmt oder besondert und 3) sich zum Außersichgehen, zum Dasein treibt.
+
+ § 79
+
+ B. Die Realisierung des Zweckes ist eben so der ganze Schluss. Diese Vermittlung ist: 1) tätiger Zweck als wirkende Ursache, aber 2) durch ein Mittel, das eines Teils dem Subjektiven angehört, von der Tätigkeit mit dem Zwecke in Verbindung gebracht wird; andern Teils dem Dasein oder der Objektivität angehört und von der Tätigkeit mit dieser Objektivität in Verbindung gebracht wird; 3) wirkt die Tätigkeit auf das unmittelbare Dasein und gibt durch dessen Aufheben sich selbst eine vermittelte, hervorgebrachte Objektivität,
+
+ §80
+
+ C.    Diese, der erfüllte Zweck, stellt die Vermittlung durch das Allgemeine dar. Er ist ein Äußerliches, welches einerseits Produkt, anderseits Grund des Hervorbringens ist. In demselben ist hiermit das Wirkende eben so sehr außer sich gekommen, und in sein Entgegengesetztes übergegangen, als es auch aus der vermittelnden Tätigkeit in sich zurückgekehrt ist und in sei­nem Anderssein nur sich selbst gefunden hat.
+
+ §81
+
+ Insofern der Zweck als tätige Ursache Mittel und Produkt in der Existenz aus einander fallen lässt, das Mittel also nicht den Zweck, das Produkt nicht die Tätigkeit an ihm selbst hat, ist die Zweckmäßigkeit bloß eine äußerliche und relativ ist sie überhaupt, insofern der Zweck selbst von einem untergeord­neten Inhalt ist und dasjenige, was Mittel für ihn ist, nur nach irgend einer Seite diese Beziehung auf ihn hat.
+
+ §82
+
+ Der Zweck des Existierenden ist dasjenige, was es an sich und in Wahrheit oder sein Begriff ist. Die relative Zweckmäßigkeit, welche nur irgend eine Bestimmtheit desselben zur Rücksicht hat, erschöpft daher seinen Begriff nicht.
+
+ §83
+
+ Die innere Zweckmäßigkeit ist die, dass Etwas an sich selbst gegenseitig eben so sehr Zweck als Mittel, sein eigenes Produkt und dies Produkt das Produzierende selbst ist. Ein solches ist Selbstzweck.
+
+ Dritter Abschnitt. Ideenlehre.
+
+ §84
+
+ Die Idee ist der adäquate Begriff, in welchem die Objektivität und Subjektivität gleich ist, oder das Dasein dem Begriff als solchem entspricht. Sie fasst das wahrhafte Selbstleben in sich. Die Idee ist teils Leben, teils Erkennen, teils Wissenschaft.
+
+ I. Idee des Lebens.
+
+ §85
+
+ Das Leben ist die Idee im Elemente des Daseins. Durch die Ein­heit des Begriffs und der Objektivität ist das Lebendige ein solches Ganzes, in welchem die Teile nichts für sich, sondern nur durch das Ganze und im Ganzen sind, organische Teile, worinnen Materie und Form unzertrennbare Einheit ist.
+
+ §86
+
+ Das Leben hat die allgemeinen Momente an ihm, welche eben so viel allgemeine organische Systeme konstituieren: a) sein allgemeines einfaches Insichsein in seiner Äußerlichkeit, Sen­sibilität; 2) die Reizbarkeit von Außen und unmittelbare Rück­wirkung dagegen, Irritabilität; 3) Rückkehr dieser Wirkung nach Außen in sich, Reproduktion.
+
+ §87
+
+ Als sich realisierende Selbstbewegung ist das Leben der drei­fache Prozess: 1) die Gestaltung des Individuums in sich selbst; 2) seine Selbsterhaltung gegen seine unorganische Natur; 3) die Erhaltung der Gattung.
+
+ §88
+
+ 1) Der Prozess der Gestaltung ist das Verhältnis des Orga­nischen zu sich selbst und besteht darin, dass alle organischen Teile sich gegenseitig fortdauernd hervorbringen und die Er­haltung des einen von der Erhaltung der übrigen abhängt. Diese Hervorbringung ist eines Teils nur Evolution der an sich vorhandenen Organisation, andern Teils die fortdauernde Ver­änderung derselben. Jenes bloße Wachstum oder die quantita­tive Veränderung ist aber Vermehrungsprozess durch Intussus-ception, nicht durch Juxtaposition, d. h. nicht eine mechanische Vermehrung.
+
+ §89
+
+ Der Prozess der organischen Veränderung ist eben so wenig ein chemischer Prozess. Im Chemismus sind die sich zu einander verhaltenden Materien zwar durch ihren Begriff auf einander bezogen (chemische Verwandtschaft) und enthalten somit an sich ihr Produkt, welches nicht schon durch das vorher Vorhan­dene ihm Gleiche sich erzeugt. Seine Hervorbringung aber ist keine Selbsterhaltung. Es ist daher nur ein neutrales Produkt, d. h. in welchem die Tätigkeit, die nur den getrennten Mate­rien zukommt, erloschen, nicht selbst produzierend, und wieder in seine Bestandteile, der Qualität und Quantität nach, trenn­bar ist.
+
+ §90
+
+ Der organische Ernährungsprozess ist dagegen eine vollkom­mene Bestimmung der materiellen Vermehrung durch die innere schon existierende Form, welche, als das Subjektive, oder als die einfache Form aller Teile sich zu sich selbst, oder jeder gegen die übrigen Teile als gegen ein Objektives verhält und nur mit sich im Prozess ist.
+
+  
+
+ §91
+
+ 2)    Der Selbsterhaltungsprozess des Organischen gegen seine unorganische Natur. - Die freie Entgegensetzung des Lebens in Subjektives und Objektives stellt sich als organische und un­ organische Natur dar. Letztere ist das Leben ohne Individualität, worin das Einzelne für sich existiert, seinen Begriff nur als Gesetz der Naturnotwendigkeit, nicht in subjektiver Form an ihm hat und seine Bedeutung nur ins Ganze fällt. Dies Ganze, als Subjekt, ist das Organische, auf welches die unorganische Natur sich wesentlich bezieht und dessen Bedingung ausmacht.
+
+ §92
+
+ Die unorganische Bedingung verhält sich gegen das Organische nicht als Ursache oder als chemisches Moment, sondern was im Organischen durch die Einwirkung des Unorganischen gesetzt wird, ist durch das Organische selbst wesentlich bestimmt und wirkt nur als erregend. Das Organische ist die gedoppelte Be­wegung des fortdauernden Kampfes, welcher auf der einen Seite das elementarische Werden und das Übergehen ins Ent­gegengesetzte hemmt, seine Bedingung aufhebt und die objektive Allgemeinheit individualisiert, auf der andern Seite aber das Individuelle oder Subjektive aus sich selbst auflöst und zum un­organischen Dasein herabsetzt.
+
+ §93
+
+ 3)    Der Prozess der Erhaltung der Gattung ist: a) die Realisation der Gattung überhaupt, welche als allgemeines Leben durch die Besonderung der Art zur Wirklichkeit im Einzelnen, zur Individualität, übergeht; b) das Verhältnis des Organischen zu dem ihm gleichen Organischen, wodurch es sich als ein anderes Individuum derselben Gattung produziert, welche sich in diesem Wechsel der Individuen und dem Rückgang der Einzelheit zur Allgemeinheit darstellt.
+
+ II. Idee des Erkennens.
+
+ §94
+
+ Die Erkenntnis ist die Darstellung eines Gegenstandes nach sei­nen daseienden Bestimmungen, wie dieselben in der Einheit seines Begriffs befasst sind und sich daraus ergeben oder inso­fern umgekehrt die eigene Wirksamkeit des Begriffs sich seine Bestimmungen gibt. Diese Bestimmungen, als im Begriff ent­halten gesetzt, sind das Erkennen oder die im Elemente des Denkens sich realisierende Idee.
+
+ III. Absolute Idee oder das Wissen
+
+ §95
+
+ Das absolute Wissen hat: 1) nichts Äußerliches, auf irgend eine Weise Gegebenes zu seinem Gegenstande, sondern nur sich selbst. Es ist der als Begriff existierende Begriff. 2) Der Be­griff konstruiert sich aus sich selbst, indem er als Werden ist und den in ihm enthaltenen Gegensatz in der Form verschiedener für sich bestehender realer- oder Verstandes-Bestimmungen dar­stellt. 3) Indem die realen Bestimmungen zunächst in ihrer Reflexion zu Verstandesbestimmungen werden, stellt ihre Dia­lektik sie nicht nur als sich wesentlich auf einander beziehend, sondern auch in ihre Einheit übergehend dar. Aus dieser ihrer negativen Bewegung resultiert ihre positive Einheit, welche den Begriff in seiner realen Totalität ausmacht.
+
+ Zweiter Teil. Wissenschaft der Natur.
+
+ §96
+
+ Die Natur ist die absolute Idee in der Gestalt des Anderssein überhaupt, der gleichgültigen, äußerlichen Gegenständlichkeit, und der konkreten, individualisierten Verwirklichung ihrer Mo­mente; oder das absolute Wesen in der Bestimmung der Un­mittelbarkeit überhaupt gegen seine Vermittlung. Das Werden der Natur ist das Werden zum Geist.
+
+ §97
+
+ Die Natur ist als ein System von Stufen zu betrachten, deren eine aus der andern notwendig hervorgeht; aber nicht so, dass die eine durch die andere natürlicher Weise erzeugt wird, son­dern in der innern, der Natur zu Grunde liegenden Idee. Die Bewegung der Idee der Natur ist, aus ihrer Unmittelbarkeit in sich zu gehen, sich selbst aufzuheben und zum Geist zu wer­den.
+
+ §98
+
+ Die Naturwissenschaft betrachtet: 1) das ideelle Dasein der Natur als Raum und Zeit überhaupt; 2) die unorganische; 3) die organische Natur und ist demnach: 1) Mathematik; 2) Phy­sik des Unorganischen; 3) Wissenschaft der organischen Natur.
+
+ Erster Abschnitt. Mathematik.
+
+ §99
+
+ Raum und Zeit sind die daseienden Abstraktionen, oder reine Form, reine Anschauung der Natur: der Raum der daseiende Gedanke der allgemeinen gleichgültigen Verschiedenheit über­haupt; die Zeit der daseiende Gedanke der negativen Einheit oder des reinen Werdens.
+
+ § 100
+
+ Raum und Zeit sind unendlich, d. h. in der abstrakten Kontinuität ihres Außersichseins grenzenlos. Als Ideen aber haben sie Bestimmungen in ihnen selbst, welche den Begriff in seinen Momenten darstellen: die Dimensionen.
+
+ § 101
+
+ 1) Die Dimensionen des Raums sind Momente desselben, die nicht außer einander sind, sondern wo das eine ist, ist auch jedes der andern. Auch sind sie zwar die formellen Unterschiede, das eine, das andere und das dritte als Einheit derselben. Aber um der qualitätslosen Einheit des Raumes willen sind sie nicht bestimmt gegen einander, sondern leere Unterschiede, die nur in Rücksicht auf einen weitern Gegenstand eine ihnen selbst fremde Bestimmtheit erhalten.
+
+ §102
+
+ 2) Die Dimensionen der Zeit sind: 1) die Vergangenheit, das Dasein als aufgehobenes, als nicht daseiend; 2) die Zukunft, das Nichtdasein, aber bestimmt, da zu sein; 3) die Gegenwart, als das unmittelbare Werden und die Vereinigung beider.
+
+ §103
+
+ Weil der Raum in der Bestimmung eines realen, gleichgültigen Daseins ist, so erscheinen auch reale Grenzen an ihm, und seine Dimensionen, die zunächst nur bloße Richtungen überhaupt sind, machen die Formen dieser seiner Begrenzung aus.
+
+ §104
+
+ Der Begrenzung des Raums kommt nur die gleichgültige Be­stimmung der Quantität zu. Die kontinuierliche Größe, welche zunächst die Art seiner Quantität überhaupt ist, ist selbst eine unbestimmte Bestimmung. Die absolute Bestimmtheit liegt in der diskreten Größe, deren Prinzip das Eins ist.
+
+ §105
+
+ Der Raum ist der Gegenstand einer (synthetischen) Wissen­schaft, der Geometrie, weil in ihm als solchem sich das kontinuierliche Quantum schematisieren, d. h. anschaulich darstellen kann, und weil in ihm, als dem Element der gleichgültigen, außer einander seienden Mannigfaltigkeit, die jedoch zugleich kontinuierlich ist, der Begriff eines Gegenstandes sich in realer Gestalt ausdrückt, die mehr in sich enthält, als die wesentliche Begriffsbestimmung.
+
+ §106
+
+ Die Zeit jedoch als solche ist nicht fähig, vollständiges Schema oder Figur des Quantums zu sein. Sie ist als das unruhige Werden nicht ein Element für synthetische Ganze. Indem sie zur Quantität wird, geht sie in die negative Quantitätsbestim­mung, in das Eins über, welche das Prinzip für eine (analy­tische) Wissenschaft des Quantums, die Arithmetik, ist, weil die Verbindung des Eins nicht eine eigene elementarische Anschau­ung der Realität, sondern so beschaffen ist, wie sie gesetzt wird.
+
+ § 107
+
+ In der Arithmetik und Geometrie werden die Quanta mit ein­ander verglichen, die, so willkürlich und allgemein ihre Größe sein kann, doch nach dieser ihrer Bestimmung, die ihnen zu­kommt, insofern sie nicht im Verhältnisse sind, als vollkom­men oder für sich bestimmte Quanta, als endliche Größen gel­ten. Die Analysis des Unendlichen, vornehmlich aber die Diffe­renzial- und Integral-Rechnung betrachtet unendliche Größen, d. h. solche, die nicht mehr die Bedeutung von endlichen oder für sich vollkommen bestimmten Größen haben, sondern ver­schwindende Größen sind, welche allein in ihrem letzten Ver­hältnisse oder an ihrer Grenze, d. h. rein nur im Verhältnisse ihren Werth haben.
+
+ §108
+
+ Die Differenzialrechnung findet für eine Formel den Ausdruck des letzten Verhältnisses ihrer veränderlichen, endlichen Grö­ßen. Die Integralrechnung sucht umgekehrt für Formeln, wel­che letzte Verhältnisse enthalten, den endlichen Ausdruck.
+
+ §109
+
+ Die angewandte Mathematik wendet die reine Mathematik auf die Größenverhältnisse der Natur an, welche sie aus der Er­fahrung aufnimmt.
+
+  
+
+ Zweiter Abschnitt. Physik.
+
+ I. Mechanik.
+
+ § 110
+
+ Die reine Anschauung, aus ihrer Unmittelbarkeit in das Anundfürsichsein übergegangen oder der erfüllte Raum und Zeit ist die Materie. Das Außereinander des Raums und das Insichsein der Zeit absolut in Eins gesetzt, gibt den Begriff der Materie überhaupt.
+
+ § 111
+
+ Nach dem Moment des Insichseins wäre die Materie vereinzelter Punkt; nach dem Momente des Außersichseins wäre sie zu­nächst eine Menge sich ausschließender Atome. Indem diese sich aber durch das Ausschließen eben so sehr auf einander beziehen, hat das Atom keine Wirklichkeit und das Atomistische sowohl als die absolute Kontinuität, oder die unendliche Teilbarkeit nur eine Möglichkeit in ihr.
+
+ § 112
+
+ Die Materie hat, als für sich seiend, das Moment der Verein­zelung, aber dieselbe erhält sich eben so sehr im Ansichsein, und ist nur eine wesentliche Kontinuität, die Schwere, welche das allgemeine Prädikat des Körpers ausmacht, der die Materie in der Form des Subjekts ist.
+
+ §113 Der Körper enthält die Beziehung der ideellen Momente des Raums und der Zeit, welche Beziehung als Bewegung und die Schwere als deren Grund erscheint.
+
+ § 114
+
+ Die freie Bewegung kommt den Körpern zu, die ein eigenes Zentrum der Schwere in sich haben. Durch die Beziehung solcher Mittelpunkte entsteht das freie System der kreisenden Be­wegung der Himmelskörper, da hingegen die andern Körper, ohne eigenes Zentrum, der Zentrifugalkraft entbehren und der Zentripetalkraft unterliegen, wodurch sie fallen.
+
+  § 115 In der Größe der Bewegung ist außer Raum und Zeit die Masse ein Moment, so wie auch Raum und Zeit in Kraft übergehen und, wie die Masse, Momente der Kraft sind.
+
+  
+
+ II. Physik des Unorganischen
+
+ § 116
+
+ Das durch das Licht individualisiert und in qualitative Unterschiede aufgeschlossen werdende Schwere ist die konkrete oder physische Natur und Gegenstand der Physik überhaupt.
+
+ § 117
+
+ Die Schwere ist der Gegensatz des zum Insichsein nur streben­den Außersichseins. Die Materie ist dies Dasein des Strebens, dessen Gegensatz sich nur in den Momenten des Raums und der Zeit ausdrückt in einem bloß idealen Mittelpunkt. Jenes Werden des Außersichseins zum Insichsein, die intensive ein­fache Einheit der Schwere, ist ein ihr gegenübertretendes Da­sein, das frei existierende Selbst der Materie, das Licht. Das Licht ist als das sich selbst gleiche Insichsein das Prinzip der Individualisierung und Besonderung der Materie. Seine Bezie­hung auf das ihm bloß Negative, auf das Dunkle, macht die Farbe aus.
+
+ §118
+
+ Das erste Moment des besondern Daseins der physischen Natur ist der Magnetismus, die Diremtion des individuellen Einheitspunktes in den Gegensatz, der aber noch im Begriffe einge­schlossen bleibt.
+
+ §119
+
+ Das zweite Moment ist die Realisierung, nämlich das Freiwer­den und die eigene Konstituierung der Seiten des Gegensatzes: 1) die Elektrizität, welche die noch unverkörperte, in absoluter Spannung gegen einander gehaltene flüchtige Erscheinung des­selben ist. 2) die chemischen Elementarstoffe. Sie sind die quali­tativen Unterschiede der Körperlichkeit, in Gestalt eigener Ma­terien, die aber noch abstrakt und ohne wirkliche Individualität sind. 3) Die physischen Körper, in welchen die qualitativen Bestimmungen in konkreter Körperlichkeit sind, welche hier­durch zwar alle Momente der Körperlichkeit in sich enthalten, aber unter der Bestimmung eines dieser Momente oder Quali­täten, und die Gestalt des gleichgültigen Bestehens gegen ein­ander annehmen: a) als physikalische Elemente; b) als absolute oder himmlische Körper und c) als die in weitere Verteilung und Vereinzelung übergegangenen irdischen Körper.
+
+ § 120
+
+ Das dritte Moment ist der chemische Prozess. Die Vereinzelung und das eigene gleichgültige für sich Bestehen der Körper ist zugleich eine Beziehung derselben auf einander, nicht nur eine gegenseitige Spannung, sondern auch eine Entgegensetzung und Begeistung zur Tätigkeit und Einwirkung, wodurch ihr gleichgültiges Bestehen sich aufhebt und in die Einheit der Totalität zurückgeführt wird. Dieser Prozess des Rückganges aber fällt in der lebendigen Natur mit dem Prozesse der Konstruktion zusammen, wodurch die Vereinigung von einer andern Seite zugleich eine Ausscheidung und ein Niederschlag einer gleichgültigen Existenz wird.
+
+ Dritter Abschnitt. Physik des Organischen.
+
+ § 121
+
+ Die Geologie betrachtet die Gebilde der Erde als Resultat des erloschenen Prozesses der Bildung des Erdindividuums. Die Geognosie betrachtet diese Gebilde in ihrer Allgemeinheit als Gebirgsarten nach ihrer Beschaffenheit, den Verhältnissen ihrer Lagerung, und macht mit der Oryktognosie, welche vornehm­lich die einzelnen Gebilde als Bestandteile jener allgemeinen und die Gangarten betrachtet, die Mineralogie aus.
+
+ §122
+
+ Die vegetabilische Natur ist der Anfang des individuell oder subjektiv werdenden Selbsterhaltungs- oder eigentlichen orga­nischen Prozesses, der jedoch noch nicht die vollständige Kraft der individuellen Einheit besitzt, indem die Pflanze, welche Ein Individuum ist, nur solche Teile besitzt, die wieder als selbst­ständige Individuen angesehen werden können. Sie kommt um dieser mangelnden Innern Einheit willen nicht bis zum Gefühl. Die Pflanzenphysiologie betrachtet ihre allgemeine Natur, die Botanik aber das System derselben, welches ihre Einteilung vornehmlich auf die Unterschiede der Organe der Befruchtung gründet, welche die höchste Spitze des vegetabilischen Lebens ist, wodurch die Pflanzen an eine höhere Stufe des Organismus angrenzen.
+
+ §123
+
+ Die animalische Natur besitzt diejenige subjektive Einheit, wo­durch alle organischen Teile einem Ganzen, das Eins ist, unterworfen sind. Die Physiologie des tierischen Organismus betrachtet die Funktionen der Teile, die zur fortdauernden Hervorbringung des Ganzen mitwirken und durch diesen Prozess eben so hervorgebracht und erhalten werden. - Die coniparative Anatomie betrachtet den allgemeinen Typus des Tiers in den verschiedenen Gebilden der allgemeinen Gattung, teils wie derselbe in den einfachsten tierischen Organisationen sich zu zeigen anfängt und nach und nach entwickelter hervortritt, teils wie er sich nach den verschiedenen Elementen, in welchen Tiergeschlechter hervorkommen, sich modifiziert. Die Zoologie klassifiziert dieselben zunächst nach ihren gemeinschaftlichen Hauptmerkmalen, und nimmt die Bestimmung hierzu von Hauptstufen der Entwicklung des animalischen Typus, von dem Element und dann von den Waffen in Verhältnis zu andern her, wobei aber die Natur die bestimmten Grenzen, die sich hier zuerst darbieten, durch die Übergänge verwischt, welche ein Prinzip mit dem andern vereinigen.
+
+ §124
+
+ Der Organismus steht nach dem Moment seiner Irritabilität überhaupt in Beziehung auf seine unorganische Natur. Diese Trennung ist zuerst subjektiv in ihm selbst als ein Gefühl des Mangels, als ein Bedürfnis vorhanden. Diese subjektive Tren­nung reflektiert sich nach Außen zu dem Gegensatz der orga­nischen und unorganischen Natur. Die unorganischen Potenzen verhalten sich als erregend zum Organismus, und seine Tätigkeit ist der beständige Kampf, sie nach seiner Receptivität in sich aufzunehmen, aber darin zu überwältigen und dadurch die Einheit in sich wiederherzustellen, welche selbst ein solcher Verlauf des Gegensatzes der innern Systeme gegen einander und eine Wiederherstellung derselben ist.
+
+ §125
+
+ Der Organismus befindet sich im Zustande der Krankheit, wenn eine in ihm gesetzte Potenz von ihm nicht überwältigt werden kann, sich in einem System festsetzt, das sich hierdurch vereinzelt, in seiner eigenen Tätigkeit beharrt und nicht mehr in die flüssige Tätigkeit des Ganzen übergeht, somit überhaupt den organischen Prozess zu einem unterbrochenen macht. Die Wissenschaft der Krankheit und ihrer Heilung ist die Mediän.
+
+ §126
+
+ Das Tier hat Gefühl, insofern seine organischen Momente schlechthin in der Einheit des Lebens allein ihre Bestimmung und Bedeutung haben, aber sie haben zugleich noch ein äußer­liches Außereinandersein. Die letzte Reflexion dieser Äußerlichkeit in das abstrakte Element der Einfachheit, welches allein das vollständige Bestehen der Momente ausmacht, ist die Er­hebung in den Geist.
+
+  
+
+ Dritter Teil. Wissenschaft des Geistes.
+
+  
+
+ §127
+
+ Der Geist fängt von dem Äußeren nur an, bestimmt dies und verhält sich fernerhin nur zu sich selbst und zu seinen eigenen Bestimmungen.
+
+ §128
+
+ Die Philosophie des Geistes enthält drei Abschnitte. Sie betrach­tet: 1) den Geist in seinem Begriff, Psychologie überhaupt; 2) die Realisierung des Geistes; 3) die Vollendung des Geistes in Kunst, Religion und Wissenschaft.
+
+ Erster Abschnitt. Der Geist in seinem Begriff.
+
+ §129
+
+ Der Geist für sich betrachtet ist: 1) in seinem natürlichen Da­sein und seiner unmittelbaren Verbindung mit dem organischen Körper und seiner daher rührenden Abhängigkeit von dessen Affectionen und Zuständen zu begreifen, Anthropologie. - 2) Als erscheinend, insofern er sich nämlich als Subjekt auf Anderes als Objekt bezieht, ist der Geist Bewusstsein und Ge­genstand der Phänomenologie des Geistes. - 3) Als Geist nach den Bestimmungen seiner Tätigkeit innerhalb seiner selbst ist er Gegenstand der Psychologie.
+
+ (Da die sub 1 und 2 gesetzten Bestimmungen im Unterricht schon anderwärts [1*] ihre Erledigung gefunden haben, so folgt hier nur noch die Psychologie.)
+
+ §130
+
+ Die Intelligenz fängt von der Äußerlichkeit als ihrer Bedin­gung, aber nicht als ihrem Prinzip an, welches sie vielmehr sich selbst ist. Sie ist: 1) unmittelbar als Gefühl, dessen Inhalt sie 2) zur Vorstellung in sich erhebt und 3) als Denken den Inhalt von der Zufälligkeit zur Notwendigkeit und der Besonderheit zur Allgemeinheit seiner Bestimmungen reinigt.
+
+  
+
+ I. Das Gefühl.
+
+ § 131
+
+ Das Gefühl ist die einfache, jedoch bestimmte Affektion des ein­zelnen Subjekts, in welchem noch kein Unterschied desselben lind des Inhalts gesetzt ist, oder eine als im Subjekt, das sich noch nicht abgeschieden vom Objekt, gesetzte Bestimmung.
+
+ §132
+
+ Das Gefühl ist teils innerlich, teils äußerlich und ist unmit­telbar, noch ohne Reflexion, als Stimmung ein angenehmes oder unangenehmes.
+
+ II. Die Vorstellung.
+
+ §133
+
+ Das Gefühl ist der ursprüngliche, noch in sich eingehüllte Stoff, den die Intelligenz dadurch zur Vorstellung erhebt, dass sie die Form der Einfachheit, die das Gefühl hat, aufhebt, und dasselbe in ein Objektives und in ein sich davon abscheidendes Subjektives trennt, das Gefühl zu einem Gefühlten macht.
+
+ §134
+
+ Erst in der Vorstellung hat man einen Gegenstand. Die Stufen des Vorstellens sind, dass die Intelligenz 1) sich erinnert, indem sie sich überhaupt von dem Inhalt des Gefühls lostrennt; 2) die­sen Inhalt sich einbildet, ihn ohne sein Objekt behält, ihn frei aus sich hervorruft und verknüpft; 3) dass sie ihm seine un­mittelbare Bedeutung nimmt und ihm eine andere Bedeutung und Verknüpfung im Gedächtnis gibt .
+
+ A. Erinnerung.
+
+ §135
+
+ 1) Die Anschauung ist die unmittelbare Vorstellung, worin die Gefühlsbestimmungen zu einem vom Subjekte abgetrenn­ten Gegenstande gemacht sind, welcher frei von dem einzelnen Subjekte und zugleich für dasselbe ist. Aber eben so sehr ist er nicht für es als einzelnes, sondern für Alle.
+
+ §136
+
+ Das Objekt ist so gesetzt als außer dem Subjekt und an ihm selbst als einem Außereinander teils das ruhige Nebeneinander des Raums, teils das unruhige Werden im Nacheinander der Zeit. Raum und Zeit sind das abstrakte Anschauen oder die allgemeinen Formen der Anschauung.
+
+ §137
+
+ In diesen allgemeinen objektiven Elementen ist das Objekt, außerdem, dass es den Inhalt der Gefühlsbestimmungen hat, zugleich ein einzelnes, in Raum und Zeit vollkommen bestimm­tes, mit andern Gegenständen vor, neben und nach zusammen­hängendes.
+
+ (Die Dinge durch diese Bestimmtheit in Zeit und Raum und durcheinander nach ihren Bestimmungen sind gefangen und im allgemeinen Kerker.)
+
+ §138
+
+ 2) Vorstellung. Das Gefühl wird in der Anschauung objektiv. Das Subjekt ist in unmittelbarer Beziehung darauf in sie ver­senkt, so dass es eigentlich im Anschauen noch kein anderes, als jenes objektive, räumliche und zeitliche Sein hat. Die frei­willige Tätigkeit der Intelligenz besteht hier in der Aufmerk­samkeit auf das mannigfaltige Dasein des Gegenwärtigen und in der Willkür, bei dem einen Inhalt zu verweilen oder zu einem andern überzugehen: Fassungskraft.
+
+ §139
+
+ Die Anschauung ist aber das Objekt zugleich für das Subjekt. Dies letztere als das an und für sich seiende nimmt sich aus seinem Außersichsein zurück, reflektiert sich in sich und scheidet sich von der Objektivität, indem es die Anschauung subjektiv zum Bilde macht.
+
+ §140
+
+ Die Anschauung, in das Ich versetzt, ist nicht nur Bild, sondern wird Vorstellung überhaupt. Es bleibt nicht dabei, dass die ins Innere aufgenommene Anschauung vollkommen der unmittel­baren Anschauung entspreche, sondern sie wird von ihrem Zu­sammenhange in Raum und Zeit befreiet und herausgenommen. Sie ist ein aufgehobenes, d. h. eben so sehr nichtseiendes, als aufbewahrtes Dasein.
+
+ §141
+
+ Die Anschauung ist als Vorstellung die eigene Zeit und der eigene Raum des Subjekts, in die Zeit und den Raum als allge­meine Formen versetzt. Durch das Aufheben der besondern Zeit der Anschauung wird sie dauernd; durch das ihres besondern Raumes ist sie überall.
+
+ §142
+
+ Ferner wird die konkrete Anschauung in ihren mannigfaltigen Bestimmungen oder in ihrer Einheit aufbewahrt, aber eben so auch von dem Bande ihrer Einzelheit befreiet. Die Teilbestimmungen fallen aus einander und werden zu Abstraktionen, die für sich ohne den sinnlichen Zusammenhang, in welchem sie dem Subjekt zuerst erschienen sind, bestehend vorgestellt wer­den.
+
+ §143
+
+ 3) Erinnerung. Die Vorstellung als die erinnerte oder allgemein gemachte Anschauung verhält sich zur unmittelbaren Anschau­ung als Bleibendes und Allgemeines zum Einzelnen. Die Er­innerung ist nicht sowohl eine Vergleichung zweier einzelner Anschauungen, als dass die jetzige einzelne Anschauung unter die bereits allgemein gemachte oder die Vorstellung subsumiert wird. Die Dieselbigkeit, die ich erkenne, ist einerseits die Iden­tität ihres Inhalts, anderseits erkenne ich in der jetzigen An­schauung die Identität meiner mit mir selbst oder erinnere mich in ihr.
+
+ §144
+
+ Das Bild oder die Vorstellung wird nicht dadurch zu etwas Allgemeinem, dass dieselbe Anschauung öfter wiederholt würde und diese mehreren Anschauungen in Ein Bild, das mehr oder weniger abstrakt wäre, zusammenfielen, entweder bewusster oder so, dass man sich bei jeder einzelnen Anschauung an die vorhergehende erinnerte, sondern die Anschauung erhält un­mittelbar dadurch, dass Ich sie aufnehme, die Form der Allge­meinheit. Sie ist daher eine Subsumtion. In der Erinnerung wird durch eine gegenwärtige Anschauung oder Vorstellung das Bild von einer vergangenen hervorgerufen, welche die nämliche war, als die gegenwärtige. Jene vorhergehende ist das Dauernde und Allgemeine, unter welches ich die jetzige einzelne subsumiere.
+
+ B. Einbildungskraft
+
+ §145
+
+ In der Erinnerung fällt die Vorstellung der ehemaligen An­schauung und die jetzige unmittelbar in einander. Ich habe nicht Zweierlei vor mir, die Anschauung und die Vorstellung, son­dern nur, dass ich sie schon gehabt habe, dass sie schon die meinige ist, insofern ich nun auch die Vorstellung als verschie­den von der Anschauung vor mir habe, ist dies die Einbildungs­kraft. Insofern kann aber Anschauung und Vorstellung auch gänzlich verschieden sein.
+
+ §146
+
+ 1) Reproduktion der Vorstellung überhaupt. Die Einbildungs­kraft als Reproduktion der Vorstellung überhaupt ruft die Bil­der und Vorstellungen, ohne die gegenwärtige, ihnen entspre­chende Anschauung, wieder hervor und lässt sie für sich ins Bewusstsein treten.
+
+ §147
+
+ 2) Als tätig bringt die Einbildungskraft die aufbewahrten Bilder und Vorstellungen in mannigfaltigen Zusammenhang miteinander, welcher von demjenigen verschieden ist, den sie als Anschauungen hatten.
+
+ §148
+
+ Diese Verknüpfung kann nach mancherlei Bestimmungen, wel­che die Vorstellungen enthalten, geschehen. Die verschiedenen Verknüpfungsweisen sind sehr uneigentlich Gesetze der Ideenassoziation genannt worden.
+
+ §149
+
+ Die Bestimmung der Verknüpfung kann ein mehr oder weniger oberflächlicher oder gründlicher Zusammenhang sein: bloße Gleichzeitigkeit oder gleicher Ort zweier Vorstellungen; oder irgend eine Ähnlichkeit, auch Kontrast derselben; Verhältnis als Ganzes und Teile, Ursache und Wirkung, Grund und Folge u. s. w., überhaupt jede Art sinnlicher oder geistiger Beziehung. Dieser Zusammenhang steht vornehmlich unter der Herrschaft eines Interesses des Gemüts, einer Leidenschaft, oder des gei­stigen Charakters überhaupt.
+
+ § 150
+
+ Der Unterschied der Bilder von den Anschauungen ist im Bis­herigen angegeben. Das gewöhnliche Bewusstsein macht ihn unmittelbar im Wachen und gesunden Zustande. Aber im Schlaf, in außerordentlichen Zuständen, in Krankheit, fällt dieser Unterschied für dasselbe hinweg und die Einbildungskraft be­herrscht es gegen die Anschauung und gegen höhere geistige Kräfte.
+
+ §151
+
+ a) Das Träumen. Im Traumschlaf kommen uns Reihen von Vorstellungen vor, die wir nicht von Anschauungen unter­scheiden, welche durch Erinnerungen oder auch durch gegen­wärtige Empfindungen veranlaßt sind, übrigens aber auf das Zufälligste und Willkürlichste vermischt und aneinander ge­hängt werden. - Den Ahnungen, Visionen, der Schwärmerei u. s. f., liegen zwar tiefere Interessen oder Kräfte zum Grunde, als die bloße Einbildungskraft, aber sie sind mit einer beson­dern Erhöhung derselben verknüpft, welche innere, dunklere Gefühle zu Bildern macht und ihnen die Stärke von Anschau­ungen gibt.
+
+ (Sympathie mit der Natur. Sogenanntes Voraussehen. In der Wirklichkeit schläft die Zukunft. Die Wirklichkeit ist zugleich die Möglichkeit des Folgenden. Orakel, Prophezeiung aus Vö­gelflug, den Eingeweiden der Tiere. Allgemeine Stimmung durch die Natur, wie die Tiere die Erdbeben vorherempfinden. Völker, die mehr in der Einheit mit der Natur leben, haben einen stärkern Zusammenhang mit ihr, als wir, die wir von der Natur uns losgerissen haben. - Inneres Licht; Umgang mit höhern Geistern; Hexensalbe von Hyoscyamus; die Hexen betäubten sich und gerieten in eine fürchterliche Phantasie, welche epidemisch wurde. Sie sind zu lausenden verbrannt wor­den. - Gespenster; oft äußerliche Erscheinungen als Veranlas­sung, welche die Phantasie aufgreift. Das böse Gewissen, von der Qual des Verbrechens gefoltert, macht sich durch gespen­stige Gestalten objektiv. - Verabredungen, im Leben nach dem Tode sich zu erscheinen. - Schwärmerei; Fanatismus, religiöse Vorstellungen höher zu achten, als alles Sittliche im Leben und als Begriffsverhältnisse. Die Schwärmerei fällt in den Wahn, ein bildloses Gestalten der handgreiflichen Äußerlichkeit nachzu­setzen. Das Sinnliche soll höher stehen, als das Geistige. Das Absolute soll sich in die Äußerlichkeit legen. Im Dinge will man Gott sehen, ohne die Kunst; oder man will sich das abso­lute Wesen zur inneren Anschauung vor die Phantasie bringen; man will Gott ins Zeitliche, Sinnliche rücken. - Wahrhafte Übermacht der Vorstellung über die Anschauung durch den Willen, z. B. Mucius Scävola.)
+
+ §152
+
+ b) Ein höherer Grad des in die Phantasie sich einschließenden Lebens ist der Somnambulismus, das eigentliche Nachtwandeln, oder andere Zustände dieser Art, in welchen bei schwächerer oder stärkerer äußerer Empfindung der Geist eine mehr inner­liche Anschauung des Äußern hat, überhaupt in sich tätig ist und zu ganzen Reihen äußerlicher Verrichtungen, wie man sie im Wachen vornimmt, fortgeht.
+
+ (Der Somnambulismus ist α) der gewöhnliche im Schlaf: Musik hören, lesen. Briefschreiben, sprechen, an gefährliche Orte ge­hen, Wasserwannen vor dem Bett; starke Erschütterungen; β) der epileptische (durch die Finger, auf dem Magen lesen u. s. f.); γ) der magnetische; der Kranke antwortet nur dem, der mit ihm in Rapport steht.)
+
+ § 153
+
+ e) Die Verrücktheit hat außerdem, dass das Phantasieren in der Fieberhitze ein ähnlicher, von Krankheit abhängiger Zustand ist, sehr verschiedene Modifikationen, als Narrheit, Wahnsinn, Raserei u. s. f. und ist überhaupt eine Übermacht von Phanta­sievorstellungen im wachen Zustande über die Anschauungen und verständigen Vorstellungen. Die Narrheit hat irgend eine einzelne, fixe Vorstellung, die verrückt ist, und ist mit Richtig­keit der übrigen Vorstellungen in der fixen Vorstellung verbun­den. Der Wahnsinn ist eine allgemeine Zerstörung der geistigen Natur. Als Raserei oder Tollheit ist diese Verrücktheit mit bösem tückischem Willen und tobenden Ausbrüchen verbunden. (Einbildung, ein König, Kardinal, eine Person in der Gottheit zu sein. Melancholie aus Vorstellung von moralischem Unwert. Es glaubte Jemand, wenn er pisse, eine ganze Stadt zu überschwemmen; ein Anderer, er sei ein Gerstenkorn und die Hühner würden ihn fressen; ein Dritter, er habe Füße von Glas, ein Glöckchen im Leibe u. s. f. - Die Ursachen sind: α) körper­lich; oft natürliche, angeerbte Disposition; Eindrücke zur Zeit der Schwangerschaft; Ausschweifungen; giftige Kräuter; Hundswut; Krankheitsmaterie, die sich auf die Nerven, auf das Ge­hirn wirft u. s. f.; β) geistig; eine höchst lebhafte Vorstellung, z. B. sind Menschen vor Freude nicht nur gestorben, sondern auch wahnsinnig geworden; Zerrüttung durch Leidenschaften, Liebe, Stolz, Hoffnung, Eitelkeit, Täuschung; Misstrauen zer­reißt den Zusammenhang mit der Außenwelt; sein Leben in sich hinein, in seine Einzelheit vergraben u. s. f. - Die Heilart der Seelenstörungen ist demnach auch körperlich und geistig.)
+
+ §154
+
+ 3) Produktive Einbildungskraft. Die höhere Einbildungskraft, die dichtende Phantasie, steht nicht im Dienst zufälliger Zu­stände und Bestimmungen des Gemüts, sondern im Dienst der Ideen und der Wahrheit des Geistes überhaupt. Sie streift die zufälligen und willkürlichen Umstände des Daseins ab, hebt das Innere und Wesentliche desselben heraus, gestaltet und verbild­licht es. - Diese Form des erscheinenden Daseins, die sie ihm gibt, ist nur von dem Wesentlichen getragen, beherrscht, durchdrungen und zur Einheit verbunden. - Das Symbolisieren der Einbildungskraft besteht darin, dass sie sinnlichen Erschei­nungen oder Bildern Vorstellungen oder Gedanken anderer Art unterlegt, als sie unmittelbar ausdrücken, die jedoch eine analoge Beziehung mit ihnen haben und jene Bilder als den Ausdruck derselben darstellen.
+
+ (Das Dichten ist nicht Nachahmen der Natur. Die Poesie ist in höherem Sinne wahr, als die gemeine Wirklichkeit. Der Dichter ist ein tiefer Geist, der die Substanz durchschauet, die ein Anderer auch in sich hat, aber die ihm nicht zum Bewusstsein kommt. Es gilt auch hier, dass es für den Kammerdiener keinen Helden gibt. [2*] Es heißt: ich habe diesen ja auch gekannt, aber nichts davon gesehen; oder: ich habe die Liebe auch gekannt, aber nichts in ihr von dem gefunden, was der Dichter davon sagt. Darum ist der Dichter ein Seher. - Die Pracht der Natur vereinigt der Dichter zu einem Ganzen als Attribut irgend eines Höheren: Ätherblau ist sein Gewand, Blüten seine Boten u. s. f. - Ceres und Proserpina. Basis der Idee. - Sommer: Ver­gißmeinnicht. - Sonnenaufgang: »so quoll die Sonn' hervor, wie Ruh' aus Tugend quillt.« Sonnenuntergang: »so stirbt ein Held.« - Symbolik von Brod und Wein in den Eleusinischen Mysterien und im Christentum. - Ein tiefes Gemüt symbolisiert überhaupt; Neigung der Deutschen zur Gedankenpoesie der Natur u. s. f.)
+
+ C. Das Gedächtnis
+
+ §155
+
+ 1) Das Zeichen überhaupt. Indem die Vorstellung von dem äußerlichen Dasein befreit und subjektiv gemacht ist, ist das­selbe und die innere Vorstellung einander als verschieden ge­genüber getreten. Die willkürliche Verknüpfung eines äußer­lichen Daseins mit einer ihm nicht entsprechenden, sondern auch dem Inhalt nach davon verschiedenen Vorstellung, so dass jenes die Vorstellung oder Bedeutung von dieser sein soll, macht dasselbe zu einem Zeichen.
+
+ §156
+
+ Das produktive Gedächtnis bringt also die Verknüpfung der Anschauung und Vorstellung hervor, aber eine freie Verknüp­fung, worin das vorhergehende Verhältnis, in welchem der Vorstellung die Anschauung zu Grunde liegt, umgekehrt ist. In der Verknüpfung des produktiven Gedächtnisses hat das sinn­liche Dasein keinen Werth an und für sich, sondern nur den, welchen ihm der Geist gibt.
+
+ §157
+
+ Das sinnliche Dasein bezieht sich durch seine Bestimmungen überhaupt auf anderes Dasein. Indem aber durch das produktive Gedächtnis eine Vorstellung zu seiner Bestimmung gemacht ist, wird es insofern wesentlich zur Beziehung von Vorstellungen auf andere vorstellende Wesen und es beginnt darin die theo­retische Mitteilung dieser gegen einander.
+
+ §158
+
+ 2) Die Sprache. Das höchste Werk des produktiven Gedächt­nisses ist die Sprache, welche teils Ton-, teils Schriftsprache ist. Indem das produktive Gedächtnis oder die Mnemosyne der Ursprung derselben ist, so kann von einem weitern Ur­sprung nur in Rücksicht auf die Erfindung der bestimmten Zei­chen die Rede sein.
+
+ §159
+
+ Der Ton ist die flüchtige Erscheinung einer Innerlichkeit, die in dieser Äußerung nicht ein Äußerliches bleibt, sondern sich als ein Subjektives, Innerliches kund gibt, das wesentlich etwas bedeutet. - Es ist vornehmlich wichtig, dass durch die Artikulation der Töne nicht nur Bilder in ihren Bestimmungen, sondern auch abstrakte Vorstellungen bezeichnet werden. - Die konkrete Vorstellung wird überhaupt durch das Wortzeichen zu etwas Bildlosem gemacht, das sich mit dem Zeichen identifiziert. (Das Bild wird ertötet und das Wort vertritt das Bild. Dies ist ein Löwe; der Name gilt für die Sache. - Logos; Gott sprach u. s. f. - Die Sprache ist die höchste Macht unter den Menschen.
+
+ - Adam, heißt es, [3*] gab allen Dingen (Tieren) ihren Namen.
+
+ - Die Sprache ist Ertötung der sinnlichen Welt in ihrem un­mittelbaren Dasein, das Aufgehobenwerden derselben zu einem Dasein, welches ein Aufruf ist, der in allen vorstellenden Wesen wiederklingt.)
+
+ §160
+
+ In Ansehung der Erfindung der bestimmten Zeichen ist es natürlich, dass zu Tonzeichen für tönende Erscheinungen (Rau­schen, Schwirren, Klingen, Sumsen u. s. f.) unmittelbare Nach­ahmungen derselben gemacht werden. - Für andere sinnliche Gegenstände oder Veränderungen ist das Zeichen überhaupt willkürlich. Für die Bezeichnung abstrakter Verhältnisse und Bestimmungen tritt vornämlich das Symbolisieren ein und die weitere Fortbildung der Sprache gehört der Kraft der Allge­meinheit, dem Verstände an.
+
+ §161
+
+ Die Schriftsprache ist hieroglyphisch oder alphabetisch. Die hieroglyphische ist eine Bezeichnung der Gegenstände, die keine Beziehung auf ihr ertönendes Zeichen hat. - Einer allgemeinen Philosophischen Schriftsprache, wovon Mehrere den Gedanken gefasst haben, steht die unbestimmbar große Menge von Zeichen entgegen, die nötig wäre, besonders zu erfinden und zu lernen.
+
+ - Die alphabetische Schriftsprache löst die Wortzeichen in ihre einfachen Töne auf und bezeichnet dieselben.
+
+ § 162
+
+ 1) Reproduktives Gedächtnis. Es ist das Behalten der einzelnen Zeichen in Beziehung auf das Bezeichnete und vornehmhch das festhalten bildloser Reihen derselben, die nicht durch bildlichen noch verständigen Zusammenhang mit einander verknüpft, son­dern in einer völlig willkürlichen oder zufälligen Folge sind und durch bloße innere, unabhängige Kraft so zusammengehalten werden.
+
+ III. Das Denken
+
+ Das Denken ist die Tätigkeit des Geistes in seiner unabhän­gigen, sich selbst gleichen Einfachheit, welche aus und in sich selbst Bestimmungen setzt, die den Charakter der Sichselbst­gleichheit und Allgemeinheit haben.
+
+ 1.     Verstand
+
+§164
+
+ Der Verstand ist das denkende Bestimmen überhaupt und das Festhalten in gedachten Bestimmungen. Als objektiver Verstand enthält er die Kategorien, die Denkbestimmungen des Seins, welche die innere Einheit des Mannigfaltigen der Anschauun­gen und Vorstellungen ausmachen. Er unterscheidet das We­sentliche vom Unwesentlichen und erkennt die Notwendigkeit und Gesetze der Dinge.
+
+ 2.     Urteilen
+
+§165
+
+ Das Urteilen ist das Beziehen eines Einzelnen auf den Begriff. Es bestimmt überhaupt das Einzelne auf allgemeine Weise, oder subsumiert es unter das Allgemeine. Es hat folgende Stufen.
+
+ §166
+
+ a) Ist das Allgemeine, als welches das Einzelne bestimmt wird, selbst nur irgend eine Qualität desselben, deren es mehrere hat.
+
+ §167
+
+ b) Das Reflektieren ist das Hinausgehen über eine einzelne Be­stimmung, ihr Vergleichen mit andern und das Zusammenfas­sen derselben in eine bestimmte. - Das Allgemeine macht die innere Natur und das Wesen des Gegenstandes aus. Diese All­gemeinheit ist nicht nur eine Gemeinschaftlichkeit, sondern die eigene Allgemeinheit eines Gegenstandes an ihm selbst, im Gegensatz gegen die Bestimmungen seiner eigenen Besonder­heit oder Einzelheit.
+
+ §168
+
+ c) Das eigentliche Urteilen über einen Gegenstand ist das Vergleichen seiner Natur oder wahren Allgemeinheit mit seiner Einzelheit oder mit der Beschaffenheit seines Daseins; das Ver­gleichen dessen, was er ist, mit dem, was er sein soll. (In diesen Urteilen liegt die Dialektik, dass das Schlechte, sei­nem Begriff nicht Entsprechende zugleich auch ihm angemessen ist. Ein schlechtes Haus hat ein Dasein, das seinem Begriff nicht angemessen ist. Wäre es ihm aber nur nicht angemessen, so wäre es gar kein Haus. Der Begriff muss in dem Dasein noch er­kennbar sein. So wenn von einer Handlung geurteilt wird, dass sie schlecht sei, so hat ihre Unvernunft noch eine Seite der Übereinstimmung mit der Vernunft u. s. f.)
+
+ §169
+
+ Es kann hier auch der Scharfsinn erwähnt werden, der aber mehr auf eine Beschaffenheit des Urteilens geht, als dass er eine wirkliche Stufe desselben wäre. Er besteht vornehmlich darin, Unterschiede, die nicht auf der Oberfläche liegen, aufzu­fassen, und durch die Reflexion feinere oder tiefere Beziehun­gen zu bemerken. - Der Witz verknüpft ihrem äußern Anschein nach einander fremdartige Vorstellungen nach einer Seite, in der sie eine unerwartete Gleichheit darbieten. - Das Geistreiche ist ein Analogon des Vernünftigen und drückt vornehmlich eine Bestimmung oder Verhältnis aus, wie es seiner unmittelbaren Vorstellung oder in sich selbst entgegengesetzt ist. (Beim Aufgang der Sonne verwandelte sich der Himmel von Schwarz in Roth, wie ein Krebs. - Le miserable, qu'il est heu-reux! Il a faim. [4*] - Exul mentique domusque. [5*] -Unter diesem Steine liegt mein Weib und hier ruht sie und auch ich. - Auf ihren Ruhebetten die fetten Richter träumen, um ihren Husten und ihr Gewissen zugleich in Schlaf zu wiegen u. s. w.)
+
+ 3. Vernünftiges Denken
+
+ § 170
+
+ a) Die Vernunft ist negative oder dialektische, indem sie das Übergehen einer Verstandesbestimmung des Seins in ihre ent­gegengesetzte aufzeigt. Gewöhnlich erscheint das Dialektische so, dass von Einem Subjekt zwei entgegengesetzte Prädikate be­hauptet werden. Das reinere Dialektische besteht darin, dass von einem Prädikat eine Verstandesbestimmung aufgezeigt wird, wie sie an ihr selbst eben so sehr das Entgegengesetzte ihrer selbst ist, sie sich also in sich aufhebt.
+
+ §171
+
+ b) Die räsonierende Vernunft sucht die Gründe der Dinge auf, d. h. deren Gesetztsein durch und in einem Andern, welches das insichbleibende Wesen derselben, zugleich aber nur ein relativ Unbedingtes ist, indem das Begründete oder die Folge einen andern Inhalt hat, als der Grund.
+
+ §172
+
+ c) Die schließende Vernunft enthält die Vermittlung eines In­halts, der sich nach den Bestimmungen des Begriffs als Einzel­nes, Besonderes und Allgemeines verhält. Das Besondere ist gegen das Einzelne ein Allgemeines und gegen das Allgemeine ein Bestimmtes; es ist die Mitte, welche die Extreme der Ein­zelheit und Allgemeinheit in sich enthält und sie darum zu­sammenschließt. Die schließende Vernunft ist: α) formale Vernunft, insofern der Schluss subjektiv ist. Das, was darin als vermittelt oder als Folge erscheint, ist an sich das Unmittelbare. Es hat das Verhältnis eines Vermittelten nur für das Erkennen.
+
+ β ) Die teleologische Vernunft betrachtet und setzt Zwecke, ein Verhältnis, worin das Vermittelte oder Hervorgebrachte den­selben Inhalt hat, als das Unmittelbare, der vorausgesetzte Begriff, und worin das Vermittelte, die Folge, eben so sehr der Grund ist.
+
+ γ ) Die Vernunftidee ist der Begriff, insofern seine Äußerlichkeit oder seine Realität durch ihn vollkommen bestimmt ist und nur in ihrem Begriffe existiert oder das Existierende, das an ihm seinen eigenen Begriff hat, das Mittel seiner selbst, das Mittel also eben so sehr Zweck ist.
+
+  
+
+ Zweiter Abschnitt. Der praktische Geist.
+
+ §173
+
+ Der praktische Geist hat nicht nur Ideen, sondern ist die leben­dige Idee selbst. Er ist der sich aus sich selbst bestimmende und seinen Bestimmungen äußerliche Realität gebende Geist. Es ist zu unterscheiden zwischen dem Ich, wie es nur theoretisch oder ideell und wie es praktisch oder reell sich zum Gegenstande, zur Objektivität macht.
+
+ §174
+
+ Der praktische Geist hat nicht nur Ideen, sondern ist die leben das Ich von aller Bestimmtheit, in der es ist, abstrahieren kann und in aller Bestimmtheit unbestimmt und in der Gleichheit mit sich selbst bleibt.
+
+ §175
+
+ Der Wille als der innerlich bestimmende Begriff ist wesentlich Tätigkeit und Handlung. Er setzt seine innere Bestimmungen in äußerliches Dasein über, um sich als Idee darzustellen.
+
+ §176
+
+ Zur Tat gehört der ganze Umfang von Bestimmungen, die mit einer hervorgebrachten Veränderung des Daseins in un­mittelbarem Zusammenhang stehen. Zur Handlung gehört zu­nächst nur dasjenige, was davon im Entschluss oder Bewusstsein war. Nur dies anerkennt der Wille als das Seinige und als seine Schuld, die ihm eigentlich zugerechnet werden kann. Aber auch dieses ist im weitern Sinne unter der Schuld zu befassen, was von den Bestimmungen der Tat nicht bewusst wurde, aber bewusst werden konnte.
+
+ §177
+
+ a) Das praktische Gefühl begreift die praktischen rechtlichen und moralischen Bestimmungen und Gesetze zwar in sich, aber unmittelbar, daher unentwickelt und ungedacht und vornehm­lich unrein durch die Beimischung der subjektiven Einzelheit. Es ist wesentlich zu bemerken, dass das praktische Gefühl kei­nen andern wahrhaften Inhalt hat, als die bestimmt gewussten Rechte, Pflichten und Gesetze sind; dass es einerseits dunkel und durch die Einzelheit bestimmt ist, anderseits nur insofern über das bestimmte Bewusstsein derselben gesetzt werden kann, als an ihnen vereinzelt festgehalten wird und es gegen sie eine Totalität sein kann.
+
+ § 178
+
+ b) Das Gefühl einer praktischen Bestimmung und zugleich das Gefühl ihres Widerspruchs, ein Innerliches, nicht Realisiertes zu sein, dem doch zugleich die Realität wesentlich ist, ist der Trieb. Kr gehört der subjektiven Natur an und ist nur auf seine Be­stimmtheit gerichtet. Die Begierde ist eine einzelne Bestimmung des Triebes und durch das Angemessen- oder nicht Angemes­sensein des äußerlichen Daseins zu ihr wird das Gefühl zum angenehmen oder unangenehmen. In Trieb und Begierde ist der praktische Geist in der Natürlichkeit ein abhängiges unfreies Wesen.
+
+ §179
+
+ c) Der Geist muss sich erheben aus der Versenktheit in die Triebe zur Allgemeinheit, so dass die Triebe nicht in ihrer Besonderung für sich als absolute gelten, sondern ihre Bestimmungen nur als Momente der Totalität ihre Stelle und richtigen Werth erhalten, wodurch sie von der subjektiven Zufälligkeit gereinigt werden.
+
+ § 180
+
+ Die Bestimmungen des Geistes machen seine Gesetze aus. Sie sind aber nicht äußerliche oder natürliche Determinationen des­selben; seine einzige Bestimmung, in der alle enthalten sind, ist seine Freiheit, die sowohl die Form als der Inhalt seines Ge­setzes ist, das ein rechtliches, moralisches oder politisches sein kann.
+
+ I. Das Recht
+
+ §181
+
+ Der Geist als freies, selbstbewusstes Wesen ist das sich selbst gleiche Ich, das in seiner absolut negativen Beziehung zuerst ausschließendes Ich, einzelnes freies Wesen oder Person ist.
+
+ §182
+
+ Das Recht ist das Verhältnis der Menschen, insofern sie abstrakte Personen sind. Diejenige Handlung ist widerrechtlich, durch welche der Mensch nicht als Person respektiert wird, oder welche in die Sphäre seiner Freiheit einen Eingriff macht. Dies Verhältnis ist also seiner Grundbestimmung nach negativer Natur und fordert nicht, dem Andern eigentlich etwas Positives zu erweisen, sondern nur ihn als Person zu lassen.
+
+ §183
+
+ Die äußere Sphäre des Rechts und der Freiheit macht das Eigentum aus, die Subsumtion einer herrenlosen Sache unter meine Gewalt und meinen Willen. Der Besitz ist die Seite der willkür­lichen Bemächtigung. Die Seite des Eigentums als eines solchen ist die allgemeine Seite, dass der Besitz eine Äußerung meines Willens ist, der als etwas Absolutes von dem Andern respektiert werden muss.
+
+ §184
+
+ Ich kann mich meines Eigentums entäußern, dessen nämlich, was in der Tat Eigentum ist, d. i. was teils mein ist, teils das Moment der Äußerlichkeit an ihm selbst hat. - Unveräußerlich ist also meine Vernunft, meine Freiheit, meine Per­sönlichkeit, und was überhaupt meine ganze Freiheit wesentlich in sich enthält.
+
+ §185
+
+ Ich kann mein Eigentum an einen Andern veräußern und kann mir fremdes Eigentum erwerben. Dieser Erwerb geschieht nur durch den Vertrag, die gegenseitige Einwilligung zweier Per­sonen, sich eines Eigentums zu entäußern, es dem Andern zu überlassen und die Einwilligung, es anzunehmen.
+
+ §186
+
+ Die Sphäre meiner Freiheit enthält meine Persönlichkeit und die Beziehung einer Sache auf dieselbe; indem diese Sphäre von Andern verletzt wird, so kann dies geschehen entweder nur in dem Sinne, dass nur diese Sache nicht mir gehört, wobei meine Persönlichkeit anerkannt wird; oder aber in dem Sinne, dass diese selbst nicht anerkannt wird, was in gewaltsamer Ver­letzung meines Leibes und Lebens der Fall ist.
+
+ §187
+
+ In meiner Persönlichkeit verletzt der Andere unmittelbar seine eigene. Er tut darin nicht etwas bloß Einzelnes gegen mich, sondern etwas Allgemeines. Was er dem Begriff nach gegen sich selbst getan, muss zur Wirklichkeit gebracht werden. - Insofern dies durch die verletzte Person selbst geschieht, ist es Rache; insofern sie durch einen allgemeinen Willen und im Namen derselben vollbracht wird, ist sie Strafe.
+
+ §188
+
+ Das Recht in Beziehung auf das Eigentum macht den Gegen­stand des bürgerlichen oder Zivilrechts; das Recht in Beziehung auf die Persönlichkeit den Gegenstand des peinlichen oder Kriminalrechts aus. - Die Wissenschaft von den Grundbegriffen des Rechts ist das Naturrecht genannt worden, als ob es ein Recht gäbe, das dem Menschen von Natur zukäme, und ein davon verschiedenes, welches in der Gesellschaft entspränge in dem Sinne, dass in dieser das natürliche Recht als das wahr­hafte zum Teil aufgeopfert werden müsse. In der Tat ent­stehen durch die Gesellschaft noch besondere Rechte, welche nicht in dem Rechte, dem bloß die einzelne Persönlichkeit zu Grunde liegt, enthalten sind. Zugleich aber ist sie die Aufhe­bung der Einseitigkeit jenes Prinzips und die wahre Realisierung desselben.
+
+ II. Die Moralität
+
+ §189
+
+ Die Moralität enthält den Satz: schaue dich in deinem Handeln als freies Wesen an; oder sie fügt das Moment der Subjektivität dem Handeln hinzu, dass nämlich: 1) das Subjektive als Ge­sinnung und Absicht dem, was an sich Gebot ist, entspricht, und dass, was Pflicht ist, nicht aus Neigung oder irgend einer fremdartigen Pflicht willen oder mit Eitelkeit auf das Gutsein, sondern aus der Gesinnung getan werde, weil es Pflicht ist; 2) betrifft sie somit den Menschen nach seiner Besonderheit und ist nicht bloß negativ, wie das Recht. Ein freies Wesen kann man nur gehen lassen, dem besondern Menschen aber etwas erweisen.
+
+ § 190
+
+ Das Gute ist der Inhalt der Pflichten nämlich der Grundbe­stimmungen, welche die notwendigen menschlichen Verhält­nisse enthalten oder das Vernünftige in denselben. Das Böse ist, was mit Willen auf die Zerstörung eines solchen Verhält­nisses geht. Das Schlechte ist, wenn, obgleich nicht mit direktem Vorsatz, aber mit Wissen, aus Schwäche gegen einen Trieb der Sinnlichkeit, oder eine Neigung des Herzens, Pflichten verletzt werden.
+
+ §191
+
+ 1) Die notwendigen menschlichen Verhältnisse jedes Menschen zu sich seihst bestehen: a) in der Selbsterhaltung, dass das Indi­viduum die äußerliche physische Natur sich unterwerfe und angemessen mache. b) Von ihm als seiner eigenen physischen Natur muss es seiner geistigen Natur Unabhängigkeit erschaf­fen. c) Seinem allgemeinen geistigen Wesen muss es sich unter­werfen und angemessen machen, Bildung überhaupt.
+
+ §192
+
+ 2)     Das Familienverhältnis ist die Natureinigkeit von Individuen. Das Band dieser natürlichen Gesellschaft ist Liebe und Vertrauen, das Wissen dieser ursprünglichen Einigkeit und des Handelns im Sinne desselben. Nach ihrer besondern Bestimmung kommen den Individuen, die diese Gesellschaft ausmachen, besondere Rechte zu; in sofern diese aber in der Form von Rechten behauptet würden, so wäre das moralische Band dieser Gesellschaft zerrissen, worin Jeder wesentlich aus der Gesinnung der Liebe das erhält, was ihm an sich zukommt:
+
+ §193
+
+ 3)    Das moralische Verhältnis zu Andern überhaupt gründet sich auf die ursprüngliche Identität der menschlichen Natur. Die Pflichten der allgemeinen Menschenliebe bestehen in wohlwollender Gesinnung, in den allgemeinen, wesentlichen Dienstleistungen nach dem Zufall eines Verhältnisses. Moralische Pflichten zu näheren und dauernden Dienstleistungen entspringen aus dem in freiem Willen gegründeten Verhältnis von Bekanntschaft und Freundschaft.
+
+ (Hier sind die letzten Grenzen der Endlichkeit. Es kommt auf den Augenblick an.)
+
+ III. Der Staat (Realer Geist)
+
+ §194
+
+ Die natürliche Gesellschaft der Familie erweitert sich zur allge­meinen Staatsgesellschaft, welche eben so sehr eine durch die Natur gegründete als durch freien Willen eingegangene Verbin­dung ist und so sehr auf dem Recht als auf der Moralität be­ruht, überhaupt aber nicht so wesentlich als eine aus Individuen bestehende Gesellschaft, denn als ein in sich einiger, indivi­dueller Volksgeist erscheint.
+
+ §195
+
+ Die Staatswissenschaft ist die Darstellung der Organisation, die ein Volk als ein in sich lebendiges organisches Ganze hat.
+
+ §196
+
+ Der Staat macht als das Allgemeine den Gegensatz zu den Indi­viduen. Er ist um so vollkommener, je mehr das Allgemeine der Vernunft entspricht und je mehr die Individuen mit dem Geist des Ganzen Eins sind. Die wesentliche Gesinnung der Bürger gegen den Staat und dessen Regierung ist weder der blinde Gehorsam gegen ihre Befehle, noch dass zu den Einrich­tungen und Maßregeln im Staat Jeder seine individuelle Ein­willigung zu geben hätte, sondern Vertrauen und einsichtsvoller Gehorsam gegen denselben.
+
+ §197
+
+ Der Staat enthält verschiedene Gewalten, welche die Momente seiner Organisation ausmachen. Die gesetzgebende, richterliche und executive Gewalt überhaupt sind die abstrakten Momente derselben. - Die realen Gewalten sind die das Ganze konstituierende, die gerichtliche und polizeiliche, die finanzielle und ad­ministrative, die militärische und politische Gewalt, in deren jeder eigentlich jene abstrakten Momente vorkommen. - Der oberste betätigende Mittelpunkt aller ist die Regierung.
+
+ §198
+
+ Die verschiedenen Stände eines Staates sind überhaupt konkrete Unterschiede, nach welchen sich die Individuen in Klassen teilen, die vornehmlich auf der Ungleichheit des Reichtums, der Beziehung und Bildung, so wie diese zum Teil wieder auf der Ungleichheit der Geburt ruhen, wodurch die Individuen zu einer Art der Tätigkeit für den Staat mehr Brauchbarkeit er­halten, als zu einer andern.
+
+ §199
+
+ Die Verfassung setzt die Trennung und Beziehung der ver­schiedenen Staatsgewalten zu einander und den Wirkungskreis einer jeden fest, vornehmlich die Rechte der Individuen in Verhältnis zu dem Staat und den Anteil der Mitwirkung der­selben, den sie nicht bloß in der Wahl der Regierung, sondern auch insofern sie Bürger überhaupt sind, haben sollen.
+
+ §200
+
+ Sitten, Gesetze und Verfassung machen das organisierte innere Leben eines Volksgeistes aus. Das Prinzip oder die Art und Bestimmung seines Wesens ist darin ausgedrückt. Außer­dem hat er ein äußerliches Verhältnis und äußerliche Schick­sale.
+
+ § 201
+
+ Diese so zu sagen historische Geschichte betrachtet die Existenz eines Volksgeistes, die Entwicklung seines Prinzips in seiner Verfassung und Gesetzen und in seinen Schicksalen auf eine äußerliche Weise nach der Wahrnehmung der Begebenheiten und den unmittelbaren Ursachen, wie sie in zufälligen Um­ständen und individuellen Charakteren zu liegen scheinen.
+
+ § 202
+
+ Die philosophische Geschichte fasst nicht nur das Prinzip eines Volkes aus seinen Einrichtungen und Schicksalen auf und ent­wickelt die Begebenheiten aus dem ersten, sondern betrachtet hauptsächlich den allgemeinen Weltgeist, wie er in einem Innern Zusammenhange durch die Geschichte der getrennt er­scheinenden Nationen und ihre Schicksale die verschiedenen Stufen seiner Bildung durchlaufen hat. Sie stellt den allgemeinen Geist als Substanz erscheinend in seinen Akzidenzen dar, so dass diese seine Gestalt oder Äußerlichkeit nicht seinem Wesen gleichmäßig gebildet ist. Seine höhere Darstellung ist seine Gestaltung in einfacher geistiger Form.
+
+ (Es zählen nicht alle Völker in der Weltgeschichte. Jedes hat nach seinem Prinzip seinen Punkt, Moment. Dann tritt es, wie es scheint, für immer ab. Nicht zufällig kommt seine Reihe.)
+
+ Dritter Abschnitt. Der Geist in seiner reinen Darstellung.
+
+ I. Die Kunst
+
+ §203
+
+ Die Kunst stellt den Geist in Individualität und zugleich ge­reinigt vom zufälligen Dasein und dessen Veränderungen und von äußern Bedingungen dar und zwar objektiv für die An­schauung und Vorstellung. Das Schöne an und für sich ist Ge­genstand der Kunst, nicht die Nachahmung der Natur, die selbst eine nur zeitliche und unfreie Nachahmung der Idee ist. Die Ästhetik betrachtet die nähern Formen dieser schönen Dar­stellung.
+
+ (Kunst hängt davon ab, welches substantielle Bewusstsein der Geist ist. Wir studieren die Griechischen Werke, sind darum keine Griechen. Die Vorstellung tuts nicht, sondern das innere produktive Leben, dass wir das selbst sind. Die Volksphantasie ist nicht Aberglaube an Etwas, sondern der eigene Geist; das so­genannte Wunderbare ist eine läppische Maschinerie; Missgriff Klopstocks mit seinen Engeln, Nordischen Göttern. [6*] Die leben­dige Mythologie eines Volkes macht daher den Grund und Gehalt seiner Kunst aus.)
+
+ Es sind zwei Hauptformen oder Style der Kunst zu unterschei­den, der antike und moderne. Der Charakter der ersten ist plastisch, objektiv, der der andern romantisch, subjektiv. Der antike stellt die Individualität zugleich als allgemeinen, wesent­lichen Charakter dar, ohne dass er darum zur Abstraktion und Allegorie wird, sondern lebendige Totalität bleibt. In der objektiven Klarheit und Haltung löscht er das Zufällige und Will­kürliche des Subjektiven aus.
+
+ §205
+
+ Die Künste unterscheiden sich nach Gattungen durch das Ele­ment, worin sie das Schöne darstellen und wodurch auch der Gegenstand und Geist dieser Darstellung näher bestimmt wird. Für die äußere Anschauung gibt die Malerei eine farbige Ge­staltung auf einer Fläche, die Bildhauerkunst eine farblose Ge­staltung in körperlicher Form. Für die innere Anschauung stellt die Musik in vorstellungslosen Tönen, die Poesie durch die Sprache dar.
+
+ (Redekunst, Baukunst, Gartenkunst u. s. f. sind nicht reine schöne Künste, weil ihnen noch ein anderer Zweck zu Grunde liegt, als die Darstellung des Schönen.)
+
+ § 206
+
+ Die Hauptgattungen der Poesie sind die epische, lyrische und dramatische. Die erstere stellt einen Gegenstand als eine äußerliche Begebenheit dar; die zweite eine einzelne Empfindung oder die subjektive im Gemüt vorgehende Bewe­gung; die dritte die eigentliche Handlung als Wirkung des Willens.
+
+ II. Die Religion
+
+ §207
+
+ Die Religion gibt die Darstellung des absoluten Geistes nicht bloß für Anschauung und Vorstellung, sondern auch für den Gedanken und die Erkenntnis. Ihre Hauptbestimmung ist, das Individuum zu dem Gedanken Gottes zu erheben, seine Einig­keit mit ihm hervorzubringen und es derselben zu vergewissern. (Die Religion ist die Wahrheit, wie sie für alle Menschen ist. Das Wesen der wahrhaften Religion ist die Liebe. Sie ist we­sentlich Gesinnung als Erkenntnis der Wahrheit des mensch­lichen Willens. Die religiöse Liebe ist nicht nur die natürliche Anhängigkeit; oder nur moralisches Wohlwollen; nicht eine unbestimmt allgemeine schwachsinnige Empfindung, sondern bewährt sich im Einzelnen mit absoluter Aufopferung. „Liebet Euch unter einander, wie ich Euch geliebt habe." [7*] - Die religiöse Liebe ist die unendliche Macht über alles Endliche des Geistes, über Schlechtes, Böses, Verbrechen, auch positive Gesetze u. s. f. Christus ließ seine Jünger am Sabbath Aehren ausraufen und heilte eine kranke Hand. Die göttliche Liebe vergibt die Sünde, macht für den Geist Geschehenes ungeschehen. Der Maria Mag­dalena wird viel vergeben, weil sie viel geliebt hat. Die Liebe ist selbst über die Rücksichten der Moral hinaus: Maria salbt Christus, statt es den Armen zu geben und Christus billigt dies. - Das substantielle Verhältnis des Menschen zu Gott ist die Vergebung der Sünden. Der Grund der Liebe ist das Bewusstsein von Gott und seinem Wesen als der Liehe und sie daher zugleich die höchste Demut . Ich soll mir nicht die Objektivität in der Liebe sein, sondern Gott, aber in seinem Erkennen soll ich mich selbst vergessen. - Die Vergebung der Sünde ist nicht ein Zeitliches, keine Folge äußerlicher Strafe, sondern eine ewige, innere in Geist und Gemüt. Das Vernichten seiner Nichtigkeit ist die Hoheit der Liebe. - Das substantielle Verhältnis des Menschen zu Gott scheint in seiner Wahrheit ein Jenseits zu sein, aber die Liebe Gottes zum Menschen und des Menschen zu Gott hebt die Trennung des Diesseits von dem als einem Jenseits Vorgestellten auf und ist das ewige Leben. Diese Identität wird angeschaut in Christus. Als Menschen­sohn ist er Gottessohn. Für den Gottmenschen ist kein Jenseits. Nicht als dieser einzelne, sondern als allgemeiner, als der wahr­hafte Mensch gilt er. Die äußerliche Seite seiner Geschichte muss von der religiösen unterschieden werden. Er ist durch die Wirk­lichkeit, Niedrigkeit, Schmählichkeit hindurch gegangen, gestor­ben. Sein Schmerz war die Tiefe der Einheit der göttlichen und menschlichen Natur im Leben und Leiden. Die seligen Götter der Heiden wurden als in einem Jenseits vorgestellt; durch Chri­stus ist die gemeine Wirklichkeit, diese Niedrigkeit, die nicht verächtlich ist, selbst geheiligt. Seine Auferstehung und Him­melfahrt sind nur für den Glauben: Stephanus sah ihn im Ge­sicht zur Rechten Gottes. Gottes ewiges Leben ist dies, die Rückkehr in sich. Zweifel aus Umständen, aus Einzelheiten auf­zubringen, ob dies eine äußerliche Wirklichkeit, ist läppisch, er­bärmlich. Es kommt dem Glauben auf das sinnliche Geschehen gar nicht an, sondern auf das, was ewig geschieht. Geschichte Gottes.
+
+ Die Versöhnung Gottes mit dem Menschen als an und für sich geschehen, nicht als ein Zufall, als eine Willkür Gottes, wird in der Kirche gewusst. Dies zu wissen, ist der heilige Geist der Gemeinde. - Das Reich Gottes ist zunächst die unsichtbare Kirche, die alle Zonen und verschiedene Religionen umfasst; dann die äußerliche Kirche. - In der katholischen Kirche ist die Gemeinde in sich getrennt als Priester und Laien. Jene sind die Bevollmächtigten und üben Gewalt aus. Die Versöhnung mit Gott wird zum Teil äußerlich gemacht; überhaupt herrscht bei den Katholiken eine ungeistigere Wirklichkeit der Religion. - Bei den Protestanten sind die Priester nur Lehrer. Alle sind in der Gemeinde vor Gott als dem gegenwärtigen Geist der Ge­meinde gleich. Die Werke als solche sind kraftlos. Auf den Glauben, auf die Gesinnung kommt es an. Das Böse wird als ein an und für sich Nichtiges gewusst. Dieser Schmerz muss den Menschen durchdringen. Er muss die Gnade Gottes, sich mit ihm trotz des Bösen, wenn er es aufgibt und aus ihm sich zurück­nimmt, zu vereinen, frei ergreifen. Nur im Gemüt kommt es zur wirklichen Gemeinschaft mit Gott. In ihm verklärt sich auch die sinnliche Form der Sakramente.
+
+ III. Die Wissenschaft
+
+ §208
+
+ Die Wissenschaft ist die begreifende Erkenntnis des absoluten Geistes. Indem er in Begriffsform aufgefasst wird, ist alles Fremdsein im Wissen aufgehoben und dies hat die vollkom­mene Gleichheit mit sich selbst erlangt. Es ist der Begriff, der sich selbst zum Inhalt hat und sich begreift.
+
+  
+
+ Anfang der Seite
+
+ Anmerkungen der Herausgeber
+
+ [1*] Vgl. Zweiten Kursus der Mittelklasse.
+
+ [2*] Sprichwort, das Hegel schon in der Phänomenologie des Geistes erwähnt und tiefsinnig gedeutet hatte. Vgl. auch Die Vernunft in der Geschichte, hrsg. von J. Hoffmeister, 5. Aufl. Hamburg 1955, S. 103, mit dem Hinweis auf Goethes Rezeption der damaligen Deutung. Die Stelle findet sich in den Wahlverwandtschaf­ten (1809), 2. Teil, Kap. 5. Aus Ottiliens Tagebüchern.
+
+ [3*] 1. Mose, 2, 19-20. 186
+
+ [4*] Der Elende, dass er glücklich ist! Er hat Hunger.
+
+ [5*] Ohne Geist und Haus.
+
+ [6*] Friedrich Gottlieb Klopstock (1724-1803), Messias Bd. 1-4, Halle 1751-1773. 196
+
+ [7*] Joh. 13, 34-35.
+
+  
+
+ Anfang der Seite
+
+ Zuletzt aktualisiert am 15.11.2007

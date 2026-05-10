@@ -1,0 +1,417 @@
+Hegel - History of Philosophy
+
+ Lectures on the History of Philosophy
+
+ by G W F Hegel
+
+ 1805-6
+
+ trans. E S Haldane, 1892-6
+
+ Note on the Text
+
+The lectures presented herein were first published between 1833-36 in volumes 13-15 in the first edition of Hegel's Werke . They were edited by Hegel's former student, Karl Ludwig Michelet. According to Frederick C. Beiser (Introduction to the Bison Book Edition, U. of Neb. Press, 1995), the source material consisted of Hegel's notebook from his Jena lectures (1805-06), a fragment written by Hegel on the history of philosophy, Hegel's introduction to his Berlin lectures (1820), and several sets of student lecture notes. According to Haldane, the Jena volume is "made the basis, as representing the main elements of the subject afterwards to be more fully amplified ..." (Translator's Note) A shortened edition of the Werke was issued in 1840-44. The present translation - the first part of which was published in 1892 - is taken from this shortened edition.
+
+The Introduction of this e-text was originally transcribed for Hegel by HyperText by Andy Blunden. The translator's footnotes have been added by Carl Mickelson. Part Three: Modern Philosophy was published by Carl Mickelsen utilising resources of the University of Idaho , Department of Philosophy. The remaining sections - Oriental Philosophy, Greek Philosophy and Philosophy of the Middle Ages - has been transcribed by Andy Blunden.
+
+Permission is granted for electronic copying, distribution in print form for educational purposes and personal use. No permission is granted for commercial use of this material.
+
+Carl Mickelsen - carlmick(@)moscow.com
+
+ Inaugural Address
+
+ Prefatory Note
+
+ Introduction
+
+ A. Notion of the History of Philosophy
+
+ 1. Common Ideas regarding the History of Philosophy
+
+ a. The History of Philosophy as an accumulation of Opinions
+
+ b. Proof of futility of Philosophical Knowledge obtained through History of Philosophy itself
+
+ c. Explanatory remarks on the diversity in Philosophies
+
+ 2. Explanatory remarks on the Definition of the History of Philosophy
+
+ a. The Notion of Development
+
+ b. The Notion of the Concrete
+
+ c. Philosophy as the apprehension of the development of the Concrete
+
+ 3. Results obtained with respect to the notion of the History of Philosophy
+
+ a. The development in Time of the various Philosophies
+
+ b. The application of the foregoing to the treatment of Philosophy
+
+ c. Further comparison between the History of Philosophy and Philosophy itself
+
+ B. Relation of Philosophy to other Departments of Knowledge
+
+ 1. The Historical Side of this Connection
+
+ a. Outward and historical conditions imposed upon Philosophy
+
+ b. The commencement in History of an intellectual necessity for Philosophy
+
+ c. Philosophy as the thought of its time
+
+ 2. Separation of Philosophy from other allied departments of Knowledge
+
+ a. Relation of Philosophy to Scientific Knowledge
+
+ b. Relation of Philosophy to Religion
+
+ c. Philosophy proper distinguished from Popular Philosophy
+
+ 3. Commencement of Philosophy and its History
+
+ a. Freedom of Thought as a first condition
+
+ b. Separation of the East and its Philosophy
+
+ c. Beginnings of Philosophy in Greece
+
+ C. Division, Sources, and Method adopted in treating of the History of Philosophy
+
+ 1. Division of the History of Philosophy
+
+ 2. Sources of the History of Philosophy
+
+ 3. Method of Treatment adopted
+
+ Oriental Philosophy
+
+ Introduction
+
+ A. Chinese Philosophy
+
+1. Confucius
+
+2. The Philosophy of the Y-King
+
+3. The Sect of the Tao-See
+
+ B. Indian Philosophy
+
+1. The Sanc'hya Philosophy of Capila
+
+2. The Philosophy of Gotama and Canade
+
+ PART ONE: GREEK PHILOSOPHY
+
+ Introduction
+
+Section One
+
+ First Period , from Thales to Aristotle
+
+ Chapter I: First Period, First Division
+
+The first extends from Thales to Anaxagoras, from abstract thought which is in immediate determinateness to the thought of the self-determining Thought. Here a beginning is made with the absolutely simple, in which the earliest methods of determination manifest themselves as attempts, until the time of Anaxagoras; he determines the true as the nou ς, and as active thought which no longer is in a determinate character, but which is self-determining.
+
+ Introduction
+
+A. The Ionic Philosophy
+
+ 1. Thales
+
+ 2. Anaximander
+
+ 3. Anaximenes
+
+B. Pythagorus and the Pythagoreans
+
+C. The Eleatic School
+
+ 1. Xenophanes
+
+ 2. Parmenides
+
+ 3. Melissus
+
+ 4. Zeno
+
+D. Heraclitus
+
+E. Empedocles, Leucippus and Democritus
+
+ 1. Leucippus and Democritus
+
+ 2. Empedocles
+
+F. Philosophy of Anaxagoras
+
+ Chapter II: First Period, Second Division
+
+The second division comprises the Sophists, Socrates, and the followers of Socrates. Here the self-determining thought is conceived of as present and concrete in me; that constitutes the principle of subjectivity if not also of infinite subjectivity, for thought first shows itself here only partly as abstract principle and partly as contingent subjectivity.
+
+ Introduction
+
+A. The Sophists
+
+ 1. Protagoras
+
+ 2. Gorgias
+
+B. Socrates
+
+ 1. The Socratic Method
+
+ 2. The Principle of the Good
+
+ 3. The Fate of Socrates
+
+C. The Philosophy of the Socratics
+
+ 1. The Megarics
+
+ a. Euclides
+
+ b. Eubilides
+
+ c. Stilpo
+
+ 2. The Cyrenaic Method
+
+ a. Aristippus
+
+ b. Theodorus
+
+ c. Hegesias
+
+ d. Anniceris
+
+ 3. The Cynic School
+
+ a. Antisthenes
+
+ b. Diogenes
+
+ c. Later Cynics
+
+ Chapter III: First Period, Third Division
+
+The third division, which deals with Plato and Aristotle, is found in Greek science where objective thought, the Idea, forms itself into a whole. The concrete, in itself determining Thought, is, with Plato, the still abstract Idea, but in the form of universality; while with Aristotle that Idea was conceived of as the self-determining, or in the determination of its efficacy or activity.
+
+A. The Philosophy of Plato
+
+ 1. Dialectic
+
+ 2. Philosophy of Nature
+
+ 3. Philosophy of Mind
+
+B. The Philosophy of Aristotle
+
+ 1. Metaphysics
+
+ 2. Philosophy of Nature
+
+ 3. Philosophy of Mind
+
+ a. Psychology
+
+ b. Practical Philosophy
+
+ a . Ethics
+
+ b . Politics
+
+ 4. Logic
+
+ Section Two
+
+ Second Period, Dogmatism and Scepticism
+
+The three principles of Stoicism, Epicureanism and Scepticism are necessary; in the first there is the principle of thought or of universality itself, but yet determined in itself; the abstract thought is here the determining criterion of the truth. There is opposed to thought, in the second place, the determinate as such, the principle of individuality, feeling generally, sensuous perception and observation. These two form the principles of the Stoic and Epicurean philosophies. Both principles are one-sided and, as positive, become sciences of the understanding. Scepticism, the negation of these two one-sided philosophies which must be recognized as such. The principle of Scepticism is thus the active negation of every criterion, of all determinate principles of whatever kind they be, whether knowledge derived from the senses, or from reflection on ordinary conceptions, or from thought.
+
+ Introduction
+
+A. The Philosophy of the Stoics
+
+B. The Philosophy of the Epicureans
+
+C. The Philosophy of the New Academy
+
+D. Scepticism
+
+ Section Three
+
+ Third Period, The Neo-Platonists
+
+Since Scepticism is the annulling of the opposites which in Stoicism and Epicureanism were accepted as the universal principles from which all other opposites took their rise, it likewise is the unity in which these opposites are found as ideal determinations, so that the Idea must now come into consciousness as concrete in itself. With the rejection of the criterion for subjective knowledge, finite principles in general also disappear; for it is with these that the criterion has to do. This is closely connected with the revolution which was caused in the world by Christianity.
+
+ Introduction
+
+A. Philo
+
+B. The Cabala and Gnosticism
+
+C. The Alexandrian Philosophy
+
+ PART TWO: PHILOSOPHY OF THE MIDDLE AGES
+
+ Table of Contents for Part Two
+
+ Introduction
+
+ Section One: Arabian Philosophy
+
+ Section Two: The Scholastics
+
+ Section Three: The Revival of the Sciences
+
+ PART THREE: MODERN PHILOSOPHY
+
+ Introduction
+
+ Section One: Modern Philosophy in its First Statement
+
+THE first two philosophers whom we have to consider are Bacon and Boehme; there is as complete a disparity between these individuals as between their systems of philosophy. None the less both agree that mind operates in the content of its knowledge as in its own domain, and this consequently appears as concrete Being. This domain in Bacon is the finite, natural world; in Boehme it is the inward, mystical, godly Christian life and existence; for the former starts from experience and induction, the latter from God and the pantheism of the Trinity.
+
+ A. Bacon
+
+ B. Jacob Boehme
+
+ Section Two: Period of the Thinking Understanding
+
+AFTER Neo-Platonisim and all that is associated with it is left behind, it is not until Descartes is arrived at that we really enter upon a philosophy which is, properly speaking, independent, which knows that it comes forth from reason as independent, and that self-consciousness is an essential moment in the truth. Philosophy in its own proper soil separates itself entirely from the philosophizing theology, in accordance with its principle, and places it on quite another side. Here, we may say, we are at home, and like the mariner after a long voyage in a tempestuous sea, we may now hail the sight of land; with Descartes the culture of modern times, the thought of modern Philosophy, really begins to appear, after a long and tedious journey on the way which has led so far. It is specially characteristic of the German that the more servile he on the one hand is, the more uncontrolled is he on the other; restraint and want of restraint - originality, is the angel of darkness that buffets us. In this new period the universal principle by means of which everything in the world is regulated, is the thought that proceeds from itself; it is a certain inwardness, which is above all evidenced in respect to Christianity, and which is the Protestant principle in accordance with which thought has come to the consciousness of the world at large as that to which every man has a claim. Thus because the independently existent thought, this culminating point of inwardness, is now set forth and firmly grasped as such, the dead externality of authority is set aside and regarded as out of place. It is only through my own free thought within that thought can however be recognized and ratified by me. This likewise signifies that such free thought is the universal business of the world and of individuals; it is indeed the duty of every man, since everything is based upon it; thus what claims to rank as established in the world man must scrutinize in his own thoughts. Philosophy is thus become a matter of universal interest, and one respecting which each can judge for himself; for everyone is a thinker from the beginning.
+
+On account of this new beginning to Philosophy we find in the old histories of Philosophy of the seventeenth century - e.g., that of Stanley - the philosophy of the Greeks and Romans only, and Christianity forms the conclusion. The idea was that neither in Christianity nor subsequently any philosophy was to be found, because there was no longer a necessity for it, seeing that the philosophic theology of the Middle Ages had not free, spontaneous thought as its principle (Vol. I. pp. 111, 112). But though it is true that this has now become the philosophic principle, we must not expect that it should be at once methodically developed out of thought. The old assumption is made, that man only attains to the truth through reflection; this plainly is the principle. But the determination and definition of God, the world of the manifold as it appears, is not yet revealed as necessarily proceeding from thought; for we have only reached the thought of a content which is given through ordinary conception, observation, and experience.
+
+On the one hand we see a metaphysic, and, on the other, the particular sciences: on the one hand abstract thought as such, on the other its content taken from experience; these two lines in the abstract stand opposed to one another, and yet they do not separate themselves so sharply. We shall indeed come to an opposition, viz. to that between a priori thought - that the determinations which are to hold good for thought must, be taken from thought itself - and the determination that we must commence, conclude and think from experience. This is the opposition between rationalism and empiricism; but it is really a subordinate one, because even the metaphysical mode in philosophy, which only allows validity to immanent thought, does not take what is methodically developed from the necessity of thought, but in the old way derives its content from inward or outward experience, and through reflection and meditation renders it abstract. The form of philosophy which is first reached through thought is metaphysics, the form of the thinking understanding; this period has, as its outstanding figures, Descartes and Spinoza, likewise Malebranche and Locke, Leibnitz and Wolff. The second form is Scepticism and Criticism with regard to the thinking understanding, to metaphysics as such, and to the universal of empiricism; here we shall go on to speak of representatives of the Scottish, German, and French philosophies; the French materialists again turn back to metaphysics.
+
+ Chapter I. - The Metaphysics of the Understanding
+
+METAPHYSICS is what reaches after substance, and this implies that one unity, one thought is maintained in opposition to dualism, just as Being was amongst the ancients. In metaphysics itself we have, however, the opposition between substantiality and individuality. What comes first is the spontaneous, but likewise uncritical, metaphysics, and it is represented by Descartes and Spinoza, who assert the unity of Being and thought. The second stage is found in Locke, who treats of the opposition itself inasmuch as he considers the metaphysical Idea of experience, that is the origin of thoughts and their justification, not yet entering on the question of whether they are absolutely true. In the third place we have Leibnitz's monad - the world viewed as a totality.
+
+A. First Division
+
+We here encounter the innate ideas of Descartes. The philosophy of Spinoza, in the second place, is related to the philosophy of Descartes as its necessary development only; the method is an important part of it. A method which stands alongside of Spinozism and which is also a perfected development of Cartesianism, is, in the third place, that by which Malebranche has represented this philosophy.
+
+ 1. Descartes
+
+ 2. Spinoza
+
+ 3. Malebranche
+
+B. Second Division
+
+It was Locke who became the instrument of setting forth this entire manner of thinking in a systematic way, for he worked out Bacon's position more fully. And if Bacon made sensuous Being to be the truth, Locke demonstrated the universal, Thought, to be present in sensuous Being, or showed that we obtained the universal, the true, from experience. From Locke a wide culture proceeds, influencing English philosophers more especially; the forms adopted by this school were various, but the principle was the same; it became a general method of regarding things in a popular way, and calls itself Philosophy, although the object of Philosophy is not to be met with here.
+
+ 1. Locke
+
+ 2. Hugo Grotius
+
+ 3. Thomas Hobbes
+
+ 4. Cudworth, Clarke, Wollaston
+
+ 5. Puffendorf
+
+ 6. Newton
+
+C. Third Division
+
+The third development of the philosophy of the understanding is that represented by Leibnitz and Wolff. If Wolff's metaphysics is divested of its rigid form, we have as a result the later popular philosophy.
+
+ 1. Leibnitz
+
+ 2. Wolff
+
+ 3. German Popular Philosophy
+
+ Chapter II. - Transition Period
+
+THE decadence which we find in thought until the philosophy of Kant is reached, is manifested in what was at this time advocated in opposition to the metaphysic of the understanding, and which may be called a general popular philosophy, a reflecting empiricism, which to a greater or less extent becomes itself a metaphysic; just as, on the other hand, that metaphysic, in as far as it extended to particular sciences, becomes empiricism. As against these metaphysical contradictions, as against the artificialities of the metaphysical synthesis, as against the assistance of God, the preestablished harmony, the best possible world, &c., as against this merely artificial understanding, we now find that fixed principles, immanent in mind, have been asserted or maintained respecting what is felt, intuitively perceived and honoured in the cultured human breast. And in distinction to the assertion that we only find the solution in the principles of a fixed and permanent content form a reconciliation here and now, they adopt a position of independence, and assume an intellectual standing-ground which they find in what has generally been termed the healthy human understanding. Such determinations may indeed be found to be perfectly good and valid if the feelings, intuitions, heart and understanding of man be morally and intellectually fashioned; for in that case better and more noble feelings and desires may rule in men and a more universal content, may be expressed in these principles. But when men make what we call sound reason - that which is by nature implanted in man's breast - into the content and the principle, the healthy human understanding discovers itself to be identical with a feeling and knowledge belonging to nature. The Indians who worship a cow, and who expose or slay newborn children, and commit all sorts of barbarous deeds, the Egyptians who pray to a bird, the apis, &c., and the Turks as well, all possess a healthy human understanding similar in nature. But the healthy human understanding and the natural feeling of rude and barbarous Turks, when taken as a standard, result in shocking principles. When we speak of healthy human understanding, however, of natural feelings, we always have before our eyes a cultured mind; and those who make the healthy human reason, the natural knowledge, the immediate feelings and inspirations found in themselves, into a rule and standard, do not know that when religion, morality, and rectitude are discovered to be present in the human breast, this is due to culture and education, which are the first to make such principles into natural feelings. Here natural feelings and the healthy human understanding are thus made the principle; and much may be recognized as coming under these heads. This then is the form taken by Philosophy in the eighteenth century. Taken as a whole, three points of view have to be considered; in the first place, Hume must be regarded on his own account, then the Scottish, and, thirdly, the French philosophy. Hume is a sceptic; the Scottish philosophy opposes the scepticism of Hume, the French philosophy has in the "enlightenment" of Germany (by which expression is indicated that form of German philosophy which is not Wolffian metaphysics) an appendage of a feebler form. Since from the metaphysical God we can make no further progress in the concrete, Locke grounds his content on experience. But that empiricism leads thought to no fixed standpoint, Hume demonstrates by denying every universal; the Scottish philosophers, on the contrary, undoubtedly maintain universal propositions and truths, but not through thought. Hence in empiricism itself the fixed standpoint has now to be adopted; thus the French find the universal in the actuality which they call r&eacute;alit&eacute; . They do not, however, find its content in and from thought, but as living substance, as nature and matter. All this is a further working out of reflecting empiricism, and some more details respecting it must still be given.
+
+A. Idealism and Scepticism
+
+Thought generally is simple, universal self-identity, but in the form of negative movement, whereby the determinate abrogates itself. This movement of Being-for-self is now an essential moment of thought, while hitherto it was outside it; and thus grasping itself as movement in itself, thought is self-consciousness - at first indeed formal, as individual self-consciousness. Such a form it has in scepticism, but this distinction marks it off from the older scepticism, that now the certainty of reality is made the starting point. With the ancients, on the contrary, scepticism is the return into individual consciousness in such a way that to it this consciousness is not the truth, in other words that scepticism does not give expression to the results arrived at, and attains no positive significance. But since in the modern world this absolute substantiality, this unity of implicitude and self-consciousness is fundamental - that is, this faith in reality generally - scepticism has here the form of idealism, i.e., of expressing self-consciousness or certainty of self as all reality and truth. The crudest form of this idealism is when self-consciousness, as individual or formal, does not proceed further than to say: All objects are our conceptions. We find this subjective idealism in Berkeley, (1) and another form of the same in Hume.
+
+ 1. Berkeley
+
+ 2. Hume
+
+B. Scottish Philosophy
+
+In Scotland quite another school of thought developed, and the Scotch are the foremost of Hume's opponents; in German philosophy, on the other hand, we have to recognize in Kant another opposing force to that of Hume. To the Scottish school many philosophers belong; English philosophy is now restricted to Edinburgh and Glasgow, in which places a number of professors belonging to this school succeeded one another. To the scepticism of Hume they oppose an inward independent source of truth for all that pertains to religion and morality. This coincides with Kant, who also maintains an inward source or spring as against external perception; but in the case of Kant this has quite another form than that which it possesses with the Scottish philosophers. To them this inward independent source is not thought or reason as such, for the content which comes to pass from this inwardness is concrete in its nature, and likewise demands for itself the external matter of experience. It consists of popular principles, which on the one hand are opposed to the externality of the sources of knowledge, and, on the other, to metaphysics as such, to abstract thought or reasoning on its own account. This sort of reasoning understanding applied itself to ethics and to politics - sciences which have been much developed by German, French, and above all by Scottish philosophers ( supra , p. 320); they regarded morality as cultured men would, and sought to bring moral duties under a principle. Many of their works are translated into German; several of these on ethics or morality are translated by Garve, for instance, who also translated Cicero De Officiis , and they are written in a manner similar to that of Cicero when he uses the expression Insitum est a natura (Vol. I. p. 93). This moral sentiment and the ordinary human understanding hereafter formed the common principle to a whole succession of Scots, such as Thomas Reid, Beattie, Oswald, and others; in this way they frequently made sagacious observations, but with them speculative philosophy quite disappears. One special characteristic of these Scottish philosophers is that they have sought accurately to define the principle of knowledge; but on the whole they start from the same point as that which was in Germany likewise accepted as the principle. That is to say they represented the so-called healthy reason, or common-sense ( sensus communis ), as the ground of truth. The following are the principal members of this school, each of whom has some special feature distinguishing him from the rest.
+
+ 1. Thomas Reid
+
+ 2. James Beattie
+
+ 3. James Oswald
+
+ 4. Dugald Stewart
+
+ C. French Philosophy
+
+ 1. The Negative Aspect
+
+ 2. The Positive Aspect
+
+ a. Materialism
+
+ b. Robinet
+
+ 3. Idea of a Concrete Universal Unity
+
+ a. Opposition between Sensation and Thought
+
+ b. Montesquieu
+
+ c. Helvetius
+
+ d. Rousseau
+
+ D. The German Illumination
+
+ Section Three: Recent German Philosophy
+
+IN the philosophy of Kant, Fichte, and Schelling, the revolution to which in Germany mind has in these latter days advanced, was formally thought out and expressed; the sequence of these philosophies shows the course which thought has taken. In this great epoch of the world's history, whose inmost essence is laid hold of in the philosophy of history, two nations only have played a part, the German and the French, and this in spite of their absolute opposition, or rather because they are so opposite. The other nations have taken no real inward part in the same, although politically they have indeed so done, both through their governments and their people. In Germany this principle has burst forth as thought, spirit, Notion; in France, in the form of actuality. In Germany, what there is of actuality comes to us as a force of external circumstances, and as a reaction against the same. The task of modern German philosophy is, however, summed up in taking as its object the unity of thought and Being, which is the fundamental idea of philosophy generally, and comprehending it, that is, in laying hold of the inmost significance of necessity, the Notion ( supra , p. 360). The philosophy of Kant sets forth, in the first place, the formal aspect of the task, but it has the abstract absoluteness of reason in self-consciousness as its sole result, and, in one respect, it carried with it a certain character of shallowness and want of vigour, in which an attitude of criticism and negativity is retained, and which, as far as any positive element is concerned, adheres to the facts of consciousness and to mere conjecture, while it renounces thought and returns to feeling. On the other hand, however, there sprang from this the philosophy of Fichte, which speculatively grasps the essence of self-consciousness as concrete egoism, but which does not reach beyond this subjective form pertaining to the absolute. From it again comes the philosophy of Schelling, which subsequently rejects Fichte's teaching and sets forth the Idea of the Absolute, the truth in and for itself.
+
+ A. Jacobi
+
+ B. Kant
+
+ Critique of Pure Reason
+
+ Critique of Practical Reason
+
+ Critique of Practical Judgment
+
+ C. Fichte
+
+ 1. The First Principles of Fichte's Philosophy
+
+ 2. Fichte's System in a Re-constituted Form
+
+ 3. The More Important of the Followers of Fichte
+
+ a. Friedrich von Schlegel
+
+ b. Schleiermacher
+
+ c. Novalis
+
+ d. Fries, Bouterweck, Krug
+
+ D. Schelling
+
+ E. Final Result
+
+ Footnotes
+
+ 1. In the lectures of 1825-1826 and 1829-1830 Berkeley was passed over by Hegel; in both courses Hume follows directly after the Scottish and French philosophers, and thus comes immediately before Kant; in the course of 1825-1826 the French philosophy precedes the Scottish also.
+
+  
+
+ INTRODUCTION (Quentin Lauer translation)
+
+ Hegel-by-HyperText Home Page @ marxists.org

@@ -1,0 +1,384 @@
+Hegel - Phenomenology of Mind
+
+ Hegel's Phenomenology of Mind
+
+ Synopsis
+
+ (P) Preface: On Scientific Knowledge
+
+NB: In the text, Φ links to original German text, and § no.s link to explanations by J N Findlay.
+
+ 2. The element of truth is the Concept and its true
+form the scientific system
+
+ 3. Present position of the spirit
+
+ 4. The principle is not the completion; against formalism
+
+ 5. The absolute is subject -
+
+ 6. - and what this is
+
+ 7. The element of knowledge
+
+ 8. The ascent into this is the Phenomenology of the Spirit
+
+ 9. The transformation of the notion and the familiar into thought ...
+
+ 10. - and this into the Concept/Notion
+
+ 11. In what way the Phenomenology of the Spirit is negative or contains what is false
+
+ 12. Historical and mathematical truth
+
+ 13. The nature of philosophical truth and its method
+
+ 14. Against schematizing formalism
+
+ 15. The demands of the study of philosophy
+
+ 16. Argumentative thinking in its negative attitude ...
+
+ 17. ... in its positive attitude; its subject
+
+ 18. Natural philosophizing as healthy common sense and as genius
+
+ 19. Conclusion: the author's relation to the public
+
+ (I) Introduction: Intention and Method of the Argument
+
+ A. Consciousness
+
+ I. Sense-Certainty, This, and Meaning
+
+(1) The Object of Sense Certainty
+
+(2) The Subject of Sense Certainty
+
+(3) The Concrete Experience of Sense Certainty
+
+ II. Perception, Thing, and Deceptiveness
+
+ Translator's comments : In this as in the preceding section apprehension is effected under conditions of sense. But whereas in the preceding type of consciousness the universality which knowledge implies and requires no sooner appeared than it melted away, here in Perception we start from a certain stability in the manner of apprehension, and a certain constancy in the content apprehended. The universality in this case satisfies more completely the demands of knowledge. The problem for further analysis is to find the form which the universal here assumes and to determine the way in which the unity of the object (the "thing") holds together its essential differences. The result shows that the unity of the thing qua unity is only admissible as an unqualified or non-sensuous unity. It is a universal, but as such, not conditioned by sense; it is a pure or "unconditioned" universal - a thought proper. Being undetermined by sense, it transcends sense-apprehension, and so transcends perception proper, and compels the mind to adopt another cognitive attitude in order to apprehend it. This new attitude is Understanding.
+
+The following section is thus indirectly an analysis and a criticism of the doctrine which reduces or confines knowledge to perception. It shows that the position "esse est percipi" must give way to the principle "esse est intelligi".
+
+(1) The Notion of a "Thing"
+
+(2) The Contradictoriness of the Perception of "Things"
+
+(3) The Transition to the sphere of Understanding
+
+ III. Force and Understanding
+
+ Translator's comments : The term "force" holds primarily with reference to the realm of Nature, whether physical or vital: but it is also used, more or less analogically, in reference to other spheres, e.g. morality. It is the objective counterpart of the activity of "understanding"; it is objectively the same kind of relation of unity to differences which is subjectively realized when the mind understands. Force is a self-conditioned principle of unity; the differences are the "expressions of force", the unity evolves the differences out of itself. Understanding similarly is a self-conditioned process; it consists in reducing differences to some ultimate unity, which is capable of deriving or "explaining" those differences from itself. The "unconditioned universal" to which we are led by the analysis of perception takes shape, therefore, as "force". The question is, How are the elements of this unconditioned universal related, and how do they hold together? The answer is found in the highest achievement of the operation of understanding - the establishment of a "kingdom of laws", which in its entirety is the meaning of the world so far as understanding goes. But laws per se are looked on as an inner realm, which merely "appears" in the detailed particulars which those laws control, and in which those laws are made manifest. The differences, in fact, are "phenomena", the laws per se are behind the scenes: - the world as a whole thus becomes distinguished into a realm of phenomena and a realm of noumena. These two realms set a new problem to the mind, and must again be brought together in a completer way than understanding can do. This new state of consciousness is "self-consciousness".
+
+In this section we have at once an analysis of empiricism and a Criticism of the Kantian solution of the problem of empiricism. It is shown that if phenomena are appearances of noumena, then the noumena do appear, and are, in fact, nothing except so far as they appear: otherwise the noumena, so far being "hidden", are worse than appearances, they are illusion. The phenomena are not merely appearances "to the mind", but appearances of something that does make itself manifest. If phenomena are thus not external to and still less independent of noumena, noumena are just as truly immanent in phenomena. Treated in any other way, noumena can at best be only another kind of phenomena; and this raises anew precisely the problem which the opposition of phenomena or noumena was intended to solve. Phenomena are related to noumena as the trees to the wood, not as a compound to its atoms. The solution of the difficulty is thus only to be found in the type of consciousness which contains both - and this, Hegel says, is self-consciousness.
+
+(1) Force and the play of Forces
+
+(2) The Inner Realm
+
+(a) The Supersensible World
+
+(b) Law as Distinction and Sameness
+
+(c) The Law of Pure Distinction: the Inverted World
+
+(3) Infinitude
+
+ B. Self-Consciousness
+
+ IV. The True Nature of Self-Certainty
+
+ Translator's comments : The analysis of experience up to this point has been occupied with the relation of consciousness to an object admittedly different in nature from the mind aware of it. This external opposition, however, breaks down under analysis, and we are left with the result that consciousness does and must find itself in unity with its object, a unity which implies identity of nature between consciousness and its object: consciousness becomes "certain of itself in its object". This is not merely a result, but the truest expression of the initial relation with which experience starts. It is, therefore, the ground of the possibility of any relation between the terms in question: "consciousness of self" is the basis of the consciousness of anything whatsoever. This is Hegel's re-interpretation of the Kantian analysis of experience.
+
+But this result is, again, really the starting-point for a further analysis of experience, but of experience at a higher level of realization. Consciousness of self is to begin with a general attitude, a definite type of experience, which requires elucidation. It has its own conditions and forms of manifestation. Self-consciousness, being supreme, must realize itself in relation to nature, to other selves similar to the self, and to the Ultimate Being of the world. These are different kinds of content with which consciousness is to find its oneness, and they furnish different forms in which the same principle is manifested. The argument seeks to show that these forms are also different degrees of realization of self-consciousness. The outcome of the argument is that self-consciousness is truly realized only when it is universal self-consciousness, when consciousness is certain of itself throughout all reality, and explicitly finds there only itself. This result takes the form, as we shall see, of what is called Reason .
+
+The immediately succeeding section takes up the first stage of the development of self-consciousness - the consciousness of self in relation to nature. This takes the shape of Desire, Instinct, Impulse, etc., and involves the category of Life. This relationship, while undoubtedly implying the sense of self in the object and consciousness of unity with it, is the least satisfying and the least complete of all the modes of self-consciousness. It points the way, therefore, to the fuller sense of self obtained when the self is aware of itself in relation to another self.
+
+(1) Consciousness In Itself
+
+(2) Life
+
+(3) The Ego and Desire
+
+ A. Independence and Dependence of Self-Consciousness
+
+ Lordship and Bondage
+
+ Translator's comments : The selves conscious of self in another self are, of course, distinct and separate from each other. The difference is, in the first instance, a question of degree of self-assertion and self-maintenance: one is stronger, higher, more independent than another, and capable of asserting this at the expense of the other. Still, even this distinction of primary and secondary rests ultimately on their identity of constitution; and the course of the analysis here gradually brings out this essential identity as the true fact. The equality of the selves is the truth, or completer realization, of self in another self ; the affinity is higher and more ultimate than the disparity. Still, the struggle and conflict of selves must be gone through in order to bring out this result. Hence the present section.
+
+The background of Hegel's thought is the remarkable human phenomenon of the subordination of one self to another which we have in all forms of servitude - whether slavery, serfdom, or voluntary service. Servitude is not only a phase of human history, it is in principle a condition of the development and maintenance of the consciousness of self as a fact of experience.
+
+(1) Duplicated Self-Consciousness
+
+(2) The Conflict of Self-Consciousness in Self-opposition
+
+(3) Lord and Bondsman
+
+ B. Freedom of Self-Consciousness: Stoicism, Skepticism, and the Unhappy Consciousness
+
+ Translator's comments: The previous section has established the self as ultimately a free self. But even this is abstract at first, and hence the attempt to maintain it must pass through different stages. These attempts have taken historical expression in European civilization, but these are merely instances of an experience that is strictly found in all mankind. Hegel, however, selects the forms assumed in European history, and has these in mind throughout the succeeding analysis. The terms Stoicism and Scepticism refer primarily to the forms which these assumed in Greece and Rome. The last stage of independent and free self-hood he names faute de mieux , the "unhappy consciousness". The background of historical material for this type of mind is found in the religious life of the Middle Ages and the mental attitude assumed under the dominion of the Roman Catholic Church and the Feudal Hierarchy. The social and political dissolution of the Roman Empire has its counterpart in the mental chaos and dissolution of Scepticism; the craving of free mind for absolute stability and constancy amid change and uncertainty found expression in an organized attempt on the part of the Church to establish permanent connection between man's mental insecurity and an Immutable Reality. The two poles of the antithesis were far removed from each other, and the method or methods adopted to bring about the union reflect the profound contrast of the opposing elements. It is the inner process of free mind in this realm of abstract subjective piety which Hegel analyses in the part termed the "unhappy consciousness" - "unhappy" because craving complete consciousness of self and never at this stage attaining it.
+
+The end of this movement, and therefore the disappearance of all the onesidedness of abstract individual freedom of self, is found when, through the above struggle, there dawns on the self the consciousness of its complete and explicit unity with reality in every shape and form. This is the beginning of the absolute sovereignty of the Mind - Consciousness of Reason as supreme. The change to this new condition found historical expression in the Reformation and the Renaissance.
+
+ Free Self-Consciousness
+
+(1) Stoicism
+
+(2) Scepticism
+
+(3) The Unhappy Consciousness
+
+ C. Free Concrete Mind
+
+ (AA). Reason
+
+ Translator's comments: Reason is the first stage in the analysis of concrete self-conscious of itself in its object and conscious of the object as universal. Reason is not a mere "function" of mind, but a stage of mind. It therefore possesses its own peculiar content and operates in a process peculiar to itself. Its aim is to become completely conscious of its own nature; and to acquire this it must develop itself through its various phases. The process of development is from immediate to mediate, from what it is implicitly to what it is explicitly. The first step therefore is reason as immediate - where universal self is simply and directly aware of itself in the universal object. The operation of concrete mind at this stage is found where reason "observes". The analysis of observation as this operates in the various domain covered by the empirical sciences is thus the subject-matter of the following section. The processes of these various sciences are assumed in Hegel's analysis. Observation must change in character with the objects observed; hence the difference between observation of inorganic and organic nature, observation of mind, and of the relation of mind and nature. The difficulties reason has to face in this operation, and the contradictions into which it falls in seeking to find laws, etc., to satisfy its aim, form the substance of the following analysis.
+
+The nature of reason as here conceived is the source and origin of philosophical Idealism, whether the idealism be one-sided or absolute. Idealism is in fact the philosophical expression of the principle of reason, just as the various empirical sciences may be said to be the development, in the several ways which experience dictates, of the operation of rational observation. Hence the introductory pages of the following analysis are devoted to a statement of the character of true and false idealism.
+
+The historical material behind the abstract argument elaborated here is provided by the awakened scientific spirit that appeared after the Reformation, and the methods and results of the empirical sciences at the time Hegel wrote. In particular the physiological conceptions of "irritability", "sensibility" and "reproduction", discussed on p. 302 ff., were first formulated by Haller, Elementa Physiologiae (1757-66). For a list of the chief scientific works which appeared shortly before or about the time the following analysis was written, and which doubtless provided art of the material for the analysis, see Merz, History of European Thought , Vol. 1, pp. 82-83.
+
+The polemical criticism which runs through this as through almost every section of the work is directed against the one-sided idealism of Hegel's predecessors and the imperfect conception of scientific method displayed by the current science of nature.
+
+ V. Certainty and Truth of Reason
+
+ A. Observation as a function of Reason
+
+ a. (1) Observation of Nature
+
+ (2) Observation of Organic Nature
+
+ b. Observation of self-consciousness as self-consciousness, and as standing in relation to external reality. Logical and Psychological laws
+
+ Translator's comments: Observation can be directed upon the self-conscious process of mind in two ways: it may consider the mind's thinking relation to reality, and it may consider the mind's active or biotic relation to reality. The result of observation here, as in the foregoing cases, finds expression in a number of laws, which it "frames". The "laws" in the first case are "laws of thought" or connected logical laws: in the latter case we have laws of psychic events, "psychological" laws.
+
+The analysis in this section shows the inadequacy of observation as such to deal with its material in both cases. It fails in the first case because (1) "laws of thought" have no meaning apart from the reality with which thought is necessarily concerned; laws of thought are laws of "thinking", and thinking is both form and content: (2) observation gives each law an absolute being of its own, as if it were detached from the unity of self-consciousness, whereas this unity is the fundamental principle of each and all the laws, which only exist in and by the single process of that unity. Hence a type of logic confined to "observing" laws of thought is necessarily untrue. Observation again fails in the second case because it is impossible to separate mind from its total environment. Observational or empirical psychology therefore is incapable of giving an adequate account of mind the constitution of the environment enters into and in part determines the constitution of the psychic events, and the latter cannot be explained even as events without interpreting the former at the same time.
+
+(1) Laws of Thought
+
+(2) Psychological Laws
+
+(3) The Law of Indiviuality
+
+ c. Observation of self-consciousness to its immediate actuality. Physiognomy and Phrenology
+
+ Translator's comments: In the previous section observation was directed upon the relation of mind to external reality - the natural environment of individuality. The relation of mind to its own physical embodiment furnishes a further object for observation to take up. How observation operates in dealing with this relation forms the subject of the analysis in the present section.
+
+Up to and at the time at which Hegel wrote, the discussion of this relation took the form of what are now looked upon either as spurious sciences or at best as falling within the scope of physiology or psychophysics. Those pseudo-sciences were Physiognomy and Phrenology or Cranioscopy. Both had in one form or another engaged the attention of reflective minds from the earliest times. But about the latter half of the eighteenth century they gained unusual public prominence, in Germany, France and England, through the eloquence and conviction of their exponents; so much so that in Germany a law was passed forbidding the promulgation of phrenology as being dangerous to religion, and in England a law of George II re-enacted a statute of Elizabeth imposing the severest penalties on physiognomists. The chief exponents and propagandists of these studies of the human individual were Lavater (1741-1801), in physiognomy, and Gall (1758-1828), along with his pupil Spurzheim, in phrenology. The personal character and influence of the first, combined with his rhetorical eloquence, compelled the attention not only of the popular mind but of men of outstanding intelligence; while Gall lectured publicly and went from one University to another expounding the generalizations discovered or made.
+
+It was impossible therefore for any philosopher who attempted to discuss comprehensively the methods and procedure of observational science to ignore the claims made by these pseudo-sciences or to refuse to examine the validity of the laws they proposed to formulate. This was all the more necessary because the object they dealt with - the relation of mind to its physical embodiment - was and is unquestionably an important fact of experience and presents a serious problem to philosophy, especially to idealism. Hence we have in the following section an elaborate analysis of the observational "sciences" of physiognomy and phrenology - an analysis the length of which can only be explained and justified by the historical circumstances above indicated.
+
+ B. Realization of rational self-consciousness through itself
+
+ Translator's comments : In this section we have the second form in which rational experience is realized. In "observation" mind is directly aware of itself as in conscious unity with its object: it makes no effort of its own to realize this unity: it finds the unity by looking on, so to say. But it may have the same experience by creating through its own effort an object constituted and determined solely by its self. Here it does not find the unity of itself and its object; it makes the object at one with itself by moulding the character and content of the object after its own nature. As contrasted with observation, which may be called the operation of "theoretical" reason, this new way of having a rational experience may be called the operation of "practical" reason. In the first we have reason in the form of knowledge and science, in the second, reason in the sense of rational action and practice.
+
+It is this second way of establishing the experience of reason which is analysed in the following sections. The immediately succeeding section describes the experience in its general features. We have here the sphere of conscious purpose and the foundation of moral and social life.
+
+ a. Pleasure and Necessity
+
+ Translator's comments : The succeeding three sections discuss the procedure of one-sided subjective individualism - the attempt to realize the individual and yet not transcend the particular individuality. The first thought of self-consciousness when it seeks to realize or objectify itself as a mere individual is to make the objective element return directly to itself and bring a sense of increase of its own individual being or private Pleasure. This is all its interest in the practical realization of its purposes. But the realization of purposes is an expression of the life of reason, and reason means universality and systematic connexion of the content realized. Hence to seek solely private satisfaction or pleasure by a process which is inherently universal is a contradiction in terms. This contradiction the individual discovers in the shape of a sharp and painful contrast between its private feeling of individuation on the one hand and a network of universal connexion on the other-the contrast between "pleasure" and "necessity". Both fall within the individual's experience as a rational agent, and hence this necessity is his own necessity as much as the pleasure is his own pleasure. In the opposition between these factors there is no question as to which must triumph, and which must surrender.
+
+This is the type of experience analysed in the following section. It is an experience that constantly recurs in the life-history of most if not all human beings at one stage or another in their development. The analysis contained in this section is indirectly a searching criticism of Hedonism in all its forms.
+
+ b. The law of the heart, and the frenzy of self-conceit
+
+ Translator's comments: The following section is an analysis of the mood of moral Sentimentalism. It is a mood of all times and appears in many forms; but about Hegel's time it became prominent in the Romantic school and was frankly adopted as a practical attitude by certain of its representatives. Perhaps one of the most remarkable historic examples of sentimentalism was Rousseau, to whom so much in the romantic movement may be traced. In the literature of Hegel's time, and indeed in all literature, no more perfect type of sentimentalism can be found than Goethe's Werther . With such instances as these in our minds the succeeding analysis requires neither explanation nor comment.
+
+ c. Virtue and the course of the world
+
+ Translator's comments : The mood of moral sentimentalism is reduced to confusion and contradiction: but the subjective individualism in which it is rooted is not yet eradicated. Individualism now takes refuge in another attitude which claims to do greater justice to the inherent universality of rational self-realization, but yet clings to its particular individuality as an inalienable possession. It now tries to make the realization of universal purposes in the shape of the Good depend solely on its own activity, the objective sphere in which the good is to be carried out being regarded as at once external to its ends, opposing its activity, and yet requiring these ends to be carried out in order to have any moral significance. Individualism looks on the good as its private perquisite, and makes a personal merit and glory out of its action in carrying out the good. This external realm is the "Course of the World" which in itself is thought to contain no goodness, and which only gets a value if the good is realized in it. The world's course is thus to owe its goodness to the efforts of the individual. A struggle ensues, for the situation is contradictory; and the issue of the struggle goes to prove that the individual is not the fons etorigo boni , that goodness does not await his efforts, and that in fact the course of the world is at heart good; the soul of the world is righteous.
+
+The attitude analysed here is that of abstract moral idealism, the mood of moral strenuousness, the mood that constantly seeks the improvement and perfectibility of mankind. It is found in many forms, but particularly wherever there is any strong enmity between the "ideal" life and the "life of the world".
+
+ C. Individuality
+
+ Translator's comments: The following section gives a general description of individuality which seeks to realize itself, not in the one-sided ways analysed in the three preceding sections, but as a complete concrete whole. Here individuality does not regard itself abstractedly, and hence does not treat the sphere of its realization as in any way alien to itself. It is completely one with the objective world where it carries out its ends, and finds both itself adequate to its own realization, and the world sufficient and all-sufficient for the embodiment of its ends. In this sphere we have, as it were, the very antithesis of the preceding state of mind. There the good was opposed to the course of the "world", the latter being dependent for its goodness on individual effort. Here it is as if the "world" were made up of the activity of individuals and were wholly adequate to satisfy and embody all their ends. The real life of the individual is found simply in "self-expression". Naturally therefore individuals take themselves here to be "real just as they are", and have merely to express or develop their own content in order to objectify their ends. The objective world is their activity realized, is themselves "externalized".
+
+This condition of individuality is the immediate preparation for the social order of the life of a free spiritual community, and is the anticipation of that community-a community where the individual is universalized through union with the whole, and the whole particularized in the individual.
+
+ a. Self-contained individuals associated as a community of animals and the deception thence arising: the real fact
+
+ Translator's comments : The title of this section sounds unfamiliar; but the purpose of the analysis is plain, and the argument is essential as a stage in the unfolding of what rational self-contained individuality implies. It also, with the immediately succeeding sections, prepares the way for the constructive interpretation of organized society. Indeed, without individuals constituted as rational self-conscious units, each self-contained, a free self-conscious community could not exist. They form the component separate cells of the "organism" of a society, the elements out of which the compact structure of a society is made. In the first instance and as an abstract aspect of associated life, they can be regarded, and for certain purposes are in fact regarded, as merely distinct and detached units living together. Each functions as an individuality, endowed with certain powers and capacities for self-expression, pursuing his ends for his own interest, spontaneously putting forth his energies without being clearly aware of or concerned with any universal result which his essentially universal nature must bring about. In realizing his individuality he goes out of himself in one sense, in another sense he does not. By expressing himself he carries out some "end" in which he has an "interest"; he"does"something: he does a deed or a "work", which qua mere action is nothing more than a mode of purposed self-expression, and is not, as such, either good or bad (at this stage). What he does appears as external to himself, but is his own all the while, something which he has formed and in which he specifically is interested. Such a result at once objective, framed by himself and reflecting his interest, is "fact" as distinct from "thing" (which is an object of perception at the level of consciousness, not of self-consciousness). But by the nature of the case he can distinguish within this fact what is the real "intent" ( die Sache Selbst ) he has in mind from the merely objective character of the fact ( Sache ); he can, if we may put it so, distinguish the "fact of the matter" from mere "matter of fact". But other individuals with whom he is associated and who are similarly constituted, carry on the same process of separate self-expression. Each is "honest" and "honourable" in so doing: each is concerned with his own "real intent" and his own "fact". By this association they necessarily are interrelated and intercommunicate. But communication on such a basis leads to misconception, transference of intent, and "deception" of each other as well as of themselves. Work, deeds, facts have a universal character as well as a particular nature: in the former aspect they cannot be one's own, in the latter aspect they cannot be another's: yet both aspects are inseparable. Intercommunication between these individuals thus inevitably leads to contradiction. It implies a common universal nature between the individuals: but such universality at this stage is implicit not explicit. The contradiction inherent at this level between the elements in the situation created by individuals merely coexisting together without a conscious common purpose controlling and guiding all, points the way and compels an advance to another stage in the evolution of rational individuality.
+
+When self-conscious individuals are regarded as merely "together", as coexisting without consciously controlling common purposes, they resemble a community or herd of animals. Hence the title of the Section.
+
+It is not an accidental but an essential aspect of the life of society; it is indeed the indispensable basis of community which is in one respect like a community of ants, the system of activity of its component individuals, though each may and does fulfil his purpose as his own private interest.
+
+This aspect of social existence can be over-emphasized and may be regarded at times as the sole nature of society. The result can only lead to confusion. Such a conception of society may perhaps be said to be found where, as in certain economic conceptions of society, society is viewed as a herd of self-interested units each pursuing his own individual ends. It is also seen in certain historical forms of national polity which recur from time to time.
+
+(1) The Notion of Individuality as Real
+
+(2) Actual Fact and Individuality
+
+(3) Mutual Deception and Spiritual Substance
+
+ b. Reason as lawgiver
+
+ Translator's comments: The next step in the development of individuality is to bring out the universal conditions of its co-existence with other individualities. This it can do because it is complete in itself, and is essentially self-conscious reason. These conditions are many, because of the diversity of its own content and of the relations in which it stands; and are yet the conditions of individuality which is one and single. Hence their plurality never implies a separation; the conditions limit each other's operation and their precise operation must be determined.
+
+These, then, are the two stages in determining the general conditions or laws of co-existence of individuality: (1) the enunciation of different laws by and for rational individuality, (2) the relation of these laws inter se , and to the single principle from which they all proceed. Both stages owe their existence to the activity of reason. Reason promulgates laws, and criticizes, tests the validity of, the laws.
+
+Hence the two following sections.
+
+ c. Reason as test of laws
+
+ (BB). Spirit
+
+ VI. Spirit
+
+ Translator's comments: In the preceding section there is analysed the attempt on the part of individuality to operate as its own legislator and judge of laws holding for individuals. Individuality may claim the privilege of enunciating laws universal in character but having their source and inspiration solely in the single individual. Such laws can at best only be regulative and cannot be constitutive of the substance of individuality; for the substance of individuality necessarily involves other individuals within it. In short individuality is itself only realized as a part of a concrete whole of individuals: its life is drawn from common life in and with others. To attempt to enunciate laws from itself as if it could create the conditions of its own inherent universality can only issue in one result: laws are furnished without the content which gives those laws any meaning, or else the laws and the content remain from first to last external to one another. But if laws are purely formal, they cease to be i.e. constitutive conditions of individuality. Hence the attempt above described is sure to break down by its own futility. What is wanted to give the laws meaning is the concrete substance of social life: and when this concrete substance is provided ipso facto the attempt of individuality to create laws disappears, for these laws are already found in operation in social life. Only such laws have reality. But this involves the further step that individuality is only realized, only finds its true universal content, in and with the order of a society. Here alone is individuality what it is in truth, at once a particular focus of self-consciousness, and a realization of universal mind. This condition where individuality is conscious of itself only in and with others, and conscious of the common life as its own, is the stage of spiritual existence. Spiritual existence and social life thus go together. The following section begins the analysis of this phase of experience, which extends from the simplest form of sociality - the Family - up to the highest experience of universal mind - Religion.
+
+The immediately succeeding section may be taken as the keystone of the whole arch of experience traversed in the Phenomenology. Here it is pointed out that all the preceding phases of experience have not merely been preparing the way for what is to follow, but that the various aspects, hitherto treated as separate moments of experience, are in reality abstractions from the life of concrete spirit now to be discussed and analysed.
+
+It is noteworthy that from this point onwards the argument is less negative in its result either directly or indirectly, and is more systematic and constructive. This is no doubt largely because hitherto individual mind as such has been under review, and this is an abstraction from social mind or spiritual existence.
+
+ A. Objective Spirit: the ethical order
+
+ a. The ethical world: law divine and human: man and woman
+
+ Translator's comments: The first step in the analysis of spirit is to take spirit as a realized actual social order, immediately given as a historical fact, and present directly to the mincls of the individuals composing it. This is social life as an established routine of human adjustments, where the natural characteristics and constitution of its moral individuals are absorbed and built into the single substance of the living social whole. It is spirit as an objectively embodied whole of essentially spiritual individuals, without any consciousness of opposition to one another or to the whole, and with an absolute unbroken sense of their own security and fulfilment within the substance of social mind. It is spirit at the level of naive acquiescence in the law and order of conventional life.
+
+But such a self-complete type of experience has various levels of realization. It cannot exist except through the union of opposing elements; and the central principle of all experience, self-consciousness, which assumes here such a concrete form, has abundant material on which to exercise its function of creating and uniting distinctions. The first level is deternlined by the fact that the substance of social life is constituted out of the quasi-natural phenomena of human genus and species, of race and nationality, on the one hand, and the purely natural element of specialized individual sex on the other. These two aspects go together; the sex-relations of individuals maintain race and nationality, the nation lives in and through its sexually distinct individuals. The social order as an rder is realized and maintained in the medium of these elements. The fact that this order is an order of universal mind gives it a permanence, an inviolability, an absoluteness, which are inseparable from it, so inseparable that the order is looked on as having its roots in the Absolute Mind, and as deriving its authority from it. The social order on this aspect consists of a divinely established and divinely sanctioned r�gime ; the gods are the guardians of the city, of the hearth and the home. On the other hand the expression of this order varies, and is enunciated from time to time in the history of a community. The order in this sense is made by man; the law of the social order thus becomes a human law, determined by human conditions and human ends; it is a round of conventions and customs. These two forms of order are inseparable in the life of a community, and they subsist together and side beside at this level of social consciousness. They may lead to conflict in the life of the individual in the community, and have to be reconciled by force or otherwise; and they become associated and connected with the fundamental differences of individuality above referred to.
+
+The analysis of this level of social life constituted as above furnishes the argument of the following section. With Hegel's treatment of the relationships holding between Husband and Wife, Parents and Children, Brothers and Sisters should be read Aristotle's discussion of social fellowship in Eth. Nicom. Bks. VIII, IX.
+
+1. Nation and Family
+
+(a) Human Law
+
+(b) Divine Law
+
+(c) The claims of the Individual
+
+2. The Process involved in these Two Laws
+
+(a) Government as Positive Power, War as Negative
+
+(b) Man & Woman as Brother & Sister
+
+(c) The Interfusion of these Two Laws
+
+3. Ethical World as Infinitude or Self-complete Totality
+
+ b. Ethical action: knowledge human and Divine: Guilt and Destiny
+
+ Translator's comments: A fundamental condition of social order is that it is maintained by action on the part of the individual members of a society; action is a fundamental principle of distinction between individuals, is the way they make their contribution to social life, and is also the way by which the continuance of social life is ceaselessly broken and reconstituted. In a comprehensive sense therefore action is the principle by which distinction in unity is carried out in social life. The consideration of its significance is thus an essential problem of social mind. Action must be considered at once with reference to individuality and also with reference to those conceptions of social order as containing both "divine" and "human" law. In the following section, this analysis is undertaken.
+
+The specific historical background of Hegel's thought in this section, and to some extent in the preceding section, is supplied by the social life of the Greek city state. The Greek city state has been taken as the type, so to say, of spiritual existence realized as a self-complete ethical order. But the social life of Greece is here in large measure read and interpreted in the light of the dramatization of Greek ethical conceptions by the great Greek tragedians, especially Sophocles. This accounts for the repeated reference to the purely dramatic conception of the "destiny" or the "pathic" element in the life of the individual whose spiritual existence is completely bound up with the established social order. It is in Greece that we find most fully realized the all-sufficiency of the state for the individual, which Hegel has here in view, a sufficiency which was at once the strength and beauty, as well as the pathos and weakness, of Greek social life.
+
+With this and the preceding section should be read Hegel's Philosophy of History, Part II, " The Greek World "
+
+(1) Contradiction of Individuality with its Essence
+
+(2) Opposite Characteristics of Ethical Action
+
+(3) Dissolution of the Ethical Being
+
+ c. Legal status
+
+ Translator's comments: A further step in the realization of the principle of coherent sociality is reached when the individual is invested with the universality of the social order by definite enactments of the controlling agency of the social whole. His contingency as an individual is removed by his being expressly treated as a focal unity of the whole order, whose very existence is staked on maintaining him as a emit with a universal significance, and which stands or falls by maintaining him in this condition. The universal order is in this case no longer merely implicit, merely a matter of routine and custom; it is openly and objectively expressed in and through each individual component of society. The form this takes is the differentiation of the social substance into a totality of "persons", each and all invested with express universal, or legally acknowledged, significance. This is the sphere of legal personality, or of individuality constituted by a system of Rights. It is a supreme achievement of social existence, and the highest attainment of coherent social experience. Hence the present section.
+
+This is a condition or stage in every developed community. But the specific historical material for this section is derived from the law - constituted social order of the Roman Empire, especially the Empire under the Antonines. Here, whether by coincidence or otherwise, the culmination of imperial rule and the "golden age" of law synchronized. The triumph of Roman imperial government and the perfecting of the system of Roman jurisprudence were accomplished during the same period of time, about A.D. 131-235. There is every reason to suppose that the two necessarily arose and fell together, and that the decline and disappearance of the Roman law-constituted state should thus prepare the way for a further achievement of the social spirit of humanity. Hence the historical justification for the transition to the next stage of social life, that of self-discordant spiritual existence.
+
+With this section should be read Hegel's Philosophy of History, Part III, especially the introduction to this part, and Sect. III, c. 1., "Rome under the Emperors."
+
+(1) Personality
+
+(2) Contingency of the Person
+
+(3) The Absolute Person
+
+ B. Spirit in self-estrangement: the discipline of culture and civilization
+
+ Translator's comments: The life of spirit as found in the social self-consciousness has two fundamental factors, the universal spirit or social whole as such, and the individual member as such. The interrelation of these constitutes the spiritual existence of society. Each by itself is abstract, but the realization of complete spiritual life through and in each is absolutely essential for spiritual fulfilment. In the preceding analysis of spirit, one form of this process has been considered, the realization of the objective social order in and through individuals. In the succeeding section, with its various subsections, the other process of securing the same general result is analysed: we have the movement by which, starting from the individual spirit, the realization of complete spiritual existence is established. The former starts from the compact solidarity of the social substance, and results in the establishment of separate and individually complete legal personalities. The latter process starts from the rigidly exclusive unity of the individual self and issues in the establishment of a social order of absolutely universal and therefore absolutely free wins. Both processes are per se abstract, necessary though they are: hence, as we shall find, a further stage in the evolution of spirit has still to appear.
+
+The process of spirit in this second stage assumes from the start a conscious contrast between the individual spirit and a universal spiritual whole, a contrast, which, while profound, the individual seeks to remove, because the universality of spiritual existence which he seeks to attain is implicitly involved in his very being as a spiritual entity. His spiritual life seems, to begin with, rent in twain, so complete is the sense of the opposition of these factors constituting his life. His true life, his objective embodiment, seems outside him altogether and yet is felt to be his own self. He seems "estranged" from his complete self, and the estrangement seems his own doing, because the substance from which he is cut off is felt to be his own. The contrast is the deepest that spirit can possibly experience, just because spirit is and knows itself to be self-contained and self-complete, "the only reality". The contrast can only be removed by effort and struggle, for the individual spirit has to create or recreate for itself and by its own activity a universal objective spiritual realm, which it implies and in which alone it can be free and feel itself at home. The struggle spirit goes through is thus the greatest in the whole range of its experience, for the opposition to be overcome is the profoundest that exists. Since its aim is to achieve the highest for itself, nothing sacred can be allowed to stand in its way. It will make any sacrifice, and, if necessary, produce the direst spiritual disaster, a spiritual "reign of terror", to accomplish its result.
+
+The movement of spirit here analysed covers every form of the individual's "struggle for a substantial spiritual life". It embraces the "intellectual", "economic", "religious", and the "ethical" in the narrower sense of these terms; it embraces all that we mean by "culture" and "civilization". Hence the various parts of the argument: - spiritual "discipline", "enlightenment", the pursuit of "wealth", "belief" and "superstition", "absolute freedom".
+
+The process of spiritual life passed under critical review here is familiar to a greater or less extent in every age and every society. But the actual historical material present to the mind of the writer is derived from (1) the period of European history embracing the entrance of Christianity and Christian philosophy into European civilization after the fall of the Roman Empire, and the intellectual, "humanistic", awakening of the Renaissance which led on to the ecclesiastical revolution known as the Reformation: (2) the rationalistic movement of the eighteenth century, the so-called "Enlightenment" which proceded and culminated in the French Revolution, the supreme outburst of spiritual emancipation known in European history. These two periods, far removed as they are in time, have much in common. They embody principles of spiritual development fundamentally &like, and are therefore freely drawn upon in the analysis, regardless of historicity.
+
+Much of Hegel's analysis of the first stage of this spiritual movement has also directly in view the character of Rameau in Diderot's Le neveu de Rameau . This remarkable work was written in 1760, but was first brought to the notice of the literary public by Goethe, who translated and published the work in 1805. It thus came into Hegel's hands while he was writing the Phenomenology : and this perhaps accounts the repeated references to it in the argument. The term "self-estranged spirit" with which he heads this section occurs in Goethe's translation. Rameau is an extreme type of such a spirit.
+
+With this section should be read Hegel's Philosophy of History , Pt. III, � 3, c. 2; Pt. IV, � 2, c. 1, � 3, c. 1, 3: the History of Philosophy , Pt. 3, Introduction, and c. 2, " The French Philosophy and the German Enlightenment ."
+
+ I. The world of spirit in self-estrangement
+
+ a. Culture and its realm of actual reality
+
+ b. Belief and pure insight
+
+ II. Enlightenment
+
+ a. The struggle of enlightenment with superstition
+
+ b. The truth of enlightenment
+
+ III. Absolute freedom and terror
+
+ C. Spirit certain of itself: Morality
+
+ Translator's comments: The following section deals with the final and highest stage in the life of finite spiritual experience as realized in the concrete form of a historical society. Here the substance of the social order is the real content of the self-conscious individual: that substance has become subjectified; we have therefore a self-contained spiritual subject. The discordance involved in the sphere of culture and enlightenment is overcome by the self knowing and realizing itself as a completely universal self-determining free will, its world within itself, and its self its own world. Each reflects the whole (the totality of social life) in itself so perfectly that what it does is transparently the doing of the whole as much as its own doing. Such a sphere of spiritual existence is Morality, the all-sufficient spiritual order of the finite spirit as an individual. The meaning assigned to "morality" here is that expressed by Kant when he says that morality is "the relation of actions to the autonomy of the will, i.e. to possible universal legislation through maxims of the will". In other words, all the universality constituting the interrelations of finite spirits in a society is epitomized in the soul of the acting individual, who can thus quite legitimately look upon itself as the self-regulating source of all universal conditions of action.
+
+It is inevitable that such a concrete mode of experience should have and should pass through various stages in the process of various aspects fully realizing its nature. The individual may lay exclusive stress on the self-completeness which he possesses through being the source and origin of his own laws. His self-legislative function, just because it carries with it the sense of universality, may appear so supremely important that all the actual detail of his life comes to be treated as external, indifferent, and contingent. This detail no doubt is essential to give body and substance to his spiritual individuality, but the universality of his will so far transcends each and every detail of content as to seem by itself the sole and all-sufficient reality of his being. The content of his life only enters into consideration as an element to be regulated and made to conform to the universal: the relation so constituted between content and universal is found in the consciousness of Duty. Since the content is thus subordinate, though absolutely essential to give even meaning to the idea and the "fulfilment" of duty, and since the universal is the supremely important fact, not merely is duty to be fulfilled for duty's sake, but the duty in question is pure duty. The "good will" is the purely universal will, and is the only will in the world from this point of view.
+
+In the first section (a) Hegel analyses this phase of the moral life.
+
+The historical material the writer has in mind is a moral attitude which came into prominence at the time of the Romantic movement towards the end of the eighteenth and the beginning of the nineteenth centuries. It found its philosophical expression in the moral theories of Kant and Fichte; and Lessing may be taken as a typical representative in literature of the same attitude.
+
+ a. The moral view of the world
+
+ b. Dissemblance
+
+ Translator's comments: The first stage fails as it stands to do complete justice to the full meaning of morality. Both elements in the spiritually complete individual are essential, and each has to be recognized. The universal must be objectified in nature ("external nature" and "sensibility"), and nature must be subjectivized in spirit. Another condition or stage of the moral consciousness, therefore, is found where the equality of value of the elements of the moral consciousness is admitted, without these elements being completely fused into a single and total attitude. The universal is realized in many ways and forms, and each is accepted in turn as the true moral reality. The mind passes from one to the other; when one is accepted the other is set aside. The moral consciousness tries, so to say, to hide from itself the endless diversity of its appearances, simply because it clings tenaciously to the idea that the inherent self-completeness of itself is a unity per se which can only admit diversity on sufferance. Formerly it eliminated all diversity by eliminating the source of diversity-nature. Here it is forced to admit diversity, and yet cannot give up the claim to be an abstract single unity independent of difference. Thus its condition here is a mixture of self-realization and self-sophistication-a condition which Hegel characterizes as "Dissemblance", and which borders upon and may pass into "Hypocrisy". Hegel regards this attitude as the inevitable outcome of the preceding.
+
+ c. Conscience: the "beautiful soul": Evil and the forgiveness of it
+
+ Translator's comments: The one-sidedness of each of the preceding stages is removed when the moral consciousness assumes the attitude of Conscience. Here the individual is at once self-legislating and yet sure of the unity and self completeness of its own will in the midst of all diversity of moral content. The immediacy involved in the idea of a "self-legislating" will appears in the perceptual directness of the action of conscience: it "sees" what is right and does the right without hesitation. But it is not an abstract "faculty" of willing independent of the varied content of the individual's moral experience. The universality of the individual permeates and pervades all the content of his being and makes him a concrete moral individuality, at home with himself in the smallest detail as well as in the larger issues of his self-complete spiritual existence. Conscience, as Butler says, is a "system" or "constitution", analogous in the case of the individual to the objectified system of the state and its institutions. The self-deception of the second one-sided phase of moral experience seems also to have no place in Conscience, for Conscience is the transparent and self-revealing unity in all the content of moral individuality. Only on this condition can it be absolutely confident and certain of itself in all its functions, and this certainty of itself is the inalienable characteristic of conscience. It thinks it cannot be deceived about itself, can neither delude itself nor others, but freely realizes all that it professes to be and professes to be all that it realizes, It is thus the supreme achievement of finite spiritual existence; but it has no meaning apart from the existence of finite spirit in the form of society.
+
+Its very conditions, however, give rise to delusion and deception of another kind. For, so complete is its world and its life, that it may attempt to cut itself off from the concrete substance of actual society which alone makes possible the existence of conscience. It then tries to cultivate goodness in solitary isolation from the actual social whole. This is the attitude of the "beautiful soul", a type of spiritual life cultivated by the "Moravians", and familiar during the Romantic movement. Novalis is the best-known example; the classical interpretation of the mood was given in Goethe's Meister's Lehrjahre, Bk. 6. It has the self-confidence and individual inspiration of Conscience, but frankly rejects the concrete objectivity which secures for Conscience liberation from mere subjectivity. The very rejection of objectivity is the only achievement of the "beautiful soul", and is held to be the greatest triumph of its self-conscious freedom. It flees from concrete moral action, and luxuriates in a state of self-hypnotized inactivity. Still it takes up this attitude in the interests of "pure goodness", and hence in withdrawing from the lowly deeds of the daily moral life it indulges all the more in the self-cloistered cult of the beauty of holiness. It is moral individualism turned into mystic self-absorption. liegel's analysis brings out that this type of spirit is in principle as it was in fact the direct ally of moral evil. For (1) its refusal to act means indifference to all action, good and bad alike, and the rejection of the demands of duty is precisely immorality; (,2) its self-closed isolation destroys the very principle of true morality, universality of will, recognition and acknowledgment by others of the claims of the individual will.
+
+But this extremity of finite spiritual experience is the opportunity of Absolute Spirit. The attitude of this mystical moral individuality is indirectly an indication of the finittude of the moral point of view and therefore of its failure to supply the absolute self-completeness which spirit requires. The very consciousness by finite spirit of its inherent incompleteness is implicitly a consciousness of the Absolute Spirit. The consciousness of Absolute Spirit is the attitude of experience known as Religion.
+
+ (CC). Religion
+
+ VII. Religion in General
+
+ Translator's comments: The appearance of Absolute Spirit as a principle constituting on its own account a distinctive stage of experience is at once a demand of the preceding development and a condition of making experience self-complete. Finite or socialized spiritual existence is at its best incapable of establishing the truth that "Spirit is the only reality"; for the more finite spirit approximates to the state of claiming to be self-contained the more is it dependent on universal self-consciousness. A trans-finite or Absolute Spiritual Being as such is thus necessary to realize and sustain the fullness of meaning which finite spirit possesses. Moreover, if "the truth is the whole", and only so is truth self-complete and self-explaining, and if reality is essentially spiritual - then experience only finds its complete meaning realized in the principle of Absolute Spirit. Hence the final stage of the Phenomenology of experience is the appearance therein of Absolute Spirit. Moreover, Absolute Spirit, in its own distinctive existence, could only appear at the end of the process of experience, for the whole of that process is required to reveal and to constitute the substance of which the Absolute consists. But the peculiarity of the stage now reached is that here the Absolute operates in its undivided totality to form a definite type of experience; or, in the language of the text, we have the Absolute here "conscious of its self". No doubt, in all the previous stages, "consciousness", "self-consciousness", "reason", "spirit", the Absolute has been implied as a limiting principle, at once substantiating and determining the boundaries of each stage: hence each stage had an Absolute of its own, the character of which was derived in each case from the peculiarity of the stage in question. Now, however, we have the Absolute by itself, in its single self-completeness, as the sole formative factor of a certain type of experience.
+
+The Absolute, then, in its own self-complete reality appears as the constitutive principle of experience. The experience here is the self-consciousness of Absolute Spirit; it appears to itself in all its objects. Since all the modes of finitude hitherto considered (consciousness, self-consciousness, etc.) are embraced in its single totality, it may use each and all of these various modes as the media through and in which to appear. When it appears in and through these modes of finitude we have the attitude of Religion . Since these modes, as we saw, differ, the religious attitude differs; and accordingly we have various types or forms of religion.
+
+Each of these forms, in and through which the Absolute appears, is circumscribed in its nature and process; each is per se inadequate to the revelation of complete absolute self-consciousness: hence the variety of religion is necessitated by and is indirectly due to the failure of any one type and the inadequacy of every single type to reveal the Absolute completely. A form of appearance or self-manifestation of the absolute is therefore demanded which will reveal Absolute Spirit adequately to itself as it essentially is in itself. Here it will know itself, so to say, face to face, and with perfect completeness. This form is Absolute Knowledge . Hence Religion and Absolute Knowledge are the final stages in the argument of the Phenomenology . The former is dealt with in the immediately succeeding section (VII) and its various subsections; the latter forms the subject of the concluding section (VIII) of the work.
+
+ A. Natural Religion
+
+ Translator's comments: The arrangement of the analysis of Religion and the divisions into the various subsections are, as indicated in the preceding note (p. 683), determined by the general development of experience. That development is from the immediate through mediation to the fusion of immediacy and mediation. The stages of the development of experience are Consciousness, Self-consciousness, Reason, the latter leading to its highest level - finite Spiritual existence. The development of Religion follows these various ways in which objects are given in experience, and the three chief divisions of Religion are determined accordingly: Natural Religion is religion at the level of Consciousness; Art, Religion at the level of Self-consciousness; Revealed Religion is Religion at the level of Reason and Spirit. Each of these is again subdivided, and the subdivision follows more or less closely the various subdivisions of these three ultimate levels of experience - Consciousness, etc. Thus, in Natural Religion, we have Religion at the level of Sense-certainty - "Light": Religion at the level of Perception - "Life": and Religion at the level of Understanding - the reciprocal relation constituted by the "play of forces" appears as the relation of the "Artificer" to his own product.
+
+The general principle is not worked out in detail, with the same obviousness, in the case of the other two primary types of Religion - Art and Revealed Religion. But the same general method of development is pursued in these cases.
+
+The historical material before the mind of the writer is, as might be expected, the various religions which have historically appeared amongst mankind. These religions are treated, however, as illustrations of principles dominating the religious consciousness m general, rather than as merely historical phenomena.
+
+With the succeeding argument should be read Hegel's Philosophy of Religion , Part II , Sections I and II, and Part III .
+
+ B. Religion in the form of Art
+
+ a. The abstract work of art
+
+ b. The living work of art
+
+ c. The spiritual work of art
+
+ C. Revealed Religion
+
+ (DD). Absolute Knowledge
+
+ VIII. Absolute Knowledge
+
+ From Harper Torchbooks' edition of the Phenomenology (1807), from University of Idaho , Department of Philosophy by Jean McIntire.
+
+Above table of contents constructed from the original.
+
+ Hegel-by-HyperText Home Page @ marxists.org

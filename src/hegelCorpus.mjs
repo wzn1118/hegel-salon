@@ -1,5 +1,5 @@
 import { existsSync } from "node:fs";
-import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { mkdir, readFile, readdir, writeFile } from "node:fs/promises";
 import { createHash } from "node:crypto";
 import { join } from "node:path";
 import { execFileSync } from "node:child_process";
@@ -590,6 +590,14 @@ const supplementalMetadataIds = new Set(
   supplementalMetadataSeeds.map((seed) => seed.id)
 );
 
+const bundledCorpusSource = {
+  id: "bundled-public-domain-texts",
+  title: "Bundled public-domain German and English Hegel texts",
+  url: "data/corpus/texts/",
+  type: "local",
+  authority: "public-domain-or-open-text"
+};
+
 function sha1(text) {
   return createHash("sha1").update(text).digest("hex");
 }
@@ -1087,6 +1095,124 @@ async function ensureCorpusDirs() {
   await mkdir(generatedDir, { recursive: true });
 }
 
+function humanizeSlug(slug) {
+  return String(slug || "")
+    .replace(/\.txt$/i, "")
+    .replace(/[_-]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim()
+    .replace(/\b[a-z]/g, (letter) => letter.toUpperCase());
+}
+
+function splitBundledTextFileName(fileName) {
+  const baseName = String(fileName || "").replace(/\.txt$/i, "");
+  const [rawWorkId, ...pageParts] = baseName.split("--");
+  const workId = safeSlug(rawWorkId || baseName) || sha1(baseName).slice(0, 12);
+  const pageSlug = safeSlug(pageParts.join("--") || baseName) || "text";
+
+  return {
+    baseName,
+    workId,
+    pageSlug,
+    workTitle: humanizeSlug(workId),
+    pageTitle: humanizeSlug(pageParts.join("--") || baseName)
+  };
+}
+
+function inferBundledSourceKind(workId) {
+  return /metadata/i.test(String(workId || "")) ? METADATA_SOURCE_KIND : PRIMARY_SOURCE_KIND;
+}
+
+function inferBundledAuthority(workId) {
+  if (/^(hegel-werke|briefe)/i.test(String(workId || ""))) {
+    return "public-domain-edition";
+  }
+  return "public-domain-or-open-text";
+}
+
+async function buildCorpusFromBundledTexts(manifestPath, chunksPath) {
+  const fileNames = (await readdir(textsDir))
+    .filter((fileName) => /\.txt$/i.test(fileName))
+    .sort((a, b) => a.localeCompare(b));
+
+  if (!fileNames.length) {
+    return null;
+  }
+
+  const worksById = new Map();
+  const allChunks = [];
+
+  for (const fileName of fileNames) {
+    const {
+      baseName,
+      workId,
+      pageSlug,
+      workTitle,
+      pageTitle
+    } = splitBundledTextFileName(fileName);
+    const textPath = join(textsDir, fileName);
+    const text = await readFile(textPath, "utf8");
+    const chunks = chunkText(text);
+    const sourceKind = inferBundledSourceKind(workId);
+    const authority = inferBundledAuthority(workId);
+
+    if (!worksById.has(workId)) {
+      worksById.set(workId, {
+        id: workId,
+        title: workTitle,
+        sourceKind,
+        authority,
+        indexUrl: "data/corpus/texts/",
+        pageCount: 0
+      });
+    }
+
+    const work = worksById.get(workId);
+    work.pageCount += 1;
+    if (work.sourceKind !== PRIMARY_SOURCE_KIND && sourceKind === PRIMARY_SOURCE_KIND) {
+      work.sourceKind = PRIMARY_SOURCE_KIND;
+    }
+
+    chunks.forEach((content, index) => {
+      allChunks.push({
+        id: `${workId}:${pageSlug}:${index}`,
+        workId,
+        workTitle: work.title,
+        sourceKind,
+        authority,
+        pageTitle,
+        url: `data/corpus/texts/${fileName}`,
+        sourceFile: baseName,
+        content
+      });
+    });
+  }
+
+  if (!allChunks.length) {
+    return null;
+  }
+
+  const manifest = {
+    schemaVersion: CORPUS_SCHEMA_VERSION,
+    generatedAt: new Date().toISOString(),
+    sourceIndex: [bundledCorpusSource, ...sourceIndex],
+    artifacts: [],
+    bundled: {
+      textFileCount: fileNames.length,
+      mode: "public-github-release"
+    },
+    works: [...worksById.values()].sort((a, b) => a.id.localeCompare(b.id)),
+    totalChunks: allChunks.length
+  };
+
+  await Promise.all([
+    writeFile(manifestPath, JSON.stringify(manifest, null, 2), "utf8"),
+    writeFile(chunksPath, JSON.stringify(allChunks, null, 2), "utf8")
+  ]);
+
+  return { manifest, chunks: allChunks };
+}
+
 async function fetchText(url) {
   const cachePath = join(cacheDir, `${sha1(url)}.html`);
   if (existsSync(cachePath)) {
@@ -1395,6 +1521,11 @@ export async function ensureHegelCorpus() {
     if (manifest?.schemaVersion === CORPUS_SCHEMA_VERSION) {
       return { manifest, chunks };
     }
+  }
+
+  const bundledCorpus = await buildCorpusFromBundledTexts(manifestPath, chunksPath);
+  if (bundledCorpus) {
+    return bundledCorpus;
   }
 
   const works = [];

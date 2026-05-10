@@ -1,0 +1,5 @@
+data/corpus/chinese/originals/**/*.pdf filter=lfs diff=lfs merge=lfs -text
+data/corpus/chinese/originals/**/*.epub filter=lfs diff=lfs merge=lfs -text
+data/corpus/chinese/originals/**/*.mobi filter=lfs diff=lfs merge=lfs -text
+data/corpus/chinese/originals/**/*.azw3 filter=lfs diff=lfs merge=lfs -text
+data/corpus/chinese/originals/**/*.txt filter=lfs diff=lfs merge=lfs -text

@@ -4,6 +4,9 @@ tmp/*
 !tmp/.gitkeep
 data/logs/*
 !data/logs/.gitkeep
+data/corpus/cache/
+data/corpus/generated/
+data/corpus/chinese/private/
 data/uploads/
 data/auth/
 data/users/
