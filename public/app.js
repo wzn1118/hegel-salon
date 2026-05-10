@@ -2818,12 +2818,16 @@ async function saveConfig(event) {
   setConfigStatus(UI_COPY.savingConfig, "neutral");
 
   try {
+    const provider = configProvider?.value.trim() || "";
     const payload = {
-      provider: configProvider?.value.trim() || "",
+      provider,
       model: configModel?.value.trim() || "",
-      baseURL: configBaseURL?.value.trim() || "",
+      baseURL: normalizeApiBaseUrlInput(configBaseURL?.value || "", provider),
       apiKey: configApiKey?.value.trim() || ""
     };
+    if (configBaseURL) {
+      configBaseURL.value = payload.baseURL;
+    }
 
     const response = await apiFetch("/api/config", {
       method: "POST",
@@ -3586,6 +3590,15 @@ if (logoutButton) {
 }
 
 initializeProviderGuide();
+
+if (configBaseURL) {
+  configBaseURL.addEventListener("blur", () => {
+    configBaseURL.value = normalizeApiBaseUrlInput(
+      configBaseURL.value,
+      configProvider?.value || ""
+    );
+  });
+}
 
 if (configForm) {
   configForm.addEventListener("submit", saveConfig);

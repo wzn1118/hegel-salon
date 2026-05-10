@@ -68,6 +68,37 @@ function extractMessageText(payload) {
   return "";
 }
 
+function canonicalizeApiBaseURL(rawBaseURL = "", provider = "") {
+  const raw = String(rawBaseURL || "").trim();
+  if (!raw) {
+    return "";
+  }
+
+  try {
+    const url = new URL(raw);
+    let pathname = String(url.pathname || "/").replace(/\/{2,}/g, "/");
+    const providerKey = String(provider || "").trim().toLowerCase();
+
+    if (providerKey === "openai" && (!pathname || pathname === "/")) {
+      pathname = "/v1";
+    }
+
+    if (pathname.length > 1) {
+      pathname = pathname.replace(/\/+$/, "");
+    }
+
+    url.pathname = pathname;
+    return url.toString().replace(/\/+$/, pathname === "/" ? "/" : "");
+  } catch {
+    return raw;
+  }
+}
+
+function toApiUrl(baseURL, path, provider = "") {
+  const normalizedBaseURL = canonicalizeApiBaseURL(baseURL, provider);
+  return new URL(path, `${String(normalizedBaseURL).replace(/\/+$/, "")}/`).toString();
+}
+
 function parseJsonObject(rawText) {
   const raw = String(rawText || "").trim();
   const start = raw.indexOf("{");
@@ -187,6 +218,90 @@ function scoreResult(result) {
   return Number((quality * 0.45 + strict * 0.35 + hist * 0.20).toFixed(2));
 }
 
+function clampScore(value, fallback = 0) {
+  const numeric = Number.parseFloat(value);
+  if (!Number.isFinite(numeric)) {
+    return fallback;
+  }
+  return Math.max(0, Math.min(10, Number(numeric.toFixed(1))));
+}
+
+function normalizeOptimizerJudgeBundle(raw = {}) {
+  const quality = raw.qualityJudge || raw.quality || {};
+  const strict = raw.strictLogicJudge || raw.strict || {};
+  const hist = raw.historiographyJudge || raw.historiography || {};
+
+  return {
+    qualityJudge: {
+      overall: clampScore(quality.overall),
+      formal_logic: clampScore(quality.formal_logic),
+      concept_precision: clampScore(quality.concept_precision),
+      argumentative_force: clampScore(quality.argumentative_force),
+      summary: String(quality.summary || "")
+    },
+    strictLogicJudge: {
+      formal_logic: clampScore(strict.formal_logic),
+      premise_visibility: clampScore(strict.premise_visibility),
+      step_validity: clampScore(strict.step_validity),
+      no_large_leaps: clampScore(strict.no_large_leaps),
+      passed_strict: Boolean(strict.passed_strict)
+    },
+    historiographyJudge: {
+      overall: clampScore(hist.overall),
+      chronology_discipline: clampScore(hist.chronology_discipline),
+      source_status_honesty: clampScore(hist.source_status_honesty),
+      analogy_limit: clampScore(hist.analogy_limit),
+      passed_strict: Boolean(hist.passed_strict)
+    }
+  };
+}
+
+async function requestOptimizerJudge(config, { kind, prompt, reply }) {
+  if (!normalizeWhitespace(reply)) {
+    throw new Error("judge skipped: empty reply");
+  }
+
+  const response = await fetch(toApiUrl(config.baseURL, "chat/completions", config.provider), {
+    method: "POST",
+    signal: AbortSignal.timeout(Math.min(Math.max(timeoutMs, 60000), 180000)),
+    headers: {
+      Authorization: `Bearer ${config.apiKey}`,
+      "Content-Type": "application/json; charset=utf-8"
+    },
+    body: JSON.stringify({
+      model: config.model,
+      stream: false,
+      temperature: 0,
+      messages: [
+        {
+          role: "system",
+          content: [
+            "You are a strict evaluator for Hegel Salon training.",
+            "Return JSON only. Scores must use a 0 to 10 scale.",
+            "Do not reward ornament. Reward formal logic, concept precision, premise visibility, and historically honest limits.",
+            "Schema: {\"qualityJudge\":{\"overall\":number,\"formal_logic\":number,\"concept_precision\":number,\"argumentative_force\":number,\"summary\":string},\"strictLogicJudge\":{\"formal_logic\":number,\"premise_visibility\":number,\"step_validity\":number,\"no_large_leaps\":number,\"passed_strict\":boolean},\"historiographyJudge\":{\"overall\":number,\"chronology_discipline\":number,\"source_status_honesty\":number,\"analogy_limit\":number,\"passed_strict\":boolean}}"
+          ].join("\n")
+        },
+        {
+          role: "user",
+          content: [
+            `Task kind: ${kind || "concept"}`,
+            `Prompt:\n${prompt}`,
+            "",
+            `Candidate reply:\n${reply}`
+          ].join("\n")
+        }
+      ]
+    })
+  });
+
+  if (!response.ok) {
+    throw new Error(`judge failed: ${response.status} ${await response.text()}`);
+  }
+
+  return normalizeOptimizerJudgeBundle(parseJsonObject(extractMessageText(await response.json())));
+}
+
 async function requestSalon(prompt) {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), timeoutMs);
@@ -223,7 +338,7 @@ async function requestSalon(prompt) {
 async function synthesizePlaybook(config, failures) {
   const customJudgePrompt = await readOptimizerJudgePrompt(userId || null, styleProfileId || null);
   const response = await fetch(
-    new URL("chat/completions", `${String(config.baseURL).replace(/\/+$/, "")}/`).toString(),
+    toApiUrl(config.baseURL, "chat/completions", config.provider),
     {
       method: "POST",
       headers: {
@@ -320,6 +435,15 @@ async function main() {
 
       try {
         output = await requestSalon(item.prompt);
+        const judgeBundle = await requestOptimizerJudge(config, {
+          kind: item.kind,
+          prompt: item.prompt,
+          reply: output.reply
+        });
+        output = {
+          ...output,
+          ...judgeBundle
+        };
         score = scoreResult(output);
       } catch (error) {
         output = {

@@ -195,18 +195,23 @@ export function recordSecurityAuditEvent({
   route = null,
   details = {}
 } = {}) {
-  insertSecurityAuditEventToDb({
-    eventType: String(eventType || "unknown"),
-    severity,
-    ...buildSecurityEventBase({
-      userId,
-      loginIdentifier,
-      ipAddress,
-      userAgent,
-      route,
-      details
-    })
-  });
+  try {
+    insertSecurityAuditEventToDb({
+      eventType: String(eventType || "unknown"),
+      severity,
+      ...buildSecurityEventBase({
+        userId,
+        loginIdentifier,
+        ipAddress,
+        userAgent,
+        route,
+        details
+      })
+    });
+    return true;
+  } catch {
+    return false;
+  }
 }
 
 async function getSecurityAlertRecipients() {

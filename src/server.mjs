@@ -369,6 +369,47 @@ function getExpectedOrigin(req) {
   return getRequestOrigin(req);
 }
 
+function maybeRedirectCanonicalHost(req, res, url) {
+  if (!publicBaseUrl || !req.method) {
+    return false;
+  }
+
+  if (req.method !== "GET" && req.method !== "HEAD") {
+    return false;
+  }
+
+  if (url.pathname.startsWith("/api/")) {
+    return false;
+  }
+
+  let canonical;
+  try {
+    canonical = new URL(publicBaseUrl);
+  } catch {
+    return false;
+  }
+
+  const canonicalHost = canonical.hostname.toLowerCase();
+  if (!canonicalHost.startsWith("www.")) {
+    return false;
+  }
+
+  const nakedHost = canonicalHost.slice(4);
+  const requestHost = getRequestHost(req).split(":")[0].toLowerCase();
+  if (requestHost !== nakedHost) {
+    return false;
+  }
+
+  const redirectUrl = new URL(req.url || "/", canonical.origin);
+  res.writeHead(308, {
+    Location: redirectUrl.toString(),
+    ...buildCorsHeaders(req),
+    ...buildSecurityHeaders(req, { html: true })
+  });
+  res.end();
+  return true;
+}
+
 function isAllowedOriginValue(req, origin) {
   const normalizedOrigin = String(origin || "").trim();
   if (!normalizedOrigin) {
@@ -1982,7 +2023,8 @@ function buildChatCompletionMessages(systemPrompt, history) {
 }
 
 function toApiUrl(baseURL, path) {
-  return new URL(path, `${String(baseURL).replace(/\/+$/, "")}/`).toString();
+  const normalizedBaseURL = canonicalizeApiBaseURL(baseURL);
+  return new URL(path, `${String(normalizedBaseURL).replace(/\/+$/, "")}/`).toString();
 }
 
 function extractChunkText(payload) {
@@ -4082,7 +4124,9 @@ async function requestOnlineHegelReply(history, uploadedFiles = [], options = {}
       normalizedHistory
     );
 
-  normalizedHistory = await mergePersistedUserHistory(normalizedHistory, scope);
+  normalizedHistory = optimizerMode
+    ? normalizedHistory
+    : await mergePersistedUserHistory(normalizedHistory, scope);
   latestUserIndex = findLatestUserMessageIndex(normalizedHistory);
 
   const hasImageAttachmentContext = normalizedHistory.some((message) =>
@@ -6809,6 +6853,10 @@ const requestHandler = async (req, res) => {
   }
 
   const url = new URL(req.url, `http://${req.headers.host}`);
+  if (maybeRedirectCanonicalHost(req, res, url)) {
+    return;
+  }
+
   const adminUserActionMatch = url.pathname.match(
     /^\/api\/admin\/users\/([^/]+)\/(set-disabled|revoke-sessions|clear-data)$/
   );
