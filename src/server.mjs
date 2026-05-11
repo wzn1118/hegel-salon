@@ -39,6 +39,7 @@ import {
   stripInvalidDirectQuotes,
   validateReplyQuotes
 } from "./hegelQuoteValidation.mjs";
+import { auditHegelReply } from "./hegelSelfAudit.mjs";
 import {
   appendOptimizerRecord,
   buildDistilledStyleSummaryFromPlaybook,
@@ -3795,6 +3796,13 @@ function buildQuerySpecificInstructionLines({
       ? "For this query, direct quotation should be minimal. Use no quotation unless it is genuinely load-bearing for the inference."
       : "Use quotation only when it actually strengthens the argument.",
     "For substantive conceptual answers, make the reasoning explicit: define the key concepts, explain why you define them that way, answer at least one objection, and tie each major step to quoted evidence where possible.",
+    "For substantive Hegel answers, explicitly separate four layers in substance: primary-text evidence, interpretive paraphrase, modern extension when present, and system-generated summary.",
+    corpusContext?.dialecticalPlan
+      ? "Use the [DIALECTICAL PLAN] block as the logical skeleton for this turn."
+      : "Use a determinate conceptual skeleton rather than Hegelian atmosphere.",
+    corpusContext?.modeRoute?.mode
+      ? `Current mode router result: ${corpusContext.modeRoute.mode}. Follow its forbidden behavior and required answer layers.`
+      : "No mode route was supplied.",
     multilingualRequested
       ? "The user explicitly asked for multilingual comparison when relevant. Keep all languages tied to the same work and locator."
       : "Do not default to trilingual display unless a wording dispute requires it.",
@@ -4353,6 +4361,18 @@ async function requestOnlineHegelReply(history, uploadedFiles = [], options = {}
   let qualityJudge = buildQualityJudgeDefault();
   let strictLogicJudge = buildStrictLogicJudgeDefault();
   let historiographyJudge = buildHistoriographyJudgeDefault();
+  let selfAudit = {
+    passed: true,
+    severity: "none",
+    warnings: [],
+    blocking_warnings: [],
+    nonblocking_warnings: [],
+    coverage_score: 10,
+    conceptual_integrity_score: 10,
+    required_revision_instructions: [],
+    advisory_revision_instructions: []
+  };
+  let selfAuditBlockingRevisionCount = 0;
   let attempts = 0;
   const qualityGateEnabled = !attachmentMode && !optimizerMode && !lightweightDirectMode;
   const strictLogicMode = !attachmentMode && !optimizerMode && !lightweightDirectMode;
@@ -4474,10 +4494,20 @@ async function requestOnlineHegelReply(history, uploadedFiles = [], options = {}
           historicalContextText: corpusContext?.historical?.contextText || ""
         })
       : buildHistoriographyJudgeDefault();
+    selfAudit = auditHegelReply({
+      reply,
+      userMessage: latestUser?.content || "",
+      corpusContext,
+      conceptContext: corpusContext?.conceptGraphContext,
+      dialecticalPlan: corpusContext?.dialecticalPlan,
+      modeRoute: corpusContext?.modeRoute,
+      quoteValidation: validation
+    });
     const qualitySatisfied = !qualityGateEnabled || passesFormalQualityGate(qualityJudge);
     const strictLogicSatisfied = !strictLogicMode || passesStrictLogicGate(strictLogicJudge);
     const historiographySatisfied =
       !historiographyMode || passesHistoriographyGate(historiographyJudge);
+    const selfAuditSatisfied = selfAudit.passed;
     if (
       validation.passed &&
       chineseQuoteSatisfied &&
@@ -4486,7 +4516,8 @@ async function requestOnlineHegelReply(history, uploadedFiles = [], options = {}
       structureSatisfied &&
       qualitySatisfied &&
       strictLogicSatisfied &&
-      historiographySatisfied
+      historiographySatisfied &&
+      selfAuditSatisfied
     ) {
       return {
         reply,
@@ -4494,6 +4525,21 @@ async function requestOnlineHegelReply(history, uploadedFiles = [], options = {}
         qualityJudge,
         strictLogicJudge,
         historiographyJudge,
+        selfAudit,
+        modeRoute: corpusContext?.modeRoute,
+        conceptGraphContext: corpusContext?.conceptGraphContext
+          ? {
+              concept_domains: corpusContext.conceptGraphContext.concept_domains || [],
+              risk_level: corpusContext.conceptGraphContext.risk_level || "none",
+              detected_concepts: (corpusContext.conceptGraphContext.detected_concepts || []).map((item) => ({
+                id: item.id,
+                domain: item.domain,
+                risk_level: item.risk_level,
+                score: item.score
+              }))
+            }
+          : null,
+        sourceAnchors: corpusContext?.sourceAnchors || [],
         strictLogicScaffold,
         attempts,
         history: normalizedHistory,
@@ -4618,6 +4664,29 @@ async function requestOnlineHegelReply(history, uploadedFiles = [], options = {}
       );
     }
 
+    if (!selfAudit.passed) {
+      revisionLines.push(
+        "The answer failed the blocking tier of the Hegel concept-system self-audit.",
+        "High-risk self-audit failures must be repaired before delivery; low and medium warnings are advisory and may be recorded without blocking."
+      );
+
+      if (selfAudit.blocking_warnings?.length) {
+        revisionLines.push(
+          "Blocking self-audit warnings:",
+          ...selfAudit.blocking_warnings.map((item) => `- ${item.code}: ${item.message}`)
+        );
+      }
+
+      if (selfAudit.required_revision_instructions.length) {
+        revisionLines.push(
+          "Required self-audit revisions:",
+          ...selfAudit.required_revision_instructions.map((instruction) => `- ${instruction}`)
+        );
+      }
+
+      selfAuditBlockingRevisionCount += 1;
+    }
+
     revisionLines.push(
       "Keep the answer in Chinese and preserve only verified quotation wording."
     );
@@ -4698,6 +4767,15 @@ async function requestOnlineHegelReply(history, uploadedFiles = [], options = {}
           historicalContextText: corpusContext?.historical?.contextText || ""
         })
       : buildHistoriographyJudgeDefault();
+    selfAudit = auditHegelReply({
+      reply,
+      userMessage: latestUser?.content || "",
+      corpusContext,
+      conceptContext: corpusContext?.conceptGraphContext,
+      dialecticalPlan: corpusContext?.dialecticalPlan,
+      modeRoute: corpusContext?.modeRoute,
+      quoteValidation: validation
+    });
   }
 
   if (strictLogicMode && !passesStrictLogicGate(strictLogicJudge)) {
@@ -4716,6 +4794,15 @@ async function requestOnlineHegelReply(history, uploadedFiles = [], options = {}
     repairedReply = stripQuotedLatinSegments(repairedReply);
   }
   const repairedValidation = validateReplyQuotes(repairedReply, corpusContext);
+  selfAudit = auditHegelReply({
+    reply: repairedReply,
+    userMessage: latestUser?.content || "",
+    corpusContext,
+    conceptContext: corpusContext?.conceptGraphContext,
+    dialecticalPlan: corpusContext?.dialecticalPlan,
+    modeRoute: corpusContext?.modeRoute,
+    quoteValidation: repairedValidation
+  });
 
   return {
     reply: repairedReply,
@@ -4728,6 +4815,21 @@ async function requestOnlineHegelReply(history, uploadedFiles = [], options = {}
     qualityJudge,
     strictLogicJudge,
     historiographyJudge,
+    selfAudit,
+    modeRoute: corpusContext?.modeRoute,
+    conceptGraphContext: corpusContext?.conceptGraphContext
+      ? {
+          concept_domains: corpusContext.conceptGraphContext.concept_domains || [],
+          risk_level: corpusContext.conceptGraphContext.risk_level || "none",
+          detected_concepts: (corpusContext.conceptGraphContext.detected_concepts || []).map((item) => ({
+            id: item.id,
+            domain: item.domain,
+            risk_level: item.risk_level,
+            score: item.score
+          }))
+        }
+      : null,
+    sourceAnchors: corpusContext?.sourceAnchors || [],
     strictLogicScaffold,
     usedConfig: activeConfig,
     attempts,
@@ -4809,7 +4911,8 @@ async function handleChat(req, res) {
         reply,
         qualityJudge: result.qualityJudge,
         strictLogicJudge: result.strictLogicJudge,
-        historiographyJudge: result.historiographyJudge
+        historiographyJudge: result.historiographyJudge,
+        selfAudit: result.selfAudit
       });
       await appendUserMemoryTurn(
         result.userMessage || latestUser,
@@ -4831,6 +4934,10 @@ async function handleChat(req, res) {
       qualityJudge: result.qualityJudge,
       strictLogicJudge: result.strictLogicJudge,
       historiographyJudge: result.historiographyJudge,
+      selfAudit: result.selfAudit,
+      modeRoute: result.modeRoute,
+      conceptGraphContext: result.conceptGraphContext,
+      sourceAnchors: result.sourceAnchors,
       strictLogicScaffold: result.strictLogicScaffold,
       attempts: result.attempts,
       userMessage: result.userMessage || latestUser

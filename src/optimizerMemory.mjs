@@ -91,6 +91,7 @@ function normalizeRecord(record = {}) {
     qualityJudge: record.qualityJudge || null,
     strictLogicJudge: record.strictLogicJudge || null,
     historiographyJudge: record.historiographyJudge || null,
+    selfAudit: record.selfAudit || null,
     issues: Array.isArray(record.issues) ? record.issues : extractIssues(record)
   };
 }

@@ -2,7 +2,14 @@ import { searchHegelCorpus } from "./hegelCorpus.mjs";
 import { buildParallelCitationContext } from "./hegelParallel.mjs";
 import { buildChineseTranslationContext } from "./hegelChinese.mjs";
 import { buildConceptPlan, loadHegelConceptLedger } from "./hegelConcepts.mjs";
+import { buildConceptContext } from "./hegelConceptGraph.mjs";
+import { buildDialecticalPlan } from "./hegelDialectic.mjs";
 import { buildHistoricalReferenceContext } from "./hegelHistorical.mjs";
+import { renderModeRouterContext, routeHegelMode } from "./hegelModeRouter.mjs";
+import {
+  mapSourceAnchorsToHits,
+  renderSourceAnchorContext
+} from "./hegelSourceAnchors.mjs";
 
 function compressPassage(text, maxLength = 900) {
   const clean = String(text || "").replace(/\s+/g, " ").trim();
@@ -236,7 +243,69 @@ function buildArgumentDiscipline(userPrompt, chinese, conceptPlan) {
   };
 }
 
+function unique(values) {
+  return [...new Set((Array.isArray(values) ? values : []).filter(Boolean).map(String))];
+}
+
+function renderMisreadingWarnings(conceptGraphContext) {
+  const warnings = conceptGraphContext?.misreading_warnings || [];
+  if (!warnings.length) {
+    return "No concept-graph misreading warnings were triggered.";
+  }
+
+  return warnings
+    .slice(0, 18)
+    .map((item) => `- ${item.concept || "concept"}: ${item.warning}`)
+    .join("\n");
+}
+
+function renderForbiddenMoves(dialecticalPlan, modeRoute) {
+  const moves = unique([
+    ...(dialecticalPlan?.forbidden_moves || []),
+    ...(modeRoute?.forbidden_behavior || [])
+  ]);
+
+  if (!moves.length) {
+    return "No special forbidden moves beyond general source and concept discipline.";
+  }
+
+  return moves.map((item) => `- ${item}`).join("\n");
+}
+
+function buildLayeredContextText({
+  conceptGraphContext,
+  dialecticalPlan,
+  modeRoute,
+  sourceAnchors,
+  corpusEvidenceText
+}) {
+  return [
+    "[MODE ROUTER RESULT]",
+    renderModeRouterContext(modeRoute),
+    "",
+    "[CONCEPT GRAPH CONTEXT]",
+    conceptGraphContext?.contextText || "No concept graph context was available.",
+    "",
+    "[DIALECTICAL PLAN]",
+    JSON.stringify(dialecticalPlan || {}, null, 2),
+    "",
+    "[MISREADING WARNINGS]",
+    renderMisreadingWarnings(conceptGraphContext),
+    "",
+    "[FORBIDDEN MOVES]",
+    renderForbiddenMoves(dialecticalPlan, modeRoute),
+    "",
+    "[SOURCE ANCHORS]",
+    renderSourceAnchorContext(sourceAnchors),
+    "",
+    "[CORPUS EVIDENCE]",
+    corpusEvidenceText || "No corpus evidence text was available."
+  ].join("\n");
+}
+
 export async function buildCorpusContext(userPrompt) {
+  const conceptGraphContext = buildConceptContext(userPrompt);
+  const modeRoute = routeHegelMode(userPrompt);
   const conceptLedger = await loadHegelConceptLedger();
   const initialConceptPlan = buildConceptPlan(
     userPrompt,
@@ -268,6 +337,12 @@ export async function buildCorpusContext(userPrompt) {
     conceptLedger
   );
   const results = reorderResultsForPrompt(rawResults, userPrompt);
+  const sourceAnchors = mapSourceAnchorsToHits(conceptGraphContext, results);
+  const dialecticalPlan = buildDialecticalPlan({
+    userMessage: userPrompt,
+    detectedConcepts: conceptGraphContext.detected_concepts,
+    corpusHits: results
+  });
   const queryProfile = buildArgumentDiscipline(
     userPrompt,
     chinese,
@@ -297,13 +372,27 @@ export async function buildCorpusContext(userPrompt) {
       lines.push(chinese.contextText);
     }
 
+    const corpusEvidenceText = lines.join("\n");
+
     return {
-      contextText: lines.join("\n"),
+      contextText: buildLayeredContextText({
+        conceptGraphContext,
+        dialecticalPlan,
+        modeRoute,
+        sourceAnchors,
+        corpusEvidenceText
+      }),
       hits: [],
       parallelHits: parallel.entries,
       chinese,
       queryProfile,
-      conceptPlan: initialConceptPlan
+      conceptPlan: initialConceptPlan,
+      conceptGraphContext,
+      dialecticalPlan,
+      modeRoute,
+      sourceAnchors,
+      misreadingWarnings: conceptGraphContext.misreading_warnings,
+      forbiddenMoves: dialecticalPlan.forbidden_moves
     };
   }
 
@@ -340,13 +429,27 @@ export async function buildCorpusContext(userPrompt) {
     lines.push(chinese.contextText);
   }
 
+  const corpusEvidenceText = lines.join("\n\n");
+
   return {
-    contextText: lines.join("\n\n"),
+    contextText: buildLayeredContextText({
+      conceptGraphContext,
+      dialecticalPlan,
+      modeRoute,
+      sourceAnchors,
+      corpusEvidenceText
+    }),
     hits: results,
     parallelHits: parallel.entries,
     historical,
     chinese,
     queryProfile,
-    conceptPlan: initialConceptPlan
+    conceptPlan: initialConceptPlan,
+    conceptGraphContext,
+    dialecticalPlan,
+    modeRoute,
+    sourceAnchors,
+    misreadingWarnings: conceptGraphContext.misreading_warnings,
+    forbiddenMoves: dialecticalPlan.forbidden_moves
   };
 }
