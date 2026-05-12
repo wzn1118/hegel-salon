@@ -8,6 +8,13 @@ function conceptIds(detectedConcepts = []) {
   );
 }
 
+function getPlanConcepts({ detectedConcepts = [], conceptContext = null } = {}) {
+  const bundle = Array.isArray(conceptContext?.concept_bundle)
+    ? conceptContext.concept_bundle.filter(Boolean)
+    : [];
+  return bundle.length ? bundle : detectedConcepts;
+}
+
 function firstConcept(detectedConcepts = []) {
   return detectedConcepts.find(Boolean) || null;
 }
@@ -60,6 +67,61 @@ function buildSourceAnchorRequirements(detectedConcepts = []) {
     required_source_families: typeof item === "string" ? [] : item?.required_source_families || [],
     source_queries: typeof item === "string" ? [] : item?.source_queries || []
   })).filter((item) => item.concept);
+}
+
+function buildRequiredDistinctions(concepts = [], detectedConcepts = []) {
+  const explicitConceptIds = new Set(
+    (Array.isArray(detectedConcepts) ? detectedConcepts : [])
+      .filter((item) => typeof item !== "string" && item?.id && !item.inferred)
+      .map((item) => item.id)
+  );
+  const conceptMap = new Map(
+    (Array.isArray(concepts) ? concepts : [])
+      .filter((item) => item && typeof item !== "string" && item.id)
+      .map((item) => [item.id, item])
+  );
+  const distinctions = [];
+
+  for (const concept of Array.isArray(concepts) ? concepts : []) {
+    if (!concept || typeof concept === "string") continue;
+    for (const target of normalizeArray(concept.relations?.distinguished_from)) {
+      const targetConcept = conceptMap.get(target);
+      const relatedTarget = (concept.related || []).find((item) => item?.id === target);
+      distinctions.push({
+        concept: concept.id,
+        concept_label: conceptLabel(concept),
+        concept_zh: concept.zh || "",
+        concept_de: concept.de || "",
+        distinguish_from: target,
+        distinguish_from_label: targetConcept
+          ? conceptLabel(targetConcept)
+          : relatedTarget?.zh
+          ? `${target} (${relatedTarget.zh})`
+          : target,
+        distinguish_from_zh: targetConcept?.zh || relatedTarget?.zh || "",
+        distinguish_from_de: targetConcept?.de || relatedTarget?.de || "",
+        load_bearing: explicitConceptIds.size ? explicitConceptIds.has(concept.id) : distinctions.length < 4,
+        rule: `Do not let ${concept.id} collapse into ${target}.`
+      });
+    }
+  }
+
+  const seen = new Set();
+  return distinctions.filter((item) => {
+    const key = `${item.concept}:${item.distinguish_from}`;
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}
+
+function renderDistinctionConstraint(requiredDistinctions = []) {
+  const pairs = requiredDistinctions
+    .slice(0, 8)
+    .map((item) => `${item.concept} vs ${item.distinguish_from}`);
+  return pairs.length
+    ? `Make these concept distinctions explicit when they carry the answer: ${pairs.join("; ")}.`
+    : "Use concept distinctions from the graph when they carry the answer.";
 }
 
 function buildConceptTransitionChain(detectedConcepts = []) {
@@ -289,9 +351,16 @@ export function buildForbiddenMoves({ userMessage = "", detectedConcepts = [] } 
   return [...new Set(moves)];
 }
 
-export function buildDialecticalPlan({ userMessage = "", detectedConcepts = [], corpusHits = [] } = {}) {
+export function buildDialecticalPlan({
+  userMessage = "",
+  detectedConcepts = [],
+  conceptContext = null,
+  corpusHits = []
+} = {}) {
+  const planConcepts = getPlanConcepts({ detectedConcepts, conceptContext });
   const required_corpus = corpusRequirement(corpusHits, detectedConcepts);
   const forbidden_moves = buildForbiddenMoves({ userMessage, detectedConcepts });
+  const required_distinctions = buildRequiredDistinctions(planConcepts, detectedConcepts);
 
   return {
     object: inferObject(userMessage, detectedConcepts),
@@ -301,9 +370,10 @@ export function buildDialecticalPlan({ userMessage = "", detectedConcepts = [], 
     mediation: identifyMediation({ userMessage, detectedConcepts, corpusHits }),
     higher_determination: identifyHigherDetermination({ userMessage, detectedConcepts }),
     concept_transition_chain: buildConceptTransitionChain(detectedConcepts),
-    source_anchor_requirements: buildSourceAnchorRequirements(detectedConcepts),
+    source_anchor_requirements: buildSourceAnchorRequirements(planConcepts),
+    required_distinctions,
     objection_to_answer: buildObjectionToAnswer({ userMessage, detectedConcepts }),
-    quote_policy: buildQuotePolicy({ corpusHits, detectedConcepts }),
+    quote_policy: buildQuotePolicy({ corpusHits, detectedConcepts: planConcepts }),
     modern_boundary_policy: buildModernBoundaryPolicy({ userMessage, detectedConcepts }),
     required_corpus,
     forbidden_moves,
@@ -313,6 +383,7 @@ export function buildDialecticalPlan({ userMessage = "", detectedConcepts = [], 
       required_corpus.sufficient
         ? "Anchor doctrinal claims in retrieved corpus evidence where possible."
         : "Say explicitly when corpus evidence is insufficient for direct quotation.",
+      renderDistinctionConstraint(required_distinctions),
       "Do not add direct quotations unless quote validation can support the exact wording."
     ]
   };

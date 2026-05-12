@@ -341,6 +341,7 @@ export async function buildCorpusContext(userPrompt) {
   const dialecticalPlan = buildDialecticalPlan({
     userMessage: userPrompt,
     detectedConcepts: conceptGraphContext.detected_concepts,
+    conceptContext: conceptGraphContext,
     corpusHits: results
   });
   const queryProfile = buildArgumentDiscipline(

@@ -394,6 +394,56 @@ function detectDialecticalChainBreak(reply, dialecticalPlan = {}) {
   return [];
 }
 
+function conceptMentioned(text, concept) {
+  const names = [
+    concept?.concept,
+    concept?.concept_label,
+    concept?.concept_zh,
+    concept?.concept_de
+  ].filter(Boolean);
+  return names.some((name) => text.includes(String(name).replace(/_/g, " ")));
+}
+
+function distinctionTargetMentioned(text, distinction) {
+  const names = [
+    distinction?.distinguish_from,
+    distinction?.distinguish_from_label,
+    distinction?.distinguish_from_zh,
+    distinction?.distinguish_from_de
+  ].filter(Boolean);
+  return names.some((name) => text.includes(String(name).replace(/_/g, " ")));
+}
+
+function detectRequiredDistinctionFailure(reply, dialecticalPlan = {}, conceptContext = {}) {
+  const text = normalizeWhitespace(reply);
+  const requiredDistinctions = Array.isArray(dialecticalPlan.required_distinctions)
+    ? dialecticalPlan.required_distinctions.filter(Boolean).slice(0, 8)
+    : [];
+  if (!requiredDistinctions.length) return [];
+
+  const topConceptIds = new Set(getDetectedConceptIds(conceptContext).slice(0, 4));
+  const loadBearing = requiredDistinctions.filter(
+    (item) => item.load_bearing || topConceptIds.has(item.concept)
+  );
+  const required = loadBearing.length ? loadBearing : requiredDistinctions.slice(0, 4);
+  const covered = required.filter((item) =>
+    conceptMentioned(text, item) && distinctionTargetMentioned(text, item)
+  );
+
+  if (covered.length / required.length < 0.5) {
+    return [
+      warning(
+        "required_distinction_missing",
+        "The reply does not visibly maintain enough required concept distinctions.",
+        "Name the relevant concept pair and state why the first must not collapse into the second.",
+        conceptContext.risk_level === "high" ? "high" : "medium"
+      )
+    ];
+  }
+
+  return [];
+}
+
 function scoreCoverage(reply, conceptContext = {}) {
   const text = normalizeWhitespace(reply);
   const bundle = conceptContext.concept_bundle || [];
@@ -445,7 +495,8 @@ export function auditHegelReply({
     ...detectConceptCoverageFailure(reply, conceptContext),
     ...detectUnanchoredAssertionRisk(reply, corpusContext, conceptContext),
     ...detectCitationLayerConfusion(reply),
-    ...detectDialecticalChainBreak(reply, dialecticalPlan)
+    ...detectDialecticalChainBreak(reply, dialecticalPlan),
+    ...detectRequiredDistinctionFailure(reply, dialecticalPlan, conceptContext)
   ];
 
   if (quoteValidation && quoteValidation.passed === false) {

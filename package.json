@@ -11,6 +11,7 @@
     "eval:understanding:full": "node src/runUnderstandingEvaluation.mjs",
     "eval:formal-stress": "node src/runFormalLogicStress.mjs",
     "eval:historical-stress": "node src/runHistoriographyStress.mjs",
+    "smoke:concept-graph": "node src/runConceptGraphSmoke.mjs",
     "validate:hegel-graph": "node src/validateHegelConceptGraph.mjs",
     "optimize:90": "node src/runQualityOptimizer.mjs"
   },
