@@ -1,28 +1,145 @@
 # Hegel Salon
 
-## Public GitHub Release
+Hegel Salon 是一个中文优先的黑格尔阅读与论证工作台。它把语料检索、概念图谱、引文核验、附件理解和浏览器操作放在同一个本地 Web 应用里，目标不是模仿“哲学腔”，而是让回答尽量有出处、有区分、有论证路径。
 
 [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/wzn1118/hegel-salon)
 
-This repository is prepared as a public-source release. It ships with the
-German/English public-domain or openly mirrored corpus under `data/corpus/texts`.
-It does not ship private user data, API keys, sessions, uploads, browser profiles,
-licensed Chinese translations, PDFs, ebooks, or OCR exports.
+## 这个项目在做什么
 
-Quick start:
+很多哲学类聊天工具的问题不是“说得不像”，而是太容易把概念说混，把引文说虚，把现实判断说成一句态度。Hegel Salon 主要在解决这几个具体问题：
+
+- 回答黑格尔问题时，优先走概念、反对意见、文本证据和结论，而不是只套一层风格。
+- 对自由、任意、现实性、市民社会、国家、扬弃、主奴关系等概念做区分，避免把关键词混成一团。
+- 对直接引文做核验，找不到可支持的原文时就不硬编引号。
+- 支持把 PDF、表格、文本、图片等附件接入同一条回答链。
+- 提供浏览器内的 computer use，用来打开网页、点击、输入、滚动和回传截图。
+- 用评测脚本和失败记忆持续改进，而不是只靠一次 prompt 调整。
+
+这个仓库更适合被理解为一个已经能跑起来的研究型产品原型。它可以实际使用，也还在继续打磨，尤其是严肃学术结论和现实政治判断，仍然建议人工复核。
+
+## 最近重点
+
+当前版本新增了概念关系与“区分义务”层面的检查。系统不只看有没有命中某个概念，还会检查回答是否把关键概念对说清楚，例如：
+
+- 自由和任意
+- 现实性和单纯存在、现状辩护
+- 市民社会和国家
+- 扬弃和单纯取消
+- 主奴辩证法和阶级斗争
+
+对应的 smoke 测试已经放在 `src/runConceptGraphSmoke.mjs`，可以直接运行：
+
+```bash
+npm run smoke:concept-graph
+```
+
+## 快速开始
+
+需要先安装 Node.js。然后在仓库根目录运行：
 
 ```bash
 npm install
 npm run start
 ```
 
-Docker start:
+默认访问地址：
+
+```text
+http://127.0.0.1:3087/
+```
+
+如果想用 Docker：
 
 ```bash
 docker compose up -d --build
 ```
 
-For a public HTTPS deployment, set these environment variables before first run:
+## 配置模型
+
+公开仓库不会内置任何 API key。启动后可以在前端登录并配置模型提供商、base URL、模型名和 API key。
+
+本地开发也可以放一个私有配置文件：
+
+```text
+config/api.local.json
+```
+
+示例：
+
+```json
+{
+  "provider": "openai",
+  "model": "gpt-5.4",
+  "baseURL": "https://your-compatible-endpoint/v1",
+  "apiKey": "YOUR_KEY"
+}
+```
+
+`config/api.local.json` 已被 `.gitignore` 排除，不要把真实密钥提交到公开仓库。
+
+## 公开仓库包含什么
+
+这个 public release 包含：
+
+- Node 服务端和静态 Web 前端
+- 黑格尔语料检索、上下文组装、引文核验和概念图谱相关代码
+- 公开可发布的德文、英文语料和元数据
+- 评测、smoke、优化相关脚本
+- Android 原生壳工程
+- Render、Docker 和本地启动配置
+
+这个 public release 不包含：
+
+- API key、邮箱密码、隧道凭据等私密配置
+- 用户数据、会话、上传文件和浏览器 profile
+- 本地运行日志、缓存、临时文件和 sqlite 数据库
+- 授权受限的中文译本、PDF、电子书和 OCR 导出
+
+如果你有自己的资料，建议放在 `local-resources/` 或私有持久化卷里，不要提交到公开仓库。
+
+## 目录结构
+
+```text
+.
+├─ public/                  Web 前端
+├─ src/                     Node 服务、回答链、语料检索、评测和优化脚本
+├─ config/                  API 配置占位文件
+├─ data/                    公开语料、概念图谱和运行数据目录
+├─ docs/                    部署和产品说明
+├─ eval/                    评测样本
+├─ android-app/             Android 原生壳工程
+├─ local-resources/         本地私有资料入口
+├─ launch-hegel-salon.cmd   Windows 一键启动
+├─ docker-compose.yml       Docker 启动配置
+└─ render.yaml              Render 部署配置
+```
+
+## 核心模块
+
+- `src/server.mjs`：HTTP 服务和主编排入口。
+- `src/hegelContext.mjs`：把语料、概念图谱、中文材料和历史参照组织成回答上下文。
+- `src/hegelDialectic.mjs`：生成论证计划、概念区分、禁用误读和引文锚点要求。
+- `src/hegelSelfAudit.mjs`：对回答做自检，包括概念覆盖、误读风险和区分义务。
+- `src/hegelQuoteValidation.mjs`：核验直接引文是否能被检索证据支持。
+- `src/browserComputer*.mjs`：浏览器范围内的 computer use。
+- `src/runConceptGraphSmoke.mjs`：概念图谱和关键误读的 smoke 测试。
+- `src/runQualityOptimizer.mjs`：基于失败样本和 playbook 的质量优化脚本。
+
+## 常用验证
+
+```bash
+npm run smoke:concept-graph
+npm run validate:hegel-graph
+npm run eval:understanding:smoke
+npm run eval:formal-stress
+npm run eval:historical-stress
+```
+
+其中 `smoke:concept-graph` 和 `validate:hegel-graph` 是轻量检查，适合每次改动概念图谱、辩证计划或自检逻辑后先跑一遍。
+
+## 公开部署
+
+公开 HTTPS 部署时，建议启用登录和独立的管理密钥：
 
 ```text
 HEGEL_ENABLE_AUTH=1
@@ -40,245 +157,18 @@ HEGEL_SMTP_PASS=<smtp-password-or-app-password>
 HEGEL_MAIL_FROM=Hegel Salon <no-reply@your-domain.example>
 ```
 
-Users configure their own model provider, base URL, model, and API key inside
-the frontend after login. The public repo intentionally leaves default API
-configuration blank.
+如果只是本地研究或演示，可以先用 `npm run start` 跑起来，再在前端填自己的模型配置。
 
-Licensed or private materials should be added only after cloning, through
-`local-resources/` or a private persistent volume. Do not commit those materials
-to the public repository.
+## Android
 
-Hegel Salon 是一个面向中文场景的黑格尔式阅读与论证工作台。
-
-它不是通用聊天机器人外套，而是把黑格尔语料、引文核验、现实判断、附件理解、浏览器代理和一套持续优化链放进同一个本地可运行产品里的实验项目。
-
-当前项目形态以桌面端 Web 应用为主，同时包含一个 Android 原生壳工程。
-
-## 项目定位
-
-这个项目试图解决三个问题：
-
-1. 如何让一个“黑格尔式”回答系统不只是模仿语气，而是真正受语料、概念和论证结构约束。
-2. 如何把 PDF、Excel、图片、网页操作这些现实工作流接进同一条回答链。
-3. 如何把失败样本、形式逻辑审查、史学审查和持续优化回路做成系统能力，而不是只靠一次性 prompt 调优。
-
-## 当前能力
-
-- 中文优先的 Hegel persona 与原典导向回答链
-- 本地项目级 API 配置与多模型/中转兼容
-- 附件理解：PDF、Excel、CSV、TXT、JSON、Markdown、图片
-- 浏览器版 computer use：网页导航、点击、输入、截图回传
-- 现实判断题的历史引用模块
-- 形式逻辑、史学与表达质量的多层评分
-- 数据驱动优化回路：失败记忆、优化 playbook、批量跑题
-- Android 原生 App 壳工程
-
-## 仓库结构
-
-```text
-.
-├─ public/                  Web 前端
-├─ src/                     Node 服务、语料检索、回答链、评测与优化脚本
-├─ config/                  项目 API 配置
-├─ data/                    日志、语料缓存、上传文件、优化产物
-├─ local-resources/         本地黑格尔资料
-├─ android-app/             Android 原生壳工程
-├─ launch-hegel-salon.cmd   一键启动
-├─ start-hegel-salon.cmd    启动本地服务
-└─ stop-hegel-salon.cmd     停止本地服务
-```
-
-## 技术架构
-
-桌面端主链路由 `src/server.mjs` 驱动。
-
-核心模块包括：
-
-- `src/hegelPrompt.mjs`
-  负责 persona、风格、引文纪律与现实判断约束
-- `src/hegelCorpus.mjs`
-  负责本地语料检索与工作文本切片
-- `src/hegelContext.mjs`
-  负责把语料、平行引文、中文版本与历史引用模块拼成上下文
-- `src/hegelHistorical.mjs`
-  负责现实判断题的历史引用补强
-- `src/hegelQuoteValidation.mjs`
-  负责引文真伪与层级核查
-- `src/browserComputer*.mjs`
-  负责浏览器版 computer use
-- `src/runFormalLogicStress.mjs`
-  负责形式逻辑压力评测
-- `src/runHistoriographyStress.mjs`
-  负责史学压力评测
-- `src/runQualityOptimizer.mjs`
-  负责 90 分导向的批量优化
-- `src/optimizerMemory.mjs`
-  负责失败记忆与优化 playbook 回灌
-
-## 快速开始
-
-### 1. 安装依赖
-
-项目已经以 Node.js 为运行时。
-
-```bash
-npm install
-```
-
-### 2. 配置 API
-
-发布仓库默认保留的是安全占位文件。  
-本地真实配置建议写到：
-
-```text
-config/api.local.json
-```
-
-若没有 `api.local.json`，系统才会回退到：
-
-```text
-config/api.json
-```
-
-示例：
-
-```json
-{
-  "provider": "openai",
-  "model": "gpt-5.4",
-  "baseURL": "https://your-compatible-endpoint/v1",
-  "apiKey": "YOUR_KEY"
-}
-```
-
-### 3. 启动桌面端
-
-```bash
-npm run start
-```
-
-或直接双击：
-
-```text
-launch-hegel-salon.cmd
-```
-
-默认地址：
-
-```text
-http://127.0.0.1:3087/
-```
-
-## Web 端主要功能
-
-### Hegel 对话
-
-不是简单输出“黑格尔腔”，而是尽量按概念规定、反对意见、答复与结论的结构组织回答。
-
-### 附件理解
-
-支持：
-
-- PDF
-- XLS / XLSX
-- CSV / TSV
-- TXT
-- JSON
-- Markdown
-- PNG / JPG / WEBP / GIF / SVG
-
-### Computer Use
-
-当前实现是浏览器内的 computer use，不是系统级桌面代理。
-
-支持：
-
-- 打开页面
-- 点击
-- 输入
-- 滚动
-- 截图回传
-
-### 现实判断题
-
-现实政治与当代问题会触发一层历史引用模块，尝试用世界历史、法哲学与精神哲学材料给现实判断加上历史形式与类比边界。
-
-## 评测与优化
-
-### 形式逻辑压力测试
-
-```bash
-npm run eval:formal-stress
-```
-
-### 史学压力测试
-
-```bash
-npm run eval:historical-stress
-```
-
-### 90 分导向优化
-
-```bash
-npm run optimize:90
-```
-
-相关产物位于：
-
-```text
-data/logs/optimizer-progress.json
-data/logs/optimizer-playbook.json
-data/logs/optimizer-memory.jsonl
-```
-
-## Android App
-
-仓库包含 Android 原生壳工程：
+仓库包含一个 Android 原生壳工程：
 
 ```text
 android-app/
 ```
 
-它的作用是把 Hegel Salon 的移动入口做成真正的 Android App，而不是单纯浏览器书签。
+它的作用是提供移动端入口、地址配置和 WebView 承载。当前 Android 侧仍是辅助交付层，主要能力仍在 Node 服务和 Web 前端。
 
-当前形态：
+## 项目边界
 
-- 原生首页
-- 原生地址配置
-- 原生 WebView 内容页
-- 原生文件选择器接入
-
-## 当前状态
-
-这个项目已经可以运行、可以回答、可以处理附件，也可以做浏览器代理与批量优化。
-
-但它仍然是实验性系统，尤其在以下方面还没有到“稳定完成版”：
-
-- 形式逻辑满分并不成立
-- 史学判断满分并不成立
-- 90 分导向优化链已跑通，但还没有稳定把平均质量推到 90+
-- 现实判断题的历史对照还需要更具体的制度案例库
-
-因此，这个仓库更适合被理解为：
-
-一个已经能工作的产品原型，加上一套仍在持续强化的研究型回答引擎。
-
-## 推荐使用方式
-
-- 如果你要本地使用，直接跑桌面端
-- 如果你要演示产品能力，优先展示 Web 端
-- 如果你要继续研发，优先看 `src/server.mjs`、`src/hegelContext.mjs` 和各类 `run*.mjs`
-
-## 路线图
-
-- 更稳定的 90 分以上优化闭环
-- 更细的现实政治历史对照库
-- 更强的引用层级显示
-- 更可视化的优化进度面板
-- Android 正式签名与发布
-
-## 免责声明
-
-这是一个围绕黑格尔文本、现实判断和本地代理能力构建的实验系统。
-
-它会努力提高引文纪律、逻辑纪律和史学纪律，但当前并不能保证所有输出都达到严苛学术标准。对高风险结论，请继续做人工复核。
+Hegel Salon 会努力提高引文纪律、概念纪律和论证纪律，但它不是学术判断的自动裁判。遇到高风险结论、正式写作、出版引用或现实政治判断，请继续做人工复核。
