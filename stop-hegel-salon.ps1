@@ -1,26 +1,22 @@
-$ErrorActionPreference = "SilentlyContinue"
+$ErrorActionPreference = "Stop"
 
-$targets = Get-CimInstance Win32_Process -Filter "name = 'node.exe'" |
-  Where-Object {
-    ($_.CommandLine -like "*src\\server.mjs*") -or
-    ($_.CommandLine -like "*/src/server.mjs*") -or
-    ($_.CommandLine -like "*src/server.mjs*") -or
-    (
-      ($_.CommandLine -like "*hegel-salon*") -and
-      ($_.CommandLine -like "*server.mjs*")
-    )
-  }
+$projectRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
+$controllerPath = Join-Path $projectRoot "local-resources\launcher\launcher-controller.ps1"
 
-if (-not $targets) {
-  Write-Output "No running Hegel Salon server was found."
-  exit 0
+if (-not (Test-Path $controllerPath)) {
+  throw "Missing launcher controller script at $controllerPath."
 }
 
-foreach ($target in $targets) {
-  try {
-    Stop-Process -Id $target.ProcessId -Force
-    Write-Output "Stopped Hegel Salon server process $($target.ProcessId)."
-  } catch {
-    Write-Output "Failed to stop process $($target.ProcessId)."
-  }
+. $controllerPath
+
+$status = Get-LauncherStatus
+$hadServer = [bool]$status.serverRunning
+$hadTunnel = [bool]$status.publicRunning
+
+Stop-AllLauncherProcesses
+
+if ($hadServer -or $hadTunnel) {
+  Write-Output "Stopped Hegel Salon launcher processes."
+} else {
+  Write-Output "No running Hegel Salon launcher processes were found."
 }

@@ -304,13 +304,38 @@ function canTrustForwardedHeaders(req) {
   return trustProxyHeaders || isLoopbackAddress(String(req?.socket?.remoteAddress || "").trim());
 }
 
+function getSocketClientIp(req) {
+  return String(req?.socket?.remoteAddress || "").trim();
+}
+
+function getRequestHostname(req) {
+  const host = getRequestHost(req);
+  return String(host || "")
+    .split(":")[0]
+    .trim()
+    .toLowerCase();
+}
+
+function isLoopbackTargetRequest(req) {
+  return isLoopbackHost(getRequestHostname(req));
+}
+
 function getClientIp(req) {
   const forwardedFor = canTrustForwardedHeaders(req)
     ? String(req.headers["x-forwarded-for"] || "")
         .split(",")[0]
         .trim()
     : "";
-  return forwardedFor || String(req.socket?.remoteAddress || "").trim();
+  return forwardedFor || getSocketClientIp(req);
+}
+
+function getAdminClientIp(req) {
+  const socketIp = getSocketClientIp(req);
+  if (isLoopbackAddress(socketIp) && isLoopbackTargetRequest(req)) {
+    return socketIp;
+  }
+
+  return getClientIp(req);
 }
 
 function normalizeRateLimitIdentity(value, fallback = "unknown") {
@@ -1143,13 +1168,14 @@ function requireAdminUser(res, context) {
   }
 
   const req = res?.__hegelRequest;
-  if (req && !isAllowedAdminIp(getClientIp(req))) {
+  const adminClientIp = req ? getAdminClientIp(req) : "";
+  if (req && !isAllowedAdminIp(adminClientIp)) {
     recordSecurityAuditEvent({
       eventType: "admin_ip_blocked",
       severity: "warning",
       userId: context?.auth?.user?.id || null,
       loginIdentifier: context?.auth?.user?.email || context?.auth?.user?.account || null,
-      ipAddress: getClientIp(req),
+      ipAddress: adminClientIp,
       userAgent: String(req.headers["user-agent"] || ""),
       route: req.url || ""
     });
@@ -1158,7 +1184,7 @@ function requireAdminUser(res, context) {
       severity: "warning",
       userId: context?.auth?.user?.id || null,
       loginIdentifier: context?.auth?.user?.email || context?.auth?.user?.account || null,
-      ipAddress: getClientIp(req),
+      ipAddress: adminClientIp,
       userAgent: String(req.headers["user-agent"] || ""),
       route: req.url || "",
       message: "Administrator access was attempted from a non-whitelisted IP address.",

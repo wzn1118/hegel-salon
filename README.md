@@ -38,6 +38,15 @@ http://127.0.0.1:3087/
 docker compose up -d --build
 ```
 
+## V3 更新说明
+
+- 新增 Windows 启动器模式：`launch-hegel-salon.ps1` 现在支持 `launcher`、`local`、`public` 三种模式，默认进入桌面启动器界面。
+- 新增桌面启动器：`local-resources/launcher/` 提供本地启动、临时公网分享、状态查看、日志定位和 API 配置入口。
+- 公网与本地统一为单实例：Cloudflare 隧道与本机访问默认复用同一个 `3087` 服务实例，避免双实例状态漂移。
+- 新增 `HEGEL_DATA_DIR` 支持：服务端数据目录可通过环境变量或启动脚本切换，不再写死到仓库内 `data/`。
+- 修复管理员本机访问误判：当请求目标是 `127.0.0.1/localhost` 时，管理员接口优先按本地请求处理，不再被转发头错误拦截。
+- 启动与停止脚本已接入 V3 启动器控制层：`launch-hegel-salon.cmd`、`start-hegel-salon.cmd` 和 `stop-hegel-salon.ps1` 现在统一通过启动器流程管理本地服务和公网隧道。
+
 ## 这套东西适合谁
 
 - 适合想从原典、概念和论证结构进入黑格尔的人。

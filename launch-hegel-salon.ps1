@@ -1,5 +1,9 @@
 param(
-  [int]$Port = 3087
+  [ValidateSet("launcher", "local", "public")]
+  [string]$Mode = "launcher",
+  [int]$Port = 3087,
+  [switch]$OpenBrowser,
+  [string]$DataDir = ""
 )
 
 $ErrorActionPreference = "Stop"
@@ -7,34 +11,42 @@ $ErrorActionPreference = "Stop"
 $projectRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
 Set-Location $projectRoot
 
-$configPath = Join-Path $projectRoot "config\api.json"
-$examplePath = Join-Path $projectRoot "config\api.example.json"
+$launcherPath = Join-Path $projectRoot "local-resources\launcher\Hegel-Salon-Launcher.ps1"
+$controllerPath = Join-Path $projectRoot "local-resources\launcher\launcher-controller.ps1"
 
-if (-not (Test-Path $configPath) -and (Test-Path $examplePath)) {
-  Copy-Item -LiteralPath $examplePath -Destination $configPath -Force
+if (-not (Test-Path $launcherPath)) {
+  throw "Missing launcher UI script at $launcherPath."
 }
 
-$existing = Get-CimInstance Win32_Process -Filter "name = 'node.exe'" |
-  Where-Object { $_.CommandLine -like "*src\server.mjs*" } |
-  Select-Object -First 1
-
-if (-not $existing) {
-  $env:PORT = [string]$Port
-  Start-Process -FilePath node -ArgumentList "src/server.mjs" -WorkingDirectory $projectRoot | Out-Null
+if (-not (Test-Path $controllerPath)) {
+  throw "Missing launcher controller script at $controllerPath."
 }
 
-$localUrl = "http://127.0.0.1:$Port/"
+if ($Mode -eq "launcher") {
+  & $launcherPath
+  exit $LASTEXITCODE
+}
 
-for ($i = 0; $i -lt 40; $i++) {
-  try {
-    $response = Invoke-WebRequest -Uri $localUrl -UseBasicParsing -TimeoutSec 2
-    if ($response.StatusCode -eq 200) {
-      Start-Process $localUrl
-      exit 0
-    }
-  } catch {
-    Start-Sleep -Milliseconds 500
+. $controllerPath
+
+$resolvedDataDir = if ([string]::IsNullOrWhiteSpace($DataDir)) {
+  Resolve-PreferredDataDir
+} else {
+  $DataDir
+}
+
+if ($Mode -eq "local") {
+  $status = Start-LocalServer -Port $Port -DataDir $resolvedDataDir
+  if ($OpenBrowser) {
+    Start-Process $status.localUrl
   }
+  exit 0
 }
 
-Start-Process $localUrl
+if ($Mode -eq "public") {
+  $status = Start-PublicTunnel -Port $Port -DataDir $resolvedDataDir
+  if ($OpenBrowser) {
+    Start-Process $status.localUrl
+  }
+  exit 0
+}

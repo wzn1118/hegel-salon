@@ -13,6 +13,12 @@ data/users/
 data/computer-browser-sessions/
 local-resources/*
 !local-resources/README.md
+!local-resources/launcher/
+local-resources/launcher/*
+!local-resources/launcher/*.ps1
+!local-resources/launcher/*.cmd
+local-resources/launcher/logs/
+local-resources/launcher/runtime/
 android-app/.local-android/
 android-app/.playwright-cli/
 android-app/*.apk
@@ -24,5 +30,8 @@ config/api.local.json
 config/mail.local.json
 deploy/cloudflared/hegelsalon.config.yml
 .env.local
+cookies.txt
+session_body.json
+session_headers.txt
 *.log
 *.sqlite

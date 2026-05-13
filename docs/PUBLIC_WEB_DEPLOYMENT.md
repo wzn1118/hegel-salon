@@ -145,7 +145,7 @@ Recommended SSL mode:
 
 You need both of these to stay up:
 
-- the Node.js app on `3098`
+- the Node.js app on `3087` by default
 - the `cloudflared` service
 
 Recommended Windows strategy:
