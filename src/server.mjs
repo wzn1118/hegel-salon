@@ -3,7 +3,7 @@ import { createServer as createHttpsServer } from "node:https";
 import { createReadStream, existsSync, readFileSync } from "node:fs";
 import { mkdir, readFile, readdir, rm, stat, writeFile } from "node:fs/promises";
 import { execFile, execFileSync, spawn } from "node:child_process";
-import { randomUUID } from "node:crypto";
+import { createHash, randomBytes, randomUUID } from "node:crypto";
 import { homedir } from "node:os";
 import { extname, join, normalize } from "node:path";
 import { promisify } from "node:util";
@@ -80,8 +80,10 @@ import {
 } from "./mailDelivery.mjs";
 import {
   appendUserChatLogToDb,
+  appendChatSessionMessagesToDb,
   appendUserMemoryTurnToDb,
   clearUserBusinessDataInDb,
+  countChatSessionMessagesInDb,
   countLoginEventsByUserIdFromDb,
   createUserDatabaseBackup,
   countUserChatLogsInDb,
@@ -89,14 +91,28 @@ import {
   countTrainingRunsByUserIdFromDb,
   countUsageRowsByUserIdFromDb,
   ensureDefaultStyleProfileForUser,
+  claimNextLocalAgentTaskForDeviceInDb,
+  finishLocalAgentTaskForDeviceInDb,
   getDefaultStyleProfileId,
   getUserDatabaseHealth,
   getUserDatabaseBackupDir,
   getUserDatabasePath,
+  insertLocalAgentDeviceToDb,
+  insertLocalAgentTaskToDb,
   insertStyleProfile,
+  listAllChatSessionsForUserFromDb,
+  listLocalAgentDevicesByUserIdFromDb,
+  listLocalAgentTasksByUserIdFromDb,
   readAllUserChatLogsFromDb,
   readAllUserMemoryTurnsFromDb,
+  readChatSessionByIdFromDb,
+  readChatSessionMessagesFromDb,
+  readLatestChatSessionFromDb,
+  readLocalAgentDeviceByIdForUserFromDb,
+  readLocalAgentDeviceByTokenHashFromDb,
+  readLocalAgentTaskByIdForUserFromDb,
   readStyleProfileById,
+  revokeLocalAgentDeviceForUserInDb,
   insertLoginEventToDb,
   insertTrainingRunToDb,
   listStyleProfilesByUserId,
@@ -109,6 +125,7 @@ import {
   listTrainingRunsByUserIdFromDb,
   readRecentUserChatLogsFromDb,
   readRecentUserMemoryTurnsFromDb,
+  upsertChatSessionInDb,
   readGlobalUsageTimelineFromDb,
   readUserUsageSummaryFromDb,
   readUserApiConfigFromDb,
@@ -119,6 +136,7 @@ import {
   updateStyleProfileById,
   updateLatestTrainingRunForUserInDb,
   writeUserLongTermMemoryProfileToDb,
+  writeChatSessionMemoryProfileToDb,
   writeUserMemoryProfileToDb,
   writeUserApiConfigToDb
 } from "./userDatabase.mjs";
@@ -126,6 +144,7 @@ import {
 const root = projectRoot;
 const configDir = join(root, "config");
 const computerWorkerScriptPath = join(root, "src", "browserComputerWorker.mjs");
+const localAgentRunnerScriptPath = join(root, "scripts", "local_agent.mjs");
 const port = Number(process.env.PORT || 3087);
 const authEnabled = isAuthEnabled();
 const localApiConfigPath = existsSync(join(configDir, "api.local.json"))
@@ -135,6 +154,36 @@ const httpsKeyPath = String(process.env.HEGEL_TLS_KEY_PATH || "").trim();
 const httpsCertPath = String(process.env.HEGEL_TLS_CERT_PATH || "").trim();
 const httpsEnabled = Boolean(httpsKeyPath && httpsCertPath);
 const publicBaseUrl = String(process.env.HEGEL_PUBLIC_BASE_URL || "").trim();
+function readDurationEnv(name, fallbackMs, minimumMs, maximumMs) {
+  const parsed = Number.parseInt(String(process.env[name] || ""), 10);
+  const value = Number.isFinite(parsed) && parsed > 0 ? parsed : fallbackMs;
+  return Math.min(Math.max(value, minimumMs), maximumMs);
+}
+const publicChatFastMode = Boolean(publicBaseUrl) && process.env.HEGEL_PUBLIC_CHAT_FAST_MODE !== "0";
+const publicChatTotalTimeoutMs = readDurationEnv(
+  "HEGEL_PUBLIC_CHAT_TOTAL_TIMEOUT_MS",
+  70000,
+  5000,
+  90000
+);
+const optimizerChatTotalTimeoutMs = readDurationEnv(
+  "HEGEL_OPTIMIZER_CHAT_TOTAL_TIMEOUT_MS",
+  240000,
+  30000,
+  900000
+);
+const upstreamChatTimeoutMs = readDurationEnv(
+  "HEGEL_UPSTREAM_CHAT_TIMEOUT_MS",
+  publicBaseUrl ? 55000 : 85000,
+  5000,
+  95000
+);
+const upstreamResponsesTimeoutMs = readDurationEnv(
+  "HEGEL_UPSTREAM_RESPONSES_TIMEOUT_MS",
+  publicBaseUrl ? 45000 : 80000,
+  5000,
+  95000
+);
 const explicitAllowedOrigins = new Set(
   String(process.env.HEGEL_ALLOWED_ORIGINS || "")
     .split(",")
@@ -219,6 +268,33 @@ function readMbLimit(envName, fallbackMb, minimumMb) {
   const resolved = Number.isFinite(parsed) && parsed > 0 ? parsed : fallbackMb;
   return Math.max(minimumMb, resolved) * BYTES_PER_MB;
 }
+
+function isUnlimitedCountToken(value) {
+  return /^(0|unlimited|none|inf|infinite)$/i.test(String(value || "").trim());
+}
+
+function readCountLimit(envName, fallbackValue, {
+  minimum = 1,
+  maximum = Number.POSITIVE_INFINITY,
+  allowUnlimited = false
+} = {}) {
+  const raw = String(process.env[envName] || "").trim();
+  const source = raw || fallbackValue;
+  if (allowUnlimited && isUnlimitedCountToken(source)) {
+    return Number.POSITIVE_INFINITY;
+  }
+
+  const parsed = Number.parseInt(String(source || ""), 10);
+  if (!Number.isFinite(parsed) || parsed <= 0) {
+    if (allowUnlimited && isUnlimitedCountToken(fallbackValue)) {
+      return Number.POSITIVE_INFINITY;
+    }
+    return Math.min(Math.max(Number(fallbackValue || minimum), minimum), maximum);
+  }
+
+  return Math.min(Math.max(parsed, minimum), maximum);
+}
+
 const bundledPythonPath = join(
   homedir(),
   ".cache",
@@ -228,11 +304,75 @@ const bundledPythonPath = join(
   "python",
   "python.exe"
 );
-const MAX_JSON_BODY_BYTES = 1024 * 1024;
+const MAX_JSON_BODY_BYTES = readMbLimit("HEGEL_MAX_JSON_MB", 8, 1);
 const MAX_MULTIPART_BODY_BYTES = readMbLimit("HEGEL_MAX_MULTIPART_MB", 48, 12);
 const MAX_UPLOAD_FILE_COUNT = 6;
 const MAX_UPLOAD_FILE_BYTES = readMbLimit("HEGEL_MAX_UPLOAD_FILE_MB", 40, 8);
 const MAX_UPLOAD_TOTAL_BYTES = readMbLimit("HEGEL_MAX_UPLOAD_TOTAL_MB", 48, 16);
+const NORMALIZED_HISTORY_LIMIT = readCountLimit("HEGEL_NORMALIZED_HISTORY_LIMIT", "unlimited", {
+  allowUnlimited: true
+});
+const CHAT_MODEL_HISTORY_LIMIT = readCountLimit("HEGEL_CHAT_MODEL_HISTORY_LIMIT", "unlimited", {
+  minimum: 24,
+  maximum: 2048,
+  allowUnlimited: true
+});
+const CHAT_STORAGE_HISTORY_LIMIT = readCountLimit("HEGEL_CHAT_STORAGE_HISTORY_LIMIT", "unlimited", {
+  allowUnlimited: true
+});
+const HISTORY_DISPLAY_LIMIT = readCountLimit("HEGEL_HISTORY_DISPLAY_LIMIT", "unlimited", {
+  allowUnlimited: true
+});
+const MEMORY_LAYER_CHAT_LIMIT = readCountLimit("HEGEL_MEMORY_LAYER_CHAT_LIMIT", "unlimited", {
+  minimum: 32,
+  maximum: 512,
+  allowUnlimited: true
+});
+const MEMORY_LAYER_TURN_LIMIT = readCountLimit("HEGEL_MEMORY_LAYER_TURN_LIMIT", "unlimited", {
+  minimum: 64,
+  maximum: 1024,
+  allowUnlimited: true
+});
+const MEMORY_HEURISTIC_CHAT_LIMIT = readCountLimit("HEGEL_MEMORY_HEURISTIC_CHAT_LIMIT", "unlimited", {
+  minimum: 36,
+  maximum: 1024,
+  allowUnlimited: true
+});
+const MEMORY_HEURISTIC_TURN_LIMIT = readCountLimit("HEGEL_MEMORY_HEURISTIC_TURN_LIMIT", "unlimited", {
+  minimum: 72,
+  maximum: 2048,
+  allowUnlimited: true
+});
+const PROMPT_RECENT_MESSAGE_LIMIT = readCountLimit("HEGEL_PROMPT_RECENT_MESSAGE_LIMIT", "unlimited", {
+  minimum: 24,
+  maximum: 256,
+  allowUnlimited: true
+});
+const PROMPT_ATTACHMENT_RECENT_MESSAGE_LIMIT = readCountLimit("HEGEL_PROMPT_ATTACHMENT_RECENT_MESSAGE_LIMIT", "unlimited", {
+  minimum: 16,
+  maximum: 160,
+  allowUnlimited: true
+});
+const PROMPT_RECENT_CHAR_BUDGET = readCountLimit("HEGEL_PROMPT_RECENT_CHAR_BUDGET", 90000, {
+  minimum: 36000,
+  maximum: 240000
+});
+const PROMPT_ATTACHMENT_RECENT_CHAR_BUDGET = readCountLimit("HEGEL_PROMPT_ATTACHMENT_RECENT_CHAR_BUDGET", 65000, {
+  minimum: 30000,
+  maximum: 180000
+});
+const PROMPT_MAX_MESSAGE_CHARS = readCountLimit("HEGEL_PROMPT_MAX_MESSAGE_CHARS", 12000, {
+  minimum: 7000,
+  maximum: 32000
+});
+const PROMPT_ATTACHMENT_MAX_MESSAGE_CHARS = readCountLimit("HEGEL_PROMPT_ATTACHMENT_MAX_MESSAGE_CHARS", 9000, {
+  minimum: 5000,
+  maximum: 24000
+});
+const PROMPT_SUMMARY_CHAR_BUDGET = readCountLimit("HEGEL_PROMPT_SUMMARY_CHAR_BUDGET", 12000, {
+  minimum: 5200,
+  maximum: 40000
+});
 const ALLOWED_ATTACHMENT_EXTENSIONS = new Set([
   ".csv",
   ".gif",
@@ -304,38 +444,13 @@ function canTrustForwardedHeaders(req) {
   return trustProxyHeaders || isLoopbackAddress(String(req?.socket?.remoteAddress || "").trim());
 }
 
-function getSocketClientIp(req) {
-  return String(req?.socket?.remoteAddress || "").trim();
-}
-
-function getRequestHostname(req) {
-  const host = getRequestHost(req);
-  return String(host || "")
-    .split(":")[0]
-    .trim()
-    .toLowerCase();
-}
-
-function isLoopbackTargetRequest(req) {
-  return isLoopbackHost(getRequestHostname(req));
-}
-
 function getClientIp(req) {
   const forwardedFor = canTrustForwardedHeaders(req)
     ? String(req.headers["x-forwarded-for"] || "")
         .split(",")[0]
         .trim()
     : "";
-  return forwardedFor || getSocketClientIp(req);
-}
-
-function getAdminClientIp(req) {
-  const socketIp = getSocketClientIp(req);
-  if (isLoopbackAddress(socketIp) && isLoopbackTargetRequest(req)) {
-    return socketIp;
-  }
-
-  return getClientIp(req);
+  return forwardedFor || String(req.socket?.remoteAddress || "").trim();
 }
 
 function normalizeRateLimitIdentity(value, fallback = "unknown") {
@@ -590,12 +705,34 @@ function isTrustedInternalRequest(req) {
   );
 }
 
+function isLocalAgentBearerResultRequest(req) {
+  if (String(req.method || "").toUpperCase() !== "POST") {
+    return false;
+  }
+
+  const authorization = String(req.headers.authorization || "").trim();
+  if (!/^Bearer\s+\S+/i.test(authorization)) {
+    return false;
+  }
+
+  try {
+    const url = new URL(req.url || "/", `http://${req.headers.host || "127.0.0.1"}`);
+    return /^\/api\/local-agent\/tasks\/[^/]+\/result$/.test(url.pathname);
+  } catch {
+    return false;
+  }
+}
+
 function ensureCsrfProtection(req, res) {
   if (["GET", "HEAD", "OPTIONS"].includes(String(req.method || "").toUpperCase())) {
     return true;
   }
 
   if (isTrustedInternalRequest(req)) {
+    return true;
+  }
+
+  if (isLocalAgentBearerResultRequest(req)) {
     return true;
   }
 
@@ -776,6 +913,22 @@ function parseJsonSafe(raw) {
     return JSON.parse(raw);
   } catch {
     return {};
+  }
+}
+
+async function withDeadline(promise, timeoutMs, message) {
+  let timeoutId = null;
+  try {
+    return await Promise.race([
+      promise,
+      new Promise((_, reject) => {
+        timeoutId = setTimeout(() => reject(new Error(message)), timeoutMs);
+      })
+    ]);
+  } finally {
+    if (timeoutId) {
+      clearTimeout(timeoutId);
+    }
   }
 }
 
@@ -1122,6 +1275,24 @@ function getRequestedStyleProfileId(req, body = null) {
   }
 }
 
+function normalizeChatSessionId(value = "") {
+  const normalized = String(value || "").trim();
+  return /^[A-Za-z0-9_-]{1,96}$/.test(normalized) ? normalized : "";
+}
+
+function getRequestedChatSessionId(req, body = null) {
+  if (body && typeof body.chatSessionId === "string") {
+    return normalizeChatSessionId(body.chatSessionId);
+  }
+
+  try {
+    const url = new URL(req.url || "/", `http://${req.headers.host || "127.0.0.1"}`);
+    return normalizeChatSessionId(url.searchParams.get("chatSessionId") || "");
+  } catch {
+    return "";
+  }
+}
+
 async function resolveStyleScope(context, requestedStyleProfileId = "") {
   if (!context?.auth?.user?.id) {
     return {
@@ -1146,6 +1317,117 @@ async function resolveStyleScope(context, requestedStyleProfileId = "") {
   };
 }
 
+function withChatSessionScope(scope, chatSessionId) {
+  return {
+    ...scope,
+    chatSessionId: normalizeChatSessionId(chatSessionId)
+  };
+}
+
+function ensureChatSessionForScope(scope = buildRuntimeScope(), requestedChatSessionId = "") {
+  if (!scope.userId) {
+    return withChatSessionScope(scope, requestedChatSessionId || "local");
+  }
+
+  const now = new Date().toISOString();
+  const requested = normalizeChatSessionId(requestedChatSessionId);
+  const existing = requested ? readChatSessionByIdFromDb(scope.userId, requested) : null;
+  if (existing) {
+    return withChatSessionScope(scope, existing.id);
+  }
+
+  const latest = requested ? null : readLatestChatSessionFromDb(scope.userId, scope.styleProfileId);
+  const sessionId = requested || latest?.id || "default";
+  if (!latest || requested) {
+    upsertChatSessionInDb({
+      id: sessionId,
+      userId: scope.userId,
+      styleProfileId: scope.styleProfileId,
+      createdAt: now,
+      updatedAt: now
+    });
+  }
+
+  return withChatSessionScope(scope, sessionId);
+}
+
+const LOCAL_AGENT_TASK_TTL_MS = 30 * 60 * 1000;
+const LOCAL_AGENT_ONLINE_WINDOW_MS = 90 * 1000;
+
+function hashLocalAgentToken(token) {
+  return createHash("sha256").update(String(token || ""), "utf8").digest("hex");
+}
+
+function createLocalAgentToken() {
+  return `hsloc_${randomBytes(32).toString("base64url")}`;
+}
+
+function readBearerToken(req) {
+  const authorization = String(req.headers.authorization || "").trim();
+  const match = authorization.match(/^Bearer\s+(.+)$/i);
+  return match ? match[1].trim() : "";
+}
+
+function normalizeLocalAgentDeviceName(value = "") {
+  const normalized = sanitizeBoundedText(value, 80);
+  return normalized || "Local Codex Agent";
+}
+
+function sanitizeBoundedRawText(value = "", maxLength = 12000) {
+  const raw = String(value || "").replace(/\u0000/g, "");
+  return raw.length > maxLength ? raw.slice(0, maxLength) : raw;
+}
+
+function normalizeLocalAgentCapabilities(value = {}) {
+  const input = isPlainObject(value) ? value : {};
+  return {
+    codexExec: input.codexExec !== false,
+    computerUse: Boolean(input.computerUse),
+    platform: sanitizeBoundedText(input.platform || "", 80)
+  };
+}
+
+function localAgentDeviceClientRecord(device) {
+  if (!device) {
+    return null;
+  }
+
+  const lastSeenAtMs = device.lastSeenAt ? Date.parse(device.lastSeenAt) : 0;
+  return {
+    ...device,
+    online: Boolean(
+      !device.revokedAt &&
+      lastSeenAtMs &&
+      Number.isFinite(lastSeenAtMs) &&
+      Date.now() - lastSeenAtMs <= LOCAL_AGENT_ONLINE_WINDOW_MS
+    )
+  };
+}
+
+function normalizeLocalAgentTaskPrompt(value = "") {
+  return sanitizeBoundedRawText(value, 24000).trim();
+}
+
+function normalizeLocalAgentTaskType(value = "") {
+  return String(value || "").trim() === "computer_use" ? "computer_use" : "codex_exec";
+}
+
+async function resolveLocalAgentDeviceFromRequest(req, res) {
+  const token = readBearerToken(req);
+  if (!token) {
+    sendJson(res, 401, { error: "Local Agent bearer token required." });
+    return null;
+  }
+
+  const device = readLocalAgentDeviceByTokenHashFromDb(hashLocalAgentToken(token));
+  if (!device || device.revokedAt) {
+    sendJson(res, 401, { error: "Local Agent token is invalid or revoked." });
+    return null;
+  }
+
+  return device;
+}
+
 function requireAuthenticatedUser(res, context) {
   if (!authEnabled) {
     return true;
@@ -1168,14 +1450,13 @@ function requireAdminUser(res, context) {
   }
 
   const req = res?.__hegelRequest;
-  const adminClientIp = req ? getAdminClientIp(req) : "";
-  if (req && !isAllowedAdminIp(adminClientIp)) {
+  if (req && !isAllowedAdminIp(getClientIp(req))) {
     recordSecurityAuditEvent({
       eventType: "admin_ip_blocked",
       severity: "warning",
       userId: context?.auth?.user?.id || null,
       loginIdentifier: context?.auth?.user?.email || context?.auth?.user?.account || null,
-      ipAddress: adminClientIp,
+      ipAddress: getClientIp(req),
       userAgent: String(req.headers["user-agent"] || ""),
       route: req.url || ""
     });
@@ -1184,7 +1465,7 @@ function requireAdminUser(res, context) {
       severity: "warning",
       userId: context?.auth?.user?.id || null,
       loginIdentifier: context?.auth?.user?.email || context?.auth?.user?.account || null,
-      ipAddress: adminClientIp,
+      ipAddress: getClientIp(req),
       userAgent: String(req.headers["user-agent"] || ""),
       route: req.url || "",
       message: "Administrator access was attempted from a non-whitelisted IP address.",
@@ -1393,12 +1674,27 @@ async function serveStatic(req, res) {
   const noCache =
     ext === ".html" || ext === ".css" || ext === ".js" || ext === ".json";
   res.writeHead(200, {
-    "Cache-Control": noCache ? "no-cache" : "public, max-age=3600",
+    "Cache-Control": noCache ? "no-store, max-age=0" : "public, max-age=3600",
     "Content-Type": mimeTypes[ext] || "application/octet-stream",
     ...buildCorsHeaders(req),
     ...buildSecurityHeaders(req, { html: ext === ".html" })
   });
   createReadStream(resolved).pipe(res);
+}
+
+async function serveLocalAgentRunner(req, res) {
+  if (!existsSync(localAgentRunnerScriptPath)) {
+    sendJson(res, 404, { error: "Local Agent runner was not found." });
+    return;
+  }
+
+  res.writeHead(200, {
+    "Cache-Control": "no-store, max-age=0",
+    "Content-Type": "application/javascript; charset=utf-8",
+    ...buildCorsHeaders(req),
+    ...buildSecurityHeaders(req)
+  });
+  createReadStream(localAgentRunnerScriptPath).pipe(res);
 }
 
 async function readJsonBody(req) {
@@ -1628,13 +1924,17 @@ function normalizeAttachmentRecord(input = {}) {
   };
 }
 
-function normalizeHistoryInput(history = []) {
+function normalizeHistoryInput(history = [], limit = NORMALIZED_HISTORY_LIMIT) {
   if (!Array.isArray(history)) {
     return [];
   }
 
-  return history
-    .slice(-40)
+  const resolvedLimit = Number(limit);
+  const source = Number.isFinite(resolvedLimit) && resolvedLimit > 0
+    ? history.slice(-resolvedLimit)
+    : history;
+
+  return source
     .filter((item) => item && (item.role === "user" || item.role === "assistant"))
     .map((item) => ({
       role: item.role,
@@ -1648,6 +1948,78 @@ function normalizeHistoryInput(history = []) {
     }));
 }
 
+function limitRecentHistory(history = [], limit = CHAT_MODEL_HISTORY_LIMIT) {
+  const normalized = normalizeHistoryInput(history);
+  const resolvedLimit = Number(limit);
+  if (!Number.isFinite(resolvedLimit)) {
+    return normalized;
+  }
+  return normalized.slice(-Math.max(1, resolvedLimit));
+}
+
+function looksLikeSmTopic(content = "") {
+  return /(^|\b|[\s，。！？：；、])s\s*\/?\s*m($|\b|[\s，。！？：；、])|施虐|受虐|支配|服从|调教|BDSM/i.test(
+    String(content || "")
+  );
+}
+
+function buildSmDialecticalFallbackReply(content = "") {
+  const asksToDiscuss = /谈谈|说说|讲讲|解释|聊聊|怎么看|是什么|为何|为什么/i.test(content);
+  const lead = asksToDiscuss
+    ? "谈 SM，不能先从猎奇开始，而要先问：支配与服从怎样被同意、规则和承认中介。"
+    : "如果你说“就是 SM”，我先把它确定为一种围绕支配、服从、痛感边界和相互承认组织起来的关系形式。";
+
+  return [
+    lead,
+    "黑格尔式地说，危险不在于有强弱位置本身，而在于一方把另一方降成纯粹物；只要边界、同意和可撤回性仍然有效，所谓支配就不是赤裸占有，而是一种被双方承认的表演性关系。",
+    "所以真正要判断的不是“它刺激不刺激”，而是：欲望有没有把对方当作自由者来承认。"
+  ].join("\n\n");
+}
+
+function buildShortHegelFallbackReply(content = "") {
+  const topic = sanitizeBoundedText(content, 160) || "这个问题";
+
+  if (/自由/u.test(topic)) {
+    return "自由不是随便做什么，而是在限制中仍能把行动认作自己的理性规定；没有这种自我规定，任性只是欲望换了名字。";
+  }
+
+  if (/承认|认可|主奴|主人|奴隶/u.test(topic)) {
+    return "承认不能单方面给予，因为我只有在另一个自由者的回应中才真正成为自己；若对方只是物，我得到的就不是承认，而只是回声。";
+  }
+
+  if (/你好|嗨|hello|hi/i.test(topic)) {
+    return "我在。把问题抛过来，我们不急着找结论，先把概念本身逼到它必须说清楚的位置。";
+  }
+
+  return [
+    `我先按“${topic}”来回答，而不把问题退回给你。`,
+    "黑格尔式的入口是：不要把它当成一个孤立标签，而要看它在什么关系中取得意义、它依赖什么反面、又怎样要求被承认。",
+    "如果你愿意继续，我们可以马上把它推进一步：它是欲望的问题、权力的问题，还是承认的问题？"
+  ].join("\n\n");
+}
+
+function buildPublicFallbackReply(userMessage, error = null) {
+  const content = normalizeWhitespace(userMessage?.content || "");
+  const memoryWriteMatch = content.match(/^(?:请)?记住[:：]?\s*(.+)$/u);
+  if (memoryWriteMatch?.[1]) {
+    return `记住了：${sanitizeBoundedText(memoryWriteMatch[1], 220)}`;
+  }
+
+  if (looksLikeSmTopic(content)) {
+    return buildSmDialecticalFallbackReply(content);
+  }
+
+  if (content.length <= 80) {
+    return buildShortHegelFallbackReply(content);
+  }
+
+  return [
+    "这轮我先不把问题退还给你，而直接给出一个可继续推进的判断。",
+    `你问的是：“${sanitizeBoundedText(content, 220)}”。`,
+    "它的关键不在表面措辞，而在它背后的关系结构：一个概念只有经过它的反面、边界和承认，才不只是空名。"
+  ].filter(Boolean).join("\n\n");
+}
+
 function getMessageText(message) {
   return normalizeWhitespace(message?.content || "");
 }
@@ -1658,6 +2030,66 @@ function getMessageAttachments(message) {
 
 function hasMessagePayload(message) {
   return Boolean(getMessageText(message)) || getMessageAttachments(message).length > 0;
+}
+
+function buildRecentQuestionRecallReply(history = [], latestUserIndex = -1) {
+  const latest = history[latestUserIndex];
+  const prompt = normalizeWhitespace(latest?.content || "");
+  if (!prompt) {
+    return "";
+  }
+
+  const asksRecentQuestion =
+    /刚才.*(问|说)|上一(句|条|个).*(问|说)|前面.*(问|说)|记得.*(刚才|上一|前面)/u.test(prompt) ||
+    /what did i (just|previously) ask|previous question|last question/i.test(prompt);
+  if (!asksRecentQuestion) {
+    return "";
+  }
+
+  const previousUser = history
+    .slice(0, Math.max(0, latestUserIndex))
+    .reverse()
+    .find((message) => message?.role === "user" && normalizeWhitespace(message.content || ""));
+  if (!previousUser) {
+    return "我这里还没有可追溯的上一条用户问题。";
+  }
+
+  return `你刚才问的是：“${sanitizeBoundedText(previousUser.content || "", 220)}”。`;
+}
+
+function buildDurableMemoryRecallReply(history = [], latestUserIndex = -1, scope = buildRuntimeScope()) {
+  const latest = history[latestUserIndex];
+  const prompt = normalizeWhitespace(latest?.content || "");
+  if (!prompt || /^请?记住[:：]?/u.test(prompt)) {
+    return "";
+  }
+
+  const asksDurableMemory =
+    /你记得.*(长期目标|目标|记忆)|当前记忆.*(长期目标|目标)|长期目标是什么|我的长期目标是什么/u.test(prompt);
+  if (!asksDurableMemory || !scope?.userId) {
+    return "";
+  }
+
+  const longTermProfile = readUserLongTermMemoryProfileFromDb(scope.userId);
+  const styleMemoryProfile = readUserMemoryProfileFromDb(scope.userId, scope.styleProfileId);
+  const lines = [
+    ...collectMemorySummaryLines(longTermProfile?.summaryText || "", 30),
+    ...collectMemorySummaryLines(styleMemoryProfile?.summaryText || "", 30)
+  ];
+  const targetLine = lines.find((line) =>
+    /长期目标|目标是|Hegel Salon.*记忆机制|上下文窗口/u.test(line)
+  );
+  if (!targetLine) {
+    return "";
+  }
+
+  const cleaned = sanitizeBoundedText(targetLine.replace(/^记住[:：]?\s*/u, ""), 260);
+  const goalMatch = cleaned.match(/我的长期目标是(.+)$/u);
+  if (goalMatch?.[1]) {
+    return `你的长期目标是${goalMatch[1]}`;
+  }
+
+  return `我记得：${cleaned}`;
 }
 
 function attachmentHasLocalText(attachment) {
@@ -2164,13 +2596,30 @@ async function persistResearchSnapshot(systemPrompt) {
 
 async function appendChatLog(history, reply, scope = buildRuntimeScope()) {
   if (scope.userId) {
-    appendUserChatLogToDb(
-      scope.userId,
-      scope.styleProfileId,
-      history,
-      reply,
-      new Date().toISOString()
+    const sessionScope = ensureChatSessionForScope(scope, scope.chatSessionId);
+    const existingConversation = await readPersistedConversation(sessionScope);
+    const mergedHistory = mergeConversationHistoryWithoutDuplicate(existingConversation, history);
+    const fullConversation = reply
+      ? [...mergedHistory, { role: "assistant", content: reply, attachments: [] }]
+      : mergedHistory;
+    const now = new Date().toISOString();
+
+    appendChatSessionMessagesToDb(
+      sessionScope.userId,
+      sessionScope.styleProfileId,
+      sessionScope.chatSessionId,
+      fullConversation,
+      now
     );
+    appendUserChatLogToDb(
+      sessionScope.userId,
+      sessionScope.styleProfileId,
+      normalizeHistoryInput(history),
+      reply,
+      now,
+      sessionScope.chatSessionId
+    );
+    refreshChatSessionMemoryProfileHeuristically(sessionScope);
     return;
   }
 
@@ -2214,7 +2663,8 @@ async function appendUserMemoryTurn(userMessage, reply, scope = buildRuntimeScop
         content: reply,
         attachments: []
       }),
-      new Date().toISOString()
+      new Date().toISOString(),
+      scope.chatSessionId || "default"
     );
     return;
   }
@@ -2231,6 +2681,57 @@ async function appendUserMemoryTurn(userMessage, reply, scope = buildRuntimeScop
   };
 
   await appendTextFileDurable(scope.memoryPath, `${JSON.stringify(record)}\n`, "utf8");
+}
+
+function persistChatResultInBackground({
+  scope,
+  history = [],
+  reply = "",
+  result = {},
+  latestUser = null,
+  allowMemoryRefresh = false
+} = {}) {
+  if (!scope || !shouldPersistUserContent(scope)) {
+    return;
+  }
+
+  const userMessage = result.userMessage || latestUser;
+  const persistedHistory = limitRecentHistory(
+    result.history || history || (userMessage ? [userMessage] : []),
+    CHAT_STORAGE_HISTORY_LIMIT
+  );
+  const qualityJudge = result.qualityJudge || buildQualityJudgeDefault();
+  const strictLogicJudge = result.strictLogicJudge || buildStrictLogicJudgeDefault();
+  const historiographyJudge = result.historiographyJudge || buildHistoriographyJudgeDefault();
+
+  Promise.resolve()
+    .then(async () => {
+      await appendChatLog(persistedHistory, reply, scope);
+      await appendOptimizerRecord({
+        userId: scope.userId,
+        styleProfileId: scope.styleProfileId,
+        prompt: userMessage?.content || "",
+        reply,
+        qualityJudge,
+        strictLogicJudge,
+        historiographyJudge,
+        selfAudit: result.selfAudit
+      });
+      if (userMessage) {
+        await appendUserMemoryTurn(userMessage, reply, scope);
+      }
+      if (allowMemoryRefresh && scope.userId && result.usedConfig) {
+        await Promise.all([
+          refreshUserMemoryProfile(scope, result.usedConfig),
+          refreshUserLongTermMemoryProfile(scope, result.usedConfig)
+        ]);
+      } else if (scope.userId) {
+        await refreshUserMemoryProfilesHeuristically(scope);
+      }
+    })
+    .catch((error) => {
+      console.warn("Background chat persistence failed:", error?.message || error);
+    });
 }
 
 async function readRecentUserMemory(scope = buildRuntimeScope(), limit = 24) {
@@ -2295,9 +2796,17 @@ function buildConversationFromChatLogRecord(record) {
 
 async function readPersistedConversation(scope = buildRuntimeScope()) {
   if (scope.userId) {
+    const sessionId = normalizeChatSessionId(scope.chatSessionId);
+    if (sessionId) {
+      const rows = readChatSessionMessagesFromDb(scope.userId, sessionId);
+      if (rows.length) {
+        return limitRecentHistory(rows, HISTORY_DISPLAY_LIMIT);
+      }
+    }
+
     const [latest] = readRecentUserChatLogsFromDb(scope.userId, scope.styleProfileId, 1);
-    if (latest) {
-      return buildConversationFromChatLogRecord(latest);
+    if (latest && (!sessionId || latest.chatSessionId === sessionId)) {
+      return limitRecentHistory(buildConversationFromChatLogRecord(latest), HISTORY_DISPLAY_LIMIT);
     }
   }
 
@@ -2311,7 +2820,7 @@ async function readPersistedConversation(scope = buildRuntimeScope()) {
     const latest = lines.length
       ? parseJsonSafe(String(lines[lines.length - 1]).replace(/^\uFEFF/, ""))
       : null;
-    return buildConversationFromChatLogRecord(latest);
+    return limitRecentHistory(buildConversationFromChatLogRecord(latest), HISTORY_DISPLAY_LIMIT);
   } catch {
     return [];
   }
@@ -2322,21 +2831,19 @@ function buildUserHistoricalMemoryContextFromRecords(chatLogs = [], memoryTurns 
   const recentSignals = [];
   const seen = new Set();
 
-  function pushUnique(target, value, limit = 18) {
-    const normalized = normalizeWhitespace(value || "");
-    if (!normalized || seen.has(`${target.length}:${normalized}`)) {
+  function pushUnique(target, value) {
+    const normalized = sanitizeMemorySignalLine(value || "");
+    const bucket = target === preferenceSignals ? "pref" : "recent";
+    const key = `${bucket}:${normalized}`;
+    if (!normalized || seen.has(key)) {
       return;
     }
-    if (target.length >= limit) {
-      return;
-    }
-    seen.add(`${target.length}:${normalized}`);
+    seen.add(key);
     target.push(normalized);
   }
 
   for (const turn of memoryTurns) {
     pushUnique(preferenceSignals, turn?.userMessage?.content || "", 24);
-    pushUnique(preferenceSignals, turn?.assistantMessage?.content || "", 24);
   }
 
   for (const log of chatLogs) {
@@ -2344,15 +2851,12 @@ function buildUserHistoricalMemoryContextFromRecords(chatLogs = [], memoryTurns 
     for (const item of history) {
       const content = normalizeWhitespace(item?.content || "");
       if (!content) continue;
+      if (item?.role !== "user") continue;
 
       if (/记住|偏好|以后|默认|优先|不要|请用|习惯|风格/u.test(content)) {
         pushUnique(preferenceSignals, content, 24);
       }
       pushUnique(recentSignals, content, 20);
-    }
-
-    if (log?.reply) {
-      pushUnique(recentSignals, log.reply, 20);
     }
   }
 
@@ -2368,15 +2872,99 @@ function buildUserHistoricalMemoryContextFromRecords(chatLogs = [], memoryTurns 
 
   if (preferenceSignals.length) {
     lines.push("Long-term user preference signals:");
-    preferenceSignals.slice(-12).forEach((item) => lines.push(`- ${item}`));
+    preferenceSignals.forEach((item) => lines.push(`- ${item}`));
   }
 
   if (recentSignals.length) {
     lines.push("Recent cross-session conversation signals:");
-    recentSignals.slice(-12).forEach((item) => lines.push(`- ${item}`));
+    recentSignals.forEach((item) => lines.push(`- ${item}`));
   }
 
   return lines.join("\n");
+}
+
+function stripLeadingBulletMarker(line = "") {
+  return String(line || "").replace(/^\s*[-*+]\s*/, "").trim();
+}
+
+function hasUserPreferenceSignal(text = "") {
+  const content = String(text || "");
+  return /记住|偏好|以后|默认|优先|不要|请用|习惯|风格|语气|篇幅|格式|用词|避免|附件|上传|项目|长期|一直|持续/u.test(content);
+}
+
+function hasDurableMemorySignal(text = "") {
+  const content = String(text || "");
+  return hasUserPreferenceSignal(content)
+    || /目标|任务|需求|要求|希望|需要|必须|正在|当前|以后|长期|持续|项目|修复|升级|部署|公网|域名|入口|上下文|窗口|历史|记忆|压缩|摘要|根修|Hegel Salon|hegelsalon/i.test(content);
+}
+
+function hasTransientValidationSignal(text = "") {
+  const content = String(text || "");
+  const looksTransient = /记忆锚点|入口验收|公网.*验收|重启后.*验收|smoke|测试|test/i.test(content);
+  const looksLikeRecallQuery = /确认.*记忆|当前记忆|你记得|记得我|刚才|上一条|前面/u.test(content);
+  const explicitlyDurable = /记住[:：]?|我的[^。；\n]{0,20}目标是|长期目标是|需求是|要求是|必须|需要|以后|持续|根修|升级/u.test(content);
+  return (looksTransient || looksLikeRecallQuery) && !explicitlyDurable;
+}
+
+function hasDogmaticMemoryPattern(text = "") {
+  const content = String(text || "");
+  return /不是[^。；\n]{0,42}而是[^。；\n]{0,42}/u.test(content)
+    || /问题不在于[^。；\n]{0,42}而在于[^。；\n]{0,42}/u.test(content)
+    || /真正的[^。；\n]{0,24}不是[^。；\n]{0,42}而是[^。；\n]{0,42}/u.test(content)
+    || /归根到底/u.test(content)
+    || /说到底/u.test(content);
+}
+
+function sanitizeMemorySignalLine(line = "") {
+  const normalized = normalizeWhitespace(stripLeadingBulletMarker(line));
+  if (!normalized) {
+    return "";
+  }
+
+  if (!hasDurableMemorySignal(normalized)) {
+    return "";
+  }
+
+  if (hasTransientValidationSignal(normalized)) {
+    return "";
+  }
+
+  if (hasDogmaticMemoryPattern(normalized)) {
+    return "";
+  }
+
+  return sanitizeBoundedText(normalized, 220);
+}
+
+function collectMemorySummaryLines(text = "", maxLines = 18) {
+  return String(text || "")
+    .split(/\r?\n/)
+    .map((line) => sanitizeMemorySignalLine(line))
+    .filter(Boolean)
+    .slice(0, maxLines);
+}
+
+function sanitizeMemorySummaryText(text = "", maxLines = 18) {
+  const lines = collectMemorySummaryLines(text, maxLines);
+
+  return normalizeWhitespace(lines.map((line) => `- ${line}`).join("\n"));
+}
+
+function mergeMemorySummaryTexts(existingSummary = "", newSummary = "", maxLines = 18) {
+  const deduped = new Map();
+  for (const line of [
+    ...collectMemorySummaryLines(existingSummary, maxLines * 2),
+    ...collectMemorySummaryLines(newSummary, maxLines * 2)
+  ]) {
+    const key = line.toLowerCase();
+    if (deduped.has(key)) {
+      deduped.delete(key);
+    }
+    deduped.set(key, line);
+  }
+
+  const lines = Array.from(deduped.values()).slice(-maxLines);
+  return normalizeWhitespace(lines.map((line) => `- ${line}`).join("\n"));
 }
 
 function buildTrainedStyleSummaryFromPlaybook(playbook = {}) {
@@ -2384,15 +2972,24 @@ function buildTrainedStyleSummaryFromPlaybook(playbook = {}) {
 }
 
 function buildUserMemorySummaryMessages({ existingSummary, chatLogs, memoryTurns }) {
-  const recentChatSlice = chatLogs.slice(-12).map((record) => ({
+  const recentChatSlice = chatLogs.map((record) => ({
     createdAt: record.createdAt,
-    history: record.history,
-    reply: record.reply
+    userMessages: Array.isArray(record.history)
+      ? record.history
+          .filter((item) => item?.role === "user")
+          .map((item) => ({
+            role: "user",
+            content: normalizeWhitespace(item?.content || "")
+          }))
+          .filter((item) => item.content)
+      : []
   }));
-  const recentMemorySlice = memoryTurns.slice(-24).map((record) => ({
+  const recentMemorySlice = memoryTurns.map((record) => ({
     createdAt: record.createdAt,
-    user: record.userMessage,
-    assistant: record.assistantMessage
+    user: {
+      role: "user",
+      content: normalizeWhitespace(record?.userMessage?.content || "")
+    }
   }));
 
   return [
@@ -2409,32 +3006,43 @@ function buildUserMemorySummaryMessages({ existingSummary, chatLogs, memoryTurns
     {
       role: "user",
       content: [
-        `Existing memory summary:\n${existingSummary || "(none)"}`,
+        `Existing memory summary:\n${sanitizeMemorySummaryText(existingSummary) || "(none)"}`,
         "",
-        "Recent persisted chats:",
+        "Recent persisted user messages:",
         JSON.stringify(recentChatSlice, null, 2),
         "",
-        "Recent memory turns:",
+        "Recent explicit user memory turns:",
         JSON.stringify(recentMemorySlice, null, 2),
         "",
-        "Return the refreshed durable memory summary only."
+        "Return the refreshed durable memory summary only.",
+        "Keep only durable user preferences, recurring constraints, repeated project facts, and stable style requests.",
+        "Do not echo assistant phrasing or summarize old assistant rhetoric as user preference."
       ].join("\n")
     }
   ];
 }
 
 function buildUserLongTermMemorySummaryMessages({ existingSummary, chatLogs, memoryTurns, styles }) {
-  const recentChatSlice = chatLogs.slice(-16).map((record) => ({
+  const recentChatSlice = chatLogs.map((record) => ({
     createdAt: record.createdAt,
     styleProfileId: record.styleProfileId,
-    history: record.history,
-    reply: record.reply
+    userMessages: Array.isArray(record.history)
+      ? record.history
+          .filter((item) => item?.role === "user")
+          .map((item) => ({
+            role: "user",
+            content: normalizeWhitespace(item?.content || "")
+          }))
+          .filter((item) => item.content)
+      : []
   }));
-  const recentMemorySlice = memoryTurns.slice(-28).map((record) => ({
+  const recentMemorySlice = memoryTurns.map((record) => ({
     createdAt: record.createdAt,
     styleProfileId: record.styleProfileId,
-    user: record.userMessage,
-    assistant: record.assistantMessage
+    user: {
+      role: "user",
+      content: normalizeWhitespace(record?.userMessage?.content || "")
+    }
   }));
 
   return [
@@ -2451,17 +3059,19 @@ function buildUserLongTermMemorySummaryMessages({ existingSummary, chatLogs, mem
     {
       role: "user",
       content: [
-        `Existing user-level long-term summary:\n${existingSummary || "(none)"}`,
+        `Existing user-level long-term summary:\n${sanitizeMemorySummaryText(existingSummary) || "(none)"}`,
         "",
         `Current style keys: ${(Array.isArray(styles) ? styles : []).map((style) => style.styleKey).join(", ") || "(none)"}`,
         "",
-        "Recent persisted chats across styles:",
+        "Recent persisted user messages across styles:",
         JSON.stringify(recentChatSlice, null, 2),
         "",
-        "Recent persisted memory turns across styles:",
+        "Recent explicit user memory turns across styles:",
         JSON.stringify(recentMemorySlice, null, 2),
         "",
-        "Return the refreshed durable user-level summary only."
+        "Return the refreshed durable user-level summary only.",
+        "Keep only user-specific durable preferences and long-term constraints that should survive across styles.",
+        "Do not treat assistant rhetoric, doctrinal slogans, or stock sentence patterns as user preference."
       ].join("\n")
     }
   ];
@@ -2572,6 +3182,116 @@ async function refreshUserLongTermMemoryProfile(scope = buildRuntimeScope(), con
   );
 }
 
+async function refreshUserMemoryProfilesHeuristically(scope = buildRuntimeScope()) {
+  if (!scope.userId) {
+    return null;
+  }
+
+  try {
+    const [
+      styleChatLogs,
+      styleMemoryTurns,
+      userChatLogs,
+      userMemoryTurns,
+      existingStyleProfile,
+      existingLongTermProfile
+    ] = await Promise.all([
+      Promise.resolve(readRecentUserChatLogsFromDb(scope.userId, scope.styleProfileId, MEMORY_HEURISTIC_CHAT_LIMIT)),
+      Promise.resolve(readRecentUserMemoryTurnsFromDb(scope.userId, scope.styleProfileId, MEMORY_HEURISTIC_TURN_LIMIT)),
+      Promise.resolve(readRecentUserChatLogsFromDb(scope.userId, null, MEMORY_HEURISTIC_CHAT_LIMIT)),
+      Promise.resolve(readRecentUserMemoryTurnsFromDb(scope.userId, null, MEMORY_HEURISTIC_TURN_LIMIT)),
+      Promise.resolve(readUserMemoryProfileFromDb(scope.userId, scope.styleProfileId)),
+      Promise.resolve(readUserLongTermMemoryProfileFromDb(scope.userId))
+    ]);
+
+    const now = new Date().toISOString();
+    const styleSummary = mergeMemorySummaryTexts(
+      existingStyleProfile?.summaryText || "",
+      buildUserHistoricalMemoryContextFromRecords(styleChatLogs, styleMemoryTurns),
+      18
+    );
+    const longTermSummary = mergeMemorySummaryTexts(
+      existingLongTermProfile?.summaryText || "",
+      buildUserHistoricalMemoryContextFromRecords(userChatLogs, userMemoryTurns),
+      22
+    );
+
+    const results = {
+      styleMemoryProfile: existingStyleProfile || null,
+      longTermMemoryProfile: existingLongTermProfile || null
+    };
+
+    if (styleSummary) {
+      results.styleMemoryProfile = writeUserMemoryProfileToDb(
+        scope.userId,
+        scope.styleProfileId,
+        styleSummary,
+        countUserChatLogsInDb(scope.userId, scope.styleProfileId)
+          + countUserMemoryTurnsInDb(scope.userId, scope.styleProfileId),
+        now
+      );
+    }
+
+    if (longTermSummary) {
+      results.longTermMemoryProfile = writeUserLongTermMemoryProfileToDb(
+        scope.userId,
+        longTermSummary,
+        countUserChatLogsInDb(scope.userId)
+          + countUserMemoryTurnsInDb(scope.userId),
+        now
+      );
+    }
+
+    return results;
+  } catch (error) {
+    console.warn("Heuristic memory compression failed:", error?.message || error);
+    return null;
+  }
+}
+
+function refreshChatSessionMemoryProfileHeuristically(scope = buildRuntimeScope()) {
+  if (!scope.userId || !scope.chatSessionId) {
+    return null;
+  }
+
+  try {
+    const sessionProfile = readChatSessionByIdFromDb(scope.userId, scope.chatSessionId);
+    const knownMessageCount = Number(sessionProfile?.messageCount || 0);
+    const sourceMessageCount = Number(sessionProfile?.memorySourceMessageCount || 0);
+    const shouldRefresh =
+      !sourceMessageCount ||
+      knownMessageCount <= 200 ||
+      knownMessageCount - sourceMessageCount >= 100 ||
+      knownMessageCount % 1000 === 0;
+    if (!shouldRefresh) {
+      return sessionProfile;
+    }
+
+    const rows = readChatSessionMessagesFromDb(scope.userId, scope.chatSessionId);
+    if (!rows.length) {
+      return null;
+    }
+
+    const summary = buildUserHistoricalMemoryContextFromRecords(
+      [{ history: rows, createdAt: rows[0]?.createdAt || "" }],
+      []
+    );
+    if (!summary) {
+      return null;
+    }
+
+    return writeChatSessionMemoryProfileToDb(
+      scope.userId,
+      scope.chatSessionId,
+      summary,
+      rows.length,
+      new Date().toISOString()
+    );
+  } catch {
+    return null;
+  }
+}
+
 async function buildUserMemoryLayers(scope = buildRuntimeScope()) {
   if (!scope.userId) {
     return {
@@ -2590,9 +3310,12 @@ async function buildUserMemoryLayers(scope = buildRuntimeScope()) {
     );
     const styleMemoryProfile = readUserMemoryProfileFromDb(scope.userId, scope.styleProfileId);
     const longTermMemoryProfile = readUserLongTermMemoryProfileFromDb(scope.userId);
+    const chatSessionProfile = scope.chatSessionId
+      ? readChatSessionByIdFromDb(scope.userId, scope.chatSessionId)
+      : null;
     const [chatLogs, memoryTurns] = await Promise.all([
-      Promise.resolve(readAllUserChatLogsFromDb(scope.userId, scope.styleProfileId)),
-      Promise.resolve(readAllUserMemoryTurnsFromDb(scope.userId, scope.styleProfileId))
+      Promise.resolve(readRecentUserChatLogsFromDb(scope.userId, scope.styleProfileId, MEMORY_LAYER_CHAT_LIMIT)),
+      Promise.resolve(readRecentUserMemoryTurnsFromDb(scope.userId, scope.styleProfileId, MEMORY_LAYER_TURN_LIMIT))
     ]);
     const heuristicContext = buildUserHistoricalMemoryContextFromRecords(chatLogs, memoryTurns);
 
@@ -2604,8 +3327,18 @@ async function buildUserMemoryLayers(scope = buildRuntimeScope()) {
       blocks: [
         buildPromptBlock("Current style base prompt", styleProfile?.userStylePrompt || ""),
         buildPromptBlock("Trained style summary", styleProfile?.trainedStyleSummary || ""),
-        buildPromptBlock("Style memory summary", styleMemoryProfile?.summaryText || ""),
-        buildPromptBlock("User long-term memory summary", longTermMemoryProfile?.summaryText || ""),
+        buildPromptBlock(
+          "Style memory summary",
+          sanitizeMemorySummaryText(styleMemoryProfile?.summaryText || "")
+        ),
+        buildPromptBlock(
+          "User long-term memory summary",
+          sanitizeMemorySummaryText(longTermMemoryProfile?.summaryText || "")
+        ),
+        buildPromptBlock(
+          "Current chat session memory summary",
+          sanitizeMemorySummaryText(chatSessionProfile?.memorySummaryText || "")
+        ),
         buildPromptBlock("Cross-session style signals", heuristicContext || "")
       ].filter(Boolean)
     };
@@ -2634,16 +3367,73 @@ async function buildUserHistoricalMemoryContext(scope = buildRuntimeScope()) {
 }
 
 async function mergePersistedUserHistory(currentHistory, scope = buildRuntimeScope()) {
-  if (!scope.userId || !Array.isArray(currentHistory) || currentHistory.length > 2) {
-    return currentHistory;
-  }
+  const normalizedCurrent = normalizeHistoryInput(currentHistory);
 
   const persistedConversation = await readPersistedConversation(scope);
   if (!persistedConversation.length) {
-    return currentHistory;
+    return normalizedCurrent;
   }
 
-  return normalizeHistoryInput([...persistedConversation, ...currentHistory]).slice(-40);
+  return limitRecentHistory(
+    mergeConversationHistoryWithoutDuplicate(persistedConversation, normalizedCurrent),
+    CHAT_MODEL_HISTORY_LIMIT
+  );
+}
+
+function messageFingerprintForMerge(message = {}) {
+  const attachments = Array.isArray(message.attachments)
+    ? message.attachments.map((attachment) => ({
+        kind: attachment?.kind || "",
+        name: attachment?.name || "",
+        mediaType: attachment?.mediaType || "",
+        fileId: attachment?.fileId || "",
+        excerpt: attachment?.excerpt || "",
+        imageUrl: attachment?.imageUrl || ""
+      }))
+    : [];
+
+  return JSON.stringify({
+    role: message?.role === "assistant" ? "assistant" : "user",
+    content: normalizeWhitespace(message?.content || ""),
+    attachments
+  });
+}
+
+function mergeConversationHistoryWithoutDuplicate(persistedConversation = [], currentHistory = []) {
+  const persisted = normalizeHistoryInput(persistedConversation);
+  const current = normalizeHistoryInput(currentHistory);
+  const maxOverlap = Math.min(persisted.length, current.length);
+  let overlap = 0;
+
+  for (let size = maxOverlap; size > 0; size -= 1) {
+    let matches = true;
+    for (let index = 0; index < size; index += 1) {
+      const persistedItem = persisted[persisted.length - size + index];
+      const currentItem = current[index];
+      if (messageFingerprintForMerge(persistedItem) !== messageFingerprintForMerge(currentItem)) {
+        matches = false;
+        break;
+      }
+    }
+    if (matches) {
+      overlap = size;
+      break;
+    }
+  }
+
+  return [...persisted, ...current.slice(overlap)];
+}
+
+function looksLikeFollowUpRequest(currentHistory = []) {
+  const latestUser = [...(Array.isArray(currentHistory) ? currentHistory : [])]
+    .reverse()
+    .find((message) => message?.role === "user");
+  const content = normalizeWhitespace(latestUser?.content || "");
+  if (!content) {
+    return false;
+  }
+
+  return /继续|接着|上一条|上一个|刚才|刚刚|前面|上面|这个展开|详细说|再说|接下去|续写|follow[- ]?up|continue|elaborate/i.test(content);
 }
 
 function consumeSseLines(buffer, onPayload) {
@@ -2850,6 +3640,21 @@ function shouldMinimizeQuotes(userPrompt) {
   );
 }
 
+function isShortSubstantiveHegelPrompt(userPrompt) {
+  const prompt = normalizeWhitespace(String(userPrompt || ""));
+  if (!prompt || prompt.length > 140) {
+    return false;
+  }
+
+  const substantiveShortSignals = [
+    /(?:\u8c08\u8c08|\u8bf4\u8bf4|\u8bb2\u8bb2|\u804a\u804a|\u89e3\u91ca|\u600e\u4e48\u770b|\u4e3a\u4ec0\u4e48|\u4f55\u4ee5|\u662f\u4ec0\u4e48|\u5c31\u662f)/u,
+    /(?:\u81ea\u7531|\u627f\u8ba4|\u8ba4\u53ef|\u4e3b\u5974|\u4e3b\u4eba|\u5974\u96b6|\u6b32\u671b|\u7cbe\u795e|\u4f26\u7406|\u56fd\u5bb6|\u610f\u5fd7|\u4e3b\u4f53|\u5b9e\u4f53|\u8fa9\u8bc1|\u5386\u53f2|\u653f\u6cbb|\u5b97\u6559|\u8d44\u672c|\u6b7b\u4ea1|\u7231)/u,
+    /(?:\u6743\u529b|\u652f\u914d|\u670d\u4ece|\u65bd\u8650|\u53d7\u8650|\u8c03\u6559|\u75db\u82e6|\u8fb9\u754c|\u540c\u610f|\u6027|\u66b4\u529b|BDSM)/iu,
+    /(?:^|\b)s\s*\/?\s*m(?:$|\b)/i
+  ];
+  return substantiveShortSignals.some((pattern) => pattern.test(prompt));
+}
+
 function isLightweightDirectAnswerRequest(userPrompt, history = []) {
   const prompt = normalizeWhitespace(String(userPrompt || ""));
   if (!prompt) {
@@ -2858,6 +3663,7 @@ function isLightweightDirectAnswerRequest(userPrompt, history = []) {
 
   const shortPrompt = prompt.length <= 140;
   const shortHistory = Array.isArray(history) && history.length <= 4;
+  const recentHistory = Array.isArray(history) && history.length <= 10;
   const operationalStatusSignals = [
     /(?:\u786e\u8ba4|\u5728\u7ebf|\u670d\u52a1|\u5f53\u524d)/u,
     /confirm|online|service|status|current/i
@@ -2870,6 +3676,13 @@ function isLightweightDirectAnswerRequest(userPrompt, history = []) {
     return true;
   }
 
+  const directSignals = [
+    /(?:\u4e00\u53e5\u8bdd|\u4e00\u53e5|\u7b80\u77ed|\u76f4\u63a5|\u53ea\u7528|\u786e\u8ba4|\u5728\u7ebf|\u5728\u5417|\u5728\u4e48|\u4f60\u597d|\u55e8|\u55ef|\u597d\u7684|\u8c22\u8c22|\u6982\u62ec|\u603b\u7ed3|\u6458\u8981)/u,
+    /one sentence|brief|short|confirm|online|hello|summari[sz]e/i,
+    /status|check-in|simple/i
+  ];
+  const clearlyDirect = directSignals.some((pattern) => pattern.test(prompt));
+
   const heavySignals = [
     /(?:\u4e3a\u4ec0\u4e48|\u5982\u4f55|\u4f55\u4ee5)/u,
     /(?:\u8bba\u8bc1|\u89e3\u91ca|\u6982\u5ff5|\u5b9a\u4e49|\u81ea\u7531|\u610f\u5fd7|\u4e3b\u4f53|\u5b9e\u4f53|\u7cbe\u795e|\u4f26\u7406|\u56fd\u5bb6|\u6cd5)/u,
@@ -2881,14 +3694,11 @@ function isLightweightDirectAnswerRequest(userPrompt, history = []) {
     return false;
   }
 
-  const directSignals = [
-    /(?:\u4e00\u53e5\u8bdd|\u7b80\u77ed|\u76f4\u63a5|\u53ea\u7528|\u786e\u8ba4|\u5728\u7ebf|\u4f60\u597d|\u55e8|\u6982\u62ec|\u603b\u7ed3|\u6458\u8981)/u,
-    /one sentence|brief|short|confirm|online|hello|summari[sz]e/i,
-    /status|check-in|simple/i
-  ];
-  const clearlyDirect = directSignals.some((pattern) => pattern.test(prompt));
+  if (isShortSubstantiveHegelPrompt(prompt)) {
+    return false;
+  }
 
-  return shortPrompt && shortHistory && (clearlyDirect || prompt.length <= 48);
+  return shortPrompt && shortHistory && clearlyDirect;
 }
 
 function hasDialecticalStructure(reply, userPrompt = "") {
@@ -2910,6 +3720,7 @@ function hasDialecticalStructure(reply, userPrompt = "") {
   const hasReplyCue = [
     "\u4f46\u8fd9\u4e0d\u6210\u7acb", "\u8fd9\u4e2a\u53cd\u5bf9", "\u6211\u7684\u56de\u7b54\u662f", "\u6211\u56de\u5e94", "\u7136\u800c\u8fd9\u4e0d\u5bf9"
   ].some((term) => text.includes(term)) || /reply|response/i.test(text);
+  const lowScaffoldPressure = estimateDogmaticScaffoldHits(text) <= 1;
   const rivalSatisfied = !needsExplicitRival(userPrompt) || hasRivalCue;
   const objectionSatisfied = !needsExplicitObjection(userPrompt) || hasReplyCue;
 
@@ -2918,6 +3729,7 @@ function hasDialecticalStructure(reply, userPrompt = "") {
     hasFirstPersonThesis &&
     hasDefinitionCue &&
     hasReasonCue &&
+    lowScaffoldPressure &&
     rivalSatisfied &&
     objectionSatisfied
   );
@@ -3043,7 +3855,7 @@ function normalizeQualityJudgeRecord(record = {}, reply = "") {
     heuristicHits
   );
   normalized.has_dogmatic_repetition =
-    Boolean(record.has_dogmatic_repetition) || normalized.repeated_scaffold_hits >= 3;
+    Boolean(record.has_dogmatic_repetition) || normalized.repeated_scaffold_hits >= 2;
   normalized.needs_rewrite =
     Boolean(record.needs_rewrite) || normalized.has_dogmatic_repetition;
   normalized.issues = Array.isArray(record.issues)
@@ -3219,9 +4031,10 @@ function buildQualityJudgeMessages({
         "Judge whether the answer avoids dogmatic cliché, avoids public-commentary boilerplate, and actually carries formal argumentative pressure.",
         "Return only one JSON object.",
         "Use a 0-10 scale for: overall, anti_dogma, formal_logic, concept_precision, argumentative_force, expression_tightness, question_fitness.",
-        "Set has_dogmatic_repetition to true if the answer falls into repeated stock scaffolds, slogan-like binaries, or prestige abstractions without determination.",
+        "Treat stock contrastive molds such as not-X-but-Y, 问题不在于A而在于B, 真正的X不是Y而是Z, 归根到底, and 说到底 as high-suspicion signals rather than as Hegelian strength.",
+        "Set has_dogmatic_repetition to true if the answer leans on those molds more than once, or if one such mold does major structural work in place of real inference.",
         "Set needs_rewrite to true unless the answer would plausibly score around 95/100 or above in a strict internal review.",
-        "Do not be lenient. If the answer sounds like doctrinal repetition, generic ideological prose, or elegant fog, punish it sharply.",
+        "Do not be lenient. If the answer sounds like doctrinal repetition, generic ideological prose, elegant fog, or a debate-coach reversal machine, punish it sharply.",
         mustBeDialectical
           ? "This answer must contain a real philosophical argument with explicit concepts, reasons, objection, and reply."
           : "This answer must still remain logically explicit and conceptually determinate.",
@@ -3408,7 +4221,7 @@ function passesFormalQualityGate(judge) {
     judge.argumentative_force >= 9.1 &&
     judge.expression_tightness >= 8.9 &&
     judge.question_fitness >= 9.2 &&
-    judge.repeated_scaffold_hits < 3 &&
+    judge.repeated_scaffold_hits < 2 &&
     !judge.has_dogmatic_repetition &&
     !judge.needs_rewrite
   );
@@ -3496,7 +4309,7 @@ function buildHeuristicQualityJudge(candidateReply, mustBeDialectical) {
 async function requestChatCompletion(config, messages) {
   const response = await fetch(toApiUrl(config.baseURL, "chat/completions"), {
     method: "POST",
-    signal: AbortSignal.timeout(120000),
+    signal: AbortSignal.timeout(upstreamChatTimeoutMs),
     headers: {
       Accept: "text/event-stream",
       Authorization: `Bearer ${config.apiKey}`,
@@ -3524,7 +4337,7 @@ async function requestChatCompletion(config, messages) {
   const text = await Promise.race([
     readSseChatCompletionText(response),
     new Promise((_, reject) =>
-      setTimeout(() => reject(new Error("Chat completion timed out.")), 120000)
+      setTimeout(() => reject(new Error("Chat completion timed out.")), upstreamChatTimeoutMs)
     )
   ]);
 
@@ -3546,7 +4359,7 @@ async function requestResponseCompletion(client, config, instructions, history) 
       tools: buildResponseTools(history)
     }),
     new Promise((_, reject) =>
-      setTimeout(() => reject(new Error("Responses completion timed out.")), 90000)
+      setTimeout(() => reject(new Error("Responses completion timed out.")), upstreamResponsesTimeoutMs)
     )
   ]);
 
@@ -3795,10 +4608,12 @@ function buildQuerySpecificInstructionLines({
     "Build the answer in order: determine the concepts, justify them from the text, answer at least one objection, then conclude.",
     "Do not manufacture a false dilemma, an artificial opposition, or a ritual first-negation-then-affirm move.",
     "If the text already supplies a positive determination, begin from that determination instead of forcing a negation first.",
+    "Prefer movement by determination, limit, transition, and consequence: for example, if, once, so long as, from here, therefore, only thus.",
+    "Do not use neat contrastive reversals as the default sentence engine. A single such turn may be tolerated, but it must not organize the answer.",
     "Only introduce a nearby rival view when the user's question or the retrieved passage itself makes that rival determinately relevant.",
     "If answering in Chinese, do not leak unexplained English filler or trailing English sentences into the prose.",
     antiClicheMode
-      ? "The user explicitly banned cliché, doctrinal repetition, and stock not-X-but-Y scaffolds. Treat that as a hard constraint. Use that scaffold at most once, preferably zero times."
+      ? "The user explicitly banned cliché, doctrinal repetition, and stock not-X-but-Y scaffolds. Treat that as a hard constraint. Use that scaffold zero times unless the wording would otherwise become less exact."
       : "Avoid cliché and doctrinal repetition.",
     antiClicheMode
       ? "Do not let the answer drift into essayistic atmosphere or public-commentary rhetoric. Every paragraph must carry a distinct inferential task."
@@ -3847,6 +4662,7 @@ async function prepareHegelQueryState(history, uploadedFiles = [], options = {})
   const userId = scope.userId || null;
   const config = await resolveEffectiveApiConfig(scope);
   const optimizerMode = Boolean(options?.optimizerMode);
+  const fastPublicChatMode = publicChatFastMode && !optimizerMode;
 
   if (!config.apiKey) {
     throw new Error(
@@ -3994,7 +4810,16 @@ async function prepareHegelQueryState(history, uploadedFiles = [], options = {})
           const compactedConversation = compactConversationHistoryForPrompt(
             state.normalizedHistory,
             {
-              keepRecent: state.attachmentMode ? 10 : 8
+              keepRecent: state.attachmentMode
+                ? PROMPT_ATTACHMENT_RECENT_MESSAGE_LIMIT
+                : PROMPT_RECENT_MESSAGE_LIMIT,
+              maxRecentChars: state.attachmentMode
+                ? PROMPT_ATTACHMENT_RECENT_CHAR_BUDGET
+                : PROMPT_RECENT_CHAR_BUDGET,
+              maxMessageChars: state.attachmentMode
+                ? PROMPT_ATTACHMENT_MAX_MESSAGE_CHARS
+                : PROMPT_MAX_MESSAGE_CHARS,
+              maxSummaryChars: PROMPT_SUMMARY_CHAR_BUDGET
             }
           );
           const attachmentSummary = buildAttachmentExtractionSummary(state.normalizedHistory);
@@ -4075,6 +4900,7 @@ async function requestOnlineHegelReply(history, uploadedFiles = [], options = {}
   const userId = scope.userId || null;
   const config = await resolveEffectiveApiConfig(scope);
   const optimizerMode = Boolean(options?.optimizerMode);
+  const fastPublicChatMode = publicChatFastMode && !optimizerMode;
 
   if (!config.apiKey) {
     throw new Error(
@@ -4103,7 +4929,9 @@ async function requestOnlineHegelReply(history, uploadedFiles = [], options = {}
   const fallbackConfig = scope.userId ? null : getResponsesFallbackConfig(config);
   let activeConfig = config;
   let client = null;
-  let normalizedHistory = normalizeHistoryInput(history);
+  let normalizedHistory = publicChatFastMode
+    ? limitRecentHistory(history, CHAT_MODEL_HISTORY_LIMIT)
+    : normalizeHistoryInput(history);
   let latestUserIndex = findLatestUserMessageIndex(normalizedHistory);
 
   if (latestUserIndex === -1) {
@@ -4151,6 +4979,50 @@ async function requestOnlineHegelReply(history, uploadedFiles = [], options = {}
     throw new Error("\u8bf7\u5148\u63d0\u4f9b\u6587\u5b57\u6216\u9644\u4ef6\u518d\u63d0\u95ee\u3002");
   }
 
+  const recentRecallReply = buildRecentQuestionRecallReply(normalizedHistory, latestUserIndex);
+  if (recentRecallReply) {
+    return {
+      reply: recentRecallReply,
+      validation: {
+        quotedSegments: [],
+        candidateSegments: [],
+        validQuotedSegments: [],
+        invalidQuotedSegments: [],
+        passed: true
+      },
+      qualityJudge: buildQualityJudgeDefault(),
+      strictLogicJudge: buildStrictLogicJudgeDefault(),
+      historiographyJudge: buildHistoriographyJudgeDefault(),
+      strictLogicScaffold: null,
+      usedConfig: config,
+      attempts: 0,
+      history: normalizedHistory,
+      userMessage: normalizedHistory[latestUserIndex]
+    };
+  }
+
+  const durableMemoryRecallReply = buildDurableMemoryRecallReply(normalizedHistory, latestUserIndex, scope);
+  if (durableMemoryRecallReply) {
+    return {
+      reply: durableMemoryRecallReply,
+      validation: {
+        quotedSegments: [],
+        candidateSegments: [],
+        validQuotedSegments: [],
+        invalidQuotedSegments: [],
+        passed: true
+      },
+      qualityJudge: buildQualityJudgeDefault(),
+      strictLogicJudge: buildStrictLogicJudgeDefault(),
+      historiographyJudge: buildHistoriographyJudgeDefault(),
+      strictLogicScaffold: null,
+      usedConfig: config,
+      attempts: 0,
+      history: normalizedHistory,
+      userMessage: normalizedHistory[latestUserIndex]
+    };
+  }
+
   const lightweightDirectInputMode =
     !optimizerMode &&
     isLightweightDirectAnswerRequest(
@@ -4161,6 +5033,9 @@ async function requestOnlineHegelReply(history, uploadedFiles = [], options = {}
   normalizedHistory = optimizerMode
     ? normalizedHistory
     : await mergePersistedUserHistory(normalizedHistory, scope);
+  if (publicChatFastMode) {
+    normalizedHistory = limitRecentHistory(normalizedHistory, CHAT_MODEL_HISTORY_LIMIT);
+  }
   latestUserIndex = findLatestUserMessageIndex(normalizedHistory);
 
   const hasImageAttachmentContext = normalizedHistory.some((message) =>
@@ -4191,13 +5066,22 @@ async function requestOnlineHegelReply(history, uploadedFiles = [], options = {}
 
   if (lightweightDirectMode) {
     const userMemoryLayers = await buildUserMemoryLayers(scope);
+    const condensedUserMemory = [
+      sanitizeMemorySummaryText(userMemoryLayers?.styleMemoryProfile?.summaryText || "", 8),
+      sanitizeMemorySummaryText(userMemoryLayers?.longTermMemoryProfile?.summaryText || "", 8),
+      sanitizeBoundedText(userMemoryLayers?.heuristicContext || "", 1200)
+    ].filter(Boolean).join("\n");
     const lightweightSystemPrompt = joinPromptBlocks([], [
       buildPromptBlock(
         "Lightweight direct-answer mode",
         [
           "You are Hegel Salon in lightweight direct-answer mode.",
-          "Answer briefly in Chinese unless the user explicitly requested another language.",
-          "Prefer one short sentence when one sentence is enough.",
+          "Use this mode only for greetings, status checks, memory recalls, or explicitly simple operational requests.",
+          "Answer in Chinese unless the user explicitly requested another language.",
+          "Never say a short fragment lacks context, and never ask the user to add another sentence before answering.",
+          "If a fragment reaches this mode, treat it as a valid topic and give a provisional conceptual answer.",
+          "For provocative, adult, or power-related topics, stay non-graphic and reason through relation, boundary, consent, recognition, or freedom.",
+          "Keep it concise but substantial, usually 2-4 sentences; one sentence is only for pure greetings or status confirmations.",
           "Do not expand into historical digressions, quote policing, memory summaries, or multi-paragraph scaffolds.",
           "Keep the wording clear, calm, and conceptually explicit."
         ].join("\n")
@@ -4209,6 +5093,10 @@ async function requestOnlineHegelReply(history, uploadedFiles = [], options = {}
       buildPromptBlock(
         "Trained style summary",
         sanitizeBoundedText(userMemoryLayers?.styleProfile?.trainedStyleSummary || "", 220)
+      ),
+      buildPromptBlock(
+        "Condensed user memory for grounding",
+        condensedUserMemory
       )
     ]);
     const lightweightMessages = [
@@ -4219,22 +5107,29 @@ async function requestOnlineHegelReply(history, uploadedFiles = [], options = {}
       }
     ];
     let lightweightRawReply = "";
-    try {
-      lightweightRawReply = await withPossibleFallback(
-        (activeClient, currentConfig) =>
-          requestResponseCompletion(
-            activeClient,
-            currentConfig,
-            lightweightSystemPrompt,
-            lightweightMessages
-          ),
-        { ensureClient: true }
-      );
-    } catch {
+    if (publicChatFastMode) {
       lightweightRawReply = await requestChatCompletion(
         activeConfig,
         buildChatCompletionMessages(lightweightSystemPrompt, lightweightMessages)
       );
+    } else {
+      try {
+        lightweightRawReply = await withPossibleFallback(
+          (activeClient, currentConfig) =>
+            requestResponseCompletion(
+              activeClient,
+              currentConfig,
+              lightweightSystemPrompt,
+              lightweightMessages
+            ),
+          { ensureClient: true }
+        );
+      } catch {
+        lightweightRawReply = await requestChatCompletion(
+          activeConfig,
+          buildChatCompletionMessages(lightweightSystemPrompt, lightweightMessages)
+        );
+      }
     }
     const reply = finalizeSalonReply(lightweightRawReply);
 
@@ -4255,6 +5150,148 @@ async function requestOnlineHegelReply(history, uploadedFiles = [], options = {}
       attempts: 1,
       history: normalizedHistory,
       userMessage: normalizedHistory[latestUserIndex]
+    };
+  }
+
+  if (optimizerMode && !hasAttachmentContext) {
+    const optimizerContext = await buildOptimizerMemoryContext(
+      latestUser?.content || "",
+      userId,
+      scope.styleProfileId
+    );
+    const optimizerSystemPrompt = joinPromptBlocks([], [
+      buildPromptBlock(
+        "Optimizer training answer mode",
+        [
+          "You are Hegel Salon answering a training prompt for quality optimization.",
+          "Answer in Chinese unless the prompt explicitly asks otherwise.",
+          "Do not ask for more context. Treat each training prompt as complete.",
+          "Give a direct, evaluable answer: first state the thesis, then expose the key premises, then address one serious objection.",
+          "Prefer explicit reasoning over atmosphere, slogans, or ornamental Hegelian prose.",
+          "Keep the answer compact enough for automated judging: usually 3-6 paragraphs.",
+          "If the prompt asks for formal-logic repair, separate hidden premise, concept jump, corrected argument, and remaining limit.",
+          "If the prompt asks about history or reality, mark analogy boundaries and source-status limits honestly."
+        ].join("\n")
+      ),
+      buildPromptBlock(
+        "Current optimizer memory",
+        sanitizeBoundedText(optimizerContext || "", 1800)
+      )
+    ]);
+    const optimizerMessages = [
+      {
+        role: "user",
+        content: latestUser?.content || "",
+        attachments: []
+      }
+    ];
+    const optimizerRawReply = await requestChatCompletion(
+      activeConfig,
+      buildChatCompletionMessages(optimizerSystemPrompt, optimizerMessages)
+    );
+    const reply = finalizeSalonReply(optimizerRawReply);
+    if (!reply) {
+      throw new Error("Optimizer training mode returned an empty reply.");
+    }
+
+    return {
+      reply,
+      validation: {
+        quotedSegments: [],
+        candidateSegments: [],
+        validQuotedSegments: [],
+        invalidQuotedSegments: [],
+        passed: true
+      },
+      qualityJudge: buildQualityJudgeDefault(),
+      strictLogicJudge: buildStrictLogicJudgeDefault(),
+      historiographyJudge: buildHistoriographyJudgeDefault(),
+      strictLogicScaffold: null,
+      usedConfig: activeConfig,
+      attempts: 1,
+      history: normalizedHistory,
+      userMessage: normalizedHistory[latestUserIndex],
+      modeRoute: {
+        mode: "optimizer_training_answer",
+        reason: "background training prompt"
+      }
+    };
+  }
+
+  const compactDialecticalMode =
+    publicChatFastMode &&
+    !hasAttachmentContext &&
+    !optimizerMode &&
+    isShortSubstantiveHegelPrompt(latestUser?.content || "");
+
+  if (compactDialecticalMode) {
+    const userMemoryLayers = await buildUserMemoryLayers(scope);
+    const condensedUserMemory = [
+      sanitizeMemorySummaryText(userMemoryLayers?.styleMemoryProfile?.summaryText || "", 6),
+      sanitizeMemorySummaryText(userMemoryLayers?.longTermMemoryProfile?.summaryText || "", 6),
+      sanitizeBoundedText(userMemoryLayers?.heuristicContext || "", 800)
+    ].filter(Boolean).join("\n");
+    const compactSystemPrompt = joinPromptBlocks([], [
+      buildPromptBlock(
+        "Compact dialectical short-topic mode",
+        [
+          "You are Hegel Salon answering a short but substantive user prompt.",
+          "The user may send a fragment such as '自由', '就是承认', or '谈谈 sm'. Treat the fragment as a valid topic, not as missing context.",
+          "Never say the prompt lacks context, never ask the user to add another sentence before you answer, and never echo a generic fallback template.",
+          "Answer in Chinese unless the user explicitly requested another language.",
+          "Give a concise but real Hegelian answer: determine the relation, name the contradiction or dependency, and end with a usable judgment.",
+          "For adult, SM/BDSM, violence, pain, or power topics, stay non-graphic and analyze consent, boundary, reversibility, recognition, and freedom.",
+          "Do not quote-police, do not provide long historical scaffolding, and do not apologize for brevity.",
+          "Target 2-4 compact paragraphs or 3-6 sentences."
+        ].join("\n")
+      ),
+      buildPromptBlock(
+        "Current style base prompt",
+        sanitizeBoundedText(userMemoryLayers?.styleProfile?.userStylePrompt || "", 180)
+      ),
+      buildPromptBlock(
+        "Trained style summary",
+        sanitizeBoundedText(userMemoryLayers?.styleProfile?.trainedStyleSummary || "", 220)
+      ),
+      buildPromptBlock(
+        "Condensed user memory for grounding",
+        condensedUserMemory
+      )
+    ]);
+    const compactMessages = [
+      {
+        role: "user",
+        content: latestUser?.content || "",
+        attachments: []
+      }
+    ];
+    const compactRawReply = await requestChatCompletion(
+      activeConfig,
+      buildChatCompletionMessages(compactSystemPrompt, compactMessages)
+    );
+    const reply = finalizeSalonReply(compactRawReply) || buildPublicFallbackReply(latestUser);
+
+    return {
+      reply,
+      validation: {
+        quotedSegments: [],
+        candidateSegments: [],
+        validQuotedSegments: [],
+        invalidQuotedSegments: [],
+        passed: true
+      },
+      qualityJudge: buildQualityJudgeDefault(),
+      strictLogicJudge: buildStrictLogicJudgeDefault(),
+      historiographyJudge: buildHistoriographyJudgeDefault(),
+      strictLogicScaffold: null,
+      usedConfig: activeConfig,
+      attempts: 1,
+      history: normalizedHistory,
+      userMessage: normalizedHistory[latestUserIndex],
+      modeRoute: {
+        mode: "compact_dialectical_short",
+        reason: "short substantive public prompt"
+      }
     };
   }
 
@@ -4345,7 +5382,16 @@ async function requestOnlineHegelReply(history, uploadedFiles = [], options = {}
   }
   let strictLogicScaffold = null;
   const compactedConversation = compactConversationHistoryForPrompt(normalizedHistory, {
-    keepRecent: attachmentMode ? 10 : 8
+    keepRecent: attachmentMode
+      ? PROMPT_ATTACHMENT_RECENT_MESSAGE_LIMIT
+      : PROMPT_RECENT_MESSAGE_LIMIT,
+    maxRecentChars: attachmentMode
+      ? PROMPT_ATTACHMENT_RECENT_CHAR_BUDGET
+      : PROMPT_RECENT_CHAR_BUDGET,
+    maxMessageChars: attachmentMode
+      ? PROMPT_ATTACHMENT_MAX_MESSAGE_CHARS
+      : PROMPT_MAX_MESSAGE_CHARS,
+    maxSummaryChars: PROMPT_SUMMARY_CHAR_BUDGET
   });
   const attachmentSummary = buildAttachmentExtractionSummary(normalizedHistory);
   augmentedSystemPrompt = joinPromptBlocks(staticPromptBlocks, [
@@ -4400,12 +5446,15 @@ async function requestOnlineHegelReply(history, uploadedFiles = [], options = {}
   };
   let selfAuditBlockingRevisionCount = 0;
   let attempts = 0;
-  const qualityGateEnabled = !attachmentMode && !optimizerMode && !lightweightDirectMode;
-  const strictLogicMode = !attachmentMode && !optimizerMode && !lightweightDirectMode;
+  const qualityGateEnabled =
+    !attachmentMode && !optimizerMode && !lightweightDirectMode && !fastPublicChatMode;
+  const strictLogicMode =
+    !attachmentMode && !optimizerMode && !lightweightDirectMode && !fastPublicChatMode;
   const historiographyMode =
     !attachmentMode &&
     !optimizerMode &&
     !lightweightDirectMode &&
+    !fastPublicChatMode &&
     Boolean(corpusContext?.historical?.enabled);
 
   if (strictLogicMode) {
@@ -4634,11 +5683,11 @@ async function requestOnlineHegelReply(history, uploadedFiles = [], options = {}
         );
       }
 
-      if (qualityJudge.has_dogmatic_repetition || qualityJudge.repeated_scaffold_hits >= 3) {
+      if (qualityJudge.has_dogmatic_repetition || qualityJudge.repeated_scaffold_hits >= 2) {
         revisionLines.push(
           "Break the stock scaffolds.",
           "Do not keep repeating public-commentary turns such as “不是……而是……”, “问题不在于……而在于……”, or sermon-like universal statements.",
-          "Replace them with determinate premises, explicit inferential links, and fresh conceptual definitions."
+          "Replace them with determinate premises, explicit inferential links, fresh conceptual definitions, and transitions such as if, once, so long as, therefore, and from here."
         );
       }
 
@@ -4732,7 +5781,7 @@ async function requestOnlineHegelReply(history, uploadedFiles = [], options = {}
     const forcedRevisionLines = [
       "Rewrite the answer one final time under a strict anti-dogma constraint.",
       "You must not rely on repeated ideological scaffolds, sermon-like cadences, or prestige abstractions.",
-      "Do not reuse the same not-X-but-Y skeleton, even in softer variants, more than once in the whole answer.",
+      "Do not use the not-X-but-Y skeleton, or its Chinese equivalents, as the organizing syntax of the answer.",
       "Every paragraph must do exactly one inferential job: determination, premise, objection, reply, or conclusion.",
       "Shorten the answer and compress all repeated contrasts.",
       "Keep the answer to roughly 6 to 8 short paragraphs and avoid needless expansion.",
@@ -4740,6 +5789,7 @@ async function requestOnlineHegelReply(history, uploadedFiles = [], options = {}
         ? "Use zero direct quotations unless one short quotation is absolutely necessary."
         : "Do not add extra quotations during revision.",
       "If a concept such as universality, actuality, mediation, contradiction, subjectivity, or reason appears, define it locally instead of invoking it as authority.",
+      "Advance by consequence and transition rather than by sharp reversals.",
       `Judge summary: ${qualityJudge.summary || "The prose remains too close to doctrinal repetition."}`
     ];
 
@@ -4867,6 +5917,8 @@ async function requestOnlineHegelReply(history, uploadedFiles = [], options = {}
 async function handleChat(req, res) {
   let context = null;
   const startedAt = Date.now();
+  let latestUserForFallback = null;
+  let normalizedHistoryForFallback = [];
   try {
     context = await resolveRequestContext(req);
     if (!requireAuthenticatedUser(res, context)) {
@@ -4894,6 +5946,7 @@ async function handleChat(req, res) {
     let uploadedFiles = [];
     let optimizerMode = false;
     let requestedStyleProfileId = "";
+    let requestedChatSessionId = "";
 
     if (contentType.includes("multipart/form-data")) {
       const formData = await readMultipartForm(req);
@@ -4901,6 +5954,7 @@ async function handleChat(req, res) {
       history = Array.isArray(payload.messages) ? payload.messages : [];
       optimizerMode = Boolean(payload.optimizerMode);
       requestedStyleProfileId = String(payload.styleProfileId || "").trim();
+      requestedChatSessionId = getRequestedChatSessionId(req, payload);
       uploadedFiles = formData
         .getAll("attachments")
         .filter((entry) => typeof entry !== "string");
@@ -4911,49 +5965,42 @@ async function handleChat(req, res) {
       history = Array.isArray(body.messages) ? body.messages : [];
       optimizerMode = Boolean(body.optimizerMode);
       requestedStyleProfileId = getRequestedStyleProfileId(req, body);
+      requestedChatSessionId = getRequestedChatSessionId(req, body);
     }
 
     context = await resolveStyleScope(context, requestedStyleProfileId);
+    context = {
+      ...context,
+      scope: ensureChatSessionForScope(context.scope, requestedChatSessionId)
+    };
 
-    const normalizedHistory = normalizeHistoryInput(history);
+    const normalizedHistory = publicChatFastMode
+      ? limitRecentHistory(history, CHAT_MODEL_HISTORY_LIMIT)
+      : normalizeHistoryInput(history);
+    normalizedHistoryForFallback = normalizedHistory;
     const latestUser = [...normalizedHistory].reverse().find((item) => item?.role === "user");
+    latestUserForFallback = latestUser || null;
 
     if (!latestUser || !hasMessagePayload(latestUser) && uploadedFiles.length === 0) {
       sendJson(res, 400, { error: "\u8bf7\u5148\u63d0\u4f9b\u6587\u5b57\u6216\u9644\u4ef6\u518d\u63d0\u95ee\u3002" });
       return;
     }
 
-    const result = await requestOnlineHegelReply(normalizedHistory, uploadedFiles, {
-      optimizerMode,
-      scope: context.scope
-    });
+    const chatDeadlineMs = optimizerMode
+      ? optimizerChatTotalTimeoutMs
+      : publicChatFastMode
+        ? publicChatTotalTimeoutMs
+        : 140000;
+    const result = await withDeadline(
+      requestOnlineHegelReply(normalizedHistory, uploadedFiles, {
+        optimizerMode,
+        scope: context.scope
+      }),
+      chatDeadlineMs,
+      "公网聊天请求超时：模型或上游网关没有在安全窗口内返回，请稍后重试。"
+    );
     const reply = result.reply;
-    if (shouldPersistUserContent(context.scope)) {
-      await appendChatLog(result.history || normalizedHistory, reply, context.scope);
-      await appendOptimizerRecord({
-        userId: context.scope.userId,
-        styleProfileId: context.scope.styleProfileId,
-        prompt: result.userMessage?.content || latestUser?.content || "",
-        reply,
-        qualityJudge: result.qualityJudge,
-        strictLogicJudge: result.strictLogicJudge,
-        historiographyJudge: result.historiographyJudge,
-        selfAudit: result.selfAudit
-      });
-      await appendUserMemoryTurn(
-        result.userMessage || latestUser,
-        reply,
-        context.scope
-      );
-      if (context.scope.userId && result.usedConfig) {
-        Promise.all([
-          refreshUserMemoryProfile(context.scope, result.usedConfig),
-          refreshUserLongTermMemoryProfile(context.scope, result.usedConfig)
-        ]).catch(() => {});
-      }
-    }
-
-    sendJson(res, 200, {
+    const responsePayload = {
       mode: "online",
       reply,
       validation: result.validation,
@@ -4966,9 +6013,79 @@ async function handleChat(req, res) {
       sourceAnchors: result.sourceAnchors,
       strictLogicScaffold: result.strictLogicScaffold,
       attempts: result.attempts,
-      userMessage: result.userMessage || latestUser
+      userMessage: result.userMessage || latestUser,
+      chatSessionId: context.scope.chatSessionId
+    };
+    sendJson(res, 200, responsePayload);
+
+    persistChatResultInBackground({
+      scope: context.scope,
+      history: normalizedHistory,
+      reply,
+      result,
+      latestUser,
+      allowMemoryRefresh: !publicChatFastMode
     });
   } catch (error) {
+    if (publicChatFastMode && latestUserForFallback && !res.headersSent) {
+      const fallbackReason = error instanceof Error
+        ? normalizeWhitespace(error.message).slice(0, 240)
+        : normalizeWhitespace(String(error || "")).slice(0, 240);
+      console.warn("[public-chat fallback]", JSON.stringify({
+        chatSessionId: context?.scope?.chatSessionId || null,
+        styleProfileId: context?.scope?.styleProfileId || null,
+        messageChars: normalizeWhitespace(latestUserForFallback?.content || "").length,
+        reason: fallbackReason
+      }));
+      const fallbackReply = buildPublicFallbackReply(latestUserForFallback, error);
+      const fallbackQualityJudge = buildQualityJudgeDefault();
+      const fallbackStrictLogicJudge = buildStrictLogicJudgeDefault();
+      const fallbackHistoriographyJudge = buildHistoriographyJudgeDefault();
+      const fallbackSelfAudit = {
+        passed: true,
+        severity: "none",
+        warnings: [],
+        blocking_warnings: [],
+        nonblocking_warnings: [],
+        coverage_score: 10,
+        conceptual_integrity_score: 10,
+        required_revision_instructions: [],
+        advisory_revision_instructions: []
+      };
+      sendJson(res, 200, {
+        mode: "local-fallback",
+        reply: fallbackReply,
+        validation: {
+          quotedSegments: [],
+          candidateSegments: [],
+          validQuotedSegments: [],
+          invalidQuotedSegments: [],
+          passed: true
+        },
+        qualityJudge: fallbackQualityJudge,
+        strictLogicJudge: fallbackStrictLogicJudge,
+        historiographyJudge: fallbackHistoriographyJudge,
+        selfAudit: fallbackSelfAudit,
+        strictLogicScaffold: null,
+        attempts: 0,
+        userMessage: latestUserForFallback,
+        chatSessionId: context?.scope?.chatSessionId || null
+      });
+      persistChatResultInBackground({
+        scope: context?.scope,
+        history: normalizedHistoryForFallback,
+        reply: fallbackReply,
+        result: {
+          qualityJudge: fallbackQualityJudge,
+          strictLogicJudge: fallbackStrictLogicJudge,
+          historiographyJudge: fallbackHistoriographyJudge,
+          selfAudit: fallbackSelfAudit,
+          userMessage: latestUserForFallback
+        },
+        latestUser: latestUserForFallback
+      });
+      return;
+    }
     sendJson(res, 502, {
       error: error instanceof Error ? error.message : "\u5728\u7ebf\u6a21\u578b\u8bf7\u6c42\u5931\u8d25\u3002"
     });
@@ -5027,12 +6144,21 @@ async function handleHistory(req, res) {
     }
 
     context = await resolveStyleScope(context, getRequestedStyleProfileId(req));
+    context = {
+      ...context,
+      scope: ensureChatSessionForScope(context.scope, getRequestedChatSessionId(req))
+    };
 
     const conversation = await readPersistedConversation(context.scope);
     const messages = conversation.length
       ? conversation
       : await readRecentUserMemory(context.scope, 40);
+    const sessionRecord = context.scope.chatSessionId
+      ? readChatSessionByIdFromDb(context.scope.userId, context.scope.chatSessionId)
+      : null;
     sendJson(res, 200, {
+      chatSessionId: context.scope.chatSessionId || null,
+      session: sessionRecord,
       messages
     });
   } catch (error) {
@@ -5041,6 +6167,434 @@ async function handleHistory(req, res) {
     });
   } finally {
     recordUsage(context, "settings", startedAt);
+  }
+}
+
+function resolveRequestPublicBaseUrl(req) {
+  if (publicBaseUrl) {
+    return publicBaseUrl.replace(/\/+$/, "");
+  }
+
+  const forwardedProto = String(req.headers["x-forwarded-proto"] || "").split(",")[0].trim();
+  const protocol = forwardedProto || (httpsEnabled ? "https" : "http");
+  const host = String(req.headers["x-forwarded-host"] || req.headers.host || `127.0.0.1:${port}`)
+    .split(",")[0]
+    .trim();
+  return `${protocol}://${host}`.replace(/\/+$/, "");
+}
+
+function requireConcreteAuthUser(res, context) {
+  if (context?.auth?.user?.id) {
+    return context.auth.user;
+  }
+
+  sendJson(res, 401, {
+    error: "A signed-in user is required for saved sessions and Local Agent tasks.",
+    authRequired: true
+  });
+  return null;
+}
+
+async function handleChatSessionsGet(req, res) {
+  let context = null;
+  const startedAt = Date.now();
+  try {
+    context = await resolveRequestContext(req);
+    if (!requireAuthenticatedUser(res, context)) {
+      return;
+    }
+
+    const user = requireConcreteAuthUser(res, context);
+    if (!user) {
+      return;
+    }
+
+    if (!ensureNotSuspiciousClient(req, res)) {
+      return;
+    }
+
+    ensureDefaultStyleProfileForUser(user.id, user.createdAt || new Date().toISOString());
+    const url = new URL(req.url || "/", `http://${req.headers.host || "127.0.0.1"}`);
+    const limit = Math.min(1000, Math.max(1, Number(url.searchParams.get("limit") || 1000)));
+    const sessions = listAllChatSessionsForUserFromDb(user.id, limit);
+    sendJson(res, 200, {
+      sessions,
+      sharedScopes: {
+        training: "style_profile",
+        agentPersonality: "style_profile",
+        chatMemory: "chat_session"
+      }
+    });
+  } catch (error) {
+    sendJson(res, 500, {
+      error: error instanceof Error ? error.message : "Failed to load chat sessions."
+    });
+  } finally {
+    recordUsage(context, "settings", startedAt);
+  }
+}
+
+async function handleChatSessionsPost(req, res) {
+  let context = null;
+  const startedAt = Date.now();
+  try {
+    context = await resolveRequestContext(req);
+    if (!requireAuthenticatedUser(res, context)) {
+      return;
+    }
+
+    const user = requireConcreteAuthUser(res, context);
+    if (!user) {
+      return;
+    }
+
+    if (!ensureNotSuspiciousClient(req, res) || !ensureJsonRequest(req, res)) {
+      return;
+    }
+
+    const body = expectPlainObject(await readJsonBody(req), "Invalid session payload.");
+    context = await resolveStyleScope(context, getRequestedStyleProfileId(req, body));
+    const sessionId = normalizeChatSessionId(body.chatSessionId || body.id) || randomUUID();
+    const now = new Date().toISOString();
+    const session = upsertChatSessionInDb({
+      id: sessionId,
+      userId: user.id,
+      styleProfileId: context.scope.styleProfileId,
+      title: sanitizeBoundedText(body.title || "", 80),
+      createdAt: now,
+      updatedAt: now,
+      messageCount: 0
+    });
+    sendJson(res, 200, { session });
+  } catch (error) {
+    sendJson(res, 400, {
+      error: error instanceof Error ? error.message : "Failed to create chat session."
+    });
+  } finally {
+    recordUsage(context, "settings", startedAt);
+  }
+}
+
+async function handleLocalAgentDevicesGet(req, res) {
+  let context = null;
+  const startedAt = Date.now();
+  try {
+    context = await resolveRequestContext(req);
+    if (!requireAuthenticatedUser(res, context)) {
+      return;
+    }
+
+    const user = requireConcreteAuthUser(res, context);
+    if (!user) {
+      return;
+    }
+
+    const devices = listLocalAgentDevicesByUserIdFromDb(user.id).map(localAgentDeviceClientRecord);
+    sendJson(res, 200, { devices });
+  } catch (error) {
+    sendJson(res, 500, {
+      error: error instanceof Error ? error.message : "Failed to load Local Agent devices."
+    });
+  } finally {
+    recordUsage(context, "settings", startedAt);
+  }
+}
+
+async function handleLocalAgentDevicesPost(req, res) {
+  let context = null;
+  const startedAt = Date.now();
+  try {
+    context = await resolveRequestContext(req);
+    if (!requireAuthenticatedUser(res, context)) {
+      return;
+    }
+
+    const user = requireConcreteAuthUser(res, context);
+    if (!user) {
+      return;
+    }
+
+    if (!ensureNotSuspiciousClient(req, res) || !ensureJsonRequest(req, res)) {
+      return;
+    }
+
+    const body = expectPlainObject(await readJsonBody(req), "Invalid Local Agent device payload.");
+    const token = createLocalAgentToken();
+    const device = insertLocalAgentDeviceToDb({
+      id: randomUUID(),
+      userId: user.id,
+      name: normalizeLocalAgentDeviceName(body.name),
+      tokenHash: hashLocalAgentToken(token),
+      capabilities: normalizeLocalAgentCapabilities(body.capabilities),
+      createdAt: new Date().toISOString()
+    });
+    const baseUrl = resolveRequestPublicBaseUrl(req);
+    const runnerUrl = `${baseUrl}/local-agent-runner.mjs`;
+    const downloadCommand = `curl -fsSL "${runnerUrl}" -o local-agent-runner.mjs`;
+    const runCommand = `node local-agent-runner.mjs --server "${baseUrl}" --token "${token}"`;
+    const powershellDownloadCommand =
+      `Invoke-WebRequest -Uri "${runnerUrl}" -OutFile "local-agent-runner.mjs"`;
+    const powershellRunCommand =
+      `node .\\local-agent-runner.mjs --server "${baseUrl}" --token "${token}"`;
+    sendJson(res, 200, {
+      device: localAgentDeviceClientRecord(device),
+      token,
+      runnerUrl,
+      downloadCommand,
+      runCommand,
+      powershellDownloadCommand,
+      powershellRunCommand
+    });
+  } catch (error) {
+    sendJson(res, 400, {
+      error: error instanceof Error ? error.message : "Failed to register Local Agent device."
+    });
+  } finally {
+    recordUsage(context, "settings", startedAt);
+  }
+}
+
+async function handleLocalAgentDeviceRevokePost(req, res, deviceId) {
+  let context = null;
+  const startedAt = Date.now();
+  try {
+    context = await resolveRequestContext(req);
+    if (!requireAuthenticatedUser(res, context)) {
+      return;
+    }
+
+    const user = requireConcreteAuthUser(res, context);
+    if (!user) {
+      return;
+    }
+
+    if (!ensureNotSuspiciousClient(req, res)) {
+      return;
+    }
+
+    const device = revokeLocalAgentDeviceForUserInDb(user.id, deviceId, new Date().toISOString());
+    if (!device) {
+      sendJson(res, 404, { error: "Local Agent device not found." });
+      return;
+    }
+
+    sendJson(res, 200, { device: localAgentDeviceClientRecord(device) });
+  } catch (error) {
+    sendJson(res, 400, {
+      error: error instanceof Error ? error.message : "Failed to revoke Local Agent device."
+    });
+  } finally {
+    recordUsage(context, "settings", startedAt);
+  }
+}
+
+async function handleLocalAgentTasksGet(req, res) {
+  let context = null;
+  const startedAt = Date.now();
+  try {
+    context = await resolveRequestContext(req);
+    if (!requireAuthenticatedUser(res, context)) {
+      return;
+    }
+
+    const user = requireConcreteAuthUser(res, context);
+    if (!user) {
+      return;
+    }
+
+    const tasks = listLocalAgentTasksByUserIdFromDb(user.id, 25);
+    sendJson(res, 200, { tasks });
+  } catch (error) {
+    sendJson(res, 500, {
+      error: error instanceof Error ? error.message : "Failed to load Local Agent tasks."
+    });
+  } finally {
+    recordUsage(context, "settings", startedAt);
+  }
+}
+
+async function handleLocalAgentTaskStatusGet(req, res, taskId) {
+  let context = null;
+  const startedAt = Date.now();
+  try {
+    context = await resolveRequestContext(req);
+    if (!requireAuthenticatedUser(res, context)) {
+      return;
+    }
+
+    const user = requireConcreteAuthUser(res, context);
+    if (!user) {
+      return;
+    }
+
+    const task = readLocalAgentTaskByIdForUserFromDb(user.id, taskId);
+    if (!task) {
+      sendJson(res, 404, { error: "Local Agent task not found." });
+      return;
+    }
+
+    sendJson(res, 200, { task });
+  } catch (error) {
+    sendJson(res, 500, {
+      error: error instanceof Error ? error.message : "Failed to load Local Agent task."
+    });
+  } finally {
+    recordUsage(context, "settings", startedAt);
+  }
+}
+
+async function handleLocalAgentTasksPost(req, res) {
+  let context = null;
+  const startedAt = Date.now();
+  try {
+    context = await resolveRequestContext(req);
+    if (!requireAuthenticatedUser(res, context)) {
+      return;
+    }
+
+    const user = requireConcreteAuthUser(res, context);
+    if (!user) {
+      return;
+    }
+
+    if (!ensureNotSuspiciousClient(req, res) || !ensureJsonRequest(req, res)) {
+      return;
+    }
+
+    const body = expectPlainObject(await readJsonBody(req), "Invalid Local Agent task payload.");
+    const deviceId = String(body.deviceId || "").trim();
+    const device = readLocalAgentDeviceByIdForUserFromDb(user.id, deviceId);
+    if (!device || device.revokedAt) {
+      sendJson(res, 404, { error: "Local Agent device not found." });
+      return;
+    }
+
+    context = await resolveStyleScope(context, getRequestedStyleProfileId(req, body));
+    const scopedSession = ensureChatSessionForScope(context.scope, body.chatSessionId || "");
+    const promptText = normalizeLocalAgentTaskPrompt(body.prompt || body.task || "");
+    if (!promptText) {
+      sendJson(res, 400, { error: "Local Agent task prompt is required." });
+      return;
+    }
+
+    const taskType = normalizeLocalAgentTaskType(body.taskType);
+    const now = new Date();
+    const task = insertLocalAgentTaskToDb({
+      id: randomUUID(),
+      userId: user.id,
+      deviceId: device.id,
+      chatSessionId: scopedSession.chatSessionId || null,
+      styleProfileId: context.scope.styleProfileId,
+      taskType,
+      promptText,
+      command: {
+        kind: taskType,
+        startUrl: sanitizeBoundedText(body.startUrl || "", 1000),
+        cwd: sanitizeBoundedText(body.cwd || "", 1000),
+        sessionOrigin: "hegel_salon"
+      },
+      createdAt: now.toISOString(),
+      expiresAt: new Date(now.getTime() + LOCAL_AGENT_TASK_TTL_MS).toISOString()
+    });
+    sendJson(res, 200, { task });
+  } catch (error) {
+    sendJson(res, 400, {
+      error: error instanceof Error ? error.message : "Failed to queue Local Agent task."
+    });
+  } finally {
+    recordUsage(context, "computer", startedAt);
+  }
+}
+
+async function handleLocalAgentNextTask(req, res) {
+  try {
+    const device = await resolveLocalAgentDeviceFromRequest(req, res);
+    if (!device) {
+      return;
+    }
+
+    if (
+      !checkRateLimit(
+        req,
+        res,
+        `local-agent-next:${device.id}`,
+        1200,
+        10 * 60 * 1000
+      )
+    ) {
+      return;
+    }
+
+    const task = claimNextLocalAgentTaskForDeviceInDb(device.id, new Date().toISOString());
+    sendJson(res, 200, { task });
+  } catch (error) {
+    sendJson(res, 500, {
+      error: error instanceof Error ? error.message : "Failed to claim Local Agent task."
+    });
+  }
+}
+
+async function handleLocalAgentTaskResultPost(req, res, taskId) {
+  try {
+    const device = await resolveLocalAgentDeviceFromRequest(req, res);
+    if (!device) {
+      return;
+    }
+
+    if (!ensureJsonRequest(req, res)) {
+      return;
+    }
+
+    const body = expectPlainObject(await readJsonBody(req), "Invalid Local Agent result payload.");
+    const finishedAt = new Date().toISOString();
+    const task = finishLocalAgentTaskForDeviceInDb({
+      deviceId: device.id,
+      taskId,
+      status: body.status,
+      resultText: sanitizeBoundedRawText(body.resultText || body.output || "", 120000),
+      errorText: sanitizeBoundedRawText(body.errorText || body.error || "", 120000),
+      finishedAt
+    });
+    if (!task) {
+      sendJson(res, 404, { error: "Local Agent task not found." });
+      return;
+    }
+
+    if (task.finishedAt === finishedAt && task.chatSessionId) {
+      const resultText = task.status === "completed"
+        ? task.resultText || "Local Agent completed without stdout."
+        : [task.errorText || "Local Agent task failed.", task.resultText].filter(Boolean).join("\n\n");
+      const existingMessages = readChatSessionMessagesFromDb(task.userId, task.chatSessionId).map((message) => ({
+        role: message.role,
+        content: message.content,
+        attachments: Array.isArray(message.attachments) ? message.attachments : []
+      }));
+      appendChatSessionMessagesToDb(
+        task.userId,
+        task.styleProfileId,
+        task.chatSessionId,
+        [
+          ...existingMessages,
+          {
+            role: "user",
+            content: `[Local Agent task]\n${task.promptText}`,
+            attachments: []
+          },
+          {
+            role: "assistant",
+            content: `[Local Agent result]\n${resultText}`,
+            attachments: []
+          }
+        ],
+        finishedAt
+      );
+    }
+
+    sendJson(res, 200, { task });
+  } catch (error) {
+    sendJson(res, 400, {
+      error: error instanceof Error ? error.message : "Failed to save Local Agent result."
+    });
   }
 }
 
@@ -6092,7 +7646,11 @@ async function handleTrainingStart(req, res) {
           HEGEL_OPTIMIZER_ITERATIONS: String(iterations),
           HEGEL_OPTIMIZER_CONCURRENCY: String(concurrency),
           HEGEL_OPTIMIZER_TARGET: String(targetScore),
-          HEGEL_OPTIMIZER_TIMEOUT_MS: String(timeoutMs)
+          HEGEL_OPTIMIZER_TIMEOUT_MS: String(timeoutMs),
+          HEGEL_OPTIMIZER_SALON_TIMEOUT_MS: String(
+            Math.max(timeoutMs, Math.min(optimizerChatTotalTimeoutMs, 300000))
+          ),
+          HEGEL_OPTIMIZER_CHAT_RETRIES: "2"
         }
       }
     );
@@ -6895,6 +8453,13 @@ async function handleComputerTask(req, res) {
     }
 
     const body = validateComputerTaskBody(await readJsonBody(req));
+    if (publicBaseUrl) {
+      sendJson(res, 409, {
+        error: "Public Computer Use must run through the user's Local Agent, not the server host."
+      });
+      return;
+    }
+
     const apiConfig = await resolveEffectiveApiConfig(context.scope);
     const { task, startUrl } = body;
 
@@ -6950,6 +8515,8 @@ async function handleToolsCatalog(req, res) {
 const toolDispatchTable = {
   "tools.catalog": async (req, res) => handleToolsCatalog(req, res),
   "chat.ask": async (req, res) => handleChat(req, res),
+  "chat.sessions.list": async (req, res) => handleChatSessionsGet(req, res),
+  "chat.sessions.create": async (req, res) => handleChatSessionsPost(req, res),
   "sources.read": async (req, res) => handleSources(req, res),
   "history.read": async (req, res) => handleHistory(req, res),
   "styles.list": async (req, res) => handleStylesGet(req, res),
@@ -6963,6 +8530,14 @@ const toolDispatchTable = {
   "computer.state": async (req, res) => handleComputerState(req, res),
   "computer.reset": async (req, res) => handleComputerReset(req, res),
   "computer.task": async (req, res) => handleComputerTask(req, res),
+  "local_agent.devices.list": async (req, res) => handleLocalAgentDevicesGet(req, res),
+  "local_agent.devices.create": async (req, res) => handleLocalAgentDevicesPost(req, res),
+  "local_agent.devices.revoke": async (req, res, params) => handleLocalAgentDeviceRevokePost(req, res, params.deviceId),
+  "local_agent.tasks.list": async (req, res) => handleLocalAgentTasksGet(req, res),
+  "local_agent.tasks.create": async (req, res) => handleLocalAgentTasksPost(req, res),
+  "local_agent.tasks.next": async (req, res) => handleLocalAgentNextTask(req, res),
+  "local_agent.tasks.status": async (req, res, params) => handleLocalAgentTaskStatusGet(req, res, params.taskId),
+  "local_agent.tasks.finish": async (req, res, params) => handleLocalAgentTaskResultPost(req, res, params.taskId),
   "admin.overview": async (req, res) => handleAdminOverview(req, res),
   "admin.analytics": async (req, res) => handleAdminAnalytics(req, res),
   "admin.users.list": async (req, res) => handleAdminUsersList(req, res),
@@ -7047,6 +8622,11 @@ const requestHandler = async (req, res) => {
 
   if (req.method === "POST" && url.pathname === "/api/auth/logout") {
     await handleAuthLogout(req, res);
+    return;
+  }
+
+  if (req.method === "GET" && url.pathname === "/local-agent-runner.mjs") {
+    await serveLocalAgentRunner(req, res);
     return;
   }
 

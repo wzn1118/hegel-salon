@@ -124,6 +124,10 @@ function getBootstrapAdminConfig() {
   };
 }
 
+function shouldForceSyncBootstrapAdmin() {
+  return process.env.HEGEL_BOOTSTRAP_ADMIN_FORCE_SYNC === "1";
+}
+
 function hashToken(token) {
   return createHash("sha256").update(String(token || "")).digest("hex");
 }
@@ -336,6 +340,7 @@ async function readUsersStore() {
   const configuredAdminAccounts = getConfiguredAdminAccounts();
   const configuredAdminEmails = getConfiguredAdminEmails();
   const bootstrapAdmin = getBootstrapAdminConfig();
+  const forceSyncBootstrapAdmin = shouldForceSyncBootstrapAdmin();
   let changed = false;
 
   const users = rawUsers.map((user) => {
@@ -375,6 +380,36 @@ async function readUsersStore() {
 
     return normalized;
   });
+
+  if (bootstrapAdmin && forceSyncBootstrapAdmin) {
+    const matchingUser = users.find(
+      (user) => user.account === bootstrapAdmin.account || user.email === bootstrapAdmin.email
+    );
+
+    if (matchingUser) {
+      const passwordSalt = randomBytes(16).toString("hex");
+      const passwordHash = derivePasswordHash(bootstrapAdmin.password, passwordSalt);
+
+      if (
+        matchingUser.account !== bootstrapAdmin.account ||
+        matchingUser.email !== bootstrapAdmin.email ||
+        matchingUser.role !== "admin" ||
+        matchingUser.disabledAt !== null ||
+        !matchingUser.verifiedAt ||
+        matchingUser.passwordSalt !== passwordSalt ||
+        matchingUser.passwordHash !== passwordHash
+      ) {
+        matchingUser.account = bootstrapAdmin.account;
+        matchingUser.email = bootstrapAdmin.email;
+        matchingUser.role = "admin";
+        matchingUser.disabledAt = null;
+        matchingUser.verifiedAt = matchingUser.verifiedAt || new Date().toISOString();
+        matchingUser.passwordSalt = passwordSalt;
+        matchingUser.passwordHash = passwordHash;
+        changed = true;
+      }
+    }
+  }
 
   if (
     bootstrapAdmin &&

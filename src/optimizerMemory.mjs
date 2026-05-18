@@ -16,6 +16,23 @@ function normalizeWhitespace(text) {
     .trim();
 }
 
+function hasDogmaticScaffoldPattern(text = "") {
+  const content = normalizeWhitespace(text);
+  return /不是[^。；\n]{0,42}而是[^。；\n]{0,42}/u.test(content)
+    || /问题不在于[^。；\n]{0,42}而在于[^。；\n]{0,42}/u.test(content)
+    || /真正的[^。；\n]{0,24}不是[^。；\n]{0,42}而是[^。；\n]{0,42}/u.test(content)
+    || /归根到底/u.test(content)
+    || /说到底/u.test(content);
+}
+
+function sanitizePlaybookRule(text = "") {
+  const normalized = normalizeWhitespace(text);
+  if (!normalized || hasDogmaticScaffoldPattern(normalized)) {
+    return "";
+  }
+  return normalized;
+}
+
 function tokenizePrompt(text) {
   const raw = normalizeWhitespace(text).toLowerCase();
   const tokens = new Set();
@@ -177,11 +194,21 @@ export function buildDistilledStyleSummaryFromPlaybook(playbook = {}) {
     historical: "现实/历史判断"
   };
 
-  const lines = ["该风格以训练蒸馏结果为主，以下约束来自训练失败样本与优化 playbook："];
+  const lines = [
+    "该风格以训练蒸馏结果为主。",
+    "句法默认从规定、限度、推进和结果来展开，不以整齐反转句式充当论证骨架。"
+  ];
   for (const key of ["general", "concept", "audit", "historical"]) {
     if (Array.isArray(playbook[key]) && playbook[key].length) {
+      const cleaned = playbook[key]
+        .map((item) => sanitizePlaybookRule(item))
+        .filter(Boolean)
+        .slice(0, 6);
+      if (!cleaned.length) {
+        continue;
+      }
       lines.push(`${sectionLabels[key]}:`);
-      playbook[key].slice(0, 6).forEach((item) => lines.push(`- ${String(item || "").trim()}`));
+      cleaned.forEach((item) => lines.push(`- ${item}`));
     }
   }
 
@@ -249,7 +276,7 @@ export async function buildOptimizerMemoryContext(userPrompt, userId = null, sty
     lines.push("Nearest failure memories:");
     for (const item of similarFailures) {
       lines.push(`Prompt: ${item.prompt}`);
-      for (const issue of item.issues.slice(0, 4)) {
+      for (const issue of item.issues.map((entry) => sanitizePlaybookRule(entry)).filter(Boolean).slice(0, 4)) {
         lines.push(`- ${issue}`);
       }
     }

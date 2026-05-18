@@ -19,7 +19,7 @@ The application now supports:
 Set these in production:
 
 ```env
-PORT=3087
+PORT=3098
 HEGEL_ENABLE_AUTH=1
 HEGEL_PUBLIC_BASE_URL=https://your-domain.example
 HEGEL_FORCE_SECURE_COOKIES=1

@@ -48,6 +48,84 @@ function summarizeMessage(message) {
   return `${role}: ${parts.join(" | ")}`;
 }
 
+function clipText(text = "", maxLength = 4000) {
+  const normalized = normalizeWhitespace(text);
+  const limit = Math.max(200, Number(maxLength || 4000));
+  return normalized.length > limit ? `${normalized.slice(0, limit).trim()}...` : normalized;
+}
+
+function trimAttachmentForPrompt(attachment = {}) {
+  return {
+    ...attachment,
+    excerpt: attachment?.excerpt ? clipText(attachment.excerpt, 1800) : attachment?.excerpt
+  };
+}
+
+function trimMessageForPrompt(message = {}, maxContentLength = 6000) {
+  return {
+    ...message,
+    role: message?.role === "assistant" ? "assistant" : "user",
+    content: clipText(message?.content || "", maxContentLength),
+    attachments: Array.isArray(message?.attachments)
+      ? message.attachments.slice(0, 6).map(trimAttachmentForPrompt)
+      : []
+  };
+}
+
+function estimatePromptMessageChars(message = {}) {
+  const attachmentChars = Array.isArray(message.attachments)
+    ? message.attachments.reduce((sum, attachment) =>
+        sum
+          + String(attachment?.name || "").length
+          + String(attachment?.excerpt || "").length
+          + String(attachment?.imageUrl || "").length,
+      0)
+    : 0;
+  return String(message.content || "").length + attachmentChars + 32;
+}
+
+function fitRecentMessagesToBudget(messages = [], options = {}) {
+  return selectRecentMessagesForPrompt(messages, options).recentMessages;
+}
+
+function selectRecentMessagesForPrompt(messages = [], options = {}, sourceOffset = 0) {
+  const maxRecentChars = Math.max(4000, Number(options.maxRecentChars || 32000));
+  const maxMessageChars = Math.max(600, Number(options.maxMessageChars || 6000));
+  const trimmed = messages.map((message, index) => ({
+    ...trimMessageForPrompt(message, maxMessageChars),
+    __sourceIndex: sourceOffset + index
+  }));
+  let total = trimmed.reduce((sum, message) => sum + estimatePromptMessageChars(message), 0);
+
+  while (trimmed.length > 4 && total > maxRecentChars) {
+    const [removed] = trimmed.splice(0, 1);
+    total -= estimatePromptMessageChars(removed);
+  }
+
+  const startIndex = trimmed.length ? trimmed[0].__sourceIndex : sourceOffset + messages.length;
+  return {
+    startIndex,
+    recentMessages: trimmed.map(({ __sourceIndex, ...message }) => message)
+  };
+}
+
+function clipSummaryLines(lines = [], maxSummaryChars = 4200) {
+  const limit = Math.max(1000, Number(maxSummaryChars || 4200));
+  const kept = [];
+  let total = 0;
+
+  for (const line of [...lines].reverse()) {
+    const size = String(line || "").length + 1;
+    if (kept.length && total + size > limit) {
+      break;
+    }
+    kept.push(line);
+    total += size;
+  }
+
+  return kept.reverse().join("\n");
+}
+
 export function buildPromptBlock(title, content) {
   const normalizedContent = normalizeWhitespace(content || "");
   if (!normalizedContent) {
@@ -65,18 +143,28 @@ export function joinPromptBlocks(staticBlocks = [], dynamicBlocks = []) {
 }
 
 export function compactConversationHistoryForPrompt(history = [], options = {}) {
-  const keepRecent = Math.max(4, Number(options.keepRecent || 8));
+  const requestedKeepRecent = Number(options.keepRecent ?? 8);
+  const maxSummaryChars = Math.max(1000, Number(options.maxSummaryChars || 4200));
   const normalizedHistory = Array.isArray(history) ? history.filter(Boolean) : [];
+  const keepRecent = Number.isFinite(requestedKeepRecent)
+    ? Math.min(normalizedHistory.length, Math.max(4, requestedKeepRecent))
+    : normalizedHistory.length;
 
-  if (normalizedHistory.length <= keepRecent) {
+  if (!normalizedHistory.length) {
     return {
-      recentMessages: normalizedHistory,
+      recentMessages: [],
       summaryText: ""
     };
   }
 
-  const olderMessages = normalizedHistory.slice(0, -keepRecent);
-  const recentMessages = normalizedHistory.slice(-keepRecent);
+  const candidateStart = Math.max(0, normalizedHistory.length - keepRecent);
+  const recentSelection = selectRecentMessagesForPrompt(
+    normalizedHistory.slice(candidateStart),
+    options,
+    candidateStart
+  );
+  const olderMessages = normalizedHistory.slice(0, recentSelection.startIndex);
+  const recentMessages = recentSelection.recentMessages;
   const summaryLines = [];
 
   const instructionSignals = olderMessages
@@ -86,13 +174,12 @@ export function compactConversationHistoryForPrompt(history = [], options = {}) 
 
   if (instructionSignals.length) {
     summaryLines.push("Earlier session instructions and preference signals:");
-    instructionSignals.slice(-6).forEach((item) => summaryLines.push(`- ${item}`));
+    instructionSignals.forEach((item) => summaryLines.push(`- ${item}`));
   }
 
   const olderTurns = olderMessages
     .map(summarizeMessage)
-    .filter(Boolean)
-    .slice(-8);
+    .filter(Boolean);
 
   if (olderTurns.length) {
     summaryLines.push("Compressed earlier current-session turns:");
@@ -101,7 +188,7 @@ export function compactConversationHistoryForPrompt(history = [], options = {}) 
 
   return {
     recentMessages,
-    summaryText: summaryLines.join("\n")
+    summaryText: clipSummaryLines(summaryLines, maxSummaryChars)
   };
 }
 

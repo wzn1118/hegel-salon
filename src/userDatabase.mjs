@@ -94,10 +94,40 @@ db.exec(`
     user_id TEXT NOT NULL,
     memory_scope TEXT NOT NULL DEFAULT 'default',
     style_profile_id TEXT NOT NULL DEFAULT 'default',
+    chat_session_id TEXT NOT NULL DEFAULT 'default',
     created_at TEXT NOT NULL,
     history_json TEXT NOT NULL,
     reply_text TEXT NOT NULL,
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+  );
+
+  CREATE TABLE IF NOT EXISTS chat_sessions (
+    id TEXT PRIMARY KEY,
+    user_id TEXT NOT NULL,
+    style_profile_id TEXT NOT NULL DEFAULT 'default',
+    title TEXT NOT NULL DEFAULT '',
+    created_at TEXT NOT NULL,
+    updated_at TEXT NOT NULL,
+    message_count INTEGER NOT NULL DEFAULT 0,
+    memory_summary_text TEXT NOT NULL DEFAULT '',
+    memory_source_message_count INTEGER NOT NULL DEFAULT 0,
+    memory_updated_at TEXT,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+  );
+
+  CREATE TABLE IF NOT EXISTS user_chat_messages (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    chat_session_id TEXT NOT NULL,
+    user_id TEXT NOT NULL,
+    style_profile_id TEXT NOT NULL DEFAULT 'default',
+    ordinal INTEGER NOT NULL,
+    role TEXT NOT NULL,
+    content_text TEXT NOT NULL DEFAULT '',
+    attachments_json TEXT NOT NULL DEFAULT '[]',
+    created_at TEXT NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+    FOREIGN KEY (chat_session_id) REFERENCES chat_sessions(id) ON DELETE CASCADE,
+    UNIQUE(chat_session_id, ordinal)
   );
 
   CREATE TABLE IF NOT EXISTS style_memory_profiles (
@@ -175,6 +205,38 @@ db.exec(`
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
   );
 
+  CREATE TABLE IF NOT EXISTS local_agent_devices (
+    id TEXT PRIMARY KEY,
+    user_id TEXT NOT NULL,
+    name TEXT NOT NULL DEFAULT '',
+    token_hash TEXT NOT NULL UNIQUE,
+    capabilities_json TEXT NOT NULL DEFAULT '{}',
+    created_at TEXT NOT NULL,
+    last_seen_at TEXT,
+    revoked_at TEXT,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+  );
+
+  CREATE TABLE IF NOT EXISTS local_agent_tasks (
+    id TEXT PRIMARY KEY,
+    user_id TEXT NOT NULL,
+    device_id TEXT NOT NULL,
+    chat_session_id TEXT,
+    style_profile_id TEXT NOT NULL DEFAULT 'default',
+    task_type TEXT NOT NULL DEFAULT 'codex_exec',
+    status TEXT NOT NULL,
+    prompt_text TEXT NOT NULL DEFAULT '',
+    command_json TEXT NOT NULL DEFAULT '{}',
+    result_text TEXT NOT NULL DEFAULT '',
+    error_text TEXT NOT NULL DEFAULT '',
+    created_at TEXT NOT NULL,
+    claimed_at TEXT,
+    finished_at TEXT,
+    expires_at TEXT NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+    FOREIGN KEY (device_id) REFERENCES local_agent_devices(id) ON DELETE CASCADE
+  );
+
   CREATE TABLE IF NOT EXISTS user_usage_daily (
     user_id TEXT NOT NULL,
     usage_day TEXT NOT NULL,
@@ -199,6 +261,11 @@ db.exec(`
   CREATE INDEX IF NOT EXISTS idx_security_audit_events_type_created_at ON security_audit_events(event_type, created_at);
   CREATE INDEX IF NOT EXISTS idx_security_alerts_created_at ON security_alerts(created_at);
   CREATE INDEX IF NOT EXISTS idx_security_alerts_type_created_at ON security_alerts(alert_type, created_at);
+  CREATE INDEX IF NOT EXISTS idx_chat_sessions_user_style_updated ON chat_sessions(user_id, style_profile_id, updated_at);
+  CREATE INDEX IF NOT EXISTS idx_user_chat_messages_session_ordinal ON user_chat_messages(chat_session_id, ordinal);
+  CREATE INDEX IF NOT EXISTS idx_local_agent_devices_user_seen ON local_agent_devices(user_id, last_seen_at);
+  CREATE INDEX IF NOT EXISTS idx_local_agent_tasks_device_status ON local_agent_tasks(device_id, status, created_at);
+  CREATE INDEX IF NOT EXISTS idx_local_agent_tasks_user_created ON local_agent_tasks(user_id, created_at);
 `);
 
 function ensureSafeSqlIdentifier(value, fieldName = "identifier") {
@@ -329,6 +396,8 @@ ensureColumn("user_memory_turns", "memory_scope", "TEXT NOT NULL DEFAULT 'defaul
 ensureColumn("user_chat_logs", "memory_scope", "TEXT NOT NULL DEFAULT 'default'");
 ensureColumn("user_memory_turns", "style_profile_id", "TEXT NOT NULL DEFAULT 'default'");
 ensureColumn("user_chat_logs", "style_profile_id", "TEXT NOT NULL DEFAULT 'default'");
+ensureColumn("user_memory_turns", "chat_session_id", "TEXT NOT NULL DEFAULT 'default'");
+ensureColumn("user_chat_logs", "chat_session_id", "TEXT NOT NULL DEFAULT 'default'");
 ensureColumn("training_runs", "style_profile_id", "TEXT NOT NULL DEFAULT 'default'");
 
 function migratePlaintextApiKeysToEncrypted() {
@@ -480,6 +549,7 @@ function mapMemoryTurnRow(row) {
     userId: row.user_id,
     styleProfileId: row.style_profile_id || "default",
     memoryScope: row.memory_scope || "default",
+    chatSessionId: row.chat_session_id || "default",
     createdAt: row.created_at,
     userMessage: parseJsonSafe(row.user_message_json, {}),
     assistantMessage: parseJsonSafe(row.assistant_message_json, {})
@@ -496,9 +566,87 @@ function mapChatLogRow(row) {
     userId: row.user_id,
     styleProfileId: row.style_profile_id || "default",
     memoryScope: row.memory_scope || "default",
+    chatSessionId: row.chat_session_id || "default",
     createdAt: row.created_at,
     history: parseJsonSafe(row.history_json, []),
     reply: row.reply_text
+  };
+}
+
+function mapChatSessionRow(row) {
+  if (!row) {
+    return null;
+  }
+
+  return {
+    id: row.id,
+    userId: row.user_id,
+    styleProfileId: row.style_profile_id || "default",
+    title: row.title || "",
+    createdAt: row.created_at,
+    updatedAt: row.updated_at,
+    messageCount: Number(row.message_count || 0),
+    memorySummaryText: row.memory_summary_text || "",
+    memorySourceMessageCount: Number(row.memory_source_message_count || 0),
+    memoryUpdatedAt: row.memory_updated_at || null
+  };
+}
+
+function mapChatMessageRow(row) {
+  if (!row) {
+    return null;
+  }
+
+  return {
+    id: row.id,
+    chatSessionId: row.chat_session_id,
+    userId: row.user_id,
+    styleProfileId: row.style_profile_id || "default",
+    ordinal: Number(row.ordinal || 0),
+    role: row.role === "assistant" ? "assistant" : "user",
+    content: row.content_text || "",
+    attachments: parseJsonSafe(row.attachments_json, []),
+    createdAt: row.created_at
+  };
+}
+
+function mapLocalAgentDeviceRow(row) {
+  if (!row) {
+    return null;
+  }
+
+  return {
+    id: row.id,
+    userId: row.user_id,
+    name: row.name || "",
+    capabilities: parseJsonSafe(row.capabilities_json, {}),
+    createdAt: row.created_at,
+    lastSeenAt: row.last_seen_at || null,
+    revokedAt: row.revoked_at || null
+  };
+}
+
+function mapLocalAgentTaskRow(row) {
+  if (!row) {
+    return null;
+  }
+
+  return {
+    id: row.id,
+    userId: row.user_id,
+    deviceId: row.device_id,
+    chatSessionId: row.chat_session_id || null,
+    styleProfileId: row.style_profile_id || "default",
+    taskType: row.task_type || "codex_exec",
+    status: row.status,
+    promptText: row.prompt_text || "",
+    command: parseJsonSafe(row.command_json, {}),
+    resultText: row.result_text || "",
+    errorText: row.error_text || "",
+    createdAt: row.created_at,
+    claimedAt: row.claimed_at || null,
+    finishedAt: row.finished_at || null,
+    expiresAt: row.expires_at
   };
 }
 
@@ -1546,14 +1694,22 @@ export function writeStyleMemoryProfileToDb(userId, styleProfileId, summaryText,
   return readStyleMemoryProfileFromDb(styleProfileId);
 }
 
-export function appendUserMemoryTurnToDb(userId, styleProfileId, userMessage, assistantMessage, createdAt) {
+export function appendUserMemoryTurnToDb(
+  userId,
+  styleProfileId,
+  userMessage,
+  assistantMessage,
+  createdAt,
+  chatSessionId = "default"
+) {
   db.prepare(`
     INSERT INTO user_memory_turns (
-      user_id, style_profile_id, created_at, user_message_json, assistant_message_json
-    ) VALUES (?, ?, ?, ?, ?)
+      user_id, style_profile_id, chat_session_id, created_at, user_message_json, assistant_message_json
+    ) VALUES (?, ?, ?, ?, ?, ?)
   `).run(
     String(userId || ""),
     String(styleProfileId || defaultStyleProfileId(userId)),
+    String(chatSessionId || "default"),
     String(createdAt || new Date().toISOString()),
     JSON.stringify(userMessage || {}),
     JSON.stringify(assistantMessage || {})
@@ -1561,9 +1717,13 @@ export function appendUserMemoryTurnToDb(userId, styleProfileId, userMessage, as
 }
 
 export function readRecentUserMemoryTurnsFromDb(userId, styleProfileId, limit = 24) {
+  if (!Number.isFinite(Number(limit))) {
+    return readAllUserMemoryTurnsFromDb(userId, styleProfileId);
+  }
+
   if (!styleProfileId) {
     return db.prepare(`
-      SELECT id, user_id, style_profile_id, created_at, user_message_json, assistant_message_json
+      SELECT id, user_id, style_profile_id, chat_session_id, created_at, user_message_json, assistant_message_json
       FROM user_memory_turns
       WHERE user_id = ?
       ORDER BY id DESC
@@ -1575,7 +1735,7 @@ export function readRecentUserMemoryTurnsFromDb(userId, styleProfileId, limit = 
   }
 
   return db.prepare(`
-    SELECT id, user_id, style_profile_id, created_at, user_message_json, assistant_message_json
+    SELECT id, user_id, style_profile_id, chat_session_id, created_at, user_message_json, assistant_message_json
     FROM user_memory_turns
     WHERE user_id = ? AND style_profile_id = ?
     ORDER BY id DESC
@@ -1590,7 +1750,7 @@ export function readRecentUserMemoryTurnsFromDb(userId, styleProfileId, limit = 
 export function readAllUserMemoryTurnsFromDb(userId, styleProfileId) {
   if (!styleProfileId) {
     return db.prepare(`
-      SELECT id, user_id, style_profile_id, created_at, user_message_json, assistant_message_json
+      SELECT id, user_id, style_profile_id, chat_session_id, created_at, user_message_json, assistant_message_json
       FROM user_memory_turns
       WHERE user_id = ?
       ORDER BY id ASC
@@ -1598,7 +1758,7 @@ export function readAllUserMemoryTurnsFromDb(userId, styleProfileId) {
   }
 
   return db.prepare(`
-    SELECT id, user_id, style_profile_id, created_at, user_message_json, assistant_message_json
+    SELECT id, user_id, style_profile_id, chat_session_id, created_at, user_message_json, assistant_message_json
     FROM user_memory_turns
     WHERE user_id = ? AND style_profile_id = ?
     ORDER BY id ASC
@@ -1620,24 +1780,493 @@ export function countUserMemoryTurnsInDb(userId, styleProfileId = null) {
   );
 }
 
-export function appendUserChatLogToDb(userId, styleProfileId, history, reply, createdAt) {
+export function appendUserChatLogToDb(
+  userId,
+  styleProfileId,
+  history,
+  reply,
+  createdAt,
+  chatSessionId = "default"
+) {
   db.prepare(`
     INSERT INTO user_chat_logs (
-      user_id, style_profile_id, created_at, history_json, reply_text
-    ) VALUES (?, ?, ?, ?, ?)
+      user_id, style_profile_id, chat_session_id, created_at, history_json, reply_text
+    ) VALUES (?, ?, ?, ?, ?, ?)
   `).run(
     String(userId || ""),
     String(styleProfileId || defaultStyleProfileId(userId)),
+    String(chatSessionId || "default"),
     String(createdAt || new Date().toISOString()),
     JSON.stringify(Array.isArray(history) ? history : []),
     String(reply || "")
   );
 }
 
+export function upsertChatSessionInDb({
+  id,
+  userId,
+  styleProfileId,
+  title = "",
+  createdAt = new Date().toISOString(),
+  updatedAt = new Date().toISOString(),
+  messageCount = 0
+} = {}) {
+  const sessionId = String(id || "").trim();
+  if (!sessionId) {
+    throw new Error("chat session id is required.");
+  }
+
+  db.prepare(`
+    INSERT INTO chat_sessions (
+      id, user_id, style_profile_id, title, created_at, updated_at, message_count
+    ) VALUES (?, ?, ?, ?, ?, ?, ?)
+    ON CONFLICT(id) DO UPDATE SET
+      style_profile_id = excluded.style_profile_id,
+      title = CASE
+        WHEN chat_sessions.title = '' THEN excluded.title
+        ELSE chat_sessions.title
+      END,
+      updated_at = excluded.updated_at,
+      message_count = MAX(chat_sessions.message_count, excluded.message_count)
+  `).run(
+    sessionId,
+    String(userId || ""),
+    String(styleProfileId || defaultStyleProfileId(userId)),
+    String(title || ""),
+    String(createdAt),
+    String(updatedAt),
+    Math.max(0, Number(messageCount || 0))
+  );
+
+  return readChatSessionByIdFromDb(userId, sessionId);
+}
+
+export function readChatSessionByIdFromDb(userId, chatSessionId) {
+  return mapChatSessionRow(db.prepare(`
+    SELECT id, user_id, style_profile_id, title, created_at, updated_at, message_count,
+      memory_summary_text, memory_source_message_count, memory_updated_at
+    FROM chat_sessions
+    WHERE user_id = ? AND id = ?
+  `).get(String(userId || ""), String(chatSessionId || "")));
+}
+
+export function readLatestChatSessionFromDb(userId, styleProfileId) {
+  return mapChatSessionRow(db.prepare(`
+    SELECT id, user_id, style_profile_id, title, created_at, updated_at, message_count,
+      memory_summary_text, memory_source_message_count, memory_updated_at
+    FROM chat_sessions
+    WHERE user_id = ? AND style_profile_id = ?
+    ORDER BY updated_at DESC, rowid DESC
+    LIMIT 1
+  `).get(String(userId || ""), String(styleProfileId || defaultStyleProfileId(userId))));
+}
+
+export function listChatSessionsFromDb(userId, styleProfileId, limit = 50) {
+  return db.prepare(`
+    SELECT id, user_id, style_profile_id, title, created_at, updated_at, message_count,
+      memory_summary_text, memory_source_message_count, memory_updated_at
+    FROM chat_sessions
+    WHERE user_id = ? AND style_profile_id = ?
+    ORDER BY updated_at DESC, rowid DESC
+    LIMIT ?
+  `).all(
+    String(userId || ""),
+    String(styleProfileId || defaultStyleProfileId(userId)),
+    Math.max(1, Number(limit || 50))
+  ).map(mapChatSessionRow);
+}
+
+export function listAllChatSessionsForUserFromDb(userId, limit = 100) {
+  return db.prepare(`
+    SELECT id, user_id, style_profile_id, title, created_at, updated_at, message_count,
+      memory_summary_text, memory_source_message_count, memory_updated_at
+    FROM chat_sessions
+    WHERE user_id = ?
+    ORDER BY updated_at DESC, rowid DESC
+    LIMIT ?
+  `).all(
+    String(userId || ""),
+    Math.max(1, Number(limit || 100))
+  ).map(mapChatSessionRow);
+}
+
+export function insertLocalAgentDeviceToDb({
+  id,
+  userId,
+  name = "",
+  tokenHash,
+  capabilities = {},
+  createdAt = new Date().toISOString()
+} = {}) {
+  const deviceId = String(id || "").trim();
+  const safeUserId = String(userId || "").trim();
+  const safeTokenHash = String(tokenHash || "").trim();
+  if (!deviceId || !safeUserId || !safeTokenHash) {
+    throw new Error("local agent device id, user id, and token hash are required.");
+  }
+
+  db.prepare(`
+    INSERT INTO local_agent_devices (
+      id, user_id, name, token_hash, capabilities_json, created_at, last_seen_at, revoked_at
+    ) VALUES (?, ?, ?, ?, ?, ?, NULL, NULL)
+  `).run(
+    deviceId,
+    safeUserId,
+    String(name || ""),
+    safeTokenHash,
+    JSON.stringify(capabilities && typeof capabilities === "object" ? capabilities : {}),
+    String(createdAt)
+  );
+
+  return readLocalAgentDeviceByIdForUserFromDb(safeUserId, deviceId);
+}
+
+export function listLocalAgentDevicesByUserIdFromDb(userId) {
+  return db.prepare(`
+    SELECT id, user_id, name, capabilities_json, created_at, last_seen_at, revoked_at
+    FROM local_agent_devices
+    WHERE user_id = ? AND revoked_at IS NULL
+    ORDER BY COALESCE(last_seen_at, created_at) DESC, created_at DESC
+  `).all(String(userId || "")).map(mapLocalAgentDeviceRow);
+}
+
+export function readLocalAgentDeviceByIdForUserFromDb(userId, deviceId) {
+  return mapLocalAgentDeviceRow(db.prepare(`
+    SELECT id, user_id, name, capabilities_json, created_at, last_seen_at, revoked_at
+    FROM local_agent_devices
+    WHERE user_id = ? AND id = ?
+  `).get(String(userId || ""), String(deviceId || "")));
+}
+
+export function readLocalAgentDeviceByTokenHashFromDb(tokenHash) {
+  return mapLocalAgentDeviceRow(db.prepare(`
+    SELECT id, user_id, name, capabilities_json, created_at, last_seen_at, revoked_at
+    FROM local_agent_devices
+    WHERE token_hash = ?
+  `).get(String(tokenHash || "")));
+}
+
+export function markLocalAgentDeviceSeenInDb(deviceId, seenAt = new Date().toISOString()) {
+  db.prepare(`
+    UPDATE local_agent_devices
+    SET last_seen_at = ?
+    WHERE id = ? AND revoked_at IS NULL
+  `).run(String(seenAt), String(deviceId || ""));
+}
+
+export function revokeLocalAgentDeviceForUserInDb(
+  userId,
+  deviceId,
+  revokedAt = new Date().toISOString()
+) {
+  const safeUserId = String(userId || "");
+  const safeDeviceId = String(deviceId || "");
+  db.exec("BEGIN IMMEDIATE");
+  try {
+    db.prepare(`
+      UPDATE local_agent_devices
+      SET revoked_at = ?
+      WHERE user_id = ? AND id = ? AND revoked_at IS NULL
+    `).run(String(revokedAt), safeUserId, safeDeviceId);
+
+    db.prepare(`
+      UPDATE local_agent_tasks
+      SET status = 'failed',
+        error_text = CASE
+          WHEN error_text = '' THEN 'Local Agent device was revoked before this task completed.'
+          ELSE error_text
+        END,
+        finished_at = COALESCE(finished_at, ?)
+      WHERE user_id = ?
+        AND device_id = ?
+        AND status IN ('queued', 'claimed')
+    `).run(String(revokedAt), safeUserId, safeDeviceId);
+
+    db.exec("COMMIT");
+  } catch (error) {
+    db.exec("ROLLBACK");
+    throw error;
+  }
+
+  return readLocalAgentDeviceByIdForUserFromDb(safeUserId, safeDeviceId);
+}
+
+export function insertLocalAgentTaskToDb({
+  id,
+  userId,
+  deviceId,
+  chatSessionId = null,
+  styleProfileId,
+  taskType = "codex_exec",
+  promptText = "",
+  command = {},
+  createdAt = new Date().toISOString(),
+  expiresAt
+} = {}) {
+  const taskId = String(id || "").trim();
+  const safeUserId = String(userId || "").trim();
+  const safeDeviceId = String(deviceId || "").trim();
+  if (!taskId || !safeUserId || !safeDeviceId) {
+    throw new Error("local agent task id, user id, and device id are required.");
+  }
+
+  db.prepare(`
+    INSERT INTO local_agent_tasks (
+      id, user_id, device_id, chat_session_id, style_profile_id, task_type,
+      status, prompt_text, command_json, result_text, error_text,
+      created_at, claimed_at, finished_at, expires_at
+    ) VALUES (?, ?, ?, ?, ?, ?, 'queued', ?, ?, '', '', ?, NULL, NULL, ?)
+  `).run(
+    taskId,
+    safeUserId,
+    safeDeviceId,
+    chatSessionId ? String(chatSessionId) : null,
+    String(styleProfileId || defaultStyleProfileId(userId)),
+    String(taskType || "codex_exec"),
+    String(promptText || ""),
+    JSON.stringify(command && typeof command === "object" ? command : {}),
+    String(createdAt),
+    String(expiresAt || new Date(Date.now() + 30 * 60 * 1000).toISOString())
+  );
+
+  return readLocalAgentTaskByIdForUserFromDb(safeUserId, taskId);
+}
+
+export function readLocalAgentTaskByIdForUserFromDb(userId, taskId) {
+  return mapLocalAgentTaskRow(db.prepare(`
+    SELECT id, user_id, device_id, chat_session_id, style_profile_id, task_type,
+      status, prompt_text, command_json, result_text, error_text,
+      created_at, claimed_at, finished_at, expires_at
+    FROM local_agent_tasks
+    WHERE user_id = ? AND id = ?
+  `).get(String(userId || ""), String(taskId || "")));
+}
+
+export function listLocalAgentTasksByUserIdFromDb(userId, limit = 25) {
+  return db.prepare(`
+    SELECT id, user_id, device_id, chat_session_id, style_profile_id, task_type,
+      status, prompt_text, command_json, result_text, error_text,
+      created_at, claimed_at, finished_at, expires_at
+    FROM local_agent_tasks
+    WHERE user_id = ?
+    ORDER BY created_at DESC
+    LIMIT ?
+  `).all(
+    String(userId || ""),
+    Math.max(1, Number(limit || 25))
+  ).map(mapLocalAgentTaskRow);
+}
+
+export function claimNextLocalAgentTaskForDeviceInDb(deviceId, claimedAt = new Date().toISOString()) {
+  const safeDeviceId = String(deviceId || "");
+  db.exec("BEGIN IMMEDIATE");
+  try {
+    const task = mapLocalAgentTaskRow(db.prepare(`
+      SELECT id, user_id, device_id, chat_session_id, style_profile_id, task_type,
+        status, prompt_text, command_json, result_text, error_text,
+        created_at, claimed_at, finished_at, expires_at
+      FROM local_agent_tasks
+      WHERE device_id = ?
+        AND status = 'queued'
+        AND expires_at > ?
+      ORDER BY created_at ASC
+      LIMIT 1
+    `).get(safeDeviceId, String(claimedAt)));
+
+    if (!task) {
+      markLocalAgentDeviceSeenInDb(safeDeviceId, claimedAt);
+      db.exec("COMMIT");
+      return null;
+    }
+
+    db.prepare(`
+      UPDATE local_agent_tasks
+      SET status = 'claimed',
+        claimed_at = ?
+      WHERE id = ? AND device_id = ? AND status = 'queued'
+    `).run(String(claimedAt), task.id, safeDeviceId);
+    markLocalAgentDeviceSeenInDb(safeDeviceId, claimedAt);
+    db.exec("COMMIT");
+    return {
+      ...task,
+      status: "claimed",
+      claimedAt
+    };
+  } catch (error) {
+    db.exec("ROLLBACK");
+    throw error;
+  }
+}
+
+export function finishLocalAgentTaskForDeviceInDb({
+  deviceId,
+  taskId,
+  status = "completed",
+  resultText = "",
+  errorText = "",
+  finishedAt = new Date().toISOString()
+} = {}) {
+  const safeStatus = status === "failed" ? "failed" : "completed";
+  db.prepare(`
+    UPDATE local_agent_tasks
+    SET status = ?,
+      result_text = ?,
+      error_text = ?,
+      finished_at = ?
+    WHERE id = ?
+      AND device_id = ?
+      AND status IN ('queued', 'claimed')
+  `).run(
+    safeStatus,
+    String(resultText || ""),
+    String(errorText || ""),
+    String(finishedAt),
+    String(taskId || ""),
+    String(deviceId || "")
+  );
+  markLocalAgentDeviceSeenInDb(deviceId, finishedAt);
+  return mapLocalAgentTaskRow(db.prepare(`
+    SELECT id, user_id, device_id, chat_session_id, style_profile_id, task_type,
+      status, prompt_text, command_json, result_text, error_text,
+      created_at, claimed_at, finished_at, expires_at
+    FROM local_agent_tasks
+    WHERE id = ? AND device_id = ?
+  `).get(String(taskId || ""), String(deviceId || "")));
+}
+
+export function countChatSessionMessagesInDb(userId, chatSessionId) {
+  return Number(db.prepare(`
+    SELECT COUNT(*) AS count
+    FROM user_chat_messages
+    WHERE user_id = ? AND chat_session_id = ?
+  `).get(String(userId || ""), String(chatSessionId || "")).count || 0);
+}
+
+export function readChatSessionMessagesFromDb(userId, chatSessionId) {
+  return db.prepare(`
+    SELECT id, chat_session_id, user_id, style_profile_id, ordinal, role, content_text, attachments_json, created_at
+    FROM user_chat_messages
+    WHERE user_id = ? AND chat_session_id = ?
+    ORDER BY ordinal ASC
+  `).all(String(userId || ""), String(chatSessionId || "")).map(mapChatMessageRow);
+}
+
+export function appendChatSessionMessagesToDb(
+  userId,
+  styleProfileId,
+  chatSessionId,
+  messages = [],
+  createdAt = new Date().toISOString()
+) {
+  const sessionId = String(chatSessionId || "").trim();
+  if (!sessionId || !Array.isArray(messages) || !messages.length) {
+    return {
+      appended: 0,
+      messageCount: countChatSessionMessagesInDb(userId, sessionId)
+    };
+  }
+
+  const normalizedMessages = messages
+    .filter((message) => message && (message.role === "user" || message.role === "assistant"))
+    .map((message) => ({
+      role: message.role === "assistant" ? "assistant" : "user",
+      content: String(message.content || ""),
+      attachments: Array.isArray(message.attachments) ? message.attachments : []
+    }));
+  const existingCount = countChatSessionMessagesInDb(userId, sessionId);
+  const pendingMessages = normalizedMessages.slice(existingCount);
+  if (!pendingMessages.length) {
+    upsertChatSessionInDb({
+      id: sessionId,
+      userId,
+      styleProfileId,
+      updatedAt: createdAt,
+      messageCount: existingCount
+    });
+    return {
+      appended: 0,
+      messageCount: existingCount
+    };
+  }
+
+  const insert = db.prepare(`
+    INSERT OR IGNORE INTO user_chat_messages (
+      chat_session_id, user_id, style_profile_id, ordinal, role, content_text, attachments_json, created_at
+    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+  `);
+  const safeUserId = String(userId || "");
+  const safeStyleId = String(styleProfileId || defaultStyleProfileId(userId));
+  db.exec("BEGIN IMMEDIATE");
+  try {
+    pendingMessages.forEach((message, index) => {
+      insert.run(
+        sessionId,
+        safeUserId,
+        safeStyleId,
+        existingCount + index,
+        message.role,
+        message.content,
+        JSON.stringify(message.attachments),
+        String(createdAt)
+      );
+    });
+    db.exec("COMMIT");
+  } catch (error) {
+    db.exec("ROLLBACK");
+    throw error;
+  }
+
+  const messageCount = existingCount + pendingMessages.length;
+  const firstUserMessage = normalizedMessages.find((message) => message.role === "user" && message.content);
+  upsertChatSessionInDb({
+    id: sessionId,
+    userId,
+    styleProfileId,
+    title: firstUserMessage?.content ? firstUserMessage.content.slice(0, 80) : "",
+    updatedAt: createdAt,
+    messageCount
+  });
+
+  return {
+    appended: pendingMessages.length,
+    messageCount
+  };
+}
+
+export function writeChatSessionMemoryProfileToDb(
+  userId,
+  chatSessionId,
+  summaryText,
+  sourceMessageCount,
+  updatedAt = new Date().toISOString()
+) {
+  db.prepare(`
+    UPDATE chat_sessions
+    SET memory_summary_text = ?,
+      memory_source_message_count = ?,
+      memory_updated_at = ?,
+      updated_at = MAX(updated_at, ?)
+    WHERE user_id = ? AND id = ?
+  `).run(
+    String(summaryText || ""),
+    Math.max(0, Number(sourceMessageCount || 0)),
+    String(updatedAt),
+    String(updatedAt),
+    String(userId || ""),
+    String(chatSessionId || "")
+  );
+
+  return readChatSessionByIdFromDb(userId, chatSessionId);
+}
+
 export function readRecentUserChatLogsFromDb(userId, styleProfileId, limit = 10) {
+  if (!Number.isFinite(Number(limit))) {
+    return readAllUserChatLogsFromDb(userId, styleProfileId);
+  }
+
   if (!styleProfileId) {
     return db.prepare(`
-      SELECT id, user_id, style_profile_id, created_at, history_json, reply_text
+      SELECT id, user_id, style_profile_id, chat_session_id, created_at, history_json, reply_text
       FROM user_chat_logs
       WHERE user_id = ?
       ORDER BY id DESC
@@ -1649,7 +2278,7 @@ export function readRecentUserChatLogsFromDb(userId, styleProfileId, limit = 10)
   }
 
   return db.prepare(`
-    SELECT id, user_id, style_profile_id, created_at, history_json, reply_text
+    SELECT id, user_id, style_profile_id, chat_session_id, created_at, history_json, reply_text
     FROM user_chat_logs
     WHERE user_id = ? AND style_profile_id = ?
     ORDER BY id DESC
@@ -1664,7 +2293,7 @@ export function readRecentUserChatLogsFromDb(userId, styleProfileId, limit = 10)
 export function readAllUserChatLogsFromDb(userId, styleProfileId) {
   if (!styleProfileId) {
     return db.prepare(`
-      SELECT id, user_id, style_profile_id, created_at, history_json, reply_text
+      SELECT id, user_id, style_profile_id, chat_session_id, created_at, history_json, reply_text
       FROM user_chat_logs
       WHERE user_id = ?
       ORDER BY id ASC
@@ -1672,7 +2301,7 @@ export function readAllUserChatLogsFromDb(userId, styleProfileId) {
   }
 
   return db.prepare(`
-    SELECT id, user_id, style_profile_id, created_at, history_json, reply_text
+    SELECT id, user_id, style_profile_id, chat_session_id, created_at, history_json, reply_text
     FROM user_chat_logs
     WHERE user_id = ? AND style_profile_id = ?
     ORDER BY id ASC
@@ -1707,8 +2336,14 @@ export function clearUserBusinessDataInDb(userId, targets = [], styleProfileId =
       if (styleProfileId) {
         db.prepare("DELETE FROM user_chat_logs WHERE user_id = ? AND style_profile_id = ?")
           .run(String(userId || ""), String(styleProfileId || ""));
+        db.prepare("DELETE FROM user_chat_messages WHERE user_id = ? AND style_profile_id = ?")
+          .run(String(userId || ""), String(styleProfileId || ""));
+        db.prepare("DELETE FROM chat_sessions WHERE user_id = ? AND style_profile_id = ?")
+          .run(String(userId || ""), String(styleProfileId || ""));
       } else {
         db.prepare("DELETE FROM user_chat_logs WHERE user_id = ?").run(String(userId || ""));
+        db.prepare("DELETE FROM user_chat_messages WHERE user_id = ?").run(String(userId || ""));
+        db.prepare("DELETE FROM chat_sessions WHERE user_id = ?").run(String(userId || ""));
       }
     }
     if (activeTargets.has("memory")) {

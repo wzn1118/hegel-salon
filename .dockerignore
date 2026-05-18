@@ -31,4 +31,3 @@ deploy/cloudflared/hegelsalon.config.yml
 .env.local
 *.log
 *.sqlite
-

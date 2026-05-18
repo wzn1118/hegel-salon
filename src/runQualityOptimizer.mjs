@@ -1,5 +1,5 @@
 import { existsSync } from "node:fs";
-import { mkdir, readFile } from "node:fs/promises";
+import { appendFile, mkdir, readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { writeJsonFileAtomic } from "./atomicFile.mjs";
 import { loadCodexOpenAIConfig } from "./codexConfig.mjs";
@@ -31,6 +31,38 @@ const concurrency =
   Number.parseInt(process.env.HEGEL_OPTIMIZER_CONCURRENCY || "2", 10) || 2;
 const timeoutMs =
   Number.parseInt(process.env.HEGEL_OPTIMIZER_TIMEOUT_MS || "300000", 10) || 300000;
+const salonRetries = Math.min(
+  Math.max(Number.parseInt(process.env.HEGEL_OPTIMIZER_CHAT_RETRIES || "2", 10) || 2, 0),
+  5
+);
+const salonTimeoutMs = Math.min(
+  Math.max(
+    Number.parseInt(
+      process.env.HEGEL_OPTIMIZER_SALON_TIMEOUT_MS || String(timeoutMs),
+      10
+    ) || timeoutMs,
+    180000
+  ),
+  900000
+);
+const optimizerLogPath = join(scope.logsDir, "optimizer-worker.log");
+
+async function writeWorkerLog(event, details = {}) {
+  try {
+    await mkdir(scope.logsDir, { recursive: true });
+    await appendFile(
+      optimizerLogPath,
+      `${JSON.stringify({
+        ts: new Date().toISOString(),
+        event,
+        ...details
+      })}\n`,
+      "utf8"
+    );
+  } catch {
+    // Training progress should not fail because diagnostics could not be written.
+  }
+}
 
 function resolveOptimizerModelConfig() {
   const inherited = loadCodexOpenAIConfig();
@@ -302,9 +334,13 @@ async function requestOptimizerJudge(config, { kind, prompt, reply }) {
   return normalizeOptimizerJudgeBundle(parseJsonObject(extractMessageText(await response.json())));
 }
 
-async function requestSalon(prompt) {
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function requestSalonOnce(prompt) {
   const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), timeoutMs);
+  const timer = setTimeout(() => controller.abort(), salonTimeoutMs);
 
   try {
     const response = await fetch(apiUrl, {
@@ -329,10 +365,40 @@ async function requestSalon(prompt) {
       throw new Error(`chat failed: ${response.status} ${await response.text()}`);
     }
 
-    return response.json();
+    const payload = await response.json();
+    if (payload?.mode === "local-fallback") {
+      throw new Error("chat returned local-fallback instead of optimizer training answer");
+    }
+    if (payload?.modeRoute?.mode && payload.modeRoute.mode !== "optimizer_training_answer") {
+      throw new Error(`chat returned unexpected modeRoute: ${payload.modeRoute.mode}`);
+    }
+    return payload;
   } finally {
     clearTimeout(timer);
   }
+}
+
+async function requestSalon(prompt) {
+  let lastError = null;
+  for (let attempt = 0; attempt <= salonRetries; attempt += 1) {
+    try {
+      if (attempt > 0) {
+        await writeWorkerLog("salon_retry_started", {
+          attempt: attempt + 1,
+          maxAttempts: salonRetries + 1,
+          previousError: lastError instanceof Error ? lastError.message : String(lastError || "")
+        });
+      }
+      return await requestSalonOnce(prompt);
+    } catch (error) {
+      lastError = error;
+      if (attempt >= salonRetries) {
+        throw error;
+      }
+      await sleep(Math.min(15000, 1500 * (attempt + 1)));
+    }
+  }
+  throw lastError || new Error("chat failed before optimizer request was sent");
 }
 
 async function synthesizePlaybook(config, failures) {
@@ -390,6 +456,19 @@ async function main() {
   }
 
   await mkdir(scope.logsDir, { recursive: true });
+  await writeWorkerLog("optimizer_started", {
+    apiUrl,
+    userId: userId || null,
+    styleProfileId: styleProfileId || null,
+    iterations,
+    concurrency,
+    targetScore,
+    timeoutMs,
+    salonTimeoutMs,
+    salonRetries,
+    model: config.model,
+    baseURL: config.baseURL
+  });
   const pool = [...buildPromptPool(), ...(await loadCustomPromptPool())];
   const results = [];
   const failures = [];
@@ -411,6 +490,7 @@ async function main() {
       updatedAt: new Date().toISOString(),
       done,
       targetScore,
+      salonTimeoutMs,
       iterationsTarget: iterations,
       completed: results.length,
       successCount: successful.length,
@@ -434,7 +514,19 @@ async function main() {
       let score = 0;
 
       try {
+        await writeWorkerLog("iteration_started", {
+          iteration: current + 1,
+          iterations,
+          kind: item.kind,
+          prompt: normalizeWhitespace(item.prompt).slice(0, 240)
+        });
         output = await requestSalon(item.prompt);
+        await writeWorkerLog("salon_reply_received", {
+          iteration: current + 1,
+          replyChars: normalizeWhitespace(output.reply || "").length,
+          mode: output.mode || null,
+          modeRoute: output.modeRoute?.mode || null
+        });
         const judgeBundle = await requestOptimizerJudge(config, {
           kind: item.kind,
           prompt: item.prompt,
@@ -445,7 +537,17 @@ async function main() {
           ...judgeBundle
         };
         score = scoreResult(output);
+        await writeWorkerLog("iteration_scored", {
+          iteration: current + 1,
+          score,
+          qualityOverall: output.qualityJudge?.overall ?? null,
+          strictFormalLogic: output.strictLogicJudge?.formal_logic ?? null
+        });
       } catch (error) {
+        await writeWorkerLog("iteration_failed", {
+          iteration: current + 1,
+          error: error instanceof Error ? error.message : String(error)
+        });
         output = {
           reply: "",
           qualityJudge: {
@@ -534,9 +636,19 @@ async function main() {
       2
     )
   );
+  await writeWorkerLog("optimizer_finished", {
+    iterations: results.length,
+    targetScore,
+    averageScore: Number(average.toFixed(2)),
+    failures: failures.length,
+    playbookError
+  });
 }
 
-main().catch((error) => {
+main().catch(async (error) => {
+  await writeWorkerLog("optimizer_crashed", {
+    error: error instanceof Error ? error.message : String(error)
+  });
   console.error(error);
   process.exitCode = 1;
 });

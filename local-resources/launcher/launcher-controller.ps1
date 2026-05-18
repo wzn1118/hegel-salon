@@ -165,24 +165,58 @@ function Remove-State {
   }
 }
 
+function Get-ProcessCommandLine([int]$ProcessId) {
+  if ($ProcessId -le 0) {
+    return ""
+  }
+
+  try {
+    return [string](Get-CimInstance Win32_Process -Filter ("ProcessId = {0}" -f $ProcessId) -ErrorAction Stop).CommandLine
+  } catch {
+    return ""
+  }
+}
+
+function Test-IsLauncherServerProcess([int]$ProcessId) {
+  $commandLine = Get-ProcessCommandLine -ProcessId $ProcessId
+  if (-not $commandLine) {
+    return $false
+  }
+
+  return $commandLine -like "*src/server.mjs*" -or $commandLine -like "*src\server.mjs*"
+}
+
 function Get-ServerProcess {
   $state = Read-State
   $port = if (Test-StateKey $state "port") { [int]$state.port } else { $script:DefaultPort }
   $processId = 0
+  $candidate = $null
   if (Test-StateKey $state "serverPid") {
     $processId = [int]$state.serverPid
   }
   if ($processId -gt 0) {
     try {
       $proc = Get-Process -Id $processId -ErrorAction Stop
-      if (($proc.ProcessName -like "node*") -and (Test-ProcessListeningOnPort -ProcessId $proc.Id -Port $port)) {
-        return $proc
+      if (
+        ($proc.ProcessName -like "node*") -and
+        (Test-ProcessListeningOnPort -ProcessId $proc.Id -Port $port) -and
+        (Test-IsLauncherServerProcess -ProcessId $proc.Id)
+      ) {
+        $candidate = $proc
       }
     } catch {
     }
   }
 
-  return Find-ServerNodeProcess -Port $port
+  if (-not $candidate) {
+    $candidate = Find-ServerNodeProcess -Port $port
+  }
+
+  if ($candidate -and (Test-ServerReady -Port $port)) {
+    return $candidate
+  }
+
+  return $null
 }
 
 function Find-ServerNodeProcess([int]$Port = $script:DefaultPort) {
@@ -191,7 +225,7 @@ function Find-ServerNodeProcess([int]$Port = $script:DefaultPort) {
       Select-Object -First 1
     if ($listener -and $listener.OwningProcess) {
       $proc = Get-Process -Id ([int]$listener.OwningProcess) -ErrorAction Stop
-      if ($proc.ProcessName -like "node*") {
+      if (($proc.ProcessName -like "node*") -and (Test-IsLauncherServerProcess -ProcessId $proc.Id)) {
         return $proc
       }
     }
@@ -358,29 +392,69 @@ function Test-TcpPortOpen([int]$Port) {
   }
 }
 
-function Test-ServerReady([int]$Port) {
-  $response = $null
+function Read-LauncherResponseText($Response) {
+  if (-not $Response) {
+    return ""
+  }
+
+  $stream = $null
+  $reader = $null
   try {
-    $request = [System.Net.HttpWebRequest]::Create(("http://127.0.0.1:{0}/" -f $Port))
-    $request.Method = "GET"
-    $request.AllowAutoRedirect = $false
-    $request.Timeout = 2000
-    $request.ReadWriteTimeout = 2000
-    $request.UserAgent = "HegelLauncher/1.0"
-    $response = $request.GetResponse()
-    return $true
-  } catch [System.Net.WebException] {
-    if ($_.Exception.Response) {
-      try {
-        $_.Exception.Response.Close()
-      } catch {
-      }
-      return $true
+    $stream = $Response.GetResponseStream()
+    if (-not $stream) {
+      return ""
     }
 
-    return Test-TcpPortOpen -Port $Port
+    $reader = New-Object System.IO.StreamReader($stream)
+    return $reader.ReadToEnd()
   } catch {
-    return Test-TcpPortOpen -Port $Port
+    return ""
+  } finally {
+    if ($reader) {
+      try {
+        $reader.Close()
+      } catch {
+      }
+    } elseif ($stream) {
+      try {
+        $stream.Close()
+      } catch {
+      }
+    }
+  }
+}
+
+function Test-SessionEndpointUrl([string]$Url, [int]$TimeoutMs = 2500) {
+  if ([string]::IsNullOrWhiteSpace($Url)) {
+    return $false
+  }
+
+  $response = $null
+  try {
+    $request = [System.Net.HttpWebRequest]::Create($Url)
+    $request.Method = "GET"
+    $request.AllowAutoRedirect = $false
+    $request.Timeout = $TimeoutMs
+    $request.ReadWriteTimeout = $TimeoutMs
+    $request.UserAgent = "HegelLauncher/1.0"
+    $response = [System.Net.HttpWebResponse]$request.GetResponse()
+  } catch [System.Net.WebException] {
+    if (-not $_.Exception.Response) {
+      return $false
+    }
+    $response = [System.Net.HttpWebResponse]$_.Exception.Response
+  } catch {
+    return $false
+  }
+
+  try {
+    $contentType = [string]$response.ContentType
+    if ($contentType -notmatch "application/json") {
+      return $false
+    }
+
+    $body = Read-LauncherResponseText $response
+    return ($body -match '"authEnabled"\s*:') -and ($body -match '"user"\s*:')
   } finally {
     if ($response) {
       try {
@@ -391,7 +465,11 @@ function Test-ServerReady([int]$Port) {
   }
 }
 
-function Wait-ForServer([int]$Port, [int]$Attempts = 60) {
+function Test-ServerReady([int]$Port) {
+  return Test-SessionEndpointUrl -Url ("http://127.0.0.1:{0}/api/auth/session" -f $Port)
+}
+
+function Wait-ForServer([int]$Port, [int]$Attempts = 180) {
   for ($i = 0; $i -lt $Attempts; $i++) {
     if (Test-ServerReady -Port $Port) {
       return $true
@@ -401,12 +479,57 @@ function Wait-ForServer([int]$Port, [int]$Attempts = 60) {
   return $false
 }
 
+function Test-PublicUrlReady([string]$PublicUrl) {
+  if ([string]::IsNullOrWhiteSpace($PublicUrl)) {
+    return $false
+  }
+
+  $normalized = [string]$PublicUrl
+  return Test-SessionEndpointUrl -Url ($normalized.TrimEnd("/") + "/api/auth/session")
+}
+
+function Wait-ForPublicUrl([string]$PublicUrl, [int]$Attempts = 60) {
+  for ($i = 0; $i -lt $Attempts; $i++) {
+    if (Test-PublicUrlReady -PublicUrl $PublicUrl) {
+      return $true
+    }
+    Start-Sleep -Milliseconds 500
+  }
+
+  return $false
+}
+
 function Ensure-ApiConfigFile {
   $configPath = Join-Path $script:ProjectRoot "config\api.json"
   $examplePath = Join-Path $script:ProjectRoot "config\api.example.json"
   if ((-not (Test-Path $configPath)) -and (Test-Path $examplePath)) {
     Copy-Item -LiteralPath $examplePath -Destination $configPath -Force
   }
+}
+
+function Ensure-ApiConfigKeyFile {
+  param(
+    [string]$DataDir,
+    [string]$FallbackValue = ""
+  )
+
+  if ([string]::IsNullOrWhiteSpace($DataDir)) {
+    return
+  }
+
+  $authDir = Join-Path $DataDir "auth"
+  $keyPath = Join-Path $authDir "api-config.key"
+  if (Test-Path $keyPath) {
+    return
+  }
+
+  New-Item -ItemType Directory -Path $authDir -Force | Out-Null
+  $seed = if ([string]::IsNullOrWhiteSpace($FallbackValue)) {
+    New-RandomSecret 32
+  } else {
+    [string]$FallbackValue
+  }
+  Set-Content -Path $keyPath -Value $seed -Encoding UTF8
 }
 
 function New-RandomSecret([int]$Bytes = 32) {
@@ -506,6 +629,18 @@ function Start-LocalServer {
     $existing = $null
   }
 
+  if (-not $existing) {
+    $staleServer = Find-ServerNodeProcess -Port $Port
+    if ($staleServer) {
+      try {
+        Stop-Process -Id $staleServer.Id -Force -ErrorAction Stop
+        [void](Wait-ForProcessExitById -ProcessId $staleServer.Id)
+        Start-Sleep -Milliseconds 500
+      } catch {
+      }
+    }
+  }
+
   if ($existing) {
     $state.serverPid = $existing.Id
     Write-State $state
@@ -526,11 +661,12 @@ function Start-LocalServer {
 
   if ($requestedPublicMode) {
     $admin = Get-OrCreate-AdminConfig
+    Ensure-ApiConfigKeyFile -DataDir $desiredDataDir -FallbackValue ([string]$admin.masterKey)
     $environment["HEGEL_ENABLE_AUTH"] = "1"
     $environment["HEGEL_ADMIN_ACCOUNT"] = [string]$admin.account
     $environment["HEGEL_ADMIN_EMAIL"] = [string]$admin.email
     $environment["HEGEL_ADMIN_PASSWORD"] = [string]$admin.password
-    $environment["HEGEL_API_CONFIG_MASTER_KEY"] = [string]$admin.masterKey
+    $environment["HEGEL_BOOTSTRAP_ADMIN_FORCE_SYNC"] = "1"
     $environment["HEGEL_ADMIN_REMOTE_ALLOWED"] = "0"
     $environment["HEGEL_ADMIN_ALLOWED_IPS"] = "127.0.0.1,::1"
     $environment["HEGEL_ADMIN_2FA_DISABLED"] = "1"
@@ -588,8 +724,14 @@ function Start-LocalServer {
 }
 
 function Stop-LocalServer {
-  $proc = Get-ServerProcess
-  if ($proc) {
+  $processesById = @{}
+  foreach ($proc in @((Get-ServerProcess), (Find-ServerNodeProcess))) {
+    if ($proc -and (-not $processesById.ContainsKey([string]$proc.Id))) {
+      $processesById[[string]$proc.Id] = $proc
+    }
+  }
+
+  foreach ($proc in $processesById.Values) {
     try {
       Stop-Process -Id $proc.Id -Force -ErrorAction Stop
       [void](Wait-ForProcessExitById -ProcessId $proc.Id)
@@ -722,13 +864,22 @@ function Start-NamedPublicTunnel {
 
   $existingTunnel = Get-NamedTunnelProcess
   if ($existingTunnel) {
-    $state = Read-State
-    $state.tunnelPid = $existingTunnel.Id
-    $state.publicUrl = $publicUrl
-    $state.publicStartedAt = (Get-Date).ToString("s")
-    $state.publicMode = $true
-    Write-State $state
-    return $state
+    if (Wait-ForPublicUrl -PublicUrl $publicUrl -Attempts 10) {
+      $state = Read-State
+      $state.tunnelPid = $existingTunnel.Id
+      $state.publicUrl = $publicUrl
+      $state.publicStartedAt = (Get-Date).ToString("s")
+      $state.publicMode = $true
+      Write-State $state
+      return $state
+    }
+
+    try {
+      Stop-Process -Id $existingTunnel.Id -Force -ErrorAction Stop
+      [void](Wait-ForProcessExitById -ProcessId $existingTunnel.Id)
+      Start-Sleep -Milliseconds 500
+    } catch {
+    }
   }
 
   foreach ($logPath in @($script:TunnelStdOutPath, $script:TunnelStdErrPath)) {
@@ -752,6 +903,14 @@ function Start-NamedPublicTunnel {
     } catch {
       throw "Named tunnel exited before Cloudflare finished connecting. Check $($script:TunnelStdErrPath)."
     }
+  }
+
+  if (-not (Wait-ForPublicUrl -PublicUrl $publicUrl -Attempts 24)) {
+    try {
+      Stop-Process -Id $process.Id -Force -ErrorAction SilentlyContinue
+    } catch {
+    }
+    throw "Named tunnel connected, but $publicUrl did not become reachable. Check $($script:TunnelStdErrPath)."
   }
 
   $state = Read-State
@@ -828,15 +987,31 @@ function Start-PublicTunnel {
 
   $existingTunnel = Get-TunnelProcess
   if ($existingTunnel) {
-    if (-not $state.publicUrl) {
-      $state.publicUrl = Read-LatestPublicUrlFromLogs -Paths @($script:TunnelStdErrPath, $script:TunnelStdOutPath)
-      if ($state.publicUrl) {
-        Write-State $state
-      }
+    $existingPublicUrl = if ($state.publicUrl) {
+      [string]$state.publicUrl
+    } else {
+      Read-LatestPublicUrlFromLogs -Paths @($script:TunnelStdErrPath, $script:TunnelStdOutPath)
     }
-    if ($state.publicUrl) {
+
+    if ($existingPublicUrl -and (Wait-ForPublicUrl -PublicUrl $existingPublicUrl -Attempts 10)) {
+      $state.publicUrl = $existingPublicUrl
+      Write-State $state
       return $state
     }
+
+    try {
+      Stop-Process -Id $existingTunnel.Id -Force -ErrorAction Stop
+      [void](Wait-ForProcessExitById -ProcessId $existingTunnel.Id)
+      Start-Sleep -Milliseconds 500
+    } catch {
+    }
+  }
+
+  $state = Read-State
+  if ($state.publicUrl) {
+    $state.Remove("publicUrl")
+    $state.Remove("publicStartedAt")
+    Write-State $state
   }
 
   $logPaths = @($script:TunnelStdErrPath, $script:TunnelStdOutPath)
@@ -868,6 +1043,14 @@ function Start-PublicTunnel {
     throw "cloudflared started, but no public URL was detected."
   }
 
+  if (-not (Wait-ForPublicUrl -PublicUrl $publicUrl -Attempts 24)) {
+    try {
+      Stop-Process -Id $process.Id -Force -ErrorAction SilentlyContinue
+    } catch {
+    }
+    throw "cloudflared exposed $publicUrl, but it did not become reachable."
+  }
+
   $state = Read-State
   $state.tunnelPid = $process.Id
   $state.publicUrl = $publicUrl
@@ -888,27 +1071,29 @@ function Get-LauncherStatus {
   $namedTunnel = Get-NamedTunnelProcess
   $namedConfig = Get-NamedTunnelConfig
   $port = if ($state.port) { [int]$state.port } else { $script:DefaultPort }
+  $serverHealthy = [bool]$server
+  $publicCandidateUrl = $null
+  if ($tunnel) {
+    if ($namedTunnel -and $tunnel.Id -eq $namedTunnel.Id) {
+      $publicCandidateUrl = Get-PrimaryNamedTunnelPublicUrl
+    } elseif ($state.publicUrl) {
+      $publicCandidateUrl = [string]$state.publicUrl
+    } else {
+      $publicCandidateUrl = Read-LatestPublicUrlFromLogs -Paths @($script:TunnelStdErrPath, $script:TunnelStdOutPath)
+    }
+  }
+  $publicHealthy = [bool]$tunnel -and $serverHealthy -and (Test-PublicUrlReady -PublicUrl $publicCandidateUrl)
   $status = [ordered]@{
     projectRoot = $script:ProjectRoot
     port = $port
     localUrl = if ($state.localUrl) { $state.localUrl } else { "http://127.0.0.1:$port/" }
-    serverRunning = [bool]$server
+    serverRunning = $serverHealthy
     serverPid = if ($server) { $server.Id } else { $null }
     publicMode = [bool]$state.publicMode
     dataDir = if ($state.dataDir) { [string]$state.dataDir } else { Resolve-PreferredDataDir }
-    publicRunning = [bool]$tunnel
+    publicRunning = $publicHealthy
     publicBaseUrl = if ($state.publicBaseUrl) { [string]$state.publicBaseUrl } else { $null }
-    publicUrl = if ($tunnel) {
-      if ($namedTunnel -and $tunnel.Id -eq $namedTunnel.Id) {
-        Get-PrimaryNamedTunnelPublicUrl
-      } elseif ($state.publicUrl) {
-        $state.publicUrl
-      } else {
-        Read-LatestPublicUrlFromLogs -Paths @($script:TunnelStdErrPath, $script:TunnelStdOutPath)
-      }
-    } else {
-      $null
-    }
+    publicUrl = if ($tunnel) { $publicCandidateUrl } else { $null }
     tunnelPid = if ($tunnel) { $tunnel.Id } else { $null }
     namedTunnelReady = Test-NamedTunnelReady
     namedTunnelConfigPath = if ($namedConfig) { $namedConfig.path } else { $script:NamedTunnelConfigPath }

@@ -56,7 +56,7 @@ export function detectConceptualNameDropping(reply, conceptContext = {}) {
     text,
     /普遍性|特殊性|个别性|中介|否定性|现实性|理念|精神|概念|辩证|universal|mediation|actuality|negativity|concept/gi
   );
-  const hasDefinitionCue = /所谓|意思是|在这里|我称之为|不是.*而是|means|by .* I mean|defined as/i.test(text);
+  const hasDefinitionCue = /所谓|意思是|在这里|在这里的|在这里是指|我称之为|我这里说的|means|by .* I mean|defined as/i.test(text);
 
   if ((hits.length >= 4 || abstractionHits >= 8 || ids.length >= 3) && !hasDefinitionCue) {
     return [
@@ -170,7 +170,7 @@ export function detectMissingDialecticalMovement(reply, dialecticalPlan = {}) {
     /限制|限度|片面|抽象|limit/i,
     /矛盾|张力|contradiction/i,
     /中介|通过|mediation|mediate/i,
-    /因此|由此|更高|规定|结论|therefore/i
+    /因此|由此|更高|规定|推进|过渡|结论|therefore|from here|only thus|so long as|once/i
   ];
   const hits = requiredCues.filter((pattern) => pattern.test(text)).length;
 

@@ -22,6 +22,7 @@ let providerPresetButtons = [];
 const openComputer = document.getElementById("openComputer");
 const openTraining = document.getElementById("openTraining");
 const styleSelector = document.getElementById("styleSelector");
+const newChatSessionButton = document.getElementById("newChatSession");
 const createStyle = document.getElementById("createStyle");
 const openStylePanel = document.getElementById("openStylePanel");
 const stylePanel = document.getElementById("stylePanel");
@@ -118,13 +119,16 @@ const sendResetCodeButton = document.getElementById("sendResetCode");
 const sessionPill = document.getElementById("sessionPill");
 const sessionIdentity = document.getElementById("sessionIdentity");
 const logoutButton = document.getElementById("logoutButton");
+const chatSessionList = document.getElementById("chatSessionList");
 
 const API_BASE_STORAGE_KEY = "hegel-salon-api-base";
 const STORAGE_KEY = "hegel-salon-width";
 const STYLE_STORAGE_KEY = "hegel-salon-style";
+const CHAT_SESSION_STORAGE_KEY = "hegel-salon-chat-session";
 const DEFAULT_SALON_WIDTH = 860;
 const MIN_SALON_WIDTH = 620;
 const MAX_SALON_WIDTH = 1120;
+const HISTORY_RENDER_CHUNK = 500;
 const PIXEL_TITLE = "与黑格尔对话";
 const PIXEL_FONT = '"ArkPixel16", monospace';
 const MESSAGE_FONT = '400 17px "Noto Sans SC"';
@@ -217,6 +221,10 @@ function normalizeApiBaseUrlInput(rawBaseURL = "", provider = "") {
 
 const messages = [createInitialMessageRecord()];
 
+let persistedHistoryMessageCount = 0;
+let activeChatSessionId = "";
+let chatSessionRecords = [];
+let visibleMessageCount = HISTORY_RENDER_CHUNK;
 let pendingFiles = [];
 let nextPendingFileId = 1;
 let sourcesLoaded = false;
@@ -250,7 +258,10 @@ window.__hegelSalonApp = {
     if (authGate) {
       authGate.classList.remove("hidden");
     }
-  }
+  },
+  getCurrentChatContext: () => getCurrentChatContext(),
+  appendTechnicalResult: (text) => appendTechnicalResult(text),
+  refreshChatSessions: () => loadChatSessions().catch(() => {})
 };
 
 function readConfiguredApiBase() {
@@ -279,6 +290,237 @@ function getApiBase() {
   }
 
   return "";
+}
+
+function createClientChatSessionId() {
+  if (window.crypto?.randomUUID) {
+    return window.crypto.randomUUID();
+  }
+
+  return `chat-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 12)}`;
+}
+
+function chatSessionStorageKey() {
+  const userKey = authState.user?.id || authState.user?.account || "guest";
+  const styleKey = styleState.currentStyleId || "default";
+  return `${CHAT_SESSION_STORAGE_KEY}:${userKey}:${styleKey}`;
+}
+
+function loadStoredChatSessionId() {
+  try {
+    return localStorage.getItem(chatSessionStorageKey()) || "";
+  } catch {
+    return "";
+  }
+}
+
+function storeChatSessionId(chatSessionId) {
+  activeChatSessionId = String(chatSessionId || "").trim();
+  try {
+    if (activeChatSessionId) {
+      localStorage.setItem(chatSessionStorageKey(), activeChatSessionId);
+    }
+  } catch {
+    // localStorage may be unavailable in hardened/private contexts.
+  }
+}
+
+function getCurrentChatContext() {
+  return {
+    styleProfileId: styleState.currentStyleId || "",
+    chatSessionId: activeChatSessionId || ""
+  };
+}
+
+function appendTechnicalResult(text) {
+  const content = String(text || "").trim();
+  if (!content) {
+    return;
+  }
+
+  pushMessageRecord({
+    role: "assistant",
+    content: `Local Agent result:\n\n${content}`,
+    attachments: []
+  });
+  persistedHistoryMessageCount = messages.filter((message) => !message.loading).length;
+}
+
+function formatSessionTime(value) {
+  const time = value ? Date.parse(value) : 0;
+  if (!time || !Number.isFinite(time)) {
+    return "";
+  }
+
+  const deltaMs = Date.now() - time;
+  if (deltaMs < 60 * 1000) {
+    return "now";
+  }
+  if (deltaMs < 60 * 60 * 1000) {
+    return `${Math.max(1, Math.round(deltaMs / (60 * 1000)))}m`;
+  }
+  if (deltaMs < 24 * 60 * 60 * 1000) {
+    return `${Math.max(1, Math.round(deltaMs / (60 * 60 * 1000)))}h`;
+  }
+  return new Date(time).toLocaleDateString();
+}
+
+function sessionTitle(session, index) {
+  const title = normalizeWhitespace(session?.title || "");
+  if (title) {
+    return title;
+  }
+  if (Number(session?.messageCount || 0) === 0) {
+    return "New session";
+  }
+  return `Session ${index + 1}`;
+}
+
+function sessionStyleName(session) {
+  const styleId = String(session?.styleProfileId || "").trim();
+  const style = styleState.styles.find((item) => item.id === styleId);
+  return style?.name || style?.styleKey || (styleId ? "Shared persona" : "Default persona");
+}
+
+function renderChatSessionList() {
+  if (!chatSessionList) {
+    return;
+  }
+
+  chatSessionList.innerHTML = "";
+  if (!authState.user) {
+    return;
+  }
+
+  const records = [...chatSessionRecords];
+  if (activeChatSessionId && !records.some((session) => session.id === activeChatSessionId)) {
+    records.unshift({
+      id: activeChatSessionId,
+      styleProfileId: styleState.currentStyleId || "",
+      title: "New session",
+      updatedAt: new Date().toISOString(),
+      messageCount: 0
+    });
+  }
+
+  if (!records.length) {
+    const empty = document.createElement("p");
+    empty.className = "chat-session-empty";
+    empty.textContent = "No saved sessions yet";
+    chatSessionList.append(empty);
+    return;
+  }
+
+  const fragment = document.createDocumentFragment();
+  records.forEach((session, index) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = `chat-session-item${session.id === activeChatSessionId ? " is-active" : ""}`;
+    button.title = `${sessionTitle(session, index)} - ${sessionStyleName(session)} - shared training/persona`;
+
+    const title = document.createElement("span");
+    title.className = "chat-session-title";
+    title.textContent = sessionTitle(session, index);
+
+    const meta = document.createElement("span");
+    meta.className = "chat-session-meta";
+    const count = Number(session.messageCount || 0);
+    meta.textContent = `${count} msg ${formatSessionTime(session.updatedAt)}`.trim();
+
+    const style = document.createElement("span");
+    style.className = "chat-session-style";
+    style.textContent = `Persona shared: ${sessionStyleName(session)}`;
+
+    button.append(title, meta, style);
+    button.addEventListener("click", () => {
+      switchChatSession(session).catch((error) => {
+        setAuthStatus(error instanceof Error ? error.message : "Failed to switch chat session.", "error");
+      });
+    });
+    fragment.append(button);
+  });
+
+  chatSessionList.append(fragment);
+}
+
+function upsertChatSessionRecord(session = {}) {
+  const sessionId = String(session.id || "").trim();
+  if (!sessionId) {
+    return;
+  }
+
+  const existing = chatSessionRecords.find((record) => record.id === sessionId) || {};
+  const nextRecord = {
+    ...existing,
+    ...session,
+    id: sessionId,
+    styleProfileId: session.styleProfileId || existing.styleProfileId || styleState.currentStyleId || "",
+    updatedAt: session.updatedAt || new Date().toISOString()
+  };
+  chatSessionRecords = [
+    nextRecord,
+    ...chatSessionRecords.filter((record) => record.id !== sessionId)
+  ];
+  renderChatSessionList();
+}
+
+function scheduleChatSessionsRefresh(delays = [250, 1400, 3600]) {
+  delays.forEach((delay) => {
+    window.setTimeout(() => {
+      loadChatSessions().catch(() => {});
+    }, delay);
+  });
+}
+
+async function loadChatSessions() {
+  if (!authState.user) {
+    chatSessionRecords = [];
+    renderChatSessionList();
+    return [];
+  }
+
+  const response = await apiFetch("/api/chat/sessions?limit=1000");
+  const data = await readJsonResponse(response);
+  if (!response.ok) {
+    handleAuthRequiredPayload(data);
+    throw new Error(data.error || "Failed to load chat sessions.");
+  }
+
+  chatSessionRecords = Array.isArray(data.sessions) ? data.sessions : [];
+  renderChatSessionList();
+  return chatSessionRecords;
+}
+
+async function switchChatSession(session) {
+  if (!session?.id) {
+    renderChatSessionList();
+    return;
+  }
+
+  if (session.id === activeChatSessionId) {
+    await loadUserHistory();
+    await loadChatSessions().catch(() => {});
+    return;
+  }
+
+  const targetStyleId = String(session.styleProfileId || "").trim();
+  const styleChanged = Boolean(targetStyleId && targetStyleId !== styleState.currentStyleId);
+  if (styleChanged) {
+    styleState.currentStyleId = targetStyleId;
+    styleState.currentStyle = styleState.styles.find((style) => style.id === targetStyleId) || null;
+    localStorage.setItem(getScopedStyleStorageKey(), targetStyleId);
+    if (styleSelector) {
+      styleSelector.value = targetStyleId;
+    }
+    renderStylePanel();
+  }
+
+  storeChatSessionId(session.id);
+  await loadUserHistory();
+  if (styleChanged) {
+    await loadTrainingStatus().catch(() => {});
+  }
+  await loadChatSessions().catch(() => {});
 }
 
 function apiUrl(path) {
@@ -315,6 +557,25 @@ function apiFetch(path, options = {}) {
     ...options,
     headers
   });
+}
+
+async function readJsonResponse(response) {
+  const contentType = String(response.headers.get("content-type") || "").toLowerCase();
+  if (contentType.includes("application/json")) {
+    return response.json();
+  }
+
+  const rawText = await response.text().catch(() => "");
+  const text = normalizeWhitespace(
+    rawText
+      .replace(/<script[\s\S]*?<\/script>/gi, " ")
+      .replace(/<style[\s\S]*?<\/style>/gi, " ")
+      .replace(/<[^>]+>/g, " ")
+  );
+  const suffix = text ? ` ${text.slice(0, 180)}` : "";
+  return {
+    error: `\u670d\u52a1\u8fd4\u56de\u4e86\u975e JSON \u54cd\u5e94\uff08HTTP ${response.status}\uff09\uff0c\u53ef\u80fd\u662f\u516c\u7f51\u7f51\u5173\u8d85\u65f6\u6216\u4e0a\u6e38\u9519\u8bef\u3002${suffix}`
+  };
 }
 
 function clamp(value, min, max) {
@@ -721,6 +982,7 @@ async function createStyleProfile() {
     }
     renderStylePanel();
     await loadUserHistory();
+    await loadChatSessions().catch(() => {});
     await loadTrainingStatus().catch(() => {});
     if (stylePanel) {
       stylePanel.classList.remove("hidden");
@@ -759,7 +1021,7 @@ async function saveCurrentStyleProfile(event) {
         userStylePrompt: stylePromptInput?.value || ""
       })
     });
-    const data = await response.json();
+    const data = await readJsonResponse(response);
     if (!response.ok) {
       throw new Error(data.error || "风格保存失败。");
     }
@@ -784,11 +1046,13 @@ async function selectStyleProfile(styleProfileId) {
   styleState.currentStyleId = styleProfileId;
   styleState.currentStyle = styleState.styles.find((style) => style.id === styleProfileId) || null;
   localStorage.setItem(getScopedStyleStorageKey(), styleProfileId);
+  activeChatSessionId = loadStoredChatSessionId();
   if (styleSelector) {
     styleSelector.value = styleProfileId;
   }
   renderStylePanel();
   await loadUserHistory();
+  await loadChatSessions().catch(() => {});
   await loadTrainingStatus().catch(() => {});
 }
 
@@ -917,11 +1181,16 @@ function renderAuthState() {
     if (sessionPill) {
       sessionPill.classList.add("hidden");
     }
+    chatSessionRecords = [];
+    renderChatSessionList();
     adminLoaded = false;
     setInteractionLocked(false);
     window.__hegelSalonApp = {
       authRequired: () => false,
-      openAuthGate: () => {}
+      openAuthGate: () => {},
+      getCurrentChatContext: () => getCurrentChatContext(),
+      appendTechnicalResult: (text) => appendTechnicalResult(text),
+      refreshChatSessions: () => loadChatSessions().catch(() => {})
     };
     return;
   }
@@ -953,6 +1222,8 @@ function renderAuthState() {
       authGate.classList.remove("hidden");
     }
     closePanels();
+    chatSessionRecords = [];
+    renderChatSessionList();
     adminLoaded = false;
     setInteractionLocked(true);
     showAuthTab("login");
@@ -960,7 +1231,10 @@ function renderAuthState() {
 
   window.__hegelSalonApp = {
     authRequired: isAuthRequired,
-    openAuthGate: () => promptForAuth()
+    openAuthGate: () => promptForAuth(),
+    getCurrentChatContext: () => getCurrentChatContext(),
+    appendTechnicalResult: (text) => appendTechnicalResult(text),
+    refreshChatSessions: () => loadChatSessions().catch(() => {})
   };
 }
 
@@ -977,13 +1251,22 @@ function handleAuthRequiredPayload(payload) {
 async function loadUserHistory() {
   if (!authState.user) {
     replaceMessages([createInitialMessageRecord()]);
+    persistedHistoryMessageCount = 0;
+    chatSessionRecords = [];
+    renderChatSessionList();
     return;
   }
 
-  const response = await apiFetch(
-    `/api/history${styleState.currentStyleId ? `?styleProfileId=${encodeURIComponent(styleState.currentStyleId)}` : ""}`
-  );
-  const data = await response.json();
+  const params = new URLSearchParams();
+  if (styleState.currentStyleId) {
+    params.set("styleProfileId", styleState.currentStyleId);
+  }
+  const storedSessionId = activeChatSessionId || loadStoredChatSessionId();
+  if (storedSessionId) {
+    params.set("chatSessionId", storedSessionId);
+  }
+  const response = await apiFetch(`/api/history${params.toString() ? `?${params.toString()}` : ""}`);
+  const data = await readJsonResponse(response);
 
   if (!response.ok) {
     handleAuthRequiredPayload(data);
@@ -1003,7 +1286,13 @@ async function loadUserHistory() {
         }))
     : [];
 
-  replaceMessages(history.length ? history : [createInitialMessageRecord()]);
+  const restoredMessages = history.length ? history : [createInitialMessageRecord()];
+  replaceMessages(restoredMessages);
+  persistedHistoryMessageCount = history.length ? restoredMessages.length : 0;
+  if (data.chatSessionId) {
+    storeChatSessionId(data.chatSessionId);
+  }
+  renderChatSessionList();
 }
 
 async function loadAuthSession() {
@@ -1026,9 +1315,12 @@ async function loadAuthSession() {
   if (authState.user) {
     await loadStyles();
     await loadUserHistory();
+    await loadChatSessions().catch(() => {});
   } else {
     await loadStyles();
     replaceMessages([createInitialMessageRecord()]);
+    chatSessionRecords = [];
+    renderChatSessionList();
   }
   return authState;
 }
@@ -1213,6 +1505,7 @@ async function submitRegister(event) {
     renderAuthState();
     await loadStyles();
     await loadUserHistory();
+    await loadChatSessions().catch(() => {});
     setAuthStatus("注册完成，已进入会话。", "success");
   } catch (error) {
     setAuthStatus(error instanceof Error ? error.message : "注册失败。", "error");
@@ -1248,6 +1541,7 @@ async function submitLogin(event) {
     renderAuthState();
     await loadStyles();
     await loadUserHistory();
+    await loadChatSessions().catch(() => {});
     setAuthStatus("登录成功。", "success");
   } catch (error) {
     setAuthStatus(error instanceof Error ? error.message : "登录失败。", "error");
@@ -1277,6 +1571,7 @@ async function verifyAdminTwoFactor() {
     renderAuthState();
     await loadStyles();
     await loadUserHistory();
+    await loadChatSessions().catch(() => {});
     setAuthStatus("登录成功。", "success");
   } catch (error) {
     setAuthStatus(error instanceof Error ? error.message : "管理员 2FA 验证失败。", "error");
@@ -1328,6 +1623,7 @@ async function submitLoginWithTwoFactor(event) {
     renderAuthState();
     await loadStyles();
     await loadUserHistory();
+    await loadChatSessions().catch(() => {});
     setAuthStatus("登录成功。", "success");
   } catch (error) {
     setAuthStatus(error instanceof Error ? error.message : "登录失败。", "error");
@@ -1658,9 +1954,27 @@ function renderMessages() {
   }
 
   chat.innerHTML = "";
-  messages.forEach((message) => {
-    chat.append(createMessageNode(message));
+  const renderCount = Math.max(1, Math.min(messages.length, visibleMessageCount));
+  const hiddenCount = Math.max(0, messages.length - renderCount);
+  const fragment = document.createDocumentFragment();
+
+  if (hiddenCount > 0) {
+    const loadEarlier = document.createElement("button");
+    loadEarlier.type = "button";
+    loadEarlier.className = "ghost-button load-earlier";
+    loadEarlier.textContent = `加载更早消息（已保留 ${messages.length} 条，当前隐藏 ${hiddenCount} 条）`;
+    loadEarlier.addEventListener("click", () => {
+      visibleMessageCount = Math.min(messages.length, visibleMessageCount + HISTORY_RENDER_CHUNK);
+      renderMessages();
+    });
+    fragment.append(loadEarlier);
+  }
+
+  messages.slice(-renderCount).forEach((message) => {
+    fragment.append(createMessageNode(message));
   });
+
+  chat.append(fragment);
 
   scrollToBottom();
   refreshScrollChrome();
@@ -1668,6 +1982,10 @@ function renderMessages() {
 
 function replaceMessages(nextMessages = []) {
   messages.splice(0, messages.length, ...nextMessages);
+  visibleMessageCount = Math.min(
+    Math.max(HISTORY_RENDER_CHUNK, visibleMessageCount),
+    Math.max(HISTORY_RENDER_CHUNK, messages.length)
+  );
   renderMessages();
 }
 
@@ -1695,12 +2013,77 @@ function removeLoadingMessage() {
 }
 
 function buildRequestPayload() {
+  const requestMessages = messages
+    .filter((message) => !message.loading)
+    .slice(authState.user ? persistedHistoryMessageCount : 0)
+    .map(cloneMessageForRequest);
+
   return {
     styleProfileId: styleState.currentStyleId || "",
-    messages: messages
-      .filter((message) => !message.loading)
-      .map(cloneMessageForRequest)
+    chatSessionId: activeChatSessionId || "",
+    messages: requestMessages
   };
+}
+
+async function createChatSessionOnServer(chatSessionId) {
+  const response = await apiFetch("/api/chat/sessions", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json; charset=utf-8"
+    },
+    body: JSON.stringify({
+      chatSessionId,
+      styleProfileId: styleState.currentStyleId || "",
+      title: ""
+    })
+  });
+  const data = await readJsonResponse(response);
+  if (!response.ok) {
+    handleAuthRequiredPayload(data);
+    throw new Error(data.error || "Failed to create chat session.");
+  }
+  return data.session || { id: chatSessionId };
+}
+
+async function startNewChatSession() {
+  if (promptForAuth("Please sign in before creating a new session.")) {
+    return;
+  }
+
+  if (newChatSessionButton) {
+    newChatSessionButton.disabled = true;
+  }
+
+  const clientSessionId = createClientChatSessionId();
+  try {
+    const session = await createChatSessionOnServer(clientSessionId);
+    const sessionId = String(session.id || clientSessionId);
+    storeChatSessionId(sessionId);
+    upsertChatSessionRecord({
+      ...session,
+      id: sessionId,
+      styleProfileId: session.styleProfileId || styleState.currentStyleId || "",
+      messageCount: Number(session.messageCount || 0),
+      updatedAt: session.updatedAt || new Date().toISOString()
+    });
+    await loadChatSessions().catch(() => {});
+  } catch (error) {
+    setAuthStatus(error instanceof Error ? error.message : "Failed to create chat session.", "error");
+    return;
+  } finally {
+    if (newChatSessionButton) {
+      newChatSessionButton.disabled = false;
+    }
+  }
+
+  persistedHistoryMessageCount = 0;
+  visibleMessageCount = HISTORY_RENDER_CHUNK;
+  pendingFiles = [];
+  renderPendingAttachments();
+  replaceMessages([createInitialMessageRecord()]);
+  if (promptInput) {
+    promptInput.focus();
+  }
 }
 
 async function sendPrompt(prompt) {
@@ -1772,7 +2155,7 @@ async function sendPrompt(prompt) {
       });
     }
 
-    const data = await response.json();
+    const data = await readJsonResponse(response);
     removeLoadingMessage();
 
     if (!response.ok) {
@@ -1787,6 +2170,10 @@ async function sendPrompt(prompt) {
         attachments: []
       });
       return;
+    }
+
+    if (data.chatSessionId) {
+      storeChatSessionId(data.chatSessionId);
     }
 
     if (data.userMessage) {
@@ -1809,11 +2196,22 @@ async function sendPrompt(prompt) {
       attachments: [],
       loading: false
     });
+    persistedHistoryMessageCount = messages.filter((message) => !message.loading).length;
+    if (data.chatSessionId) {
+      upsertChatSessionRecord({
+        id: data.chatSessionId,
+        styleProfileId: styleState.currentStyleId || "",
+        title: question.slice(0, 80),
+        messageCount: persistedHistoryMessageCount,
+        updatedAt: new Date().toISOString()
+      });
+    }
     renderMessages();
-    if (authState.user && styleState.currentStyleId) {
+    if (authState.user) {
       window.setTimeout(() => {
         loadStyles().catch(() => {});
       }, 1200);
+      scheduleChatSessionsRefresh();
     }
   } catch (error) {
     removeLoadingMessage();
@@ -3583,6 +3981,10 @@ if (createStyle) {
       setAuthStatus(error instanceof Error ? error.message : "新建风格失败。", "error");
     }
   });
+}
+
+if (newChatSessionButton) {
+  newChatSessionButton.addEventListener("click", startNewChatSession);
 }
 
 if (logoutButton) {

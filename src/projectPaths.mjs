@@ -1,18 +1,13 @@
 import { existsSync } from "node:fs";
 import { homedir } from "node:os";
-import { dirname, isAbsolute, join, resolve } from "node:path";
+import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const moduleDir = dirname(fileURLToPath(import.meta.url));
-const configuredDataDir = String(process.env.HEGEL_DATA_DIR || "").trim();
 
 export const projectRoot = join(moduleDir, "..");
 export const publicDir = join(projectRoot, "public");
-export const dataDir = configuredDataDir
-  ? isAbsolute(configuredDataDir)
-    ? configuredDataDir
-    : resolve(projectRoot, configuredDataDir)
-  : join(projectRoot, "data");
+export const dataDir = join(projectRoot, "data");
 export const researchDir = join(dataDir, "research");
 export const corpusDir = join(dataDir, "corpus");
 export const chineseCorpusDir = join(corpusDir, "chinese");
