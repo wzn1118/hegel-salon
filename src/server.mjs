@@ -9,7 +9,7 @@ import { extname, join, normalize } from "node:path";
 import { promisify } from "node:util";
 import OpenAI from "openai";
 import { loadCodexOpenAIConfig, loadCodexResponsesFallbackConfig } from "./codexConfig.mjs";
-import { buildHegelStaticPromptBlocks } from "./hegelPrompt.mjs";
+import { buildHegelStaticPromptBlocks, buildHegelVoiceContract } from "./hegelPrompt.mjs";
 import { buildCorpusContext } from "./hegelContext.mjs";
 import {
   buildAttachmentExtractionSummary,
@@ -155,7 +155,11 @@ const httpsCertPath = String(process.env.HEGEL_TLS_CERT_PATH || "").trim();
 const httpsEnabled = Boolean(httpsKeyPath && httpsCertPath);
 const publicBaseUrl = String(process.env.HEGEL_PUBLIC_BASE_URL || "").trim();
 function readDurationEnv(name, fallbackMs, minimumMs, maximumMs) {
-  const parsed = Number.parseInt(String(process.env[name] || ""), 10);
+  return coerceDurationMs(process.env[name], fallbackMs, minimumMs, maximumMs);
+}
+
+function coerceDurationMs(rawValue, fallbackMs, minimumMs, maximumMs) {
+  const parsed = Number.parseInt(String(rawValue || ""), 10);
   const value = Number.isFinite(parsed) && parsed > 0 ? parsed : fallbackMs;
   return Math.min(Math.max(value, minimumMs), maximumMs);
 }
@@ -1958,65 +1962,81 @@ function limitRecentHistory(history = [], limit = CHAT_MODEL_HISTORY_LIMIT) {
 }
 
 function looksLikeSmTopic(content = "") {
-  return /(^|\b|[\s，。！？：；、])s\s*\/?\s*m($|\b|[\s，。！？：；、])|施虐|受虐|支配|服从|调教|BDSM/i.test(
+  return looksLikeSmTopicClean(content);
+}
+
+function buildSmDialecticalFallbackReply(content = "") {
+  return buildSmDialecticalFallbackReplyClean(content);
+}
+
+function buildShortHegelFallbackReply(content = "") {
+  return buildShortHegelFallbackReplyClean(content);
+}
+
+function buildPublicFallbackReply(userMessage, error = null) {
+  return buildPublicFallbackReplyClean(userMessage, error);
+}
+
+function looksLikeSmTopicClean(content = "") {
+  return /(^|\b|[\s,，。！？：；、])s\s*\/?\s*m($|\b|[\s,，。！？：；、])|施虐|受虐|支配|服从|调教|BDSM/i.test(
     String(content || "")
   );
 }
 
-function buildSmDialecticalFallbackReply(content = "") {
+function buildSmDialecticalFallbackReplyClean(content = "") {
   const asksToDiscuss = /谈谈|说说|讲讲|解释|聊聊|怎么看|是什么|为何|为什么/i.test(content);
   const lead = asksToDiscuss
-    ? "谈 SM，不能先从猎奇开始，而要先问：支配与服从怎样被同意、规则和承认中介。"
+    ? "谈 SM，不能从猎奇开始，而要先问：支配与服从怎样被同意、规则和承认中介。"
     : "如果你说“就是 SM”，我先把它确定为一种围绕支配、服从、痛感边界和相互承认组织起来的关系形式。";
 
   return [
     lead,
-    "黑格尔式地说，危险不在于有强弱位置本身，而在于一方把另一方降成纯粹物；只要边界、同意和可撤回性仍然有效，所谓支配就不是赤裸占有，而是一种被双方承认的表演性关系。",
-    "所以真正要判断的不是“它刺激不刺激”，而是：欲望有没有把对方当作自由者来承认。"
+    "危险不在强弱位置本身，而在一方把另一方降成纯粹物。只要边界、同意和可撤回性仍然有效，支配就不是赤裸占有，而是一种被双方承认的表演性关系。",
+    "真正要判断的是：欲望有没有把对方作为自由者来承认。若这一点消失，形式还在，关系却已经从承认退回到物化。"
   ].join("\n\n");
 }
 
-function buildShortHegelFallbackReply(content = "") {
+function buildShortHegelFallbackReplyClean(content = "") {
   const topic = sanitizeBoundedText(content, 160) || "这个问题";
 
   if (/自由/u.test(topic)) {
-    return "自由不是随便做什么，而是在限制中仍能把行动认作自己的理性规定；没有这种自我规定，任性只是欲望换了名字。";
+    return "自由不是随便做什么，而是在限制中仍能把行动认作自己的理性规定。没有这种自我规定，任性只是欲望换了名字。";
   }
 
   if (/承认|认可|主奴|主人|奴隶/u.test(topic)) {
-    return "承认不能单方面给予，因为我只有在另一个自由者的回应中才真正成为自己；若对方只是物，我得到的就不是承认，而只是回声。";
+    return "承认不能单方面给予，因为我只有在另一个自由者的回应中才真正成为自己。若对方只是物，我得到的就不是承认，而只是回声。";
   }
 
   if (/你好|嗨|hello|hi/i.test(topic)) {
-    return "我在。把问题抛过来，我们不急着找结论，先把概念本身逼到它必须说清楚的位置。";
+    return "我在。把问题抛过来；我不急着给结论，先把概念逼到它必须说清楚的位置。";
   }
 
   return [
-    `我先按“${topic}”来回答，而不把问题退回给你。`,
-    "黑格尔式的入口是：不要把它当成一个孤立标签，而要看它在什么关系中取得意义、它依赖什么反面、又怎样要求被承认。",
-    "如果你愿意继续，我们可以马上把它推进一步：它是欲望的问题、权力的问题，还是承认的问题？"
+    `我先按“${topic}”来回答，而不把问题退还给你。`,
+    "入口在于：不要把它当成孤立标签，而要看它在什么关系中取得意义、依赖什么反面、又怎样要求被承认。",
+    "由此它才成为可思的对象，而不是一个悬空的名词。"
   ].join("\n\n");
 }
 
-function buildPublicFallbackReply(userMessage, error = null) {
+function buildPublicFallbackReplyClean(userMessage, error = null) {
   const content = normalizeWhitespace(userMessage?.content || "");
   const memoryWriteMatch = content.match(/^(?:请)?记住[:：]?\s*(.+)$/u);
   if (memoryWriteMatch?.[1]) {
     return `记住了：${sanitizeBoundedText(memoryWriteMatch[1], 220)}`;
   }
 
-  if (looksLikeSmTopic(content)) {
-    return buildSmDialecticalFallbackReply(content);
+  if (looksLikeSmTopicClean(content)) {
+    return buildSmDialecticalFallbackReplyClean(content);
   }
 
   if (content.length <= 80) {
-    return buildShortHegelFallbackReply(content);
+    return buildShortHegelFallbackReplyClean(content);
   }
 
   return [
-    "这轮我先不把问题退还给你，而直接给出一个可继续推进的判断。",
+    "这一轮我先不把问题退还给你，而直接给出一个可推进的判断。",
     `你问的是：“${sanitizeBoundedText(content, 220)}”。`,
-    "它的关键不在表面措辞，而在它背后的关系结构：一个概念只有经过它的反面、边界和承认，才不只是空名。"
+    "关键不在表面措辞，而在背后的关系结构：一个概念只有经过它的反面、边界和承认，才不只是空名。"
   ].filter(Boolean).join("\n\n");
 }
 
@@ -3539,6 +3559,55 @@ function finalizeSalonReply(text) {
   );
 }
 
+function hasGenericAiCadence(reply = "") {
+  const text = normalizeWhitespace(reply);
+  if (!text) {
+    return true;
+  }
+  const lower = text.toLowerCase();
+  const aiSignals = [
+    /这是一个(很)?好问题/u,
+    /我们可以从(几个|以下)/u,
+    /首先[，,].*其次/su,
+    /总之[，,]/u,
+    /希望(这|以上).*(帮助|有帮助)/u,
+    /如果你(愿意|想).*我可以/u,
+    /作为(一个)?(ai|人工智能|助手|语言模型)/iu,
+    /from hegel'?s perspective/i,
+    /hegel would say/i
+  ];
+  const hasMojibake = /[�]|(?:锛|涓|鑷|榛|濡|璇|鎴|鈥|€|俙|坾)/u.test(text);
+  const menuLike = (text.match(/(?:^|\n)\s*(?:首先|其次|最后|第一|第二|第三)[，,：:]/gu) || []).length >= 2;
+  const tooAssistantLike = aiSignals.some((pattern) => pattern.test(text)) || lower.includes("as an ai");
+  return hasMojibake || menuLike || tooAssistantLike;
+}
+
+async function repairGenericAiCadence({
+  activeConfig,
+  systemPrompt,
+  messages,
+  badReply,
+  compact = true
+}) {
+  const repairPrompt = joinPromptBlocks([], [
+    buildPromptBlock(
+      "Hegelian voice repair",
+      [
+        buildHegelVoiceContract({ compact }),
+        "Rewrite the candidate answer. Preserve the substantive answer, but remove generic AI cadence, service phrasing, overview menus, mojibake, and follow-up invitations.",
+        "Keep Chinese by default. Do not mention that you are repairing style. Do not add markdown headings or bullet lists."
+      ].join("\n")
+    ),
+    buildPromptBlock("Original system context", sanitizeBoundedText(systemPrompt, 3000)),
+    buildPromptBlock("Candidate answer to repair", sanitizeBoundedText(badReply, 2400))
+  ]);
+  const repaired = await requestChatCompletion(
+    activeConfig,
+    buildChatCompletionMessages(repairPrompt, messages)
+  );
+  return finalizeSalonReply(repaired) || badReply;
+}
+
 function requiresChinesePrimaryQuote(userPrompt, corpusContext) {
   const prompt = String(userPrompt || "");
   return (
@@ -5051,107 +5120,7 @@ async function requestOnlineHegelReply(history, uploadedFiles = [], options = {}
   );
   const hasAttachmentContext =
     hasImageAttachmentContext || hasRemoteAttachmentContext || hasLocalAttachmentContext;
-
-  if (hasRemoteAttachmentContext && !client) {
-    activeConfig = fallbackConfig || config;
-    client = createOpenAIClient(activeConfig);
-  }
-
-  const staticPromptBlocks = buildHegelStaticPromptBlocks();
-  await persistResearchSnapshot(staticPromptBlocks.join("\n"));
-  const systemPrompt = staticPromptBlocks.join("\n");
   const latestUser = normalizedHistory[latestUserIndex];
-  const lightweightDirectMode =
-    !hasAttachmentContext && lightweightDirectInputMode;
-
-  if (lightweightDirectMode) {
-    const userMemoryLayers = await buildUserMemoryLayers(scope);
-    const condensedUserMemory = [
-      sanitizeMemorySummaryText(userMemoryLayers?.styleMemoryProfile?.summaryText || "", 8),
-      sanitizeMemorySummaryText(userMemoryLayers?.longTermMemoryProfile?.summaryText || "", 8),
-      sanitizeBoundedText(userMemoryLayers?.heuristicContext || "", 1200)
-    ].filter(Boolean).join("\n");
-    const lightweightSystemPrompt = joinPromptBlocks([], [
-      buildPromptBlock(
-        "Lightweight direct-answer mode",
-        [
-          "You are Hegel Salon in lightweight direct-answer mode.",
-          "Use this mode only for greetings, status checks, memory recalls, or explicitly simple operational requests.",
-          "Answer in Chinese unless the user explicitly requested another language.",
-          "Never say a short fragment lacks context, and never ask the user to add another sentence before answering.",
-          "If a fragment reaches this mode, treat it as a valid topic and give a provisional conceptual answer.",
-          "For provocative, adult, or power-related topics, stay non-graphic and reason through relation, boundary, consent, recognition, or freedom.",
-          "Keep it concise but substantial, usually 2-4 sentences; one sentence is only for pure greetings or status confirmations.",
-          "Do not expand into historical digressions, quote policing, memory summaries, or multi-paragraph scaffolds.",
-          "Keep the wording clear, calm, and conceptually explicit."
-        ].join("\n")
-      ),
-      buildPromptBlock(
-        "Current style base prompt",
-        sanitizeBoundedText(userMemoryLayers?.styleProfile?.userStylePrompt || "", 180)
-      ),
-      buildPromptBlock(
-        "Trained style summary",
-        sanitizeBoundedText(userMemoryLayers?.styleProfile?.trainedStyleSummary || "", 220)
-      ),
-      buildPromptBlock(
-        "Condensed user memory for grounding",
-        condensedUserMemory
-      )
-    ]);
-    const lightweightMessages = [
-      {
-        role: "user",
-        content: latestUser?.content || "",
-        attachments: []
-      }
-    ];
-    let lightweightRawReply = "";
-    if (publicChatFastMode) {
-      lightweightRawReply = await requestChatCompletion(
-        activeConfig,
-        buildChatCompletionMessages(lightweightSystemPrompt, lightweightMessages)
-      );
-    } else {
-      try {
-        lightweightRawReply = await withPossibleFallback(
-          (activeClient, currentConfig) =>
-            requestResponseCompletion(
-              activeClient,
-              currentConfig,
-              lightweightSystemPrompt,
-              lightweightMessages
-            ),
-          { ensureClient: true }
-        );
-      } catch {
-        lightweightRawReply = await requestChatCompletion(
-          activeConfig,
-          buildChatCompletionMessages(lightweightSystemPrompt, lightweightMessages)
-        );
-      }
-    }
-    const reply = finalizeSalonReply(lightweightRawReply);
-
-    return {
-      reply,
-      validation: {
-        quotedSegments: [],
-        candidateSegments: [],
-        validQuotedSegments: [],
-        invalidQuotedSegments: [],
-        passed: true
-      },
-      qualityJudge: buildQualityJudgeDefault(),
-      strictLogicJudge: buildStrictLogicJudgeDefault(),
-      historiographyJudge: buildHistoriographyJudgeDefault(),
-      strictLogicScaffold: null,
-      usedConfig: activeConfig,
-      attempts: 1,
-      history: normalizedHistory,
-      userMessage: normalizedHistory[latestUserIndex]
-    };
-  }
 
   if (optimizerMode && !hasAttachmentContext) {
     const optimizerContext = await buildOptimizerMemoryContext(
@@ -5161,13 +5130,17 @@ async function requestOnlineHegelReply(history, uploadedFiles = [], options = {}
     );
     const optimizerSystemPrompt = joinPromptBlocks([], [
       buildPromptBlock(
+        "Hegelian voice contract",
+        buildHegelVoiceContract({ compact: false, training: true })
+      ),
+      buildPromptBlock(
         "Optimizer training answer mode",
         [
           "You are Hegel Salon answering a training prompt for quality optimization.",
           "Answer in Chinese unless the prompt explicitly asks otherwise.",
           "Do not ask for more context. Treat each training prompt as complete.",
           "Give a direct, evaluable answer: first state the thesis, then expose the key premises, then address one serious objection.",
-          "Prefer explicit reasoning over atmosphere, slogans, or ornamental Hegelian prose.",
+          "Prefer explicit reasoning over atmosphere, slogans, ornamental Hegelian prose, or generic AI explanation.",
           "Keep the answer compact enough for automated judging: usually 3-6 paragraphs.",
           "If the prompt asks for formal-logic repair, separate hidden premise, concept jump, corrected argument, and remaining limit.",
           "If the prompt asks about history or reality, mark analogy boundaries and source-status limits honestly."
@@ -5218,6 +5191,119 @@ async function requestOnlineHegelReply(history, uploadedFiles = [], options = {}
     };
   }
 
+  if (hasRemoteAttachmentContext && !client) {
+    activeConfig = fallbackConfig || config;
+    client = createOpenAIClient(activeConfig);
+  }
+
+  const staticPromptBlocks = buildHegelStaticPromptBlocks();
+  await persistResearchSnapshot(staticPromptBlocks.join("\n"));
+  const systemPrompt = staticPromptBlocks.join("\n");
+  const lightweightDirectMode =
+    !hasAttachmentContext && lightweightDirectInputMode;
+
+  if (lightweightDirectMode) {
+    const userMemoryLayers = await buildUserMemoryLayers(scope);
+    const condensedUserMemory = [
+      sanitizeMemorySummaryText(userMemoryLayers?.styleMemoryProfile?.summaryText || "", 8),
+      sanitizeMemorySummaryText(userMemoryLayers?.longTermMemoryProfile?.summaryText || "", 8),
+      sanitizeBoundedText(userMemoryLayers?.heuristicContext || "", 1200)
+    ].filter(Boolean).join("\n");
+    const lightweightSystemPrompt = joinPromptBlocks([], [
+      buildPromptBlock(
+        "Hegelian voice contract",
+        buildHegelVoiceContract({ compact: true })
+      ),
+      buildPromptBlock(
+        "Lightweight direct-answer mode",
+        [
+          "You are Hegel Salon in lightweight direct-answer mode.",
+          "Use this mode only for greetings, status checks, memory recalls, or explicitly simple operational requests.",
+          "Answer in Chinese unless the user explicitly requested another language.",
+          "Never say a short fragment lacks context, and never ask the user to add another sentence before answering.",
+          "If a fragment reaches this mode, treat it as a valid topic and give a provisional conceptual answer.",
+          "For provocative, adult, or power-related topics, stay non-graphic and reason through relation, boundary, consent, recognition, or freedom.",
+          "Keep it concise but substantial, usually 2-4 sentences; one sentence is only for pure greetings or status confirmations.",
+          "Do not expand into historical digressions, quote policing, memory summaries, or multi-paragraph scaffolds.",
+          "Keep the wording clear, calm, conceptually explicit, and free of assistant-like service phrases."
+        ].join("\n")
+      ),
+      buildPromptBlock(
+        "Current style base prompt",
+        sanitizeBoundedText(userMemoryLayers?.styleProfile?.userStylePrompt || "", 180)
+      ),
+      buildPromptBlock(
+        "Trained style summary",
+        sanitizeBoundedText(userMemoryLayers?.styleProfile?.trainedStyleSummary || "", 220)
+      ),
+      buildPromptBlock(
+        "Condensed user memory for grounding",
+        condensedUserMemory
+      )
+    ]);
+    const lightweightMessages = [
+      {
+        role: "user",
+        content: latestUser?.content || "",
+        attachments: []
+      }
+    ];
+    let lightweightRawReply = "";
+    if (publicChatFastMode) {
+      lightweightRawReply = await requestChatCompletion(
+        activeConfig,
+        buildChatCompletionMessages(lightweightSystemPrompt, lightweightMessages)
+      );
+    } else {
+      try {
+        lightweightRawReply = await withPossibleFallback(
+          (activeClient, currentConfig) =>
+            requestResponseCompletion(
+              activeClient,
+              currentConfig,
+              lightweightSystemPrompt,
+              lightweightMessages
+            ),
+          { ensureClient: true }
+        );
+      } catch {
+        lightweightRawReply = await requestChatCompletion(
+          activeConfig,
+          buildChatCompletionMessages(lightweightSystemPrompt, lightweightMessages)
+        );
+      }
+    }
+    let reply = finalizeSalonReply(lightweightRawReply);
+    if (hasGenericAiCadence(reply)) {
+      reply = await repairGenericAiCadence({
+        activeConfig,
+        systemPrompt: lightweightSystemPrompt,
+        messages: lightweightMessages,
+        badReply: reply,
+        compact: true
+      });
+    }
+
+    return {
+      reply,
+      validation: {
+        quotedSegments: [],
+        candidateSegments: [],
+        validQuotedSegments: [],
+        invalidQuotedSegments: [],
+        passed: true
+      },
+      qualityJudge: buildQualityJudgeDefault(),
+      strictLogicJudge: buildStrictLogicJudgeDefault(),
+      historiographyJudge: buildHistoriographyJudgeDefault(),
+      strictLogicScaffold: null,
+      usedConfig: activeConfig,
+      attempts: 1,
+      history: normalizedHistory,
+      userMessage: normalizedHistory[latestUserIndex]
+    };
+  }
+
   const compactDialecticalMode =
     publicChatFastMode &&
     !hasAttachmentContext &&
@@ -5233,6 +5319,10 @@ async function requestOnlineHegelReply(history, uploadedFiles = [], options = {}
     ].filter(Boolean).join("\n");
     const compactSystemPrompt = joinPromptBlocks([], [
       buildPromptBlock(
+        "Hegelian voice contract",
+        buildHegelVoiceContract({ compact: true })
+      ),
+      buildPromptBlock(
         "Compact dialectical short-topic mode",
         [
           "You are Hegel Salon answering a short but substantive user prompt.",
@@ -5241,7 +5331,7 @@ async function requestOnlineHegelReply(history, uploadedFiles = [], options = {}
           "Answer in Chinese unless the user explicitly requested another language.",
           "Give a concise but real Hegelian answer: determine the relation, name the contradiction or dependency, and end with a usable judgment.",
           "For adult, SM/BDSM, violence, pain, or power topics, stay non-graphic and analyze consent, boundary, reversibility, recognition, and freedom.",
-          "Do not quote-police, do not provide long historical scaffolding, and do not apologize for brevity.",
+          "Do not quote-police, do not provide long historical scaffolding, do not apologize for brevity, and do not sound like a generic AI explainer.",
           "Target 2-4 compact paragraphs or 3-6 sentences."
         ].join("\n")
       ),
@@ -5269,7 +5359,16 @@ async function requestOnlineHegelReply(history, uploadedFiles = [], options = {}
       activeConfig,
       buildChatCompletionMessages(compactSystemPrompt, compactMessages)
     );
-    const reply = finalizeSalonReply(compactRawReply) || buildPublicFallbackReply(latestUser);
+    let reply = finalizeSalonReply(compactRawReply) || buildPublicFallbackReplyClean(latestUser);
+    if (hasGenericAiCadence(reply)) {
+      reply = await repairGenericAiCadence({
+        activeConfig,
+        systemPrompt: compactSystemPrompt,
+        messages: compactMessages,
+        badReply: reply,
+        compact: true
+      });
+    }
 
     return {
       reply,
@@ -5945,6 +6044,7 @@ async function handleChat(req, res) {
     let history = [];
     let uploadedFiles = [];
     let optimizerMode = false;
+    let optimizerDeadlineMs = optimizerChatTotalTimeoutMs;
     let requestedStyleProfileId = "";
     let requestedChatSessionId = "";
 
@@ -5953,6 +6053,12 @@ async function handleChat(req, res) {
       const payload = parseJsonSafe(String(formData.get("payload") || "{}"));
       history = Array.isArray(payload.messages) ? payload.messages : [];
       optimizerMode = Boolean(payload.optimizerMode);
+      optimizerDeadlineMs = coerceDurationMs(
+        payload.optimizerDeadlineMs,
+        optimizerChatTotalTimeoutMs,
+        30000,
+        900000
+      );
       requestedStyleProfileId = String(payload.styleProfileId || "").trim();
       requestedChatSessionId = getRequestedChatSessionId(req, payload);
       uploadedFiles = formData
@@ -5964,6 +6070,12 @@ async function handleChat(req, res) {
       expectPlainObject(body, "Invalid chat payload.");
       history = Array.isArray(body.messages) ? body.messages : [];
       optimizerMode = Boolean(body.optimizerMode);
+      optimizerDeadlineMs = coerceDurationMs(
+        body.optimizerDeadlineMs,
+        optimizerChatTotalTimeoutMs,
+        30000,
+        900000
+      );
       requestedStyleProfileId = getRequestedStyleProfileId(req, body);
       requestedChatSessionId = getRequestedChatSessionId(req, body);
     }
@@ -5987,7 +6099,7 @@ async function handleChat(req, res) {
     }
 
     const chatDeadlineMs = optimizerMode
-      ? optimizerChatTotalTimeoutMs
+      ? optimizerDeadlineMs
       : publicChatFastMode
         ? publicChatTotalTimeoutMs
         : 140000;
@@ -6037,7 +6149,7 @@ async function handleChat(req, res) {
         messageChars: normalizeWhitespace(latestUserForFallback?.content || "").length,
         reason: fallbackReason
       }));
-      const fallbackReply = buildPublicFallbackReply(latestUserForFallback, error);
+      const fallbackReply = buildPublicFallbackReplyClean(latestUserForFallback, error);
       const fallbackQualityJudge = buildQualityJudgeDefault();
       const fallbackStrictLogicJudge = buildStrictLogicJudgeDefault();
       const fallbackHistoriographyJudge = buildHistoriographyJudgeDefault();

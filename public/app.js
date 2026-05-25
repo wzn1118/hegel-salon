@@ -22,6 +22,8 @@ let providerPresetButtons = [];
 const openComputer = document.getElementById("openComputer");
 const openTraining = document.getElementById("openTraining");
 const styleSelector = document.getElementById("styleSelector");
+const chatSessionToggle = document.getElementById("chatSessionToggle");
+const chatSessionPopover = document.getElementById("chatSessionPopover");
 const newChatSessionButton = document.getElementById("newChatSession");
 const createStyle = document.getElementById("createStyle");
 const openStylePanel = document.getElementById("openStylePanel");
@@ -134,6 +136,24 @@ const PIXEL_FONT = '"ArkPixel16", monospace';
 const MESSAGE_FONT = '400 17px "Noto Sans SC"';
 const AUTO_SCROLL_EDGE = 88;
 const SUPPORTED_HINT = "支持图片、PDF、Excel、CSV、TSV、TXT、JSON";
+const SESSION_COPY = {
+  toggleButton: "会话",
+  newButton: "新会话",
+  newButtonBusy: "创建中",
+  panelTitle: "会话",
+  panelHint: "",
+  untitled: "未命名会话",
+  emptyList: "还没有会话。",
+  emptyDraft: "空白草稿",
+  activeBadge: "当前",
+  freshBadge: "新",
+  noteBadge: "札",
+  pendingBadge: "待书写",
+  recordedBadge: "已记录",
+  stylePrefix: "风格共用",
+  sharedPersona: "共用风格",
+  defaultPersona: "默认风格"
+};
 
 const UI_COPY = {
   assistantRole: "黑格尔",
@@ -227,6 +247,7 @@ let chatSessionRecords = [];
 let visibleMessageCount = HISTORY_RENDER_CHUNK;
 let pendingFiles = [];
 let nextPendingFileId = 1;
+let chatSessionPopoverOpen = false;
 let sourcesLoaded = false;
 let configLoaded = false;
 let trainingPollTimer = null;
@@ -354,15 +375,18 @@ function formatSessionTime(value) {
 
   const deltaMs = Date.now() - time;
   if (deltaMs < 60 * 1000) {
-    return "now";
+    return "刚刚";
   }
   if (deltaMs < 60 * 60 * 1000) {
-    return `${Math.max(1, Math.round(deltaMs / (60 * 1000)))}m`;
+    return `${Math.max(1, Math.round(deltaMs / (60 * 1000)))} 分钟前`;
   }
   if (deltaMs < 24 * 60 * 60 * 1000) {
-    return `${Math.max(1, Math.round(deltaMs / (60 * 60 * 1000)))}h`;
+    return `${Math.max(1, Math.round(deltaMs / (60 * 60 * 1000)))} 小时前`;
   }
-  return new Date(time).toLocaleDateString();
+  return new Date(time).toLocaleDateString("zh-CN", {
+    month: "short",
+    day: "numeric"
+  });
 }
 
 function sessionTitle(session, index) {
@@ -371,15 +395,54 @@ function sessionTitle(session, index) {
     return title;
   }
   if (Number(session?.messageCount || 0) === 0) {
-    return "New session";
+    return SESSION_COPY.untitled;
   }
-  return `Session ${index + 1}`;
+  return `第 ${index + 1} 席`;
 }
 
 function sessionStyleName(session) {
   const styleId = String(session?.styleProfileId || "").trim();
   const style = styleState.styles.find((item) => item.id === styleId);
-  return style?.name || style?.styleKey || (styleId ? "Shared persona" : "Default persona");
+  return style?.name || style?.styleKey || (styleId ? SESSION_COPY.sharedPersona : SESSION_COPY.defaultPersona);
+}
+
+function sessionMessageLabel(count) {
+  if (!count) {
+    return SESSION_COPY.emptyDraft;
+  }
+  return `${count} 条消息`;
+}
+
+function setNewChatButtonBusy(isBusy) {
+  if (!newChatSessionButton) {
+    return;
+  }
+
+  newChatSessionButton.disabled = Boolean(isBusy);
+  newChatSessionButton.setAttribute("aria-busy", isBusy ? "true" : "false");
+  newChatSessionButton.textContent = isBusy ? SESSION_COPY.newButtonBusy : SESSION_COPY.newButton;
+}
+
+function setChatSessionPopoverOpen(isOpen) {
+  chatSessionPopoverOpen = Boolean(isOpen && authState.user);
+  if (chatSessionPopover) {
+    chatSessionPopover.classList.toggle("hidden", !chatSessionPopoverOpen);
+  }
+  if (chatSessionToggle) {
+    chatSessionToggle.classList.toggle("is-open", chatSessionPopoverOpen);
+    chatSessionToggle.setAttribute("aria-expanded", chatSessionPopoverOpen ? "true" : "false");
+  }
+}
+
+function toggleChatSessionPopover() {
+  if (promptForAuth("请先登录后再查看会话。")) {
+    return;
+  }
+  setChatSessionPopoverOpen(!chatSessionPopoverOpen);
+}
+
+function closeChatSessionPopover() {
+  setChatSessionPopoverOpen(false);
 }
 
 function renderChatSessionList() {
@@ -389,6 +452,7 @@ function renderChatSessionList() {
 
   chatSessionList.innerHTML = "";
   if (!authState.user) {
+    setChatSessionPopoverOpen(false);
     return;
   }
 
@@ -397,7 +461,7 @@ function renderChatSessionList() {
     records.unshift({
       id: activeChatSessionId,
       styleProfileId: styleState.currentStyleId || "",
-      title: "New session",
+      title: SESSION_COPY.untitled,
       updatedAt: new Date().toISOString(),
       messageCount: 0
     });
@@ -406,36 +470,63 @@ function renderChatSessionList() {
   if (!records.length) {
     const empty = document.createElement("p");
     empty.className = "chat-session-empty";
-    empty.textContent = "No saved sessions yet";
+    empty.textContent = SESSION_COPY.emptyList;
     chatSessionList.append(empty);
     return;
   }
 
   const fragment = document.createDocumentFragment();
   records.forEach((session, index) => {
+    const count = Number(session.messageCount || 0);
+    const isActive = session.id === activeChatSessionId;
+    const titleText = sessionTitle(session, index);
+    const timeText = formatSessionTime(session.updatedAt);
+    const metaText = [sessionMessageLabel(count), timeText].filter(Boolean).join(" · ");
+
     const button = document.createElement("button");
     button.type = "button";
-    button.className = `chat-session-item${session.id === activeChatSessionId ? " is-active" : ""}`;
-    button.title = `${sessionTitle(session, index)} - ${sessionStyleName(session)} - shared training/persona`;
+    button.className = [
+      "chat-session-item",
+      isActive ? "is-active" : "",
+      count === 0 ? "is-empty" : ""
+    ].filter(Boolean).join(" ");
+    button.title = `${titleText} · ${metaText} · ${SESSION_COPY.stylePrefix}：${sessionStyleName(session)}`;
+    button.setAttribute("aria-current", isActive ? "true" : "false");
+
+    const mark = document.createElement("span");
+    mark.className = "chat-session-mark";
+    mark.textContent = isActive ? SESSION_COPY.activeBadge : count === 0 ? SESSION_COPY.freshBadge : SESSION_COPY.noteBadge;
+
+    const body = document.createElement("span");
+    body.className = "chat-session-body";
+
+    const titleRow = document.createElement("span");
+    titleRow.className = "chat-session-title-row";
 
     const title = document.createElement("span");
     title.className = "chat-session-title";
-    title.textContent = sessionTitle(session, index);
+    title.textContent = titleText;
+
+    const badge = document.createElement("span");
+    badge.className = "chat-session-badge";
+    badge.textContent = isActive ? SESSION_COPY.activeBadge : count === 0 ? SESSION_COPY.pendingBadge : SESSION_COPY.recordedBadge;
 
     const meta = document.createElement("span");
     meta.className = "chat-session-meta";
-    const count = Number(session.messageCount || 0);
-    meta.textContent = `${count} msg ${formatSessionTime(session.updatedAt)}`.trim();
+    meta.textContent = metaText;
 
     const style = document.createElement("span");
     style.className = "chat-session-style";
-    style.textContent = `Persona shared: ${sessionStyleName(session)}`;
+    style.textContent = `${SESSION_COPY.stylePrefix} · ${sessionStyleName(session)}`;
 
-    button.append(title, meta, style);
+    titleRow.append(title, badge);
+    body.append(titleRow, meta, style);
+    button.append(mark, body);
     button.addEventListener("click", () => {
       switchChatSession(session).catch((error) => {
         setAuthStatus(error instanceof Error ? error.message : "Failed to switch chat session.", "error");
       });
+      closeChatSessionPopover();
     });
     fragment.append(button);
   });
@@ -704,6 +795,8 @@ function hydrateStaticCopy() {
   setText(".salon-intro", UI_COPY.salonIntro);
   setText(".composer-label", UI_COPY.promptLabel);
   setText(".composer-hint", UI_COPY.composerHint);
+  setText(".chat-session-kicker", SESSION_COPY.panelTitle);
+  setText(".chat-session-shared-hint", SESSION_COPY.panelHint);
 
   const portrait = document.querySelector(".portrait");
   if (portrait) {
@@ -728,6 +821,16 @@ function hydrateStaticCopy() {
 
   if (sendButton) {
     sendButton.textContent = UI_COPY.send;
+  }
+
+  if (chatSessionToggle) {
+    chatSessionToggle.textContent = SESSION_COPY.toggleButton;
+    chatSessionToggle.setAttribute("aria-label", SESSION_COPY.toggleButton);
+  }
+
+  if (newChatSessionButton) {
+    newChatSessionButton.textContent = SESSION_COPY.newButton;
+    newChatSessionButton.setAttribute("aria-label", SESSION_COPY.newButton);
   }
 
   if (promptInput) {
@@ -2050,9 +2153,7 @@ async function startNewChatSession() {
     return;
   }
 
-  if (newChatSessionButton) {
-    newChatSessionButton.disabled = true;
-  }
+  setNewChatButtonBusy(true);
 
   const clientSessionId = createClientChatSessionId();
   try {
@@ -2071,9 +2172,7 @@ async function startNewChatSession() {
     setAuthStatus(error instanceof Error ? error.message : "Failed to create chat session.", "error");
     return;
   } finally {
-    if (newChatSessionButton) {
-      newChatSessionButton.disabled = false;
-    }
+    setNewChatButtonBusy(false);
   }
 
   persistedHistoryMessageCount = 0;
@@ -2081,6 +2180,7 @@ async function startNewChatSession() {
   pendingFiles = [];
   renderPendingAttachments();
   replaceMessages([createInitialMessageRecord()]);
+  closeChatSessionPopover();
   if (promptInput) {
     promptInput.focus();
   }
@@ -3986,6 +4086,39 @@ if (createStyle) {
 if (newChatSessionButton) {
   newChatSessionButton.addEventListener("click", startNewChatSession);
 }
+
+if (chatSessionToggle) {
+  chatSessionToggle.addEventListener("click", (event) => {
+    event.stopPropagation();
+    toggleChatSessionPopover();
+  });
+}
+
+if (chatSessionPopover) {
+  chatSessionPopover.addEventListener("click", (event) => {
+    event.stopPropagation();
+  });
+}
+
+document.addEventListener("click", (event) => {
+  if (!chatSessionPopoverOpen) {
+    return;
+  }
+  const target = event.target;
+  if (
+    target instanceof Node &&
+    (chatSessionPopover?.contains(target) || chatSessionToggle?.contains(target))
+  ) {
+    return;
+  }
+  closeChatSessionPopover();
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && chatSessionPopoverOpen) {
+    closeChatSessionPopover();
+  }
+});
 
 if (logoutButton) {
   logoutButton.addEventListener("click", logoutSession);

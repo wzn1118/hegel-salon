@@ -3,6 +3,7 @@ import { appendFile, mkdir, readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { writeJsonFileAtomic } from "./atomicFile.mjs";
 import { loadCodexOpenAIConfig } from "./codexConfig.mjs";
+import { buildHegelVoiceContract } from "./hegelPrompt.mjs";
 import {
   buildDistilledStyleSummaryFromPlaybook,
   readOptimizerJudgePrompt,
@@ -151,15 +152,16 @@ function buildPromptPool() {
     { kind: "concept", prompt: "意志为什么不能等于欲望？请把概念、推理与反对意见说清楚。" },
     { kind: "concept", prompt: "实体同样是主体为什么不是空洞口号？请给出严格论证。" },
     { kind: "concept", prompt: "概念为什么不是空形式？请避免抽象大词空转。" },
+    { kind: "voice", prompt: "请用黑格尔第一人称回答：为什么直接的确定性一经被说出就已经离开了直接性？不要写成 AI 科普。" },
+    { kind: "voice", prompt: "把“承认”说得像真正的黑格尔，而不是像通用助手总结：它为什么需要另一个自由者？" },
     { kind: "audit", prompt: "请按严格形式逻辑修订：法的理念是自由，所以凡是法都是自由。国家既然是法的现实化，所以国家的一切规定也都是自由。" },
     { kind: "audit", prompt: "请按严格形式逻辑修订：只要一个人不断否定流行意见，他就已经具有哲学意义。因为否定比肯定更深刻，所以强烈批评本身就是真理。" },
     { kind: "historical", prompt: "如何评价一位强调中心统合的当代大国领导者？必须引用历史来理解现实，明确类比边界，不要停在公共评论。" },
     { kind: "historical", prompt: "如何理解一位在民选体制下造成高度极化的当代领袖现象？请用历史形式分析现实，并明确类比边界。" },
-    { kind: "historical", prompt: "如何理解当代大国的国家能力？请结合历史与制度媒介，而不是停留在一般评论。"},
-    { kind: "historical", prompt: "如何理解现代官僚体系的忠诚逻辑？必须区分现实对象、历史形式和类比极限。"}
+    { kind: "historical", prompt: "如何理解当代大国的国家能力？请结合历史与制度媒介，而不是停留在一般评论。" },
+    { kind: "historical", prompt: "如何理解现代官僚体系的忠诚逻辑？必须区分现实对象、历史形式和类比极限。" }
   ];
 }
-
 async function loadCustomPromptPool() {
   const path = join(process.cwd(), customPromptPath);
   if (!existsSync(path)) {
@@ -310,7 +312,10 @@ async function requestOptimizerJudge(config, { kind, prompt, reply }) {
           content: [
             "You are a strict evaluator for Hegel Salon training.",
             "Return JSON only. Scores must use a 0 to 10 scale.",
-            "Do not reward ornament. Reward formal logic, concept precision, premise visibility, and historically honest limits.",
+            buildHegelVoiceContract({ compact: false, training: true }),
+            "Do not reward ornament. Reward formal logic, concept precision, premise visibility, historically honest limits, and a severe first-person Hegelian voice.",
+            "Punish generic AI-explainer prose: '首先/其次/最后', '这是一个很好的问题', menu-like structure, service politeness, neutral textbook summaries, and follow-up invitations.",
+            "Punish fake Hegelianism: decorative abstractions, repeated 不是……而是…… scaffolds, mystical haze, and public-commentary slogans.",
             "Schema: {\"qualityJudge\":{\"overall\":number,\"formal_logic\":number,\"concept_precision\":number,\"argumentative_force\":number,\"summary\":string},\"strictLogicJudge\":{\"formal_logic\":number,\"premise_visibility\":number,\"step_validity\":number,\"no_large_leaps\":number,\"passed_strict\":boolean},\"historiographyJudge\":{\"overall\":number,\"chronology_discipline\":number,\"source_status_honesty\":number,\"analogy_limit\":number,\"passed_strict\":boolean}}"
           ].join("\n")
         },
@@ -355,6 +360,7 @@ async function requestSalonOnce(prompt) {
       },
       body: JSON.stringify({
         optimizerMode: true,
+        optimizerDeadlineMs: timeoutMs,
         styleProfileId: styleProfileId || "",
         messages: [{ role: "user", content: prompt }]
       }),
@@ -421,7 +427,10 @@ async function synthesizePlaybook(config, failures) {
             content: [
               "You are synthesizing a concise optimizer playbook for a Hegel salon.",
               "Return JSON only.",
+              buildHegelVoiceContract({ compact: false, training: true }),
               `Focus on failure patterns that would raise answers toward ${targetScore}/10.`,
+              "Correction rules must be readable Chinese or English. Never emit mojibake, question-mark placeholders, or vague style praise.",
+              "Prefer rules that force Hegelian movement: immediate determination, internal limit, mediation, objection, reply, sharper conclusion.",
               customJudgePrompt
                 ? `User-custom training prompt:\n${customJudgePrompt}`
                 : "No user-custom training prompt was supplied."
@@ -469,6 +478,18 @@ async function main() {
     model: config.model,
     baseURL: config.baseURL
   });
+  console.log(
+    JSON.stringify({
+      event: "optimizer_started",
+      userId: userId || null,
+      styleProfileId: styleProfileId || null,
+      iterations,
+      concurrency,
+      targetScore,
+      timeoutMs,
+      salonTimeoutMs
+    })
+  );
   const pool = [...buildPromptPool(), ...(await loadCustomPromptPool())];
   const results = [];
   const failures = [];
@@ -622,20 +643,13 @@ async function main() {
   }
   await writeProgress(true);
 
-  console.log(
-    JSON.stringify(
-      {
-        iterations: results.length,
-        targetScore,
-        averageScore: Number(average.toFixed(2)),
-        failures: failures.length,
-        playbook,
-        distilledStyleSummary
-      },
-      null,
-      2
-    )
-  );
+  console.log(JSON.stringify({
+    event: "optimizer_finished",
+    iterations: results.length,
+    targetScore,
+    averageScore: Number(average.toFixed(2)),
+    failures: failures.length
+  }));
   await writeWorkerLog("optimizer_finished", {
     iterations: results.length,
     targetScore,
