@@ -1,53 +1,126 @@
 # Hegel Salon
 
+[English README](./README.en.md)
+
 [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/wzn1118/hegel-salon)
 
-**Hegel Salon is a Chinese-first Hegelian reasoning workspace that combines primary-text grounding, quote discipline, real-world judgment, document understanding, browser-scoped computer use, and a live optimization loop in one runnable product.**
+Hegel Salon 是一个中文优先的黑格尔阅读与推理工作台。它不是把几个黑格尔术语塞进聊天框里的玩具，也不试图冒充“哲学权威”。这个项目更像一个可以运行的研究桌面：前端负责对话、附件和资料入口，Node 后端负责语料检索、引用约束、历史参照、判断修订和用户隔离，外层再配上部署、评测和优化脚本，让一次讨论尽量留下可复查的依据。
 
-Hegel Salon 不是一个只模仿黑格尔语气的聊天壳。它更像一个思想工作台：把黑格尔语料、概念结构、引文核验、现实判断、附件处理、浏览器代理、用户系统和持续优化机制放进同一个本地优先的 Web 应用里。
+项目最初的目标很朴素：当一个中文用户问黑格尔、现实问题、论文段落或一份文档时，系统不要只给一段漂亮但空泛的回答，而要尽量说明自己依据什么文本、哪些地方是解释、哪些地方只是类比，哪里还需要人工判断。它可以在本地跑，也可以以多用户 Web 服务的方式部署；它可以只当一个私人阅读工具，也可以作为一个继续实验“哲学语料 + 现代模型 + 质量反馈”的产品原型。
 
-## What Is Included
+## 这个项目在做什么
 
-- A static Web frontend served by a Node.js backend.
-- Chinese-first Hegelian dialogue with corpus-aware prompt assembly.
-- Local German/English public-domain or openly mirrored Hegel corpus under `data/corpus/texts`.
-- Concept graph, source anchors, quote validation, self-audit, and historical-reference modules.
-- Attachment understanding for PDF, spreadsheets, CSV/TSV, text, JSON, Markdown, and images.
-- Browser-scoped computer use for navigation, clicking, typing, scrolling, and screenshot-backed page inspection.
-- Multi-user auth mode with login, email verification, admin tooling, CSRF protection, and per-user runtime isolation.
-- Per-user API configuration support for model provider, base URL, model, and API key.
-- Evaluation and optimization scripts for understanding, formal logic, historiography, concept graph smoke checks, and quality optimization.
-- Docker, Docker Compose, Render Blueprint, Cloudflare tunnel docs, and Windows launcher scripts.
-- Optional Android shell based on Capacitor for a native mobile entry point.
+Hegel Salon 把几件通常分散的事情放到同一个应用里：
 
-## Current Status
+- 中文优先的黑格尔式对话，不要求用户用英文或德文进入问题。
+- 本地语料检索，围绕 `data/corpus/texts/` 中可公开分发的德文、英文材料组织上下文。
+- 引文纪律，尽量把可直接引用的原文和模型解释区分开。
+- 概念图和历史参照，用来帮助回答从“概念解释”走向“现实判断”。
+- 附件理解，支持 PDF、表格、CSV/TSV、文本、JSON、Markdown 和图片等输入。
+- 浏览器范围内的 Computer Use，可以导航、点击、输入、滚动，并保留截图和动作记录。
+- 多用户模式，包含登录、邮箱验证码、管理员工具、CSRF 防护和用户运行态隔离。
+- 评测与优化脚本，用失败样例、质量分数和 playbook 反过来改进后续回答。
+- Windows 启动脚本、Docker、Render Blueprint、Cloudflare Tunnel 文档和可选 Android 壳。
 
-This repository is a working product prototype, not a finished academic oracle.
+这里的“黑格尔式”不是指固定的说话腔调，而是指回答结构要承担更多责任：先把问题放进概念关系里，再区分文本依据、推理跃迁和现实判断，最后承认仍然不确定的部分。项目仍在原型阶段，但它已经不是单页 demo，而是一套可以启动、登录、上传、部署、评测和继续打磨的应用。
 
-It can run locally, serve the Web app, process files, call model APIs, preserve user-scoped state, drive a browser session, and run evaluation or optimization loops. The strict logic, historiography, real-world judgment, and 90-point quality optimization layers are still experimental signals. High-risk or scholarly conclusions should still be reviewed by a human.
+## 适合谁
 
-## Quick Start
+这个仓库适合几类人：
+
+- 想在中文语境里认真读黑格尔，但又希望工具能帮忙整理语料、概念和出处的人。
+- 想把哲学问答做成可运行产品，而不是只写 prompt 的开发者。
+- 想研究“引用约束、语料检索、模型自审、失败记忆”如何一起影响回答质量的人。
+- 想把本地 AI 工具部署成带账号体系的私人或小团队 Web 服务的人。
+
+如果你只是想找一个轻量聊天 demo，这个项目可能偏重；如果你想找一个完美可靠的学术判官，它也还不够。它更适合作为一个认真但仍开放的工作台。
+
+## 当前状态
+
+这是一个可运行的产品原型，不是完成态的学术系统。
+
+目前它可以：
+
+- 在本地启动 Web 应用，默认端口是 `3087`。
+- 通过 `/api/chat` 处理对话、附件和语料上下文。
+- 在认证模式下为不同用户隔离上传、聊天记录、优化状态和浏览器代理状态。
+- 用管理员账号管理用户和运行态数据。
+- 调用配置好的模型 API，并支持本地私有配置文件。
+- 运行理解评测、形式逻辑压力测试、历史判断压力测试、概念图检查和质量优化脚本。
+- 通过 Docker、Render 或 Windows + Cloudflare Tunnel 做公开部署。
+
+仍然要谨慎看待的部分：
+
+- 质量分数、逻辑分数和历史判断分数只是信号，不是正确性证明。
+- 引文校验能减少伪引，但不能替代人工校勘。
+- 浏览器代理只控制浏览器范围，不是完整桌面控制。
+- 公开部署前必须自己配置密钥、邮箱、HTTPS、上传扫描和管理员策略。
+- 仓库不应包含私人聊天、运行日志、API key、SMTP 密码、受版权保护的中文译本或本地研究资料。
+
+## 快速开始
+
+需要 Node.js 和 npm。克隆后安装依赖：
 
 ```bash
 npm install
+```
+
+启动：
+
+```bash
 npm run start
 ```
 
-Open:
+浏览器打开：
 
 ```text
 http://127.0.0.1:3087/
 ```
 
-Docker:
+如果你在 Windows 上使用便携包，也可以双击：
+
+```text
+launch-hegel-salon.cmd
+```
+
+停止本地服务：
+
+```text
+stop-hegel-salon.cmd
+```
+
+Docker 方式：
 
 ```bash
 docker compose up -d --build
 ```
 
-## Public Deployment
+## 模型配置
 
-For a public HTTPS deployment, set production environment variables before first run:
+公开仓库不会携带真实 API key。开发时建议创建：
+
+```text
+config/api.local.json
+```
+
+示例：
+
+```json
+{
+  "provider": "openai",
+  "model": "gpt-5.4",
+  "baseURL": "https://api.openai.com/v1",
+  "apiKey": "YOUR_KEY"
+}
+```
+
+本地使用时，也可以通过页面里的 API 配置面板填写。开启认证模式后，项目级配置会被锁住，用户配置和运行态会按账号隔离；公开部署时更建议把模型密钥留在服务端，而不是交给浏览器端用户覆盖。
+
+## 公开部署
+
+Render 部署可以使用页面顶部的按钮，或直接连接本仓库里的 `render.yaml`。
+
+最少要准备这些环境变量：
 
 ```text
 HEGEL_ENABLE_AUTH=1
@@ -65,87 +138,21 @@ HEGEL_SMTP_PASS=<smtp-password-or-app-password>
 HEGEL_MAIL_FROM=Hegel Salon <no-reply@your-domain.example>
 ```
 
-For Render deployment, use the button above or connect the repository with `render.yaml`.
-For Windows + Cloudflare Named Tunnel deployment, see `docs/PUBLIC_WEB_DEPLOYMENT.md`.
-For auth, HTTPS, and security details, see `DEPLOY-V4.md` and `docs/SECURITY_DEPLOYMENT.md`.
-
-## Model Configuration
-
-The public repository intentionally does not ship live API keys.
-
-For local development, create:
+公开环境建议同时开启：
 
 ```text
-config/api.local.json
+HEGEL_HIDE_DEV_CODES=1
+HEGEL_TRUST_PROXY=1
+HEGEL_FORCE_SECURE_COOKIES=1
 ```
 
-Example:
+更多部署说明见：
 
-```json
-{
-  "provider": "openai",
-  "model": "gpt-5.4",
-  "baseURL": "https://api.openai.com/v1",
-  "apiKey": "YOUR_KEY"
-}
-```
+- [DEPLOY-V4.md](./DEPLOY-V4.md)
+- [docs/PUBLIC_WEB_DEPLOYMENT.md](./docs/PUBLIC_WEB_DEPLOYMENT.md)
+- [docs/SECURITY_DEPLOYMENT.md](./docs/SECURITY_DEPLOYMENT.md)
 
-When auth mode is enabled, users can keep model configuration in their own isolated runtime scope unless the deployment locks configuration server-side.
-
-## Project Map
-
-```text
-.
-|-- public/                  Web UI, styles, browser-use panel, admin UI
-|-- src/                     Node server, answer pipeline, corpus, auth, tools, evaluation, optimizer
-|-- config/                  Public-safe config templates and local override location
-|-- data/corpus/texts/       Redistributable German/English Hegel corpus files
-|-- docs/                    GitHub release, public web deployment, and security deployment notes
-|-- deploy/                  Cloudflare tunnel and deployment helpers
-|-- android-app/             Optional Capacitor Android shell
-|-- launch-hegel-salon.cmd   Windows local launcher
-|-- start-hegel-salon.cmd    Windows start helper
-`-- stop-hegel-salon.cmd     Windows stop helper
-```
-
-## Main Runtime Flow
-
-```text
-Browser UI
-  -> /api/chat
-  -> prompt assembly
-  -> corpus retrieval
-  -> source and quote discipline
-  -> historical-reference injection
-  -> optional judges / self-audit / revision
-  -> final answer
-
-Browser UI
-  -> /api/computer/*
-  -> controlled browser worker
-  -> page actions, screenshots, and action transcript
-
-Optimizer
-  -> /api/chat
-  -> failure collection
-  -> playbook synthesis
-  -> optimizer memory
-  -> future answer guidance
-```
-
-## Important Modules
-
-- `src/server.mjs` is the orchestration core for HTTP routes, chat, attachments, auth-aware runtime state, training, and admin flows.
-- `src/hegelPrompt.mjs` defines the Hegelian persona, argument form, source discipline, and judgment constraints.
-- `src/hegelCorpus.mjs`, `src/hegelContext.mjs`, and `src/hegelParallel.mjs` build source-aware context from the local corpus.
-- `src/hegelConceptGraph.mjs`, `src/hegelDialectic.mjs`, and `src/hegelModeRouter.mjs` add concept structure and mode routing.
-- `src/hegelQuoteValidation.mjs` separates quote-ready wording from interpretation.
-- `src/hegelHistorical.mjs` strengthens present-day judgment with historical reference patterns.
-- `src/browserComputer.mjs` and `src/browserComputerWorker.mjs` power browser-scoped computer use.
-- `src/auth.mjs` and `src/userDatabase.mjs` provide user accounts, sessions, admin tools, and per-user state.
-- `src/runQualityOptimizer.mjs` and `src/optimizerMemory.mjs` run the current memory-and-playbook optimization loop.
-
-## Useful Scripts
+## 常用脚本
 
 ```bash
 npm run start
@@ -158,39 +165,69 @@ npm run validate:hegel-graph
 npm run optimize:90
 ```
 
-## Data And Privacy Boundaries
+`npm run optimize:90` 不是模型微调。它会走当前问答管线，收集较弱回答，生成失败模式和 playbook，再把这些经验写回优化记忆，供后续回答参考。
 
-This public release is designed to be redistributable. It should include source code, public docs, frontend assets, deployment templates, training examples, and allowed corpus material.
-
-It should not include:
-
-- API keys or SMTP credentials.
-- Runtime SQLite databases.
-- User sessions, auth records, uploads, or private chat logs.
-- Browser profiles or browser-agent state.
-- Licensed Chinese translations, private PDFs, ebooks, OCR exports, or local-only research bundles.
-
-Private material should be mounted after cloning through `local-resources/`, private `data/` volumes, or deployment-specific secrets. Do not commit those materials to the public repository.
-
-## Android App
-
-The `android-app/` folder contains a Capacitor-based Android shell. Its role is to provide a native mobile entry point with endpoint configuration and WebView delivery. It is currently an adjunct client layer, not a separate backend.
-
-## Roadmap
-
-- Make the optimizer progress and playbook loop more stable and observable.
-- Expand concrete historical case libraries for real-world judgment.
-- Improve strict-logic and historiography scoring reliability.
-- Surface quote/source confidence more visibly in the UI.
-- Harden public deployment defaults and admin operations.
-- Package the Android client for a cleaner release flow.
-
-## Recommended GitHub Description
+## 目录结构
 
 ```text
-Chinese-first Hegelian reasoning workspace with primary-text grounding, quote validation, document understanding, browser agency, multi-user auth, and optimization memory.
+.
+|-- public/                  Web UI、样式、浏览器代理面板、管理入口
+|-- src/                     Node 服务、回答管线、语料、认证、工具、评测和优化
+|-- config/                  公开安全的配置模板，以及本地私有配置入口
+|-- data/corpus/texts/       可公开分发的德文和英文黑格尔语料
+|-- docs/                    公开部署、安全部署和发布说明
+|-- deploy/                  Cloudflare Tunnel、Nginx 等部署辅助文件
+|-- android-app/             可选 Capacitor Android 壳
+|-- training/                训练和评测相关材料
+|-- launch-hegel-salon.cmd   Windows 一键启动入口
+|-- start-hegel-salon.cmd    Windows 启动辅助脚本
+`-- stop-hegel-salon.cmd     Windows 停止辅助脚本
 ```
 
-## Disclaimer
+几个核心文件：
 
-Hegel Salon tries to improve source discipline, logic discipline, and historical judgment, but it does not guarantee academic correctness. Treat the system as a research-oriented reasoning workspace and review important outputs carefully.
+- `src/server.mjs`：HTTP 路由、聊天、附件、认证、训练、管理和运行态协调的主入口。
+- `src/hegelPrompt.mjs`：回答人格、论证形式、引文纪律和现实判断边界。
+- `src/hegelCorpus.mjs`、`src/hegelContext.mjs`、`src/hegelParallel.mjs`：语料检索和上下文构造。
+- `src/hegelQuoteValidation.mjs`：区分可引用原文和解释性表述。
+- `src/browserComputer.mjs`、`src/browserComputerWorker.mjs`：浏览器范围内的 Computer Use。
+- `src/auth.mjs`、`src/userDatabase.mjs`：账号、会话、管理员和用户数据隔离。
+- `src/runQualityOptimizer.mjs`、`src/optimizerMemory.mjs`：质量优化和失败记忆。
+
+## 数据和隐私边界
+
+这个仓库应当只包含可以公开分发的代码、文档、前端资源、部署模板、示例材料和允许公开的语料。下面这些不应该提交到 GitHub：
+
+- API key、SMTP 密码或其他密钥。
+- SQLite 运行库、用户会话、认证记录、上传文件和私人聊天记录。
+- 浏览器 profile、Computer Use 运行态和截图缓存。
+- 受版权保护的中文译本、私人 PDF、电子书、OCR 结果和本地研究包。
+
+如果你有自己的资料，建议放在 `local-resources/`、私有 `data/` 挂载卷或部署平台的私密存储里，不要直接提交。
+
+## Android 壳
+
+`android-app/` 是 Capacitor 做的可选移动入口。它主要负责在 Android 上配置服务端地址并打开 Web 产品，不是独立后端。
+
+## 路线图
+
+接下来比较值得继续做的事：
+
+- 让优化进度、失败样例和 playbook 更容易观察和回滚。
+- 扩充现实判断所需的历史案例库。
+- 提升形式逻辑和历史判断评分的稳定性。
+- 在界面上更清楚地显示引用置信度和证据边界。
+- 加固公开部署默认值，尤其是上传、管理员操作和邮件验证码。
+- 整理 Android 客户端的发布流程。
+
+## 推荐 GitHub 简介
+
+```text
+中文优先的黑格尔阅读与推理工作台，结合原典语料、引用约束、附件理解、浏览器代理、多用户部署和质量优化记忆。
+```
+
+## 许可和声明
+
+代码许可见 [LICENSE](./LICENSE)。
+
+Hegel Salon 会尽量提高来源纪律、论证纪律和历史判断质量，但它不能保证学术正确。重要结论、直接引文和论文用途请继续人工复核。
